@@ -1,0 +1,432 @@
+[
+ {
+  "id": 1,
+  "title": "Quy trình AI doanh nghiệp & thu thập dữ liệu",
+  "ibmCourse": "IBM AI Workflow – Course 1: AI Workflow: Business Priorities and Data Ingestion",
+  "intro": "Chương này giới thiệu IBM AI Enterprise Workflow: vì sao cần một process model (CRISP-DM, OSEMN, IBM Design Thinking), cách ánh xạ các giai đoạn design thinking vào quy trình data science và cách ưu tiên cơ hội kinh doanh qua case study công ty streaming AAVAIL. Phần sau tập trung vào thu thập dữ liệu, chất lượng dữ liệu và xây dựng data ingestion pipeline (ETL, kiểm tra chất lượng, sparse matrix).",
+  "keyPoints": [
+   {
+    "heading": "Tổng quan khoá học và yêu cầu đầu vào",
+    "body": "Specialization IBM AI Enterprise Workflow gồm 6 khoá, xoay quanh case study AAVAIL – một công ty streaming theo mô hình thuê bao, mở rộng sang thị trường mới. Trọng tâm của khoá học là đưa best practices vào toàn bộ workflow (\"Incorporating best practices into the workflow\"), không phải dạy lại thuật toán từ đầu.\nNgười học được kỳ vọng đã quen với numeric computing, data munging, data visualization và data modeling bằng Python (NumPy, pandas, matplotlib, scikit-learn). Câu \"phải thành thạo một trong R, Python hoặc Java\" là SAI – khoá học dùng Python.\nJupyter notebook là công cụ chuẩn công nghiệp trong hệ sinh thái Python cho data science. Thực hành kỹ thuật phần mềm \"lưu tối đa code trong file text để quản lý bằng version control\" nay đã thành chuẩn trong data science (True).\nPython: kiểu built-in gồm int, float, bool, str, list, tuple, dict, set…; heap và varchar KHÔNG phải kiểu built-in. Kiểu mutable (đổi tại chỗ): list, set, dict; immutable: int, float, bool, str, tuple. Tạo dict từ hai list: dict(zip(lst1, lst2)). Base Python KHÔNG tự song song hoá trên nhiều core."
+   },
+   {
+    "heading": "Process models: CRISP-DM, OSEMN và IBM Design Thinking",
+    "body": "Process model giúp: tránh các hướng đi lan man (avoid unnecessary tangents), phân bổ thời gian hiệu quả, thu hẹp quá trình chọn mô hình. Phát biểu KÉM chính xác nhất về lợi ích: \"giúp đi qua workflow nhanh hơn\" (speeding up the process).\nCRISP-DM (Cross-Industry Standard Process for Data Mining): chuẩn mở, ra đời năm 1996, gồm 6 pha: Business Understanding, Data Understanding, Data Preparation, Modeling, Evaluation, Deployment.\nOSEMN: Obtain, Scrub (làm sạch), Explore, Model, iNterpret. Chữ \"S\" = Scrubbing.\nIBM Design Thinking là process model được khoá học chọn vì design thinking được dùng ở nhiều lĩnh vực khác, giúp truyền đạt AI workflow cho người ngoài data science dễ hơn (True).\nHai yếu tố thiết yếu và chung cho cả ba mô hình: giải quyết câu hỏi kinh doanh (resolve the business question) và feedback loops. Ví dụ feedback loop hợp lệ: từ modeling quay lại data collection, từ production quay lại model iteration. KHÔNG hợp lệ: \"đi từ business opportunity và data collection sang model iteration\" (đó là luồng tiến, không phải vòng phản hồi)."
+   },
+   {
+    "heading": "Năm giai đoạn design thinking ánh xạ vào AI workflow",
+    "body": "Thứ tự: Empathize → Define → Ideate → Prototype → Test. Giai đoạn đầu tiên là Empathize.\nEmpathize: hiểu cơ hội kinh doanh, phỏng vấn stakeholder, xác định dữ liệu cần thu thập. Ngày đầu đi làm nên bắt đầu bằng việc lấy góc nhìn của management và đi theo các manh mối họ cung cấp (không phải lao vào EDA ngay).\nDefine: xác định và ưu tiên business opportunity, định nghĩa các thách thức (\"AAVAIL move to define challenges\" = Define), xây dựng data ingestion/ETL.\nIdeate: EDA, data transformation, feature engineering, kiểm định giả thuyết.\nPrototype: modeling, so sánh mô hình.\nTest: triển khai (deployment), unit test, monitoring, feedback loop.\nIBM Enterprise Design Thinking còn có: the Loop (Observe – Reflect – Make; nguyên tắc chính là quan sát và suy ngẫm – Observation and Reflection), Hills (mục tiêu định hướng), Playbacks (các buổi stakeholder chia sẻ câu chuyện và phản hồi để giữ đồng thuận), Sponsor Users (người dùng thực tế mang chuyên môn lĩnh vực tham gia cùng nhóm)."
+   },
+   {
+    "heading": "Tư duy khoa học và ưu tiên cơ hội kinh doanh",
+    "body": "Scientific thinking: đặt giả thuyết có thể kiểm chứng, tìm dữ liệu, thiết kế thí nghiệm, lặp lại. Câu hỏi mang tính khoa học: \"Có dữ liệu (ví dụ corpus phản hồi khách hàng) ủng hộ không?\", \"Có thể chạy A/B testing không?\", \"Công ty khác đã thành công với thay đổi tương tự chưa?\". Câu KHÔNG khoa học: \"Thành viên lãnh đạo nào ủng hộ quyết định này?\".\nVí dụ cửa hàng xe trượt tuyết (sled): bước tiếp theo hợp lý là thu thêm dữ liệu và lặp lại thí nghiệm lượng tuyết, dùng dữ liệu khác (tuyết theo county) và lặp lại, hoặc bắt đầu đánh giá khả thi kinh doanh cho bang tốt nhất (Vermont).\nDịch ngôn ngữ kinh doanh sang ngôn ngữ data science: AAVAIL muốn biết khách hàng nào sẽ rời bỏ (churn) → bài toán Classification.\nƯu tiên cơ hội: startup speech-to-text có khách hiện tại hài lòng nhưng bán cho khách mới chậm → ưu tiên customer segmentation/market analysis để giúp marketing tiếp cận khách mới. Cơ hội \"defensible\" nhất là cải thiện hệ thống nhận dạng âm thanh hiện có thành giao diện phong phú hơn.\nTính ROI nhanh (back-of-the-envelope): số người dùng active × phí năm, hoặc trừ thêm ước tính chi phí thời gian dự án."
+   },
+   {
+    "heading": "Thu thập dữ liệu và chất lượng dữ liệu",
+    "body": "Chất lượng dữ liệu bao gồm cả các quan sát (observations) lẫn độ trưởng thành (maturity) của dữ liệu. Duy trì chất lượng dữ liệu giúp tránh trễ dự án và vượt ngân sách.\nData scientist có thể dành khoảng 60% thời gian cho làm sạch dữ liệu. Các yếu tố ảnh hưởng thời gian làm sạch: chất lượng, nguồn, độ phức tạp dữ liệu…; \"quy mô công ty\" KHÔNG phải yếu tố.\nNên thu dữ liệu ở mức chi tiết nhất có thể (granular) thay vì summary-level vì cho phép phân tích sâu hơn. Đảm bảo luôn có dữ liệu tối thiểu cần thiết để giám sát hiệu năng mô hình và debug.\nGhi chép tài liệu dữ liệu (document your data) trước khi bắt đầu giúp tinh gọn modeling và bảo đảm chất lượng.\nAAVAIL: các team được triển khai để tạo product traction ở thị trường mới; sau khi có dữ liệu sales, management muốn biết các team đã được tối ưu dựa trên lịch sử bán hàng chưa; khi chuẩn bị phân tích cần xét các feature có sẵn cho từng cá nhân trong team.\nVai trò: data engineer lo việc pipeline và bảo đảm mô hình đã triển khai scale tốt khi số người dùng tăng."
+   },
+   {
+    "heading": "Data ingestion và ETL",
+    "body": "ETL = Extract, Transform, Load. Data ingestion pipeline tập trung vào thu thập và xử lý dữ liệu, đưa dữ liệu thô từ nhiều nguồn vào định dạng sẵn sàng cho phân tích.\nCác việc nên có trong pipeline: xử lý missing data, dữ liệu lỗi, quan sát lặp lại và các vấn đề toàn vẹn dữ liệu; kiểm tra rằng với một bộ tham số cho trước thì trả về đúng dữ liệu kỳ vọng; kiểm tra định dạng đầu ra đúng kỳ vọng.\nCâu \"bad data in equals bad data out\" (garbage in, garbage out) gắn với bước triển khai nhiều kiểm tra quality assurance.\nMục tiêu cuối: đưa dữ liệu về pandas DataFrame hoặc NumPy array vì dễ dùng với thư viện ML, dễ tóm tắt, dễ trực quan hoá (đáp án \"All of the above\"). Khi munge dữ liệu bán hàng, mục tiêu hợp lý: mỗi hàng là một customer, các cột như total_sales, name, most_bought.\nCSV phổ biến vì là plain-text, đọc ghi dễ, tương thích spreadsheet; pandas là thư viện thường dùng đọc ghi CSV (pd.read_csv). Tự động hoá ingestion bằng script Python chạy được từ dòng lệnh, có kiểm thử."
+   },
+   {
+    "heading": "Nguồn dữ liệu: relational DB, NoSQL và công cụ scale",
+    "body": "Relational database truy cập qua connector Python: SQLite → sqlite3, PostgreSQL → psycopg2, MySQL → mysql-connector/pymysql, Oracle → cx_Oracle. Cặp KHÔNG hợp lệ: Berkeley DB → bsddb (Berkeley DB là key-value store, không phải relational DB).\nNoSQL (MongoDB, key-value, document store) xử lý dữ liệu lộn xộn, bán cấu trúc tốt hơn relational database.\nCác nguồn khác: file CSV/JSON, API, log, streaming. Trong case study, nhiều file JSON được gộp thành một DataFrame.\nKhi dữ liệu quá lớn so với bộ nhớ, Dask giúp scale phân tích kiểu pandas/NumPy song song; Spark dùng cho dữ liệu phân tán."
+   },
+   {
+    "heading": "Sparse matrices làm đích của ETL",
+    "body": "Sparse matrix chỉ lưu các phần tử khác 0, tiết kiệm bộ nhớ. Định dạng trong scipy.sparse: COO (coordinate), CSR (Compressed Sparse Row), CSC (Compressed Sparse Column), LIL (List of Lists), DOK (Dictionary of Keys), BSR, DIA. Thường dựng bằng COO/LIL/DOK rồi chuyển sang CSR/CSC để tính toán.\nDữ liệu phù hợp: word counts (bag-of-words) và user-item matrix cho recommendation.\nCaveats: các hàm đại số tuyến tính của NumPy thường không gọi trực tiếp được trên ma trận sparse; khó in ra màn hình trực tiếp (cần .toarray()/.todense() trên tập nhỏ).\nscikit-learn chấp nhận SciPy sparse matrix làm input chuẩn, nên KHÔNG cần chuyển sang dense trước khi dùng train_test_split (câu \"cần chuyển dense\" là False)."
+   }
+  ],
+  "video": "videos/ch1.mp4",
+  "sources": [
+   {
+    "label": "Coursera – AI Workflow: Business Priorities and Data Ingestion (IBM)",
+    "url": "https://www.coursera.org/learn/ibm-ai-workflow-business-priorities-data-ingestion"
+   },
+   {
+    "label": "Coursera – IBM AI Enterprise Workflow Specialization",
+    "url": "https://www.coursera.org/specializations/ibm-ai-workflow"
+   },
+   {
+    "label": "Wikipedia – Cross-industry standard process for data mining (CRISP-DM)",
+    "url": "https://en.wikipedia.org/wiki/Cross-industry_standard_process_for_data_mining"
+   },
+   {
+    "label": "SciPy – Sparse arrays (scipy.sparse)",
+    "url": "https://docs.scipy.org/doc/scipy/reference/sparse.html"
+   },
+   {
+    "label": "pandas – IO tools (text, CSV, JSON, SQL…)",
+    "url": "https://pandas.pydata.org/docs/user_guide/io.html"
+   },
+   {
+    "label": "Python docs – sqlite3: DB-API 2.0 interface for SQLite",
+    "url": "https://docs.python.org/3/library/sqlite3.html"
+   }
+  ]
+ },
+ {
+  "id": 2,
+  "title": "Phân tích dữ liệu & kiểm định giả thuyết",
+  "ibmCourse": "IBM AI Workflow – Course 2: AI Workflow: Data Analysis and Hypothesis Testing",
+  "intro": "Chương này tương ứng giai đoạn Ideate của design thinking: khám phá dữ liệu (EDA), trực quan hoá có tính tái lập, xử lý missing values và imputation. Phần sau ôn lại nền tảng xác suất, suy luận thống kê, kiểm định giả thuyết (t-test, Welch, binomial) và cách xử lý multiple comparisons trong case study AAVAIL.",
+  "keyPoints": [
+   {
+    "heading": "Mục đích và phạm vi của EDA",
+    "body": "Exploratory Data Analysis (EDA) nhằm tạo các bản tóm tắt (summary tables) và trực quan hoá để hiểu dữ liệu, phát hiện vấn đề chất lượng, hình thành giả thuyết và gợi ý feature.\nEDA KHÔNG bao gồm việc xây dựng mô hình dự đoán như linear/logistic regression (đó là modeling). Phát biểu KÉM đúng nhất: \"EDA gồm cả exploratory và confirmatory data analysis\" – confirmatory (kiểm định) là bước riêng sau EDA.\nEDA KHÔNG tách rời modeling: nó giúp ước lượng thời gian cần cho modeling (câu \"EDA decoupled from modeling\" là False).\nQuy trình gợi ý: đọc dữ liệu đã ingest → kiểm tra missing/duplicate → bảng tóm tắt theo nhóm (groupby, pivot_table) → biểu đồ → ghi lại phát hiện và giả thuyết cần kiểm định."
+   },
+   {
+    "heading": "Trực quan hoá trong doanh nghiệp và tính tái lập",
+    "body": "Khi trực quan hoá trong doanh nghiệp, điều quan trọng nhất là reproducibility (tái lập) và communication (truyền đạt cho stakeholder). Mọi biến đổi dữ liệu nên nằm trong code/script; thao tác copy-paste trong spreadsheet là ví dụ KHÔNG reproducible.\nmatplotlib.pyplot cung cấp giao diện hàm (functional/state-based interface) cho sử dụng tương tác đơn giản; còn object-oriented interface (fig, ax) cho biểu đồ phức tạp.\nseaborn được xây dựng trên matplotlib, nên pairplot và các hàm seaborn KHÔNG phải công cụ tách biệt với matplotlib (False).\nPlotly tạo biểu đồ tương tác, chạy trên web; \"chỉ tạo ảnh tĩnh\" KHÔNG phải tính năng của Plotly.\nJupyter notebook tiện cho EDA nhưng KHÔNG tự nhiên phù hợp với version control (file JSON khó diff) – nên đưa code ổn định ra file .py.\nDashboard (ví dụ trong Watson Studio) dùng để theo dõi, chia sẻ kết quả liên tục; câu \"dashboard là cách nhanh tạo biểu đồ đơn giản di động\" là phát biểu kém đúng nhất."
+   },
+   {
+    "heading": "Missing values: MCAR, MAR, MNAR",
+    "body": "Ba loại missingness: MCAR (Missing Completely At Random – thiếu hoàn toàn ngẫu nhiên, không phụ thuộc gì), MAR (Missing At Random – việc thiếu phụ thuộc vào biến quan sát được khác), MNAR (Missing Not At Random – việc thiếu phụ thuộc chính giá trị bị thiếu hoặc biến không quan sát được).\nChiến lược: xoá dòng (complete-case analysis, chỉ an toàn khi MCAR), imputation đơn giản (mean, median, most_frequent cho categorical), imputation bằng mô hình (dùng các feature khác dự đoán giá trị thiếu, IterativeImputer/KNNImputer).\nVới dữ liệu số, khuyến nghị dùng kỹ thuật imputation. Trong case AAVAIL thiếu 10% số stream: đầu tiên thử lấy lại từ user logs; nếu không được thì thay bằng mean hoặc dự đoán từ feature khác. Phương án KÉM hữu ích nhất cho modeling churn là thay bằng -1 để đánh dấu unknown (tạo giá trị giả trên thang số).\nMultiple imputation: tạo nhiều bộ dữ liệu được impute khác nhau, phân tích từng bộ rồi gộp kết quả – mục đích chính là mô tả tốt hơn sai số/độ bất định do việc thay thế missing values gây ra."
+   },
+   {
+    "heading": "Nền tảng xác suất và phân phối",
+    "body": "Giả định khi đưa ra phát biểu xác suất về một mẫu: tồn tại population mà mẫu được lấy từ đó; population tuân theo một phân phối giả định; các quan sát là i.i.d. (độc lập, cùng phân phối); random variable biểu diễn các giá trị dữ liệu có thể nhận. KHÔNG phải giả định: \"phát biểu xác suất áp dụng cho từng quan sát một\".\nBiến cố xung khắc (mutually exclusive) không thể xảy ra đồng thời, ví dụ số âm và số dương nhỏ hơn 25; số trong 100–200 và số trong 201–300.\nPhân phối chuẩn: điểm có mean 50, sd 20 → P(X ≥ 80) = 1 - stats.norm.cdf(80, loc=50, scale=20) ≈ 0.067. Dùng cdf cho P(X ≤ x), 1 - cdf (hoặc sf) cho phần đuôi phải.\nPhân phối nhị thức: tỷ lệ đăng ký 2.5%, 108879 lượt truy cập, P(số đăng ký ≤ 2701) = stats.binom.cdf(2701, 108879, 0.025) ≈ 0.346.\nPoisson mô hình hoá số sự kiện đếm; có thể dùng bootstrap để định lượng độ bất định của ước lượng (ví dụ churn theo Poisson – True)."
+   },
+   {
+    "heading": "Các phương pháp suy luận thống kê",
+    "body": "Statistical inference: rút ra kết luận về population từ mẫu. Các phương pháp tính ước lượng (estimates): Maximum Likelihood Estimation (MLE), Markov Chain Monte Carlo (MCMC – trong Bayesian), Expectation Maximization (EM), simulation via permutations/bootstrap.\nNull Hypothesis Significance Testing (NHST) KHÔNG phải phương pháp tính ước lượng – nó là khung để ra quyết định bác bỏ hay không bác bỏ giả thuyết.\nFrequentist: tham số cố định, dùng p-value, confidence interval. Bayesian: tham số là biến ngẫu nhiên, kết hợp prior với likelihood để có posterior, thường ước lượng bằng MCMC."
+   },
+   {
+    "heading": "Kiểm định giả thuyết và chọn test phù hợp",
+    "body": "Null hypothesis (H0) thường phát biểu \"không có khác biệt\": ví dụ người dùng Product 1 và Product 2 có cùng độ tuổi trung bình. Alternative (H1) là có khác biệt. Nếu p-value < alpha (thường 0.05) thì bác bỏ H0.\nChọn test: 1-sample t-test (so trung bình một mẫu với giá trị cho trước); 2-sample t-test equal variance; 2-sample unequal variances t-test (Welch) khi hai nhóm có kích thước/phương sai khác nhau – đây là đáp án cho câu so sánh tuổi người dùng Product 1 và 2; z-test với continuity correction và binomial test cho tỷ lệ (dữ liệu nhị phân); chi-square cho bảng tần số; permutation test khi không muốn giả định phân phối.\nTrong SciPy: stats.ttest_1samp, stats.ttest_ind(a, b, equal_var=False) cho Welch, stats.binomtest, stats.chi2_contingency.\nTrong case study AAVAIL, kiểm định giả thuyết được dùng để xem có khác biệt có ý nghĩa giữa các nhóm (quốc gia, gói thuê bao) liên quan đến churn hay không."
+   },
+   {
+    "heading": "Multiple comparisons problem",
+    "body": "Khi thực hiện nhiều kiểm định, xác suất có ít nhất một kết quả dương tính giả tăng mạnh (với 20 test ở alpha 0.05, kỳ vọng khoảng 1 kết quả \"có ý nghĩa\" do ngẫu nhiên).\nChiến lược hợp lệ: Bonferroni correction (chia alpha cho số test, kiểm soát family-wise error rate); Benjamini/Hochberg correction dựa trên False Discovery Rate; tạo null distribution bằng permutations để có bối cảnh; nếu phù hợp, dùng khung mô hình khác như generalized linear models (hoặc mô hình phân cấp) thay vì nhiều test rời rạc.\nKHÔNG hợp lệ: thực hiện tất cả phép so sánh rồi chỉ giữ test cho kết quả tốt nhất (p-hacking).\nTrong Python: statsmodels.stats.multitest.multipletests(pvals, method=\"bonferroni\" hoặc \"fdr_bh\")."
+   }
+  ],
+  "video": "videos/ch2.mp4",
+  "sources": [
+   {
+    "label": "Coursera – AI Workflow: Data Analysis and Hypothesis Testing (IBM)",
+    "url": "https://www.coursera.org/learn/ibm-ai-workflow-data-analysis-hypothesis-testing"
+   },
+   {
+    "label": "scikit-learn – Imputation of missing values",
+    "url": "https://scikit-learn.org/stable/modules/impute.html"
+   },
+   {
+    "label": "SciPy – scipy.stats.ttest_ind (Welch's t-test với equal_var=False)",
+    "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_ind.html"
+   },
+   {
+    "label": "SciPy – scipy.stats.binom",
+    "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.binom.html"
+   },
+   {
+    "label": "statsmodels – multipletests (Bonferroni, Benjamini/Hochberg)",
+    "url": "https://www.statsmodels.org/stable/generated/statsmodels.stats.multitest.multipletests.html"
+   },
+   {
+    "label": "seaborn – pairplot",
+    "url": "https://seaborn.pydata.org/generated/seaborn.pairplot.html"
+   }
+  ]
+ },
+ {
+  "id": 3,
+  "title": "Feature engineering & phát hiện bias",
+  "ibmCourse": "IBM AI Workflow – Course 3: AI Workflow: Feature Engineering and Bias Detection",
+  "intro": "Chương này tương ứng với IBM Course 3: biến đổi dữ liệu thành feature tốt bằng các interface của scikit-learn và pipeline, xử lý dữ liệu mất cân bằng (imbalanced classes), giảm chiều, topic modeling, clustering và phát hiện outlier. Phần cuối tập trung vào bias, fairness (protected attributes, AIF360) và độ bền vững của mô hình trước tấn công đối kháng (Adversarial Robustness Toolbox).",
+  "keyPoints": [
+   {
+    "heading": "Data transformation, interface của scikit-learn và pipeline",
+    "body": "Feature engineering là quá trình dùng hiểu biết về dữ liệu và nghiệp vụ để tạo, chọn và biến đổi biến đầu vào giúp mô hình học tốt hơn. Đặc điểm quan trọng nhất khi áp dụng data transformation là tính lặp (Iteration): thử, đánh giá, quay lại chỉnh.\nscikit-learn có 4 interface chính: Estimator (fit), Predictor (predict), Transformer (transform) và Model (score). 'Classifier interface' KHÔNG phải là một interface. Phương thức .fit_transform thuộc cả Transformer và Estimator. Feature engineering cùng domain expert được đóng gói thành một Transformer tùy biến.\nDữ liệu đầu vào chuẩn cho các interface là NumPy arrays và SciPy sparse matrices (sparse matrix dùng trực tiếp được với train_test_split, không cần chuyển sang dense).\nPipeline (sklearn.pipeline.Pipeline) nối các transformer và estimator cuối thành một chuỗi; lý do chính để nhấn mạnh pipeline là có một nền tảng nhất quán để so sánh nhiều biến thể của workflow (True) và tránh rò rỉ dữ liệu khi cross-validation."
+   },
+   {
+    "heading": "Dữ liệu mất cân bằng (class imbalance)",
+    "body": "Khi một lớp chiếm tỉ lệ rất nhỏ, accuracy dễ gây hiểu nhầm (misleading): mô hình đoán toàn lớp đa số vẫn đạt accuracy cao. Nên dùng precision, recall, F1 hoặc confusion matrix.\nKỹ thuật phổ biến: oversampling lớp thiểu số và undersampling lớp đa số (đáp án 'Both A and B'), thêm class_weight, hoặc dùng thuật toán phát hiện (outlier/novelty detection).\nChiến lược tốt nhất: so sánh các cách re-sampling với một baseline VÀ với các thuật toán detection, rồi chọn theo metric phù hợp. Không có quy tắc bắt buộc: lớp thiểu số dưới 5% KHÔNG có nghĩa là phải dùng outlier detection thay cho học có giám sát (False).\nTrong case study clustering của khóa học, re-sampling KHÔNG đem lại cải thiện lớn (False) — luôn phải kiểm chứng bằng thực nghiệm."
+   },
+   {
+    "heading": "imbalanced-learn: SMOTE, ADASYN, SMOTENC",
+    "body": "imbalanced-learn (imblearn) là thư viện tương thích API scikit-learn, cung cấp: random over/under-sampling, SMOTE, ADASYN, các phương pháp kết hợp (SMOTEENN, SMOTETomek), ensemble cân bằng (BalancedRandomForest…) và Pipeline riêng hỗ trợ sampler. Thư viện KHÔNG đóng gói thuật toán outlier detection — đó là đáp án 'không phải feature của imbalanced-learn'.\nSMOTE (Synthetic Minority Over-sampling Technique) tạo mẫu tổng hợp bằng nội suy giữa một mẫu thiểu số và các láng giềng gần. ADASYN tạo nhiều mẫu hơn ở vùng khó học. SMOTENC dùng khi dữ liệu có cả biến categorical và continuous; SMOTEN dùng khi chỉ có biến categorical.\nLưu ý bẫy: ADASYN là kỹ thuật oversampling, KHÔNG phải thuật toán outlier detection; down-sampling lớp đa số KHÔNG phải là dimensionality reduction."
+   },
+   {
+    "heading": "Dimensionality reduction: PCA, tSNE, NMF",
+    "body": "Mục đích chính của giảm chiều: đơn giản hóa mô hình và giảm thời gian tính toán, trực quan hóa dữ liệu nhiều chiều, khử nhiễu, xử lý đa cộng tuyến.\nCác kỹ thuật: PCA (Principal Component Analysis), TruncatedSVD (dùng tốt với sparse matrix), NMF (Non-negative Matrix Factorization), tSNE, UMAP, LDA cho văn bản. K-nearest neighbors KHÔNG phải kỹ thuật giảm chiều.\ntSNE là lựa chọn hợp lý thay PCA vì mô tả được nhiều dạng cấu trúc phi tuyến hơn, nhưng khi số feature rất lớn vẫn nên dùng PCA (hoặc TruncatedSVD) giảm xuống khoảng 50 chiều trước (True).\nVới customer profiling của AAVAIL, KHÔNG bắt buộc chạy PCA trước khi clustering (False)."
+   },
+   {
+    "heading": "Topic modeling: bag-of-words và LDA",
+    "body": "Bag-of-words biểu diễn văn bản bằng tần suất (đếm) các từ, bỏ qua thứ tự; kết quả thường là sparse matrix (CountVectorizer, TfidfVectorizer). Word counts và ma trận user-item là ví dụ điển hình của dữ liệu hợp với sparse matrix.\nLatent Dirichlet Allocation (LDA) và NMF là các phương pháp topic modeling. Khi in các từ đại diện cho mỗi topic, insight thu được là: mỗi topic được định nghĩa bởi các từ đại diện, và mỗi document là một hỗn hợp (mixture) của các topic.\nTrực quan hóa topic (ví dụ pyLDAvis) có tác động đến business opportunity vì chia sẻ với domain expert có thể giúp feature engineering theo từng topic."
+   },
+   {
+    "heading": "Clustering và chọn số cụm",
+    "body": "Clustering (học không giám sát) dùng để phân nhóm khách hàng (customer profiling). Với dữ liệu AAVAIL, số profile/cụm hợp lý khoảng 6–8.\nMetric hợp lý để chọn số cụm: silhouette score, AIC/BIC cho Gaussian mixture, Calinski-Harabasz… Inertia (within-cluster sum-of-squares) luôn giảm khi tăng k nên KHÔNG được coi là metric hợp lý để tự nó chọn số cụm (đáp án trong đề).\nSpectral clustering áp dụng dễ dàng cho đồ thị (graph) vì làm việc trên ma trận affinity. Dirichlet process Gaussian mixture model (BayesianGaussianMixture) không cần đặt trước số cụm; KMeans, GMM, Spectral thì cần."
+   },
+   {
+    "heading": "Outlier và novelty detection",
+    "body": "Các thuật toán phát hiện outlier trong scikit-learn: Isolation Forest, Local Outlier Factor (LOF), One-Class SVM, Elliptic Envelope. Theo đáp án khóa học, Local Outlier Factor được xem là hoạt động tốt với dữ liệu nhiều chiều (Isolation Forest cũng hiệu quả với dữ liệu nhiều chiều).\nOutlier detection có thể dùng như một hướng giải quyết dữ liệu cực kỳ mất cân bằng, và novelty detection còn dùng để theo dõi dữ liệu mới trong production.\nADASYN, SMOTE là kỹ thuật sampling, không phải outlier detection."
+   },
+   {
+    "heading": "Bias, fairness và protected attributes",
+    "body": "Sampling bias xảy ra khi dữ liệu đại diện thiếu (under-represent) một số nhóm con. Protected attribute là đặc điểm không được dùng để phân biệt đối xử: race, gender, age, religion, national origin, disability… Ví dụ với recommendation engine bán lẻ, purchase history là thuộc tính ít có khả năng là protected attribute nhất.\nVới hồ sơ vay tín dụng, mẫu 'salary > 50K và Age > 25 thì sẽ trả nợ' là pattern không mong muốn nhất vì dựa vào tuổi (protected attribute).\nPrecision, recall, F1 KHÔNG cung cấp bằng chứng khách quan về fairness (False); cần metric fairness riêng như disparate impact, statistical parity difference.\nIBM AI Fairness 360 (AIF360) có các thuật toán giảm bias ở pre-processing (Reweighing), in-processing và post-processing. API của Reweighing theo phong cách scikit-learn (fit/transform), nên câu 'có nhiều phương thức tùy biến phải tra tài liệu' là False."
+   },
+   {
+    "heading": "Adversarial robustness và tấn công",
+    "body": "Adversarial Robustness Toolbox (ART, do IBM khởi xướng, nay thuộc LF AI & Data) là thư viện Python để đánh giá và kiểm chứng độ bền vững (robustness) của mô hình ML trước các tấn công: evasion, poisoning, extraction, inference.\nPoisoning attack: tấn công chèn dữ liệu độc hại vào tập huấn luyện để làm sai lệch mô hình. Evasion attack: chỉnh sửa nhỏ input lúc dự đoán (adversarial examples) để đánh lừa mô hình.\nPhòng thủ: kiểm tra chất lượng dữ liệu đầu vào, adversarial training, phát hiện input bất thường và giám sát mô hình sau khi triển khai."
+   }
+  ],
+  "video": "videos/ch3.mp4",
+  "sources": [
+   {
+    "label": "Coursera – AI Workflow: Feature Engineering and Bias Detection (IBM)",
+    "url": "https://www.coursera.org/learn/ibm-ai-workflow-feature-engineering-bias-detection"
+   },
+   {
+    "label": "imbalanced-learn – Over-sampling (SMOTE, ADASYN)",
+    "url": "https://imbalanced-learn.org/stable/over_sampling.html"
+   },
+   {
+    "label": "imbalanced-learn – SMOTENC",
+    "url": "https://imbalanced-learn.org/stable/references/generated/imblearn.over_sampling.SMOTENC.html"
+   },
+   {
+    "label": "scikit-learn – Decomposing signals in components (PCA, NMF, LDA)",
+    "url": "https://scikit-learn.org/stable/modules/decomposition.html"
+   },
+   {
+    "label": "scikit-learn – Clustering",
+    "url": "https://scikit-learn.org/stable/modules/clustering.html"
+   },
+   {
+    "label": "scikit-learn – Novelty and Outlier Detection",
+    "url": "https://scikit-learn.org/stable/modules/outlier_detection.html"
+   },
+   {
+    "label": "AI Fairness 360 (AIF360) documentation",
+    "url": "https://aif360.readthedocs.io/en/stable/"
+   },
+   {
+    "label": "Adversarial Robustness Toolbox documentation",
+    "url": "https://adversarial-robustness-toolbox.readthedocs.io/en/latest/"
+   }
+  ]
+ },
+ {
+  "id": 4,
+  "title": "Machine learning, nhận dạng hình ảnh & NLP",
+  "ibmCourse": "IBM AI Workflow – Course 4: AI Workflow: Machine Learning, Visual Recognition and NLP",
+  "intro": "Chương này tương ứng với IBM Course 4: chọn và đánh giá mô hình supervised learning (metric phân loại, hồi quy, cross-validation), các họ mô hình từ linear model, tree, ensemble đến neural network (CNN, RNN, transfer learning). Phần sau giới thiệu Watson Visual Recognition, xử lý ngôn ngữ tự nhiên (NLP) với spaCy, scikit-learn và dịch vụ Watson Natural Language Understanding.",
+  "keyPoints": [
+   {
+    "heading": "Supervised learning, multiclass và multilabel",
+    "body": "Supervised learning gồm classification (dự đoán nhãn) và regression (dự đoán giá trị thực). Quá trình điều chỉnh tham số mô hình dựa trên dữ liệu huấn luyện được gọi là learning, estimation hay model fitting.\nMulticlass classification: mỗi mẫu chỉ thuộc đúng MỘT nhãn trong nhiều lớp. Multilabel: mỗi mẫu có thể có NHIỀU nhãn cùng lúc.\nMọi classifier trong scikit-learn đều làm multiclass ngay từ đầu (True), nhưng khác cách tiếp cận: one-vs-all/one-vs-rest (huấn luyện một classifier riêng cho mỗi nhãn) hoặc one-vs-one. Naïve Bayes được thiết kế vốn có (inherently) cho multiclass.\nCross-validation cùng train-test split là công cụ then chốt để mô hình hoạt động tốt trên dữ liệu chưa thấy (True). Grid search tăng tốc bằng n_jobs (song song); dùng ShuffleSplit là cách ít có khả năng tăng tốc nhất."
+   },
+   {
+    "heading": "Metric phân loại: confusion matrix, precision, recall, F1",
+    "body": "Confusion matrix gồm TP (dự đoán đúng lớp positive), FP, FN, TN. 'Average Score' KHÔNG phải thành phần của confusion matrix.\nPrecision = TP/(TP+FP); Recall = TP/(TP+FN); F1 là trung bình điều hòa của precision và recall, metric dùng để cân bằng hai đại lượng này. Với dữ liệu mất cân bằng, accuracy dễ gây hiểu nhầm.\nF-beta: khi false negative tốn kém hơn false positive (ví dụ gắn cờ bình luận nghi phạm pháp để xem lại thủ công) thì đặt beta = 2 để ưu tiên recall; beta < 1 ưu tiên precision.\nTham số average (micro, macro, weighted, binary) quyết định cách gộp điểm F1 giữa các lớp trong bài toán multiclass/multilabel.\nclassification_report của sklearn dùng để tóm tắt hiệu năng mô hình: precision, recall, f1-score, support cho từng lớp."
+   },
+   {
+    "heading": "Metric hồi quy và linear models",
+    "body": "RMSE = Root Mean Square Error, phạt nặng sai số lớn. MAE (Mean Absolute Error) ít nhạy với giá trị cực trị, nên ưu tiên MAE khi phân phối đuôi dài, ví dụ dự đoán thời gian đến khi máy hỏng.\nGeneralized linear models (GLM): linear regression, logistic regression, Poisson regression… KNN regression KHÔNG phải GLM. Các mô hình GLMM như multilevel/hierarchical model thường được tối ưu bằng kỹ thuật phức tạp như MCMC sampling (True).\nCác biến thể gradient descent đã học: batch, stochastic (SGD) và mini-batch gradient descent; 'regularized gradient descent' KHÔNG nằm trong danh sách."
+   },
+   {
+    "heading": "Decision tree và ensemble",
+    "body": "Decision tree dễ diễn giải và là mô hình hữu ích cho dữ liệu churn của AAVAIL (True), nhưng bản thân nó KHÔNG phải ensemble.\nEnsemble: bagging (Random Forest, BaggingClassifier) giảm variance; boosting (AdaBoost, Gradient Boosting, XGBoost) giảm bias. Bagging và boosting KHÔNG chỉ dùng decision tree làm base classifier (False).\nTrong Random Forest, các cây cơ sở riêng lẻ có low bias và high variance (câu 'high bias, low variance' là False); việc lấy trung bình nhiều cây giúp giảm variance."
+   },
+   {
+    "heading": "Neural network: CNN, RNN, transfer learning",
+    "body": "Tham số có thể tinh chỉnh của neural network: số layer, số neuron, activation function, learning rate, optimizer, batch size, số epoch, dropout/regularization. 'Hardware availability' KHÔNG phải tham số tunable.\nCNN điển hình gồm convolutional, pooling và dense layers (True); dùng cho phân loại ảnh, nhận dạng đối tượng. Một CNN đơn giản chạy trên cả 10 lớp (CIFAR-10) với toàn bộ dữ liệu đạt khoảng 62–77% accuracy. Theo đề, 'image composition' là use case ít phù hợp nhất cho CNN.\nRNN (và LSTM, GRU) phổ biến nhất cho time-series và dữ liệu chuỗi.\nTransfer learning là tái sử dụng mô hình đã huấn luyện sẵn (ví dụ trên ImageNet), xuất phát từ deep learning, KHÔNG phải từ reinforcement learning (False). Reinforcement learning là học hành động phù hợp qua thử và sai (trial and error).\nThêm GPU không phải lúc nào cũng làm thời gian huấn luyện giảm mãi (False) do chi phí giao tiếp, I/O và giới hạn song song."
+   },
+   {
+    "heading": "Watson Visual Recognition",
+    "body": "Watson Visual Recognition (dịch vụ IBM Cloud, nay đã ngừng cung cấp) cho phép phân loại ảnh bằng model có sẵn hoặc huấn luyện custom classifier từ các file zip ảnh positive cho mỗi lớp và ảnh negative.\nẢnh negative nên càng giống về mặt hình ảnh với ảnh positive càng tốt, để mô hình học được ranh giới tinh tế.\nCó thể truy cập qua API key với Python SDK/curl, nhưng cũng qua giao diện Watson Studio, nên câu 'chỉ truy cập bằng API key qua Python hoặc curl' là False.\nKhông cần tải ảnh về máy trước khi gọi classify: có thể truyền URL ảnh (False)."
+   },
+   {
+    "heading": "NLP: tiền xử lý và pipeline phân loại văn bản",
+    "body": "Mục đích của NLP là phân tích và hiểu ngôn ngữ của con người. Ứng dụng phổ biến trong doanh nghiệp: xử lý và phân tích phản hồi khách hàng, chatbot, phân loại tài liệu, trích xuất thông tin. Sentiment analysis là xác định sắc thái cảm xúc của một chuỗi từ.\nTiền xử lý: tokenization, bỏ stop words, lemmatization (spaCy). Trong khóa học, hàm lemmatize_document giảm tổng số token còn khoảng 45–50% so với ban đầu.\nBiểu diễn văn bản: bag-of-words, TF-IDF, n-grams; sau đó dùng classifier như Naive Bayes, SGDClassifier trong Pipeline. Câu hỏi hợp lý khi tuning pipeline NLP: có bỏ stop words không, dùng n-gram nào, TF-IDF hay count, chọn classifier nào. 'Nên dùng RMSE hay MAE' KHÔNG phải câu hỏi phù hợp (đó là metric hồi quy).\nDùng NLP API có sẵn thay vì tự xây mô hình giúp tốn ít thời gian và tài nguyên hơn."
+   },
+   {
+    "heading": "Watson Natural Language Understanding (NLU) và Python SDK",
+    "body": "Watson NLU phân tích văn bản để trích xuất: sentiment, emotion, entities, keywords, categories, concepts, relations, semantic roles, syntax. Custom model (qua Watson Knowledge Studio) được dùng cho entities và relations; theo đề, 'phân loại tài liệu bằng custom model xây từ văn bản' KHÔNG phải tính năng của NLU.\nThiết lập SDK: bước đầu tiên là tạo tài khoản IBM Cloud; cài đặt bằng lệnh pip install --upgrade ibm-watson.\nBa thông tin cần lưu (trong file bảo mật trên máy tin cậy, không đưa vào code): service API key, service version, service URL.\nĐể lặp lại thí nghiệm một cách reproducible, phải truyền tham số version (ngày phiên bản API, ví dụ '2022-04-07') trong mỗi request."
+   }
+  ],
+  "video": "videos/ch4.mp4",
+  "sources": [
+   {
+    "label": "Coursera – AI Workflow: Machine Learning, Visual Recognition and NLP (IBM)",
+    "url": "https://www.coursera.org/learn/ibm-ai-workflow-machine-learning-vr-nlp"
+   },
+   {
+    "label": "scikit-learn – Metrics and scoring",
+    "url": "https://scikit-learn.org/stable/modules/model_evaluation.html"
+   },
+   {
+    "label": "scikit-learn – classification_report",
+    "url": "https://scikit-learn.org/stable/modules/generated/sklearn.metrics.classification_report.html"
+   },
+   {
+    "label": "scikit-learn – Multiclass and multioutput algorithms",
+    "url": "https://scikit-learn.org/stable/modules/multiclass.html"
+   },
+   {
+    "label": "scikit-learn – Ensembles",
+    "url": "https://scikit-learn.org/stable/modules/ensemble.html"
+   },
+   {
+    "label": "scikit-learn – Linear Models",
+    "url": "https://scikit-learn.org/stable/modules/linear_model.html"
+   },
+   {
+    "label": "TensorFlow – Convolutional Neural Network (CIFAR-10) tutorial",
+    "url": "https://www.tensorflow.org/tutorials/images/cnn"
+   },
+   {
+    "label": "IBM Cloud API Docs – Natural Language Understanding",
+    "url": "https://cloud.ibm.com/apidocs/natural-language-understanding"
+   }
+  ]
+ },
+ {
+  "id": 5,
+  "title": "Triển khai mô hình doanh nghiệp",
+  "ibmCourse": "IBM AI Workflow – Course 5: AI Workflow: Enterprise Model Deployment",
+  "intro": "Chương này đưa mô hình từ notebook ra môi trường thật: tối ưu hoá code, đóng gói bằng Docker, phục vụ dự đoán qua Flask API và triển khai lên IBM Watson Machine Learning. Phần thứ hai dùng Apache Spark (spark-submit, Spark MLlib) để mở rộng quy mô và xây dựng hệ gợi ý collaborative filtering với ALS cho case study AAVAIL.",
+  "keyPoints": [
+   {
+    "heading": "Tối ưu hoá code trước khi triển khai",
+    "body": "Bước đầu tiên là profiling: đo thời gian để tìm ra phần code là bottleneck, chứ không phải viết lại thuật toán từ đầu. Thách thức phổ biến là khó giảm thời gian huấn luyện của các mô hình lớn.\nCác công cụ tăng tốc Python được nhắc đến: Cython, Numba, PyCUDA, multiprocessing (tạo nhiều process – package hỗ trợ spawning processes), threading, mpi4py, ipyparallel. TensorBoard KHÔNG phải công cụ tối ưu code (nó là công cụ trực quan hoá). 'subprocessing' và 'symmetric-multiprocessing' không phải là package Python cụ thể để tăng tốc.\nPython gốc KHÔNG tự động song song hoá trên nhiều core. Trong scikit-learn, dùng tham số n_jobs (ví dụ n_jobs=-1) để huấn luyện song song. Với dữ liệu quá lớn so với bộ nhớ, Dask hoặc Spark giúp mở rộng phân tích.\nData engineer là vai trò quan tâm nhất tới việc mô hình đã triển khai scale tốt khi số người dùng tăng."
+   },
+   {
+    "heading": "Docker: image, container và Dockerfile",
+    "body": "Docker cung cấp một môi trường chuẩn, tái lập được để triển khai mô hình, giúp deploy dễ hơn và nhẹ hơn máy ảo. Một container gồm code, runtime, thư viện và một private filesystem tách biệt khỏi host và các container khác.\nImage là nền của container: có thể pull image (official hoặc user-defined) từ registry rồi yêu cầu Docker client chạy container từ image đó. Dockerfile giống như một công thức từng bước để build image (FROM, COPY, RUN, EXPOSE, CMD). Bản cộng đồng của Docker Engine là docker-ce.\nUse case điển hình: microservices, nền tảng chung cho DevOps/data engineer, tránh cài đặt phức tạp môi trường Spark, tính di động hybrid/multi-cloud cho mô hình. Docker KHÔNG phải để thay thế hoàn toàn một virtual machine tiêu chuẩn.\nLệnh thường gặp: docker build -t app ., docker run -p 4000:8080 app, docker ps, docker images."
+   },
+   {
+    "heading": "Port forwarding và volumes",
+    "body": "Port forwarding cho phép dữ liệu đi vào và ra khỏi container, đồng thời kiểm soát ứng dụng nào được làm việc đó; ví dụ docker run -p 4000:8080 ánh xạ cổng 4000 của máy host vào cổng 8080 trong container.\nVì container có filesystem riêng, cách được khuyến nghị để truy cập notebook và script từ trong container là volumes (dữ liệu được Docker quản lý và tồn tại sau khi container dừng). Bind mounts và tmpfs là các lựa chọn khác nhưng đáp án chuẩn của đề là volumes."
+   },
+   {
+    "heading": "Phục vụ mô hình bằng Flask API",
+    "body": "Mô hình được gói trong một module Python riêng (model.py với hàm train/load/predict) và được ứng dụng Flask gọi qua các endpoint như /train, /predict, /logs. Truy vấn gửi tới API chạy trong Docker có định dạng JSON và kết quả cũng trả về JSON.\nAPI phải kiểm tra lỗi đầu vào. Trong bài toán dự báo doanh thu của AAVAIL, đầu vào tối thiểu là ngày mục tiêu (target date) và quốc gia (country).\nCấu trúc template này (module riêng, unit test, version control, script ingest/visualize) giúp tái sử dụng workflow."
+   },
+   {
+    "heading": "IBM Watson Machine Learning (WML)",
+    "body": "Để lặp mô hình ở local rồi triển khai lên WML cần hai bước: provision dịch vụ WML và tạo Python virtual environment. Lý do chính tạo virtual environment là đảm bảo mô hình huấn luyện ở local tương thích với WML (cùng phiên bản thư viện được hỗ trợ).\nWML không chỉ nhận file pickle – có thể lưu mô hình dưới nhiều dạng khác nhau (đối tượng mô hình scikit-learn, Keras, Spark, file nén…), nên câu 'chỉ được truyền pickle' là False.\nKhi dùng dịch vụ Watson qua Python SDK cần lưu ba thông tin: API key, version và URL của service. API key và thông tin nhạy cảm phải được lưu trong file an toàn trên máy tin cậy. Cài SDK bằng pip install --upgrade ibm-watson; bước đầu tiên là tạo tài khoản IBM Cloud."
+   },
+   {
+    "heading": "Apache Spark và spark-submit",
+    "body": "Spark là engine tính toán phân tán cho dữ liệu lớn. Lệnh spark-submit dùng để gửi ứng dụng lên một Spark cluster (không phải để tạo hay cài cluster). Tuỳ chọn --executor-memory chỉ lượng bộ nhớ cấp cho MỖI executor; --driver-memory là bộ nhớ của driver; --master chỉ cluster manager.\nCluster manager của Spark gồm: Standalone, Hadoop YARN, Apache Mesos và Kubernetes. Docker KHÔNG phải cluster manager, và câu 'Spark cluster thường được quản lý bằng Docker container và file YAML' là False.\nTrong script example-spark-submit.sh, dòng #!/bin/bash (shebang) báo hệ thống dùng Bash shell để chạy script."
+   },
+   {
+    "heading": "Spark MLlib: DataFrame, Pipeline và ParamMap",
+    "body": "Spark ML API dùng DataFrame của Spark SQL, chứa nhiều kiểu dữ liệu ở các cột khác nhau: text, feature vectors, nhãn thật và predictions. MLlib có Transformer, Estimator và Pipeline giống scikit-learn, và có cả công cụ NLP như Tokenizer, HashingTF, IDF (TF-IDF) – nên câu 'MLlib thiếu TF-IDF' là False.\nCách truyền tham số hợp lệ: đặt named parameters khi khai báo mô hình, truyền ParamMap vào .fit() của mô hình, tạo/cập nhật ParamMap rồi truyền vào .fit(), hoặc truyền ParamMap vào .fit() của pipeline. Truyền file pickle khi khai báo mô hình là KHÔNG hợp lệ."
+   },
+   {
+    "heading": "Hệ gợi ý (recommender systems) với ALS",
+    "body": "Loại hệ gợi ý có sẵn trong Spark ML là collaborative filtering, cài đặt bằng Alternating Least Squares (ALS) – một dạng matrix factorization phân rã ma trận user-item. Ma trận user-item (và word counts) rất phù hợp với sparse matrix.\nALS mặc định dành cho explicit feedback (rating), nhưng có thể dùng dễ dàng cho implicit feedback bằng implicitPrefs=True. Trong case study, thay đổi tham số regularization lambda (regParam) có ảnh hưởng lớn nhất đến hiệu năng mô hình.\nCold start problem: khi có user mới hoặc item mới, chưa có tương tác nên gợi ý dựa trên độ tương đồng (similarities) gặp khó khăn. Spark có coldStartStrategy='drop' để bỏ các dự đoán NaN khi đánh giá."
+   }
+  ],
+  "video": "videos/ch5.mp4",
+  "sources": [
+   {
+    "label": "Coursera – AI Workflow: Enterprise Model Deployment (IBM)",
+    "url": "https://www.coursera.org/learn/ibm-ai-workflow-machine-learning-model-deployment"
+   },
+   {
+    "label": "Docker overview",
+    "url": "https://docs.docker.com/get-started/docker-overview/"
+   },
+   {
+    "label": "Docker docs – Volumes",
+    "url": "https://docs.docker.com/engine/storage/volumes/"
+   },
+   {
+    "label": "Flask Quickstart",
+    "url": "https://flask.palletsprojects.com/en/stable/quickstart/"
+   },
+   {
+    "label": "Apache Spark – Submitting Applications",
+    "url": "https://spark.apache.org/docs/latest/submitting-applications.html"
+   },
+   {
+    "label": "Apache Spark – Collaborative Filtering (ALS)",
+    "url": "https://spark.apache.org/docs/latest/ml-collaborative-filtering.html"
+   },
+   {
+    "label": "Python docs – multiprocessing",
+    "url": "https://docs.python.org/3/library/multiprocessing.html"
+   }
+  ]
+ },
+ {
+  "id": 6,
+  "title": "AI trong vận hành (AI in Production)",
+  "ibmCourse": "IBM AI Workflow – Course 6: AI Workflow: AI in Production",
+  "intro": "Chương cuối tập trung vào việc giữ cho mô hình hoạt động tốt sau khi triển khai: feedback loops, unit testing, CI/CD, logging và giám sát performance drift. Bên cạnh đó là IBM Watson OpenScale (drift, fairness, explainability), bảo mật mô hình trước tấn công adversarial, và vận hành mô hình trên Kubernetes.",
+  "keyPoints": [
+   {
+    "heading": "Feedback loops và workflow templates",
+    "body": "AI workflow không tuyến tính mà có các feedback loop. Ba process model (CRISP-DM, IBM Data Science Methodology, design thinking) dù khác nhau về trọng tâm đều có chung hai yếu tố: giải quyết câu hỏi kinh doanh và feedback loops.\nVí dụ feedback loop hợp lệ: thử các data transformation khác nhau trên một mô hình; từ bước transformation quay lại data collection; làm EDA trên dữ liệu đã log sau khi deploy; quay lại thảo luận business opportunity sau khi deploy. Đi tiếp từ business opportunity và data collection sang model iteration là luồng tiến bình thường, KHÔNG phải feedback loop.\nWorkflow templates giúp đi nhanh qua workflow: dùng version control, mô hình là module Python riêng được Flask gọi, template cho unit test suite, code ingest và visualize là module/script. Một HTML endpoint của Flask để làm dashboard là yếu tố đóng góp ÍT nhất cho khả năng tái sử dụng."
+   },
+   {
+    "heading": "Unit testing và test-driven development",
+    "body": "Unit test kiểm tra từng đơn vị code nhỏ một cách độc lập (Python: module unittest, các hàm assertEqual, assertTrue, setUp). Trong TDD, viết test trước rồi mới viết code để test pass.\nLý do đóng gói unit test cùng mô hình đã triển khai: nâng cao chất lượng code, làm regression test, tự động hoá các tác vụ giám sát hiệu năng, dễ tích hợp vào CI/CD pipeline. Unit test KHÔNG thực hiện các feedback loop của workflow.\nPackage coverage dùng để ước lượng test coverage (coverage run -m unittest discover, coverage report). Không bắt buộc phải đạt gần 100% coverage trước production – câu này là False.\nUnit testing kết hợp novelty detection tạo ra cơ chế tự động để giám sát hiệu năng mô hình."
+   },
+   {
+    "heading": "CI/CD",
+    "body": "Continuous Integration: lập trình viên merge thay đổi thường xuyên vào trunk – nhánh chính nơi mọi thay đổi được hợp nhất; mỗi lần merge chạy build và test tự động.\nContinuous Delivery giữ code luôn ở trạng thái sẵn sàng phát hành; Continuous Deployment là tự động triển khai phần mềm lên production (không phải deploy thủ công).\nRủi ro chính của nhịp thay đổi nhanh trong CI/CD là đưa bug vào hệ thống, vì vậy cần unit test và giám sát. Thay đổi phần mềm (ví dụ đổi phiên bản thư viện) có thể gây performance drift."
+   },
+   {
+    "heading": "Logging để giám sát hiệu năng",
+    "body": "Dữ liệu giám sát hiệu năng được thu thập chủ yếu dưới dạng log files, ở mức chi tiết (granular) nhất có thể. Mục đích của logging là theo dõi thay đổi và phát hiện vấn đề hiệu năng; đảm bảo có dữ liệu tối thiểu cần thiết để giám sát mô hình và debug.\nCác trường thiết yếu cho predict endpoint: timestamp, runtime, model_version_number, predictions/recommendations, input_data_summary. Runtime KHÔNG phải trường tùy chọn (câu 'runtime là optional' là False). Trường được xem là không thiết yếu: request_type và toàn bộ input data (đáp án 'request_type, input data').\nAPI key và thông tin nhạy cảm phải được lưu trong file an toàn trên máy tin cậy, không đưa vào log hay file công khai."
+   },
+   {
+    "heading": "Performance drift và phát hiện dữ liệu bất thường",
+    "body": "Performance drift là khi hiệu năng mô hình suy giảm theo thời gian. Nguồn gây drift: thay đổi nhân khẩu học hoặc hành vi khách hàng sau khi huấn luyện; dữ liệu huấn luyện thiếu, sai hoặc mất cân bằng; thay đổi phiên bản thư viện/module (đáp án: All of the above).\nCó thể so sánh phân phối dữ liệu mới với dữ liệu huấn luyện bằng thước đo khoảng cách như Wasserstein distance, hoặc dùng outlier/novelty detection.\nThuật toán outlier detection: Elliptic Envelope, One-Class SVM, Isolation Forest, Local Outlier Factor (đề cho rằng LOF hoạt động tốt với dữ liệu nhiều chiều). ADASYN là kỹ thuật oversampling, KHÔNG phải outlier detection."
+   },
+   {
+    "heading": "IBM Watson OpenScale và bảo mật mô hình",
+    "body": "Watson OpenScale cung cấp ba dịch vụ chính: Drift monitoring, Fairness (phát hiện bias) và Explainability (giải thích dự đoán). OpenScale KHÔNG chỉ làm việc với mô hình xây và triển khai trên Watson Studio – nó có thể giám sát mô hình triển khai trên nhiều nền tảng khác (câu 'chỉ làm việc với Watson Studio' là False).\nAdversarial attacks: poisoning attack chèn dữ liệu độc hại vào tập huấn luyện; evasion attack xảy ra lúc dự đoán. Adversarial Robustness Toolbox (ART) của IBM dùng để kiểm tra độ bền vững (robustness) của mô hình ML."
+   },
+   {
+    "heading": "Kubernetes: các thành phần",
+    "body": "Kubernetes điều phối container trên cluster. Tài nguyên được định nghĩa bằng file YAML.\nAPI server (thuộc control plane/master) phơi bày các khả năng để định nghĩa workload. Kubelet là agent trên mỗi worker node, đảm bảo ứng dụng trên node khỏe mạnh và đang chạy. kubectl ('kube CTL') là CLI để giao tiếp với cluster qua Kubernetes API. Kube DNS cung cấp service discovery cho các pod.\nMinikube khởi chạy một Kubernetes cluster cục bộ trong máy ảo hoặc trực tiếp trên host."
+   },
+   {
+    "heading": "Pod, Deployment và Service",
+    "body": "Pod là đơn vị nhỏ nhất, chứa một hoặc nhiều container. Một pod KHÔNG thể chứa nhiều deployment – ngược lại, deployment quản lý các pod.\nDeployment quản lý trạng thái mong muốn (desired state) của ứng dụng: nếu một pod lỗi, một pod mới được tạo để thay thế.\nService: ClusterIP chỉ truy cập trong cluster, NodePort mở cổng trên mỗi node, LoadBalancer phơi bày ứng dụng ra người dùng bên ngoài."
+   }
+  ],
+  "video": "videos/ch6.mp4",
+  "sources": [
+   {
+    "label": "Coursera – AI Workflow: AI in Production (IBM)",
+    "url": "https://www.coursera.org/learn/ibm-ai-workflow-ai-production"
+   },
+   {
+    "label": "Python docs – unittest",
+    "url": "https://docs.python.org/3/library/unittest.html"
+   },
+   {
+    "label": "Coverage.py documentation",
+    "url": "https://coverage.readthedocs.io/"
+   },
+   {
+    "label": "scikit-learn – Novelty and Outlier Detection",
+    "url": "https://scikit-learn.org/stable/modules/outlier_detection.html"
+   },
+   {
+    "label": "Kubernetes – Cluster Components",
+    "url": "https://kubernetes.io/docs/concepts/overview/components/"
+   },
+   {
+    "label": "Kubernetes – Deployments",
+    "url": "https://kubernetes.io/docs/concepts/workloads/controllers/deployment/"
+   },
+   {
+    "label": "minikube – Get Started",
+    "url": "https://minikube.sigs.k8s.io/docs/start/"
+   },
+   {
+    "label": "Adversarial Robustness Toolbox (GitHub)",
+    "url": "https://github.com/Trusted-AI/adversarial-robustness-toolbox"
+   }
+  ]
+ }
+]

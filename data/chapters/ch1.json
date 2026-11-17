@@ -1,0 +1,180 @@
+{
+  "id": 1,
+  "title": "Quy trình AI doanh nghiệp & thu thập dữ liệu",
+  "ibmCourse": "IBM AI Workflow – Course 1: AI Workflow: Business Priorities and Data Ingestion",
+  "intro": "Chương này giới thiệu IBM AI Enterprise Workflow: vì sao cần một process model (CRISP-DM, OSEMN, IBM Design Thinking), cách ánh xạ các giai đoạn design thinking vào quy trình data science và cách ưu tiên cơ hội kinh doanh qua case study công ty streaming AAVAIL. Phần sau tập trung vào thu thập dữ liệu, chất lượng dữ liệu và xây dựng data ingestion pipeline (ETL, kiểm tra chất lượng, sparse matrix).",
+  "keyPoints": [
+    {
+      "heading": "Tổng quan khoá học và yêu cầu đầu vào",
+      "body": "Specialization IBM AI Enterprise Workflow gồm 6 khoá, xoay quanh case study AAVAIL – một công ty streaming theo mô hình thuê bao, mở rộng sang thị trường mới. Trọng tâm của khoá học là đưa best practices vào toàn bộ workflow (\"Incorporating best practices into the workflow\"), không phải dạy lại thuật toán từ đầu.\nNgười học được kỳ vọng đã quen với numeric computing, data munging, data visualization và data modeling bằng Python (NumPy, pandas, matplotlib, scikit-learn). Câu \"phải thành thạo một trong R, Python hoặc Java\" là SAI – khoá học dùng Python.\nJupyter notebook là công cụ chuẩn công nghiệp trong hệ sinh thái Python cho data science. Thực hành kỹ thuật phần mềm \"lưu tối đa code trong file text để quản lý bằng version control\" nay đã thành chuẩn trong data science (True).\nPython: kiểu built-in gồm int, float, bool, str, list, tuple, dict, set…; heap và varchar KHÔNG phải kiểu built-in. Kiểu mutable (đổi tại chỗ): list, set, dict; immutable: int, float, bool, str, tuple. Tạo dict từ hai list: dict(zip(lst1, lst2)). Base Python KHÔNG tự song song hoá trên nhiều core."
+    },
+    {
+      "heading": "Process models: CRISP-DM, OSEMN và IBM Design Thinking",
+      "body": "Process model giúp: tránh các hướng đi lan man (avoid unnecessary tangents), phân bổ thời gian hiệu quả, thu hẹp quá trình chọn mô hình. Phát biểu KÉM chính xác nhất về lợi ích: \"giúp đi qua workflow nhanh hơn\" (speeding up the process).\nCRISP-DM (Cross-Industry Standard Process for Data Mining): chuẩn mở, ra đời năm 1996, gồm 6 pha: Business Understanding, Data Understanding, Data Preparation, Modeling, Evaluation, Deployment.\nOSEMN: Obtain, Scrub (làm sạch), Explore, Model, iNterpret. Chữ \"S\" = Scrubbing.\nIBM Design Thinking là process model được khoá học chọn vì design thinking được dùng ở nhiều lĩnh vực khác, giúp truyền đạt AI workflow cho người ngoài data science dễ hơn (True).\nHai yếu tố thiết yếu và chung cho cả ba mô hình: giải quyết câu hỏi kinh doanh (resolve the business question) và feedback loops. Ví dụ feedback loop hợp lệ: từ modeling quay lại data collection, từ production quay lại model iteration. KHÔNG hợp lệ: \"đi từ business opportunity và data collection sang model iteration\" (đó là luồng tiến, không phải vòng phản hồi)."
+    },
+    {
+      "heading": "Năm giai đoạn design thinking ánh xạ vào AI workflow",
+      "body": "Thứ tự: Empathize → Define → Ideate → Prototype → Test. Giai đoạn đầu tiên là Empathize.\nEmpathize: hiểu cơ hội kinh doanh, phỏng vấn stakeholder, xác định dữ liệu cần thu thập. Ngày đầu đi làm nên bắt đầu bằng việc lấy góc nhìn của management và đi theo các manh mối họ cung cấp (không phải lao vào EDA ngay).\nDefine: xác định và ưu tiên business opportunity, định nghĩa các thách thức (\"AAVAIL move to define challenges\" = Define), xây dựng data ingestion/ETL.\nIdeate: EDA, data transformation, feature engineering, kiểm định giả thuyết.\nPrototype: modeling, so sánh mô hình.\nTest: triển khai (deployment), unit test, monitoring, feedback loop.\nIBM Enterprise Design Thinking còn có: the Loop (Observe – Reflect – Make; nguyên tắc chính là quan sát và suy ngẫm – Observation and Reflection), Hills (mục tiêu định hướng), Playbacks (các buổi stakeholder chia sẻ câu chuyện và phản hồi để giữ đồng thuận), Sponsor Users (người dùng thực tế mang chuyên môn lĩnh vực tham gia cùng nhóm)."
+    },
+    {
+      "heading": "Tư duy khoa học và ưu tiên cơ hội kinh doanh",
+      "body": "Scientific thinking: đặt giả thuyết có thể kiểm chứng, tìm dữ liệu, thiết kế thí nghiệm, lặp lại. Câu hỏi mang tính khoa học: \"Có dữ liệu (ví dụ corpus phản hồi khách hàng) ủng hộ không?\", \"Có thể chạy A/B testing không?\", \"Công ty khác đã thành công với thay đổi tương tự chưa?\". Câu KHÔNG khoa học: \"Thành viên lãnh đạo nào ủng hộ quyết định này?\".\nVí dụ cửa hàng xe trượt tuyết (sled): bước tiếp theo hợp lý là thu thêm dữ liệu và lặp lại thí nghiệm lượng tuyết, dùng dữ liệu khác (tuyết theo county) và lặp lại, hoặc bắt đầu đánh giá khả thi kinh doanh cho bang tốt nhất (Vermont).\nDịch ngôn ngữ kinh doanh sang ngôn ngữ data science: AAVAIL muốn biết khách hàng nào sẽ rời bỏ (churn) → bài toán Classification.\nƯu tiên cơ hội: startup speech-to-text có khách hiện tại hài lòng nhưng bán cho khách mới chậm → ưu tiên customer segmentation/market analysis để giúp marketing tiếp cận khách mới. Cơ hội \"defensible\" nhất là cải thiện hệ thống nhận dạng âm thanh hiện có thành giao diện phong phú hơn.\nTính ROI nhanh (back-of-the-envelope): số người dùng active × phí năm, hoặc trừ thêm ước tính chi phí thời gian dự án."
+    },
+    {
+      "heading": "Thu thập dữ liệu và chất lượng dữ liệu",
+      "body": "Chất lượng dữ liệu bao gồm cả các quan sát (observations) lẫn độ trưởng thành (maturity) của dữ liệu. Duy trì chất lượng dữ liệu giúp tránh trễ dự án và vượt ngân sách.\nData scientist có thể dành khoảng 60% thời gian cho làm sạch dữ liệu. Các yếu tố ảnh hưởng thời gian làm sạch: chất lượng, nguồn, độ phức tạp dữ liệu…; \"quy mô công ty\" KHÔNG phải yếu tố.\nNên thu dữ liệu ở mức chi tiết nhất có thể (granular) thay vì summary-level vì cho phép phân tích sâu hơn. Đảm bảo luôn có dữ liệu tối thiểu cần thiết để giám sát hiệu năng mô hình và debug.\nGhi chép tài liệu dữ liệu (document your data) trước khi bắt đầu giúp tinh gọn modeling và bảo đảm chất lượng.\nAAVAIL: các team được triển khai để tạo product traction ở thị trường mới; sau khi có dữ liệu sales, management muốn biết các team đã được tối ưu dựa trên lịch sử bán hàng chưa; khi chuẩn bị phân tích cần xét các feature có sẵn cho từng cá nhân trong team.\nVai trò: data engineer lo việc pipeline và bảo đảm mô hình đã triển khai scale tốt khi số người dùng tăng."
+    },
+    {
+      "heading": "Data ingestion và ETL",
+      "body": "ETL = Extract, Transform, Load. Data ingestion pipeline tập trung vào thu thập và xử lý dữ liệu, đưa dữ liệu thô từ nhiều nguồn vào định dạng sẵn sàng cho phân tích.\nCác việc nên có trong pipeline: xử lý missing data, dữ liệu lỗi, quan sát lặp lại và các vấn đề toàn vẹn dữ liệu; kiểm tra rằng với một bộ tham số cho trước thì trả về đúng dữ liệu kỳ vọng; kiểm tra định dạng đầu ra đúng kỳ vọng.\nCâu \"bad data in equals bad data out\" (garbage in, garbage out) gắn với bước triển khai nhiều kiểm tra quality assurance.\nMục tiêu cuối: đưa dữ liệu về pandas DataFrame hoặc NumPy array vì dễ dùng với thư viện ML, dễ tóm tắt, dễ trực quan hoá (đáp án \"All of the above\"). Khi munge dữ liệu bán hàng, mục tiêu hợp lý: mỗi hàng là một customer, các cột như total_sales, name, most_bought.\nCSV phổ biến vì là plain-text, đọc ghi dễ, tương thích spreadsheet; pandas là thư viện thường dùng đọc ghi CSV (pd.read_csv). Tự động hoá ingestion bằng script Python chạy được từ dòng lệnh, có kiểm thử."
+    },
+    {
+      "heading": "Nguồn dữ liệu: relational DB, NoSQL và công cụ scale",
+      "body": "Relational database truy cập qua connector Python: SQLite → sqlite3, PostgreSQL → psycopg2, MySQL → mysql-connector/pymysql, Oracle → cx_Oracle. Cặp KHÔNG hợp lệ: Berkeley DB → bsddb (Berkeley DB là key-value store, không phải relational DB).\nNoSQL (MongoDB, key-value, document store) xử lý dữ liệu lộn xộn, bán cấu trúc tốt hơn relational database.\nCác nguồn khác: file CSV/JSON, API, log, streaming. Trong case study, nhiều file JSON được gộp thành một DataFrame.\nKhi dữ liệu quá lớn so với bộ nhớ, Dask giúp scale phân tích kiểu pandas/NumPy song song; Spark dùng cho dữ liệu phân tán."
+    },
+    {
+      "heading": "Sparse matrices làm đích của ETL",
+      "body": "Sparse matrix chỉ lưu các phần tử khác 0, tiết kiệm bộ nhớ. Định dạng trong scipy.sparse: COO (coordinate), CSR (Compressed Sparse Row), CSC (Compressed Sparse Column), LIL (List of Lists), DOK (Dictionary of Keys), BSR, DIA. Thường dựng bằng COO/LIL/DOK rồi chuyển sang CSR/CSC để tính toán.\nDữ liệu phù hợp: word counts (bag-of-words) và user-item matrix cho recommendation.\nCaveats: các hàm đại số tuyến tính của NumPy thường không gọi trực tiếp được trên ma trận sparse; khó in ra màn hình trực tiếp (cần .toarray()/.todense() trên tập nhỏ).\nscikit-learn chấp nhận SciPy sparse matrix làm input chuẩn, nên KHÔNG cần chuyển sang dense trước khi dùng train_test_split (câu \"cần chuyển dense\" là False)."
+    }
+  ],
+  "sources": [
+    {
+      "label": "Coursera – AI Workflow: Business Priorities and Data Ingestion (IBM)",
+      "url": "https://www.coursera.org/learn/ibm-ai-workflow-business-priorities-data-ingestion"
+    },
+    {
+      "label": "Coursera – IBM AI Enterprise Workflow Specialization",
+      "url": "https://www.coursera.org/specializations/ibm-ai-workflow"
+    },
+    {
+      "label": "Wikipedia – Cross-industry standard process for data mining (CRISP-DM)",
+      "url": "https://en.wikipedia.org/wiki/Cross-industry_standard_process_for_data_mining"
+    },
+    {
+      "label": "SciPy – Sparse arrays (scipy.sparse)",
+      "url": "https://docs.scipy.org/doc/scipy/reference/sparse.html"
+    },
+    {
+      "label": "pandas – IO tools (text, CSV, JSON, SQL…)",
+      "url": "https://pandas.pydata.org/docs/user_guide/io.html"
+    },
+    {
+      "label": "Python docs – sqlite3: DB-API 2.0 interface for SQLite",
+      "url": "https://docs.python.org/3/library/sqlite3.html"
+    }
+  ],
+  "slides": [
+    {
+      "title": "Chương 1: Quy trình AI & thu thập dữ liệu",
+      "bullets": [
+        "IBM AI Enterprise Workflow – Course 1",
+        "Process models: CRISP-DM, OSEMN, Design Thinking",
+        "Ưu tiên cơ hội kinh doanh với AAVAIL",
+        "Thu thập dữ liệu, ETL và sparse matrix"
+      ],
+      "narration": "Chào mừng bạn đến với chương 1 của môn AID301c. Chương này bám theo khoá học đầu tiên trong chuỗi IBM AI Enterprise Workflow, có tên Business Priorities and Data Ingestion. Xuyên suốt khoá học là case study AAVAIL, một công ty streaming bán gói thuê bao và đang mở rộng sang thị trường mới. Bạn sẽ học về process model, design thinking, cách ưu tiên cơ hội kinh doanh và cách xây dựng data ingestion pipeline."
+    },
+    {
+      "title": "Khoá học kỳ vọng gì ở bạn?",
+      "bullets": [
+        "Đã biết numeric computing, data munging, visualization, modeling",
+        "Ngôn ngữ chính: Python, không phải R hay Java",
+        "Trọng tâm: đưa best practices vào workflow",
+        "Jupyter notebook là chuẩn công nghiệp"
+      ],
+      "narration": "Trước hết, khoá học này dành cho người đã có nền tảng. Bạn được kỳ vọng đã quen với numeric computing, data munging, data visualization và data modeling bằng Python. Đề thi hay hỏi câu đúng sai rằng bạn phải thành thạo R, Python hoặc Java, và đáp án là sai. Jupyter notebook được xem là công cụ chuẩn công nghiệp, và việc lưu code thành file text dưới version control nay đã trở thành chuẩn mực trong data science."
+    },
+    {
+      "title": "Ba process model cần nhớ",
+      "bullets": [
+        "CRISP-DM: chuẩn mở từ 1996, 6 pha",
+        "OSEMN: Obtain, Scrub, Explore, Model, iNterpret",
+        "IBM Design Thinking: dễ giao tiếp với người ngoài",
+        "Điểm chung: câu hỏi kinh doanh + feedback loops"
+      ],
+      "narration": "Process model giúp chúng ta tránh đi lan man, phân bổ thời gian hợp lý và thu hẹp việc chọn mô hình. Tuy nhiên, nó không nhằm mục đích đi qua workflow nhanh hơn, đây là một bẫy thường gặp. CRISP-DM là chuẩn mở có từ năm 1996, gồm sáu pha từ business understanding đến deployment. OSEMN gồm Obtain, Scrub, Explore, Model và Interpret, trong đó chữ S nghĩa là scrubbing, tức làm sạch dữ liệu. Hai yếu tố chung của cả ba mô hình là giải quyết câu hỏi kinh doanh và có feedback loops."
+    },
+    {
+      "title": "Năm giai đoạn design thinking",
+      "bullets": [
+        "Empathize: hiểu cơ hội, hỏi management trước",
+        "Define: xác định thách thức, data ingestion",
+        "Ideate: EDA, transformation, feature engineering",
+        "Prototype: modeling; Test: deployment, feedback"
+      ],
+      "narration": "Design thinking có năm giai đoạn theo thứ tự Empathize, Define, Ideate, Prototype và Test. Giai đoạn đầu tiên là Empathize, nơi bạn tìm hiểu cơ hội kinh doanh. Nếu đề hỏi ngày đầu đi làm nên bắt đầu thế nào, hãy chọn lấy góc nhìn của management và đi theo manh mối họ đưa ra. Ở giai đoạn Define, nhóm xác định thách thức, ưu tiên cơ hội và xây dựng data ingestion. Ideate gắn với EDA, biến đổi dữ liệu và feature engineering."
+    },
+    {
+      "title": "IBM Enterprise Design Thinking",
+      "bullets": [
+        "The Loop: Observe, Reflect, Make",
+        "Hills: mục tiêu định hướng cho nhóm",
+        "Playbacks: stakeholder chia sẻ câu chuyện, phản hồi",
+        "Sponsor Users: người dùng thực có chuyên môn"
+      ],
+      "narration": "IBM bổ sung thêm một số khái niệm cho design thinking trong doanh nghiệp. Vòng lặp trung tâm gọi là the Loop, gồm quan sát, suy ngẫm và tạo ra sản phẩm, nên nguyên tắc chính được nhắc đến là observation and reflection. Hills là những mục tiêu định hướng giúp cả nhóm thống nhất. Playbacks là các buổi mà stakeholder cùng chia sẻ câu chuyện và phản hồi, giữ cho mọi người đồng thuận. Sponsor Users là những người dùng thực tế, mang chuyên môn lĩnh vực, tham gia cùng nhóm trong suốt dự án."
+    },
+    {
+      "title": "Tư duy khoa học & ưu tiên cơ hội",
+      "bullets": [
+        "Câu hỏi khoa học dựa trên dữ liệu, A/B testing",
+        "Không khoa học: lãnh đạo nào ủng hộ?",
+        "Churn của AAVAIL → bài toán classification",
+        "ROI nhanh: số user active × phí năm"
+      ],
+      "narration": "Khoá học nhấn mạnh tư duy khoa học. Một câu hỏi mang tính khoa học sẽ tìm dữ liệu, ví dụ một tập phản hồi khách hàng, đề xuất thí nghiệm như A/B testing, hoặc tham khảo công ty khác đã làm điều tương tự. Ngược lại, hỏi thành viên lãnh đạo nào ủng hộ quyết định thì không phải tư duy khoa học. Khi management nói bằng ngôn ngữ kinh doanh rằng họ muốn biết khách hàng nào sắp rời đi, data scientist dịch thành bài toán classification. Để ước tính ROI nhanh, lấy số người dùng active nhân với phí hằng năm."
+    },
+    {
+      "title": "Chọn cơ hội kinh doanh đúng",
+      "bullets": [
+        "Khách cũ hài lòng, khách mới chậm",
+        "Ưu tiên segmentation, market analysis cho marketing",
+        "Cơ hội defensible: cải tiến công nghệ lõi",
+        "Ví dụ sled: thu thêm dữ liệu, lặp thí nghiệm"
+      ],
+      "narration": "Đề thi thường đưa tình huống một startup speech-to-text có kết hợp cử chỉ và ngôn ngữ cơ thể. Khách hàng hiện tại rất hài lòng nhưng việc có khách mới lại chậm. Lúc này ưu tiên cao nhất là dùng customer segmentation hoặc market analysis để giúp marketing tiếp cận khách hàng mới, chứ không phải chuyển sang thị trường khác. Cơ hội có tính phòng thủ cao nhất là cải tiến hệ thống nhận dạng âm thanh hiện có thành giao diện phong phú hơn."
+    },
+    {
+      "title": "Thu thập dữ liệu chất lượng",
+      "bullets": [
+        "Chất lượng = observations + maturity của dữ liệu",
+        "Khoảng 60% thời gian dành cho làm sạch",
+        "Ưu tiên dữ liệu granular hơn summary-level",
+        "Data engineer bảo đảm hệ thống scale"
+      ],
+      "narration": "Chất lượng dữ liệu bao gồm cả các quan sát lẫn độ trưởng thành của dữ liệu. Giữ chất lượng tốt giúp tránh trễ tiến độ và vượt ngân sách. Một con số hay gặp là data scientist có thể dành khoảng 60 phần trăm thời gian cho làm sạch dữ liệu, và quy mô công ty không phải yếu tố ảnh hưởng thời gian đó. Bạn nên thu dữ liệu ở mức chi tiết nhất có thể, vì dữ liệu granular cho phép phân tích sâu hơn. Trong đội ngũ, data engineer là người lo cho mô hình triển khai scale tốt khi người dùng tăng."
+    },
+    {
+      "title": "Data ingestion pipeline và ETL",
+      "bullets": [
+        "ETL: Extract, Transform, Load",
+        "Xử lý missing, faulty, duplicate data",
+        "Kiểm tra dữ liệu và định dạng trả về",
+        "Đích: pandas DataFrame, NumPy array, sparse matrix"
+      ],
+      "code": "import pandas as pd\nimport sqlite3\n\nconn = sqlite3.connect(\"aavail.db\")\ndf_db = pd.read_sql(\"SELECT * FROM customers\", conn)\ndf_csv = pd.read_csv(\"streams.csv\")\ndf = df_db.merge(df_csv, on=\"customer_id\")\nassert df[\"customer_id\"].is_unique",
+      "narration": "ETL là viết tắt của Extract, Transform và Load. Một ingestion pipeline tốt phải xử lý missing data, dữ liệu lỗi và quan sát bị lặp, đồng thời kiểm tra rằng với một bộ tham số cho trước thì trả về đúng dữ liệu và đúng định dạng kỳ vọng. Câu nói dữ liệu xấu vào thì kết quả xấu ra gắn với việc cài đặt nhiều bước kiểm tra chất lượng. Đích đến thường là pandas DataFrame hay NumPy array vì dễ phân tích và dễ đưa vào mô hình."
+    },
+    {
+      "title": "Sparse matrix trong scipy",
+      "bullets": [
+        "Chỉ lưu phần tử khác 0",
+        "Hợp với word counts, user-item matrix",
+        "Không gọi trực tiếp linear algebra NumPy",
+        "train_test_split nhận sparse, không cần dense"
+      ],
+      "code": "from scipy import sparse\n\nrows, cols, vals = [0, 1, 2], [3, 0, 2], [5, 1, 2]\nm = sparse.coo_matrix((vals, (rows, cols)), shape=(3, 4))\nm_csr = m.tocsr()\nprint(m_csr.toarray())",
+      "narration": "Sparse matrix chỉ lưu các phần tử khác 0, nên rất tiết kiệm bộ nhớ. Thư viện scipy dot sparse có nhiều định dạng như COO, CSR, CSC, LIL và DOK. Dữ liệu phù hợp là số lần xuất hiện của từ trong văn bản và ma trận user item cho hệ gợi ý. Hai nhược điểm hay được hỏi là không gọi trực tiếp được các hàm đại số tuyến tính của NumPy, và khó in ma trận ra màn hình. Lưu ý rằng scikit-learn nhận sparse matrix làm đầu vào chuẩn, nên không cần chuyển sang dense trước khi chia train test."
+    },
+    {
+      "title": "Tóm tắt & mẹo thi",
+      "bullets": [
+        "Empathize trước, Define để xác định thách thức",
+        "Process model không nhằm làm nhanh hơn",
+        "CRISP-DM 1996; S trong OSEMN là Scrubbing",
+        "Berkeley DB với bsddb không phải relational"
+      ],
+      "narration": "Tóm lại, hãy nhớ thứ tự Empathize, Define, Ideate, Prototype, Test, và nhớ rằng giai đoạn định nghĩa thách thức là Define. Một số bẫy thường gặp trong đề: process model không nhằm giúp đi nhanh hơn; CRISP-DM có từ năm 1996; chữ S trong OSEMN là scrubbing; feedback loop không phải là đi thẳng từ cơ hội kinh doanh sang model iteration. Cặp Berkeley DB và bsddb không phải kết nối relational database. Heap và varchar không phải kiểu built-in của Python. Hẹn gặp bạn ở chương 2 về phân tích dữ liệu."
+    }
+  ]
+}

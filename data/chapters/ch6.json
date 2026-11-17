@@ -1,0 +1,190 @@
+{
+  "id": 6,
+  "title": "AI trong vận hành (AI in Production)",
+  "ibmCourse": "IBM AI Workflow – Course 6: AI Workflow: AI in Production",
+  "intro": "Chương cuối tập trung vào việc giữ cho mô hình hoạt động tốt sau khi triển khai: feedback loops, unit testing, CI/CD, logging và giám sát performance drift. Bên cạnh đó là IBM Watson OpenScale (drift, fairness, explainability), bảo mật mô hình trước tấn công adversarial, và vận hành mô hình trên Kubernetes.",
+  "keyPoints": [
+    {
+      "heading": "Feedback loops và workflow templates",
+      "body": "AI workflow không tuyến tính mà có các feedback loop. Ba process model (CRISP-DM, IBM Data Science Methodology, design thinking) dù khác nhau về trọng tâm đều có chung hai yếu tố: giải quyết câu hỏi kinh doanh và feedback loops.\nVí dụ feedback loop hợp lệ: thử các data transformation khác nhau trên một mô hình; từ bước transformation quay lại data collection; làm EDA trên dữ liệu đã log sau khi deploy; quay lại thảo luận business opportunity sau khi deploy. Đi tiếp từ business opportunity và data collection sang model iteration là luồng tiến bình thường, KHÔNG phải feedback loop.\nWorkflow templates giúp đi nhanh qua workflow: dùng version control, mô hình là module Python riêng được Flask gọi, template cho unit test suite, code ingest và visualize là module/script. Một HTML endpoint của Flask để làm dashboard là yếu tố đóng góp ÍT nhất cho khả năng tái sử dụng."
+    },
+    {
+      "heading": "Unit testing và test-driven development",
+      "body": "Unit test kiểm tra từng đơn vị code nhỏ một cách độc lập (Python: module unittest, các hàm assertEqual, assertTrue, setUp). Trong TDD, viết test trước rồi mới viết code để test pass.\nLý do đóng gói unit test cùng mô hình đã triển khai: nâng cao chất lượng code, làm regression test, tự động hoá các tác vụ giám sát hiệu năng, dễ tích hợp vào CI/CD pipeline. Unit test KHÔNG thực hiện các feedback loop của workflow.\nPackage coverage dùng để ước lượng test coverage (coverage run -m unittest discover, coverage report). Không bắt buộc phải đạt gần 100% coverage trước production – câu này là False.\nUnit testing kết hợp novelty detection tạo ra cơ chế tự động để giám sát hiệu năng mô hình."
+    },
+    {
+      "heading": "CI/CD",
+      "body": "Continuous Integration: lập trình viên merge thay đổi thường xuyên vào trunk – nhánh chính nơi mọi thay đổi được hợp nhất; mỗi lần merge chạy build và test tự động.\nContinuous Delivery giữ code luôn ở trạng thái sẵn sàng phát hành; Continuous Deployment là tự động triển khai phần mềm lên production (không phải deploy thủ công).\nRủi ro chính của nhịp thay đổi nhanh trong CI/CD là đưa bug vào hệ thống, vì vậy cần unit test và giám sát. Thay đổi phần mềm (ví dụ đổi phiên bản thư viện) có thể gây performance drift."
+    },
+    {
+      "heading": "Logging để giám sát hiệu năng",
+      "body": "Dữ liệu giám sát hiệu năng được thu thập chủ yếu dưới dạng log files, ở mức chi tiết (granular) nhất có thể. Mục đích của logging là theo dõi thay đổi và phát hiện vấn đề hiệu năng; đảm bảo có dữ liệu tối thiểu cần thiết để giám sát mô hình và debug.\nCác trường thiết yếu cho predict endpoint: timestamp, runtime, model_version_number, predictions/recommendations, input_data_summary. Runtime KHÔNG phải trường tùy chọn (câu 'runtime là optional' là False). Trường được xem là không thiết yếu: request_type và toàn bộ input data (đáp án 'request_type, input data').\nAPI key và thông tin nhạy cảm phải được lưu trong file an toàn trên máy tin cậy, không đưa vào log hay file công khai."
+    },
+    {
+      "heading": "Performance drift và phát hiện dữ liệu bất thường",
+      "body": "Performance drift là khi hiệu năng mô hình suy giảm theo thời gian. Nguồn gây drift: thay đổi nhân khẩu học hoặc hành vi khách hàng sau khi huấn luyện; dữ liệu huấn luyện thiếu, sai hoặc mất cân bằng; thay đổi phiên bản thư viện/module (đáp án: All of the above).\nCó thể so sánh phân phối dữ liệu mới với dữ liệu huấn luyện bằng thước đo khoảng cách như Wasserstein distance, hoặc dùng outlier/novelty detection.\nThuật toán outlier detection: Elliptic Envelope, One-Class SVM, Isolation Forest, Local Outlier Factor (đề cho rằng LOF hoạt động tốt với dữ liệu nhiều chiều). ADASYN là kỹ thuật oversampling, KHÔNG phải outlier detection."
+    },
+    {
+      "heading": "IBM Watson OpenScale và bảo mật mô hình",
+      "body": "Watson OpenScale cung cấp ba dịch vụ chính: Drift monitoring, Fairness (phát hiện bias) và Explainability (giải thích dự đoán). OpenScale KHÔNG chỉ làm việc với mô hình xây và triển khai trên Watson Studio – nó có thể giám sát mô hình triển khai trên nhiều nền tảng khác (câu 'chỉ làm việc với Watson Studio' là False).\nAdversarial attacks: poisoning attack chèn dữ liệu độc hại vào tập huấn luyện; evasion attack xảy ra lúc dự đoán. Adversarial Robustness Toolbox (ART) của IBM dùng để kiểm tra độ bền vững (robustness) của mô hình ML."
+    },
+    {
+      "heading": "Kubernetes: các thành phần",
+      "body": "Kubernetes điều phối container trên cluster. Tài nguyên được định nghĩa bằng file YAML.\nAPI server (thuộc control plane/master) phơi bày các khả năng để định nghĩa workload. Kubelet là agent trên mỗi worker node, đảm bảo ứng dụng trên node khỏe mạnh và đang chạy. kubectl ('kube CTL') là CLI để giao tiếp với cluster qua Kubernetes API. Kube DNS cung cấp service discovery cho các pod.\nMinikube khởi chạy một Kubernetes cluster cục bộ trong máy ảo hoặc trực tiếp trên host."
+    },
+    {
+      "heading": "Pod, Deployment và Service",
+      "body": "Pod là đơn vị nhỏ nhất, chứa một hoặc nhiều container. Một pod KHÔNG thể chứa nhiều deployment – ngược lại, deployment quản lý các pod.\nDeployment quản lý trạng thái mong muốn (desired state) của ứng dụng: nếu một pod lỗi, một pod mới được tạo để thay thế.\nService: ClusterIP chỉ truy cập trong cluster, NodePort mở cổng trên mỗi node, LoadBalancer phơi bày ứng dụng ra người dùng bên ngoài."
+    }
+  ],
+  "sources": [
+    {
+      "label": "Coursera – AI Workflow: AI in Production (IBM)",
+      "url": "https://www.coursera.org/learn/ibm-ai-workflow-ai-production"
+    },
+    {
+      "label": "Python docs – unittest",
+      "url": "https://docs.python.org/3/library/unittest.html"
+    },
+    {
+      "label": "Coverage.py documentation",
+      "url": "https://coverage.readthedocs.io/"
+    },
+    {
+      "label": "scikit-learn – Novelty and Outlier Detection",
+      "url": "https://scikit-learn.org/stable/modules/outlier_detection.html"
+    },
+    {
+      "label": "Kubernetes – Cluster Components",
+      "url": "https://kubernetes.io/docs/concepts/overview/components/"
+    },
+    {
+      "label": "Kubernetes – Deployments",
+      "url": "https://kubernetes.io/docs/concepts/workloads/controllers/deployment/"
+    },
+    {
+      "label": "minikube – Get Started",
+      "url": "https://minikube.sigs.k8s.io/docs/start/"
+    },
+    {
+      "label": "Adversarial Robustness Toolbox (GitHub)",
+      "url": "https://github.com/Trusted-AI/adversarial-robustness-toolbox"
+    }
+  ],
+  "slides": [
+    {
+      "title": "Chương 6: AI trong vận hành",
+      "bullets": [
+        "Feedback loops và workflow templates",
+        "Unit testing, coverage và CI/CD",
+        "Logging, performance drift, Watson OpenScale",
+        "Vận hành mô hình trên Kubernetes"
+      ],
+      "narration": "Chào mừng các bạn đến với chương 6, AI trong vận hành, tương ứng với khoá học cuối cùng của IBM AI Workflow. Triển khai mô hình mới chỉ là bắt đầu. Sau khi mô hình chạy thật, dữ liệu thay đổi, code thay đổi và hiệu năng có thể suy giảm. Trong chương này, các bạn sẽ học về feedback loops, unit testing, CI/CD, logging, cách phát hiện performance drift, dịch vụ IBM Watson OpenScale, bảo mật mô hình, và cuối cùng là vận hành mô hình trên Kubernetes."
+    },
+    {
+      "title": "Feedback loops và templates",
+      "bullets": [
+        "Chung mọi process model: câu hỏi kinh doanh, feedback loops",
+        "Feedback loop: quay lại bước trước",
+        "Business opportunity sang model iteration không phải loop",
+        "HTML dashboard ít giúp tái sử dụng nhất"
+      ],
+      "narration": "AI workflow không phải một đường thẳng. Mọi process model đều có chung hai yếu tố là giải quyết câu hỏi kinh doanh và feedback loops. Feedback loop là khi ta quay lại một bước trước, ví dụ thử transformation khác, quay lại data collection, làm EDA trên dữ liệu đã log sau khi deploy, hoặc bàn lại business opportunity. Còn đi tiếp từ business opportunity sang model iteration là luồng tiến bình thường, không phải feedback loop. Workflow templates giúp tái sử dụng nhờ version control, module mô hình riêng và template unit test, còn HTML endpoint làm dashboard đóng góp ít nhất."
+    },
+    {
+      "title": "Unit testing và coverage",
+      "bullets": [
+        "unittest: kiểm tra từng đơn vị code",
+        "TDD: viết test trước, code sau",
+        "Package coverage ước lượng test coverage",
+        "Không cần gần 100% coverage"
+      ],
+      "code": "import unittest\nclass ModelTest(unittest.TestCase):\n    def test_predict(self):\n        result = model_predict('all', '2018-01-05')\n        self.assertIn('y_pred', result)\n\n# coverage run -m unittest discover && coverage report",
+      "narration": "Unit test kiểm tra từng đơn vị code nhỏ một cách độc lập, trong Python ta dùng module unittest. Với test driven development, ta viết test trước rồi mới viết code. Đóng gói unit test cùng mô hình giúp nâng cao chất lượng code, làm regression test, tự động hoá giám sát và dễ tích hợp vào CI/CD, nhưng unit test không thực hiện feedback loop. Để ước lượng test coverage, ta dùng package coverage. Câu nói cần gần 100 phần trăm coverage trước production là sai. Unit testing kết hợp novelty detection tạo ra cơ chế tự động giám sát mô hình."
+    },
+    {
+      "title": "CI/CD",
+      "bullets": [
+        "Continuous Integration: merge thường xuyên vào trunk",
+        "Trunk là nhánh chính của code",
+        "Continuous Deployment: tự động deploy",
+        "Rủi ro: thay đổi nhanh dễ đưa bug vào"
+      ],
+      "narration": "Continuous Integration nghĩa là các lập trình viên merge thay đổi thường xuyên vào trunk, tức nhánh chính nơi mọi thay đổi được hợp nhất, kèm build và test tự động. Continuous Delivery giữ code luôn sẵn sàng phát hành, còn Continuous Deployment là tự động triển khai phần mềm lên production. Nhịp thay đổi nhanh mang lại tốc độ, nhưng rủi ro chính là đưa bug vào hệ thống. Thay đổi phần mềm như nâng phiên bản thư viện cũng có thể gây performance drift, vì vậy unit test và giám sát là bắt buộc."
+    },
+    {
+      "title": "Logging cho predict endpoint",
+      "bullets": [
+        "Dữ liệu giám sát lưu dạng log files",
+        "Thu thập ở mức granular nhất",
+        "Thiết yếu: timestamp, runtime, model version, prediction",
+        "Không thiết yếu: request_type, input data"
+      ],
+      "code": "header = ['unique_id', 'timestamp', 'y_pred', 'y_proba',\n          'query', 'model_version', 'runtime']",
+      "narration": "Muốn giám sát mô hình, trước hết phải có dữ liệu. Dữ liệu giám sát được thu thập dưới dạng log files, ở mức chi tiết nhất có thể, để theo dõi thay đổi, phát hiện vấn đề hiệu năng và debug. Với predict endpoint, các trường thiết yếu gồm timestamp, runtime, phiên bản mô hình, kết quả dự đoán và bản tóm tắt dữ liệu đầu vào. Runtime không phải trường tùy chọn. Còn request type và toàn bộ input data được xem là không thiết yếu. API key luôn phải lưu trong file an toàn trên máy tin cậy."
+    },
+    {
+      "title": "Performance drift",
+      "bullets": [
+        "Hành vi, nhân khẩu học khách hàng thay đổi",
+        "Dữ liệu huấn luyện thiếu, sai, mất cân bằng",
+        "Đổi phiên bản thư viện hoặc module",
+        "So sánh phân phối bằng Wasserstein distance"
+      ],
+      "narration": "Performance drift là hiện tượng hiệu năng mô hình giảm dần sau khi triển khai. Các nguồn gây drift gồm thay đổi nhân khẩu học hay hành vi khách hàng sau khi huấn luyện, dữ liệu huấn luyện thiếu, sai hoặc mất cân bằng, và thay đổi phiên bản thư viện. Khi đề hỏi nguồn drift phổ biến, đáp án thường là tất cả các ý trên. Để phát hiện drift, ta so sánh phân phối dữ liệu mới với dữ liệu huấn luyện, chẳng hạn bằng Wasserstein distance, hoặc dùng outlier detection để phát hiện mẫu bất thường."
+    },
+    {
+      "title": "Outlier và novelty detection",
+      "bullets": [
+        "Elliptic Envelope, One-Class SVM",
+        "Isolation Forest, Local Outlier Factor",
+        "ADASYN là oversampling, không phải outlier detection",
+        "LOF hợp với dữ liệu nhiều chiều"
+      ],
+      "code": "from sklearn.ensemble import IsolationForest\nclf = IsolationForest(random_state=42).fit(X_train)\nflags = clf.predict(X_new)  # -1 = outlier",
+      "narration": "Scikit-learn cung cấp nhiều thuật toán outlier detection như Elliptic Envelope, One Class SVM, Isolation Forest và Local Outlier Factor. Ta huấn luyện chúng trên dữ liệu gốc, sau đó kiểm tra dữ liệu mới, mẫu nào bị gắn nhãn trừ 1 là bất thường. Theo đề, phương pháp được biết là hoạt động tốt với dữ liệu nhiều chiều là Local Outlier Factor. Một bẫy hay gặp là ADASYN, đây là kỹ thuật oversampling cho dữ liệu mất cân bằng, không phải thuật toán outlier detection."
+    },
+    {
+      "title": "Watson OpenScale và bảo mật",
+      "bullets": [
+        "OpenScale: Drift, Fairness, Explainability",
+        "Không chỉ cho mô hình trên Watson Studio",
+        "Poisoning attack: chèn dữ liệu độc vào training",
+        "Adversarial Robustness Toolbox kiểm tra độ bền"
+      ],
+      "narration": "IBM Watson OpenScale là nền tảng giám sát mô hình trong production với ba dịch vụ chính là drift monitoring, fairness và explainability. Fairness phát hiện bias với các nhóm được bảo vệ, còn explainability giải thích vì sao mô hình đưa ra một dự đoán. OpenScale không chỉ làm việc với mô hình xây trên Watson Studio, nó có thể giám sát mô hình triển khai ở nhiều nơi khác. Về bảo mật, poisoning attack là tấn công chèn dữ liệu độc hại vào tập huấn luyện. Để kiểm tra độ bền vững của mô hình, IBM cung cấp Adversarial Robustness Toolbox."
+    },
+    {
+      "title": "Kubernetes: các thành phần",
+      "bullets": [
+        "API server: phơi bày khả năng định nghĩa workload",
+        "Kubelet: giữ ứng dụng trên worker node khỏe mạnh",
+        "kubectl: CLI giao tiếp với cluster",
+        "Kube DNS: service discovery; tài nguyên viết bằng YAML"
+      ],
+      "code": "minikube start\nkubectl apply -f deployment.yaml\nkubectl get pods",
+      "narration": "Kubernetes điều phối container trên một cluster, và tài nguyên được định nghĩa bằng file YAML. API server phơi bày các khả năng để định nghĩa workload. Kubelet là agent chạy trên mỗi worker node, đảm bảo ứng dụng khỏe mạnh và đang chạy. Kubectl là công cụ dòng lệnh để giao tiếp với cluster qua Kubernetes API. Kube DNS cung cấp service discovery cho các pod. Còn Minikube dùng để khởi chạy một Kubernetes cluster cục bộ, trong máy ảo hoặc trực tiếp trên máy host."
+    },
+    {
+      "title": "Pod, Deployment, Service",
+      "bullets": [
+        "Pod chứa container, không chứa deployment",
+        "Deployment quản lý desired state",
+        "Pod lỗi thì pod mới thay thế",
+        "LoadBalancer phơi bày ứng dụng ra ngoài"
+      ],
+      "narration": "Pod là đơn vị nhỏ nhất trong Kubernetes và chứa một hoặc nhiều container. Một pod không thể chứa nhiều deployment, mà ngược lại, deployment quản lý các pod. Deployment duy trì trạng thái mong muốn của ứng dụng, vì vậy khi một pod bị lỗi, một pod mới sẽ được tạo ra để thay thế. Để phơi bày ứng dụng ra người dùng bên ngoài, ta dùng service loại LoadBalancer, khác với ClusterIP chỉ truy cập được bên trong cluster."
+    },
+    {
+      "title": "Tổng kết và mẹo thi",
+      "bullets": [
+        "Không cần gần 100% test coverage",
+        "Runtime là trường log bắt buộc",
+        "OpenScale không chỉ cho Watson Studio",
+        "Kubelet giữ node khỏe, kubectl là CLI"
+      ],
+      "narration": "Tóm lại, vận hành AI là vòng lặp liên tục của kiểm thử, logging, giám sát và cải tiến. Khi thi, hãy nhớ các bẫy sau. Không cần gần 100 phần trăm test coverage. Trunk là nhánh chính, Continuous Deployment là triển khai tự động. Runtime là trường log thiết yếu, request type và input data thì không. Nguồn drift là tất cả các ý, ADASYN không phải outlier detection. OpenScale không chỉ dành cho Watson Studio. Kubelet giữ node khỏe mạnh, kubectl là công cụ dòng lệnh, pod không chứa deployment. Chúc các bạn thi tốt."
+    }
+  ]
+}

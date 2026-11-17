@@ -1,0 +1,168 @@
+{
+  "id": 2,
+  "title": "Phân tích dữ liệu & kiểm định giả thuyết",
+  "ibmCourse": "IBM AI Workflow – Course 2: AI Workflow: Data Analysis and Hypothesis Testing",
+  "intro": "Chương này tương ứng giai đoạn Ideate của design thinking: khám phá dữ liệu (EDA), trực quan hoá có tính tái lập, xử lý missing values và imputation. Phần sau ôn lại nền tảng xác suất, suy luận thống kê, kiểm định giả thuyết (t-test, Welch, binomial) và cách xử lý multiple comparisons trong case study AAVAIL.",
+  "keyPoints": [
+    {
+      "heading": "Mục đích và phạm vi của EDA",
+      "body": "Exploratory Data Analysis (EDA) nhằm tạo các bản tóm tắt (summary tables) và trực quan hoá để hiểu dữ liệu, phát hiện vấn đề chất lượng, hình thành giả thuyết và gợi ý feature.\nEDA KHÔNG bao gồm việc xây dựng mô hình dự đoán như linear/logistic regression (đó là modeling). Phát biểu KÉM đúng nhất: \"EDA gồm cả exploratory và confirmatory data analysis\" – confirmatory (kiểm định) là bước riêng sau EDA.\nEDA KHÔNG tách rời modeling: nó giúp ước lượng thời gian cần cho modeling (câu \"EDA decoupled from modeling\" là False).\nQuy trình gợi ý: đọc dữ liệu đã ingest → kiểm tra missing/duplicate → bảng tóm tắt theo nhóm (groupby, pivot_table) → biểu đồ → ghi lại phát hiện và giả thuyết cần kiểm định."
+    },
+    {
+      "heading": "Trực quan hoá trong doanh nghiệp và tính tái lập",
+      "body": "Khi trực quan hoá trong doanh nghiệp, điều quan trọng nhất là reproducibility (tái lập) và communication (truyền đạt cho stakeholder). Mọi biến đổi dữ liệu nên nằm trong code/script; thao tác copy-paste trong spreadsheet là ví dụ KHÔNG reproducible.\nmatplotlib.pyplot cung cấp giao diện hàm (functional/state-based interface) cho sử dụng tương tác đơn giản; còn object-oriented interface (fig, ax) cho biểu đồ phức tạp.\nseaborn được xây dựng trên matplotlib, nên pairplot và các hàm seaborn KHÔNG phải công cụ tách biệt với matplotlib (False).\nPlotly tạo biểu đồ tương tác, chạy trên web; \"chỉ tạo ảnh tĩnh\" KHÔNG phải tính năng của Plotly.\nJupyter notebook tiện cho EDA nhưng KHÔNG tự nhiên phù hợp với version control (file JSON khó diff) – nên đưa code ổn định ra file .py.\nDashboard (ví dụ trong Watson Studio) dùng để theo dõi, chia sẻ kết quả liên tục; câu \"dashboard là cách nhanh tạo biểu đồ đơn giản di động\" là phát biểu kém đúng nhất."
+    },
+    {
+      "heading": "Missing values: MCAR, MAR, MNAR",
+      "body": "Ba loại missingness: MCAR (Missing Completely At Random – thiếu hoàn toàn ngẫu nhiên, không phụ thuộc gì), MAR (Missing At Random – việc thiếu phụ thuộc vào biến quan sát được khác), MNAR (Missing Not At Random – việc thiếu phụ thuộc chính giá trị bị thiếu hoặc biến không quan sát được).\nChiến lược: xoá dòng (complete-case analysis, chỉ an toàn khi MCAR), imputation đơn giản (mean, median, most_frequent cho categorical), imputation bằng mô hình (dùng các feature khác dự đoán giá trị thiếu, IterativeImputer/KNNImputer).\nVới dữ liệu số, khuyến nghị dùng kỹ thuật imputation. Trong case AAVAIL thiếu 10% số stream: đầu tiên thử lấy lại từ user logs; nếu không được thì thay bằng mean hoặc dự đoán từ feature khác. Phương án KÉM hữu ích nhất cho modeling churn là thay bằng -1 để đánh dấu unknown (tạo giá trị giả trên thang số).\nMultiple imputation: tạo nhiều bộ dữ liệu được impute khác nhau, phân tích từng bộ rồi gộp kết quả – mục đích chính là mô tả tốt hơn sai số/độ bất định do việc thay thế missing values gây ra."
+    },
+    {
+      "heading": "Nền tảng xác suất và phân phối",
+      "body": "Giả định khi đưa ra phát biểu xác suất về một mẫu: tồn tại population mà mẫu được lấy từ đó; population tuân theo một phân phối giả định; các quan sát là i.i.d. (độc lập, cùng phân phối); random variable biểu diễn các giá trị dữ liệu có thể nhận. KHÔNG phải giả định: \"phát biểu xác suất áp dụng cho từng quan sát một\".\nBiến cố xung khắc (mutually exclusive) không thể xảy ra đồng thời, ví dụ số âm và số dương nhỏ hơn 25; số trong 100–200 và số trong 201–300.\nPhân phối chuẩn: điểm có mean 50, sd 20 → P(X ≥ 80) = 1 - stats.norm.cdf(80, loc=50, scale=20) ≈ 0.067. Dùng cdf cho P(X ≤ x), 1 - cdf (hoặc sf) cho phần đuôi phải.\nPhân phối nhị thức: tỷ lệ đăng ký 2.5%, 108879 lượt truy cập, P(số đăng ký ≤ 2701) = stats.binom.cdf(2701, 108879, 0.025) ≈ 0.346.\nPoisson mô hình hoá số sự kiện đếm; có thể dùng bootstrap để định lượng độ bất định của ước lượng (ví dụ churn theo Poisson – True)."
+    },
+    {
+      "heading": "Các phương pháp suy luận thống kê",
+      "body": "Statistical inference: rút ra kết luận về population từ mẫu. Các phương pháp tính ước lượng (estimates): Maximum Likelihood Estimation (MLE), Markov Chain Monte Carlo (MCMC – trong Bayesian), Expectation Maximization (EM), simulation via permutations/bootstrap.\nNull Hypothesis Significance Testing (NHST) KHÔNG phải phương pháp tính ước lượng – nó là khung để ra quyết định bác bỏ hay không bác bỏ giả thuyết.\nFrequentist: tham số cố định, dùng p-value, confidence interval. Bayesian: tham số là biến ngẫu nhiên, kết hợp prior với likelihood để có posterior, thường ước lượng bằng MCMC."
+    },
+    {
+      "heading": "Kiểm định giả thuyết và chọn test phù hợp",
+      "body": "Null hypothesis (H0) thường phát biểu \"không có khác biệt\": ví dụ người dùng Product 1 và Product 2 có cùng độ tuổi trung bình. Alternative (H1) là có khác biệt. Nếu p-value < alpha (thường 0.05) thì bác bỏ H0.\nChọn test: 1-sample t-test (so trung bình một mẫu với giá trị cho trước); 2-sample t-test equal variance; 2-sample unequal variances t-test (Welch) khi hai nhóm có kích thước/phương sai khác nhau – đây là đáp án cho câu so sánh tuổi người dùng Product 1 và 2; z-test với continuity correction và binomial test cho tỷ lệ (dữ liệu nhị phân); chi-square cho bảng tần số; permutation test khi không muốn giả định phân phối.\nTrong SciPy: stats.ttest_1samp, stats.ttest_ind(a, b, equal_var=False) cho Welch, stats.binomtest, stats.chi2_contingency.\nTrong case study AAVAIL, kiểm định giả thuyết được dùng để xem có khác biệt có ý nghĩa giữa các nhóm (quốc gia, gói thuê bao) liên quan đến churn hay không."
+    },
+    {
+      "heading": "Multiple comparisons problem",
+      "body": "Khi thực hiện nhiều kiểm định, xác suất có ít nhất một kết quả dương tính giả tăng mạnh (với 20 test ở alpha 0.05, kỳ vọng khoảng 1 kết quả \"có ý nghĩa\" do ngẫu nhiên).\nChiến lược hợp lệ: Bonferroni correction (chia alpha cho số test, kiểm soát family-wise error rate); Benjamini/Hochberg correction dựa trên False Discovery Rate; tạo null distribution bằng permutations để có bối cảnh; nếu phù hợp, dùng khung mô hình khác như generalized linear models (hoặc mô hình phân cấp) thay vì nhiều test rời rạc.\nKHÔNG hợp lệ: thực hiện tất cả phép so sánh rồi chỉ giữ test cho kết quả tốt nhất (p-hacking).\nTrong Python: statsmodels.stats.multitest.multipletests(pvals, method=\"bonferroni\" hoặc \"fdr_bh\")."
+    }
+  ],
+  "sources": [
+    {
+      "label": "Coursera – AI Workflow: Data Analysis and Hypothesis Testing (IBM)",
+      "url": "https://www.coursera.org/learn/ibm-ai-workflow-data-analysis-hypothesis-testing"
+    },
+    {
+      "label": "scikit-learn – Imputation of missing values",
+      "url": "https://scikit-learn.org/stable/modules/impute.html"
+    },
+    {
+      "label": "SciPy – scipy.stats.ttest_ind (Welch's t-test với equal_var=False)",
+      "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_ind.html"
+    },
+    {
+      "label": "SciPy – scipy.stats.binom",
+      "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.binom.html"
+    },
+    {
+      "label": "statsmodels – multipletests (Bonferroni, Benjamini/Hochberg)",
+      "url": "https://www.statsmodels.org/stable/generated/statsmodels.stats.multitest.multipletests.html"
+    },
+    {
+      "label": "seaborn – pairplot",
+      "url": "https://seaborn.pydata.org/generated/seaborn.pairplot.html"
+    }
+  ],
+  "slides": [
+    {
+      "title": "Chương 2: Phân tích dữ liệu & kiểm định",
+      "bullets": [
+        "IBM AI Enterprise Workflow – Course 2",
+        "EDA và trực quan hoá có tính tái lập",
+        "Missing values và multiple imputation",
+        "Xác suất, suy luận và kiểm định giả thuyết"
+      ],
+      "narration": "Chào mừng bạn đến với chương 2, tương ứng với khoá học thứ hai của IBM có tên Data Analysis and Hypothesis Testing. Trong design thinking, đây là giai đoạn Ideate, khi dữ liệu đã được ingest và ta bắt đầu khám phá nó. Bạn sẽ học mục đích của EDA, cách trực quan hoá sao cho tái lập được, ba loại missing data và cách imputation, sau đó ôn lại xác suất, các phương pháp suy luận thống kê, cách chọn test phù hợp và cách xử lý vấn đề so sánh nhiều lần."
+    },
+    {
+      "title": "EDA là gì?",
+      "bullets": [
+        "Tạo bảng tóm tắt và biểu đồ",
+        "Không gồm mô hình dự đoán như regression",
+        "Không gồm confirmatory analysis",
+        "Giúp ước lượng thời gian modeling"
+      ],
+      "narration": "Exploratory Data Analysis, hay EDA, có mục đích tạo ra các bảng tóm tắt và hình ảnh trực quan để hiểu dữ liệu. EDA giúp phát hiện lỗi chất lượng, hình thành giả thuyết và gợi ý feature. Đề thi hay hỏi điều gì không thuộc EDA, và đáp án là mô hình dự đoán như linear hay logistic regression. Một bẫy khác là câu EDA gồm cả phân tích khám phá lẫn phân tích khẳng định; phát biểu này kém đúng nhất, vì kiểm định là bước riêng. Ngoài ra, EDA không tách rời modeling, nó còn giúp ước lượng thời gian cần để xây mô hình."
+    },
+    {
+      "title": "Trực quan hoá trong doanh nghiệp",
+      "bullets": [
+        "Ưu tiên reproducibility và communication",
+        "Copy-paste spreadsheet là không tái lập",
+        "seaborn xây trên matplotlib; Plotly tương tác",
+        "Notebook khó quản lý bằng version control"
+      ],
+      "code": "import seaborn as sns\nimport matplotlib.pyplot as plt\n\nsns.pairplot(df, hue=\"is_churned\")\nplt.savefig(\"pairplot.png\")",
+      "narration": "Khi trực quan hoá trong doanh nghiệp, hai điều được nhấn mạnh là tính tái lập và khả năng truyền đạt. Mọi biến đổi nên nằm trong code, còn thao tác copy paste trong spreadsheet là ví dụ điển hình của việc không tái lập được. Module pyplot của matplotlib cung cấp giao diện hàm cho việc dùng tương tác đơn giản. Seaborn được xây trên matplotlib, nên pairplot không phải công cụ tách biệt. Plotly tạo biểu đồ tương tác, không chỉ ảnh tĩnh. Cuối cùng, Jupyter notebook rất tiện cho EDA nhưng không tự nhiên phù hợp với version control."
+    },
+    {
+      "title": "Ba loại missing data",
+      "bullets": [
+        "MCAR: thiếu hoàn toàn ngẫu nhiên",
+        "MAR: phụ thuộc biến quan sát khác",
+        "MNAR: phụ thuộc chính giá trị bị thiếu",
+        "Xoá dòng chỉ an toàn khi MCAR"
+      ],
+      "narration": "Có ba loại missing data. MCAR nghĩa là thiếu hoàn toàn ngẫu nhiên, không liên quan đến bất kỳ biến nào. MAR nghĩa là việc thiếu phụ thuộc vào một biến khác mà ta quan sát được, ví dụ một quốc gia nào đó hay bị thiếu log. MNAR nghĩa là việc thiếu phụ thuộc chính giá trị bị thiếu, ví dụ người xem ít thì không ghi nhận số stream. Việc xoá các dòng bị thiếu chỉ thật sự an toàn khi dữ liệu thuộc loại MCAR. Với dữ liệu số, khuyến nghị chung là dùng kỹ thuật imputation."
+    },
+    {
+      "title": "Imputation và multiple imputation",
+      "bullets": [
+        "Thay bằng mean, median hoặc mô hình",
+        "Thay bằng -1: kém hữu ích nhất",
+        "Multiple imputation đo sai số do impute",
+        "sklearn: SimpleImputer, IterativeImputer"
+      ],
+      "code": "from sklearn.impute import SimpleImputer\n\nimp = SimpleImputer(strategy=\"mean\")\nX_filled = imp.fit_transform(X)",
+      "narration": "Trong case AAVAIL, giả sử 10 phần trăm khách hàng thiếu tổng số stream. Bước đầu là thử lấy lại từ user log. Nếu không được, có thể thay bằng giá trị trung bình, hoặc dùng các feature khác để dự đoán giá trị thiếu. Phương án kém hữu ích nhất cho việc mô hình hoá churn là thay bằng âm một để đánh dấu không biết. Multiple imputation tạo nhiều bộ dữ liệu được điền khác nhau rồi gộp kết quả, mục đích chính là mô tả tốt hơn sai số mà việc thay thế gây ra. Trong scikit-learn có SimpleImputer và IterativeImputer."
+    },
+    {
+      "title": "Nền tảng xác suất",
+      "bullets": [
+        "Giả định: population, phân phối, i.i.d.",
+        "Không áp dụng cho từng quan sát",
+        "Normal: P(X ≥ 80) = 1 - cdf",
+        "Binomial: P(≤ 2701) ≈ 0.346"
+      ],
+      "code": "from scipy import stats\n\np_high = 1 - stats.norm.cdf(80, loc=50, scale=20)\np_sign = stats.binom.cdf(2701, 108879, 0.025)\nprint(round(p_high, 3), round(p_sign, 3))  # 0.067 0.346",
+      "narration": "Khi phát biểu xác suất về một mẫu, ta giả định có một population, population đó theo một phân phối nào đó, các quan sát độc lập và cùng phân phối, và biến ngẫu nhiên biểu diễn các giá trị có thể có. Phát biểu xác suất không áp dụng cho từng quan sát riêng lẻ. Với phân phối chuẩn có trung bình 50 và độ lệch chuẩn 20, xác suất điểm từ 80 trở lên là một trừ hàm cdf. Với phân phối nhị thức, tỷ lệ đăng ký 2.5 phần trăm trên 108879 lượt, xác suất có không quá 2701 người đăng ký là khoảng 0.346."
+    },
+    {
+      "title": "Các phương pháp suy luận thống kê",
+      "bullets": [
+        "Ước lượng: MLE, MCMC, EM, permutation",
+        "NHST không phải phương pháp tính ước lượng",
+        "Bootstrap đo độ bất định của ước lượng",
+        "Frequentist và Bayesian"
+      ],
+      "narration": "Suy luận thống kê là rút ra kết luận về population từ mẫu. Các phương pháp dùng để tính ước lượng gồm maximum likelihood, Markov Chain Monte Carlo trong Bayesian, expectation maximization và mô phỏng bằng permutation. Đề thi hỏi phương pháp nào không dùng để tính ước lượng, đáp án là kiểm định giả thuyết null, viết tắt NHST, vì đó là khung ra quyết định. Bootstrap giúp định lượng độ bất định, ví dụ khi churn được mô hình hoá bằng phân phối Poisson. Trường phái frequentist dùng p-value, còn Bayesian kết hợp prior với dữ liệu."
+    },
+    {
+      "title": "Chọn đúng kiểm định",
+      "bullets": [
+        "H0: hai nhóm có cùng trung bình",
+        "Hai nhóm, phương sai khác: Welch t-test",
+        "Tỷ lệ: binomial test, z-test",
+        "Bác bỏ H0 khi p-value < alpha"
+      ],
+      "code": "from scipy import stats\n\nt, p = stats.ttest_ind(age_p1, age_p2, equal_var=False)\nif p < 0.05:\n    print(\"Reject H0: mean ages differ\")",
+      "narration": "Giả thuyết null thường phát biểu rằng không có khác biệt. Ví dụ, công ty Z muốn biết tuổi của người dùng Product 1 và Product 2 có khác nhau không, thì H0 là hai nhóm có cùng độ tuổi trung bình. Test phù hợp nhất là t-test hai mẫu với phương sai không bằng nhau, còn gọi là Welch, trong SciPy là ttest ind với equal var bằng False. T-test một mẫu so trung bình với một giá trị cố định. Với dữ liệu tỷ lệ như đăng ký hay không, dùng binomial test hoặc z-test. Nếu p-value nhỏ hơn alpha, thường là 0.05, ta bác bỏ H0."
+    },
+    {
+      "title": "Multiple comparisons problem",
+      "bullets": [
+        "Nhiều test làm tăng dương tính giả",
+        "Bonferroni, Benjamini/Hochberg (FDR)",
+        "Permutation null distribution, hoặc dùng GLM",
+        "Sai: chỉ giữ test tốt nhất"
+      ],
+      "narration": "Khi chạy nhiều kiểm định cùng lúc, khả năng gặp ít nhất một kết quả có ý nghĩa do may rủi tăng lên rất nhanh. Đây là multiple comparisons problem. Các cách xử lý hợp lệ gồm hiệu chỉnh Bonferroni, hiệu chỉnh Benjamini Hochberg dựa trên false discovery rate, tạo phân phối null bằng permutation để có bối cảnh, hoặc chuyển sang khung mô hình khác như generalized linear model. Cách không hợp lệ là chạy tất cả các phép so sánh rồi chỉ giữ lại test cho kết quả đẹp nhất, đó chính là p-hacking."
+    },
+    {
+      "title": "Tóm tắt & mẹo thi",
+      "bullets": [
+        "EDA: tóm tắt + biểu đồ, không regression",
+        "Ba loại missing: MCAR, MAR, MNAR",
+        "Tuổi Product 1 và 2: Welch t-test",
+        "NHST không phải phương pháp ước lượng"
+      ],
+      "narration": "Hãy tóm tắt các điểm dễ ra thi. EDA là tóm tắt và trực quan hoá, không gồm regression dự đoán và không gồm confirmatory analysis. Trực quan hoá doanh nghiệp đề cao tính tái lập và truyền đạt. Ba loại missing là MCAR, MAR và MNAR; thay giá trị thiếu bằng âm một là lựa chọn kém nhất; multiple imputation nhằm đo sai số. Với câu so sánh tuổi hai nhóm sản phẩm, chọn Welch t-test. NHST không dùng để tính ước lượng. Và đừng bao giờ chỉ giữ test tốt nhất. Hẹn gặp bạn ở chương 3."
+    }
+  ]
+}

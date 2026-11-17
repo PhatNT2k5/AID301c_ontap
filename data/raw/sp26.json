@@ -1,0 +1,1832 @@
+[
+  {
+    "id": "sp26-01",
+    "source": "SP26 FE",
+    "number": 1,
+    "file": "screenshot_2026-11-17_19-25-17.png",
+    "question": "What is the purpose of the classification_report in sklearn?",
+    "options": [
+      {
+        "key": "A",
+        "text": "To visualize data"
+      },
+      {
+        "key": "B",
+        "text": "To summarize model performance"
+      },
+      {
+        "key": "C",
+        "text": "To preprocess data"
+      },
+      {
+        "key": "D",
+        "text": "To train a model"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "comments": [
+      "b",
+      "b"
+    ],
+    "answer": [
+      "B"
+    ],
+    "answerSource": "comment",
+    "commentAgreement": "unanimous"
+  },
+  {
+    "id": "sp26-02",
+    "source": "SP26 FE",
+    "number": 2,
+    "file": "screenshot_2026-11-17_19-25-19.png",
+    "question": "In the script example-spark-submit.sh, what does the #!/bin/bash line indicate?",
+    "options": [
+      {
+        "key": "A",
+        "text": "It specifies the script's name"
+      },
+      {
+        "key": "B",
+        "text": "It indicates the script is written in Python"
+      },
+      {
+        "key": "C",
+        "text": "It tells the system to use the Bash shell to execute the script"
+      },
+      {
+        "key": "D",
+        "text": "It is a comment and has no effect"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "comments": [
+      "c",
+      "c"
+    ],
+    "answer": [
+      "C"
+    ],
+    "answerSource": "comment",
+    "commentAgreement": "unanimous"
+  },
+  {
+    "id": "sp26-03",
+    "source": "SP26 FE",
+    "number": 3,
+    "file": "screenshot_2026-11-17_19-25-20.png",
+    "question": "In the context of NLP, what does sentiment analysis refer to?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Analyzing the structure of sentences"
+      },
+      {
+        "key": "B",
+        "text": "Determining the emotional tone behind a series of words"
+      },
+      {
+        "key": "C",
+        "text": "Translating text from one language to another"
+      },
+      {
+        "key": "D",
+        "text": "Summarizing large documents"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "comments": [
+      "b",
+      "b"
+    ],
+    "answer": [
+      "B"
+    ],
+    "answerSource": "comment",
+    "commentAgreement": "unanimous"
+  },
+  {
+    "id": "sp26-04",
+    "source": "SP26 FE",
+    "number": 4,
+    "file": "screenshot_2026-11-17_19-25-21.png",
+    "question": "Thinking with the lens of the scientific process, what would your next steps be if you wanted to decide where to open the next store for your sled business?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Start pulling sales and other data to create a business viability assessment for Vermont"
+      },
+      {
+        "key": "B",
+        "text": "Gather more data and repeat the snowfall experiment"
+      },
+      {
+        "key": "C",
+        "text": "Gather different data say snowfall by county and repeat the experiment"
+      },
+      {
+        "key": "D",
+        "text": "Start a business viability assessment for all three states"
+      }
+    ],
+    "multi": true,
+    "choose": 3,
+    "comments": [
+      "abc"
+    ],
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "answerSource": "comment",
+    "commentAgreement": "unanimous"
+  },
+  {
+    "id": "sp26-05",
+    "source": "SP26 FE",
+    "number": 5,
+    "file": "screenshot_2026-11-17_19-25-22.png",
+    "question": "Processing the corpus with the provided lemmatize_document reduces the total number of tokens to what percentage of the original?",
+    "options": [
+      {
+        "key": "A",
+        "text": "10-15%"
+      },
+      {
+        "key": "B",
+        "text": "20-35%"
+      },
+      {
+        "key": "C",
+        "text": "45-50%"
+      },
+      {
+        "key": "D",
+        "text": "70-75%"
+      },
+      {
+        "key": "E",
+        "text": "85-95%"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "comments": [
+      "d",
+      "C",
+      "c",
+      "C"
+    ],
+    "answer": [
+      "C"
+    ],
+    "answerSource": "comment",
+    "commentAgreement": "majority"
+  },
+  {
+    "id": "sp26-06",
+    "source": "SP26 FE",
+    "number": 6,
+    "file": "screenshot_2026-11-17_19-25-24.png",
+    "question": "What is the first step in setting up the Watson Developer Cloud Python SDK?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Install the SDK"
+      },
+      {
+        "key": "B",
+        "text": "Create an IBM Cloud account"
+      },
+      {
+        "key": "C",
+        "text": "Create a resource for Natural Language Understanding"
+      },
+      {
+        "key": "D",
+        "text": "Download the tutorial files"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "comments": [
+      "b"
+    ],
+    "answer": [
+      "B"
+    ],
+    "answerSource": "comment",
+    "commentAgreement": "unanimous"
+  },
+  {
+    "id": "sp26-07",
+    "source": "SP26 FE",
+    "number": 7,
+    "file": "screenshot_2026-11-17_19-25-25.png",
+    "question": "When you worked on model deployment case study, which modification to the ALS algorithm had the largest effect on model performance?",
+    "options": [
+      {
+        "key": "A",
+        "text": "The explicit training vs implicit training comparison"
+      },
+      {
+        "key": "B",
+        "text": "The lambda or regularization parameter"
+      },
+      {
+        "key": "C",
+        "text": "The epsilon or scale parameter"
+      },
+      {
+        "key": "D",
+        "text": "The l1 vs l2 comparison"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "comments": [
+      "a",
+      "B",
+      "b",
+      "b"
+    ],
+    "answer": [
+      "B"
+    ],
+    "answerSource": "comment",
+    "commentAgreement": "majority"
+  },
+  {
+    "id": "sp26-08",
+    "source": "SP26 FE",
+    "number": 8,
+    "file": "screenshot_2026-11-17_19-25-26.png",
+    "question": "When you compiled the JSON files into a single DataFrame or NumPy array, about how many days did the entire range of dates span?",
+    "options": [
+      {
+        "key": "A",
+        "text": "400"
+      },
+      {
+        "key": "B",
+        "text": "450"
+      },
+      {
+        "key": "C",
+        "text": "500"
+      },
+      {
+        "key": "D",
+        "text": "600"
+      },
+      {
+        "key": "E",
+        "text": "650"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "comments": [
+      "c",
+      "D (~607)",
+      "C",
+      "C",
+      "c"
+    ],
+    "answer": [
+      "C"
+    ],
+    "answerSource": "comment",
+    "commentAgreement": "majority"
+  },
+  {
+    "id": "sp26-09",
+    "source": "SP26 FE",
+    "number": 9,
+    "file": "screenshot_2026-11-17_19-25-28.png",
+    "question": "Which library in Python is commonly used for reading and writing CSV files?",
+    "options": [
+      {
+        "key": "A",
+        "text": "NumPy"
+      },
+      {
+        "key": "B",
+        "text": "Matplotlib"
+      },
+      {
+        "key": "C",
+        "text": "Pandas"
+      },
+      {
+        "key": "D",
+        "text": "SciPy"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "comments": [
+      "c",
+      "c"
+    ],
+    "answer": [
+      "C"
+    ],
+    "answerSource": "comment",
+    "commentAgreement": "unanimous"
+  },
+  {
+    "id": "sp26-10",
+    "source": "SP26 FE",
+    "number": 10,
+    "file": "screenshot_2026-11-17_19-25-29.png",
+    "question": "What is a poisoning attack?",
+    "options": [
+      {
+        "key": "A",
+        "text": "An attack that occurs during model deployment"
+      },
+      {
+        "key": "B",
+        "text": "An attack that injects malicious data into the training set"
+      },
+      {
+        "key": "C",
+        "text": "An attack that modifies the model's architecture"
+      },
+      {
+        "key": "D",
+        "text": "An attack that occurs only at test time"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "comments": [
+      "b",
+      "b"
+    ],
+    "answer": [
+      "B"
+    ],
+    "answerSource": "comment",
+    "commentAgreement": "unanimous"
+  },
+  {
+    "id": "sp26-11",
+    "source": "SP26 FE",
+    "number": 11,
+    "file": "screenshot_2026-11-17_19-25-30.png",
+    "question": "Which Python package can be used to estimate test coverage?",
+    "options": [
+      {
+        "key": "A",
+        "text": "unittest"
+      },
+      {
+        "key": "B",
+        "text": "coverage"
+      },
+      {
+        "key": "C",
+        "text": "pytest"
+      },
+      {
+        "key": "D",
+        "text": "flask"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "comments": [
+      "b",
+      "b"
+    ],
+    "answer": [
+      "B"
+    ],
+    "answerSource": "comment",
+    "commentAgreement": "unanimous"
+  },
+  {
+    "id": "sp26-12",
+    "source": "SP26 FE",
+    "number": 12,
+    "file": "screenshot_2026-11-17_19-25-31.png",
+    "question": "What is the primary purpose of documenting your data before starting a project?",
+    "options": [
+      {
+        "key": "A",
+        "text": "To impress stakeholders"
+      },
+      {
+        "key": "B",
+        "text": "To streamline the modeling process and ensure data quality"
+      },
+      {
+        "key": "C",
+        "text": "To increase project costs"
+      },
+      {
+        "key": "D",
+        "text": "To avoid using Python"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "comments": [
+      "b",
+      "b"
+    ],
+    "answer": [
+      "B"
+    ],
+    "answerSource": "comment",
+    "commentAgreement": "unanimous"
+  },
+  {
+    "id": "sp26-13",
+    "source": "SP26 FE",
+    "number": 13,
+    "file": "screenshot_2026-11-17_19-25-33.png",
+    "question": "What is a common issue with using accuracy as a metric for imbalanced classes?",
+    "options": [
+      {
+        "key": "A",
+        "text": "It is always accurate."
+      },
+      {
+        "key": "B",
+        "text": "It can be misleading."
+      },
+      {
+        "key": "C",
+        "text": "It is the only metric available."
+      },
+      {
+        "key": "D",
+        "text": "It does not consider false positives."
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "comments": [
+      "b",
+      "b"
+    ],
+    "answer": [
+      "B"
+    ],
+    "answerSource": "comment",
+    "commentAgreement": "unanimous"
+  },
+  {
+    "id": "sp26-14",
+    "source": "SP26 FE",
+    "number": 14,
+    "file": "screenshot_2026-11-17_19-25-34.png",
+    "question": "The decision tree base models in random forests individually have high bias and low variance.",
+    "options": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "comments": [
+      "b",
+      "b"
+    ],
+    "answer": [
+      "B"
+    ],
+    "answerSource": "comment",
+    "commentAgreement": "unanimous"
+  },
+  {
+    "id": "sp26-15",
+    "source": "SP26 FE",
+    "number": 15,
+    "file": "screenshot_2026-11-17_19-25-35.png",
+    "question": "Which country had the most total revenue when you summed across all purchases?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Singapore"
+      },
+      {
+        "key": "B",
+        "text": "United Kingdom"
+      },
+      {
+        "key": "C",
+        "text": "USA"
+      },
+      {
+        "key": "D",
+        "text": "EIRE"
+      },
+      {
+        "key": "E",
+        "text": "Germany"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "comments": [
+      "c",
+      "B",
+      "b",
+      "b"
+    ],
+    "answer": [
+      "B"
+    ],
+    "answerSource": "comment",
+    "commentAgreement": "majority"
+  },
+  {
+    "id": "sp26-16",
+    "source": "SP26 FE",
+    "number": 16,
+    "file": "screenshot_2026-11-17_19-25-37.png",
+    "question": "Which of the following is NOT a component of the confusion matrix?",
+    "options": [
+      {
+        "key": "A",
+        "text": "True Negatives (TN)"
+      },
+      {
+        "key": "B",
+        "text": "False Positives (FP)"
+      },
+      {
+        "key": "C",
+        "text": "True Positives (TP)"
+      },
+      {
+        "key": "D",
+        "text": "Average Score (AS)"
+      },
+      {
+        "key": "E",
+        "text": "False Negatives (FN)"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "comments": [
+      "d",
+      "d"
+    ],
+    "answer": [
+      "D"
+    ],
+    "answerSource": "comment",
+    "commentAgreement": "unanimous"
+  },
+  {
+    "id": "sp26-17",
+    "source": "SP26 FE",
+    "number": 17,
+    "file": "screenshot_2026-11-17_19-25-38.png",
+    "question": "Docker containers run a private file system that is isolated from the host and other containers. What is the suggested way to access notebooks and scripts from within the container?",
+    "options": [
+      {
+        "key": "A",
+        "text": "tmpfs mount"
+      },
+      {
+        "key": "B",
+        "text": "use a named pipe"
+      },
+      {
+        "key": "C",
+        "text": "bind mounts"
+      },
+      {
+        "key": "D",
+        "text": "GitHub"
+      },
+      {
+        "key": "E",
+        "text": "volumes"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "comments": [
+      "c",
+      "c"
+    ],
+    "answer": [
+      "C"
+    ],
+    "answerSource": "comment",
+    "commentAgreement": "unanimous"
+  },
+  {
+    "id": "sp26-18",
+    "source": "SP26 FE",
+    "number": 18,
+    "file": "screenshot_2026-11-17_19-25-39.png",
+    "question": "When you use Watson Services like Watson Natural Language Understanding via the Python SDK, what are the three items that need to be saved? These items are generally saved on a local machine and included in scripts and notebooks as imported variables.",
+    "options": [
+      {
+        "key": "A",
+        "text": "service version, service API key, service JSON map"
+      },
+      {
+        "key": "B",
+        "text": "service URL, service JSON map, service API key"
+      },
+      {
+        "key": "C",
+        "text": "service API key, service version, service URL"
+      },
+      {
+        "key": "D",
+        "text": "service version, service IAMAuthenticator, service URL"
+      },
+      {
+        "key": "E",
+        "text": "service API key, service URL, service IAMAuthenticator"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "comments": [
+      "c",
+      "c"
+    ],
+    "answer": [
+      "C"
+    ],
+    "answerSource": "comment",
+    "commentAgreement": "unanimous"
+  },
+  {
+    "id": "sp26-19",
+    "source": "SP26 FE",
+    "number": 19,
+    "file": "screenshot_2026-11-17_19-25-41.png",
+    "question": "For given input lists: a,b,c and 1,2,3 Create a dictionary from two input lists",
+    "options": [
+      {
+        "key": "A",
+        "text": "def make_dict(lst1,lst2): res = {} for key,value in zip(lst1,lst2): res[key]= value return res"
+      },
+      {
+        "key": "B",
+        "text": "def make_dict(lst1,lst2): res = {} res[lst1]= lst2 return res"
+      },
+      {
+        "key": "C",
+        "text": "def make_dict(lst1,lst2): res = {} for key,value in (lst1,lst2): res[key]= value return res"
+      },
+      {
+        "key": "D",
+        "text": "def make_dict(lst1,lst2): res = [] for key,value in zip(lst1,lst2): res[key]= value return res"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "comments": [
+      "a",
+      "a"
+    ],
+    "answer": [
+      "A"
+    ],
+    "answerSource": "comment",
+    "commentAgreement": "unanimous"
+  },
+  {
+    "id": "sp26-20",
+    "source": "SP26 FE",
+    "number": 20,
+    "file": "screenshot_2026-11-17_19-25-42.png",
+    "question": "What is the purpose of kubectl in kubernetes?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Automatic logging of requests and responses"
+      },
+      {
+        "key": "B",
+        "text": "A tool that makes it easy to run a single-node cluster locally"
+      },
+      {
+        "key": "C",
+        "text": "The primary node agent on each node, responsible for the processes running on that machine"
+      },
+      {
+        "key": "D",
+        "text": "The CLI for communicating with the kubernetes cluster"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "comments": [
+      "d",
+      "d"
+    ],
+    "answer": [
+      "D"
+    ],
+    "answerSource": "comment",
+    "commentAgreement": "unanimous"
+  },
+  {
+    "id": "sp26-21",
+    "source": "SP26 FE",
+    "number": 21,
+    "file": "screenshot_2026-11-17_19-25-43.png",
+    "question": "Which of the following is the least valid statement when it comes to dashboards?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Dashboards are an easy way to share summaries and findings"
+      },
+      {
+        "key": "B",
+        "text": "Dashboards have interactive functionality that helps create a rich experience for the user"
+      },
+      {
+        "key": "C",
+        "text": "Dashboards are generally used after serveral iterations of the AI workflow"
+      },
+      {
+        "key": "D",
+        "text": "Dashboards are quick way to create portable simple plots"
+      },
+      {
+        "key": "E",
+        "text": "Dashboards can be used to tell the story of investigative visualizations"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "comments": [
+      "d",
+      "d"
+    ],
+    "answer": [
+      "D"
+    ],
+    "answerSource": "comment",
+    "commentAgreement": "unanimous"
+  },
+  {
+    "id": "sp26-22",
+    "source": "SP26 FE",
+    "number": 22,
+    "file": "screenshot_2026-11-17_19-25-45.png",
+    "question": "What is the first stage of the design thinking process?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Ideate"
+      },
+      {
+        "key": "B",
+        "text": "Empathize"
+      },
+      {
+        "key": "C",
+        "text": "Prototype"
+      },
+      {
+        "key": "D",
+        "text": "Test"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "comments": [
+      "b",
+      "b"
+    ],
+    "answer": [
+      "B"
+    ],
+    "answerSource": "comment",
+    "commentAgreement": "unanimous"
+  },
+  {
+    "id": "sp26-23",
+    "source": "SP26 FE",
+    "number": 23,
+    "file": "screenshot_2026-11-17_19-25-46.png",
+    "question": "Which of the following is NOT a factor that affects the time spent on data cleaning?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Team experience"
+      },
+      {
+        "key": "B",
+        "text": "Data quality"
+      },
+      {
+        "key": "C",
+        "text": "Project requirements"
+      },
+      {
+        "key": "D",
+        "text": "Company size"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "comments": [
+      "d",
+      "d"
+    ],
+    "answer": [
+      "D"
+    ],
+    "answerSource": "comment",
+    "commentAgreement": "unanimous"
+  },
+  {
+    "id": "sp26-24",
+    "source": "SP26 FE",
+    "number": 24,
+    "file": "screenshot_2026-11-17_19-25-47.png",
+    "question": "What is the community package of the Docker Engine called?",
+    "options": [
+      {
+        "key": "A",
+        "text": "docker-io"
+      },
+      {
+        "key": "B",
+        "text": "docker-ce"
+      },
+      {
+        "key": "C",
+        "text": "docker-compose"
+      },
+      {
+        "key": "D",
+        "text": "docker-toolbox"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "comments": [
+      "b",
+      "b"
+    ],
+    "answer": [
+      "B"
+    ],
+    "answerSource": "comment",
+    "commentAgreement": "unanimous"
+  },
+  {
+    "id": "sp26-25",
+    "source": "SP26 FE",
+    "number": 25,
+    "file": "screenshot_2026-11-17_19-25-48.png",
+    "question": "Sparse matrices can be useful as a target destination for ETL, but what are the main caveats (choose one or more)?",
+    "options": [
+      {
+        "key": "A",
+        "text": "You cannot convert directly from a numpy array to any of the scipy sparse matrices"
+      },
+      {
+        "key": "B",
+        "text": "NumPy linear algebra functions generally cannot be called directly"
+      },
+      {
+        "key": "C",
+        "text": "Saving to disk is not possible directly from a scipy sparse format"
+      },
+      {
+        "key": "D",
+        "text": "The train test splits need to be performed by hand with scipy sparse matrices"
+      },
+      {
+        "key": "E",
+        "text": "It is difficult to print to screen scipy sparse matrices directly"
+      }
+    ],
+    "multi": true,
+    "choose": 2,
+    "comments": [
+      "be",
+      "B E"
+    ],
+    "answer": [
+      "B",
+      "E"
+    ],
+    "answerSource": "comment",
+    "commentAgreement": "unanimous"
+  },
+  {
+    "id": "sp26-26",
+    "source": "SP26 FE",
+    "number": 26,
+    "file": "screenshot_2026-11-17_19-25-50.png",
+    "question": "There are many ways to carry out statistical inference. Which one method of the following is NOT used to compute estimates in the context of statistical inference.",
+    "options": [
+      {
+        "key": "A",
+        "text": "Null Hypothesis Significance Testing (NHST)"
+      },
+      {
+        "key": "B",
+        "text": "Maximum Likelihood Estimation (MLE)"
+      },
+      {
+        "key": "C",
+        "text": "Markov Chain Monte Carlo (MCMC)"
+      },
+      {
+        "key": "D",
+        "text": "Expectation Maximization (EM)"
+      },
+      {
+        "key": "E",
+        "text": "Simulation via Permutations"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "comments": [
+      "a",
+      "A"
+    ],
+    "answer": [
+      "A"
+    ],
+    "answerSource": "comment",
+    "commentAgreement": "unanimous"
+  },
+  {
+    "id": "sp26-27",
+    "source": "SP26 FE",
+    "number": 27,
+    "file": "screenshot_2026-11-17_19-25-51.png",
+    "question": "What does the term \"trunk\" refer to in the context of Continuous Integration?",
+    "options": [
+      {
+        "key": "A",
+        "text": "A type of software bug"
+      },
+      {
+        "key": "B",
+        "text": "The main branch of code where all changes are merged"
+      },
+      {
+        "key": "C",
+        "text": "A deployment strategy"
+      },
+      {
+        "key": "D",
+        "text": "A testing framework"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "comments": [
+      "B",
+      "b"
+    ],
+    "answer": [
+      "B"
+    ],
+    "answerSource": "comment",
+    "commentAgreement": "unanimous"
+  },
+  {
+    "id": "sp26-28",
+    "source": "SP26 FE",
+    "number": 28,
+    "file": "screenshot_2026-11-17_19-25-52.png",
+    "question": "Why is granular data preferred over summary level data?",
+    "options": [
+      {
+        "key": "A",
+        "text": "It is easier to collect"
+      },
+      {
+        "key": "B",
+        "text": "It allows for more detailed analysis"
+      },
+      {
+        "key": "C",
+        "text": "It takes less time to process"
+      },
+      {
+        "key": "D",
+        "text": "It is more visually appealing"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "comments": [
+      "b",
+      "b"
+    ],
+    "answer": [
+      "B"
+    ],
+    "answerSource": "comment",
+    "commentAgreement": "unanimous"
+  },
+  {
+    "id": "sp26-29",
+    "source": "SP26 FE",
+    "number": 29,
+    "file": "screenshot_2026-11-17_19-25-54.png",
+    "question": "When embarking on a data science project, why do you ultimately want to format your data so that it can be housed in something like a Pandas DataFrame or NumPy Array?",
+    "options": [
+      {
+        "key": "A",
+        "text": "DataFrames/Arrays most closely resemble tables in relational databases."
+      },
+      {
+        "key": "B",
+        "text": "DataFrames/Arrays are the only structures in Python capable of holding significant amounts of data."
+      },
+      {
+        "key": "C",
+        "text": "Nearly all modeling algorithms take input data in a tabular format analogous to format of DataFrames/Arrays."
+      },
+      {
+        "key": "D",
+        "text": "All of the answers"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "comments": [
+      "C",
+      "c"
+    ],
+    "answer": [
+      "C"
+    ],
+    "answerSource": "comment",
+    "commentAgreement": "unanimous"
+  },
+  {
+    "id": "sp26-30",
+    "source": "SP26 FE",
+    "number": 30,
+    "file": "screenshot_2026-11-17_19-25-55.png",
+    "question": "Which process model is known for its open standard and has been around since 1996?",
+    "options": [
+      {
+        "key": "A",
+        "text": "OSEMN"
+      },
+      {
+        "key": "B",
+        "text": "CRISP-DM"
+      },
+      {
+        "key": "C",
+        "text": "Design Thinking"
+      },
+      {
+        "key": "D",
+        "text": "Agile"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "comments": [
+      "B",
+      "b"
+    ],
+    "answer": [
+      "B"
+    ],
+    "answerSource": "comment",
+    "commentAgreement": "unanimous"
+  },
+  {
+    "id": "sp26-31",
+    "source": "SP26 FE",
+    "number": 31,
+    "file": "screenshot_2026-11-17_19-25-56.png",
+    "question": "What is a key principle of design thinking mentioned in the course?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Data collection"
+      },
+      {
+        "key": "B",
+        "text": "Observation and Reflection"
+      },
+      {
+        "key": "C",
+        "text": "Rapid prototyping"
+      },
+      {
+        "key": "D",
+        "text": "User testing"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "comments": [
+      "B",
+      "b"
+    ],
+    "answer": [
+      "B"
+    ],
+    "answerSource": "comment",
+    "commentAgreement": "unanimous"
+  },
+  {
+    "id": "sp26-32",
+    "source": "SP26 FE",
+    "number": 32,
+    "file": "screenshot_2026-11-17_19-25-58.png",
+    "question": "Which method is recommended for handling missing values in numerical data?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Convert missing values to a flag"
+      },
+      {
+        "key": "B",
+        "text": "Use imputation techniques"
+      },
+      {
+        "key": "C",
+        "text": "Delete the entire dataset"
+      },
+      {
+        "key": "D",
+        "text": "Replace with a random value"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "comments": [
+      "B",
+      "b"
+    ],
+    "answer": [
+      "B"
+    ],
+    "answerSource": "comment",
+    "commentAgreement": "unanimous"
+  },
+  {
+    "id": "sp26-33",
+    "source": "SP26 FE",
+    "number": 33,
+    "file": "screenshot_2026-11-17_19-25-59.png",
+    "question": "Which of the following is a key aspect of applying data transformations?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Data collection"
+      },
+      {
+        "key": "B",
+        "text": "Iteration"
+      },
+      {
+        "key": "C",
+        "text": "Data visualization"
+      },
+      {
+        "key": "D",
+        "text": "Data storage"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "comments": [
+      "B",
+      "b"
+    ],
+    "answer": [
+      "B"
+    ],
+    "answerSource": "comment",
+    "commentAgreement": "unanimous"
+  },
+  {
+    "id": "sp26-34",
+    "source": "SP26 FE",
+    "number": 34,
+    "file": "screenshot_2026-11-17_19-26-00.png",
+    "question": "What will the management team want to know after the sales data is released?",
+    "options": [
+      {
+        "key": "A",
+        "text": "The number of products sold"
+      },
+      {
+        "key": "B",
+        "text": "If the teams are well-optimized based on historical sales data"
+      },
+      {
+        "key": "C",
+        "text": "The marketing budget for each team"
+      },
+      {
+        "key": "D",
+        "text": "The demographics of the customers"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "comments": [
+      "B",
+      "b"
+    ],
+    "answer": [
+      "B"
+    ],
+    "answerSource": "comment",
+    "commentAgreement": "unanimous"
+  },
+  {
+    "id": "sp26-35",
+    "source": "SP26 FE",
+    "number": 35,
+    "file": "screenshot_2026-11-17_19-26-02.png",
+    "question": "What is the primary purpose of dimensionality reduction in data science?",
+    "options": [
+      {
+        "key": "A",
+        "text": "To increase the number of features"
+      },
+      {
+        "key": "B",
+        "text": "To simplify models and reduce computation time"
+      },
+      {
+        "key": "C",
+        "text": "To eliminate all data points"
+      },
+      {
+        "key": "D",
+        "text": "To create more complex models"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "comments": [
+      "B",
+      "b"
+    ],
+    "answer": [
+      "B"
+    ],
+    "answerSource": "comment",
+    "commentAgreement": "unanimous"
+  },
+  {
+    "id": "sp26-36",
+    "source": "SP26 FE",
+    "number": 36,
+    "file": "screenshot_2026-11-17_19-26-03.png",
+    "question": "In the context of the AI workflow presented in these materials which of the following is not an example of a valid feedback loop?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Trying different data transformations on a given model"
+      },
+      {
+        "key": "B",
+        "text": "Returning to the data collection stage from transformations to reduce the number of transforms"
+      },
+      {
+        "key": "C",
+        "text": "Performing EDA on the data after a model has been deployed and data have been logged"
+      },
+      {
+        "key": "D",
+        "text": "Moving from the business opportunity and data collection to model iteration"
+      },
+      {
+        "key": "E",
+        "text": "Returning to discuss the business opportunity after a model has been deployed"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "comments": [
+      "D",
+      "d"
+    ],
+    "answer": [
+      "D"
+    ],
+    "answerSource": "comment",
+    "commentAgreement": "unanimous"
+  },
+  {
+    "id": "sp26-37",
+    "source": "SP26 FE",
+    "number": 37,
+    "file": "screenshot_2026-11-17_19-26-04.png",
+    "question": "What is a key reason for using existing NLP APIs instead of building models from scratch?",
+    "options": [
+      {
+        "key": "A",
+        "text": "They are always more accurate"
+      },
+      {
+        "key": "B",
+        "text": "They require less time and resources"
+      },
+      {
+        "key": "C",
+        "text": "They are easier to understand"
+      },
+      {
+        "key": "D",
+        "text": "They eliminate the need for data"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "comments": [
+      "B",
+      "b"
+    ],
+    "answer": [
+      "B"
+    ],
+    "answerSource": "comment",
+    "commentAgreement": "unanimous"
+  },
+  {
+    "id": "sp26-38",
+    "source": "SP26 FE",
+    "number": 38,
+    "file": "screenshot_2026-11-17_19-26-05.png",
+    "question": "Which of the following is a common challenge when optimizing code for machine learning models?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Lack of available data"
+      },
+      {
+        "key": "B",
+        "text": "Difficulty in improving training time for large models"
+      },
+      {
+        "key": "C",
+        "text": "Inability to use multiple GPUs"
+      },
+      {
+        "key": "D",
+        "text": "Limited programming languages available"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "comments": [
+      "B",
+      "b"
+    ],
+    "answer": [
+      "B"
+    ],
+    "answerSource": "comment",
+    "commentAgreement": "unanimous"
+  },
+  {
+    "id": "sp26-39",
+    "source": "SP26 FE",
+    "number": 39,
+    "file": "screenshot_2026-11-17_19-26-07.png",
+    "question": "If you have data with a large number of features and you are sure that it will take some time to train and tune the model, which approach is LEAST likely to result in a speed improvement during grid-searching?",
+    "options": [
+      {
+        "key": "A",
+        "text": "In your pipeline use variance thresholding to limit the number of features"
+      },
+      {
+        "key": "B",
+        "text": "Use the Shuffle and split form of cross-validation"
+      },
+      {
+        "key": "C",
+        "text": "Use a randomized grid search form of cross validation"
+      },
+      {
+        "key": "D",
+        "text": "Randomly subset the data"
+      },
+      {
+        "key": "E",
+        "text": "Use PCA to reduce the dimensionality of the data before training"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "comments": [
+      "B",
+      "b"
+    ],
+    "answer": [
+      "B"
+    ],
+    "answerSource": "comment",
+    "commentAgreement": "unanimous"
+  },
+  {
+    "id": "sp26-40",
+    "source": "SP26 FE",
+    "number": 40,
+    "file": "screenshot_2026-11-17_19-26-08.png",
+    "question": "Which Python package supports spawning processes for code optimization?",
+    "options": [
+      {
+        "key": "A",
+        "text": "threading"
+      },
+      {
+        "key": "B",
+        "text": "subprocess"
+      },
+      {
+        "key": "C",
+        "text": "multiprocessing"
+      },
+      {
+        "key": "D",
+        "text": "numpy"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "comments": [
+      "C",
+      "c"
+    ],
+    "answer": [
+      "C"
+    ],
+    "answerSource": "comment",
+    "commentAgreement": "unanimous"
+  },
+  {
+    "id": "sp26-41",
+    "source": "SP26 FE",
+    "number": 41,
+    "file": "screenshot_2026-11-17_19-26-09.png",
+    "question": "Which of the following neural network architectures are most-commonly used for time-series analysis?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Multi-layer perceptron"
+      },
+      {
+        "key": "B",
+        "text": "Recurrent neural networks"
+      },
+      {
+        "key": "C",
+        "text": "Transfer learning"
+      },
+      {
+        "key": "D",
+        "text": "Convolutional neural network"
+      },
+      {
+        "key": "E",
+        "text": "Autoencoders"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "comments": [
+      "B",
+      "b"
+    ],
+    "answer": [
+      "B"
+    ],
+    "answerSource": "comment",
+    "commentAgreement": "unanimous"
+  },
+  {
+    "id": "sp26-42",
+    "source": "SP26 FE",
+    "number": 42,
+    "file": "screenshot_2026-11-17_19-26-11.png",
+    "question": "A decision tree classifier is useful as a model for the AAVAIL subscriber churn data.",
+    "options": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "comments": [
+      "A",
+      "a"
+    ],
+    "answer": [
+      "A"
+    ],
+    "answerSource": "comment",
+    "commentAgreement": "unanimous"
+  },
+  {
+    "id": "sp26-43",
+    "source": "SP26 FE",
+    "number": 43,
+    "file": "screenshot_2026-11-17_19-26-12.png",
+    "question": "What is the purpose of profiling in code optimization?",
+    "options": [
+      {
+        "key": "A",
+        "text": "To write new algorithms from scratch"
+      },
+      {
+        "key": "B",
+        "text": "To identify which parts of the code are bottlenecks"
+      },
+      {
+        "key": "C",
+        "text": "To increase the number of processor cores"
+      },
+      {
+        "key": "D",
+        "text": "To reduce the amount of data used"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "comments": [
+      "B",
+      "b"
+    ],
+    "answer": [
+      "B"
+    ],
+    "answerSource": "comment",
+    "commentAgreement": "unanimous"
+  },
+  {
+    "id": "sp26-44",
+    "source": "SP26 FE",
+    "number": 44,
+    "file": "screenshot_2026-11-17_19-26-13.png",
+    "question": "What type of data structures are used as standardized input to the interfaces in scikit-learn?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Lists and dictionaries"
+      },
+      {
+        "key": "B",
+        "text": "DataFrames and Series"
+      },
+      {
+        "key": "C",
+        "text": "NumPy arrays and SciPy sparse matrices"
+      },
+      {
+        "key": "D",
+        "text": "Strings and tuples"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "comments": [
+      "C",
+      "c"
+    ],
+    "answer": [
+      "C"
+    ],
+    "answerSource": "comment",
+    "commentAgreement": "unanimous"
+  },
+  {
+    "id": "sp26-45",
+    "source": "SP26 FE",
+    "number": 45,
+    "file": "screenshot_2026-11-17_19-26-15.png",
+    "question": "Which command-line tool is used to interact with the Kubernetes API?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Kubelet"
+      },
+      {
+        "key": "B",
+        "text": "Kube CTL"
+      },
+      {
+        "key": "C",
+        "text": "Docker"
+      },
+      {
+        "key": "D",
+        "text": "Helm"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "comments": [
+      "B",
+      "b"
+    ],
+    "answer": [
+      "B"
+    ],
+    "answerSource": "comment",
+    "commentAgreement": "unanimous"
+  },
+  {
+    "id": "sp26-46",
+    "source": "SP26 FE",
+    "number": 46,
+    "file": "screenshot_2026-11-17_19-26-16.png",
+    "question": "A Kubernetes pod can contain multiple kubernetes deployments",
+    "options": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "comments": [
+      "B",
+      "b"
+    ],
+    "answer": [
+      "B"
+    ],
+    "answerSource": "comment",
+    "commentAgreement": "unanimous"
+  },
+  {
+    "id": "sp26-47",
+    "source": "SP26 FE",
+    "number": 47,
+    "file": "screenshot_2026-11-17_19-26-17.png",
+    "question": "Docker images are the basis of containers. It is possible to pull an image from the registry and ask the Docker client to run a container based on that image. Some images are official while many others are user defined",
+    "options": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "comments": [
+      "A",
+      "a"
+    ],
+    "answer": [
+      "A"
+    ],
+    "answerSource": "comment",
+    "commentAgreement": "unanimous"
+  },
+  {
+    "id": "sp26-48",
+    "source": "SP26 FE",
+    "number": 48,
+    "file": "screenshot_2026-11-17_19-26-18.png",
+    "question": "Which of the following classifiers is inherently designed for multiclass classification?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Linear Regression"
+      },
+      {
+        "key": "B",
+        "text": "Naive Bayes"
+      },
+      {
+        "key": "C",
+        "text": "K-Means Clustering"
+      },
+      {
+        "key": "D",
+        "text": "Decision Trees (in binary mode)"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "comments": [
+      "B",
+      "b"
+    ],
+    "answer": [
+      "B"
+    ],
+    "answerSource": "comment",
+    "commentAgreement": "unanimous"
+  },
+  {
+    "id": "sp26-49",
+    "source": "SP26 FE",
+    "number": 49,
+    "file": "screenshot_2026-11-17_19-26-20.png",
+    "question": "The.fit_transform method corresponds to which scikit-learn interface(s)?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Transformer, Estimator, Predictor"
+      },
+      {
+        "key": "B",
+        "text": "Transformer, Estimator"
+      },
+      {
+        "key": "C",
+        "text": "Estimator, Predictor"
+      },
+      {
+        "key": "D",
+        "text": "Transformer"
+      },
+      {
+        "key": "E",
+        "text": "Transformer, Predictor"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "comments": [
+      "B",
+      "b"
+    ],
+    "answer": [
+      "B"
+    ],
+    "answerSource": "comment",
+    "commentAgreement": "unanimous"
+  },
+  {
+    "id": "sp26-50",
+    "source": "SP26 FE",
+    "number": 50,
+    "file": "screenshot_2026-11-17_19-26-21.png",
+    "question": "Which command is used to install the Watson Developer Cloud Python SDK?",
+    "options": [
+      {
+        "key": "A",
+        "text": "pip install ibm-watson"
+      },
+      {
+        "key": "B",
+        "text": "pip install --upgrade ibm-watson"
+      },
+      {
+        "key": "C",
+        "text": "install ibm-watson"
+      },
+      {
+        "key": "D",
+        "text": "upgrade ibm-watson"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "comments": [
+      "B",
+      "b"
+    ],
+    "answer": [
+      "B"
+    ],
+    "answerSource": "comment",
+    "commentAgreement": "unanimous"
+  }
+]

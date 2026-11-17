@@ -1,0 +1,1498 @@
+[
+  {
+    "id": "su26fe-01",
+    "source": "SU26 FE",
+    "number": 1,
+    "question": "Which of the following best describes multiclass classification?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Each sample can have multiple labels."
+      },
+      {
+        "key": "B",
+        "text": "Each sample is assigned to only one label."
+      },
+      {
+        "key": "C",
+        "text": "It is limited to two classes only."
+      },
+      {
+        "key": "D",
+        "text": "It does not require any evaluation metrics."
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": [
+      "B"
+    ],
+    "answerSource": "official"
+  },
+  {
+    "id": "su26fe-02",
+    "source": "SU26 FE",
+    "number": 2,
+    "question": "Which of the following techniques is commonly used to address class imbalance?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Over-sampling"
+      },
+      {
+        "key": "B",
+        "text": "Under-sampling"
+      },
+      {
+        "key": "C",
+        "text": "Both A and B"
+      },
+      {
+        "key": "D",
+        "text": "None of the above"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": [
+      "C"
+    ],
+    "answerSource": "official"
+  },
+  {
+    "id": "su26fe-03",
+    "source": "SU26 FE",
+    "number": 3,
+    "question": "Which list contains one or more elements that were presented as non-essential when creating a logging system to monitor the performance of a machine learning model that has been deployed.",
+    "options": [
+      {
+        "key": "A",
+        "text": "request_type, input data"
+      },
+      {
+        "key": "B",
+        "text": "model_version_number, timestamp"
+      },
+      {
+        "key": "C",
+        "text": "predictions/recommendations, timestamp"
+      },
+      {
+        "key": "D",
+        "text": "input_data_summary, runtime"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": [
+      "A"
+    ],
+    "answerSource": "official"
+  },
+  {
+    "id": "su26fe-04",
+    "source": "SU26 FE",
+    "number": 4,
+    "question": "During which phase of the design thinking process does AAVAiL move to define challenges?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Empathize"
+      },
+      {
+        "key": "B",
+        "text": "Define"
+      },
+      {
+        "key": "C",
+        "text": "Ideate"
+      },
+      {
+        "key": "D",
+        "text": "Prototype"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": [
+      "B"
+    ],
+    "answerSource": "official"
+  },
+  {
+    "id": "su26fe-05",
+    "source": "SU26 FE",
+    "number": 5,
+    "question": "Which of the following was not discussed as a tunable parameter of a neural network?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Hardware availability"
+      },
+      {
+        "key": "B",
+        "text": "Activation functions: sigmoid, tanh, softmax, ReLU, leaky ReLU"
+      },
+      {
+        "key": "C",
+        "text": "Regularization techniques: weight decay, early stopping, dropout"
+      },
+      {
+        "key": "D",
+        "text": "Training method: Loss function, learning rate, batch size, number of epochs"
+      },
+      {
+        "key": "E",
+        "text": "Structure: the number of hidden layers, the number of nodes in each layer"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": [
+      "A"
+    ],
+    "answerSource": "official"
+  },
+  {
+    "id": "su26fe-06",
+    "source": "SU26 FE",
+    "number": 6,
+    "question": "Which of the following best describes Continuous Deployment?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Manual deployments of software"
+      },
+      {
+        "key": "B",
+        "text": "Automated deployments of software"
+      },
+      {
+        "key": "C",
+        "text": "Merging changes infrequently"
+      },
+      {
+        "key": "D",
+        "text": "Extensive testing before deployment"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": [
+      "B"
+    ],
+    "answerSource": "official"
+  },
+  {
+    "id": "su26fe-07",
+    "source": "SU26 FE",
+    "number": 7,
+    "question": "Why is it important to ensure that minimally required data is available?",
+    "options": [
+      {
+        "key": "A",
+        "text": "To reduce the size of the data set"
+      },
+      {
+        "key": "B",
+        "text": "To monitor model performance and debug issues"
+      },
+      {
+        "key": "C",
+        "text": "To make data collection easier"
+      },
+      {
+        "key": "D",
+        "text": "To avoid using log files"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": [
+      "B"
+    ],
+    "answerSource": "official"
+  },
+  {
+    "id": "su26fe-08",
+    "source": "SU26 FE",
+    "number": 8,
+    "question": "Where should you store your API key and sensitive information?",
+    "options": [
+      {
+        "key": "A",
+        "text": "In a publicly accessible file"
+      },
+      {
+        "key": "B",
+        "text": "On a machine you trust in a secure file"
+      },
+      {
+        "key": "C",
+        "text": "In a shared document"
+      },
+      {
+        "key": "D",
+        "text": "In the cloud without encryption"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": [
+      "B"
+    ],
+    "answerSource": "official"
+  },
+  {
+    "id": "su26fe-09",
+    "source": "SU26 FE",
+    "number": 9,
+    "question": "When training a custom classifier in Watson Visual Recognition the negative images should be:",
+    "options": [
+      {
+        "key": "A",
+        "text": "As visually similar as possible to the positive images"
+      },
+      {
+        "key": "B",
+        "text": "Background images without the positive images"
+      },
+      {
+        "key": "C",
+        "text": "As random as possible to establish a background"
+      },
+      {
+        "key": "D",
+        "text": "Randomly generated from the positive images"
+      },
+      {
+        "key": "E",
+        "text": "Visually distinct from the positive images"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": [
+      "A"
+    ],
+    "answerSource": "official"
+  },
+  {
+    "id": "su26fe-10",
+    "source": "SU26 FE",
+    "number": 10,
+    "question": "You may only pass a pickle file to save your model in the your Watson Machine Learning library.",
+    "options": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": [
+      "B"
+    ],
+    "answerSource": "official"
+  },
+  {
+    "id": "su26fe-11",
+    "source": "SU26 FE",
+    "number": 11,
+    "question": "Which of the following is a method used for topic modeling?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Principal Component Analysis (PCA)"
+      },
+      {
+        "key": "B",
+        "text": "Latent Dirichlet Allocation (LDA)"
+      },
+      {
+        "key": "C",
+        "text": "Support Vector Machines (SVM)"
+      },
+      {
+        "key": "D",
+        "text": "K-Means Clustering"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": [
+      "B"
+    ],
+    "answerSource": "official"
+  },
+  {
+    "id": "su26fe-12",
+    "source": "SU26 FE",
+    "number": 12,
+    "question": "What is the purpose of the spark-submit command?",
+    "options": [
+      {
+        "key": "A",
+        "text": "To create a Spark cluster"
+      },
+      {
+        "key": "B",
+        "text": "To submit applications to a Spark cluster"
+      },
+      {
+        "key": "C",
+        "text": "To monitor Spark jobs"
+      },
+      {
+        "key": "D",
+        "text": "To install Spark"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": [
+      "B"
+    ],
+    "answerSource": "official"
+  },
+  {
+    "id": "su26fe-13",
+    "source": "SU26 FE",
+    "number": 13,
+    "question": "What is a potential consequence of software changes on model performance?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Improved accuracy"
+      },
+      {
+        "key": "B",
+        "text": "Performance drift"
+      },
+      {
+        "key": "C",
+        "text": "Increased training time"
+      },
+      {
+        "key": "D",
+        "text": "No impact at all"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": [
+      "B"
+    ],
+    "answerSource": "official"
+  },
+  {
+    "id": "su26fe-14",
+    "source": "SU26 FE",
+    "number": 14,
+    "question": "What is the primary purpose of Natural Language Processing (NLP)?",
+    "options": [
+      {
+        "key": "A",
+        "text": "To create visual content"
+      },
+      {
+        "key": "B",
+        "text": "To analyze and understand human language"
+      },
+      {
+        "key": "C",
+        "text": "To develop hardware components"
+      },
+      {
+        "key": "D",
+        "text": "To manage databases"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": [
+      "B"
+    ],
+    "answerSource": "official"
+  },
+  {
+    "id": "su26fe-15",
+    "source": "SU26 FE",
+    "number": 15,
+    "question": "Which types of programming tasks best describes what you are expected to already have some familiarity with before beginning this course?",
+    "options": [
+      {
+        "key": "A",
+        "text": "dashboarding, high performance computing, and code profiling"
+      },
+      {
+        "key": "B",
+        "text": "numeric computing, data munging, data visualization and data modeling"
+      },
+      {
+        "key": "C",
+        "text": "convex optimization, python programming, statistical programming"
+      },
+      {
+        "key": "D",
+        "text": "continuous integration, linear programming, and data exploration"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": [
+      "B"
+    ],
+    "answerSource": "official"
+  },
+  {
+    "id": "su26fe-16",
+    "source": "SU26 FE",
+    "number": 16,
+    "question": "Which of the following is a common task during the \"Define\" stage?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Data collection"
+      },
+      {
+        "key": "B",
+        "text": "Data cleaning and preliminary exploratory data analysis"
+      },
+      {
+        "key": "C",
+        "text": "Model training"
+      },
+      {
+        "key": "D",
+        "text": "Business opportunity identification"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": [
+      "D"
+    ],
+    "answerSource": "official"
+  },
+  {
+    "id": "su26fe-17",
+    "source": "SU26 FE",
+    "number": 17,
+    "question": "Which of the following is NOT a recommended tool for optimizing code?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Cython"
+      },
+      {
+        "key": "B",
+        "text": "mpi4py"
+      },
+      {
+        "key": "C",
+        "text": "TensorBoard"
+      },
+      {
+        "key": "D",
+        "text": "ipyparallel"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": [
+      "C"
+    ],
+    "answerSource": "official"
+  },
+  {
+    "id": "su26fe-18",
+    "source": "SU26 FE",
+    "number": 18,
+    "question": "A typical convolutional neural network is constructed using a combination of convolutional, pooling and dense layers.",
+    "options": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": [
+      "A"
+    ],
+    "answerSource": "official"
+  },
+  {
+    "id": "su26fe-19",
+    "source": "SU26 FE",
+    "number": 19,
+    "question": "Which method can be used to compare distributions of data?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Linear regression"
+      },
+      {
+        "key": "B",
+        "text": "Kullback-Leibler divergence"
+      },
+      {
+        "key": "C",
+        "text": "Decision trees"
+      },
+      {
+        "key": "D",
+        "text": "Neural networks"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": [
+      "B"
+    ],
+    "answerSource": "official"
+  },
+  {
+    "id": "su26fe-20",
+    "source": "SU26 FE",
+    "number": 20,
+    "question": "In which situation would you most strongly consider MAE over RMSE as a regression metric?",
+    "options": [
+      {
+        "key": "A",
+        "text": "where we would like to interpret the error metric in terms of the original units"
+      },
+      {
+        "key": "B",
+        "text": "like predicting daily temperature where we expect a small range of values"
+      },
+      {
+        "key": "C",
+        "text": "like predicting time to failure for a machine where we expect a long tailed distribution of values"
+      },
+      {
+        "key": "D",
+        "text": "like predicting the category or topic associated with a document"
+      },
+      {
+        "key": "E",
+        "text": "where we would like to interpret the error metric as a squared version of the original units"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": [
+      "C"
+    ],
+    "answerSource": "official"
+  },
+  {
+    "id": "su26fe-21",
+    "source": "SU26 FE",
+    "number": 21,
+    "question": "What does the --executor-memory option specify in the spark-submit command?",
+    "options": [
+      {
+        "key": "A",
+        "text": "The amount of memory allocated to the driver"
+      },
+      {
+        "key": "B",
+        "text": "The amount of memory allocated to each executor"
+      },
+      {
+        "key": "C",
+        "text": "The total memory for the Spark application"
+      },
+      {
+        "key": "D",
+        "text": "The memory required for the script"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": [
+      "B"
+    ],
+    "answerSource": "official"
+  },
+  {
+    "id": "su26fe-22",
+    "source": "SU26 FE",
+    "number": 22,
+    "question": "Which file format is commonly used for storing structured data in a tabular format?",
+    "options": [
+      {
+        "key": "A",
+        "text": "JSON"
+      },
+      {
+        "key": "B",
+        "text": "XML"
+      },
+      {
+        "key": "C",
+        "text": "CSV"
+      },
+      {
+        "key": "D",
+        "text": "TXT"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": [
+      "C"
+    ],
+    "answerSource": "official"
+  },
+  {
+    "id": "su26fe-23",
+    "source": "SU26 FE",
+    "number": 23,
+    "question": "Which of the following is not an example of a variant/application of gradient decent that we have covered?",
+    "options": [
+      {
+        "key": "A",
+        "text": "batch gradient descent"
+      },
+      {
+        "key": "B",
+        "text": "mini-batch gradient descent"
+      },
+      {
+        "key": "C",
+        "text": "regularized gradient decent"
+      },
+      {
+        "key": "D",
+        "text": "stochastic gradient descent"
+      },
+      {
+        "key": "E",
+        "text": "gradient descent applied to regression"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": [
+      "C"
+    ],
+    "answerSource": "official"
+  },
+  {
+    "id": "su26fe-24",
+    "source": "SU26 FE",
+    "number": 24,
+    "question": "Which of the following can lead to sampling bias?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Using a larger dataset"
+      },
+      {
+        "key": "B",
+        "text": "Under-representing certain subgroups in the data"
+      },
+      {
+        "key": "C",
+        "text": "Increasing the number of features"
+      },
+      {
+        "key": "D",
+        "text": "Using cross-validation"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": [
+      "B"
+    ],
+    "answerSource": "official"
+  },
+  {
+    "id": "su26fe-25",
+    "source": "SU26 FE",
+    "number": 25,
+    "question": "Lets imagine there is a start-up that has a speech-to-text service that incorporates gestures and body language into its output. They offer annotated meeting reports as a product and customers are generally very satisfied, but sales to new customers tend to be very slow to acquire. Which of the following business opportunities should be the highest priority?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Develop and delivery new products to existing customers"
+      },
+      {
+        "key": "B",
+        "text": "Develop new products and target new customers"
+      },
+      {
+        "key": "C",
+        "text": "Use customer segmentation and/or market analysis to help marketing with new customers"
+      },
+      {
+        "key": "D",
+        "text": "Use customer segmentation and/or market analysis to move into a different market"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": [
+      "C"
+    ],
+    "answerSource": "official"
+  },
+  {
+    "id": "su26fe-26",
+    "source": "SU26 FE",
+    "number": 26,
+    "question": "Which of the following best describes the quality of data?",
+    "options": [
+      {
+        "key": "A",
+        "text": "It only refers to the data collection methods."
+      },
+      {
+        "key": "B",
+        "text": "It includes both the observations and the maturity of the data."
+      },
+      {
+        "key": "C",
+        "text": "It is irrelevant to project success."
+      },
+      {
+        "key": "D",
+        "text": "It is solely determined by the data storage system."
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": [
+      "B"
+    ],
+    "answerSource": "official"
+  },
+  {
+    "id": "su26fe-27",
+    "source": "SU26 FE",
+    "number": 27,
+    "question": "Which tasks should be included in a data ingestion pipeline? (Choose one or more)",
+    "options": [
+      {
+        "key": "A",
+        "text": "Account for missing data, faulty data, repeated observations and other data integrity issues"
+      },
+      {
+        "key": "B",
+        "text": "Ensure that expected data is returned given a specific set of parameters"
+      },
+      {
+        "key": "C",
+        "text": "Ensure that an expected format is returned"
+      },
+      {
+        "key": "D",
+        "text": "Ensure that models produce expected results"
+      }
+    ],
+    "multi": true,
+    "choose": 3,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "answerSource": "official"
+  },
+  {
+    "id": "su26fe-28",
+    "source": "SU26 FE",
+    "number": 28,
+    "question": "Which of the following is a common use case for NLP in large enterprises?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Managing financial transactions"
+      },
+      {
+        "key": "B",
+        "text": "Processing and analyzing customer feedback"
+      },
+      {
+        "key": "C",
+        "text": "Designing physical products"
+      },
+      {
+        "key": "D",
+        "text": "Conducting scientific experiments"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": [
+      "B"
+    ],
+    "answerSource": "official"
+  },
+  {
+    "id": "su26fe-29",
+    "source": "SU26 FE",
+    "number": 29,
+    "question": "If we continue to add GPUs or other computational resources, the time it takes to train a model will always continue to decrease.",
+    "options": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": [
+      "B"
+    ],
+    "answerSource": "official"
+  },
+  {
+    "id": "su26fe-30",
+    "source": "SU26 FE",
+    "number": 30,
+    "question": "What does a Docker container include?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Only the application code"
+      },
+      {
+        "key": "B",
+        "text": "Code, runtime libraries, and a private filesystem"
+      },
+      {
+        "key": "C",
+        "text": "Only the operating system"
+      },
+      {
+        "key": "D",
+        "text": "Only the database"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": [
+      "B"
+    ],
+    "answerSource": "official"
+  },
+  {
+    "id": "su26fe-31",
+    "source": "SU26 FE",
+    "number": 31,
+    "question": "Which of the following is NOT normally a part of the EDA process",
+    "options": [
+      {
+        "key": "A",
+        "text": "Visual summaries of the data"
+      },
+      {
+        "key": "B",
+        "text": "Connecting the data to the business opportunity"
+      },
+      {
+        "key": "C",
+        "text": "Communication to stakeholders"
+      },
+      {
+        "key": "D",
+        "text": "Predictive linear or logistic regression"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": [
+      "D"
+    ],
+    "answerSource": "official"
+  },
+  {
+    "id": "su26fe-32",
+    "source": "SU26 FE",
+    "number": 32,
+    "question": "Which statement best describes why visualization of topics can have an impact on the business opportunity?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Because sharing with domain experts might enable topic-specific feature engineering"
+      },
+      {
+        "key": "B",
+        "text": "Because visual inspection can help choose the number of topics"
+      },
+      {
+        "key": "C",
+        "text": "Because we are able to see the top words with each topic"
+      },
+      {
+        "key": "D",
+        "text": "Because we are able to see the relative importance of each topic across the corpus"
+      },
+      {
+        "key": "E",
+        "text": "Because domain experts can visually inspect the validity of the topics"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": [
+      "A"
+    ],
+    "answerSource": "official"
+  },
+  {
+    "id": "su26fe-33",
+    "source": "SU26 FE",
+    "number": 33,
+    "question": "What is the purpose of Exploratory Data Analysis (EDA)?",
+    "options": [
+      {
+        "key": "A",
+        "text": "To clean the data"
+      },
+      {
+        "key": "B",
+        "text": "To create summaries and visualizations of the data"
+      },
+      {
+        "key": "C",
+        "text": "To build predictive models"
+      },
+      {
+        "key": "D",
+        "text": "To gather raw data"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": [
+      "B"
+    ],
+    "answerSource": "official"
+  },
+  {
+    "id": "su26fe-34",
+    "source": "SU26 FE",
+    "number": 34,
+    "question": "Which component is responsible for ensuring that applications are healthy and running in worker nodes?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Kubernetes Master"
+      },
+      {
+        "key": "B",
+        "text": "Kubelet"
+      },
+      {
+        "key": "C",
+        "text": "API Server"
+      },
+      {
+        "key": "D",
+        "text": "Deployment"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": [
+      "B"
+    ],
+    "answerSource": "official"
+  },
+  {
+    "id": "su26fe-35",
+    "source": "SU26 FE",
+    "number": 35,
+    "question": "What is emphasized as important when carrying out data visualization in an enterprise context?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Speed of execution"
+      },
+      {
+        "key": "B",
+        "text": "Reproducibility and communication"
+      },
+      {
+        "key": "C",
+        "text": "Complexity of models"
+      },
+      {
+        "key": "D",
+        "text": "Use of advanced algorithms"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": [
+      "B"
+    ],
+    "answerSource": "official"
+  },
+  {
+    "id": "su26fe-36",
+    "source": "SU26 FE",
+    "number": 36,
+    "question": "A Spark cluster is generally managed using a Docker container and a YAML file.",
+    "options": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": [
+      "B"
+    ],
+    "answerSource": "official"
+  },
+  {
+    "id": "su26fe-37",
+    "source": "SU26 FE",
+    "number": 37,
+    "question": "What is a common approach used by classifiers that default to a one-vs-all strategy?",
+    "options": [
+      {
+        "key": "A",
+        "text": "A single classifier is trained for all classes."
+      },
+      {
+        "key": "B",
+        "text": "A different classifier is trained for each label."
+      },
+      {
+        "key": "C",
+        "text": "All classes are treated as one single class."
+      },
+      {
+        "key": "D",
+        "text": "It is not applicable to multiclass classification."
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": [
+      "B"
+    ],
+    "answerSource": "official"
+  },
+  {
+    "id": "su26fe-38",
+    "source": "SU26 FE",
+    "number": 38,
+    "question": "What is Port Forwarding in Docker?",
+    "options": [
+      {
+        "key": "A",
+        "text": "The process of creating a data file on the local computer that persists after the container is closed"
+      },
+      {
+        "key": "B",
+        "text": "Sending one container to multiple nodes on a multicloud environment"
+      },
+      {
+        "key": "C",
+        "text": "Allowing data to be passed in and out of a docker container and controlling which applications can do this"
+      },
+      {
+        "key": "D",
+        "text": "Building one Docker image using another docker image as a template"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": [
+      "C"
+    ],
+    "answerSource": "official"
+  },
+  {
+    "id": "su26fe-39",
+    "source": "SU26 FE",
+    "number": 39,
+    "question": "In a confusion matrix, what does True Positive (TP) represent?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Correctly predicted negative cases"
+      },
+      {
+        "key": "B",
+        "text": "Incorrectly predicted positive cases"
+      },
+      {
+        "key": "C",
+        "text": "Correctly predicted positive cases"
+      },
+      {
+        "key": "D",
+        "text": "Incorrectly predicted negative cases"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": [
+      "C"
+    ],
+    "answerSource": "official"
+  },
+  {
+    "id": "su26fe-40",
+    "source": "SU26 FE",
+    "number": 40,
+    "question": "What does a deployment in Kubernetes manage?",
+    "options": [
+      {
+        "key": "A",
+        "text": "The API server"
+      },
+      {
+        "key": "B",
+        "text": "The desired state of applications"
+      },
+      {
+        "key": "C",
+        "text": "The health of worker nodes"
+      },
+      {
+        "key": "D",
+        "text": "The network configuration"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": [
+      "B"
+    ],
+    "answerSource": "official"
+  },
+  {
+    "id": "su26fe-41",
+    "source": "SU26 FE",
+    "number": 41,
+    "question": "Which of the following best describes the focus of this course?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Strict adherence to a specific process model"
+      },
+      {
+        "key": "B",
+        "text": "Incorporating best practices into the workflow"
+      },
+      {
+        "key": "C",
+        "text": "Learning only from data science literature"
+      },
+      {
+        "key": "D",
+        "text": "Avoiding any structured approach"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": [
+      "B"
+    ],
+    "answerSource": "official"
+  },
+  {
+    "id": "su26fe-42",
+    "source": "SU26 FE",
+    "number": 42,
+    "question": "A data scientist at Company Z sorted the survey responses by whether the respondents used Product 1 or Product 2 and then compiled their ages:\nOf the hypothesis test discussed in these contents what one is the most appropriate for testing the following hypothesis?\nThere is no age difference, on average, between the users of product 1 and the users of product 2",
+    "code": "p1_ages = [25., 32., 20., 18., 28., 32., 31., 19., 34., 34., 23., 29., 17.,\n        23., 25., 31., 32., 29., 29., 24., 22., 28., 26., 24., 23.]\n\np2_ages = [20., 25., 27., 19., 22., 26., 24., 27., 24., 20., 25., 28., 18.,\n        19., 23., 28., 19., 19., 19., 25., 29., 26., 23., 23., 22.]",
+    "options": [
+      {
+        "key": "A",
+        "text": "A 1-sample t-test"
+      },
+      {
+        "key": "B",
+        "text": "A 2-sample t-test assuming equal variance"
+      },
+      {
+        "key": "C",
+        "text": "Z-Test with continuity correction"
+      },
+      {
+        "key": "D",
+        "text": "A 2-sample unequal variances t-test"
+      },
+      {
+        "key": "E",
+        "text": "Binomial Test"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": [
+      "D"
+    ],
+    "answerSource": "official"
+  },
+  {
+    "id": "su26fe-43",
+    "source": "SU26 FE",
+    "number": 43,
+    "question": "What is the primary goal of the \"Empathize\" stage in the data science process?",
+    "options": [
+      {
+        "key": "A",
+        "text": "To gather data"
+      },
+      {
+        "key": "B",
+        "text": "To understand business opportunities"
+      },
+      {
+        "key": "C",
+        "text": "To clean the data"
+      },
+      {
+        "key": "D",
+        "text": "To build a model"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": [
+      "B"
+    ],
+    "answerSource": "official"
+  },
+  {
+    "id": "su26fe-44",
+    "source": "SU26 FE",
+    "number": 44,
+    "question": "Which of the following lists contains one or more references to a technology that is not a specific python package used to speed up and improve the performance of python code?",
+    "options": [
+      {
+        "key": "A",
+        "text": "py-cuda, Cython"
+      },
+      {
+        "key": "B",
+        "text": "multiprocessing, mpi4py"
+      },
+      {
+        "key": "C",
+        "text": "subprocessing, symmetric-multiprocessing"
+      },
+      {
+        "key": "D",
+        "text": "threading, ipyparallel"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": [
+      "C"
+    ],
+    "answerSource": "official"
+  },
+  {
+    "id": "su26fe-45",
+    "source": "SU26 FE",
+    "number": 45,
+    "question": "Which of the following statements does not describe valid use case for dimensionality reduction?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Principal components analysis to process images used in classification."
+      },
+      {
+        "key": "B",
+        "text": "Non-negative matrix factorization to resolve topics from a corpus of words."
+      },
+      {
+        "key": "C",
+        "text": "t-distributed stochastic neighbor embedding to visualize the results of a clustering algorithm."
+      },
+      {
+        "key": "D",
+        "text": "Using an ANOVA to select a subset of features"
+      },
+      {
+        "key": "E",
+        "text": "Down-sampling of the majority class"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": [
+      "E"
+    ],
+    "answerSource": "official"
+  },
+  {
+    "id": "su26fe-46",
+    "source": "SU26 FE",
+    "number": 46,
+    "question": "What is the principal reason to create a virtual environment before creating your model locally?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Because all models should have their own virtual environment"
+      },
+      {
+        "key": "B",
+        "text": "Because it will ensure that the most recent packages are used"
+      },
+      {
+        "key": "C",
+        "text": "Because virtual environments can be containerized easily"
+      },
+      {
+        "key": "D",
+        "text": "Because the Python client for Watson Machine Learning has specific dependencies"
+      },
+      {
+        "key": "E",
+        "text": "Because it ensures that locally created/trained models are compatible with Watson Machine Learning"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": [
+      "E"
+    ],
+    "answerSource": "official"
+  },
+  {
+    "id": "su26fe-47",
+    "source": "SU26 FE",
+    "number": 47,
+    "question": "What does ETL stand for in data processing?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Extract, Transform, Load"
+      },
+      {
+        "key": "B",
+        "text": "Evaluate, Test, Load"
+      },
+      {
+        "key": "C",
+        "text": "Extract, Transfer, Load"
+      },
+      {
+        "key": "D",
+        "text": "Evaluate, Transform, Load"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": [
+      "A"
+    ],
+    "answerSource": "official"
+  },
+  {
+    "id": "su26fe-48",
+    "source": "SU26 FE",
+    "number": 48,
+    "question": "Which tool is mentioned as an industry standard in the Python ecosystem for data science?",
+    "options": [
+      {
+        "key": "A",
+        "text": "RStudio"
+      },
+      {
+        "key": "B",
+        "text": "Jupyter notebooks"
+      },
+      {
+        "key": "C",
+        "text": "Spyder"
+      },
+      {
+        "key": "D",
+        "text": "Tableau"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": [
+      "B"
+    ],
+    "answerSource": "official"
+  },
+  {
+    "id": "su26fe-49",
+    "source": "SU26 FE",
+    "number": 49,
+    "question": "Cross-validation along with train-test splits are critical tools to help ensure our models are well calibrated for unseen data",
+    "options": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": [
+      "A"
+    ],
+    "answerSource": "official"
+  },
+  {
+    "id": "su26fe-50",
+    "source": "SU26 FE",
+    "number": 50,
+    "question": "In the design thinking process, what phase are team members currently working on?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Ideate"
+      },
+      {
+        "key": "B",
+        "text": "Prototype"
+      },
+      {
+        "key": "C",
+        "text": "Empathize"
+      },
+      {
+        "key": "D",
+        "text": "Test"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": [
+      "C"
+    ],
+    "answerSource": "official",
+    "notes": "Question refers to a scenario/context (team members' current activity) that is not shown in the image."
+  }
+]

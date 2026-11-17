@@ -1,0 +1,477 @@
+[
+ {
+  "id": "su26re-45",
+  "chapterId": 4,
+  "aiAnswer": [
+   "D"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "scikit-learn định nghĩa các interface chính: Estimator (fit), Predictor (predict) và Transformer (transform). \"Classifier\" chỉ là một loại estimator cụ thể (ví dụ LogisticRegression) chứ không phải một interface riêng (D). Các lựa chọn Transformer (A), Estimator (B), Predictor (C) đều là interface chuẩn của API."
+ },
+ {
+  "id": "su26re-46",
+  "chapterId": 6,
+  "aiAnswer": [
+   "B"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Poisoning attack là tấn công vào giai đoạn huấn luyện bằng cách chèn dữ liệu độc hại hoặc gán nhãn sai vào training set để làm sai lệch mô hình (B). Tấn công chỉ xảy ra lúc test (D) là evasion/adversarial example, còn thay đổi kiến trúc mô hình (C) hay tấn công lúc deployment (A) không phải định nghĩa của poisoning."
+ },
+ {
+  "id": "su26re-47",
+  "chapterId": 1,
+  "aiAnswer": [
+   "F"
+  ],
+  "agree": true,
+  "confidence": "medium",
+  "explanation": "Nhu cầu kinh doanh của AAVAIL xoay quanh việc dự đoán khách hàng có rời bỏ (churn) hay ở lại, tức là biến mục tiêu dạng nhãn rời rạc, nên trong ngôn ngữ Data Science đây là bài toán Classification (F). Regression (D) dùng khi dự đoán giá trị liên tục như doanh thu; Recommender system (A) hay A/B Testing (B) không khớp với mục tiêu dự đoán churn.",
+  "reviewNote": "Nguồn Quizlet chọn Regression (D), có thể do hiểu dự án là dự đoán doanh thu; tuy nhiên với bài toán churn của AAVAIL, Classification (F) theo đáp án chính thức là hợp lý hơn."
+ },
+ {
+  "id": "su26re-48",
+  "chapterId": 2,
+  "aiAnswer": [
+   "A"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "MLE (B), MCMC (C), EM (D) và mô phỏng bằng permutation (E) đều là các phương pháp dùng để tính ước lượng (estimate) tham số hoặc phân phối. NHST (A) là khung kiểm định giả thuyết, dùng để quyết định bác bỏ hay không bác bỏ null hypothesis dựa trên p-value, chứ bản thân nó không phải phương pháp tính ước lượng."
+ },
+ {
+  "id": "su26re-49",
+  "chapterId": 1,
+  "aiAnswer": [
+   "B"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "NoSQL database có schema linh hoạt (schema-less), nên xử lý dữ liệu lộn xộn, bán cấu trúc tốt hơn relational database (B). Ngược lại, áp đặt schema chặt (A) là đặc điểm của SQL; NoSQL không cần truy vấn SQL phức tạp (D) và thường dùng cho dữ liệu rất lớn chứ không phải chỉ dữ liệu nhỏ (C)."
+ },
+ {
+  "id": "su26re-50",
+  "chapterId": 6,
+  "aiAnswer": [
+   "B"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Logging trong performance monitoring ghi lại input, prediction, thời gian xử lý, phiên bản model... để theo dõi thay đổi theo thời gian và phát hiện vấn đề hiệu năng hay drift (B). Logging không làm tăng kích thước dataset (A), không cải thiện giao diện (C) và không nhằm giảm chi phí tính toán (D)."
+ },
+ {
+  "id": "qz2-004",
+  "chapterId": 1,
+  "aiAnswer": [
+   "B"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Phát biểu là sai (B): khóa học IBM AI Enterprise Workflow yêu cầu thành thạo Python cụ thể, vì toàn bộ notebook và lab dùng Python (pandas, scikit-learn...). Biết R hay Java thay cho Python là không đủ."
+ },
+ {
+  "id": "qz2-005",
+  "chapterId": 1,
+  "aiAnswer": [
+   "B"
+  ],
+  "agree": true,
+  "confidence": "medium",
+  "explanation": "Process model (như CRISP-DM, design thinking) giúp tránh lan man (A), phân bổ thời gian hiệu quả (D) và thu hẹp việc chọn mô hình (C) nhờ có cấu trúc rõ ràng. Phát biểu kém chính xác nhất là \"đẩy nhanh tốc độ đi qua workflow\" (B), vì process model hướng tới làm đúng và có hệ thống chứ không nhằm đi nhanh hơn; nhiều khi còn phải lặp lại các bước."
+ },
+ {
+  "id": "qz2-006",
+  "chapterId": 1,
+  "aiAnswer": [
+   "A"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Đúng (A): design thinking là phương pháp đã được dùng rộng rãi trong nhiều lĩnh vực khác (thiết kế sản phẩm, kinh doanh), nên dùng nó để mô tả AI workflow giúp người ngoài ngành data science dễ hiểu và dễ giao tiếp hơn."
+ },
+ {
+  "id": "qz2-007",
+  "chapterId": 1,
+  "aiAnswer": [
+   "B"
+  ],
+  "agree": false,
+  "confidence": "medium",
+  "explanation": "Đáp án nguồn là C (lấy góc nhìn từ ban quản lý). Tuy nhiên theo design thinking mà khóa học dùng, bước đầu tiên là Empathize: phỏng vấn hoặc đọc review của cả subscriber hài lòng lẫn không hài lòng (B) để hiểu vấn đề từ phía người dùng.\nNghe ban quản lý (C) chỉ cho một góc nhìn có thể thiên lệch, còn lao vào thu thập dữ liệu và EDA ngay (A) là bỏ qua bước hiểu vấn đề.",
+  "reviewNote": "Hai nguồn Quizlet mâu thuẫn (C và B); theo giai đoạn Empathize của design thinking trong Course 1, B (phỏng vấn/nghiên cứu subscriber) hợp lý hơn C."
+ },
+ {
+  "id": "qz2-008",
+  "chapterId": 1,
+  "aiAnswer": [
+   "C"
+  ],
+  "agree": false,
+  "confidence": "high",
+  "explanation": "Đáp án nguồn là D (All of the above), nhưng phát biểu B sai rõ ràng: DataFrame/Array không phải cấu trúc duy nhất trong Python có thể chứa nhiều dữ liệu (list, dict, generator, database...). Lý do thực sự là hầu hết thuật toán modeling nhận input dạng bảng (feature matrix) tương tự DataFrame/Array (C); A chỉ là nhận xét phụ, không phải lý do cốt lõi.",
+  "reviewNote": "B là phát biểu sai nên \"All of the above\" (D) không thể đúng; Quizlet 1 và comment SP26 đều chọn C, đây là đáp án hợp lý hơn."
+ },
+ {
+  "id": "qz2-009",
+  "chapterId": 1,
+  "aiAnswer": [
+   "D"
+  ],
+  "agree": true,
+  "confidence": "medium",
+  "explanation": "Cơ hội kinh doanh vững chắc nhất là cải thiện hệ thống nhận dạng âm thanh hiện có thành giao diện phong phú hơn cho thiết bị di động (D): tận dụng trực tiếp công nghệ lõi, thị trường lớn và ít rủi ro đạo đức. Dự đoán cảm xúc người trong video (A) hay cung cấp thông tin ứng viên cho nhà tuyển dụng (B) có rủi ro lớn về quyền riêng tư và bias; làm thêm một app hội nghị (C) thì cạnh tranh gay gắt, khó phòng thủ."
+ },
+ {
+  "id": "qz2-012",
+  "chapterId": 1,
+  "aiAnswer": [
+   "A"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Đúng (A): CSV là định dạng plain-text, đọc ghi rất dễ (pandas.read_csv, module csv) và mở được bằng các công cụ spreadsheet như Excel, nên là một trong những định dạng phổ biến nhất trong data science."
+ },
+ {
+  "id": "qz2-013",
+  "chapterId": 1,
+  "aiAnswer": [
+   "D"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Berkeley DB là cơ sở dữ liệu key-value nhúng, không phải relational database, nên cặp Berkeley DB --> bsddb (D) không phải quan hệ relational database - connector hợp lệ. Các cặp MySQL - MySQL-python (A), PostgreSQL - psycopg2 (B), SQLite - sqlite3 (C) đều là connector Python chuẩn cho relational database."
+ },
+ {
+  "id": "qz2-014",
+  "chapterId": 1,
+  "aiAnswer": [
+   "C"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Sparse matrix phù hợp với dữ liệu có rất nhiều giá trị 0, như ma trận word count (mỗi văn bản chỉ chứa một phần nhỏ từ vựng) và user-item matrix trong recommender (mỗi user chỉ tương tác với ít item) (C). Time-series, audio và ảnh (A, B, D) thường là dữ liệu dense, hầu hết giá trị khác 0."
+ },
+ {
+  "id": "qz2-015",
+  "chapterId": 1,
+  "aiAnswer": [
+   "B"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Sai (B): train_test_split của scikit-learn chấp nhận trực tiếp SciPy sparse matrix (ví dụ csr_matrix) và trả về sparse matrix, không cần chuyển sang dense. Chuyển sang dense còn có thể gây tốn bộ nhớ nghiêm trọng."
+ },
+ {
+  "id": "qz2-016",
+  "chapterId": 1,
+  "aiAnswer": [
+   "B"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "\"Bad data in equals bad data out\" (garbage in, garbage out) nhấn mạnh chất lượng dữ liệu, nên tương ứng với bước triển khai các kiểm tra quality assurance (B). Thu thập dữ liệu từ các nguồn (A) và tự động hóa pipeline (C) là các bước khác của ingestion, không trực tiếp xử lý chất lượng dữ liệu."
+ },
+ {
+  "id": "qz2-017",
+  "chapterId": 1,
+  "aiAnswer": [
+   "C"
+  ],
+  "agree": true,
+  "confidence": "medium",
+  "explanation": "Data engineer chịu trách nhiệm hạ tầng, pipeline và hệ thống triển khai, nên là người quan tâm nhất đến việc model đã deploy có scale tốt khi số user tăng (C). Data scientist (A) tập trung vào xây dựng và đánh giá mô hình, data analyst (B) vào phân tích, còn product manager (D) quan tâm đến giá trị kinh doanh hơn là khả năng mở rộng kỹ thuật."
+ },
+ {
+  "id": "qz2-018",
+  "chapterId": 2,
+  "aiAnswer": [
+   "B"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Phát biểu kém đúng nhất là B: EDA là exploratory data analysis, khác với confirmatory data analysis (kiểm định giả thuyết); hai giai đoạn này bổ sung cho nhau chứ EDA không bao gồm cả hai. Các ý còn lại đều đúng: EDA cho cái nhìn tổng quan (A), phát hiện missing data, outlier, class imbalance (C), giúp ước lượng thời gian dự án (D) và liên hệ dữ liệu với business opportunity (E)."
+ },
+ {
+  "id": "qz2-019",
+  "chapterId": 2,
+  "aiAnswer": [
+   "E"
+  ],
+  "agree": true,
+  "confidence": "medium",
+  "explanation": "Thao tác copy-paste trong spreadsheet (E) là thủ công, không được ghi lại thành code nên không thể tái lập chính xác, vì vậy không phải reproducible research. Code trong Python file (A), code block trong Jupyter (B) và các visualization sinh từ code (D) đều có thể chạy lại; dùng công cụ proprietary (C) có thể hạn chế khả năng chia sẻ nhưng bản thân nó không phải là một thao tác xử lý dữ liệu không tái lập được."
+ },
+ {
+  "id": "qz2-020",
+  "chapterId": 2,
+  "aiAnswer": [
+   "B"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Sai (B): seaborn được xây dựng trên nền matplotlib, các hàm như pairplot thực chất tạo ra Figure/Axes của matplotlib và có thể tùy chỉnh bằng API matplotlib. Vì vậy chúng không phải công cụ tách biệt khỏi matplotlib."
+ },
+ {
+  "id": "qz2-021",
+  "chapterId": 2,
+  "aiAnswer": [
+   "B"
+  ],
+  "agree": true,
+  "confidence": "medium",
+  "explanation": "Thay giá trị thiếu bằng -1 (B) đưa vào một số stream âm vô nghĩa, làm méo phân phối của feature dạng đếm và có thể đánh lừa nhiều mô hình (như linear model), nên ít hữu ích nhất. Imputation bằng mean (A) là cách đơn giản, chấp nhận được, còn dùng các feature khác để dự đoán giá trị thiếu (C) thường cho kết quả tốt nhất."
+ },
+ {
+  "id": "qz2-022",
+  "chapterId": 2,
+  "aiAnswer": [
+   "C"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Multiple imputation tạo nhiều bộ dữ liệu được impute khác nhau rồi kết hợp kết quả, nhờ đó định lượng được độ bất định (error) do việc thay thế giá trị thiếu gây ra (C). Nó không bắt buộc chỉ vì nhiều feature bị thiếu (A) và không nhằm tăng kích thước training data (B)."
+ },
+ {
+  "id": "qz2-024",
+  "chapterId": 2,
+  "aiAnswer": [
+   "B"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Sai (B): EDA gắn chặt với modeling; qua EDA ta biết mức độ missing data, outlier, class imbalance, kích thước và độ phức tạp của dữ liệu, từ đó ước lượng được thời gian cần cho bước modeling."
+ },
+ {
+  "id": "qz2-025",
+  "chapterId": 2,
+  "aiAnswer": [
+   "E"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Ba loại missingness chuẩn là MCAR (Missing Completely At Random), MAR (Missing At Random) và MNAR (Missing Not At Random) (E). Các lựa chọn khác chứa thuật ngữ không tồn tại như MRAR hay MARC."
+ },
+ {
+  "id": "qz2-026",
+  "chapterId": 2,
+  "aiAnswer": [
+   "A"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Jupyter notebook lưu dưới dạng JSON kèm output và metadata, nên diff và merge trong version control (git) rất khó; vì vậy \"tự nhiên phù hợp với version control\" (A) là phát biểu kém đúng nhất. Các ý khác đều đúng: kết hợp code và markdown để kể chuyện (C), tích hợp tốt với matplotlib (D) và pandas (E), dễ chuyển giữa các môi trường (B)."
+ },
+ {
+  "id": "qz2-029",
+  "chapterId": 2,
+  "aiAnswer": [
+   "C"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Null hypothesis là giả thuyết \"không có khác biệt\": tuổi trung bình của user Product 1 và Product 2 bằng nhau (C). Các phát biểu Product 1 già hơn (A) hay trẻ hơn (B) là dạng alternative hypothesis (một phía)."
+ },
+ {
+  "id": "qz2-030",
+  "chapterId": 2,
+  "aiAnswer": [
+   "D"
+  ],
+  "agree": true,
+  "confidence": "medium",
+  "explanation": "Dashboard là công cụ chia sẻ tóm tắt và phát hiện (A), có tính tương tác (B), thường xây sau vài vòng lặp workflow (C) và dùng để kể câu chuyện từ các visualization (E). Phát biểu kém hợp lệ nhất là dashboard là cách nhanh để tạo plot đơn giản, portable (D): xây dashboard tốn công, còn plot đơn giản thì nên dùng matplotlib/seaborn."
+ },
+ {
+  "id": "qz2-032",
+  "chapterId": 2,
+  "aiAnswer": [
+   "B"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Dùng binom.cdf(2701, n=108879, p=0.025) của scipy.stats. Kỳ vọng là n*p ≈ 2722 và độ lệch chuẩn sqrt(n*p*(1-p)) ≈ 51.5, nên 2701 chỉ thấp hơn kỳ vọng khoảng 0.4 độ lệch chuẩn, cho xác suất ≈ 0.346 (B). Các giá trị rất nhỏ như 0.007 (D) hay 0.015 (E) chỉ hợp lý nếu quan sát lệch xa kỳ vọng."
+ },
+ {
+  "id": "qz2-033",
+  "chapterId": 2,
+  "aiAnswer": [
+   "A"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Đúng (A): bootstrap là phương pháp resampling không phụ thuộc phân phối cụ thể; có thể resample dữ liệu nhiều lần, ước lượng lại tham số của Poisson (ví dụ lambda) và dùng phân phối các ước lượng đó để lấy confidence interval cho độ bất định."
+ },
+ {
+  "id": "qz2-034",
+  "chapterId": 2,
+  "aiAnswer": [
+   "C"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Thực hiện tất cả phép so sánh rồi chỉ giữ test tốt nhất (C) chính là p-hacking, làm tăng mạnh false positive, nên không phải chiến lược hợp lệ. Bonferroni (E), Benjamini/Hochberg FDR (A), dùng null distribution từ permutation (B) và chuyển sang khung mô hình khác như generalized linear models (D) đều là cách xử lý multiple comparisons hợp lệ."
+ },
+ {
+  "id": "qz2-035",
+  "chapterId": 3,
+  "aiAnswer": [
+   "A"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Feature engineering (tạo, biến đổi feature theo kiến thức domain) được hiện thực bằng interface Transformer với fit/transform (A), có thể viết custom transformer cùng domain expert. Estimator (B) dùng để học mô hình, Fit (C) và Predict (D) chỉ là method, còn Pipeline (E) là công cụ ghép các bước chứ không phải interface để biến đổi feature."
+ },
+ {
+  "id": "qz2-036",
+  "chapterId": 3,
+  "aiAnswer": [
+   "D"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "SMOTENC (SMOTE for Nominal and Continuous) được thiết kế cho dữ liệu trộn lẫn biến categorical và continuous (D). SMOTE gốc (E), BorderlineSMOTE (B), SVMSMOTE (C) và KMeansSMOTE (A) đều nội suy trong không gian liên tục nên không xử lý đúng biến categorical."
+ },
+ {
+  "id": "qz2-037",
+  "chapterId": 3,
+  "aiAnswer": [
+   "E"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "K-nearest neighbors (E) là thuật toán phân loại/hồi quy dựa trên láng giềng gần nhất, không phải kỹ thuật dimensionality reduction. PCA (F), SVD (C), eigenvalue decomposition (D), NMF (B) và LDA dùng cho topic modeling (A) đều chiếu dữ liệu xuống không gian ít chiều hơn."
+ },
+ {
+  "id": "qz2-038",
+  "chapterId": 3,
+  "aiAnswer": [
+   "B"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Trong topic modeling (LDA, NMF), mỗi topic được đặc trưng bởi các từ đại diện nhất, và mỗi document là hỗn hợp của các topic đó (B). Top words không phải từ xuất hiện nhiều nhất trong toàn corpus (A), và các mô tả C, D, E đảo ngược hoặc sai quan hệ giữa document, topic và word."
+ },
+ {
+  "id": "qz2-040",
+  "chapterId": 3,
+  "aiAnswer": [
+   "A"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Đúng (A): pipeline đóng gói các bước tiền xử lý, biến đổi và mô hình thành một quy trình nhất quán, nhờ đó dễ thay đổi từng thành phần và so sánh công bằng nhiều biến thể của workflow (ví dụ kết hợp với grid search), đồng thời tránh data leakage."
+ },
+ {
+  "id": "qz2-041",
+  "chapterId": 3,
+  "aiAnswer": [
+   "E"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Chiến lược tốt nhất là so sánh các phương pháp re-sampling với một baseline và với các thuật toán detection (outlier/anomaly) (E), vì không có cách nào luôn thắng. Chỉ chọn biến thể SMOTE tốt nhất (B) hoặc chỉ dùng outlier detection (D) là bỏ qua so sánh; chờ thu thập đến khi cân bằng (C) thường không khả thi."
+ },
+ {
+  "id": "qz2-042",
+  "chapterId": 3,
+  "aiAnswer": [
+   "D"
+  ],
+  "agree": true,
+  "confidence": "medium",
+  "explanation": "imbalanced-learn cung cấp nhiều phương pháp over/under-sampling (A), có tutorial (C), tương thích với scikit-learn pipeline (E) và có hỗ trợ cho Keras/TensorFlow (B). Thư viện này không đóng gói thuật toán outlier detection (D); các thuật toán như Isolation Forest hay One Class SVM nằm trong scikit-learn."
+ },
+ {
+  "id": "qz2-044",
+  "chapterId": 3,
+  "aiAnswer": [
+   "A"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Đúng (A): t-SNE là phương pháp phi tuyến nên giữ được nhiều cấu trúc cục bộ hơn PCA, nhưng tốn kém tính toán; khi số feature rất lớn, thường khuyến nghị giảm chiều trước bằng PCA (ví dụ xuống khoảng 50 chiều) rồi mới chạy t-SNE."
+ },
+ {
+  "id": "qz2-046",
+  "chapterId": 3,
+  "aiAnswer": [
+   "C"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Pattern dựa vào Age > 25 (C) dùng tuổi, một protected attribute, để quyết định cấp tín dụng, dẫn đến phân biệt đối xử và vi phạm quy định cho vay công bằng nên là pattern không mong muốn nhất. Salary hay debt (A, B) là yếu tố tài chính hợp lý; nơi cư trú (D) hay tên bằng cấp (E) có thể là proxy gây bias nhưng không trực tiếp là protected attribute như tuổi."
+ },
+ {
+  "id": "qz2-047",
+  "chapterId": 3,
+  "aiAnswer": [
+   "A"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "ADASYN (A) là kỹ thuật over-sampling sinh mẫu tổng hợp cho lớp thiểu số (tương tự SMOTE), không phải thuật toán outlier detection. Elliptic Envelope (B), One Class SVM (C), Isolation Forest (D) và Local Outlier Factor (E) đều là các thuật toán phát hiện outlier trong scikit-learn."
+ },
+ {
+  "id": "qz2-048",
+  "chapterId": 3,
+  "aiAnswer": [
+   "E"
+  ],
+  "agree": false,
+  "confidence": "low",
+  "explanation": "Đáp án nguồn là B (Inertia), với lý do inertia luôn giảm khi tăng số cluster nên không thể dùng trực tiếp để chọn số cluster tối ưu. Tuy nhiên inertia vẫn được dùng phổ biến qua elbow method; trong khi Adjusted Rand index (E) cần nhãn thật (ground truth) để so sánh, nên trong bài toán clustering không có nhãn nó mới là metric không hợp lý để chọn số cluster.\nCalinski-Harabasz (A), Silhouette (C) và Davies-Bouldin (D) là các internal metric hợp lệ.",
+  "reviewNote": "Đáp án nguồn B có thể dựa trên việc inertia giảm đơn điệu theo k; nhưng Adjusted Rand index (E) đòi hỏi ground truth labels nên khó dùng để chọn số cluster, có thể là đáp án hợp lý hơn. Cần đối chiếu với nội dung Course 3."
+ },
+ {
+  "id": "qz2-049",
+  "chapterId": 3,
+  "aiAnswer": [
+   "E"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Protected attribute là thuộc tính liên quan đến nhóm có thể bị phân biệt đối xử như tuổi (A), bản dạng giới (B), chủng tộc (C), tôn giáo (D). Purchase history (E) là dữ liệu hành vi, chính là tín hiệu cốt lõi cho recommendation engine, nên ít có khả năng là protected attribute nhất."
+ },
+ {
+  "id": "qz2-050",
+  "chapterId": 3,
+  "aiAnswer": [
+   "B"
+  ],
+  "agree": true,
+  "confidence": "medium",
+  "explanation": "Sai (B): thuật toán Reweighing trong AIF360 theo phong cách API của scikit-learn với các method quen thuộc fit, transform, fit_transform, nên không có nhiều method tùy biến đòi hỏi phải tra tài liệu kỹ mới dùng được."
+ },
+ {
+  "id": "qz2-051",
+  "chapterId": 3,
+  "aiAnswer": [
+   "D"
+  ],
+  "agree": false,
+  "confidence": "medium",
+  "explanation": "Đáp án nguồn là E (Local Outlier Factor). Tuy nhiên tài liệu scikit-learn cho biết Isolation Forest (D) hoạt động hiệu quả với dữ liệu nhiều chiều nhờ cô lập điểm bằng các lần chia ngẫu nhiên, trong khi LOF (E) dựa trên khoảng cách/mật độ láng giềng nên bị ảnh hưởng bởi curse of dimensionality.\nElliptic Envelope (B) giả định phân phối Gaussian, One Class SVM (C) nhạy với outlier trong dữ liệu huấn luyện, còn Random Forests (A) không phải phương pháp outlier detection.",
+  "reviewNote": "Theo sklearn docs, Isolation Forest là phương pháp được ghi nhận hiệu quả trong dữ liệu high-dimensional, còn LOF thường kém hiệu quả khi số chiều cao; D hợp lý hơn đáp án nguồn E."
+ },
+ {
+  "id": "qz2-052",
+  "chapterId": 3,
+  "aiAnswer": [
+   "B"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Sai (B): khi lớp thiểu số dưới 5%, outlier detection là một lựa chọn đáng cân nhắc nhưng không bắt buộc; vẫn có thể dùng supervised learning kết hợp re-sampling (SMOTE, under-sampling) hoặc class weight, và nên so sánh các cách tiếp cận với nhau."
+ },
+ {
+  "id": "qz2-053",
+  "chapterId": 3,
+  "aiAnswer": [
+   "B"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Spectral clustering (B) làm việc trên ma trận affinity/Laplacian của đồ thị nên áp dụng trực tiếp được cho graph (ví dụ cắt đồ thị). k-means (D), Gaussian mixture models (A) và Dirichlet process GMM (E) cần dữ liệu dạng vector trong không gian feature; Affinity Propagation (C) dùng ma trận similarity nhưng không được thiết kế cho bài toán phân cụm đồ thị như spectral clustering."
+ }
+]

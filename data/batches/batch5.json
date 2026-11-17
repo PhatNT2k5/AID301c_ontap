@@ -1,0 +1,1588 @@
+[
+ {
+  "id": "qz1-127",
+  "question": "When you compiled the JSON files into a single DataFrame or NumPy array, about how many days did the entire range of dates span?",
+  "options": [
+   {
+    "key": "A",
+    "text": "400"
+   },
+   {
+    "key": "B",
+    "text": "450"
+   },
+   {
+    "key": "C",
+    "text": "500"
+   },
+   {
+    "key": "D",
+    "text": "600"
+   },
+   {
+    "key": "E",
+    "text": "650"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "C"
+  ],
+  "answerSource": "quizlet",
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "C"
+    ]
+   },
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "C"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz1-128",
+  "question": "Which country had the most total revenue when you summed across all purchases?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Singapore"
+   },
+   {
+    "key": "B",
+    "text": "United Kingdom"
+   },
+   {
+    "key": "C",
+    "text": "USA"
+   },
+   {
+    "key": "D",
+    "text": "EIRE"
+   },
+   {
+    "key": "E",
+    "text": "Germany"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "quizlet",
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz1-129",
+  "question": "There are many established methods from the literature that may be used to analyze time-series data. Classical machine learning techniques can also be used, but which of the following is the most important caveat to keep in mind when employing this approach?",
+  "options": [
+   {
+    "key": "A",
+    "text": "You cannot use scikit-learn to combine multiple predictions"
+   },
+   {
+    "key": "B",
+    "text": "The data cannot be feature engineered to help identify features that are needed by the model to detect trends"
+   },
+   {
+    "key": "C",
+    "text": "There is no simple way to do a train/test split of the data"
+   },
+   {
+    "key": "D",
+    "text": "Significant computational resources are generally required"
+   },
+   {
+    "key": "E",
+    "text": "A specialized strategy that uses recursion (for example) or multiple models must be employed for multipoint forecasting"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "E"
+  ],
+  "answerSource": "quizlet",
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "E"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz1-130",
+  "question": "When the data are pivoted and summarized across days which of the following features were the most difficult to include as a summarized or engineered feature?",
+  "options": [
+   {
+    "key": "A",
+    "text": "revenue"
+   },
+   {
+    "key": "B",
+    "text": "stream_views"
+   },
+   {
+    "key": "C",
+    "text": "stream_ids"
+   },
+   {
+    "key": "D",
+    "text": "purchases"
+   },
+   {
+    "key": "E",
+    "text": "customer_id"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "E"
+  ],
+  "answerSource": "quizlet",
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "E"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz1-131",
+  "question": "The time-series plots using a day time interval for revenue, purchases and total_views revealed many similarities. Which part of the year indicated a trend for the highest level of activity?",
+  "options": [
+   {
+    "key": "A",
+    "text": "January-February"
+   },
+   {
+    "key": "B",
+    "text": "April-May"
+   },
+   {
+    "key": "C",
+    "text": "November-December"
+   },
+   {
+    "key": "D",
+    "text": "June-July"
+   },
+   {
+    "key": "E",
+    "text": "September-October"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "C"
+  ],
+  "answerSource": "quizlet",
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "C"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "sp26-02",
+  "question": "In the script example-spark-submit.sh, what does the #!/bin/bash line indicate?",
+  "options": [
+   {
+    "key": "A",
+    "text": "It specifies the script's name"
+   },
+   {
+    "key": "B",
+    "text": "It indicates the script is written in Python"
+   },
+   {
+    "key": "C",
+    "text": "It tells the system to use the Bash shell to execute the script"
+   },
+   {
+    "key": "D",
+    "text": "It is a comment and has no effect"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "C"
+  ],
+  "answerSource": "comment",
+  "sourceAnswers": [
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "C"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "sp26-03",
+  "question": "In the context of NLP, what does sentiment analysis refer to?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Analyzing the structure of sentences"
+   },
+   {
+    "key": "B",
+    "text": "Determining the emotional tone behind a series of words"
+   },
+   {
+    "key": "C",
+    "text": "Translating text from one language to another"
+   },
+   {
+    "key": "D",
+    "text": "Summarizing large documents"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "comment",
+  "sourceAnswers": [
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "sp26-06",
+  "question": "What is the first step in setting up the Watson Developer Cloud Python SDK?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Install the SDK"
+   },
+   {
+    "key": "B",
+    "text": "Create an IBM Cloud account"
+   },
+   {
+    "key": "C",
+    "text": "Create a resource for Natural Language Understanding"
+   },
+   {
+    "key": "D",
+    "text": "Download the tutorial files"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "comment",
+  "sourceAnswers": [
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "sp26-09",
+  "question": "Which library in Python is commonly used for reading and writing CSV files?",
+  "options": [
+   {
+    "key": "A",
+    "text": "NumPy"
+   },
+   {
+    "key": "B",
+    "text": "Matplotlib"
+   },
+   {
+    "key": "C",
+    "text": "Pandas"
+   },
+   {
+    "key": "D",
+    "text": "SciPy"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "C"
+  ],
+  "answerSource": "comment",
+  "sourceAnswers": [
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "C"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "sp26-11",
+  "question": "Which Python package can be used to estimate test coverage?",
+  "options": [
+   {
+    "key": "A",
+    "text": "unittest"
+   },
+   {
+    "key": "B",
+    "text": "coverage"
+   },
+   {
+    "key": "C",
+    "text": "pytest"
+   },
+   {
+    "key": "D",
+    "text": "flask"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "comment",
+  "sourceAnswers": [
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "sp26-12",
+  "question": "What is the primary purpose of documenting your data before starting a project?",
+  "options": [
+   {
+    "key": "A",
+    "text": "To impress stakeholders"
+   },
+   {
+    "key": "B",
+    "text": "To streamline the modeling process and ensure data quality"
+   },
+   {
+    "key": "C",
+    "text": "To increase project costs"
+   },
+   {
+    "key": "D",
+    "text": "To avoid using Python"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "comment",
+  "sourceAnswers": [
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "sp26-13",
+  "question": "What is a common issue with using accuracy as a metric for imbalanced classes?",
+  "options": [
+   {
+    "key": "A",
+    "text": "It is always accurate."
+   },
+   {
+    "key": "B",
+    "text": "It can be misleading."
+   },
+   {
+    "key": "C",
+    "text": "It is the only metric available."
+   },
+   {
+    "key": "D",
+    "text": "It does not consider false positives."
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "comment",
+  "sourceAnswers": [
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "sp26-14",
+  "question": "The decision tree base models in random forests individually have high bias and low variance.",
+  "options": [
+   {
+    "key": "A",
+    "text": "True"
+   },
+   {
+    "key": "B",
+    "text": "False"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "comment",
+  "sourceAnswers": [
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "sp26-19",
+  "question": "For given input lists: a,b,c and 1,2,3 Create a dictionary from two input lists",
+  "options": [
+   {
+    "key": "A",
+    "text": "def make_dict(lst1,lst2): res = {} for key,value in zip(lst1,lst2): res[key]= value return res"
+   },
+   {
+    "key": "B",
+    "text": "def make_dict(lst1,lst2): res = {} res[lst1]= lst2 return res"
+   },
+   {
+    "key": "C",
+    "text": "def make_dict(lst1,lst2): res = {} for key,value in (lst1,lst2): res[key]= value return res"
+   },
+   {
+    "key": "D",
+    "text": "def make_dict(lst1,lst2): res = [] for key,value in zip(lst1,lst2): res[key]= value return res"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "A"
+  ],
+  "answerSource": "comment",
+  "sourceAnswers": [
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "A"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "sp26-22",
+  "question": "What is the first stage of the design thinking process?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Ideate"
+   },
+   {
+    "key": "B",
+    "text": "Empathize"
+   },
+   {
+    "key": "C",
+    "text": "Prototype"
+   },
+   {
+    "key": "D",
+    "text": "Test"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "comment",
+  "sourceAnswers": [
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "sp26-23",
+  "question": "Which of the following is NOT a factor that affects the time spent on data cleaning?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Team experience"
+   },
+   {
+    "key": "B",
+    "text": "Data quality"
+   },
+   {
+    "key": "C",
+    "text": "Project requirements"
+   },
+   {
+    "key": "D",
+    "text": "Company size"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "D"
+  ],
+  "answerSource": "comment",
+  "sourceAnswers": [
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "D"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "sp26-27",
+  "question": "What does the term \"trunk\" refer to in the context of Continuous Integration?",
+  "options": [
+   {
+    "key": "A",
+    "text": "A type of software bug"
+   },
+   {
+    "key": "B",
+    "text": "The main branch of code where all changes are merged"
+   },
+   {
+    "key": "C",
+    "text": "A deployment strategy"
+   },
+   {
+    "key": "D",
+    "text": "A testing framework"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "comment",
+  "sourceAnswers": [
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "sp26-28",
+  "question": "Why is granular data preferred over summary level data?",
+  "options": [
+   {
+    "key": "A",
+    "text": "It is easier to collect"
+   },
+   {
+    "key": "B",
+    "text": "It allows for more detailed analysis"
+   },
+   {
+    "key": "C",
+    "text": "It takes less time to process"
+   },
+   {
+    "key": "D",
+    "text": "It is more visually appealing"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "comment",
+  "sourceAnswers": [
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "sp26-30",
+  "question": "Which process model is known for its open standard and has been around since 1996?",
+  "options": [
+   {
+    "key": "A",
+    "text": "OSEMN"
+   },
+   {
+    "key": "B",
+    "text": "CRISP-DM"
+   },
+   {
+    "key": "C",
+    "text": "Design Thinking"
+   },
+   {
+    "key": "D",
+    "text": "Agile"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "comment",
+  "sourceAnswers": [
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "sp26-31",
+  "question": "What is a key principle of design thinking mentioned in the course?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Data collection"
+   },
+   {
+    "key": "B",
+    "text": "Observation and Reflection"
+   },
+   {
+    "key": "C",
+    "text": "Rapid prototyping"
+   },
+   {
+    "key": "D",
+    "text": "User testing"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "comment",
+  "sourceAnswers": [
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "sp26-32",
+  "question": "Which method is recommended for handling missing values in numerical data?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Convert missing values to a flag"
+   },
+   {
+    "key": "B",
+    "text": "Use imputation techniques"
+   },
+   {
+    "key": "C",
+    "text": "Delete the entire dataset"
+   },
+   {
+    "key": "D",
+    "text": "Replace with a random value"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "comment",
+  "sourceAnswers": [
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "sp26-35",
+  "question": "What is the primary purpose of dimensionality reduction in data science?",
+  "options": [
+   {
+    "key": "A",
+    "text": "To increase the number of features"
+   },
+   {
+    "key": "B",
+    "text": "To simplify models and reduce computation time"
+   },
+   {
+    "key": "C",
+    "text": "To eliminate all data points"
+   },
+   {
+    "key": "D",
+    "text": "To create more complex models"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "comment",
+  "sourceAnswers": [
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "sp26-37",
+  "question": "What is a key reason for using existing NLP APIs instead of building models from scratch?",
+  "options": [
+   {
+    "key": "A",
+    "text": "They are always more accurate"
+   },
+   {
+    "key": "B",
+    "text": "They require less time and resources"
+   },
+   {
+    "key": "C",
+    "text": "They are easier to understand"
+   },
+   {
+    "key": "D",
+    "text": "They eliminate the need for data"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "comment",
+  "sourceAnswers": [
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "sp26-40",
+  "question": "Which Python package supports spawning processes for code optimization?",
+  "options": [
+   {
+    "key": "A",
+    "text": "threading"
+   },
+   {
+    "key": "B",
+    "text": "subprocess"
+   },
+   {
+    "key": "C",
+    "text": "multiprocessing"
+   },
+   {
+    "key": "D",
+    "text": "numpy"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "C"
+  ],
+  "answerSource": "comment",
+  "sourceAnswers": [
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "C"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "sp26-43",
+  "question": "What is the purpose of profiling in code optimization?",
+  "options": [
+   {
+    "key": "A",
+    "text": "To write new algorithms from scratch"
+   },
+   {
+    "key": "B",
+    "text": "To identify which parts of the code are bottlenecks"
+   },
+   {
+    "key": "C",
+    "text": "To increase the number of processor cores"
+   },
+   {
+    "key": "D",
+    "text": "To reduce the amount of data used"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "comment",
+  "sourceAnswers": [
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "sp26-44",
+  "question": "What type of data structures are used as standardized input to the interfaces in scikit-learn?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Lists and dictionaries"
+   },
+   {
+    "key": "B",
+    "text": "DataFrames and Series"
+   },
+   {
+    "key": "C",
+    "text": "NumPy arrays and SciPy sparse matrices"
+   },
+   {
+    "key": "D",
+    "text": "Strings and tuples"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "C"
+  ],
+  "answerSource": "comment",
+  "sourceAnswers": [
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "C"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "sp26-45",
+  "question": "Which command-line tool is used to interact with the Kubernetes API?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Kubelet"
+   },
+   {
+    "key": "B",
+    "text": "Kube CTL"
+   },
+   {
+    "key": "C",
+    "text": "Docker"
+   },
+   {
+    "key": "D",
+    "text": "Helm"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "comment",
+  "sourceAnswers": [
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "fa25-01",
+  "question": "What is the best practice for data collection in performance monitoring?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Collect data at a summary level"
+   },
+   {
+    "key": "B",
+    "text": "Collect data at the most granular level possible"
+   },
+   {
+    "key": "C",
+    "text": "Collect data only once a week"
+   },
+   {
+    "key": "D",
+    "text": "Collect data from social media"
+   }
+  ],
+  "multi": false,
+  "answer": null,
+  "answerSource": null,
+  "sourceAnswers": [],
+  "conflict": false
+ },
+ {
+  "id": "fa25-02",
+  "question": "What is a key risk associated with the increased pace of change in CI/CD?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Increased collaboration among teams"
+   },
+   {
+    "key": "B",
+    "text": "Introduction of bugs"
+   },
+   {
+    "key": "C",
+    "text": "Faster deployment times"
+   },
+   {
+    "key": "D",
+    "text": "Improved testing processes"
+   }
+  ],
+  "multi": false,
+  "answer": null,
+  "answerSource": null,
+  "sourceAnswers": [],
+  "conflict": false
+ },
+ {
+  "id": "fa25-04",
+  "question": "What is the main function of the Kubernetes API server?",
+  "options": [
+   {
+    "key": "A",
+    "text": "To manage worker nodes"
+   },
+   {
+    "key": "B",
+    "text": "To expose capabilities for defining workloads"
+   },
+   {
+    "key": "C",
+    "text": "To deploy applications"
+   },
+   {
+    "key": "D",
+    "text": "To monitor application health"
+   }
+  ],
+  "multi": false,
+  "answer": null,
+  "answerSource": null,
+  "sourceAnswers": [],
+  "conflict": false
+ },
+ {
+  "id": "fa25-06",
+  "question": "What is the primary format used for collecting data in performance monitoring?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Spreadsheets"
+   },
+   {
+    "key": "B",
+    "text": "Log files"
+   },
+   {
+    "key": "C",
+    "text": "Text documents"
+   },
+   {
+    "key": "D",
+    "text": "Presentations"
+   }
+  ],
+  "multi": false,
+  "answer": null,
+  "answerSource": null,
+  "sourceAnswers": [],
+  "conflict": false
+ },
+ {
+  "id": "fa25-11",
+  "question": "What is an important tool for comparing variants of the workflow in software engineering?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Data pipelines"
+   },
+   {
+    "key": "B",
+    "text": "Data lakes"
+   },
+   {
+    "key": "C",
+    "text": "Data warehouses"
+   },
+   {
+    "key": "D",
+    "text": "Data dashboards"
+   }
+  ],
+  "multi": false,
+  "answer": null,
+  "answerSource": null,
+  "sourceAnswers": [],
+  "conflict": false
+ },
+ {
+  "id": "fa25-14",
+  "question": "Which of the following best describes feature engineering?",
+  "options": [
+   {
+    "key": "A",
+    "text": "The process of gathering data"
+   },
+   {
+    "key": "B",
+    "text": "The selection and creation of data features to improve model performance"
+   },
+   {
+    "key": "C",
+    "text": "The visualization of data"
+   },
+   {
+    "key": "D",
+    "text": "The storage of data"
+   }
+  ],
+  "multi": false,
+  "answer": null,
+  "answerSource": null,
+  "sourceAnswers": [],
+  "conflict": false
+ },
+ {
+  "id": "fa25-17",
+  "question": "Mutable data types/collections in Python can be changed in place. Immutable ones can not change in place. Which of the following are mutable?",
+  "options": [
+   {
+    "key": "A",
+    "text": "bool"
+   },
+   {
+    "key": "B",
+    "text": "int"
+   },
+   {
+    "key": "C",
+    "text": "float"
+   },
+   {
+    "key": "D",
+    "text": "set"
+   },
+   {
+    "key": "E",
+    "text": "list"
+   },
+   {
+    "key": "F",
+    "text": "string"
+   }
+  ],
+  "multi": true,
+  "answer": [
+   "D",
+   "E"
+  ],
+  "answerSource": "quizlet",
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "D",
+     "E"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "fa25-18",
+  "question": "What does the 'average' parameter in the F1 score calculation affect?",
+  "options": [
+   {
+    "key": "A",
+    "text": "The number of classes considered"
+   },
+   {
+    "key": "B",
+    "text": "The weighting of precision and recall"
+   },
+   {
+    "key": "C",
+    "text": "The overall accuracy of the model"
+   },
+   {
+    "key": "D",
+    "text": "The size of the dataset"
+   }
+  ],
+  "multi": false,
+  "answer": null,
+  "answerSource": null,
+  "sourceAnswers": [],
+  "conflict": false
+ },
+ {
+  "id": "fa25-19",
+  "question": "Who are \"Sponsor Users\" in the design thinking framework?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Project managers overseeing the design process"
+   },
+   {
+    "key": "B",
+    "text": "Real-world users who provide domain expertise"
+   },
+   {
+    "key": "C",
+    "text": "Data scientists working on the project"
+   },
+   {
+    "key": "D",
+    "text": "Stakeholders funding the project"
+   }
+  ],
+  "multi": false,
+  "answer": null,
+  "answerSource": null,
+  "sourceAnswers": [],
+  "conflict": false
+ },
+ {
+  "id": "fa25-20",
+  "question": "What is a key reason for maintaining data quality in enterprises?",
+  "options": [
+   {
+    "key": "A",
+    "text": "To reduce the number of employees"
+   },
+   {
+    "key": "B",
+    "text": "To avoid project delays and budget shortfalls"
+   },
+   {
+    "key": "C",
+    "text": "To increase data storage capacity"
+   },
+   {
+    "key": "D",
+    "text": "To enhance social media presence"
+   }
+  ],
+  "multi": false,
+  "answer": null,
+  "answerSource": null,
+  "sourceAnswers": [],
+  "conflict": false
+ },
+ {
+  "id": "fa25-21",
+  "question": "In the design thinking process, what do \"Playbacks\" refer to?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Presentations of data findings"
+   },
+   {
+    "key": "B",
+    "text": "Sessions where stakeholders share stories and feedback"
+   },
+   {
+    "key": "C",
+    "text": "Replaying recorded meetings"
+   },
+   {
+    "key": "D",
+    "text": "Reviewing past projects"
+   }
+  ],
+  "multi": false,
+  "answer": null,
+  "answerSource": null,
+  "sourceAnswers": [],
+  "conflict": false
+ },
+ {
+  "id": "fa25-22",
+  "question": "For the vector v = [2.0, -3.5, 5.1]:\nFind the L1 norm of v\nReturn the result as a float",
+  "code": "import numpy as np\n\ndef calculate_l1_norm(v):\n  //Code here?\n  return L1",
+  "options": [
+   {
+    "key": "A",
+    "text": "L1 = np.linalg.norm(v, ord=1)"
+   },
+   {
+    "key": "B",
+    "text": "L1 = np.linalg(ord=1,v)"
+   },
+   {
+    "key": "C",
+    "text": "L1 = np.norm(v, ord=1)"
+   },
+   {
+    "key": "D",
+    "text": "L1 = norm(v, ord=1)"
+   }
+  ],
+  "multi": false,
+  "answer": null,
+  "answerSource": null,
+  "sourceAnswers": [],
+  "conflict": false
+ },
+ {
+  "id": "fa25-23",
+  "question": "Which metric is used to evaluate the balance between precision and recall?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Accuracy"
+   },
+   {
+    "key": "B",
+    "text": "F1 Score"
+   },
+   {
+    "key": "C",
+    "text": "Recall"
+   },
+   {
+    "key": "D",
+    "text": "Precision"
+   }
+  ],
+  "multi": false,
+  "answer": null,
+  "answerSource": null,
+  "sourceAnswers": [],
+  "conflict": false
+ },
+ {
+  "id": "fa25-24",
+  "question": "What is the primary focus of data ingestion pipelines?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Data visualization"
+   },
+   {
+    "key": "B",
+    "text": "Data storage"
+   },
+   {
+    "key": "C",
+    "text": "Data quality maintenance"
+   },
+   {
+    "key": "D",
+    "text": "Data collection and processing"
+   }
+  ],
+  "multi": false,
+  "answer": null,
+  "answerSource": null,
+  "sourceAnswers": [],
+  "conflict": false
+ },
+ {
+  "id": "fa25-30",
+  "question": "In multilabel classification, how are labels assigned to samples?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Labels are mutually exclusive."
+   },
+   {
+    "key": "B",
+    "text": "Each sample can have multiple labels assigned."
+   },
+   {
+    "key": "C",
+    "text": "Only one label can be assigned to each sample."
+   },
+   {
+    "key": "D",
+    "text": "It is the same as binary classification."
+   }
+  ],
+  "multi": false,
+  "answer": null,
+  "answerSource": null,
+  "sourceAnswers": [],
+  "conflict": false
+ },
+ {
+  "id": "fa25-31",
+  "question": "Which of the following is NOT a benefit of using NLP in enterprises?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Extracting insights from unstructured text data"
+   },
+   {
+    "key": "B",
+    "text": "Automating customer service responses"
+   },
+   {
+    "key": "C",
+    "text": "Creating complex hardware systems"
+   },
+   {
+    "key": "D",
+    "text": "Enhancing data-driven decision-making"
+   }
+  ],
+  "multi": false,
+  "answer": null,
+  "answerSource": null,
+  "sourceAnswers": [],
+  "conflict": false
+ },
+ {
+  "id": "fa25-34",
+  "question": "Which learning technique involves discovering appropriate actions through trial and error?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Supervised Learning"
+   },
+   {
+    "key": "B",
+    "text": "Unsupervised Learning"
+   },
+   {
+    "key": "C",
+    "text": "Reinforcement Learning"
+   },
+   {
+    "key": "D",
+    "text": "Semi-supervised Learning"
+   }
+  ],
+  "multi": false,
+  "answer": null,
+  "answerSource": null,
+  "sourceAnswers": [],
+  "conflict": false
+ },
+ {
+  "id": "fa25-39",
+  "question": "What is the primary goal of the teams deployed by AAVAIL?",
+  "options": [
+   {
+    "key": "A",
+    "text": "To increase product prices"
+   },
+   {
+    "key": "B",
+    "text": "To focus on product traction in new markets"
+   },
+   {
+    "key": "C",
+    "text": "To reduce the number of team members"
+   },
+   {
+    "key": "D",
+    "text": "To develop new marketing strategies"
+   }
+  ],
+  "multi": false,
+  "answer": null,
+  "answerSource": null,
+  "sourceAnswers": [],
+  "conflict": false
+ },
+ {
+  "id": "fa25-40",
+  "question": "What is one of the key aspects to consider when preparing for data analysis?",
+  "options": [
+   {
+    "key": "A",
+    "text": "The color scheme of the dashboard"
+   },
+   {
+    "key": "B",
+    "text": "The features available for each individual from the teams"
+   },
+   {
+    "key": "C",
+    "text": "The number of team members"
+   },
+   {
+    "key": "D",
+    "text": "The location of the markets"
+   }
+  ],
+  "multi": false,
+  "answer": null,
+  "answerSource": null,
+  "sourceAnswers": [],
+  "conflict": false
+ },
+ {
+  "id": "fa25-46",
+  "question": "Which of the following is NOT a manager for a Spark cluster?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Apache Mesos"
+   },
+   {
+    "key": "B",
+    "text": "Hadoop YARN"
+   },
+   {
+    "key": "C",
+    "text": "Docker"
+   },
+   {
+    "key": "D",
+    "text": "Spark on Kubernetes"
+   }
+  ],
+  "multi": false,
+  "answer": null,
+  "answerSource": null,
+  "sourceAnswers": [],
+  "conflict": false
+ }
+]

@@ -1,0 +1,194 @@
+{
+  "id": 3,
+  "title": "Feature engineering & phát hiện bias",
+  "ibmCourse": "IBM AI Workflow – Course 3: AI Workflow: Feature Engineering and Bias Detection",
+  "intro": "Chương này tương ứng với IBM Course 3: biến đổi dữ liệu thành feature tốt bằng các interface của scikit-learn và pipeline, xử lý dữ liệu mất cân bằng (imbalanced classes), giảm chiều, topic modeling, clustering và phát hiện outlier. Phần cuối tập trung vào bias, fairness (protected attributes, AIF360) và độ bền vững của mô hình trước tấn công đối kháng (Adversarial Robustness Toolbox).",
+  "keyPoints": [
+    {
+      "heading": "Data transformation, interface của scikit-learn và pipeline",
+      "body": "Feature engineering là quá trình dùng hiểu biết về dữ liệu và nghiệp vụ để tạo, chọn và biến đổi biến đầu vào giúp mô hình học tốt hơn. Đặc điểm quan trọng nhất khi áp dụng data transformation là tính lặp (Iteration): thử, đánh giá, quay lại chỉnh.\nscikit-learn có 4 interface chính: Estimator (fit), Predictor (predict), Transformer (transform) và Model (score). 'Classifier interface' KHÔNG phải là một interface. Phương thức .fit_transform thuộc cả Transformer và Estimator. Feature engineering cùng domain expert được đóng gói thành một Transformer tùy biến.\nDữ liệu đầu vào chuẩn cho các interface là NumPy arrays và SciPy sparse matrices (sparse matrix dùng trực tiếp được với train_test_split, không cần chuyển sang dense).\nPipeline (sklearn.pipeline.Pipeline) nối các transformer và estimator cuối thành một chuỗi; lý do chính để nhấn mạnh pipeline là có một nền tảng nhất quán để so sánh nhiều biến thể của workflow (True) và tránh rò rỉ dữ liệu khi cross-validation."
+    },
+    {
+      "heading": "Dữ liệu mất cân bằng (class imbalance)",
+      "body": "Khi một lớp chiếm tỉ lệ rất nhỏ, accuracy dễ gây hiểu nhầm (misleading): mô hình đoán toàn lớp đa số vẫn đạt accuracy cao. Nên dùng precision, recall, F1 hoặc confusion matrix.\nKỹ thuật phổ biến: oversampling lớp thiểu số và undersampling lớp đa số (đáp án 'Both A and B'), thêm class_weight, hoặc dùng thuật toán phát hiện (outlier/novelty detection).\nChiến lược tốt nhất: so sánh các cách re-sampling với một baseline VÀ với các thuật toán detection, rồi chọn theo metric phù hợp. Không có quy tắc bắt buộc: lớp thiểu số dưới 5% KHÔNG có nghĩa là phải dùng outlier detection thay cho học có giám sát (False).\nTrong case study clustering của khóa học, re-sampling KHÔNG đem lại cải thiện lớn (False) — luôn phải kiểm chứng bằng thực nghiệm."
+    },
+    {
+      "heading": "imbalanced-learn: SMOTE, ADASYN, SMOTENC",
+      "body": "imbalanced-learn (imblearn) là thư viện tương thích API scikit-learn, cung cấp: random over/under-sampling, SMOTE, ADASYN, các phương pháp kết hợp (SMOTEENN, SMOTETomek), ensemble cân bằng (BalancedRandomForest…) và Pipeline riêng hỗ trợ sampler. Thư viện KHÔNG đóng gói thuật toán outlier detection — đó là đáp án 'không phải feature của imbalanced-learn'.\nSMOTE (Synthetic Minority Over-sampling Technique) tạo mẫu tổng hợp bằng nội suy giữa một mẫu thiểu số và các láng giềng gần. ADASYN tạo nhiều mẫu hơn ở vùng khó học. SMOTENC dùng khi dữ liệu có cả biến categorical và continuous; SMOTEN dùng khi chỉ có biến categorical.\nLưu ý bẫy: ADASYN là kỹ thuật oversampling, KHÔNG phải thuật toán outlier detection; down-sampling lớp đa số KHÔNG phải là dimensionality reduction."
+    },
+    {
+      "heading": "Dimensionality reduction: PCA, tSNE, NMF",
+      "body": "Mục đích chính của giảm chiều: đơn giản hóa mô hình và giảm thời gian tính toán, trực quan hóa dữ liệu nhiều chiều, khử nhiễu, xử lý đa cộng tuyến.\nCác kỹ thuật: PCA (Principal Component Analysis), TruncatedSVD (dùng tốt với sparse matrix), NMF (Non-negative Matrix Factorization), tSNE, UMAP, LDA cho văn bản. K-nearest neighbors KHÔNG phải kỹ thuật giảm chiều.\ntSNE là lựa chọn hợp lý thay PCA vì mô tả được nhiều dạng cấu trúc phi tuyến hơn, nhưng khi số feature rất lớn vẫn nên dùng PCA (hoặc TruncatedSVD) giảm xuống khoảng 50 chiều trước (True).\nVới customer profiling của AAVAIL, KHÔNG bắt buộc chạy PCA trước khi clustering (False)."
+    },
+    {
+      "heading": "Topic modeling: bag-of-words và LDA",
+      "body": "Bag-of-words biểu diễn văn bản bằng tần suất (đếm) các từ, bỏ qua thứ tự; kết quả thường là sparse matrix (CountVectorizer, TfidfVectorizer). Word counts và ma trận user-item là ví dụ điển hình của dữ liệu hợp với sparse matrix.\nLatent Dirichlet Allocation (LDA) và NMF là các phương pháp topic modeling. Khi in các từ đại diện cho mỗi topic, insight thu được là: mỗi topic được định nghĩa bởi các từ đại diện, và mỗi document là một hỗn hợp (mixture) của các topic.\nTrực quan hóa topic (ví dụ pyLDAvis) có tác động đến business opportunity vì chia sẻ với domain expert có thể giúp feature engineering theo từng topic."
+    },
+    {
+      "heading": "Clustering và chọn số cụm",
+      "body": "Clustering (học không giám sát) dùng để phân nhóm khách hàng (customer profiling). Với dữ liệu AAVAIL, số profile/cụm hợp lý khoảng 6–8.\nMetric hợp lý để chọn số cụm: silhouette score, AIC/BIC cho Gaussian mixture, Calinski-Harabasz… Inertia (within-cluster sum-of-squares) luôn giảm khi tăng k nên KHÔNG được coi là metric hợp lý để tự nó chọn số cụm (đáp án trong đề).\nSpectral clustering áp dụng dễ dàng cho đồ thị (graph) vì làm việc trên ma trận affinity. Dirichlet process Gaussian mixture model (BayesianGaussianMixture) không cần đặt trước số cụm; KMeans, GMM, Spectral thì cần."
+    },
+    {
+      "heading": "Outlier và novelty detection",
+      "body": "Các thuật toán phát hiện outlier trong scikit-learn: Isolation Forest, Local Outlier Factor (LOF), One-Class SVM, Elliptic Envelope. Theo đáp án khóa học, Local Outlier Factor được xem là hoạt động tốt với dữ liệu nhiều chiều (Isolation Forest cũng hiệu quả với dữ liệu nhiều chiều).\nOutlier detection có thể dùng như một hướng giải quyết dữ liệu cực kỳ mất cân bằng, và novelty detection còn dùng để theo dõi dữ liệu mới trong production.\nADASYN, SMOTE là kỹ thuật sampling, không phải outlier detection."
+    },
+    {
+      "heading": "Bias, fairness và protected attributes",
+      "body": "Sampling bias xảy ra khi dữ liệu đại diện thiếu (under-represent) một số nhóm con. Protected attribute là đặc điểm không được dùng để phân biệt đối xử: race, gender, age, religion, national origin, disability… Ví dụ với recommendation engine bán lẻ, purchase history là thuộc tính ít có khả năng là protected attribute nhất.\nVới hồ sơ vay tín dụng, mẫu 'salary > 50K và Age > 25 thì sẽ trả nợ' là pattern không mong muốn nhất vì dựa vào tuổi (protected attribute).\nPrecision, recall, F1 KHÔNG cung cấp bằng chứng khách quan về fairness (False); cần metric fairness riêng như disparate impact, statistical parity difference.\nIBM AI Fairness 360 (AIF360) có các thuật toán giảm bias ở pre-processing (Reweighing), in-processing và post-processing. API của Reweighing theo phong cách scikit-learn (fit/transform), nên câu 'có nhiều phương thức tùy biến phải tra tài liệu' là False."
+    },
+    {
+      "heading": "Adversarial robustness và tấn công",
+      "body": "Adversarial Robustness Toolbox (ART, do IBM khởi xướng, nay thuộc LF AI & Data) là thư viện Python để đánh giá và kiểm chứng độ bền vững (robustness) của mô hình ML trước các tấn công: evasion, poisoning, extraction, inference.\nPoisoning attack: tấn công chèn dữ liệu độc hại vào tập huấn luyện để làm sai lệch mô hình. Evasion attack: chỉnh sửa nhỏ input lúc dự đoán (adversarial examples) để đánh lừa mô hình.\nPhòng thủ: kiểm tra chất lượng dữ liệu đầu vào, adversarial training, phát hiện input bất thường và giám sát mô hình sau khi triển khai."
+    }
+  ],
+  "sources": [
+    {
+      "label": "Coursera – AI Workflow: Feature Engineering and Bias Detection (IBM)",
+      "url": "https://www.coursera.org/learn/ibm-ai-workflow-feature-engineering-bias-detection"
+    },
+    {
+      "label": "imbalanced-learn – Over-sampling (SMOTE, ADASYN)",
+      "url": "https://imbalanced-learn.org/stable/over_sampling.html"
+    },
+    {
+      "label": "imbalanced-learn – SMOTENC",
+      "url": "https://imbalanced-learn.org/stable/references/generated/imblearn.over_sampling.SMOTENC.html"
+    },
+    {
+      "label": "scikit-learn – Decomposing signals in components (PCA, NMF, LDA)",
+      "url": "https://scikit-learn.org/stable/modules/decomposition.html"
+    },
+    {
+      "label": "scikit-learn – Clustering",
+      "url": "https://scikit-learn.org/stable/modules/clustering.html"
+    },
+    {
+      "label": "scikit-learn – Novelty and Outlier Detection",
+      "url": "https://scikit-learn.org/stable/modules/outlier_detection.html"
+    },
+    {
+      "label": "AI Fairness 360 (AIF360) documentation",
+      "url": "https://aif360.readthedocs.io/en/stable/"
+    },
+    {
+      "label": "Adversarial Robustness Toolbox documentation",
+      "url": "https://adversarial-robustness-toolbox.readthedocs.io/en/latest/"
+    }
+  ],
+  "slides": [
+    {
+      "title": "Feature engineering & phát hiện bias",
+      "bullets": [
+        "IBM AI Workflow – Course 3",
+        "Interface scikit-learn và pipeline",
+        "Dữ liệu mất cân bằng, SMOTE",
+        "Giảm chiều, topic modeling, clustering",
+        "Bias, fairness và tấn công đối kháng"
+      ],
+      "narration": "Chào mừng bạn đến với chương 3, tương ứng với khóa học thứ ba của IBM về feature engineering và phát hiện bias. Trong chương này, chúng ta sẽ đi qua cách biến đổi dữ liệu bằng các interface của scikit-learn và pipeline, cách xử lý dữ liệu mất cân bằng với SMOTE, các kỹ thuật giảm chiều, topic modeling, clustering và phát hiện outlier. Cuối cùng, chúng ta sẽ tìm hiểu bias, fairness và cách kiểm tra mô hình trước các tấn công đối kháng."
+    },
+    {
+      "title": "Bốn interface của scikit-learn",
+      "bullets": [
+        "Estimator: fit",
+        "Predictor: predict",
+        "Transformer: transform, fit_transform",
+        "Model: score",
+        "Input: NumPy array hoặc SciPy sparse matrix"
+      ],
+      "code": "from sklearn.pipeline import Pipeline\npipe = Pipeline([\n    (\"scaler\", StandardScaler()),\n    (\"clf\", LogisticRegression())\n])\npipe.fit(X_train, y_train)",
+      "narration": "scikit-learn có bốn interface chính. Estimator có phương thức fit để học từ dữ liệu. Predictor có phương thức predict. Transformer có phương thức transform, và fit_transform thuộc về cả Transformer lẫn Estimator. Model có phương thức score. Hãy nhớ rằng không có thứ gì gọi là Classifier interface, đây là bẫy hay gặp. Dữ liệu đầu vào chuẩn là NumPy array hoặc SciPy sparse matrix. Khi làm feature engineering cùng domain expert, ta đóng gói logic đó thành một Transformer tùy biến. Pipeline nối các bước lại, tạo nền tảng nhất quán để so sánh nhiều biến thể của workflow."
+    },
+    {
+      "title": "Feature engineering là quá trình lặp",
+      "bullets": [
+        "Tạo, chọn, biến đổi feature từ hiểu biết nghiệp vụ",
+        "Iteration là yếu tố then chốt",
+        "Sparse matrix dùng trực tiếp với train_test_split",
+        "Pipeline tránh rò rỉ dữ liệu"
+      ],
+      "narration": "Feature engineering là việc dùng hiểu biết về dữ liệu và nghiệp vụ để tạo, chọn và biến đổi các biến đầu vào. Khía cạnh quan trọng nhất khi áp dụng data transformation là tính lặp, nghĩa là thử một biến đổi, đánh giá kết quả, rồi quay lại điều chỉnh. Một điểm hay bị hỏi là sparse matrix của SciPy không cần chuyển sang dense trước khi dùng train_test_split. Ngoài ra, đặt các bước tiền xử lý trong pipeline giúp tránh rò rỉ dữ liệu khi chạy cross-validation."
+    },
+    {
+      "title": "Dữ liệu mất cân bằng",
+      "bullets": [
+        "Accuracy dễ gây hiểu nhầm",
+        "Oversampling lớp thiểu số, undersampling lớp đa số",
+        "So sánh với baseline và thuật toán detection",
+        "Dưới 5% không bắt buộc outlier detection"
+      ],
+      "narration": "Khi một lớp chỉ chiếm phần rất nhỏ, accuracy trở nên gây hiểu nhầm, vì mô hình đoán toàn bộ là lớp đa số vẫn đạt điểm cao. Hai kỹ thuật phổ biến là oversampling lớp thiểu số và undersampling lớp đa số, nên đáp án thường là cả hai. Chiến lược tốt nhất mà khóa học đề xuất là so sánh các cách re-sampling với một baseline và với các thuật toán detection. Không có quy tắc nào bắt buộc dùng outlier detection khi lớp thiểu số dưới năm phần trăm."
+    },
+    {
+      "title": "imbalanced-learn và họ SMOTE",
+      "bullets": [
+        "SMOTE: nội suy giữa các láng giềng gần",
+        "ADASYN: tập trung vùng khó học",
+        "SMOTENC: categorical lẫn continuous",
+        "Không có outlier detection trong imblearn"
+      ],
+      "code": "from imblearn.over_sampling import SMOTENC\nsm = SMOTENC(categorical_features=[0, 3])\nX_res, y_res = sm.fit_resample(X, y)",
+      "narration": "Thư viện imbalanced-learn tương thích với scikit-learn và cung cấp các phương pháp oversampling và undersampling. SMOTE tạo mẫu tổng hợp bằng cách nội suy giữa một điểm thiểu số và các láng giềng gần nhất. ADASYN sinh nhiều mẫu hơn ở vùng khó học. Khi dữ liệu có cả biến categorical và biến continuous, hãy dùng SMOTENC. Một bẫy quan trọng là imbalanced-learn không đóng gói thuật toán outlier detection, và ADASYN là kỹ thuật oversampling chứ không phải thuật toán phát hiện outlier."
+    },
+    {
+      "title": "Giảm chiều dữ liệu",
+      "bullets": [
+        "Mục đích: đơn giản mô hình, giảm tính toán",
+        "PCA, TruncatedSVD, NMF, tSNE",
+        "KNN không phải kỹ thuật giảm chiều",
+        "Nhiều feature: PCA trước rồi tSNE"
+      ],
+      "narration": "Mục đích chính của dimensionality reduction là đơn giản hóa mô hình và giảm thời gian tính toán. Các kỹ thuật tiêu biểu gồm PCA, TruncatedSVD, NMF và tSNE. K nearest neighbors không phải kỹ thuật giảm chiều, và down-sampling lớp đa số cũng không phải ứng dụng của giảm chiều. tSNE mô tả được nhiều dạng cấu trúc hơn PCA, nhưng khi số feature rất lớn, nên dùng PCA giảm chiều trước. Với dữ liệu khách hàng của AAVAIL, không bắt buộc chạy PCA trước khi clustering."
+    },
+    {
+      "title": "Topic modeling",
+      "bullets": [
+        "Bag-of-words: đếm tần suất từ",
+        "LDA và NMF tìm topic",
+        "Topic định nghĩa bởi từ đại diện",
+        "Document là hỗn hợp các topic"
+      ],
+      "narration": "Với văn bản, bag-of-words biểu diễn mỗi tài liệu bằng tần suất xuất hiện của các từ, bỏ qua thứ tự, và kết quả thường là sparse matrix. Latent Dirichlet Allocation, viết tắt là LDA, cùng với NMF là các phương pháp topic modeling phổ biến. Khi in ra các từ đại diện cho từng topic, ta hiểu rằng mỗi topic được định nghĩa bởi các từ đó, còn mỗi tài liệu là một hỗn hợp của nhiều topic. Trực quan hóa topic rất có giá trị cho doanh nghiệp, vì chia sẻ với domain expert có thể giúp feature engineering theo từng topic."
+    },
+    {
+      "title": "Clustering và outlier detection",
+      "bullets": [
+        "Chọn k: silhouette, BIC; không dựa inertia",
+        "Spectral clustering cho graph",
+        "DPGMM không cần đặt số cụm",
+        "LOF, Isolation Forest, One-Class SVM"
+      ],
+      "narration": "Clustering được dùng để xây dựng hồ sơ khách hàng, và với dữ liệu AAVAIL số cụm hợp lý khoảng sáu đến tám. Để chọn số cụm, hãy dùng silhouette score hoặc BIC, còn inertia luôn giảm khi tăng số cụm nên không được coi là metric hợp lý. Spectral clustering áp dụng dễ dàng cho dữ liệu dạng đồ thị. Dirichlet process Gaussian mixture model không cần đặt trước số cụm. Về phát hiện outlier, ta có Isolation Forest, One-Class SVM, Elliptic Envelope và Local Outlier Factor, phương pháp được khóa học nêu là hoạt động tốt với dữ liệu nhiều chiều."
+    },
+    {
+      "title": "Bias, fairness và AIF360",
+      "bullets": [
+        "Sampling bias: thiếu đại diện nhóm con",
+        "Protected attribute: tuổi, giới tính, chủng tộc",
+        "Precision, recall không chứng minh fairness",
+        "AIF360 Reweighing có API kiểu scikit-learn"
+      ],
+      "narration": "Sampling bias xảy ra khi dữ liệu đại diện thiếu một số nhóm con. Protected attribute là những đặc điểm như tuổi, giới tính, chủng tộc hay tôn giáo, không được dùng để phân biệt đối xử. Ví dụ, trong hệ thống gợi ý bán lẻ, lịch sử mua hàng là thuộc tính ít có khả năng là protected attribute nhất. Với hồ sơ vay, quy tắc dựa trên tuổi là pattern không mong muốn. Precision, recall và F1 không phải bằng chứng khách quan về fairness. Bộ công cụ AI Fairness 360 của IBM có thuật toán Reweighing với API đơn giản theo phong cách scikit-learn."
+    },
+    {
+      "title": "Adversarial robustness",
+      "bullets": [
+        "Adversarial Robustness Toolbox kiểm chứng robustness",
+        "Poisoning: chèn dữ liệu độc vào training",
+        "Evasion: sửa input lúc dự đoán",
+        "Giám sát và adversarial training"
+      ],
+      "narration": "Adversarial Robustness Toolbox là thư viện Python giúp đánh giá và kiểm chứng độ bền vững của mô hình machine learning. Poisoning attack là kiểu tấn công chèn dữ liệu độc hại vào tập huấn luyện để làm sai lệch mô hình. Evasion attack thì chỉnh sửa rất nhỏ dữ liệu đầu vào lúc dự đoán để đánh lừa mô hình. Cách phòng thủ gồm kiểm tra chất lượng dữ liệu, adversarial training và giám sát mô hình sau khi triển khai."
+    },
+    {
+      "title": "Tổng kết và mẹo thi",
+      "bullets": [
+        "fit_transform: Transformer và Estimator",
+        "SMOTENC cho dữ liệu hỗn hợp",
+        "ADASYN, KNN là bẫy phân loại",
+        "Accuracy metric không chứng minh fairness"
+      ],
+      "narration": "Tóm lại, hãy nhớ bốn interface của scikit-learn và rằng fit_transform thuộc cả Transformer lẫn Estimator. Với dữ liệu mất cân bằng, so sánh re-sampling với baseline và thuật toán detection, dùng SMOTENC khi có biến categorical lẫn continuous. Cẩn thận các bẫy phân loại: ADASYN không phải outlier detection, KNN không phải giảm chiều, down-sampling không phải giảm chiều, và imbalanced-learn không có outlier detection. Inertia không dùng để chọn số cụm. Cuối cùng, precision và recall không chứng minh fairness, còn poisoning attack là chèn dữ liệu độc vào tập huấn luyện."
+    }
+  ]
+}

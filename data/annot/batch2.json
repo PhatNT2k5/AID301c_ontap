@@ -1,0 +1,481 @@
+[
+ {
+  "id": "su26fe-48",
+  "chapterId": 1,
+  "aiAnswer": [
+   "B"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Jupyter notebooks là công cụ tiêu chuẩn trong hệ sinh thái Python cho data science vì cho phép kết hợp code, kết quả, biểu đồ và ghi chú trong cùng một tài liệu. RStudio (A) là IDE cho ngôn ngữ R, Spyder (C) chỉ là một IDE Python, còn Tableau (D) là công cụ BI/visualization, không phải chuẩn của hệ sinh thái Python."
+ },
+ {
+  "id": "su26fe-49",
+  "chapterId": 4,
+  "aiAnswer": [
+   "A"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Đúng. Train-test split giữ lại dữ liệu chưa thấy để đánh giá, còn cross-validation ước lượng hiệu năng ổn định hơn trên nhiều lần chia dữ liệu; cả hai giúp phát hiện overfitting và đảm bảo mô hình tổng quát tốt cho dữ liệu mới."
+ },
+ {
+  "id": "su26fe-50",
+  "chapterId": 1,
+  "aiAnswer": [
+   "C"
+  ],
+  "agree": true,
+  "confidence": "low",
+  "explanation": "Theo đáp án nguồn, nhóm đang ở giai đoạn Empathize: đây là giai đoạn đầu của design thinking, khi nhóm tìm hiểu người dùng, phỏng vấn, thu thập nhu cầu và vấn đề thực tế. Ideate (A) là lúc brainstorm giải pháp, Prototype (B) là dựng mẫu thử, Test (D) là kiểm thử với người dùng, đều diễn ra sau khi đã hiểu và định nghĩa vấn đề.",
+  "reviewNote": "Câu hỏi thiếu tình huống mô tả hoạt động của nhóm nên không thể kiểm chứng độc lập; giữ đáp án nguồn C (Empathize), cần đối chiếu đề gốc."
+ },
+ {
+  "id": "su26re-01",
+  "chapterId": 1,
+  "aiAnswer": [
+   "A"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Dask là thư viện Python cho tính toán song song, mở rộng API giống pandas/NumPy để xử lý dữ liệu lớn hơn bộ nhớ hoặc phân tán trên cluster. CSV (B) chỉ là định dạng file, VS Code (C) và PyCharm (E) là IDE, còn Database (D) dùng để lưu trữ chứ không phải công cụ scale phân tích trong Python."
+ },
+ {
+  "id": "su26re-02",
+  "chapterId": 5,
+  "aiAnswer": [
+   "B"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Docker đóng gói mô hình cùng code, thư viện và cấu hình vào một container, tạo môi trường chuẩn, nhất quán từ máy dev đến production, giúp triển khai mô hình dễ dàng và tái lập được. Docker không dùng để visualization (A), không loại bỏ việc viết code (C) và không phải hệ thống lưu trữ dữ liệu (D)."
+ },
+ {
+  "id": "su26re-03",
+  "chapterId": 5,
+  "aiAnswer": [
+   "A"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Trong Spark MLlib, tham số có thể đặt trực tiếp khi khởi tạo model (B), hoặc truyền qua ParamMap vào .fit() của model hay của pipeline (C, D, E). Truyền một pickle file (A) khi khai báo model không phải cách hợp lệ, vì Spark ML không đọc tham số từ pickle mà dùng Param/ParamMap."
+ },
+ {
+  "id": "su26re-04",
+  "chapterId": 1,
+  "aiAnswer": [
+   "A"
+  ],
+  "agree": true,
+  "confidence": "medium",
+  "explanation": "Theo đáp án nguồn, mục tiêu làm sạch hợp lý là mỗi dòng là một customer, các cột là đặc trưng tổng hợp như total_sales, name, most_bought, vì bài toán quan tâm đến hành vi từng khách hàng và dạng bảng này dùng trực tiếp cho phân tích/mô hình. Dạng transactions trên rows (C) chỉ là dữ liệu thô gần như chưa được tổng hợp, còn daily revenue trên rows (B) làm mất thông tin cấp khách hàng.",
+  "reviewNote": "Nguồn mâu thuẫn (SU26 RE: A, Quizlet 1: C). A hợp lý hơn vì mục tiêu munging là tổng hợp về đơn vị phân tích (customer); C gần với dữ liệu thô ban đầu."
+ },
+ {
+  "id": "su26re-05",
+  "chapterId": 4,
+  "aiAnswer": [
+   "D"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Confusion matrix của bài toán nhị phân gồm bốn ô: True Positives, True Negatives, False Positives và False Negatives. Average Score (D) không phải thành phần của confusion matrix mà là một khái niệm không liên quan."
+ },
+ {
+  "id": "su26re-06",
+  "chapterId": 4,
+  "aiAnswer": [
+   "A",
+   "B",
+   "C"
+  ],
+  "agree": true,
+  "confidence": "medium",
+  "explanation": "Quá trình điều chỉnh tham số mô hình dựa trên dữ liệu huấn luyện có thể gọi là learning (A), estimation (B, ước lượng tham số theo góc nhìn thống kê) hoặc model fitting (C, như phương thức .fit() trong scikit-learn). Labeling (D) là việc gán nhãn cho dữ liệu, xảy ra trước khi huấn luyện, không phải quá trình tối ưu tham số."
+ },
+ {
+  "id": "su26re-07",
+  "chapterId": 4,
+  "aiAnswer": [
+   "C"
+  ],
+  "agree": true,
+  "confidence": "low",
+  "explanation": "Theo đáp án nguồn là C. F1 Score là trung bình điều hòa của precision và recall, nên phụ thuộc vào true positives, false positives và false negatives, và không quan tâm đến true negatives (A). Đáp án C nhấn mạnh TP và FN (thành phần recall), nhưng thực tế F1 cũng dùng FP (thành phần precision của đáp án D), nên cả C và D đều chỉ đúng một phần.",
+  "reviewNote": "F1 = 2TP/(2TP+FP+FN) dùng cả TP, FP, FN; C chỉ mô tả recall, D chỉ mô tả precision, nên câu hỏi mơ hồ. Giữ đáp án nguồn C nhưng cần lưu ý điểm này."
+ },
+ {
+  "id": "su26re-08",
+  "chapterId": 4,
+  "aiAnswer": [
+   "B"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Tham số n_jobs trong nhiều estimator và GridSearchCV của scikit-learn cho phép chạy song song trên nhiều CPU core (n_jobs=-1 dùng tất cả core), giúp tăng tốc huấn luyện. Tăng số feature (A) làm chậm hơn, giảm kích thước dữ liệu (C) có thể làm giảm chất lượng mô hình, còn tránh dùng thuật toán tối ưu (D) là vô lý."
+ },
+ {
+  "id": "su26re-09",
+  "chapterId": 3,
+  "aiAnswer": [
+   "C"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Bag-of-words biểu diễn mỗi văn bản thành vector đếm tần suất xuất hiện của từng từ, bỏ qua thứ tự từ; đây là đầu vào phổ biến cho topic modeling như LDA hoặc NMF. Nó không phải kỹ thuật visualization 3D (A), không sắp xếp văn bản theo độ dài (B) và không dự đoán từ tiếp theo (D, đó là language model)."
+ },
+ {
+  "id": "su26re-10",
+  "chapterId": 6,
+  "aiAnswer": [
+   "C"
+  ],
+  "agree": true,
+  "confidence": "medium",
+  "explanation": "Service kiểu LoadBalancer trong Kubernetes cấp một external load balancer (thường từ cloud provider) với IP bên ngoài để người dùng truy cập ứng dụng. ClusterIP (A) và internal service (D) chỉ truy cập được trong cluster; NodePort (B) cũng mở port trên node nhưng là cách đơn giản, ít dùng cho người dùng cuối hơn so với LoadBalancer."
+ },
+ {
+  "id": "su26re-11",
+  "chapterId": 6,
+  "aiAnswer": [
+   "D"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "kubectl là command-line interface (CLI) để giao tiếp với Kubernetes API server, dùng để triển khai, xem và quản lý tài nguyên trong cluster. Công cụ chạy cluster một node cục bộ (B) là minikube, còn agent chạy trên mỗi node (C) là kubelet."
+ },
+ {
+  "id": "su26re-12",
+  "chapterId": 5,
+  "aiAnswer": [
+   "B"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Lợi ích chính của Docker là đóng gói ứng dụng cùng toàn bộ dependency, giúp triển khai dễ dàng và nhất quán trên mọi môi trường. Các lựa chọn còn lại sai: container nhẹ hơn virtual machine chứ không tốn tài nguyên hơn (A), Docker dùng được cho cả ứng dụng lớn (C) và chạy được nhiều ứng dụng/container cùng lúc (D)."
+ },
+ {
+  "id": "su26re-13",
+  "chapterId": 1,
+  "aiAnswer": [
+   "B"
+  ],
+  "agree": true,
+  "confidence": "medium",
+  "explanation": "Trong tình huống của khóa học, sau khi có dữ liệu bán hàng, ban quản lý muốn biết các nhóm bán hàng đã được tối ưu hay chưa dựa trên dữ liệu lịch sử, vì đây là câu hỏi kinh doanh cốt lõi gắn với quyết định tổ chức. Số lượng sản phẩm bán ra (A), ngân sách marketing (C) hay nhân khẩu học khách hàng (D) chỉ là thông tin mô tả, không trả lời trực tiếp mối quan tâm đó."
+ },
+ {
+  "id": "su26re-14",
+  "chapterId": 1,
+  "aiAnswer": [
+   "A"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "OSEMN gồm Obtain, Scrub, Explore, Model, iNterpret; chữ S là Scrubbing, tức làm sạch dữ liệu. Sampling (B), Structuring (C) và Storing (D) không phải tên các bước trong framework này."
+ },
+ {
+  "id": "su26re-15",
+  "chapterId": 3,
+  "aiAnswer": [
+   "B"
+  ],
+  "agree": true,
+  "confidence": "medium",
+  "explanation": "Áp dụng data transformations (scaling, log transform, encoding...) là quá trình lặp: thử một phép biến đổi, đánh giá ảnh hưởng lên mô hình, rồi điều chỉnh. Data collection (A), visualization (C) và storage (D) là các bước liên quan nhưng không phải đặc điểm then chốt của việc áp dụng transformations."
+ },
+ {
+  "id": "su26re-16",
+  "chapterId": 2,
+  "aiAnswer": [
+   "E"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Khi đưa ra phát biểu xác suất về một mẫu, ta giả định có population nền (A), population tuân theo một phân phối xác suất giả định (B), các quan sát là i.i.d. (C) và dữ liệu được mô hình hóa bằng random variables (D). Phát biểu xác suất chỉ áp dụng cho từng quan sát một (E) không phải là giả định; suy luận thống kê nói về toàn bộ mẫu/population."
+ },
+ {
+  "id": "su26re-17",
+  "chapterId": 1,
+  "aiAnswer": [
+   "C"
+  ],
+  "agree": true,
+  "confidence": "medium",
+  "explanation": "Khóa học nhấn mạnh rằng data scientist có thể dành phần lớn thời gian, khoảng 60% (một số khảo sát nói tới 80%), cho việc làm sạch và chuẩn bị dữ liệu. 10% (A) và 30% (B) quá thấp so với thực tế, còn 90% (D) là phóng đại."
+ },
+ {
+  "id": "su26re-18",
+  "chapterId": 3,
+  "aiAnswer": [
+   "B"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Adversarial Robustness Toolbox (ART) là thư viện mã nguồn mở của IBM dùng để đánh giá và tăng cường độ bền vững của mô hình ML trước các tấn công adversarial. TensorFlow (A), scikit-learn (C) và Keras (D) là framework để xây dựng mô hình, không chuyên về kiểm tra robustness."
+ },
+ {
+  "id": "su26re-19",
+  "chapterId": 4,
+  "aiAnswer": [
+   "B"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Shuffle and split chỉ là một cách chia dữ liệu cho cross-validation, không làm giảm số feature, kích thước dữ liệu hay số tổ hợp tham số, nên ít khả năng tăng tốc grid search nhất. Ngược lại, variance thresholding (A) và PCA (E) giảm số chiều, randomized search (C) giảm số tổ hợp cần thử, còn subset dữ liệu (D) giảm lượng dữ liệu huấn luyện."
+ },
+ {
+  "id": "su26re-20",
+  "chapterId": 4,
+  "aiAnswer": [
+   "B"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "classification_report của sklearn in bảng tóm tắt hiệu năng mô hình phân loại gồm precision, recall, F1-score và support cho từng lớp. Nó không vẽ biểu đồ (A), không tiền xử lý dữ liệu (C) và không huấn luyện mô hình (D)."
+ },
+ {
+  "id": "su26re-21",
+  "chapterId": 2,
+  "aiAnswer": [
+   "A"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Hàm stats.norm.cdf(x, loc, scale) trả về P(X <= x) của phân phối chuẩn có mean loc và độ lệch chuẩn scale; vì cần P(X >= 80) nên lấy 1 - cdf, như đáp án A (kết quả khoảng 0.0668). Đáp án B trả về P(X <= 80) nên sai chiều; C sai vì scipy.stats không có hàm cdf ở cấp module; D sai vì stats.norm(...) tạo ra một distribution object chứ không phải xác suất."
+ },
+ {
+  "id": "su26re-22",
+  "chapterId": 4,
+  "aiAnswer": [
+   "A"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "RMSE là Root Mean Square Error: căn bậc hai của trung bình bình phương sai số giữa giá trị dự đoán và giá trị thực, thường dùng đánh giá mô hình regression. Các lựa chọn khác (B, C, D) là tên gọi sai."
+ },
+ {
+  "id": "su26re-23",
+  "chapterId": 2,
+  "aiAnswer": [
+   "B"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "matplotlib.pyplot cung cấp giao diện dạng hàm (state-based, giống MATLAB) để tạo biểu đồ nhanh khi dùng tương tác, ví dụ plt.plot, plt.show. Nó không dùng để xây web app (A), quản lý lưu trữ dữ liệu (C) hay phân tích thống kê (D)."
+ },
+ {
+  "id": "su26re-24",
+  "chapterId": 4,
+  "aiAnswer": [
+   "B"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Khi biến mục tiêu là giá trị thực liên tục, bài toán supervised learning là regression. Classification (A) dự đoán nhãn rời rạc, clustering (C) là unsupervised, còn reinforcement learning (D) học từ reward chứ không phải từ nhãn."
+ },
+ {
+  "id": "su26re-25",
+  "chapterId": 6,
+  "aiAnswer": [
+   "C"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Kubernetes thường định nghĩa tài nguyên (Deployment, Service, Pod...) bằng file manifest YAML và áp dụng qua kubectl apply -f. JSON (A) về kỹ thuật cũng được hỗ trợ nhưng YAML là định dạng chuẩn được dùng phổ biến; XML (B) và CSV (D) không được dùng."
+ },
+ {
+  "id": "su26re-26",
+  "chapterId": 4,
+  "aiAnswer": [
+   "B"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "fit_transform thuộc interface Transformer, và mọi Transformer trong scikit-learn cũng là Estimator vì có phương thức fit. Predictor là interface có phương thức predict (như các mô hình phân loại/hồi quy), không liên quan đến fit_transform, nên các đáp án chứa Predictor (A, C, E) sai; chỉ Transformer (D) thì thiếu Estimator."
+ },
+ {
+  "id": "su26re-27",
+  "chapterId": 5,
+  "aiAnswer": [
+   "A"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Đúng. Docker image là template để tạo container; có thể docker pull image từ registry như Docker Hub rồi docker run để chạy container. Trên registry có cả official image và nhiều image do người dùng tự định nghĩa."
+ },
+ {
+  "id": "su26re-28",
+  "chapterId": 1,
+  "aiAnswer": [
+   "A",
+   "B",
+   "C"
+  ],
+  "agree": true,
+  "confidence": "medium",
+  "explanation": "Theo tư duy khoa học, sau thí nghiệm về lượng tuyết, các bước tiếp theo hợp lý là đánh giá khả năng kinh doanh ở bang được dữ liệu ủng hộ (Vermont, A), lặp lại thí nghiệm với nhiều dữ liệu hơn (B) hoặc với dữ liệu chi tiết hơn như snowfall theo county (C) để kiểm chứng kết quả. Làm business viability assessment cho cả ba bang (D) bỏ qua kết quả thí nghiệm nên không phải bước tiếp theo theo tinh thần khoa học.",
+  "reviewNote": "Nguồn mâu thuẫn (Quizlet 1 chọn cả A, B, C, D). A, B, C hợp lý hơn vì D không dựa trên kết quả thí nghiệm; tuy nhiên đề thiếu ngữ cảnh thí nghiệm gốc."
+ },
+ {
+  "id": "su26re-29",
+  "chapterId": 6,
+  "aiAnswer": [
+   "B"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Deployment trong Kubernetes duy trì số replica mong muốn thông qua ReplicaSet; khi một pod lỗi, controller tự động tạo pod mới thay thế. Deployment không bị xóa (A), ứng dụng không dừng nếu còn replica khác (C); kubelet có giám sát container trên node (D) nhưng việc tạo pod thay thế là do controller của Deployment."
+ },
+ {
+  "id": "su26re-30",
+  "chapterId": 4,
+  "aiAnswer": [
+   "A"
+  ],
+  "agree": true,
+  "confidence": "low",
+  "explanation": "Theo đáp án nguồn (đề SU26 RE), một CNN đơn giản chạy trên cả mười lớp với toàn bộ dữ liệu đạt khoảng 62-77% accuracy, phù hợp với dataset ảnh màu như CIFAR-10 nơi CNN đơn giản thường chỉ đạt khoảng 70-75%. Mức 90-94% (D) chỉ đạt được với mô hình sâu hơn hoặc dataset dễ hơn.",
+  "reviewNote": "Nguồn mâu thuẫn (SU26 RE: A, cả hai Quizlet: D). Nếu dataset trong bài là CIFAR-10 thì A hợp lý; nếu là MNIST/Fashion-MNIST thì D hợp lý hơn, cần kiểm tra notebook gốc của Course 4."
+ },
+ {
+  "id": "su26re-31",
+  "chapterId": 1,
+  "aiAnswer": [
+   "C"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Dù mỗi process model (CRISP-DM, design thinking, quy trình của IBM) nhấn mạnh khác nhau, chúng đều bắt đầu từ việc giải quyết câu hỏi kinh doanh và có feedback loop để lặp lại, cải thiện. Prediction/recommendation (A) chỉ là loại bài toán, data mining/cleaning (B) và testing/deployment (D) là các bước cụ thể không phải yếu tố chung cốt lõi."
+ },
+ {
+  "id": "su26re-32",
+  "chapterId": 6,
+  "aiAnswer": [
+   "B"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Kube DNS (hoặc CoreDNS) cung cấp DNS nội bộ cho cluster, giúp pod tìm và gọi service bằng tên (service discovery) thay vì IP. Nó không quản lý API server (A), không giám sát health ứng dụng (C, đó là probe) và không tạo YAML manifest (D)."
+ },
+ {
+  "id": "su26re-33",
+  "chapterId": 1,
+  "aiAnswer": [
+   "C"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Tư duy khoa học dựa trên dữ liệu, thí nghiệm và bằng chứng: tìm dữ liệu phản hồi khách hàng (A), chạy A/B testing (B) hay xem xét các trường hợp tương tự (D). Hỏi thành viên lãnh đạo nào ủng hộ quyết định (C) dựa trên ý kiến và quyền lực chứ không phải bằng chứng, nên không thể hiện tư duy khoa học."
+ },
+ {
+  "id": "su26re-34",
+  "chapterId": 5,
+  "aiAnswer": [
+   "E"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Container chia sẻ kernel của host và nhắm đến đóng gói ứng dụng, nên không phải là thay thế trực tiếp cho một virtual machine đầy đủ (E). Microservices (A), nền tảng chung cho DevOps (B), tránh cài đặt môi trường Spark phức tạp (C) và tính di động multi-cloud cho mô hình ML (D) đều là use case điển hình của Docker."
+ },
+ {
+  "id": "su26re-35",
+  "chapterId": 4,
+  "aiAnswer": [
+   "B"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Sai. Watson Visual Recognition có thể truy cập không chỉ bằng API key qua Python hoặc curl mà còn qua các SDK khác (Node.js, Java...) và giao diện web như Watson Studio để huấn luyện, thử mô hình mà không cần viết code."
+ },
+ {
+  "id": "su26re-36",
+  "chapterId": 6,
+  "aiAnswer": [
+   "C"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "IBM Watson OpenScale giám sát mô hình trong production với các tính năng chính là drift monitoring, fairness (phát hiện bias) và explainability (giải thích dự đoán). Các lựa chọn A, B, D liệt kê các tính năng không thuộc OpenScale (D rõ ràng là đáp án đùa)."
+ },
+ {
+  "id": "su26re-37",
+  "chapterId": 4,
+  "aiAnswer": [
+   "A"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Decision tree là một mô hình đơn lẻ, không phải ensemble. Random forest (B) kết hợp nhiều cây bằng bagging, boosting (C) và gradient boosting (E) kết hợp tuần tự nhiều weak learner, còn model stacking (D) kết hợp dự đoán của nhiều mô hình khác nhau."
+ },
+ {
+  "id": "su26re-38",
+  "chapterId": 1,
+  "aiAnswer": [
+   "D"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Python cơ bản không tự động song song hóa xử lý trên nhiều core; muốn vậy phải dùng multiprocessing hoặc thư viện như joblib, Dask, và GIL còn hạn chế đa luồng. Các phát biểu còn lại đều đúng: chạy trong IPython/Jupyter (A), có comment (B), chạy file .py từ command line (C) và import hàm từ file .py khác (E)."
+ },
+ {
+  "id": "su26re-39",
+  "chapterId": 5,
+  "aiAnswer": [
+   "B"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "docker-ce (Community Edition) là gói cộng đồng miễn phí của Docker Engine. docker-io (A) là tên gói cũ trong một số repository của Linux distro, docker-compose (C) là công cụ định nghĩa ứng dụng nhiều container, còn docker-toolbox (D) là bộ cài đặt cũ cho Windows/Mac."
+ },
+ {
+  "id": "su26re-40",
+  "chapterId": 4,
+  "aiAnswer": [
+   "B"
+  ],
+  "agree": true,
+  "confidence": "medium",
+  "explanation": "Thách thức phổ biến khi tối ưu code cho mô hình ML là thời gian huấn luyện của mô hình lớn khó rút ngắn, đòi hỏi song song hóa, giảm chiều dữ liệu hay dùng phần cứng tốt hơn. Thiếu dữ liệu (A) là vấn đề dữ liệu chứ không phải tối ưu code, việc dùng nhiều GPU (C) hoàn toàn khả thi, và có rất nhiều ngôn ngữ lập trình (D)."
+ },
+ {
+  "id": "su26re-41",
+  "chapterId": 4,
+  "aiAnswer": [
+   "B"
+  ],
+  "agree": true,
+  "confidence": "medium",
+  "explanation": "Tài liệu chính thức của IBM hướng dẫn cài Watson Python SDK bằng lệnh pip install --upgrade ibm-watson, vừa cài mới vừa nâng cấp lên phiên bản mới nhất. Lệnh pip install ibm-watson (A) cũng cài được nhưng không phải lệnh được khóa học đưa ra; C và D không phải lệnh hợp lệ vì thiếu pip."
+ },
+ {
+  "id": "su26re-42",
+  "chapterId": 5,
+  "aiAnswer": [
+   "B"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Spark ML cung cấp sẵn collaborative filtering thông qua thuật toán ALS (Alternating Least Squares) trong pyspark.ml.recommendation. Các loại content-based (C), utility-based (A), hybrid (D) hay demographics-based (E) không có sẵn dưới dạng module recommender trong Spark ML."
+ },
+ {
+  "id": "su26re-43",
+  "chapterId": 2,
+  "aiAnswer": [
+   "C"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Plotly nổi bật với biểu đồ tương tác (A), dùng được trong Python notebook (B) và có nhiều loại biểu đồ đặc biệt như contour plot (D). Nó không chỉ tạo ảnh tĩnh, nên Generating static images only (C) không phải đặc điểm của Plotly."
+ },
+ {
+  "id": "su26re-44",
+  "chapterId": 4,
+  "aiAnswer": [
+   "B"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Naive Bayes tính xác suất hậu nghiệm cho từng lớp nên tự nhiên hỗ trợ multiclass classification. Linear Regression (A) dùng cho hồi quy, K-Means (C) là clustering không giám sát, còn Decision Trees ở chế độ binary (D) bị giới hạn chỉ hai lớp theo cách mô tả trong đáp án."
+ }
+]

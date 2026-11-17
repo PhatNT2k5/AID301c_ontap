@@ -1,0 +1,190 @@
+{
+  "id": 4,
+  "title": "Machine learning, nhận dạng hình ảnh & NLP",
+  "ibmCourse": "IBM AI Workflow – Course 4: AI Workflow: Machine Learning, Visual Recognition and NLP",
+  "intro": "Chương này tương ứng với IBM Course 4: chọn và đánh giá mô hình supervised learning (metric phân loại, hồi quy, cross-validation), các họ mô hình từ linear model, tree, ensemble đến neural network (CNN, RNN, transfer learning). Phần sau giới thiệu Watson Visual Recognition, xử lý ngôn ngữ tự nhiên (NLP) với spaCy, scikit-learn và dịch vụ Watson Natural Language Understanding.",
+  "keyPoints": [
+    {
+      "heading": "Supervised learning, multiclass và multilabel",
+      "body": "Supervised learning gồm classification (dự đoán nhãn) và regression (dự đoán giá trị thực). Quá trình điều chỉnh tham số mô hình dựa trên dữ liệu huấn luyện được gọi là learning, estimation hay model fitting.\nMulticlass classification: mỗi mẫu chỉ thuộc đúng MỘT nhãn trong nhiều lớp. Multilabel: mỗi mẫu có thể có NHIỀU nhãn cùng lúc.\nMọi classifier trong scikit-learn đều làm multiclass ngay từ đầu (True), nhưng khác cách tiếp cận: one-vs-all/one-vs-rest (huấn luyện một classifier riêng cho mỗi nhãn) hoặc one-vs-one. Naïve Bayes được thiết kế vốn có (inherently) cho multiclass.\nCross-validation cùng train-test split là công cụ then chốt để mô hình hoạt động tốt trên dữ liệu chưa thấy (True). Grid search tăng tốc bằng n_jobs (song song); dùng ShuffleSplit là cách ít có khả năng tăng tốc nhất."
+    },
+    {
+      "heading": "Metric phân loại: confusion matrix, precision, recall, F1",
+      "body": "Confusion matrix gồm TP (dự đoán đúng lớp positive), FP, FN, TN. 'Average Score' KHÔNG phải thành phần của confusion matrix.\nPrecision = TP/(TP+FP); Recall = TP/(TP+FN); F1 là trung bình điều hòa của precision và recall, metric dùng để cân bằng hai đại lượng này. Với dữ liệu mất cân bằng, accuracy dễ gây hiểu nhầm.\nF-beta: khi false negative tốn kém hơn false positive (ví dụ gắn cờ bình luận nghi phạm pháp để xem lại thủ công) thì đặt beta = 2 để ưu tiên recall; beta < 1 ưu tiên precision.\nTham số average (micro, macro, weighted, binary) quyết định cách gộp điểm F1 giữa các lớp trong bài toán multiclass/multilabel.\nclassification_report của sklearn dùng để tóm tắt hiệu năng mô hình: precision, recall, f1-score, support cho từng lớp."
+    },
+    {
+      "heading": "Metric hồi quy và linear models",
+      "body": "RMSE = Root Mean Square Error, phạt nặng sai số lớn. MAE (Mean Absolute Error) ít nhạy với giá trị cực trị, nên ưu tiên MAE khi phân phối đuôi dài, ví dụ dự đoán thời gian đến khi máy hỏng.\nGeneralized linear models (GLM): linear regression, logistic regression, Poisson regression… KNN regression KHÔNG phải GLM. Các mô hình GLMM như multilevel/hierarchical model thường được tối ưu bằng kỹ thuật phức tạp như MCMC sampling (True).\nCác biến thể gradient descent đã học: batch, stochastic (SGD) và mini-batch gradient descent; 'regularized gradient descent' KHÔNG nằm trong danh sách."
+    },
+    {
+      "heading": "Decision tree và ensemble",
+      "body": "Decision tree dễ diễn giải và là mô hình hữu ích cho dữ liệu churn của AAVAIL (True), nhưng bản thân nó KHÔNG phải ensemble.\nEnsemble: bagging (Random Forest, BaggingClassifier) giảm variance; boosting (AdaBoost, Gradient Boosting, XGBoost) giảm bias. Bagging và boosting KHÔNG chỉ dùng decision tree làm base classifier (False).\nTrong Random Forest, các cây cơ sở riêng lẻ có low bias và high variance (câu 'high bias, low variance' là False); việc lấy trung bình nhiều cây giúp giảm variance."
+    },
+    {
+      "heading": "Neural network: CNN, RNN, transfer learning",
+      "body": "Tham số có thể tinh chỉnh của neural network: số layer, số neuron, activation function, learning rate, optimizer, batch size, số epoch, dropout/regularization. 'Hardware availability' KHÔNG phải tham số tunable.\nCNN điển hình gồm convolutional, pooling và dense layers (True); dùng cho phân loại ảnh, nhận dạng đối tượng. Một CNN đơn giản chạy trên cả 10 lớp (CIFAR-10) với toàn bộ dữ liệu đạt khoảng 62–77% accuracy. Theo đề, 'image composition' là use case ít phù hợp nhất cho CNN.\nRNN (và LSTM, GRU) phổ biến nhất cho time-series và dữ liệu chuỗi.\nTransfer learning là tái sử dụng mô hình đã huấn luyện sẵn (ví dụ trên ImageNet), xuất phát từ deep learning, KHÔNG phải từ reinforcement learning (False). Reinforcement learning là học hành động phù hợp qua thử và sai (trial and error).\nThêm GPU không phải lúc nào cũng làm thời gian huấn luyện giảm mãi (False) do chi phí giao tiếp, I/O và giới hạn song song."
+    },
+    {
+      "heading": "Watson Visual Recognition",
+      "body": "Watson Visual Recognition (dịch vụ IBM Cloud, nay đã ngừng cung cấp) cho phép phân loại ảnh bằng model có sẵn hoặc huấn luyện custom classifier từ các file zip ảnh positive cho mỗi lớp và ảnh negative.\nẢnh negative nên càng giống về mặt hình ảnh với ảnh positive càng tốt, để mô hình học được ranh giới tinh tế.\nCó thể truy cập qua API key với Python SDK/curl, nhưng cũng qua giao diện Watson Studio, nên câu 'chỉ truy cập bằng API key qua Python hoặc curl' là False.\nKhông cần tải ảnh về máy trước khi gọi classify: có thể truyền URL ảnh (False)."
+    },
+    {
+      "heading": "NLP: tiền xử lý và pipeline phân loại văn bản",
+      "body": "Mục đích của NLP là phân tích và hiểu ngôn ngữ của con người. Ứng dụng phổ biến trong doanh nghiệp: xử lý và phân tích phản hồi khách hàng, chatbot, phân loại tài liệu, trích xuất thông tin. Sentiment analysis là xác định sắc thái cảm xúc của một chuỗi từ.\nTiền xử lý: tokenization, bỏ stop words, lemmatization (spaCy). Trong khóa học, hàm lemmatize_document giảm tổng số token còn khoảng 45–50% so với ban đầu.\nBiểu diễn văn bản: bag-of-words, TF-IDF, n-grams; sau đó dùng classifier như Naive Bayes, SGDClassifier trong Pipeline. Câu hỏi hợp lý khi tuning pipeline NLP: có bỏ stop words không, dùng n-gram nào, TF-IDF hay count, chọn classifier nào. 'Nên dùng RMSE hay MAE' KHÔNG phải câu hỏi phù hợp (đó là metric hồi quy).\nDùng NLP API có sẵn thay vì tự xây mô hình giúp tốn ít thời gian và tài nguyên hơn."
+    },
+    {
+      "heading": "Watson Natural Language Understanding (NLU) và Python SDK",
+      "body": "Watson NLU phân tích văn bản để trích xuất: sentiment, emotion, entities, keywords, categories, concepts, relations, semantic roles, syntax. Custom model (qua Watson Knowledge Studio) được dùng cho entities và relations; theo đề, 'phân loại tài liệu bằng custom model xây từ văn bản' KHÔNG phải tính năng của NLU.\nThiết lập SDK: bước đầu tiên là tạo tài khoản IBM Cloud; cài đặt bằng lệnh pip install --upgrade ibm-watson.\nBa thông tin cần lưu (trong file bảo mật trên máy tin cậy, không đưa vào code): service API key, service version, service URL.\nĐể lặp lại thí nghiệm một cách reproducible, phải truyền tham số version (ngày phiên bản API, ví dụ '2022-04-07') trong mỗi request."
+    }
+  ],
+  "sources": [
+    {
+      "label": "Coursera – AI Workflow: Machine Learning, Visual Recognition and NLP (IBM)",
+      "url": "https://www.coursera.org/learn/ibm-ai-workflow-machine-learning-vr-nlp"
+    },
+    {
+      "label": "scikit-learn – Metrics and scoring",
+      "url": "https://scikit-learn.org/stable/modules/model_evaluation.html"
+    },
+    {
+      "label": "scikit-learn – classification_report",
+      "url": "https://scikit-learn.org/stable/modules/generated/sklearn.metrics.classification_report.html"
+    },
+    {
+      "label": "scikit-learn – Multiclass and multioutput algorithms",
+      "url": "https://scikit-learn.org/stable/modules/multiclass.html"
+    },
+    {
+      "label": "scikit-learn – Ensembles",
+      "url": "https://scikit-learn.org/stable/modules/ensemble.html"
+    },
+    {
+      "label": "scikit-learn – Linear Models",
+      "url": "https://scikit-learn.org/stable/modules/linear_model.html"
+    },
+    {
+      "label": "TensorFlow – Convolutional Neural Network (CIFAR-10) tutorial",
+      "url": "https://www.tensorflow.org/tutorials/images/cnn"
+    },
+    {
+      "label": "IBM Cloud API Docs – Natural Language Understanding",
+      "url": "https://cloud.ibm.com/apidocs/natural-language-understanding"
+    }
+  ],
+  "slides": [
+    {
+      "title": "Machine learning, hình ảnh & NLP",
+      "bullets": [
+        "IBM AI Workflow – Course 4",
+        "Metric phân loại và hồi quy",
+        "Linear model, tree, ensemble",
+        "CNN, RNN, transfer learning",
+        "Watson Visual Recognition và Watson NLU"
+      ],
+      "narration": "Chào mừng bạn đến với chương 4, tương ứng với khóa học thứ tư của IBM về machine learning, nhận dạng hình ảnh và xử lý ngôn ngữ tự nhiên. Chúng ta sẽ ôn cách đánh giá mô hình bằng các metric phân loại và hồi quy, các họ mô hình từ linear model, decision tree, ensemble đến neural network. Sau đó, chúng ta tìm hiểu dịch vụ Watson Visual Recognition, quy trình NLP và dịch vụ Watson Natural Language Understanding."
+    },
+    {
+      "title": "Supervised learning cơ bản",
+      "bullets": [
+        "Classification: nhãn; regression: giá trị thực",
+        "Multiclass: một nhãn mỗi mẫu",
+        "Multilabel: nhiều nhãn mỗi mẫu",
+        "One-vs-all: một classifier cho mỗi nhãn"
+      ],
+      "narration": "Supervised learning chia thành classification, dự đoán nhãn, và regression, dự đoán giá trị thực. Quá trình điều chỉnh tham số theo dữ liệu huấn luyện được gọi là learning, estimation hay model fitting. Trong multiclass classification, mỗi mẫu chỉ thuộc đúng một nhãn, còn multilabel cho phép một mẫu có nhiều nhãn. Mọi classifier của scikit-learn đều hỗ trợ multiclass, nhưng cách làm khác nhau. Chiến lược one-vs-all huấn luyện một classifier riêng cho mỗi nhãn. Naive Bayes thì vốn được thiết kế cho multiclass."
+    },
+    {
+      "title": "Confusion matrix và F1",
+      "bullets": [
+        "TP, FP, FN, TN",
+        "Precision, recall, F1 trung bình điều hòa",
+        "FN tốn kém: F-beta với beta = 2",
+        "average: micro, macro, weighted"
+      ],
+      "code": "from sklearn.metrics import classification_report, fbeta_score\nprint(classification_report(y_test, y_pred))\nfbeta_score(y_test, y_pred, beta=2.0)",
+      "narration": "Confusion matrix gồm bốn ô: true positive là các ca positive được dự đoán đúng, cùng false positive, false negative và true negative. Không có thành phần nào gọi là average score. Precision đo độ chính xác của dự đoán positive, recall đo khả năng bắt được positive thật, còn F1 là trung bình điều hòa của hai đại lượng này. Khi false negative tốn kém hơn, ví dụ gắn cờ bình luận nghi vi phạm pháp luật, hãy đặt beta bằng 2 trong F-beta để ưu tiên recall. Tham số average quyết định cách gộp điểm giữa các lớp, và classification_report giúp tóm tắt hiệu năng mô hình."
+    },
+    {
+      "title": "Hồi quy và linear models",
+      "bullets": [
+        "RMSE phạt nặng sai số lớn",
+        "MAE cho phân phối đuôi dài",
+        "GLM: linear, logistic, Poisson",
+        "Gradient descent: batch, stochastic, mini-batch"
+      ],
+      "narration": "Với hồi quy, RMSE là căn bậc hai của sai số bình phương trung bình và phạt nặng các sai số lớn. MAE ít nhạy với giá trị cực trị, nên được ưu tiên khi dữ liệu có phân phối đuôi dài, chẳng hạn dự đoán thời gian đến khi máy hỏng. Generalized linear model bao gồm linear regression, logistic regression và Poisson regression, còn KNN regression thì không phải. Các mô hình multilevel thuộc họ GLMM thường được tối ưu bằng MCMC sampling. Các biến thể gradient descent đã học là batch, stochastic và mini-batch, không có regularized gradient descent."
+    },
+    {
+      "title": "Decision tree và ensemble",
+      "bullets": [
+        "Decision tree hữu ích cho churn AAVAIL",
+        "Bagging giảm variance, boosting giảm bias",
+        "Base model không bắt buộc là cây",
+        "Cây trong Random Forest: low bias, high variance"
+      ],
+      "narration": "Decision tree dễ diễn giải và là mô hình hữu ích cho dữ liệu churn của AAVAIL, nhưng một cây đơn lẻ không phải ensemble. Bagging, như Random Forest, kết hợp nhiều mô hình để giảm variance, còn boosting như AdaBoost hay Gradient Boosting huấn luyện tuần tự để giảm bias. Bagging và boosting không chỉ dùng decision tree làm base classifier. Một bẫy hay gặp là các cây trong Random Forest có bias thấp và variance cao, chứ không phải bias cao. Khi grid search chậm, hãy dùng tham số n_jobs để chạy song song."
+    },
+    {
+      "title": "Neural network và CNN",
+      "bullets": [
+        "Tunable: layer, neuron, learning rate, epoch",
+        "Hardware availability không phải tham số",
+        "CNN: convolution, pooling, dense",
+        "CNN đơn giản trên CIFAR-10: 62–77%"
+      ],
+      "narration": "Neural network có nhiều tham số có thể tinh chỉnh như số layer, số neuron, activation function, learning rate, batch size và số epoch, còn hardware availability thì không phải tham số. Một convolutional neural network điển hình được ghép từ convolutional layer, pooling layer và dense layer. Trong khóa học, một CNN đơn giản chạy trên cả mười lớp ảnh với toàn bộ dữ liệu đạt khoảng 62 đến 77 phần trăm accuracy. Lưu ý rằng thêm GPU không phải lúc nào cũng làm thời gian huấn luyện tiếp tục giảm."
+    },
+    {
+      "title": "RNN, transfer learning, reinforcement learning",
+      "bullets": [
+        "RNN, LSTM cho time-series",
+        "Transfer learning: tái dùng mô hình huấn luyện sẵn",
+        "Không xuất phát từ reinforcement learning",
+        "Reinforcement learning: thử và sai"
+      ],
+      "narration": "Với dữ liệu chuỗi thời gian, recurrent neural network và các biến thể như LSTM là kiến trúc phổ biến nhất. Transfer learning là việc tái sử dụng một mô hình đã huấn luyện sẵn trên tập dữ liệu lớn, rồi tinh chỉnh cho bài toán mới. Đây là tiến bộ của deep learning, không phải từ reinforcement learning. Còn reinforcement learning là kỹ thuật học cách hành động phù hợp thông qua thử và sai, dựa trên phần thưởng từ môi trường."
+    },
+    {
+      "title": "Watson Visual Recognition",
+      "bullets": [
+        "Custom classifier: ảnh positive và negative",
+        "Negative giống positive càng tốt",
+        "Không chỉ dùng API key qua Python, curl",
+        "Classify bằng URL, không cần tải ảnh"
+      ],
+      "narration": "Watson Visual Recognition là dịch vụ phân loại ảnh của IBM Cloud, hiện đã ngừng cung cấp nhưng vẫn có trong đề thi. Khi huấn luyện custom classifier, bạn cung cấp các tập ảnh positive cho từng lớp và tập ảnh negative. Ảnh negative nên càng giống ảnh positive về mặt hình ảnh càng tốt. Dịch vụ không chỉ truy cập được bằng API key qua Python hay curl, mà còn qua giao diện Watson Studio. Ngoài ra, bạn không cần tải ảnh về máy trước khi gọi classify, vì có thể truyền URL của ảnh."
+    },
+    {
+      "title": "Quy trình NLP",
+      "bullets": [
+        "Tokenization, stop words, lemmatization",
+        "Lemmatize giảm token còn 45–50%",
+        "Bag-of-words, TF-IDF, n-grams",
+        "Tuning không hỏi RMSE hay MAE"
+      ],
+      "code": "pipe = Pipeline([\n    (\"tfidf\", TfidfVectorizer(ngram_range=(1, 2))),\n    (\"nb\", MultinomialNB())\n])",
+      "narration": "Mục đích của NLP là phân tích và hiểu ngôn ngữ con người, với ứng dụng điển hình là phân tích phản hồi khách hàng. Sentiment analysis xác định sắc thái cảm xúc của văn bản. Bước tiền xử lý gồm tokenization, loại stop words và lemmatization bằng spaCy, giúp giảm số token còn khoảng 45 đến 50 phần trăm. Văn bản được biểu diễn bằng bag-of-words hoặc TF-IDF rồi đưa vào classifier trong một pipeline. Khi tuning, ta hỏi về n-gram hay stop words, chứ không hỏi nên dùng RMSE hay MAE."
+    },
+    {
+      "title": "Watson Natural Language Understanding",
+      "bullets": [
+        "Sentiment, emotion, entities, keywords, categories",
+        "Lưu API key, version, URL an toàn",
+        "Truyền version mỗi request để reproducible",
+        "pip install --upgrade ibm-watson"
+      ],
+      "code": "nlu = NaturalLanguageUnderstandingV1(\n    version=\"2022-04-07\", authenticator=auth)\nnlu.set_service_url(service_url)",
+      "narration": "Watson Natural Language Understanding trích xuất sentiment, emotion, entities, keywords, categories và concepts từ văn bản. Dùng API có sẵn giúp tiết kiệm thời gian và tài nguyên so với tự xây mô hình. Để bắt đầu, bạn tạo tài khoản IBM Cloud, rồi cài SDK bằng lệnh pip install ibm-watson. Ba thông tin cần lưu trong file bảo mật trên máy tin cậy là API key, version và URL của dịch vụ. Để thí nghiệm có thể lặp lại, bạn phải truyền tham số version trong mỗi request."
+    },
+    {
+      "title": "Tổng kết và mẹo thi",
+      "bullets": [
+        "Multiclass một nhãn, multilabel nhiều nhãn",
+        "FN tốn kém: beta = 2",
+        "MAE cho dữ liệu đuôi dài",
+        "Transfer learning không đến từ RL"
+      ],
+      "narration": "Tóm lại, multiclass gán một nhãn cho mỗi mẫu, còn multilabel cho phép nhiều nhãn. Khi false negative tốn kém hơn, đặt beta bằng 2. Chọn MAE thay RMSE khi dữ liệu đuôi dài. Hãy cẩn thận với các câu đúng sai: các cây trong Random Forest có variance cao, bagging và boosting không chỉ dùng cây, transfer learning không đến từ reinforcement learning, và thêm GPU không luôn giảm thời gian huấn luyện. Với Watson, ảnh negative nên giống ảnh positive, và nhớ truyền version trong mỗi request."
+    }
+  ]
+}

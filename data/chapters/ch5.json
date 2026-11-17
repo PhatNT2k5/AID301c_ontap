@@ -1,0 +1,180 @@
+{
+  "id": 5,
+  "title": "Triển khai mô hình doanh nghiệp",
+  "ibmCourse": "IBM AI Workflow – Course 5: AI Workflow: Enterprise Model Deployment",
+  "intro": "Chương này đưa mô hình từ notebook ra môi trường thật: tối ưu hoá code, đóng gói bằng Docker, phục vụ dự đoán qua Flask API và triển khai lên IBM Watson Machine Learning. Phần thứ hai dùng Apache Spark (spark-submit, Spark MLlib) để mở rộng quy mô và xây dựng hệ gợi ý collaborative filtering với ALS cho case study AAVAIL.",
+  "keyPoints": [
+    {
+      "heading": "Tối ưu hoá code trước khi triển khai",
+      "body": "Bước đầu tiên là profiling: đo thời gian để tìm ra phần code là bottleneck, chứ không phải viết lại thuật toán từ đầu. Thách thức phổ biến là khó giảm thời gian huấn luyện của các mô hình lớn.\nCác công cụ tăng tốc Python được nhắc đến: Cython, Numba, PyCUDA, multiprocessing (tạo nhiều process – package hỗ trợ spawning processes), threading, mpi4py, ipyparallel. TensorBoard KHÔNG phải công cụ tối ưu code (nó là công cụ trực quan hoá). 'subprocessing' và 'symmetric-multiprocessing' không phải là package Python cụ thể để tăng tốc.\nPython gốc KHÔNG tự động song song hoá trên nhiều core. Trong scikit-learn, dùng tham số n_jobs (ví dụ n_jobs=-1) để huấn luyện song song. Với dữ liệu quá lớn so với bộ nhớ, Dask hoặc Spark giúp mở rộng phân tích.\nData engineer là vai trò quan tâm nhất tới việc mô hình đã triển khai scale tốt khi số người dùng tăng."
+    },
+    {
+      "heading": "Docker: image, container và Dockerfile",
+      "body": "Docker cung cấp một môi trường chuẩn, tái lập được để triển khai mô hình, giúp deploy dễ hơn và nhẹ hơn máy ảo. Một container gồm code, runtime, thư viện và một private filesystem tách biệt khỏi host và các container khác.\nImage là nền của container: có thể pull image (official hoặc user-defined) từ registry rồi yêu cầu Docker client chạy container từ image đó. Dockerfile giống như một công thức từng bước để build image (FROM, COPY, RUN, EXPOSE, CMD). Bản cộng đồng của Docker Engine là docker-ce.\nUse case điển hình: microservices, nền tảng chung cho DevOps/data engineer, tránh cài đặt phức tạp môi trường Spark, tính di động hybrid/multi-cloud cho mô hình. Docker KHÔNG phải để thay thế hoàn toàn một virtual machine tiêu chuẩn.\nLệnh thường gặp: docker build -t app ., docker run -p 4000:8080 app, docker ps, docker images."
+    },
+    {
+      "heading": "Port forwarding và volumes",
+      "body": "Port forwarding cho phép dữ liệu đi vào và ra khỏi container, đồng thời kiểm soát ứng dụng nào được làm việc đó; ví dụ docker run -p 4000:8080 ánh xạ cổng 4000 của máy host vào cổng 8080 trong container.\nVì container có filesystem riêng, cách được khuyến nghị để truy cập notebook và script từ trong container là volumes (dữ liệu được Docker quản lý và tồn tại sau khi container dừng). Bind mounts và tmpfs là các lựa chọn khác nhưng đáp án chuẩn của đề là volumes."
+    },
+    {
+      "heading": "Phục vụ mô hình bằng Flask API",
+      "body": "Mô hình được gói trong một module Python riêng (model.py với hàm train/load/predict) và được ứng dụng Flask gọi qua các endpoint như /train, /predict, /logs. Truy vấn gửi tới API chạy trong Docker có định dạng JSON và kết quả cũng trả về JSON.\nAPI phải kiểm tra lỗi đầu vào. Trong bài toán dự báo doanh thu của AAVAIL, đầu vào tối thiểu là ngày mục tiêu (target date) và quốc gia (country).\nCấu trúc template này (module riêng, unit test, version control, script ingest/visualize) giúp tái sử dụng workflow."
+    },
+    {
+      "heading": "IBM Watson Machine Learning (WML)",
+      "body": "Để lặp mô hình ở local rồi triển khai lên WML cần hai bước: provision dịch vụ WML và tạo Python virtual environment. Lý do chính tạo virtual environment là đảm bảo mô hình huấn luyện ở local tương thích với WML (cùng phiên bản thư viện được hỗ trợ).\nWML không chỉ nhận file pickle – có thể lưu mô hình dưới nhiều dạng khác nhau (đối tượng mô hình scikit-learn, Keras, Spark, file nén…), nên câu 'chỉ được truyền pickle' là False.\nKhi dùng dịch vụ Watson qua Python SDK cần lưu ba thông tin: API key, version và URL của service. API key và thông tin nhạy cảm phải được lưu trong file an toàn trên máy tin cậy. Cài SDK bằng pip install --upgrade ibm-watson; bước đầu tiên là tạo tài khoản IBM Cloud."
+    },
+    {
+      "heading": "Apache Spark và spark-submit",
+      "body": "Spark là engine tính toán phân tán cho dữ liệu lớn. Lệnh spark-submit dùng để gửi ứng dụng lên một Spark cluster (không phải để tạo hay cài cluster). Tuỳ chọn --executor-memory chỉ lượng bộ nhớ cấp cho MỖI executor; --driver-memory là bộ nhớ của driver; --master chỉ cluster manager.\nCluster manager của Spark gồm: Standalone, Hadoop YARN, Apache Mesos và Kubernetes. Docker KHÔNG phải cluster manager, và câu 'Spark cluster thường được quản lý bằng Docker container và file YAML' là False.\nTrong script example-spark-submit.sh, dòng #!/bin/bash (shebang) báo hệ thống dùng Bash shell để chạy script."
+    },
+    {
+      "heading": "Spark MLlib: DataFrame, Pipeline và ParamMap",
+      "body": "Spark ML API dùng DataFrame của Spark SQL, chứa nhiều kiểu dữ liệu ở các cột khác nhau: text, feature vectors, nhãn thật và predictions. MLlib có Transformer, Estimator và Pipeline giống scikit-learn, và có cả công cụ NLP như Tokenizer, HashingTF, IDF (TF-IDF) – nên câu 'MLlib thiếu TF-IDF' là False.\nCách truyền tham số hợp lệ: đặt named parameters khi khai báo mô hình, truyền ParamMap vào .fit() của mô hình, tạo/cập nhật ParamMap rồi truyền vào .fit(), hoặc truyền ParamMap vào .fit() của pipeline. Truyền file pickle khi khai báo mô hình là KHÔNG hợp lệ."
+    },
+    {
+      "heading": "Hệ gợi ý (recommender systems) với ALS",
+      "body": "Loại hệ gợi ý có sẵn trong Spark ML là collaborative filtering, cài đặt bằng Alternating Least Squares (ALS) – một dạng matrix factorization phân rã ma trận user-item. Ma trận user-item (và word counts) rất phù hợp với sparse matrix.\nALS mặc định dành cho explicit feedback (rating), nhưng có thể dùng dễ dàng cho implicit feedback bằng implicitPrefs=True. Trong case study, thay đổi tham số regularization lambda (regParam) có ảnh hưởng lớn nhất đến hiệu năng mô hình.\nCold start problem: khi có user mới hoặc item mới, chưa có tương tác nên gợi ý dựa trên độ tương đồng (similarities) gặp khó khăn. Spark có coldStartStrategy='drop' để bỏ các dự đoán NaN khi đánh giá."
+    }
+  ],
+  "sources": [
+    {
+      "label": "Coursera – AI Workflow: Enterprise Model Deployment (IBM)",
+      "url": "https://www.coursera.org/learn/ibm-ai-workflow-machine-learning-model-deployment"
+    },
+    {
+      "label": "Docker overview",
+      "url": "https://docs.docker.com/get-started/docker-overview/"
+    },
+    {
+      "label": "Docker docs – Volumes",
+      "url": "https://docs.docker.com/engine/storage/volumes/"
+    },
+    {
+      "label": "Flask Quickstart",
+      "url": "https://flask.palletsprojects.com/en/stable/quickstart/"
+    },
+    {
+      "label": "Apache Spark – Submitting Applications",
+      "url": "https://spark.apache.org/docs/latest/submitting-applications.html"
+    },
+    {
+      "label": "Apache Spark – Collaborative Filtering (ALS)",
+      "url": "https://spark.apache.org/docs/latest/ml-collaborative-filtering.html"
+    },
+    {
+      "label": "Python docs – multiprocessing",
+      "url": "https://docs.python.org/3/library/multiprocessing.html"
+    }
+  ],
+  "slides": [
+    {
+      "title": "Chương 5: Triển khai mô hình doanh nghiệp",
+      "bullets": [
+        "Tối ưu hoá code trước khi deploy",
+        "Docker, Flask API và Watson Machine Learning",
+        "Spark, spark-submit và Spark MLlib",
+        "Hệ gợi ý collaborative filtering với ALS"
+      ],
+      "narration": "Chào mừng các bạn đến với chương 5, triển khai mô hình doanh nghiệp, tương ứng với khoá học thứ năm của IBM AI Workflow. Một mô hình chỉ tạo ra giá trị khi nó được đưa vào sử dụng thật. Trong chương này, các bạn sẽ học cách tối ưu hoá code, đóng gói mô hình bằng Docker, phục vụ dự đoán qua Flask API và triển khai lên IBM Watson Machine Learning. Sau đó, chúng ta mở rộng quy mô với Apache Spark và xây dựng hệ gợi ý bằng thuật toán ALS cho công ty streaming AAVAIL."
+    },
+    {
+      "title": "Tối ưu hoá code",
+      "bullets": [
+        "Profiling: tìm bottleneck trước khi tối ưu",
+        "Cython, Numba, multiprocessing, mpi4py, ipyparallel",
+        "TensorBoard không phải công cụ tối ưu",
+        "scikit-learn: dùng tham số n_jobs"
+      ],
+      "code": "from sklearn.ensemble import RandomForestClassifier\nclf = RandomForestClassifier(n_estimators=500, n_jobs=-1)",
+      "narration": "Trước khi triển khai, code cần đủ nhanh. Bước đầu tiên luôn là profiling, tức là đo đạc để tìm phần code là bottleneck. Các công cụ tăng tốc được giới thiệu gồm Cython, Numba, PyCUDA, threading, multiprocessing để tạo nhiều process, mpi4py và ipyparallel. TensorBoard là công cụ trực quan hoá, không phải công cụ tối ưu code. Python gốc không tự song song hoá trên nhiều core, vì vậy trong scikit-learn ta dùng tham số n_jobs. Khi dữ liệu quá lớn, Dask hoặc Spark giúp mở rộng phân tích. Người quan tâm nhất tới việc mô hình scale tốt là data engineer."
+    },
+    {
+      "title": "Docker: image và container",
+      "bullets": [
+        "Container: code, runtime, thư viện, private filesystem",
+        "Image pull từ registry, official hoặc user-defined",
+        "Dockerfile là công thức build image",
+        "Bản cộng đồng: docker-ce"
+      ],
+      "code": "FROM python:3.11-slim\nCOPY . /app\nWORKDIR /app\nRUN pip install -r requirements.txt\nEXPOSE 8080\nCMD [\"python\", \"app.py\"]",
+      "narration": "Docker quan trọng vì nó cung cấp một môi trường chuẩn và tái lập được để triển khai mô hình. Một container gồm code, runtime, thư viện và một private filesystem tách biệt khỏi máy host. Image là nền tảng của container, ta có thể pull image chính thức hoặc do người dùng tạo từ registry rồi chạy container. Dockerfile giống một công thức từng bước để build image. Bản cộng đồng của Docker Engine tên là docker-ce. Docker phù hợp cho microservices, nền tảng chung cho nhiều team và di động giữa các cloud, nhưng không phải để thay thế một máy ảo tiêu chuẩn."
+    },
+    {
+      "title": "Port forwarding và volumes",
+      "bullets": [
+        "Port forwarding: dữ liệu vào ra container",
+        "Kiểm soát ứng dụng nào được truy cập",
+        "Volumes: cách khuyến nghị truy cập notebook, script",
+        "Dữ liệu volume tồn tại sau khi container dừng"
+      ],
+      "code": "docker build -t aavail-app .\ndocker run -p 4000:8080 -v notebooks:/app/notebooks aavail-app",
+      "narration": "Vì container bị cô lập, ta cần cách giao tiếp với nó. Port forwarding cho phép dữ liệu đi vào và đi ra khỏi container, đồng thời kiểm soát ứng dụng nào được làm điều đó. Ví dụ, tham số p 4000 hai chấm 8080 ánh xạ cổng 4000 trên máy của bạn vào cổng 8080 trong container. Còn để truy cập notebook và script từ trong container, cách được khuyến nghị là volumes. Volume do Docker quản lý và dữ liệu vẫn tồn tại sau khi container dừng."
+    },
+    {
+      "title": "Phục vụ mô hình bằng Flask",
+      "bullets": [
+        "Mô hình là module Python riêng",
+        "Endpoint: /train, /predict, /logs",
+        "Truy vấn và kết quả dạng JSON",
+        "Kiểm tra đầu vào: target date và country"
+      ],
+      "code": "@app.route('/predict', methods=['POST'])\ndef predict():\n    query = request.get_json()\n    result = model_predict(query['country'], query['date'])\n    return jsonify(result)",
+      "narration": "Để người khác gọi được mô hình, ta bọc nó trong một ứng dụng Flask. Mô hình nên nằm trong một module Python riêng với các hàm train, load và predict, còn Flask gọi chúng qua các endpoint như train, predict và logs. Truy vấn gửi tới API chạy trong Docker có định dạng JSON, và kết quả trả về cũng là JSON. API cần kiểm tra lỗi đầu vào, với bài toán dự báo doanh thu của AAVAIL thì đầu vào tối thiểu là ngày mục tiêu và quốc gia. Tổ chức theo template giúp workflow dễ tái sử dụng."
+    },
+    {
+      "title": "IBM Watson Machine Learning",
+      "bullets": [
+        "Hai bước: provision WML, tạo virtual environment",
+        "Virtual env đảm bảo tương thích với WML",
+        "Không chỉ nhận file pickle",
+        "Lưu API key, version, URL an toàn"
+      ],
+      "code": "pip install --upgrade ibm-watson",
+      "narration": "Watson Machine Learning là dịch vụ cloud của IBM để triển khai mô hình. Muốn lặp mô hình ở local rồi đưa lên WML, cần hai bước là provision dịch vụ WML và tạo Python virtual environment. Virtual environment đảm bảo mô hình huấn luyện ở local tương thích với WML. Câu nói WML chỉ nhận file pickle là sai. Khi dùng dịch vụ Watson qua Python SDK, cần lưu ba thông tin là API key, version và URL, và API key phải được cất trong file an toàn trên máy tin cậy. Bước đầu tiên là tạo tài khoản IBM Cloud, rồi cài SDK bằng pip với tuỳ chọn upgrade."
+    },
+    {
+      "title": "Apache Spark và spark-submit",
+      "bullets": [
+        "spark-submit: gửi ứng dụng lên Spark cluster",
+        "--executor-memory: bộ nhớ cho mỗi executor",
+        "Cluster manager: Standalone, YARN, Mesos, Kubernetes",
+        "Docker không phải cluster manager"
+      ],
+      "code": "#!/bin/bash\nspark-submit --master local[4] \\\n  --driver-memory 4g \\\n  --executor-memory 4g \\\n  recommender.py",
+      "narration": "Khi dữ liệu vượt quá một máy, ta dùng Apache Spark. Lệnh spark-submit dùng để gửi ứng dụng lên một Spark cluster, không phải để tạo cluster hay cài Spark. Tuỳ chọn executor memory là bộ nhớ cấp cho mỗi executor, khác với driver memory. Spark cluster được quản lý bởi Standalone, Hadoop YARN, Apache Mesos hoặc Kubernetes. Docker không phải cluster manager, nên câu nói Spark cluster thường được quản lý bằng Docker và file YAML là sai. Dòng shebang bin bash ở đầu script báo hệ thống dùng Bash shell để chạy script."
+    },
+    {
+      "title": "Spark MLlib và ParamMap",
+      "bullets": [
+        "Spark ML dùng DataFrame của Spark SQL",
+        "Transformer, Estimator, Pipeline như scikit-learn",
+        "Có sẵn TF-IDF cho NLP",
+        "Không truyền pickle khi khai báo mô hình"
+      ],
+      "code": "als = ALS(maxIter=10, regParam=0.1)\nparams = {als.rank: 20}  # a ParamMap\nmodel = als.fit(train_df, params)",
+      "narration": "Spark MLlib là thư viện machine learning của Spark. Spark ML API dùng DataFrame của Spark SQL, chứa nhiều kiểu cột như text, feature vector, nhãn thật và dự đoán. MLlib có Transformer, Estimator và Pipeline giống scikit-learn, và có sẵn TF-IDF cho NLP. Về truyền tham số, các cách hợp lệ là đặt tham số khi khai báo mô hình, hoặc truyền ParamMap vào hàm fit của mô hình hay của pipeline. Truyền file pickle khi khai báo mô hình là cách không hợp lệ."
+    },
+    {
+      "title": "Hệ gợi ý collaborative filtering",
+      "bullets": [
+        "Spark có sẵn collaborative filtering bằng ALS",
+        "ALS là matrix factorization trên ma trận user-item",
+        "Mặc định explicit, dùng implicitPrefs cho implicit",
+        "Cold start: user hoặc item mới"
+      ],
+      "code": "als = ALS(userCol='user_id', itemCol='item_id',\n          ratingCol='rating', regParam=0.1,\n          coldStartStrategy='drop')",
+      "narration": "Loại hệ gợi ý có sẵn trong Spark là collaborative filtering, cài đặt bằng thuật toán Alternating Least Squares, gọi tắt là ALS. Đây là một dạng matrix factorization, phân rã ma trận user item vốn rất thưa nên phù hợp với sparse matrix. ALS mặc định dành cho explicit feedback như điểm đánh giá, nhưng dùng dễ dàng cho implicit feedback bằng cách bật implicitPrefs. Trong case study, tham số regularization lambda có ảnh hưởng lớn nhất. Cold start problem xảy ra khi có user mới hoặc item mới, khiến gợi ý dựa trên độ tương đồng gặp khó khăn."
+    },
+    {
+      "title": "Tổng kết và mẹo thi",
+      "bullets": [
+        "Docker không thay thế máy ảo",
+        "WML không chỉ nhận pickle",
+        "Docker không phải cluster manager của Spark",
+        "regParam ảnh hưởng ALS lớn nhất"
+      ],
+      "narration": "Tóm lại, chương này đi từ tối ưu code, Docker, Flask, Watson Machine Learning đến Spark và hệ gợi ý. Khi thi, hãy nhớ các bẫy sau. TensorBoard không phải công cụ tối ưu code, và Python gốc không tự song song hoá. Container gồm code, runtime, thư viện và private filesystem, Docker không thay thế máy ảo. Truy cập notebook trong container bằng volumes, truy vấn API dùng JSON. WML không chỉ nhận pickle. Executor memory là bộ nhớ của mỗi executor, Docker không phải cluster manager. ALS mặc định explicit, và regParam ảnh hưởng lớn nhất. Chúc các bạn ôn tập tốt."
+    }
+  ]
+}

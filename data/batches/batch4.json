@@ -1,0 +1,2031 @@
+[
+ {
+  "id": "qz2-054",
+  "question": "Which of the following clustering methods does not need to set the number of clusters?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Gaussian mixture models"
+   },
+   {
+    "key": "B",
+    "text": "Spectral clustering"
+   },
+   {
+    "key": "C",
+    "text": "MiniBatch k-means"
+   },
+   {
+    "key": "D",
+    "text": "k-means"
+   },
+   {
+    "key": "E",
+    "text": "Dirichlet process Gaussian mixture models"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "E"
+  ],
+  "answerSource": "quizlet",
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "E"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "E"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-055",
+  "question": "True/False. In the clustering case study, the suggested re-sampling methods drove a major improvement in model performance.",
+  "options": [
+   {
+    "key": "A",
+    "text": "True"
+   },
+   {
+    "key": "B",
+    "text": "False"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "quizlet",
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-056",
+  "question": "True/False. In the context of customer profiling and the AAVAIL data set it makes sense to first perform a dimension reduction technique like PCA before running the model through a clustering estimator.",
+  "options": [
+   {
+    "key": "A",
+    "text": "True"
+   },
+   {
+    "key": "B",
+    "text": "False"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "quizlet",
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-060",
+  "question": "What important feature of the Watson NLU API do we have to ensure so that we can repeat an experiment in the future in a reproducible way?",
+  "options": [
+   {
+    "key": "A",
+    "text": "GitHub integration"
+   },
+   {
+    "key": "B",
+    "text": "Passing a version argument with each request"
+   },
+   {
+    "key": "C",
+    "text": "Each future version of the API is guaranteed to keep the same arguments"
+   },
+   {
+    "key": "D",
+    "text": "The NLU can be run locally"
+   },
+   {
+    "key": "E",
+    "text": "The exchanged JSON is guaranteed to keep the same format"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "quizlet",
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-061",
+  "question": "Processing the corpus with the provided lemmatize_document reduces the total number of tokens to what percentage of the original?",
+  "options": [
+   {
+    "key": "A",
+    "text": "10-15%"
+   },
+   {
+    "key": "B",
+    "text": "20-35%"
+   },
+   {
+    "key": "C",
+    "text": "45-50%"
+   },
+   {
+    "key": "D",
+    "text": "70-75%"
+   },
+   {
+    "key": "E",
+    "text": "85-95%"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "C"
+  ],
+  "answerSource": "quizlet",
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "C"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "C"
+    ]
+   },
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "C"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-062",
+  "question": "If we have a situation where false positive is not as potentially costly as a false negative say flagging comments for manual review based on suspected unlawful activity, which of the following is the best approach to consider?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Only look at the f-score of the negative class for evaluation"
+   },
+   {
+    "key": "B",
+    "text": "Use recall as the evaluation metric"
+   },
+   {
+    "key": "C",
+    "text": "Use precision as the evaluation metric"
+   },
+   {
+    "key": "D",
+    "text": "Set beta to 0.5 in the fscore"
+   },
+   {
+    "key": "E",
+    "text": "Set beta to 2.0 in the fscore"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "E"
+  ],
+  "answerSource": "quizlet",
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "E"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "E"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-063",
+  "question": "True/False. All classifiers in scikit-learn do multi-class classification out-of-the-box. These classifiers can differ in their approach though (e.g one-vs-all or one-vs-one).",
+  "options": [
+   {
+    "key": "A",
+    "text": "True"
+   },
+   {
+    "key": "B",
+    "text": "False"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "A"
+  ],
+  "answerSource": "quizlet",
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-064",
+  "question": "Which of the following is not an example of a generalized linear model (GLM)?",
+  "options": [
+   {
+    "key": "A",
+    "text": "ANOVA"
+   },
+   {
+    "key": "B",
+    "text": "Multinomial regression"
+   },
+   {
+    "key": "C",
+    "text": "Poisson regression"
+   },
+   {
+    "key": "D",
+    "text": "KNN regression"
+   },
+   {
+    "key": "E",
+    "text": "Logistic regression"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "D"
+  ],
+  "answerSource": "quizlet",
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "D"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "D"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-065",
+  "question": "True/False. Models in the generalized linear mixture model (GLMM) family like multilevel models are generally optimized using sophisticated techniques like MCMC sampling.",
+  "options": [
+   {
+    "key": "A",
+    "text": "True"
+   },
+   {
+    "key": "B",
+    "text": "False"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "A"
+  ],
+  "answerSource": "quizlet",
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-066",
+  "question": "When you use Watson Services like Watson Natural Language Understanding via the Python SDK, what are the three items that need to be saved? These items are generally saved on a local machine and included in scripts and notebooks as imported variables.",
+  "options": [
+   {
+    "key": "A",
+    "text": "service version, service API key, service JSON map"
+   },
+   {
+    "key": "B",
+    "text": "service URL, service JSON map, service API key"
+   },
+   {
+    "key": "C",
+    "text": "service API key, service version, service URL"
+   },
+   {
+    "key": "D",
+    "text": "service version, service IAMAuthenticator, service URL"
+   },
+   {
+    "key": "E",
+    "text": "service API key, service URL, service IAMAuthenticator"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "C"
+  ],
+  "answerSource": "quizlet",
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "C"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "C"
+    ]
+   },
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "C"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-067",
+  "question": "Which of the following does not describe a feature of the Watson Natural Language Understanding service?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Perform document classification tasks using a custom model built from text"
+   },
+   {
+    "key": "B",
+    "text": "Identify high-level concepts that aren't necessarily directly referenced in the text"
+   },
+   {
+    "key": "C",
+    "text": "Find people, places, events, and other types of entities mentioned in your content"
+   },
+   {
+    "key": "D",
+    "text": "Recognize when two entities are related, and identify the type of relation"
+   },
+   {
+    "key": "E",
+    "text": "Analyze the sentiment toward specific target phrases and the sentiment of the document as a whole"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "A"
+  ],
+  "answerSource": "quizlet",
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-068",
+  "question": "Which of the following is not an example of a relevant question when tuning a NLP classification pipeline?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Should I use bag-of-words or a vector embedding representation?"
+   },
+   {
+    "key": "B",
+    "text": "Which stop words do I include?"
+   },
+   {
+    "key": "C",
+    "text": "Which n-grams do I include?"
+   },
+   {
+    "key": "D",
+    "text": "Should I use a TF or a tf-idf transformation?"
+   },
+   {
+    "key": "E",
+    "text": "Should I use RMSE or MAE as an evaluation metric?"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "E"
+  ],
+  "answerSource": "quizlet",
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "E"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "E"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-070",
+  "question": "Which of the following neural network architectures are most-commonly used for time-series analysis?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Multi-layer perceptron"
+   },
+   {
+    "key": "B",
+    "text": "Recurrent neural networks"
+   },
+   {
+    "key": "C",
+    "text": "Transfer learning"
+   },
+   {
+    "key": "D",
+    "text": "Convolutional neural network"
+   },
+   {
+    "key": "E",
+    "text": "Autoencoders"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "quizlet",
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-071",
+  "question": "True/False. All images must be downloaded and saved locally before you can call classify from the connected IBM Watson Visual Recognition service.",
+  "options": [
+   {
+    "key": "A",
+    "text": "True"
+   },
+   {
+    "key": "B",
+    "text": "False"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "quizlet",
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-073",
+  "question": "True/False. Bagging and boosting ensemble methods both use only decision trees as base classifiers. The difference is in the bias and variance of the individual trees.",
+  "options": [
+   {
+    "key": "A",
+    "text": "True"
+   },
+   {
+    "key": "B",
+    "text": "False"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "quizlet",
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-074",
+  "question": "True/False. A decision tree classifier is useful as a model for the AAVAIL subscriber churn data.",
+  "options": [
+   {
+    "key": "A",
+    "text": "True"
+   },
+   {
+    "key": "B",
+    "text": "False"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "A"
+  ],
+  "answerSource": "quizlet",
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   },
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "A"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-076",
+  "question": "True/False. Transfer learning is a recent advancement to come out of the field of reinforcement learning.",
+  "options": [
+   {
+    "key": "A",
+    "text": "True"
+   },
+   {
+    "key": "B",
+    "text": "False"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "quizlet",
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-079",
+  "question": "Which of the following use cases is the least appropriate use case for a convolutional neural network?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Image classification"
+   },
+   {
+    "key": "B",
+    "text": "Image retrieval"
+   },
+   {
+    "key": "C",
+    "text": "Image composition"
+   },
+   {
+    "key": "D",
+    "text": "Object detection"
+   },
+   {
+    "key": "E",
+    "text": "Image segmentation"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "C"
+  ],
+  "answerSource": "quizlet",
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "C"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "C"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-082",
+  "question": "True/False. It is reasonable to think of the commands in a Dockerfile as a step-by-step recipe on how to build up a Docker image.",
+  "options": [
+   {
+    "key": "A",
+    "text": "True"
+   },
+   {
+    "key": "B",
+    "text": "False"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "A"
+  ],
+  "answerSource": "quizlet",
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-083",
+  "question": "What are the two steps that must be carried out if you want to iterate locally on a model then deploy it to the Watson Machine Learning (WML) service?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Provision a WML service & Dockerize your model"
+   },
+   {
+    "key": "B",
+    "text": "Create a Python virtual environment & Dockerize your model"
+   },
+   {
+    "key": "C",
+    "text": "Provision cloud storage & Provision a WML service"
+   },
+   {
+    "key": "D",
+    "text": "Provision a WML service & create a Python virtual environment"
+   },
+   {
+    "key": "E",
+    "text": "Dockerize your model & Provision cloud storage"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "D"
+  ],
+  "answerSource": "quizlet",
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "D"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "D"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-090",
+  "question": "True/False. The Spark ML API uses DataFrames from Spark SQL. They can hold a variety of data types with different columns for storing text including: feature vectors, truth labels, and predictions.",
+  "options": [
+   {
+    "key": "A",
+    "text": "True"
+   },
+   {
+    "key": "B",
+    "text": "False"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "A"
+  ],
+  "answerSource": "quizlet",
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-092",
+  "question": "Docker containers run a private file system that is isolated from the host and other containers. What is the suggested way to access notebooks and scripts from within the container?",
+  "options": [
+   {
+    "key": "A",
+    "text": "tmpfs mount"
+   },
+   {
+    "key": "B",
+    "text": "use a named pipe"
+   },
+   {
+    "key": "C",
+    "text": "bind mounts"
+   },
+   {
+    "key": "D",
+    "text": "GitHub"
+   },
+   {
+    "key": "E",
+    "text": "volumes"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "E"
+  ],
+  "answerSource": "quizlet",
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "E"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "E"
+    ]
+   },
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "C"
+    ]
+   }
+  ],
+  "conflict": true
+ },
+ {
+  "id": "qz2-094",
+  "question": "True/False. Spark MLlib has several estimators and transformers, but it lacks basic tooling for natural language processing (NLP) like the ability to make term frequency-inverse document frequency (TF-IDF) transformations.",
+  "options": [
+   {
+    "key": "A",
+    "text": "True"
+   },
+   {
+    "key": "B",
+    "text": "False"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "quizlet",
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-095",
+  "question": "Which phrase most accurately reflects what is meant by the cold start problem in recommendation systems?",
+  "options": [
+   {
+    "key": "A",
+    "text": "When a new user is introduced and the recommendations are made on similarities"
+   },
+   {
+    "key": "B",
+    "text": "When a new item is introduced and the recommendations are made on similarities"
+   },
+   {
+    "key": "C",
+    "text": "When a new user is introduced and the recommendations are made on item popularity"
+   },
+   {
+    "key": "D",
+    "text": "When a new user or new item is introduced and the recommendations depend on popularity"
+   },
+   {
+    "key": "E",
+    "text": "When a new user or new item is introduced and the recommendations depend on similarities"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "E"
+  ],
+  "answerSource": "quizlet",
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "E"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "E"
+    ]
+   }
+  ],
+  "conflict": false,
+  "notes": "Option texts in the source were prefixed with a duplicated letter (e.g. \"A. When...\"); prefixes removed."
+ },
+ {
+  "id": "qz2-096",
+  "question": "True/False. Matrix factorization is commonly associated with collaborative filtering recommender systems.",
+  "options": [
+   {
+    "key": "A",
+    "text": "True"
+   },
+   {
+    "key": "B",
+    "text": "False"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "A"
+  ],
+  "answerSource": "quizlet",
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-097",
+  "question": "When you worked on model deployment case study, which modification to the ALS algorithm had the largest effect on model performance?",
+  "options": [
+   {
+    "key": "A",
+    "text": "The explicit training vs implicit training comparison"
+   },
+   {
+    "key": "B",
+    "text": "The lambda or regularization parameter"
+   },
+   {
+    "key": "C",
+    "text": "The epsilon or scale parameter"
+   },
+   {
+    "key": "D",
+    "text": "The l1 vs l2 comparison"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "quizlet",
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-098",
+  "question": "True/False. The Spark collaborative filtering implementation is built by default for explict feedback, but it can be used with implicit feedback just as easily.",
+  "options": [
+   {
+    "key": "A",
+    "text": "True"
+   },
+   {
+    "key": "B",
+    "text": "False"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "A"
+  ],
+  "answerSource": "quizlet",
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-099",
+  "question": "Which of the following was not mentioned as a reason to bundle unit tests with a deployed model?",
+  "options": [
+   {
+    "key": "A",
+    "text": "promotes code quality"
+   },
+   {
+    "key": "B",
+    "text": "regression tests"
+   },
+   {
+    "key": "C",
+    "text": "they perform the workflow feedback loops"
+   },
+   {
+    "key": "D",
+    "text": "automate performance monitoring tasks"
+   },
+   {
+    "key": "E",
+    "text": "can be readily integrated into CI/CD pipelines"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "C"
+  ],
+  "answerSource": "quizlet",
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "C"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "C"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-100",
+  "question": "True/False. When logging for the predict endpoint, runtime is considered an optional feature to be monitored.",
+  "options": [
+   {
+    "key": "A",
+    "text": "True"
+   },
+   {
+    "key": "B",
+    "text": "False"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "quizlet",
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-101",
+  "question": "To pass a query to an API endpoint that has been set up to run inside of a Docker container, which of the following best describes the formats that have been used in the presented deployment workflows?",
+  "options": [
+   {
+    "key": "A",
+    "text": "numpy ndarray, pandas DataFrame"
+   },
+   {
+    "key": "B",
+    "text": "JSON"
+   },
+   {
+    "key": "C",
+    "text": "JSON, flatfiles"
+   },
+   {
+    "key": "D",
+    "text": "YAML"
+   },
+   {
+    "key": "E",
+    "text": "All of the above"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "quizlet",
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-102",
+  "question": "In the context of the AI workflow presented in these materials which of the following is not an example of a valid feedback loop?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Trying different data transformations on a given model"
+   },
+   {
+    "key": "B",
+    "text": "Returning to the data collection stage from transformations to reduce the number of transforms"
+   },
+   {
+    "key": "C",
+    "text": "Performing EDA on the data after a model has been deployed and data have been logged"
+   },
+   {
+    "key": "D",
+    "text": "Moving from the business opportunity and data collection to model iteration"
+   },
+   {
+    "key": "E",
+    "text": "Returning to discuss the business opportunity after a model has been deployed"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "D"
+  ],
+  "answerSource": "quizlet",
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "D"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "D"
+    ]
+   },
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "D"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-103",
+  "question": "True/False. It is critical in machine learning model deployment workflows to ensure close to 100% test coverage before production.",
+  "options": [
+   {
+    "key": "A",
+    "text": "True"
+   },
+   {
+    "key": "B",
+    "text": "False"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "quizlet",
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-104",
+  "question": "Common sources of performance drift include:",
+  "options": [
+   {
+    "key": "A",
+    "text": "Changes in customer demographics or user behavior after a model is trained"
+   },
+   {
+    "key": "B",
+    "text": "Incomplete, incorrect or unbalanced training data"
+   },
+   {
+    "key": "C",
+    "text": "Changes in versions of libraries or modules used in models"
+   },
+   {
+    "key": "D",
+    "text": "All of the above"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "D"
+  ],
+  "answerSource": "quizlet",
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "D"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "D"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-106",
+  "question": "Model accuracy metrics such as precision, recall and F1 scores provide objective evidence of fairness.",
+  "options": [
+   {
+    "key": "A",
+    "text": "True"
+   },
+   {
+    "key": "B",
+    "text": "False"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "quizlet",
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-107",
+  "question": "What is the purpose of Minikube in the context of Kubernetes?",
+  "options": [
+   {
+    "key": "A",
+    "text": "It deploys a Kubernetes cluster to a remote service based on a specified YAML file"
+   },
+   {
+    "key": "B",
+    "text": "It launches a Kubernetes cluster locally within a virtual machine or directly on the host"
+   },
+   {
+    "key": "C",
+    "text": "It is used through a command line interface to interact with a Kubernetes cluster"
+   },
+   {
+    "key": "D",
+    "text": "It allows you to work with multiple Docker containers as if they were a single application"
+   },
+   {
+    "key": "E",
+    "text": "It is the management layer for a Kubernetes cluster"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "quizlet",
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-109",
+  "question": "True/False. IBM Watson OpenScale only works with models that have been built on, and deployed by, IBM Watson Stuido.",
+  "options": [
+   {
+    "key": "A",
+    "text": "True"
+   },
+   {
+    "key": "B",
+    "text": "False"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "quizlet",
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false,
+  "notes": "'Stuido' is a typo in the original image (Studio); kept verbatim."
+ },
+ {
+  "id": "qz2-111",
+  "question": "True/False. The date and time of a transaction should never be logged because this will only reflect past transactions and is not relevant to the performance of predictions on an on-going basis.",
+  "options": [
+   {
+    "key": "A",
+    "text": "True"
+   },
+   {
+    "key": "B",
+    "text": "False"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "quizlet",
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-113",
+  "question": "True/False. A Kubernetes pod can contain multiple kubernetes deployments",
+  "options": [
+   {
+    "key": "A",
+    "text": "True"
+   },
+   {
+    "key": "B",
+    "text": "False"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "quizlet",
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-114",
+  "question": "Your Flask application needs to error check the input when making a prediction. Which features need to be provided (at a minimum) as input given the context of this business opportunity?",
+  "options": [
+   {
+    "key": "A",
+    "text": "The previous three months of data and the target month from the year before"
+   },
+   {
+    "key": "B",
+    "text": "The target date and country"
+   },
+   {
+    "key": "C",
+    "text": "At least one year of revenue data"
+   },
+   {
+    "key": "D",
+    "text": "The recent number of transactions and the number of views"
+   },
+   {
+    "key": "E",
+    "text": "Metadata associated with the streams"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "quizlet",
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-115",
+  "question": "True/False. Unit testing and novelty detection provide an automated mechanism to monitor model performance.",
+  "options": [
+   {
+    "key": "A",
+    "text": "True"
+   },
+   {
+    "key": "B",
+    "text": "False"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "A"
+  ],
+  "answerSource": "quizlet",
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-116",
+  "question": "To move through the AI enterprise workflow quickly, we used the concept of workflow templates. Which of the following aspects of the template contributes the least to the re-usability of these templates?",
+  "options": [
+   {
+    "key": "A",
+    "text": "When they are used with a version control system"
+   },
+   {
+    "key": "B",
+    "text": "Ensuring that the model exists as a separate Python module to be called by Flask"
+   },
+   {
+    "key": "C",
+    "text": "Have an HTML endpoint for the Flask app to create dashboards"
+   },
+   {
+    "key": "D",
+    "text": "Use a template for a unit test suite"
+   },
+   {
+    "key": "E",
+    "text": "Ensure that data ingestion and data visualization code exists as a modules or scripts"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "C"
+  ],
+  "answerSource": "quizlet",
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "C"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "C"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz1-001",
+  "question": "Which of the following is/are NOT native or built-in data types in Python?",
+  "options": [
+   {
+    "key": "A",
+    "text": "boolean"
+   },
+   {
+    "key": "B",
+    "text": "integer"
+   },
+   {
+    "key": "C",
+    "text": "float"
+   },
+   {
+    "key": "D",
+    "text": "heap"
+   },
+   {
+    "key": "E",
+    "text": "string"
+   },
+   {
+    "key": "F",
+    "text": "varchar"
+   }
+  ],
+  "multi": true,
+  "answer": [
+   "D",
+   "F"
+  ],
+  "answerSource": "quizlet",
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "D",
+     "F"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz1-004",
+  "question": "Which of the following pairs of events are mutually exclusive. There can be more than one answer.",
+  "options": [
+   {
+    "key": "A",
+    "text": "Odd numbers and the number 3"
+   },
+   {
+    "key": "B",
+    "text": "Even numbers and numbers greater than 10"
+   },
+   {
+    "key": "C",
+    "text": "Negative numbers and positive numbers less than 25"
+   },
+   {
+    "key": "D",
+    "text": "Numbers between 100-200 and numbers between 201-300"
+   },
+   {
+    "key": "E",
+    "text": "None of the above"
+   }
+  ],
+  "multi": true,
+  "answer": [
+   "C",
+   "D"
+  ],
+  "answerSource": "quizlet",
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "C",
+     "D"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz1-012",
+  "question": "In order to come up with the back-of-the-envelope ROI calculation for this project, how might you approach it?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Number of active users X Yearly payment"
+   },
+   {
+    "key": "B",
+    "text": "Number of active users X monthly payment X % increase of users (assumption)"
+   },
+   {
+    "key": "C",
+    "text": "Yearly costs X (number of users at month 2 - number of currently active users)"
+   },
+   {
+    "key": "D",
+    "text": "Number of active users X Yearly payment - estimate for cost of project time"
+   }
+  ],
+  "multi": true,
+  "answer": [
+   "A",
+   "D"
+  ],
+  "answerSource": "quizlet",
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "A",
+     "D"
+    ]
+   }
+  ],
+  "conflict": false,
+  "notes": "Quizlet lists two correct answers (A and D); D is likely the intended single answer - verify."
+ },
+ {
+  "id": "qz1-021",
+  "question": "Sparse matrices can be useful as a target destination for ETL, but what are the main caveats (choose one or more)?",
+  "options": [
+   {
+    "key": "A",
+    "text": "You cannot convert directly from a numpy.array to any of the scipy.sparse matrices"
+   },
+   {
+    "key": "B",
+    "text": "NumPy linear algebra functions generally cannot be called directly"
+   },
+   {
+    "key": "C",
+    "text": "Saving to disk is not possible directly from a scipy.sparse format"
+   },
+   {
+    "key": "D",
+    "text": "The train test splits need to be performed by hand with scipy.sparse matrices"
+   },
+   {
+    "key": "E",
+    "text": "It is difficult to print to screen scipy.sparse matrices directly"
+   }
+  ],
+  "multi": true,
+  "answer": [
+   "B",
+   "E"
+  ],
+  "answerSource": "quizlet",
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "B",
+     "E"
+    ]
+   },
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "B",
+     "E"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz1-032",
+  "question": "True/False. The software engineering best practice of saving a maximum amount of code in text files for management under version control has become the norm in data science",
+  "options": [
+   {
+    "key": "A",
+    "text": "True"
+   },
+   {
+    "key": "B",
+    "text": "False"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "A"
+  ],
+  "answerSource": "quizlet",
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz1-057",
+  "question": "What is the number of profiles or clusters for this particular dataset?",
+  "options": [
+   {
+    "key": "A",
+    "text": "2-4"
+   },
+   {
+    "key": "B",
+    "text": "4-6"
+   },
+   {
+    "key": "C",
+    "text": "6-8"
+   },
+   {
+    "key": "D",
+    "text": "8-10"
+   },
+   {
+    "key": "E",
+    "text": "10-12"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "C"
+  ],
+  "answerSource": "quizlet",
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "C"
+    ]
+   }
+  ],
+  "conflict": false
+ }
+]

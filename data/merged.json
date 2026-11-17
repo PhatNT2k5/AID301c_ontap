@@ -1,0 +1,10688 @@
+[
+ {
+  "id": "su26fe-01",
+  "question": "Which of the following best describes multiclass classification?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Each sample can have multiple labels."
+   },
+   {
+    "key": "B",
+    "text": "Each sample is assigned to only one label."
+   },
+   {
+    "key": "C",
+    "text": "It is limited to two classes only."
+   },
+   {
+    "key": "D",
+    "text": "It does not require any evaluation metrics."
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "SU26 FE #1"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 FE",
+    "type": "official",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26fe-02",
+  "question": "Which of the following techniques is commonly used to address class imbalance?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Over-sampling"
+   },
+   {
+    "key": "B",
+    "text": "Under-sampling"
+   },
+   {
+    "key": "C",
+    "text": "Both A and B"
+   },
+   {
+    "key": "D",
+    "text": "None of the above"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "C"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "SU26 FE #2"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 FE",
+    "type": "official",
+    "answer": [
+     "C"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26fe-03",
+  "question": "Which list contains one or more elements that were presented as non-essential when creating a logging system to monitor the performance of a machine learning model that has been deployed.",
+  "options": [
+   {
+    "key": "A",
+    "text": "request_type, input data"
+   },
+   {
+    "key": "B",
+    "text": "model_version_number, timestamp"
+   },
+   {
+    "key": "C",
+    "text": "predictions/recommendations, timestamp"
+   },
+   {
+    "key": "D",
+    "text": "input_data_summary, runtime"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "A"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "Quizlet 1 #117",
+   "Quizlet 2 #105",
+   "SU26 FE #3"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 FE",
+    "type": "official",
+    "answer": [
+     "A"
+    ]
+   },
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26fe-04",
+  "question": "During which phase of the design thinking process does AAVAiL move to define challenges?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Empathize"
+   },
+   {
+    "key": "B",
+    "text": "Define"
+   },
+   {
+    "key": "C",
+    "text": "Ideate"
+   },
+   {
+    "key": "D",
+    "text": "Prototype"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "SU26 FE #4"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 FE",
+    "type": "official",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26fe-05",
+  "question": "Which of the following was not discussed as a tunable parameter of a neural network?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Hardware availability"
+   },
+   {
+    "key": "B",
+    "text": "Activation functions: sigmoid, tanh, softmax, ReLU, leaky ReLU"
+   },
+   {
+    "key": "C",
+    "text": "Regularization techniques: weight decay, early stopping, dropout"
+   },
+   {
+    "key": "D",
+    "text": "Training method: Loss function, learning rate, batch size, number of epochs"
+   },
+   {
+    "key": "E",
+    "text": "Structure: the number of hidden layers, the number of nodes in each layer"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "A"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "Quizlet 1 #84",
+   "Quizlet 2 #75",
+   "SU26 FE #5"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 FE",
+    "type": "official",
+    "answer": [
+     "A"
+    ]
+   },
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26fe-06",
+  "question": "Which of the following best describes Continuous Deployment?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Manual deployments of software"
+   },
+   {
+    "key": "B",
+    "text": "Automated deployments of software"
+   },
+   {
+    "key": "C",
+    "text": "Merging changes infrequently"
+   },
+   {
+    "key": "D",
+    "text": "Extensive testing before deployment"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "SU26 FE #6"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 FE",
+    "type": "official",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26fe-07",
+  "question": "Why is it important to ensure that minimally required data is available?",
+  "options": [
+   {
+    "key": "A",
+    "text": "To reduce the size of the data set"
+   },
+   {
+    "key": "B",
+    "text": "To monitor model performance and debug issues"
+   },
+   {
+    "key": "C",
+    "text": "To make data collection easier"
+   },
+   {
+    "key": "D",
+    "text": "To avoid using log files"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "FA25 FE #7",
+   "SU26 FE #7"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 FE",
+    "type": "official",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26fe-08",
+  "question": "Where should you store your API key and sensitive information?",
+  "options": [
+   {
+    "key": "A",
+    "text": "In a publicly accessible file"
+   },
+   {
+    "key": "B",
+    "text": "On a machine you trust in a secure file"
+   },
+   {
+    "key": "C",
+    "text": "In a shared document"
+   },
+   {
+    "key": "D",
+    "text": "In the cloud without encryption"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "FA25 FE #50",
+   "SU26 FE #8"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 FE",
+    "type": "official",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26fe-09",
+  "question": "When training a custom classifier in Watson Visual Recognition the negative images should be:",
+  "options": [
+   {
+    "key": "A",
+    "text": "As visually similar as possible to the positive images"
+   },
+   {
+    "key": "B",
+    "text": "Background images without the positive images"
+   },
+   {
+    "key": "C",
+    "text": "As random as possible to establish a background"
+   },
+   {
+    "key": "D",
+    "text": "Randomly generated from the positive images"
+   },
+   {
+    "key": "E",
+    "text": "Visually distinct from the positive images"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "A"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "Quizlet 1 #86",
+   "Quizlet 2 #77",
+   "SU26 FE #9"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 FE",
+    "type": "official",
+    "answer": [
+     "A"
+    ]
+   },
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26fe-10",
+  "question": "You may only pass a pickle file to save your model in the your Watson Machine Learning library.",
+  "options": [
+   {
+    "key": "A",
+    "text": "True"
+   },
+   {
+    "key": "B",
+    "text": "False"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "FA25 FE #41",
+   "Quizlet 1 #98",
+   "Quizlet 2 #89",
+   "SU26 FE #10"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 FE",
+    "type": "official",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26fe-11",
+  "question": "Which of the following is a method used for topic modeling?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Principal Component Analysis (PCA)"
+   },
+   {
+    "key": "B",
+    "text": "Latent Dirichlet Allocation (LDA)"
+   },
+   {
+    "key": "C",
+    "text": "Support Vector Machines (SVM)"
+   },
+   {
+    "key": "D",
+    "text": "K-Means Clustering"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "SU26 FE #11"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 FE",
+    "type": "official",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26fe-12",
+  "question": "What is the purpose of the spark-submit command?",
+  "options": [
+   {
+    "key": "A",
+    "text": "To create a Spark cluster"
+   },
+   {
+    "key": "B",
+    "text": "To submit applications to a Spark cluster"
+   },
+   {
+    "key": "C",
+    "text": "To monitor Spark jobs"
+   },
+   {
+    "key": "D",
+    "text": "To install Spark"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "SU26 FE #12"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 FE",
+    "type": "official",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26fe-13",
+  "question": "What is a potential consequence of software changes on model performance?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Improved accuracy"
+   },
+   {
+    "key": "B",
+    "text": "Performance drift"
+   },
+   {
+    "key": "C",
+    "text": "Increased training time"
+   },
+   {
+    "key": "D",
+    "text": "No impact at all"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "SU26 FE #13"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 FE",
+    "type": "official",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26fe-14",
+  "question": "What is the primary purpose of Natural Language Processing (NLP)?",
+  "options": [
+   {
+    "key": "A",
+    "text": "To create visual content"
+   },
+   {
+    "key": "B",
+    "text": "To analyze and understand human language"
+   },
+   {
+    "key": "C",
+    "text": "To develop hardware components"
+   },
+   {
+    "key": "D",
+    "text": "To manage databases"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "SU26 FE #14"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 FE",
+    "type": "official",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26fe-15",
+  "question": "Which types of programming tasks best describes what you are expected to already have some familiarity with before beginning this course?",
+  "options": [
+   {
+    "key": "A",
+    "text": "dashboarding, high performance computing, and code profiling"
+   },
+   {
+    "key": "B",
+    "text": "numeric computing, data munging, data visualization and data modeling"
+   },
+   {
+    "key": "C",
+    "text": "convex optimization, python programming, statistical programming"
+   },
+   {
+    "key": "D",
+    "text": "continuous integration, linear programming, and data exploration"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "Quizlet 1 #6",
+   "Quizlet 2 #2",
+   "SU26 FE #15"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 FE",
+    "type": "official",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26fe-16",
+  "question": "Which of the following is a common task during the \"Define\" stage?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Data collection"
+   },
+   {
+    "key": "B",
+    "text": "Data cleaning and preliminary exploratory data analysis"
+   },
+   {
+    "key": "C",
+    "text": "Model training"
+   },
+   {
+    "key": "D",
+    "text": "Business opportunity identification"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "D"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "SU26 FE #16"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 FE",
+    "type": "official",
+    "answer": [
+     "D"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26fe-17",
+  "question": "Which of the following is NOT a recommended tool for optimizing code?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Cython"
+   },
+   {
+    "key": "B",
+    "text": "mpi4py"
+   },
+   {
+    "key": "C",
+    "text": "TensorBoard"
+   },
+   {
+    "key": "D",
+    "text": "ipyparallel"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "C"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "FA25 FE #48",
+   "SU26 FE #17"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 FE",
+    "type": "official",
+    "answer": [
+     "C"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26fe-18",
+  "question": "A typical convolutional neural network is constructed using a combination of convolutional, pooling and dense layers.",
+  "options": [
+   {
+    "key": "A",
+    "text": "True"
+   },
+   {
+    "key": "B",
+    "text": "False"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "A"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "Quizlet 1 #89",
+   "Quizlet 2 #80",
+   "SU26 FE #18"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 FE",
+    "type": "official",
+    "answer": [
+     "A"
+    ]
+   },
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26fe-19",
+  "question": "Which method can be used to compare distributions of data?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Linear regression"
+   },
+   {
+    "key": "B",
+    "text": "Kullback-Leibler divergence"
+   },
+   {
+    "key": "C",
+    "text": "Decision trees"
+   },
+   {
+    "key": "D",
+    "text": "Neural networks"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "SU26 FE #19"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 FE",
+    "type": "official",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26fe-20",
+  "question": "In which situation would you most strongly consider MAE over RMSE as a regression metric?",
+  "options": [
+   {
+    "key": "A",
+    "text": "where we would like to interpret the error metric in terms of the original units"
+   },
+   {
+    "key": "B",
+    "text": "like predicting daily temperature where we expect a small range of values"
+   },
+   {
+    "key": "C",
+    "text": "like predicting time to failure for a machine where we expect a long tailed distribution of values"
+   },
+   {
+    "key": "D",
+    "text": "like predicting the category or topic associated with a document"
+   },
+   {
+    "key": "E",
+    "text": "where we would like to interpret the error metric as a squared version of the original units"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "C"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "FA25 FE #27",
+   "Quizlet 1 #66",
+   "Quizlet 2 #57",
+   "SU26 FE #20"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 FE",
+    "type": "official",
+    "answer": [
+     "C"
+    ]
+   },
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "C"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "C"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26fe-21",
+  "question": "What does the --executor-memory option specify in the spark-submit command?",
+  "options": [
+   {
+    "key": "A",
+    "text": "The amount of memory allocated to the driver"
+   },
+   {
+    "key": "B",
+    "text": "The amount of memory allocated to each executor"
+   },
+   {
+    "key": "C",
+    "text": "The total memory for the Spark application"
+   },
+   {
+    "key": "D",
+    "text": "The memory required for the script"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "SU26 FE #21"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 FE",
+    "type": "official",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26fe-22",
+  "question": "Which file format is commonly used for storing structured data in a tabular format?",
+  "options": [
+   {
+    "key": "A",
+    "text": "JSON"
+   },
+   {
+    "key": "B",
+    "text": "XML"
+   },
+   {
+    "key": "C",
+    "text": "CSV"
+   },
+   {
+    "key": "D",
+    "text": "TXT"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "C"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "SU26 FE #22"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 FE",
+    "type": "official",
+    "answer": [
+     "C"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26fe-23",
+  "question": "Which of the following is not an example of a variant/application of gradient decent that we have covered?",
+  "options": [
+   {
+    "key": "A",
+    "text": "batch gradient descent"
+   },
+   {
+    "key": "B",
+    "text": "mini-batch gradient descent"
+   },
+   {
+    "key": "C",
+    "text": "regularized gradient decent"
+   },
+   {
+    "key": "D",
+    "text": "stochastic gradient descent"
+   },
+   {
+    "key": "E",
+    "text": "gradient descent applied to regression"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "C"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "Quizlet 1 #68",
+   "Quizlet 2 #59",
+   "SU26 FE #23"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 FE",
+    "type": "official",
+    "answer": [
+     "C"
+    ]
+   },
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "C"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "C"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26fe-24",
+  "question": "Which of the following can lead to sampling bias?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Using a larger dataset"
+   },
+   {
+    "key": "B",
+    "text": "Under-representing certain subgroups in the data"
+   },
+   {
+    "key": "C",
+    "text": "Increasing the number of features"
+   },
+   {
+    "key": "D",
+    "text": "Using cross-validation"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "SU26 FE #24"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 FE",
+    "type": "official",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26fe-25",
+  "question": "Lets imagine there is a start-up that has a speech-to-text service that incorporates gestures and body language into its output. They offer annotated meeting reports as a product and customers are generally very satisfied, but sales to new customers tend to be very slow to acquire. Which of the following business opportunities should be the highest priority?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Develop and delivery new products to existing customers"
+   },
+   {
+    "key": "B",
+    "text": "Develop new products and target new customers"
+   },
+   {
+    "key": "C",
+    "text": "Use customer segmentation and/or market analysis to help marketing with new customers"
+   },
+   {
+    "key": "D",
+    "text": "Use customer segmentation and/or market analysis to move into a different market"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "C"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "Quizlet 1 #16",
+   "Quizlet 2 #10",
+   "SU26 FE #25"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 FE",
+    "type": "official",
+    "answer": [
+     "C"
+    ]
+   },
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "C"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "C"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26fe-26",
+  "question": "Which of the following best describes the quality of data?",
+  "options": [
+   {
+    "key": "A",
+    "text": "It only refers to the data collection methods."
+   },
+   {
+    "key": "B",
+    "text": "It includes both the observations and the maturity of the data."
+   },
+   {
+    "key": "C",
+    "text": "It is irrelevant to project success."
+   },
+   {
+    "key": "D",
+    "text": "It is solely determined by the data storage system."
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "SU26 FE #26"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 FE",
+    "type": "official",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26fe-27",
+  "question": "Which tasks should be included in a data ingestion pipeline? (Choose one or more)",
+  "options": [
+   {
+    "key": "A",
+    "text": "Account for missing data, faulty data, repeated observations and other data integrity issues"
+   },
+   {
+    "key": "B",
+    "text": "Ensure that expected data is returned given a specific set of parameters"
+   },
+   {
+    "key": "C",
+    "text": "Ensure that an expected format is returned"
+   },
+   {
+    "key": "D",
+    "text": "Ensure that models produce expected results"
+   }
+  ],
+  "multi": true,
+  "answer": [
+   "A",
+   "B",
+   "C"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "FA25 FE #25",
+   "Quizlet 1 #20",
+   "SU26 FE #27"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 FE",
+    "type": "official",
+    "answer": [
+     "A",
+     "B",
+     "C"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "A",
+     "B",
+     "C"
+    ]
+   }
+  ],
+  "conflict": false,
+  "notes": "Header says 'Choose 3 answers' while the question text says '(Choose one or more)'."
+ },
+ {
+  "id": "su26fe-28",
+  "question": "Which of the following is a common use case for NLP in large enterprises?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Managing financial transactions"
+   },
+   {
+    "key": "B",
+    "text": "Processing and analyzing customer feedback"
+   },
+   {
+    "key": "C",
+    "text": "Designing physical products"
+   },
+   {
+    "key": "D",
+    "text": "Conducting scientific experiments"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "SU26 FE #28"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 FE",
+    "type": "official",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26fe-29",
+  "question": "If we continue to add GPUs or other computational resources, the time it takes to train a model will always continue to decrease.",
+  "options": [
+   {
+    "key": "A",
+    "text": "True"
+   },
+   {
+    "key": "B",
+    "text": "False"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "FA25 FE #45",
+   "Quizlet 1 #90",
+   "Quizlet 2 #81",
+   "SU26 FE #29"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 FE",
+    "type": "official",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26fe-30",
+  "question": "What does a Docker container include?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Only the application code"
+   },
+   {
+    "key": "B",
+    "text": "Code, runtime libraries, and a private filesystem"
+   },
+   {
+    "key": "C",
+    "text": "Only the operating system"
+   },
+   {
+    "key": "D",
+    "text": "Only the database"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "SU26 FE #30"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 FE",
+    "type": "official",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26fe-31",
+  "question": "Which of the following is NOT normally a part of the EDA process",
+  "options": [
+   {
+    "key": "A",
+    "text": "Visual summaries of the data"
+   },
+   {
+    "key": "B",
+    "text": "Connecting the data to the business opportunity"
+   },
+   {
+    "key": "C",
+    "text": "Communication to stakeholders"
+   },
+   {
+    "key": "D",
+    "text": "Predictive linear or logistic regression"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "D"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "FA25 FE #38",
+   "Quizlet 1 #31",
+   "Quizlet 2 #23",
+   "SU26 FE #31"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 FE",
+    "type": "official",
+    "answer": [
+     "D"
+    ]
+   },
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "D"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "D"
+    ]
+   }
+  ],
+  "conflict": false,
+  "notes": "Card also contains an embedded second question in the PDF: 'True/False. The EDA process is decoupled from modeling and cannot be used to help estimate the time it will take to complete a modeling procedure.' (True/False, answer: False) - dropped from options."
+ },
+ {
+  "id": "su26fe-32",
+  "question": "Which statement best describes why visualization of topics can have an impact on the business opportunity?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Because sharing with domain experts might enable topic-specific feature engineering"
+   },
+   {
+    "key": "B",
+    "text": "Because visual inspection can help choose the number of topics"
+   },
+   {
+    "key": "C",
+    "text": "Because we are able to see the top words with each topic"
+   },
+   {
+    "key": "D",
+    "text": "Because we are able to see the relative importance of each topic across the corpus"
+   },
+   {
+    "key": "E",
+    "text": "Because domain experts can visually inspect the validity of the topics"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "A"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "Quizlet 1 #53",
+   "Quizlet 2 #45",
+   "SU26 FE #32"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 FE",
+    "type": "official",
+    "answer": [
+     "A"
+    ]
+   },
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26fe-33",
+  "question": "What is the purpose of Exploratory Data Analysis (EDA)?",
+  "options": [
+   {
+    "key": "A",
+    "text": "To clean the data"
+   },
+   {
+    "key": "B",
+    "text": "To create summaries and visualizations of the data"
+   },
+   {
+    "key": "C",
+    "text": "To build predictive models"
+   },
+   {
+    "key": "D",
+    "text": "To gather raw data"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "SU26 FE #33"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 FE",
+    "type": "official",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26fe-34",
+  "question": "Which component is responsible for ensuring that applications are healthy and running in worker nodes?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Kubernetes Master"
+   },
+   {
+    "key": "B",
+    "text": "Kubelet"
+   },
+   {
+    "key": "C",
+    "text": "API Server"
+   },
+   {
+    "key": "D",
+    "text": "Deployment"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "SU26 FE #34"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 FE",
+    "type": "official",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26fe-35",
+  "question": "What is emphasized as important when carrying out data visualization in an enterprise context?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Speed of execution"
+   },
+   {
+    "key": "B",
+    "text": "Reproducibility and communication"
+   },
+   {
+    "key": "C",
+    "text": "Complexity of models"
+   },
+   {
+    "key": "D",
+    "text": "Use of advanced algorithms"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "SU26 FE #35"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 FE",
+    "type": "official",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26fe-36",
+  "question": "A Spark cluster is generally managed using a Docker container and a YAML file.",
+  "options": [
+   {
+    "key": "A",
+    "text": "True"
+   },
+   {
+    "key": "B",
+    "text": "False"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "Quizlet 1 #94",
+   "Quizlet 2 #85",
+   "SU26 FE #36"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 FE",
+    "type": "official",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26fe-37",
+  "question": "What is a common approach used by classifiers that default to a one-vs-all strategy?",
+  "options": [
+   {
+    "key": "A",
+    "text": "A single classifier is trained for all classes."
+   },
+   {
+    "key": "B",
+    "text": "A different classifier is trained for each label."
+   },
+   {
+    "key": "C",
+    "text": "All classes are treated as one single class."
+   },
+   {
+    "key": "D",
+    "text": "It is not applicable to multiclass classification."
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "SU26 FE #37"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 FE",
+    "type": "official",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26fe-38",
+  "question": "What is Port Forwarding in Docker?",
+  "options": [
+   {
+    "key": "A",
+    "text": "The process of creating a data file on the local computer that persists after the container is closed"
+   },
+   {
+    "key": "B",
+    "text": "Sending one container to multiple nodes on a multicloud environment"
+   },
+   {
+    "key": "C",
+    "text": "Allowing data to be passed in and out of a docker container and controlling which applications can do this"
+   },
+   {
+    "key": "D",
+    "text": "Building one Docker image using another docker image as a template"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "C"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "Quizlet 1 #122",
+   "Quizlet 2 #110",
+   "SU26 FE #38"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 FE",
+    "type": "official",
+    "answer": [
+     "C"
+    ]
+   },
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "C"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "C"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26fe-39",
+  "question": "In a confusion matrix, what does True Positive (TP) represent?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Correctly predicted negative cases"
+   },
+   {
+    "key": "B",
+    "text": "Incorrectly predicted positive cases"
+   },
+   {
+    "key": "C",
+    "text": "Correctly predicted positive cases"
+   },
+   {
+    "key": "D",
+    "text": "Incorrectly predicted negative cases"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "C"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "FA25 FE #33",
+   "SU26 FE #39"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 FE",
+    "type": "official",
+    "answer": [
+     "C"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26fe-40",
+  "question": "What does a deployment in Kubernetes manage?",
+  "options": [
+   {
+    "key": "A",
+    "text": "The API server"
+   },
+   {
+    "key": "B",
+    "text": "The desired state of applications"
+   },
+   {
+    "key": "C",
+    "text": "The health of worker nodes"
+   },
+   {
+    "key": "D",
+    "text": "The network configuration"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "SU26 FE #40"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 FE",
+    "type": "official",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26fe-41",
+  "question": "Which of the following best describes the focus of this course?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Strict adherence to a specific process model"
+   },
+   {
+    "key": "B",
+    "text": "Incorporating best practices into the workflow"
+   },
+   {
+    "key": "C",
+    "text": "Learning only from data science literature"
+   },
+   {
+    "key": "D",
+    "text": "Avoiding any structured approach"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "SU26 FE #41"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 FE",
+    "type": "official",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26fe-42",
+  "question": "A data scientist at Company Z sorted the survey responses by whether the respondents used Product 1 or Product 2 and then compiled their ages:\nOf the hypothesis test discussed in these contents what one is the most appropriate for testing the following hypothesis?\nThere is no age difference, on average, between the users of product 1 and the users of product 2",
+  "code": "p1_ages = [25., 32., 20., 18., 28., 32., 31., 19., 34., 34., 23., 29., 17.,\n        23., 25., 31., 32., 29., 29., 24., 22., 28., 26., 24., 23.]\n\np2_ages = [20., 25., 27., 19., 22., 26., 24., 27., 24., 20., 25., 28., 18.,\n        19., 23., 28., 19., 19., 19., 25., 29., 26., 23., 23., 22.]",
+  "options": [
+   {
+    "key": "A",
+    "text": "A 1-sample t-test"
+   },
+   {
+    "key": "B",
+    "text": "A 2-sample t-test assuming equal variance"
+   },
+   {
+    "key": "C",
+    "text": "Z-Test with continuity correction"
+   },
+   {
+    "key": "D",
+    "text": "A 2-sample unequal variances t-test"
+   },
+   {
+    "key": "E",
+    "text": "Binomial Test"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "D"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "Quizlet 1 #39",
+   "Quizlet 2 #31",
+   "SU26 FE #42"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 FE",
+    "type": "official",
+    "answer": [
+     "D"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "D"
+    ]
+   },
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "D"
+    ]
+   }
+  ],
+  "conflict": false,
+  "notes": "Option E is truncated in the source ('Binomia', probably 'Binomial test').; The PDF references a table of respondent ages (\"compiled their ages:\") that is not present in the text dump (likely an image)."
+ },
+ {
+  "id": "su26fe-43",
+  "question": "What is the primary goal of the \"Empathize\" stage in the data science process?",
+  "options": [
+   {
+    "key": "A",
+    "text": "To gather data"
+   },
+   {
+    "key": "B",
+    "text": "To understand business opportunities"
+   },
+   {
+    "key": "C",
+    "text": "To clean the data"
+   },
+   {
+    "key": "D",
+    "text": "To build a model"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "SU26 FE #43"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 FE",
+    "type": "official",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26fe-44",
+  "question": "Which of the following lists contains one or more references to a technology that is not a specific python package used to speed up and improve the performance of python code?",
+  "options": [
+   {
+    "key": "A",
+    "text": "py-cuda, Cython"
+   },
+   {
+    "key": "B",
+    "text": "multiprocessing, mpi4py"
+   },
+   {
+    "key": "C",
+    "text": "subprocessing, symmetric-multiprocessing"
+   },
+   {
+    "key": "D",
+    "text": "threading, ipyparallel"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "C"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "Quizlet 1 #93",
+   "Quizlet 2 #84",
+   "SU26 FE #44"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 FE",
+    "type": "official",
+    "answer": [
+     "C"
+    ]
+   },
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "C"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "C"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26fe-45",
+  "question": "Which of the following statements does not describe valid use case for dimensionality reduction?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Principal components analysis to process images used in classification."
+   },
+   {
+    "key": "B",
+    "text": "Non-negative matrix factorization to resolve topics from a corpus of words."
+   },
+   {
+    "key": "C",
+    "text": "t-distributed stochastic neighbor embedding to visualize the results of a clustering algorithm."
+   },
+   {
+    "key": "D",
+    "text": "Using an ANOVA to select a subset of features"
+   },
+   {
+    "key": "E",
+    "text": "Down-sampling of the majority class"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "E"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "Quizlet 1 #51",
+   "Quizlet 2 #43",
+   "SU26 FE #45"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 FE",
+    "type": "official",
+    "answer": [
+     "E"
+    ]
+   },
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "E"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "E"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26fe-46",
+  "question": "What is the principal reason to create a virtual environment before creating your model locally?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Because all models should have their own virtual environment"
+   },
+   {
+    "key": "B",
+    "text": "Because it will ensure that the most recent packages are used"
+   },
+   {
+    "key": "C",
+    "text": "Because virtual environments can be containerized easily"
+   },
+   {
+    "key": "D",
+    "text": "Because the Python client for Watson Machine Learning has specific dependencies"
+   },
+   {
+    "key": "E",
+    "text": "Because it ensures that locally created/trained models are compatible with Watson Machine Learning"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "E"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "Quizlet 1 #97",
+   "Quizlet 2 #88",
+   "SU26 FE #46"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 FE",
+    "type": "official",
+    "answer": [
+     "E"
+    ]
+   },
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "E"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "E"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26fe-47",
+  "question": "What does ETL stand for in data processing?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Extract, Transform, Load"
+   },
+   {
+    "key": "B",
+    "text": "Evaluate, Test, Load"
+   },
+   {
+    "key": "C",
+    "text": "Extract, Transfer, Load"
+   },
+   {
+    "key": "D",
+    "text": "Evaluate, Transform, Load"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "A"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "SU26 FE #47"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 FE",
+    "type": "official",
+    "answer": [
+     "A"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26fe-48",
+  "question": "Which tool is mentioned as an industry standard in the Python ecosystem for data science?",
+  "options": [
+   {
+    "key": "A",
+    "text": "RStudio"
+   },
+   {
+    "key": "B",
+    "text": "Jupyter notebooks"
+   },
+   {
+    "key": "C",
+    "text": "Spyder"
+   },
+   {
+    "key": "D",
+    "text": "Tableau"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "SU26 FE #48"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 FE",
+    "type": "official",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26fe-49",
+  "question": "Cross-validation along with train-test splits are critical tools to help ensure our models are well calibrated for unseen data",
+  "options": [
+   {
+    "key": "A",
+    "text": "True"
+   },
+   {
+    "key": "B",
+    "text": "False"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "A"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "SU26 FE #49"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 FE",
+    "type": "official",
+    "answer": [
+     "A"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26fe-50",
+  "question": "In the design thinking process, what phase are team members currently working on?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Ideate"
+   },
+   {
+    "key": "B",
+    "text": "Prototype"
+   },
+   {
+    "key": "C",
+    "text": "Empathize"
+   },
+   {
+    "key": "D",
+    "text": "Test"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "C"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "SU26 FE #50"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 FE",
+    "type": "official",
+    "answer": [
+     "C"
+    ]
+   }
+  ],
+  "conflict": false,
+  "notes": "Question refers to a scenario/context (team members' current activity) that is not shown in the image."
+ },
+ {
+  "id": "su26re-01",
+  "question": "Which tool can help you scale your analysis with such massive data sources ?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Dask"
+   },
+   {
+    "key": "B",
+    "text": "CSV application"
+   },
+   {
+    "key": "C",
+    "text": "Visual Studio Code"
+   },
+   {
+    "key": "D",
+    "text": "Database"
+   },
+   {
+    "key": "E",
+    "text": "Pycharm"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "A"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "SU26 RE #1"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 RE",
+    "type": "official",
+    "answer": [
+     "A"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26re-02",
+  "question": "In the context of machine learning, why is Docker important?",
+  "options": [
+   {
+    "key": "A",
+    "text": "It simplifies data visualization"
+   },
+   {
+    "key": "B",
+    "text": "It provides a standard environment for model deployment"
+   },
+   {
+    "key": "C",
+    "text": "It eliminates the need for coding"
+   },
+   {
+    "key": "D",
+    "text": "It is used for data storage"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "SU26 RE #2"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 RE",
+    "type": "official",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26re-03",
+  "question": "Which of the following is not a valid way to pass parameter to a Spark MLlib model?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Pass a pickle file when the model is declared"
+   },
+   {
+    "key": "B",
+    "text": "Set the named parameters directly when the model is declared"
+   },
+   {
+    "key": "C",
+    "text": "Pass a ParamMap to the .fit() method of the model"
+   },
+   {
+    "key": "D",
+    "text": "Create a ParamMap, update it then pass it to a .fit() method of the model"
+   },
+   {
+    "key": "E",
+    "text": "Pass a ParamMap to the .fit() method of a pipeline"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "A"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "Quizlet 1 #102",
+   "Quizlet 2 #93",
+   "SU26 RE #3"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 RE",
+    "type": "official",
+    "answer": [
+     "A"
+    ]
+   },
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26re-04",
+  "question": "If you were to munge the data into a pandas.DataFrame which of the following would describe a reasonable goal for the cleaning process?",
+  "options": [
+   {
+    "key": "A",
+    "text": "customer on the rows and items like total_sales, name, most_bought on the columns"
+   },
+   {
+    "key": "B",
+    "text": "daily revenue on the rows items like customer_name and total on the columns"
+   },
+   {
+    "key": "C",
+    "text": "transactions on the rows and items like customer_name and item_id on the columns"
+   },
+   {
+    "key": "D",
+    "text": "None of the correct answer"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "A"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "Quizlet 1 #5",
+   "SU26 RE #4"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 RE",
+    "type": "official",
+    "answer": [
+     "A"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "C"
+    ]
+   }
+  ],
+  "conflict": true
+ },
+ {
+  "id": "su26re-05",
+  "question": "Which of the following is NOT a component of the confusion matrix?",
+  "options": [
+   {
+    "key": "A",
+    "text": "True Negatives (TN)"
+   },
+   {
+    "key": "B",
+    "text": "False Positives (FP)"
+   },
+   {
+    "key": "C",
+    "text": "True Positives (TP)"
+   },
+   {
+    "key": "D",
+    "text": "Average Score (AS)"
+   },
+   {
+    "key": "E",
+    "text": "False Negatives (FN)"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "D"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "SP26 FE #16",
+   "SU26 RE #5"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 RE",
+    "type": "official",
+    "answer": [
+     "D"
+    ]
+   },
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "D"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26re-06",
+  "question": "In supervised learning, what is the term for the process of adjusting model parameters based on training data?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Learning"
+   },
+   {
+    "key": "B",
+    "text": "Estimation"
+   },
+   {
+    "key": "C",
+    "text": "Model Fitting"
+   },
+   {
+    "key": "D",
+    "text": "Labeling"
+   }
+  ],
+  "multi": true,
+  "answer": [
+   "A",
+   "B",
+   "C"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "SU26 RE #6"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 RE",
+    "type": "official",
+    "answer": [
+     "A",
+     "B",
+     "C"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26re-07",
+  "question": "What is the primary focus of the F1 Score?",
+  "options": [
+   {
+    "key": "A",
+    "text": "True negatives."
+   },
+   {
+    "key": "B",
+    "text": "False positives."
+   },
+   {
+    "key": "C",
+    "text": "True positives and false negatives."
+   },
+   {
+    "key": "D",
+    "text": "True positives and false positives."
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "C"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "SU26 RE #7"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 RE",
+    "type": "official",
+    "answer": [
+     "C"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26re-08",
+  "question": "What is one way to optimize model training in scikit-learn?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Increase the number of features"
+   },
+   {
+    "key": "B",
+    "text": "Use the njobs argument"
+   },
+   {
+    "key": "C",
+    "text": "Decrease the dataset size"
+   },
+   {
+    "key": "D",
+    "text": "Avoid using any optimization algorithms"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "SU26 RE #8"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 RE",
+    "type": "official",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26re-09",
+  "question": "In the context of topic modeling, what does the bag-of-words representation refer to?",
+  "options": [
+   {
+    "key": "A",
+    "text": "A method of visualizing data in three dimensions."
+   },
+   {
+    "key": "B",
+    "text": "A technique for organizing documents based on their length."
+   },
+   {
+    "key": "C",
+    "text": "A way of representing text data by counting the frequency of words."
+   },
+   {
+    "key": "D",
+    "text": "A model that predicts the next word in a sentence."
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "C"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "SU26 RE #9"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 RE",
+    "type": "official",
+    "answer": [
+     "C"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26re-10",
+  "question": "Which type of service exposes an application to external users?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Cluster IP"
+   },
+   {
+    "key": "B",
+    "text": "Node Port"
+   },
+   {
+    "key": "C",
+    "text": "Load Balancer"
+   },
+   {
+    "key": "D",
+    "text": "Internal Service"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "C"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "SU26 RE #10"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 RE",
+    "type": "official",
+    "answer": [
+     "C"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26re-11",
+  "question": "What is the purpose of kubectl in kubernetes?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Automatic logging of requests and responses"
+   },
+   {
+    "key": "B",
+    "text": "A tool that makes it easy to run a single-node cluster locally"
+   },
+   {
+    "key": "C",
+    "text": "The primary node agent on each node, responsible for the processes running on that machine"
+   },
+   {
+    "key": "D",
+    "text": "The CLI for communicating with the kubernetes cluster"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "D"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "Quizlet 1 #124",
+   "Quizlet 2 #112",
+   "SP26 FE #20",
+   "SU26 RE #11"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 RE",
+    "type": "official",
+    "answer": [
+     "D"
+    ]
+   },
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "D"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "D"
+    ]
+   },
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "D"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26re-12",
+  "question": "Which of the following is a key benefit of using Docker?",
+  "options": [
+   {
+    "key": "A",
+    "text": "It requires more resources than virtual machines"
+   },
+   {
+    "key": "B",
+    "text": "It allows for easier deployment of applications"
+   },
+   {
+    "key": "C",
+    "text": "It is only suitable for small applications"
+   },
+   {
+    "key": "D",
+    "text": "It does not support multiple applications"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "FA25 FE #43",
+   "SU26 RE #12"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 RE",
+    "type": "official",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26re-13",
+  "question": "What will the management team want to know after the sales data is released?",
+  "options": [
+   {
+    "key": "A",
+    "text": "The number of products sold"
+   },
+   {
+    "key": "B",
+    "text": "If the teams are well-optimized based on historical sales data"
+   },
+   {
+    "key": "C",
+    "text": "The marketing budget for each team"
+   },
+   {
+    "key": "D",
+    "text": "The demographics of the customers"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "SP26 FE #34",
+   "SU26 RE #13"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 RE",
+    "type": "official",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26re-14",
+  "question": "In the OSEMN framework, what does the \"S\" stand for?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Scrubbing"
+   },
+   {
+    "key": "B",
+    "text": "Sampling"
+   },
+   {
+    "key": "C",
+    "text": "Structuring"
+   },
+   {
+    "key": "D",
+    "text": "Storing"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "A"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "SU26 RE #14"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 RE",
+    "type": "official",
+    "answer": [
+     "A"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26re-15",
+  "question": "Which of the following is a key aspect of applying data transformations?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Data collection"
+   },
+   {
+    "key": "B",
+    "text": "Iteration"
+   },
+   {
+    "key": "C",
+    "text": "Data visualization"
+   },
+   {
+    "key": "D",
+    "text": "Data storage"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "SP26 FE #33",
+   "SU26 RE #15"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 RE",
+    "type": "official",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26re-16",
+  "question": "Which of the following is NOT an example of assumption that you work with when making probability statements about a sample of data?",
+  "options": [
+   {
+    "key": "A",
+    "text": "That there is an underlying population that your sample comes from"
+   },
+   {
+    "key": "B",
+    "text": "That the population follows an assumed probability distribution"
+   },
+   {
+    "key": "C",
+    "text": "That the observations in your sample are independent and identically distributed"
+   },
+   {
+    "key": "D",
+    "text": "That random variables represent the possible values that the data can take"
+   },
+   {
+    "key": "E",
+    "text": "That the probability statement applies to one observation at a time in a data set"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "E"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "FA25 FE #37",
+   "Quizlet 1 #35",
+   "Quizlet 2 #27",
+   "SU26 RE #16"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 RE",
+    "type": "official",
+    "answer": [
+     "E"
+    ]
+   },
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "E"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "E"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26re-17",
+  "question": "What percentage of a data scientist's time can be spent on data cleaning?",
+  "options": [
+   {
+    "key": "A",
+    "text": "10%"
+   },
+   {
+    "key": "B",
+    "text": "30%"
+   },
+   {
+    "key": "C",
+    "text": "60%"
+   },
+   {
+    "key": "D",
+    "text": "90%"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "C"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "SU26 RE #17"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 RE",
+    "type": "official",
+    "answer": [
+     "C"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26re-18",
+  "question": "Which tool can be used to verify the robustness of machine learning models?",
+  "options": [
+   {
+    "key": "A",
+    "text": "TensorFlow"
+   },
+   {
+    "key": "B",
+    "text": "Adversarial Robustness Toolbox"
+   },
+   {
+    "key": "C",
+    "text": "Scikit-learn"
+   },
+   {
+    "key": "D",
+    "text": "Keras"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "SU26 RE #18"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 RE",
+    "type": "official",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26re-19",
+  "question": "If you have data with a large number of features and you are sure that it will take some time to train and tune the model, which approach is LEAST likely to result in a speed improvement during grid-searching?",
+  "options": [
+   {
+    "key": "A",
+    "text": "In your pipeline use variance thresholding to limit the number of features"
+   },
+   {
+    "key": "B",
+    "text": "Use the Shuffle and split form of cross-validation"
+   },
+   {
+    "key": "C",
+    "text": "Use a randomized grid search form of cross validation"
+   },
+   {
+    "key": "D",
+    "text": "Randomly subset the data"
+   },
+   {
+    "key": "E",
+    "text": "Use PCA to reduce the dimensionality of the data before training"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "Quizlet 1 #67",
+   "Quizlet 2 #58",
+   "SP26 FE #39",
+   "SU26 RE #19"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 RE",
+    "type": "official",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26re-20",
+  "question": "What is the purpose of the classification_report in sklearn?",
+  "options": [
+   {
+    "key": "A",
+    "text": "To visualize data"
+   },
+   {
+    "key": "B",
+    "text": "To summarize model performance"
+   },
+   {
+    "key": "C",
+    "text": "To preprocess data"
+   },
+   {
+    "key": "D",
+    "text": "To train a model"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "SP26 FE #1",
+   "SU26 RE #20"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 RE",
+    "type": "official",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26re-21",
+  "question": "Gaussian distribution\nThe Gaussian or Normal distribution is use heavily throughout statistics and data science. Lets assume scores for this assessment have a mean of 50% and a standard deviation of 20%.\nRepresent these data with a Normal distribution\nWhat is the probability of observing a score >= 80?\nUse 50.0, 20.0, and 80 for your input values",
+  "code": "import scipy.stats as stats\n\ndef gaussian_distribution(loc_val, scale_val, cdf_val):\n    '''\n    INPUT: loc (mean of the distribution), scale (standard deviation of the distribution), and cdf values\n    OUTPUT: determined probability\n    '''\n\n    //Code here?\n    return probability",
+  "options": [
+   {
+    "key": "A",
+    "text": "probability = 1 - stats.norm.cdf(cdf_val, loc=loc_val, scale=scale_val)"
+   },
+   {
+    "key": "B",
+    "text": "probability = stats.norm.cdf(cdf_val, loc=loc_val, scale=scale_val)"
+   },
+   {
+    "key": "C",
+    "text": "probability = 1 - stats.cdf(cdf_val, loc=loc_val, scale=scale_val)"
+   },
+   {
+    "key": "D",
+    "text": "probability = 1 - stats.norm(cdf_val, loc=loc_val, scale=scale_val)"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "A"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "SU26 RE #21"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 RE",
+    "type": "official",
+    "answer": [
+     "A"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26re-22",
+  "question": "What does RMSE stand for?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Root Mean Square Error"
+   },
+   {
+    "key": "B",
+    "text": "Relative Mean Squared Error"
+   },
+   {
+    "key": "C",
+    "text": "Random Mean Square Evaluation"
+   },
+   {
+    "key": "D",
+    "text": "Root Mean Squared Evaluation"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "A"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "SU26 RE #22"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 RE",
+    "type": "official",
+    "answer": [
+     "A"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26re-23",
+  "question": "What is the primary purpose of the pyplot module in Matplotlib?",
+  "options": [
+   {
+    "key": "A",
+    "text": "To create complex web applications"
+   },
+   {
+    "key": "B",
+    "text": "To provide a functional interface for simple interactive use"
+   },
+   {
+    "key": "C",
+    "text": "To manage data storage"
+   },
+   {
+    "key": "D",
+    "text": "To perform statistical analysis"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "SU26 RE #23"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 RE",
+    "type": "official",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26re-24",
+  "question": "What type of supervised learning is used when predicting a real-valued outcome?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Classification"
+   },
+   {
+    "key": "B",
+    "text": "Regression"
+   },
+   {
+    "key": "C",
+    "text": "Clustering"
+   },
+   {
+    "key": "D",
+    "text": "Reinforcement Learning"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "SU26 RE #24"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 RE",
+    "type": "official",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26re-25",
+  "question": "What file format does Kubernetes use to define resources for deployment?",
+  "options": [
+   {
+    "key": "A",
+    "text": "JSON"
+   },
+   {
+    "key": "B",
+    "text": "XML"
+   },
+   {
+    "key": "C",
+    "text": "YAML"
+   },
+   {
+    "key": "D",
+    "text": "CSV"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "C"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "SU26 RE #25"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 RE",
+    "type": "official",
+    "answer": [
+     "C"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26re-26",
+  "question": "The .fit_transform method corresponds to which scikit-learn interface(s)?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Transformer, Estimator, Predictor"
+   },
+   {
+    "key": "B",
+    "text": "Transformer, Estimator"
+   },
+   {
+    "key": "C",
+    "text": "Estimator, Predictor"
+   },
+   {
+    "key": "D",
+    "text": "Transformer"
+   },
+   {
+    "key": "E",
+    "text": "Transformer, Predictor"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "Quizlet 1 #47",
+   "Quizlet 2 #39",
+   "SP26 FE #49",
+   "SU26 RE #26"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 RE",
+    "type": "official",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26re-27",
+  "question": "Docker images are the basis of containers. It is possible to pull an image from the registry and ask the Docker client to run a container based on that image. Some images are official while many others are user defined.",
+  "options": [
+   {
+    "key": "A",
+    "text": "True"
+   },
+   {
+    "key": "B",
+    "text": "False"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "A"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "Quizlet 1 #96",
+   "Quizlet 2 #87",
+   "SP26 FE #47",
+   "SU26 RE #27"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 RE",
+    "type": "official",
+    "answer": [
+     "A"
+    ]
+   },
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   },
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "A"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26re-28",
+  "question": "Thinking with the lens of the scientific process, what would your next steps be if you wanted to decide where to open the next store for your sled business?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Start pulling sales and other data to create a business viability assessment for Vermont"
+   },
+   {
+    "key": "B",
+    "text": "Gather more data and repeat the snowfall experiment"
+   },
+   {
+    "key": "C",
+    "text": "Gather different data say snowfall by county and repeat the experiment"
+   },
+   {
+    "key": "D",
+    "text": "Start a business viability assessment for all three states"
+   }
+  ],
+  "multi": true,
+  "answer": [
+   "A",
+   "B",
+   "C"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "Quizlet 1 #13",
+   "SP26 FE #4",
+   "SU26 RE #28"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 RE",
+    "type": "official",
+    "answer": [
+     "A",
+     "B",
+     "C"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "A",
+     "B",
+     "C",
+     "D"
+    ]
+   },
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "A",
+     "B",
+     "C"
+    ]
+   }
+  ],
+  "conflict": true,
+  "notes": "Quizlet repeats all four options as correct answers; context (earlier snowfall experiment) missing - verify."
+ },
+ {
+  "id": "su26re-29",
+  "question": "What happens if a pod fails in a Kubernetes deployment?",
+  "options": [
+   {
+    "key": "A",
+    "text": "The deployment is deleted"
+   },
+   {
+    "key": "B",
+    "text": "A new pod is created to replace it"
+   },
+   {
+    "key": "C",
+    "text": "The application stops running"
+   },
+   {
+    "key": "D",
+    "text": "The kubelet is notified"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "FA25 FE #3",
+   "SU26 RE #29"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 RE",
+    "type": "official",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26re-30",
+  "question": "A simple CNN that runs on all ten classes and uses all of the data obtains approximately what level of accuracy?",
+  "options": [
+   {
+    "key": "A",
+    "text": "62-77%"
+   },
+   {
+    "key": "B",
+    "text": "78-83%"
+   },
+   {
+    "key": "C",
+    "text": "84-89%"
+   },
+   {
+    "key": "D",
+    "text": "90-94%"
+   },
+   {
+    "key": "E",
+    "text": "95-99%"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "A"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "Quizlet 1 #81",
+   "Quizlet 2 #72",
+   "SU26 RE #30"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 RE",
+    "type": "official",
+    "answer": [
+     "A"
+    ]
+   },
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "D"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "D"
+    ]
+   }
+  ],
+  "conflict": true
+ },
+ {
+  "id": "su26re-31",
+  "question": "Though the emphasis may change, which two elements are both essential and common to all three process models we talked about?",
+  "options": [
+   {
+    "key": "A",
+    "text": "prediction, recommendation"
+   },
+   {
+    "key": "B",
+    "text": "data mining, data cleaning"
+   },
+   {
+    "key": "C",
+    "text": "resolve the business question, feedback loops"
+   },
+   {
+    "key": "D",
+    "text": "testing, model deployment"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "C"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "Quizlet 1 #7",
+   "Quizlet 2 #3",
+   "SU26 RE #31"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 RE",
+    "type": "official",
+    "answer": [
+     "C"
+    ]
+   },
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "C"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "C"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26re-32",
+  "question": "What is the role of Kube DNS in Kubernetes?",
+  "options": [
+   {
+    "key": "A",
+    "text": "To manage the API server"
+   },
+   {
+    "key": "B",
+    "text": "To provide service discovery for pods"
+   },
+   {
+    "key": "C",
+    "text": "To monitor application health"
+   },
+   {
+    "key": "D",
+    "text": "To create YAML manifests"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "FA25 FE #8",
+   "SU26 RE #32"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 RE",
+    "type": "official",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26re-33",
+  "question": "Your company is convinced it is time to change the nature of your companies core product and management has come to ask your advise. Which question DOES NOT exemplify scientific thinking in this situation?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Do we have any data like a corpus of customer feedback to support this decision?"
+   },
+   {
+    "key": "B",
+    "text": "Can we run an experiment like A/B testing to see if it helps support this decision?"
+   },
+   {
+    "key": "C",
+    "text": "Which members of leadership support this decision?"
+   },
+   {
+    "key": "D",
+    "text": "Have any other companies been successful making a comparable change?"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "C"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "Quizlet 1 #17",
+   "Quizlet 2 #11",
+   "SU26 RE #33"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 RE",
+    "type": "official",
+    "answer": [
+     "C"
+    ]
+   },
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "C"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "C"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26re-34",
+  "question": "Which of the following is least likely to be a use case for Docker containers?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Microservices: many loosely coupled and independently deployable services"
+   },
+   {
+    "key": "B",
+    "text": "DevOps/Data Engineers use containers as a common platform for many teams"
+   },
+   {
+    "key": "C",
+    "text": "Avoid install overhead with a Spark environment"
+   },
+   {
+    "key": "D",
+    "text": "Hybrid, multi-cloud portability for a machine learning model"
+   },
+   {
+    "key": "E",
+    "text": "Replacement for a standard virtual machine"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "E"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "Quizlet 1 #95",
+   "Quizlet 2 #86",
+   "SU26 RE #34"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 RE",
+    "type": "official",
+    "answer": [
+     "E"
+    ]
+   },
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "E"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "E"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26re-35",
+  "question": "The Watson Visual Recognition service can only be accessed using an API key via Python or curl.",
+  "options": [
+   {
+    "key": "A",
+    "text": "True"
+   },
+   {
+    "key": "B",
+    "text": "False"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "FA25 FE #35",
+   "Quizlet 1 #87",
+   "Quizlet 2 #78",
+   "SU26 RE #35"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 RE",
+    "type": "official",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26re-36",
+  "question": "Which of the following are three services provided by IBM Watson OpenScale?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Automatic CSS-HTML Generation, Hyerparameter Tuning, Performance Metrics"
+   },
+   {
+    "key": "B",
+    "text": "Compliance, Cross Regional Availabilty, Automatic Backup"
+   },
+   {
+    "key": "C",
+    "text": "Drift Monitoring, Fairness, Explainability"
+   },
+   {
+    "key": "D",
+    "text": "General Artificial Intelligence, Time Travel, World Domination"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "C"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "Quizlet 1 #120",
+   "Quizlet 2 #108",
+   "SU26 RE #36"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 RE",
+    "type": "official",
+    "answer": [
+     "C"
+    ]
+   },
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "C"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "C"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26re-37",
+  "question": "Which of the following model is not an example of an ensemble approach to learning?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Decision tree"
+   },
+   {
+    "key": "B",
+    "text": "Random forest"
+   },
+   {
+    "key": "C",
+    "text": "Boosting"
+   },
+   {
+    "key": "D",
+    "text": "Model stacking"
+   },
+   {
+    "key": "E",
+    "text": "Gradient boosting"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "A"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "Quizlet 1 #78",
+   "Quizlet 2 #69",
+   "SU26 RE #37"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 RE",
+    "type": "official",
+    "answer": [
+     "A"
+    ]
+   },
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26re-38",
+  "question": "Which of the following is NOT true about Python?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Python code can run in IPython and Jupyter notebooks"
+   },
+   {
+    "key": "B",
+    "text": "Python allows for the inclusion of comments and pseudocode to better organize code"
+   },
+   {
+    "key": "C",
+    "text": "Users can save .py files with an editor then subsequently execute them from the command line"
+   },
+   {
+    "key": "D",
+    "text": "Base Python automatically parallelizes processing across cores when multiple cores are available"
+   },
+   {
+    "key": "E",
+    "text": "Python allows users to save multiple functions in a .py file then import those functions in a different file"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "D"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "Quizlet 1 #3",
+   "Quizlet 2 #1",
+   "SU26 RE #38"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 RE",
+    "type": "official",
+    "answer": [
+     "D"
+    ]
+   },
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "D"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "D"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26re-39",
+  "question": "What is the community package of the Docker Engine called?",
+  "options": [
+   {
+    "key": "A",
+    "text": "docker-io"
+   },
+   {
+    "key": "B",
+    "text": "docker-ce"
+   },
+   {
+    "key": "C",
+    "text": "docker-compose"
+   },
+   {
+    "key": "D",
+    "text": "docker-toolbox"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "SP26 FE #24",
+   "SU26 RE #39"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 RE",
+    "type": "official",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26re-40",
+  "question": "Which of the following is a common challenge when optimizing code for machine learning models?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Lack of available data"
+   },
+   {
+    "key": "B",
+    "text": "Difficulty in improving training time for large models"
+   },
+   {
+    "key": "C",
+    "text": "Inability to use multiple GPUs"
+   },
+   {
+    "key": "D",
+    "text": "Limited programming languages available"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "SP26 FE #38",
+   "SU26 RE #40"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 RE",
+    "type": "official",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26re-41",
+  "question": "Which command is used to install the Watson Developer Cloud Python SDK?",
+  "options": [
+   {
+    "key": "A",
+    "text": "pip install ibm-watson"
+   },
+   {
+    "key": "B",
+    "text": "pip install --upgrade ibm-watson"
+   },
+   {
+    "key": "C",
+    "text": "install ibm-watson"
+   },
+   {
+    "key": "D",
+    "text": "upgrade ibm-watson"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "SP26 FE #50",
+   "SU26 RE #41"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 RE",
+    "type": "official",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26re-42",
+  "question": "Which type of recommender system is readily available in Spark Machine learning?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Utility-based recommender systems"
+   },
+   {
+    "key": "B",
+    "text": "Collaborative-based recommender systems"
+   },
+   {
+    "key": "C",
+    "text": "Content-based recommender systems"
+   },
+   {
+    "key": "D",
+    "text": "Hybrid recommender systems"
+   },
+   {
+    "key": "E",
+    "text": "Demographics-based recommender systems"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "FA25 FE #49",
+   "Quizlet 1 #100",
+   "Quizlet 2 #91",
+   "SU26 RE #42"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 RE",
+    "type": "official",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26re-43",
+  "question": "Which of the following is NOT a feature of Plotly?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Creating interactive plots"
+   },
+   {
+    "key": "B",
+    "text": "Accessing from a Python notebook"
+   },
+   {
+    "key": "C",
+    "text": "Generating static images only"
+   },
+   {
+    "key": "D",
+    "text": "Offering unique chart types like contour plots"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "C"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "SU26 RE #43"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 RE",
+    "type": "official",
+    "answer": [
+     "C"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26re-44",
+  "question": "Which of the following classifiers is inherently designed for multiclass classification?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Linear Regression"
+   },
+   {
+    "key": "B",
+    "text": "Naïve Bayes"
+   },
+   {
+    "key": "C",
+    "text": "K-Means Clustering"
+   },
+   {
+    "key": "D",
+    "text": "Decision Trees (in binary mode)"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "SP26 FE #48",
+   "SU26 RE #44"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 RE",
+    "type": "official",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26re-45",
+  "question": "Which of the following is NOT a type of interface in scikit-learn?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Transformer interface"
+   },
+   {
+    "key": "B",
+    "text": "Estimator interface"
+   },
+   {
+    "key": "C",
+    "text": "Predictor interface"
+   },
+   {
+    "key": "D",
+    "text": "Classifier interface"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "D"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "SU26 RE #45"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 RE",
+    "type": "official",
+    "answer": [
+     "D"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26re-46",
+  "question": "What is a poisoning attack?",
+  "options": [
+   {
+    "key": "A",
+    "text": "An attack that occurs during model deployment"
+   },
+   {
+    "key": "B",
+    "text": "An attack that injects malicious data into the training set"
+   },
+   {
+    "key": "C",
+    "text": "An attack that modifies the model's architecture"
+   },
+   {
+    "key": "D",
+    "text": "An attack that occurs only at test time"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "SP26 FE #10",
+   "SU26 RE #46"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 RE",
+    "type": "official",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26re-47",
+  "question": "AAVAIL Management has described their needs to you in the language of business. How would you describe this project in the language of Data Science?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Recommender system"
+   },
+   {
+    "key": "B",
+    "text": "A/B Testing"
+   },
+   {
+    "key": "C",
+    "text": "Dimensionality Reduction"
+   },
+   {
+    "key": "D",
+    "text": "Regression Analysis"
+   },
+   {
+    "key": "E",
+    "text": "Unsupervised Learning"
+   },
+   {
+    "key": "F",
+    "text": "Classification Analysis"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "F"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "FA25 FE #10",
+   "Quizlet 1 #126",
+   "SU26 RE #47"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 RE",
+    "type": "official",
+    "answer": [
+     "F"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "D"
+    ]
+   }
+  ],
+  "conflict": true
+ },
+ {
+  "id": "su26re-48",
+  "question": "There are many ways to carry out statistical inference. Which one method of the following is NOT used to compute estimates in the context of statistical inference.",
+  "options": [
+   {
+    "key": "A",
+    "text": "Null Hypothesis Significance Testing (NHST)"
+   },
+   {
+    "key": "B",
+    "text": "Maximum Likelihood Estimation (MLE)"
+   },
+   {
+    "key": "C",
+    "text": "Markov Chain Monte Carlo (MCMC)"
+   },
+   {
+    "key": "D",
+    "text": "Expectation Maximization (EM)"
+   },
+   {
+    "key": "E",
+    "text": "Simulation via Permutations"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "A"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "Quizlet 1 #36",
+   "Quizlet 2 #28",
+   "SP26 FE #26",
+   "SU26 RE #48"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 RE",
+    "type": "official",
+    "answer": [
+     "A"
+    ]
+   },
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   },
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "A"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26re-49",
+  "question": "What is a key advantage of using NoSQL databases?",
+  "options": [
+   {
+    "key": "A",
+    "text": "They impose a strict schema on data"
+   },
+   {
+    "key": "B",
+    "text": "They handle messy data better than relational databases"
+   },
+   {
+    "key": "C",
+    "text": "They are only suitable for small datasets"
+   },
+   {
+    "key": "D",
+    "text": "They require complex SQL queries"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "SU26 RE #49"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 RE",
+    "type": "official",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "su26re-50",
+  "question": "What is the purpose of logging in model performance monitoring?",
+  "options": [
+   {
+    "key": "A",
+    "text": "To increase the size of the dataset"
+   },
+   {
+    "key": "B",
+    "text": "To track changes and identify performance issues"
+   },
+   {
+    "key": "C",
+    "text": "To improve the user interface"
+   },
+   {
+    "key": "D",
+    "text": "To reduce computational costs"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "official",
+  "sources": [
+   "SU26 RE #50"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SU26 RE",
+    "type": "official",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-004",
+  "question": "Is the following statement True/False? To succeed in this course you are expected to be proficient in any one of the following: R, Python or Java.",
+  "options": [
+   {
+    "key": "A",
+    "text": "TRUE"
+   },
+   {
+    "key": "B",
+    "text": "FALSE"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #8",
+   "Quizlet 2 #4"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-005",
+  "question": "Which of the following is the least accurate statement about the advantages of using process models in data science? Process models generally help by...",
+  "options": [
+   {
+    "key": "A",
+    "text": "avoiding unnecessary tangents"
+   },
+   {
+    "key": "B",
+    "text": "speeding up the process of getting through the workflow"
+   },
+   {
+    "key": "C",
+    "text": "minimizing the model selection process"
+   },
+   {
+    "key": "D",
+    "text": "guiding effective time allocation"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #9",
+   "Quizlet 2 #5"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-006",
+  "question": "Is the following statement True/False? Design thinking is applied in other domains which helps make the task of communicating the AI workflow to those outside of data science easier.",
+  "options": [
+   {
+    "key": "A",
+    "text": "TRUE"
+   },
+   {
+    "key": "B",
+    "text": "FALSE"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "A"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #10",
+   "Quizlet 2 #6"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-007",
+  "question": "It is day one on the job and you need to come up with a plan—how do you begin?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Gather what data you can quickly and perform some EDA to understand the problem better"
+   },
+   {
+    "key": "B",
+    "text": "Plan to interview or study reviews of both satisfied and dissatisfied subscribers as soon as possible"
+   },
+   {
+    "key": "C",
+    "text": "Get the perspective from management and follow the leads they might provide"
+   },
+   {
+    "key": "D",
+    "text": "Something else entirely"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "C"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #11",
+   "Quizlet 2 #7"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "C"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": true
+ },
+ {
+  "id": "qz2-008",
+  "question": "When embarking on a data science project, why do you ultimately want to format your data so that it can be housed in something like a Pandas DataFrame or NumPy Array?",
+  "options": [
+   {
+    "key": "A",
+    "text": "DataFrames/Arrays most closely resemble tables in relational databases."
+   },
+   {
+    "key": "B",
+    "text": "DataFrames/Arrays are the only structures in Python capable of holding significant amounts of data."
+   },
+   {
+    "key": "C",
+    "text": "Nearly all modeling algorithms take input data in a tabular format analogous to format of DataFrames/Arrays."
+   },
+   {
+    "key": "D",
+    "text": "All of the above"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "D"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #14",
+   "Quizlet 2 #8",
+   "SP26 FE #29"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "D"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "C"
+    ]
+   },
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "C"
+    ]
+   }
+  ],
+  "conflict": true
+ },
+ {
+  "id": "qz2-009",
+  "question": "Lets imagine there is a start-up that has a speech-to-text service that incorporates gestures and body language into its output. Which of the following products represents the most defensible business opportunity.",
+  "options": [
+   {
+    "key": "A",
+    "text": "Offer a service that hooks into streaming video and predicts the emotional state of people in the videos"
+   },
+   {
+    "key": "B",
+    "text": "Create an app that allows job interviewers to get additional information about candidates"
+   },
+   {
+    "key": "C",
+    "text": "Create a new and improved conferencing app"
+   },
+   {
+    "key": "D",
+    "text": "Create a service that improves on existing audio recognition systems as a richer interface to mobile devices"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "D"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #15",
+   "Quizlet 2 #9"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "D"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "D"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-012",
+  "question": "Is the following statement true or false? CSV files are one of the most commonly used file formats for data science because file input/output is easy they are plain-text, and they work well with commonly used spreadsheet tools.",
+  "options": [
+   {
+    "key": "A",
+    "text": "TRUE"
+   },
+   {
+    "key": "B",
+    "text": "FALSE"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "A"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #18",
+   "Quizlet 2 #12"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-013",
+  "question": "Which of the following DOES NOT represent a valid relational database to connector relationship?",
+  "options": [
+   {
+    "key": "A",
+    "text": "MySQL --> MySQL-python"
+   },
+   {
+    "key": "B",
+    "text": "PostgreSQL --> psycopg/psycopg2"
+   },
+   {
+    "key": "C",
+    "text": "SQLite --> sqlite3"
+   },
+   {
+    "key": "D",
+    "text": "Berkeley DB --> bsddb"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "D"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #19",
+   "Quizlet 2 #13"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "D"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "D"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-014",
+  "question": "Which types of data generally work well with sparse matrices?",
+  "options": [
+   {
+    "key": "A",
+    "text": "word counts, time-series data"
+   },
+   {
+    "key": "B",
+    "text": "audio files, images"
+   },
+   {
+    "key": "C",
+    "text": "word counts, user-item matrix for recommendations"
+   },
+   {
+    "key": "D",
+    "text": "text data, audio files"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "C"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "FA25 FE #16",
+   "Quizlet 1 #22",
+   "Quizlet 2 #14"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "C"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "C"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-015",
+  "question": "Is the following statement True or False? Sparse matrices from SciPy need to be transformed into a dense matrix before using scikit-learns train-test-split function?",
+  "options": [
+   {
+    "key": "A",
+    "text": "TRUE"
+   },
+   {
+    "key": "B",
+    "text": "FALSE"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #23",
+   "Quizlet 2 #15"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-016",
+  "question": "Which fundamental part of the data ingestion process is concerned with to the phrase \"bad data in equals bad data out\"?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Gather all relevant data from the sources of provided data"
+   },
+   {
+    "key": "B",
+    "text": "Implement several checks for quality assurance"
+   },
+   {
+    "key": "C",
+    "text": "Take the initial steps towards automation of the ingestion pipeline"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #24",
+   "Quizlet 2 #16"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-017",
+  "question": "Which of the following is most concerned with ensuring deployed models scale well with added users?",
+  "options": [
+   {
+    "key": "A",
+    "text": "data scientist"
+   },
+   {
+    "key": "B",
+    "text": "data analysts"
+   },
+   {
+    "key": "C",
+    "text": "data engineer"
+   },
+   {
+    "key": "D",
+    "text": "product manager"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "C"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #25",
+   "Quizlet 2 #17"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "C"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "C"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-018",
+  "question": "Which of the following is statements is the least correct in the context of the EDA process",
+  "options": [
+   {
+    "key": "A",
+    "text": "EDA is used to provide summary level insight into a dataset"
+   },
+   {
+    "key": "B",
+    "text": "EDA consists of both exploratory and confirmatory data analysis"
+   },
+   {
+    "key": "C",
+    "text": "EDA can be used to discover missing data, outliers and class inbalance issues"
+   },
+   {
+    "key": "D",
+    "text": "The EDA process can be used to help predict time to completion for a project"
+   },
+   {
+    "key": "E",
+    "text": "The EDA process is an ideal time to explore the connection between the data and the business opportunity"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #26",
+   "Quizlet 2 #18"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-019",
+  "question": "Which of the following is an example of a data manipulation that is NOT considered reproducible research?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Saving classes and functions in a Python file to be called by Jupyter"
+   },
+   {
+    "key": "B",
+    "text": "Code blocks in Jupyter notebooks"
+   },
+   {
+    "key": "C",
+    "text": "The use of proprietary tools to carry out research"
+   },
+   {
+    "key": "D",
+    "text": "Graphics, plots and other visualizations"
+   },
+   {
+    "key": "E",
+    "text": "Copy and paste actions in a spreadsheet"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "E"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #27",
+   "Quizlet 2 #19"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "E"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "E"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-020",
+  "question": "True/False. The seaborn pairplot and other seaborn plotting functions exist as distinct tools from the plots available through matplotlib.",
+  "options": [
+   {
+    "key": "A",
+    "text": "True"
+   },
+   {
+    "key": "B",
+    "text": "False"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #28",
+   "Quizlet 2 #20"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-021",
+  "question": "In the continuing AAVAIL streaming case study example, one of the data features that can be useful in answering questions about customer churn is the total number of streams that a customer has watched. Imagine that you are working with a dataset where 10% of customers are missing this feature. A good place to start would be to go back and see if it's possible to gather this information from the user logs, but assuming that this initiative is unsuccessful, you will have to decide what to do about this missing data. Which course of action is LEAST likely to be helpful in modeling churn?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Replace the missing stream count with the mean stream count among users where this information is available."
+   },
+   {
+    "key": "B",
+    "text": "Replace the missing stream count with a -1 to flag that it is unknown for a given user."
+   },
+   {
+    "key": "C",
+    "text": "Use the other features in the dataset in a model to predict the missing stream counts."
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #29",
+   "Quizlet 2 #21"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-022",
+  "question": "What is the main reason for using multiple imputation?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Multiple imputation is necessary when more than one feature in the training data has missing values."
+   },
+   {
+    "key": "B",
+    "text": "Multiple imputation is a way to increase the size of your training dataset."
+   },
+   {
+    "key": "C",
+    "text": "Multiple imputation helps to better characterize the error introduced by replacing missing/unknown data with some chosen values."
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "C"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #30",
+   "Quizlet 2 #22"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "C"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "C"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-024",
+  "question": "True/False. The EDA process is decoupled from modeling and cannot be used to help esitmate the time it will take to complete a modeling procedure",
+  "options": [
+   {
+    "key": "A",
+    "text": "True"
+   },
+   {
+    "key": "B",
+    "text": "False"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 2 #24"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-025",
+  "question": "The three types of missingss discussed during this module were:",
+  "options": [
+   {
+    "key": "A",
+    "text": "MRAR, MAR, MCAR"
+   },
+   {
+    "key": "B",
+    "text": "MNAR, MRAR, MCAR"
+   },
+   {
+    "key": "C",
+    "text": "MNAR, MAR, MARC"
+   },
+   {
+    "key": "D",
+    "text": "MAR, MRAR, MCAR"
+   },
+   {
+    "key": "E",
+    "text": "MCAR, MNAR, MAR"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "E"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #33",
+   "Quizlet 2 #25"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "E"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "E"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-026",
+  "question": "Which statement is the least true about using Jupyter notebooks in the context of EDA",
+  "options": [
+   {
+    "key": "A",
+    "text": "They naturally lend themselves to version control systems"
+   },
+   {
+    "key": "B",
+    "text": "They can be ported from one environment to another easily"
+   },
+   {
+    "key": "C",
+    "text": "They are helpful because a mixture of code and markdown enables storytelling"
+   },
+   {
+    "key": "D",
+    "text": "They are integrated with the plotting library matplotlib"
+   },
+   {
+    "key": "E",
+    "text": "They are integrated with the data manipulation library pandas"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "A"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "FA25 FE #36",
+   "Quizlet 1 #34",
+   "Quizlet 2 #26"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-029",
+  "question": "Company Z sent out a user satisfaction survey to its customers that included some demographic questions. They want to determine if there is a difference in the age among users of Product 1 versus users of Product 2 (at least among the survey respondents). Which of the following is an appropriate null hypothesis for this study?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Users of Product 1 are on average older than users of Product 2."
+   },
+   {
+    "key": "B",
+    "text": "Users of Product 1 are on average younger than users of Product 2."
+   },
+   {
+    "key": "C",
+    "text": "Users of Product 1 and Product 2 are on average the same age."
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "C"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #37",
+   "Quizlet 2 #29"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "C"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "C"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-030",
+  "question": "Which of the following is the least valid statement when it comes to dashboards?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Dashboards are an easy way to share summaries and findings"
+   },
+   {
+    "key": "B",
+    "text": "Dashboards have interactive functionality that helps create a rich experience for the user"
+   },
+   {
+    "key": "C",
+    "text": "Dashboards are generally used after serveral iterations of the AI workflow"
+   },
+   {
+    "key": "D",
+    "text": "Dashboards are quick way to create portable simple plots"
+   },
+   {
+    "key": "E",
+    "text": "Dashboards can be used to tell the story of investigative visualizations"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "D"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #38",
+   "Quizlet 2 #30",
+   "SP26 FE #21"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "D"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "D"
+    ]
+   },
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "D"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-032",
+  "question": "Suppose that on average 2.5% of visitors to your website sign up for your newsletter. In a recent week, 2701 visitors out of a total of 108879 signed up. Using a binomial distribution. What is the probability that number of visitors who signed up is 2701 or fewer?",
+  "options": [
+   {
+    "key": "A",
+    "text": "0.125"
+   },
+   {
+    "key": "B",
+    "text": "0.346"
+   },
+   {
+    "key": "C",
+    "text": "0.414"
+   },
+   {
+    "key": "D",
+    "text": "0.007"
+   },
+   {
+    "key": "E",
+    "text": "0.015"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #40",
+   "Quizlet 2 #32"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-033",
+  "question": "True/False. If there customer churn were quantified using a Poisson distribution, then a bootstrap could be used to quantify the uncertainty associated with the estimate.",
+  "options": [
+   {
+    "key": "A",
+    "text": "True"
+   },
+   {
+    "key": "B",
+    "text": "False"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "A"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #41",
+   "Quizlet 2 #33"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-034",
+  "question": "Which of the following is NOT and example of a valid strategy to deal with the multiple comparisons problem?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Benjamini/Hochberg correction based on False discovery Rates"
+   },
+   {
+    "key": "B",
+    "text": "Create a null distribution using permutations to help provide context"
+   },
+   {
+    "key": "C",
+    "text": "Perform all comparisons then only keep the single test that performs the best"
+   },
+   {
+    "key": "D",
+    "text": "If appropriate use an alternative modeling framework like generalized linear models"
+   },
+   {
+    "key": "E",
+    "text": "Bonferroni Correction"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "C"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #42",
+   "Quizlet 2 #34"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "C"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "C"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-035",
+  "question": "Which scikit-learn API interface would be used to carry out feature engineering with a domain expert?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Transformer"
+   },
+   {
+    "key": "B",
+    "text": "Estimator"
+   },
+   {
+    "key": "C",
+    "text": "Fit"
+   },
+   {
+    "key": "D",
+    "text": "Predict"
+   },
+   {
+    "key": "E",
+    "text": "Pipeline"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "A"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #43",
+   "Quizlet 2 #35"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-036",
+  "question": "Which variant of SMOTE is most appropriate when you have a mixture of categorical and continuous variables?",
+  "options": [
+   {
+    "key": "A",
+    "text": "KMeansSMOTE"
+   },
+   {
+    "key": "B",
+    "text": "BorderlineSMOTE"
+   },
+   {
+    "key": "C",
+    "text": "SVMSMOTE"
+   },
+   {
+    "key": "D",
+    "text": "SMOTENC"
+   },
+   {
+    "key": "E",
+    "text": "SMOTE"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "D"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #44",
+   "Quizlet 2 #36"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "D"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "D"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-037",
+  "question": "Which of the following is not an example of a technique used for dimensionality reduction technique?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Latent Dirichlet allocation"
+   },
+   {
+    "key": "B",
+    "text": "Non-negative matrix factorization"
+   },
+   {
+    "key": "C",
+    "text": "Singular value decomposition"
+   },
+   {
+    "key": "D",
+    "text": "Eigenvalue decomposition"
+   },
+   {
+    "key": "E",
+    "text": "K-nearest neighbors"
+   },
+   {
+    "key": "F",
+    "text": "Principal Components Analysis"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "E"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #45",
+   "Quizlet 2 #37"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "E"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "E"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-038",
+  "question": "When printing the most representative words from each topic what best describes the insight we gain?",
+  "options": [
+   {
+    "key": "A",
+    "text": "The top words in each topic correspond to the most frequently used words in the corpus"
+   },
+   {
+    "key": "B",
+    "text": "The topics are defined by their representative words and the document is a mixture of these topics"
+   },
+   {
+    "key": "C",
+    "text": "Documents have topics and the words describe the corpus"
+   },
+   {
+    "key": "D",
+    "text": "The words make up the document and the topics describe the words"
+   },
+   {
+    "key": "E",
+    "text": "Topics are latent features and the top words describe the average document"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "FA25 FE #13",
+   "Quizlet 1 #46",
+   "Quizlet 2 #38"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-040",
+  "question": "True/False. A principal reason for emphasizing the use of pipelines in the AI workflow is to have a consistent platform that enables comparison of many variants of the workflow.",
+  "options": [
+   {
+    "key": "A",
+    "text": "True"
+   },
+   {
+    "key": "B",
+    "text": "False"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "A"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #48",
+   "Quizlet 2 #40"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-041",
+  "question": "Which of the following statements describes the best strategy to address class imbalance?",
+  "options": [
+   {
+    "key": "A",
+    "text": "If there is a lot of data just use under-sampling otherwise use outlier detection algorithms."
+   },
+   {
+    "key": "B",
+    "text": "Determine the best variant of SMOTE by comparisons and use it."
+   },
+   {
+    "key": "C",
+    "text": "Continue to collect data until you have balanced classes."
+   },
+   {
+    "key": "D",
+    "text": "Use an outlier detection algorithm or SVM instead of a re-sampling technique."
+   },
+   {
+    "key": "E",
+    "text": "Compare re-sampling approaches to a baseline and to detection algorithms."
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "E"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "FA25 FE #12",
+   "Quizlet 1 #49",
+   "Quizlet 2 #41"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "E"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "E"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-042",
+  "question": "Which of the following statements is not a feature of the package imbalanced-learn imbalance?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Has a suite of over and under-sampling methods implemented"
+   },
+   {
+    "key": "B",
+    "text": "Works with TensorFlow"
+   },
+   {
+    "key": "C",
+    "text": "Has a number of tutorials to work from"
+   },
+   {
+    "key": "D",
+    "text": "Has outlier detection algorithm packaged as part of library"
+   },
+   {
+    "key": "E",
+    "text": "Works with scikit-learn pipelines"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "D"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "FA25 FE #15",
+   "Quizlet 1 #50",
+   "Quizlet 2 #42"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "D"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "D"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-044",
+  "question": "True/False. tSNE is a reasonable alternative to PCA because it describes a wider variety of structures. However, it is still recommended to use another dimensionality reduction method, like PCA if the number of features is very high.",
+  "options": [
+   {
+    "key": "A",
+    "text": "True"
+   },
+   {
+    "key": "B",
+    "text": "False"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "A"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #52",
+   "Quizlet 2 #44"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-046",
+  "question": "For credit applications, which of the following types of patterns would be the most undesirable for a supervised learning algorithm to use?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Given salary > 50K and dept < 5K they will repay the loan"
+   },
+   {
+    "key": "B",
+    "text": "Given salary > 80K they will repay the loan"
+   },
+   {
+    "key": "C",
+    "text": "Given salary > 50K and Age > 25 and they will repay the loan"
+   },
+   {
+    "key": "D",
+    "text": "Given salary > 50K and that they reside in a metropolitan (population >100K)"
+   },
+   {
+    "key": "E",
+    "text": "Given salary > 50K and the degree name"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "C"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #54",
+   "Quizlet 2 #46"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "C"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "C"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-047",
+  "question": "Which of the following is not an example of an outlier detection algorithms?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Adaptive Synthetic (ADASYN)"
+   },
+   {
+    "key": "B",
+    "text": "Elliptic Envelope"
+   },
+   {
+    "key": "C",
+    "text": "One Class SVM"
+   },
+   {
+    "key": "D",
+    "text": "Isolation Forest"
+   },
+   {
+    "key": "E",
+    "text": "Local Outlier Factor"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "A"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #55",
+   "Quizlet 2 #47"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-048",
+  "question": "Which of the following is NOT considered a reasonable metric to choose the number of clusters?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Calinski-Harbasz index"
+   },
+   {
+    "key": "B",
+    "text": "Inertia or the within cluster sum-of-squares"
+   },
+   {
+    "key": "C",
+    "text": "Silhouette Score"
+   },
+   {
+    "key": "D",
+    "text": "Davies-Bouldin index"
+   },
+   {
+    "key": "E",
+    "text": "Adjusted Rand index"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #56",
+   "Quizlet 2 #48"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-049",
+  "question": "You are asked to build a recommendation engine for new products at an online retailer. Which of the following features is the least likely to be a protected attribute? Recall that a protected attribute is one that may contain privileged and unprivileged classes.",
+  "options": [
+   {
+    "key": "A",
+    "text": "age"
+   },
+   {
+    "key": "B",
+    "text": "gender identity"
+   },
+   {
+    "key": "C",
+    "text": "race"
+   },
+   {
+    "key": "D",
+    "text": "religion"
+   },
+   {
+    "key": "E",
+    "text": "purchase history"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "E"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #58",
+   "Quizlet 2 #49"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "E"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "E"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-050",
+  "question": "True/False. The API for the reweighting algorithm has a number of custom methods that will require you to consult the documentation to ensure appropriate use.",
+  "options": [
+   {
+    "key": "A",
+    "text": "True"
+   },
+   {
+    "key": "B",
+    "text": "False"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #59",
+   "Quizlet 2 #50"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-051",
+  "question": "Which outlier detection method is known to work well on high-dimensional data?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Random Forests"
+   },
+   {
+    "key": "B",
+    "text": "Elliptic Envelope"
+   },
+   {
+    "key": "C",
+    "text": "One Class SVM"
+   },
+   {
+    "key": "D",
+    "text": "Isolation Forest"
+   },
+   {
+    "key": "E",
+    "text": "Local Outlier Factor"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "E"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #60",
+   "Quizlet 2 #51"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "E"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "E"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-052",
+  "question": "True/False. In an imbalanced dataset if the minority class represents less than 5% of all of the samples then outlier detection algorithms must be used in place of other supervised learning algorithms.",
+  "options": [
+   {
+    "key": "A",
+    "text": "True"
+   },
+   {
+    "key": "B",
+    "text": "False"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #61",
+   "Quizlet 2 #52"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-053",
+  "question": "Which clustering method can be readily applied to graphs?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Gaussian mixture models"
+   },
+   {
+    "key": "B",
+    "text": "Spectral clustering"
+   },
+   {
+    "key": "C",
+    "text": "Affinity Propagation"
+   },
+   {
+    "key": "D",
+    "text": "k-means"
+   },
+   {
+    "key": "E",
+    "text": "Dirichlet process Gaussian mixture models"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #62",
+   "Quizlet 2 #53"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-054",
+  "question": "Which of the following clustering methods does not need to set the number of clusters?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Gaussian mixture models"
+   },
+   {
+    "key": "B",
+    "text": "Spectral clustering"
+   },
+   {
+    "key": "C",
+    "text": "MiniBatch k-means"
+   },
+   {
+    "key": "D",
+    "text": "k-means"
+   },
+   {
+    "key": "E",
+    "text": "Dirichlet process Gaussian mixture models"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "E"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #63",
+   "Quizlet 2 #54"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "E"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "E"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-055",
+  "question": "True/False. In the clustering case study, the suggested re-sampling methods drove a major improvement in model performance.",
+  "options": [
+   {
+    "key": "A",
+    "text": "True"
+   },
+   {
+    "key": "B",
+    "text": "False"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #64",
+   "Quizlet 2 #55"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-056",
+  "question": "True/False. In the context of customer profiling and the AAVAIL data set it makes sense to first perform a dimension reduction technique like PCA before running the model through a clustering estimator.",
+  "options": [
+   {
+    "key": "A",
+    "text": "True"
+   },
+   {
+    "key": "B",
+    "text": "False"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #65",
+   "Quizlet 2 #56"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-060",
+  "question": "What important feature of the Watson NLU API do we have to ensure so that we can repeat an experiment in the future in a reproducible way?",
+  "options": [
+   {
+    "key": "A",
+    "text": "GitHub integration"
+   },
+   {
+    "key": "B",
+    "text": "Passing a version argument with each request"
+   },
+   {
+    "key": "C",
+    "text": "Each future version of the API is guaranteed to keep the same arguments"
+   },
+   {
+    "key": "D",
+    "text": "The NLU can be run locally"
+   },
+   {
+    "key": "E",
+    "text": "The exchanged JSON is guaranteed to keep the same format"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #69",
+   "Quizlet 2 #60"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-061",
+  "question": "Processing the corpus with the provided lemmatize_document reduces the total number of tokens to what percentage of the original?",
+  "options": [
+   {
+    "key": "A",
+    "text": "10-15%"
+   },
+   {
+    "key": "B",
+    "text": "20-35%"
+   },
+   {
+    "key": "C",
+    "text": "45-50%"
+   },
+   {
+    "key": "D",
+    "text": "70-75%"
+   },
+   {
+    "key": "E",
+    "text": "85-95%"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "C"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #70",
+   "Quizlet 2 #61",
+   "SP26 FE #5"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "C"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "C"
+    ]
+   },
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "C"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-062",
+  "question": "If we have a situation where false positive is not as potentially costly as a false negative say flagging comments for manual review based on suspected unlawful activity, which of the following is the best approach to consider?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Only look at the f-score of the negative class for evaluation"
+   },
+   {
+    "key": "B",
+    "text": "Use recall as the evaluation metric"
+   },
+   {
+    "key": "C",
+    "text": "Use precision as the evaluation metric"
+   },
+   {
+    "key": "D",
+    "text": "Set beta to 0.5 in the fscore"
+   },
+   {
+    "key": "E",
+    "text": "Set beta to 2.0 in the fscore"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "E"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #71",
+   "Quizlet 2 #62"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "E"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "E"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-063",
+  "question": "True/False. All classifiers in scikit-learn do multi-class classification out-of-the-box. These classifiers can differ in their approach though (e.g one-vs-all or one-vs-one).",
+  "options": [
+   {
+    "key": "A",
+    "text": "True"
+   },
+   {
+    "key": "B",
+    "text": "False"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "A"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #72",
+   "Quizlet 2 #63"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-064",
+  "question": "Which of the following is not an example of a generalized linear model (GLM)?",
+  "options": [
+   {
+    "key": "A",
+    "text": "ANOVA"
+   },
+   {
+    "key": "B",
+    "text": "Multinomial regression"
+   },
+   {
+    "key": "C",
+    "text": "Poisson regression"
+   },
+   {
+    "key": "D",
+    "text": "KNN regression"
+   },
+   {
+    "key": "E",
+    "text": "Logistic regression"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "D"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #73",
+   "Quizlet 2 #64"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "D"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "D"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-065",
+  "question": "True/False. Models in the generalized linear mixture model (GLMM) family like multilevel models are generally optimized using sophisticated techniques like MCMC sampling.",
+  "options": [
+   {
+    "key": "A",
+    "text": "True"
+   },
+   {
+    "key": "B",
+    "text": "False"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "A"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "FA25 FE #28",
+   "Quizlet 1 #74",
+   "Quizlet 2 #65"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-066",
+  "question": "When you use Watson Services like Watson Natural Language Understanding via the Python SDK, what are the three items that need to be saved? These items are generally saved on a local machine and included in scripts and notebooks as imported variables.",
+  "options": [
+   {
+    "key": "A",
+    "text": "service version, service API key, service JSON map"
+   },
+   {
+    "key": "B",
+    "text": "service URL, service JSON map, service API key"
+   },
+   {
+    "key": "C",
+    "text": "service API key, service version, service URL"
+   },
+   {
+    "key": "D",
+    "text": "service version, service IAMAuthenticator, service URL"
+   },
+   {
+    "key": "E",
+    "text": "service API key, service URL, service IAMAuthenticator"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "C"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #75",
+   "Quizlet 2 #66",
+   "SP26 FE #18"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "C"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "C"
+    ]
+   },
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "C"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-067",
+  "question": "Which of the following does not describe a feature of the Watson Natural Language Understanding service?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Perform document classification tasks using a custom model built from text"
+   },
+   {
+    "key": "B",
+    "text": "Identify high-level concepts that aren't necessarily directly referenced in the text"
+   },
+   {
+    "key": "C",
+    "text": "Find people, places, events, and other types of entities mentioned in your content"
+   },
+   {
+    "key": "D",
+    "text": "Recognize when two entities are related, and identify the type of relation"
+   },
+   {
+    "key": "E",
+    "text": "Analyze the sentiment toward specific target phrases and the sentiment of the document as a whole"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "A"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "FA25 FE #32",
+   "Quizlet 1 #76",
+   "Quizlet 2 #67"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-068",
+  "question": "Which of the following is not an example of a relevant question when tuning a NLP classification pipeline?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Should I use bag-of-words or a vector embedding representation?"
+   },
+   {
+    "key": "B",
+    "text": "Which stop words do I include?"
+   },
+   {
+    "key": "C",
+    "text": "Which n-grams do I include?"
+   },
+   {
+    "key": "D",
+    "text": "Should I use a TF or a tf-idf transformation?"
+   },
+   {
+    "key": "E",
+    "text": "Should I use RMSE or MAE as an evaluation metric?"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "E"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #77",
+   "Quizlet 2 #68"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "E"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "E"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-070",
+  "question": "Which of the following neural network architectures are most-commonly used for time-series analysis?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Multi-layer perceptron"
+   },
+   {
+    "key": "B",
+    "text": "Recurrent neural networks"
+   },
+   {
+    "key": "C",
+    "text": "Transfer learning"
+   },
+   {
+    "key": "D",
+    "text": "Convolutional neural network"
+   },
+   {
+    "key": "E",
+    "text": "Autoencoders"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #79",
+   "Quizlet 2 #70",
+   "SP26 FE #41"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-071",
+  "question": "True/False. All images must be downloaded and saved locally before you can call classify from the connected IBM Watson Visual Recognition service.",
+  "options": [
+   {
+    "key": "A",
+    "text": "True"
+   },
+   {
+    "key": "B",
+    "text": "False"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #80",
+   "Quizlet 2 #71"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-073",
+  "question": "True/False. Bagging and boosting ensemble methods both use only decision trees as base classifiers. The difference is in the bias and variance of the individual trees.",
+  "options": [
+   {
+    "key": "A",
+    "text": "True"
+   },
+   {
+    "key": "B",
+    "text": "False"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #82",
+   "Quizlet 2 #73"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-074",
+  "question": "True/False. A decision tree classifier is useful as a model for the AAVAIL subscriber churn data.",
+  "options": [
+   {
+    "key": "A",
+    "text": "True"
+   },
+   {
+    "key": "B",
+    "text": "False"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "A"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #83",
+   "Quizlet 2 #74",
+   "SP26 FE #42"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   },
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "A"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-076",
+  "question": "True/False. Transfer learning is a recent advancement to come out of the field of reinforcement learning.",
+  "options": [
+   {
+    "key": "A",
+    "text": "True"
+   },
+   {
+    "key": "B",
+    "text": "False"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "FA25 FE #26",
+   "Quizlet 1 #85",
+   "Quizlet 2 #76"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-079",
+  "question": "Which of the following use cases is the least appropriate use case for a convolutional neural network?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Image classification"
+   },
+   {
+    "key": "B",
+    "text": "Image retrieval"
+   },
+   {
+    "key": "C",
+    "text": "Image composition"
+   },
+   {
+    "key": "D",
+    "text": "Object detection"
+   },
+   {
+    "key": "E",
+    "text": "Image segmentation"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "C"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "FA25 FE #29",
+   "Quizlet 1 #88",
+   "Quizlet 2 #79"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "C"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "C"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-082",
+  "question": "True/False. It is reasonable to think of the commands in a Dockerfile as a step-by-step recipe on how to build up a Docker image.",
+  "options": [
+   {
+    "key": "A",
+    "text": "True"
+   },
+   {
+    "key": "B",
+    "text": "False"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "A"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "FA25 FE #44",
+   "Quizlet 1 #91",
+   "Quizlet 2 #82"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-083",
+  "question": "What are the two steps that must be carried out if you want to iterate locally on a model then deploy it to the Watson Machine Learning (WML) service?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Provision a WML service & Dockerize your model"
+   },
+   {
+    "key": "B",
+    "text": "Create a Python virtual environment & Dockerize your model"
+   },
+   {
+    "key": "C",
+    "text": "Provision cloud storage & Provision a WML service"
+   },
+   {
+    "key": "D",
+    "text": "Provision a WML service & create a Python virtual environment"
+   },
+   {
+    "key": "E",
+    "text": "Dockerize your model & Provision cloud storage"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "D"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "FA25 FE #47",
+   "Quizlet 1 #92",
+   "Quizlet 2 #83"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "D"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "D"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-090",
+  "question": "True/False. The Spark ML API uses DataFrames from Spark SQL. They can hold a variety of data types with different columns for storing text including: feature vectors, truth labels, and predictions.",
+  "options": [
+   {
+    "key": "A",
+    "text": "True"
+   },
+   {
+    "key": "B",
+    "text": "False"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "A"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #99",
+   "Quizlet 2 #90"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-092",
+  "question": "Docker containers run a private file system that is isolated from the host and other containers. What is the suggested way to access notebooks and scripts from within the container?",
+  "options": [
+   {
+    "key": "A",
+    "text": "tmpfs mount"
+   },
+   {
+    "key": "B",
+    "text": "use a named pipe"
+   },
+   {
+    "key": "C",
+    "text": "bind mounts"
+   },
+   {
+    "key": "D",
+    "text": "GitHub"
+   },
+   {
+    "key": "E",
+    "text": "volumes"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "E"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #101",
+   "Quizlet 2 #92",
+   "SP26 FE #17"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "E"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "E"
+    ]
+   },
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "C"
+    ]
+   }
+  ],
+  "conflict": true
+ },
+ {
+  "id": "qz2-094",
+  "question": "True/False. Spark MLlib has several estimators and transformers, but it lacks basic tooling for natural language processing (NLP) like the ability to make term frequency-inverse document frequency (TF-IDF) transformations.",
+  "options": [
+   {
+    "key": "A",
+    "text": "True"
+   },
+   {
+    "key": "B",
+    "text": "False"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "FA25 FE #42",
+   "Quizlet 1 #103",
+   "Quizlet 2 #94"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-095",
+  "question": "Which phrase most accurately reflects what is meant by the cold start problem in recommendation systems?",
+  "options": [
+   {
+    "key": "A",
+    "text": "When a new user is introduced and the recommendations are made on similarities"
+   },
+   {
+    "key": "B",
+    "text": "When a new item is introduced and the recommendations are made on similarities"
+   },
+   {
+    "key": "C",
+    "text": "When a new user is introduced and the recommendations are made on item popularity"
+   },
+   {
+    "key": "D",
+    "text": "When a new user or new item is introduced and the recommendations depend on popularity"
+   },
+   {
+    "key": "E",
+    "text": "When a new user or new item is introduced and the recommendations depend on similarities"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "E"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #104",
+   "Quizlet 2 #95"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "E"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "E"
+    ]
+   }
+  ],
+  "conflict": false,
+  "notes": "Option texts in the source were prefixed with a duplicated letter (e.g. \"A. When...\"); prefixes removed."
+ },
+ {
+  "id": "qz2-096",
+  "question": "True/False. Matrix factorization is commonly associated with collaborative filtering recommender systems.",
+  "options": [
+   {
+    "key": "A",
+    "text": "True"
+   },
+   {
+    "key": "B",
+    "text": "False"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "A"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #105",
+   "Quizlet 2 #96"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-097",
+  "question": "When you worked on model deployment case study, which modification to the ALS algorithm had the largest effect on model performance?",
+  "options": [
+   {
+    "key": "A",
+    "text": "The explicit training vs implicit training comparison"
+   },
+   {
+    "key": "B",
+    "text": "The lambda or regularization parameter"
+   },
+   {
+    "key": "C",
+    "text": "The epsilon or scale parameter"
+   },
+   {
+    "key": "D",
+    "text": "The l1 vs l2 comparison"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #106",
+   "Quizlet 2 #97",
+   "SP26 FE #7"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-098",
+  "question": "True/False. The Spark collaborative filtering implementation is built by default for explict feedback, but it can be used with implicit feedback just as easily.",
+  "options": [
+   {
+    "key": "A",
+    "text": "True"
+   },
+   {
+    "key": "B",
+    "text": "False"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "A"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #107",
+   "Quizlet 2 #98"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-099",
+  "question": "Which of the following was not mentioned as a reason to bundle unit tests with a deployed model?",
+  "options": [
+   {
+    "key": "A",
+    "text": "promotes code quality"
+   },
+   {
+    "key": "B",
+    "text": "regression tests"
+   },
+   {
+    "key": "C",
+    "text": "they perform the workflow feedback loops"
+   },
+   {
+    "key": "D",
+    "text": "automate performance monitoring tasks"
+   },
+   {
+    "key": "E",
+    "text": "can be readily integrated into CI/CD pipelines"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "C"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #111",
+   "Quizlet 2 #99"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "C"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "C"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-100",
+  "question": "True/False. When logging for the predict endpoint, runtime is considered an optional feature to be monitored.",
+  "options": [
+   {
+    "key": "A",
+    "text": "True"
+   },
+   {
+    "key": "B",
+    "text": "False"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #112",
+   "Quizlet 2 #100"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-101",
+  "question": "To pass a query to an API endpoint that has been set up to run inside of a Docker container, which of the following best describes the formats that have been used in the presented deployment workflows?",
+  "options": [
+   {
+    "key": "A",
+    "text": "numpy ndarray, pandas DataFrame"
+   },
+   {
+    "key": "B",
+    "text": "JSON"
+   },
+   {
+    "key": "C",
+    "text": "JSON, flatfiles"
+   },
+   {
+    "key": "D",
+    "text": "YAML"
+   },
+   {
+    "key": "E",
+    "text": "All of the above"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #113",
+   "Quizlet 2 #101"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-102",
+  "question": "In the context of the AI workflow presented in these materials which of the following is not an example of a valid feedback loop?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Trying different data transformations on a given model"
+   },
+   {
+    "key": "B",
+    "text": "Returning to the data collection stage from transformations to reduce the number of transforms"
+   },
+   {
+    "key": "C",
+    "text": "Performing EDA on the data after a model has been deployed and data have been logged"
+   },
+   {
+    "key": "D",
+    "text": "Moving from the business opportunity and data collection to model iteration"
+   },
+   {
+    "key": "E",
+    "text": "Returning to discuss the business opportunity after a model has been deployed"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "D"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #114",
+   "Quizlet 2 #102",
+   "SP26 FE #36"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "D"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "D"
+    ]
+   },
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "D"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-103",
+  "question": "True/False. It is critical in machine learning model deployment workflows to ensure close to 100% test coverage before production.",
+  "options": [
+   {
+    "key": "A",
+    "text": "True"
+   },
+   {
+    "key": "B",
+    "text": "False"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #115",
+   "Quizlet 2 #103"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-104",
+  "question": "Common sources of performance drift include:",
+  "options": [
+   {
+    "key": "A",
+    "text": "Changes in customer demographics or user behavior after a model is trained"
+   },
+   {
+    "key": "B",
+    "text": "Incomplete, incorrect or unbalanced training data"
+   },
+   {
+    "key": "C",
+    "text": "Changes in versions of libraries or modules used in models"
+   },
+   {
+    "key": "D",
+    "text": "All of the above"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "D"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #116",
+   "Quizlet 2 #104"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "D"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "D"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-106",
+  "question": "Model accuracy metrics such as precision, recall and F1 scores provide objective evidence of fairness.",
+  "options": [
+   {
+    "key": "A",
+    "text": "True"
+   },
+   {
+    "key": "B",
+    "text": "False"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #118",
+   "Quizlet 2 #106"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-107",
+  "question": "What is the purpose of Minikube in the context of Kubernetes?",
+  "options": [
+   {
+    "key": "A",
+    "text": "It deploys a Kubernetes cluster to a remote service based on a specified YAML file"
+   },
+   {
+    "key": "B",
+    "text": "It launches a Kubernetes cluster locally within a virtual machine or directly on the host"
+   },
+   {
+    "key": "C",
+    "text": "It is used through a command line interface to interact with a Kubernetes cluster"
+   },
+   {
+    "key": "D",
+    "text": "It allows you to work with multiple Docker containers as if they were a single application"
+   },
+   {
+    "key": "E",
+    "text": "It is the management layer for a Kubernetes cluster"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #119",
+   "Quizlet 2 #107"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-109",
+  "question": "True/False. IBM Watson OpenScale only works with models that have been built on, and deployed by, IBM Watson Stuido.",
+  "options": [
+   {
+    "key": "A",
+    "text": "True"
+   },
+   {
+    "key": "B",
+    "text": "False"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "FA25 FE #9",
+   "Quizlet 1 #121",
+   "Quizlet 2 #109"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false,
+  "notes": "'Stuido' is a typo in the original image (Studio); kept verbatim."
+ },
+ {
+  "id": "qz2-111",
+  "question": "True/False. The date and time of a transaction should never be logged because this will only reflect past transactions and is not relevant to the performance of predictions on an on-going basis.",
+  "options": [
+   {
+    "key": "A",
+    "text": "True"
+   },
+   {
+    "key": "B",
+    "text": "False"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #123",
+   "Quizlet 2 #111"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-113",
+  "question": "True/False. A Kubernetes pod can contain multiple kubernetes deployments",
+  "options": [
+   {
+    "key": "A",
+    "text": "True"
+   },
+   {
+    "key": "B",
+    "text": "False"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #125",
+   "Quizlet 2 #113",
+   "SP26 FE #46"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-114",
+  "question": "Your Flask application needs to error check the input when making a prediction. Which features need to be provided (at a minimum) as input given the context of this business opportunity?",
+  "options": [
+   {
+    "key": "A",
+    "text": "The previous three months of data and the target month from the year before"
+   },
+   {
+    "key": "B",
+    "text": "The target date and country"
+   },
+   {
+    "key": "C",
+    "text": "At least one year of revenue data"
+   },
+   {
+    "key": "D",
+    "text": "The recent number of transactions and the number of views"
+   },
+   {
+    "key": "E",
+    "text": "Metadata associated with the streams"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #108",
+   "Quizlet 2 #114"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-115",
+  "question": "True/False. Unit testing and novelty detection provide an automated mechanism to monitor model performance.",
+  "options": [
+   {
+    "key": "A",
+    "text": "True"
+   },
+   {
+    "key": "B",
+    "text": "False"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "A"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #109",
+   "Quizlet 2 #115"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz2-116",
+  "question": "To move through the AI enterprise workflow quickly, we used the concept of workflow templates. Which of the following aspects of the template contributes the least to the re-usability of these templates?",
+  "options": [
+   {
+    "key": "A",
+    "text": "When they are used with a version control system"
+   },
+   {
+    "key": "B",
+    "text": "Ensuring that the model exists as a separate Python module to be called by Flask"
+   },
+   {
+    "key": "C",
+    "text": "Have an HTML endpoint for the Flask app to create dashboards"
+   },
+   {
+    "key": "D",
+    "text": "Use a template for a unit test suite"
+   },
+   {
+    "key": "E",
+    "text": "Ensure that data ingestion and data visualization code exists as a modules or scripts"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "C"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "FA25 FE #5",
+   "Quizlet 1 #110",
+   "Quizlet 2 #116"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 2",
+    "type": "quizlet",
+    "answer": [
+     "C"
+    ]
+   },
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "C"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz1-001",
+  "question": "Which of the following is/are NOT native or built-in data types in Python?",
+  "options": [
+   {
+    "key": "A",
+    "text": "boolean"
+   },
+   {
+    "key": "B",
+    "text": "integer"
+   },
+   {
+    "key": "C",
+    "text": "float"
+   },
+   {
+    "key": "D",
+    "text": "heap"
+   },
+   {
+    "key": "E",
+    "text": "string"
+   },
+   {
+    "key": "F",
+    "text": "varchar"
+   }
+  ],
+  "multi": true,
+  "answer": [
+   "D",
+   "F"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #1"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "D",
+     "F"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz1-004",
+  "question": "Which of the following pairs of events are mutually exclusive. There can be more than one answer.",
+  "options": [
+   {
+    "key": "A",
+    "text": "Odd numbers and the number 3"
+   },
+   {
+    "key": "B",
+    "text": "Even numbers and numbers greater than 10"
+   },
+   {
+    "key": "C",
+    "text": "Negative numbers and positive numbers less than 25"
+   },
+   {
+    "key": "D",
+    "text": "Numbers between 100-200 and numbers between 201-300"
+   },
+   {
+    "key": "E",
+    "text": "None of the above"
+   }
+  ],
+  "multi": true,
+  "answer": [
+   "C",
+   "D"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #4"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "C",
+     "D"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz1-012",
+  "question": "In order to come up with the back-of-the-envelope ROI calculation for this project, how might you approach it?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Number of active users X Yearly payment"
+   },
+   {
+    "key": "B",
+    "text": "Number of active users X monthly payment X % increase of users (assumption)"
+   },
+   {
+    "key": "C",
+    "text": "Yearly costs X (number of users at month 2 - number of currently active users)"
+   },
+   {
+    "key": "D",
+    "text": "Number of active users X Yearly payment - estimate for cost of project time"
+   }
+  ],
+  "multi": true,
+  "answer": [
+   "A",
+   "D"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #12"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "A",
+     "D"
+    ]
+   }
+  ],
+  "conflict": false,
+  "notes": "Quizlet lists two correct answers (A and D); D is likely the intended single answer - verify."
+ },
+ {
+  "id": "qz1-021",
+  "question": "Sparse matrices can be useful as a target destination for ETL, but what are the main caveats (choose one or more)?",
+  "options": [
+   {
+    "key": "A",
+    "text": "You cannot convert directly from a numpy.array to any of the scipy.sparse matrices"
+   },
+   {
+    "key": "B",
+    "text": "NumPy linear algebra functions generally cannot be called directly"
+   },
+   {
+    "key": "C",
+    "text": "Saving to disk is not possible directly from a scipy.sparse format"
+   },
+   {
+    "key": "D",
+    "text": "The train test splits need to be performed by hand with scipy.sparse matrices"
+   },
+   {
+    "key": "E",
+    "text": "It is difficult to print to screen scipy.sparse matrices directly"
+   }
+  ],
+  "multi": true,
+  "answer": [
+   "B",
+   "E"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #21",
+   "SP26 FE #25"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "B",
+     "E"
+    ]
+   },
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "B",
+     "E"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz1-032",
+  "question": "True/False. The software engineering best practice of saving a maximum amount of code in text files for management under version control has become the norm in data science",
+  "options": [
+   {
+    "key": "A",
+    "text": "True"
+   },
+   {
+    "key": "B",
+    "text": "False"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "A"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #32"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "A"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz1-057",
+  "question": "What is the number of profiles or clusters for this particular dataset?",
+  "options": [
+   {
+    "key": "A",
+    "text": "2-4"
+   },
+   {
+    "key": "B",
+    "text": "4-6"
+   },
+   {
+    "key": "C",
+    "text": "6-8"
+   },
+   {
+    "key": "D",
+    "text": "8-10"
+   },
+   {
+    "key": "E",
+    "text": "10-12"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "C"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #57"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "C"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz1-127",
+  "question": "When you compiled the JSON files into a single DataFrame or NumPy array, about how many days did the entire range of dates span?",
+  "options": [
+   {
+    "key": "A",
+    "text": "400"
+   },
+   {
+    "key": "B",
+    "text": "450"
+   },
+   {
+    "key": "C",
+    "text": "500"
+   },
+   {
+    "key": "D",
+    "text": "600"
+   },
+   {
+    "key": "E",
+    "text": "650"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "C"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #127",
+   "SP26 FE #8"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "C"
+    ]
+   },
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "C"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz1-128",
+  "question": "Which country had the most total revenue when you summed across all purchases?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Singapore"
+   },
+   {
+    "key": "B",
+    "text": "United Kingdom"
+   },
+   {
+    "key": "C",
+    "text": "USA"
+   },
+   {
+    "key": "D",
+    "text": "EIRE"
+   },
+   {
+    "key": "E",
+    "text": "Germany"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #128",
+   "SP26 FE #15"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "B"
+    ]
+   },
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz1-129",
+  "question": "There are many established methods from the literature that may be used to analyze time-series data. Classical machine learning techniques can also be used, but which of the following is the most important caveat to keep in mind when employing this approach?",
+  "options": [
+   {
+    "key": "A",
+    "text": "You cannot use scikit-learn to combine multiple predictions"
+   },
+   {
+    "key": "B",
+    "text": "The data cannot be feature engineered to help identify features that are needed by the model to detect trends"
+   },
+   {
+    "key": "C",
+    "text": "There is no simple way to do a train/test split of the data"
+   },
+   {
+    "key": "D",
+    "text": "Significant computational resources are generally required"
+   },
+   {
+    "key": "E",
+    "text": "A specialized strategy that uses recursion (for example) or multiple models must be employed for multipoint forecasting"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "E"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #129"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "E"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz1-130",
+  "question": "When the data are pivoted and summarized across days which of the following features were the most difficult to include as a summarized or engineered feature?",
+  "options": [
+   {
+    "key": "A",
+    "text": "revenue"
+   },
+   {
+    "key": "B",
+    "text": "stream_views"
+   },
+   {
+    "key": "C",
+    "text": "stream_ids"
+   },
+   {
+    "key": "D",
+    "text": "purchases"
+   },
+   {
+    "key": "E",
+    "text": "customer_id"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "E"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #130"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "E"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "qz1-131",
+  "question": "The time-series plots using a day time interval for revenue, purchases and total_views revealed many similarities. Which part of the year indicated a trend for the highest level of activity?",
+  "options": [
+   {
+    "key": "A",
+    "text": "January-February"
+   },
+   {
+    "key": "B",
+    "text": "April-May"
+   },
+   {
+    "key": "C",
+    "text": "November-December"
+   },
+   {
+    "key": "D",
+    "text": "June-July"
+   },
+   {
+    "key": "E",
+    "text": "September-October"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "C"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "Quizlet 1 #131"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "C"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "sp26-02",
+  "question": "In the script example-spark-submit.sh, what does the #!/bin/bash line indicate?",
+  "options": [
+   {
+    "key": "A",
+    "text": "It specifies the script's name"
+   },
+   {
+    "key": "B",
+    "text": "It indicates the script is written in Python"
+   },
+   {
+    "key": "C",
+    "text": "It tells the system to use the Bash shell to execute the script"
+   },
+   {
+    "key": "D",
+    "text": "It is a comment and has no effect"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "C"
+  ],
+  "answerSource": "comment",
+  "sources": [
+   "SP26 FE #2"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "C"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "sp26-03",
+  "question": "In the context of NLP, what does sentiment analysis refer to?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Analyzing the structure of sentences"
+   },
+   {
+    "key": "B",
+    "text": "Determining the emotional tone behind a series of words"
+   },
+   {
+    "key": "C",
+    "text": "Translating text from one language to another"
+   },
+   {
+    "key": "D",
+    "text": "Summarizing large documents"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "comment",
+  "sources": [
+   "SP26 FE #3"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "sp26-06",
+  "question": "What is the first step in setting up the Watson Developer Cloud Python SDK?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Install the SDK"
+   },
+   {
+    "key": "B",
+    "text": "Create an IBM Cloud account"
+   },
+   {
+    "key": "C",
+    "text": "Create a resource for Natural Language Understanding"
+   },
+   {
+    "key": "D",
+    "text": "Download the tutorial files"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "comment",
+  "sources": [
+   "SP26 FE #6"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "sp26-09",
+  "question": "Which library in Python is commonly used for reading and writing CSV files?",
+  "options": [
+   {
+    "key": "A",
+    "text": "NumPy"
+   },
+   {
+    "key": "B",
+    "text": "Matplotlib"
+   },
+   {
+    "key": "C",
+    "text": "Pandas"
+   },
+   {
+    "key": "D",
+    "text": "SciPy"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "C"
+  ],
+  "answerSource": "comment",
+  "sources": [
+   "SP26 FE #9"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "C"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "sp26-11",
+  "question": "Which Python package can be used to estimate test coverage?",
+  "options": [
+   {
+    "key": "A",
+    "text": "unittest"
+   },
+   {
+    "key": "B",
+    "text": "coverage"
+   },
+   {
+    "key": "C",
+    "text": "pytest"
+   },
+   {
+    "key": "D",
+    "text": "flask"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "comment",
+  "sources": [
+   "SP26 FE #11"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "sp26-12",
+  "question": "What is the primary purpose of documenting your data before starting a project?",
+  "options": [
+   {
+    "key": "A",
+    "text": "To impress stakeholders"
+   },
+   {
+    "key": "B",
+    "text": "To streamline the modeling process and ensure data quality"
+   },
+   {
+    "key": "C",
+    "text": "To increase project costs"
+   },
+   {
+    "key": "D",
+    "text": "To avoid using Python"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "comment",
+  "sources": [
+   "SP26 FE #12"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "sp26-13",
+  "question": "What is a common issue with using accuracy as a metric for imbalanced classes?",
+  "options": [
+   {
+    "key": "A",
+    "text": "It is always accurate."
+   },
+   {
+    "key": "B",
+    "text": "It can be misleading."
+   },
+   {
+    "key": "C",
+    "text": "It is the only metric available."
+   },
+   {
+    "key": "D",
+    "text": "It does not consider false positives."
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "comment",
+  "sources": [
+   "SP26 FE #13"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "sp26-14",
+  "question": "The decision tree base models in random forests individually have high bias and low variance.",
+  "options": [
+   {
+    "key": "A",
+    "text": "True"
+   },
+   {
+    "key": "B",
+    "text": "False"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "comment",
+  "sources": [
+   "SP26 FE #14"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "sp26-19",
+  "question": "For given input lists: a,b,c and 1,2,3 Create a dictionary from two input lists",
+  "options": [
+   {
+    "key": "A",
+    "text": "def make_dict(lst1,lst2): res = {} for key,value in zip(lst1,lst2): res[key]= value return res"
+   },
+   {
+    "key": "B",
+    "text": "def make_dict(lst1,lst2): res = {} res[lst1]= lst2 return res"
+   },
+   {
+    "key": "C",
+    "text": "def make_dict(lst1,lst2): res = {} for key,value in (lst1,lst2): res[key]= value return res"
+   },
+   {
+    "key": "D",
+    "text": "def make_dict(lst1,lst2): res = [] for key,value in zip(lst1,lst2): res[key]= value return res"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "A"
+  ],
+  "answerSource": "comment",
+  "sources": [
+   "SP26 FE #19"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "A"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "sp26-22",
+  "question": "What is the first stage of the design thinking process?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Ideate"
+   },
+   {
+    "key": "B",
+    "text": "Empathize"
+   },
+   {
+    "key": "C",
+    "text": "Prototype"
+   },
+   {
+    "key": "D",
+    "text": "Test"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "comment",
+  "sources": [
+   "SP26 FE #22"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "sp26-23",
+  "question": "Which of the following is NOT a factor that affects the time spent on data cleaning?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Team experience"
+   },
+   {
+    "key": "B",
+    "text": "Data quality"
+   },
+   {
+    "key": "C",
+    "text": "Project requirements"
+   },
+   {
+    "key": "D",
+    "text": "Company size"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "D"
+  ],
+  "answerSource": "comment",
+  "sources": [
+   "SP26 FE #23"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "D"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "sp26-27",
+  "question": "What does the term \"trunk\" refer to in the context of Continuous Integration?",
+  "options": [
+   {
+    "key": "A",
+    "text": "A type of software bug"
+   },
+   {
+    "key": "B",
+    "text": "The main branch of code where all changes are merged"
+   },
+   {
+    "key": "C",
+    "text": "A deployment strategy"
+   },
+   {
+    "key": "D",
+    "text": "A testing framework"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "comment",
+  "sources": [
+   "SP26 FE #27"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "sp26-28",
+  "question": "Why is granular data preferred over summary level data?",
+  "options": [
+   {
+    "key": "A",
+    "text": "It is easier to collect"
+   },
+   {
+    "key": "B",
+    "text": "It allows for more detailed analysis"
+   },
+   {
+    "key": "C",
+    "text": "It takes less time to process"
+   },
+   {
+    "key": "D",
+    "text": "It is more visually appealing"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "comment",
+  "sources": [
+   "SP26 FE #28"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "sp26-30",
+  "question": "Which process model is known for its open standard and has been around since 1996?",
+  "options": [
+   {
+    "key": "A",
+    "text": "OSEMN"
+   },
+   {
+    "key": "B",
+    "text": "CRISP-DM"
+   },
+   {
+    "key": "C",
+    "text": "Design Thinking"
+   },
+   {
+    "key": "D",
+    "text": "Agile"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "comment",
+  "sources": [
+   "SP26 FE #30"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "sp26-31",
+  "question": "What is a key principle of design thinking mentioned in the course?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Data collection"
+   },
+   {
+    "key": "B",
+    "text": "Observation and Reflection"
+   },
+   {
+    "key": "C",
+    "text": "Rapid prototyping"
+   },
+   {
+    "key": "D",
+    "text": "User testing"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "comment",
+  "sources": [
+   "SP26 FE #31"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "sp26-32",
+  "question": "Which method is recommended for handling missing values in numerical data?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Convert missing values to a flag"
+   },
+   {
+    "key": "B",
+    "text": "Use imputation techniques"
+   },
+   {
+    "key": "C",
+    "text": "Delete the entire dataset"
+   },
+   {
+    "key": "D",
+    "text": "Replace with a random value"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "comment",
+  "sources": [
+   "SP26 FE #32"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "sp26-35",
+  "question": "What is the primary purpose of dimensionality reduction in data science?",
+  "options": [
+   {
+    "key": "A",
+    "text": "To increase the number of features"
+   },
+   {
+    "key": "B",
+    "text": "To simplify models and reduce computation time"
+   },
+   {
+    "key": "C",
+    "text": "To eliminate all data points"
+   },
+   {
+    "key": "D",
+    "text": "To create more complex models"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "comment",
+  "sources": [
+   "SP26 FE #35"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "sp26-37",
+  "question": "What is a key reason for using existing NLP APIs instead of building models from scratch?",
+  "options": [
+   {
+    "key": "A",
+    "text": "They are always more accurate"
+   },
+   {
+    "key": "B",
+    "text": "They require less time and resources"
+   },
+   {
+    "key": "C",
+    "text": "They are easier to understand"
+   },
+   {
+    "key": "D",
+    "text": "They eliminate the need for data"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "comment",
+  "sources": [
+   "SP26 FE #37"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "sp26-40",
+  "question": "Which Python package supports spawning processes for code optimization?",
+  "options": [
+   {
+    "key": "A",
+    "text": "threading"
+   },
+   {
+    "key": "B",
+    "text": "subprocess"
+   },
+   {
+    "key": "C",
+    "text": "multiprocessing"
+   },
+   {
+    "key": "D",
+    "text": "numpy"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "C"
+  ],
+  "answerSource": "comment",
+  "sources": [
+   "SP26 FE #40"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "C"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "sp26-43",
+  "question": "What is the purpose of profiling in code optimization?",
+  "options": [
+   {
+    "key": "A",
+    "text": "To write new algorithms from scratch"
+   },
+   {
+    "key": "B",
+    "text": "To identify which parts of the code are bottlenecks"
+   },
+   {
+    "key": "C",
+    "text": "To increase the number of processor cores"
+   },
+   {
+    "key": "D",
+    "text": "To reduce the amount of data used"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "comment",
+  "sources": [
+   "SP26 FE #43"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "sp26-44",
+  "question": "What type of data structures are used as standardized input to the interfaces in scikit-learn?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Lists and dictionaries"
+   },
+   {
+    "key": "B",
+    "text": "DataFrames and Series"
+   },
+   {
+    "key": "C",
+    "text": "NumPy arrays and SciPy sparse matrices"
+   },
+   {
+    "key": "D",
+    "text": "Strings and tuples"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "C"
+  ],
+  "answerSource": "comment",
+  "sources": [
+   "SP26 FE #44"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "C"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "sp26-45",
+  "question": "Which command-line tool is used to interact with the Kubernetes API?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Kubelet"
+   },
+   {
+    "key": "B",
+    "text": "Kube CTL"
+   },
+   {
+    "key": "C",
+    "text": "Docker"
+   },
+   {
+    "key": "D",
+    "text": "Helm"
+   }
+  ],
+  "multi": false,
+  "answer": [
+   "B"
+  ],
+  "answerSource": "comment",
+  "sources": [
+   "SP26 FE #45"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "SP26 FE",
+    "type": "comment",
+    "answer": [
+     "B"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "fa25-01",
+  "question": "What is the best practice for data collection in performance monitoring?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Collect data at a summary level"
+   },
+   {
+    "key": "B",
+    "text": "Collect data at the most granular level possible"
+   },
+   {
+    "key": "C",
+    "text": "Collect data only once a week"
+   },
+   {
+    "key": "D",
+    "text": "Collect data from social media"
+   }
+  ],
+  "multi": false,
+  "answer": null,
+  "answerSource": null,
+  "sources": [
+   "FA25 FE #1"
+  ],
+  "sourceAnswers": [],
+  "conflict": false
+ },
+ {
+  "id": "fa25-02",
+  "question": "What is a key risk associated with the increased pace of change in CI/CD?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Increased collaboration among teams"
+   },
+   {
+    "key": "B",
+    "text": "Introduction of bugs"
+   },
+   {
+    "key": "C",
+    "text": "Faster deployment times"
+   },
+   {
+    "key": "D",
+    "text": "Improved testing processes"
+   }
+  ],
+  "multi": false,
+  "answer": null,
+  "answerSource": null,
+  "sources": [
+   "FA25 FE #2"
+  ],
+  "sourceAnswers": [],
+  "conflict": false
+ },
+ {
+  "id": "fa25-04",
+  "question": "What is the main function of the Kubernetes API server?",
+  "options": [
+   {
+    "key": "A",
+    "text": "To manage worker nodes"
+   },
+   {
+    "key": "B",
+    "text": "To expose capabilities for defining workloads"
+   },
+   {
+    "key": "C",
+    "text": "To deploy applications"
+   },
+   {
+    "key": "D",
+    "text": "To monitor application health"
+   }
+  ],
+  "multi": false,
+  "answer": null,
+  "answerSource": null,
+  "sources": [
+   "FA25 FE #4"
+  ],
+  "sourceAnswers": [],
+  "conflict": false
+ },
+ {
+  "id": "fa25-06",
+  "question": "What is the primary format used for collecting data in performance monitoring?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Spreadsheets"
+   },
+   {
+    "key": "B",
+    "text": "Log files"
+   },
+   {
+    "key": "C",
+    "text": "Text documents"
+   },
+   {
+    "key": "D",
+    "text": "Presentations"
+   }
+  ],
+  "multi": false,
+  "answer": null,
+  "answerSource": null,
+  "sources": [
+   "FA25 FE #6"
+  ],
+  "sourceAnswers": [],
+  "conflict": false
+ },
+ {
+  "id": "fa25-11",
+  "question": "What is an important tool for comparing variants of the workflow in software engineering?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Data pipelines"
+   },
+   {
+    "key": "B",
+    "text": "Data lakes"
+   },
+   {
+    "key": "C",
+    "text": "Data warehouses"
+   },
+   {
+    "key": "D",
+    "text": "Data dashboards"
+   }
+  ],
+  "multi": false,
+  "answer": null,
+  "answerSource": null,
+  "sources": [
+   "FA25 FE #11"
+  ],
+  "sourceAnswers": [],
+  "conflict": false
+ },
+ {
+  "id": "fa25-14",
+  "question": "Which of the following best describes feature engineering?",
+  "options": [
+   {
+    "key": "A",
+    "text": "The process of gathering data"
+   },
+   {
+    "key": "B",
+    "text": "The selection and creation of data features to improve model performance"
+   },
+   {
+    "key": "C",
+    "text": "The visualization of data"
+   },
+   {
+    "key": "D",
+    "text": "The storage of data"
+   }
+  ],
+  "multi": false,
+  "answer": null,
+  "answerSource": null,
+  "sources": [
+   "FA25 FE #14"
+  ],
+  "sourceAnswers": [],
+  "conflict": false
+ },
+ {
+  "id": "fa25-17",
+  "question": "Mutable data types/collections in Python can be changed in place. Immutable ones can not change in place. Which of the following are mutable?",
+  "options": [
+   {
+    "key": "A",
+    "text": "bool"
+   },
+   {
+    "key": "B",
+    "text": "int"
+   },
+   {
+    "key": "C",
+    "text": "float"
+   },
+   {
+    "key": "D",
+    "text": "set"
+   },
+   {
+    "key": "E",
+    "text": "list"
+   },
+   {
+    "key": "F",
+    "text": "string"
+   }
+  ],
+  "multi": true,
+  "answer": [
+   "D",
+   "E"
+  ],
+  "answerSource": "quizlet",
+  "sources": [
+   "FA25 FE #17",
+   "Quizlet 1 #2"
+  ],
+  "sourceAnswers": [
+   {
+    "source": "Quizlet 1",
+    "type": "quizlet",
+    "answer": [
+     "D",
+     "E"
+    ]
+   }
+  ],
+  "conflict": false
+ },
+ {
+  "id": "fa25-18",
+  "question": "What does the 'average' parameter in the F1 score calculation affect?",
+  "options": [
+   {
+    "key": "A",
+    "text": "The number of classes considered"
+   },
+   {
+    "key": "B",
+    "text": "The weighting of precision and recall"
+   },
+   {
+    "key": "C",
+    "text": "The overall accuracy of the model"
+   },
+   {
+    "key": "D",
+    "text": "The size of the dataset"
+   }
+  ],
+  "multi": false,
+  "answer": null,
+  "answerSource": null,
+  "sources": [
+   "FA25 FE #18"
+  ],
+  "sourceAnswers": [],
+  "conflict": false
+ },
+ {
+  "id": "fa25-19",
+  "question": "Who are \"Sponsor Users\" in the design thinking framework?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Project managers overseeing the design process"
+   },
+   {
+    "key": "B",
+    "text": "Real-world users who provide domain expertise"
+   },
+   {
+    "key": "C",
+    "text": "Data scientists working on the project"
+   },
+   {
+    "key": "D",
+    "text": "Stakeholders funding the project"
+   }
+  ],
+  "multi": false,
+  "answer": null,
+  "answerSource": null,
+  "sources": [
+   "FA25 FE #19"
+  ],
+  "sourceAnswers": [],
+  "conflict": false
+ },
+ {
+  "id": "fa25-20",
+  "question": "What is a key reason for maintaining data quality in enterprises?",
+  "options": [
+   {
+    "key": "A",
+    "text": "To reduce the number of employees"
+   },
+   {
+    "key": "B",
+    "text": "To avoid project delays and budget shortfalls"
+   },
+   {
+    "key": "C",
+    "text": "To increase data storage capacity"
+   },
+   {
+    "key": "D",
+    "text": "To enhance social media presence"
+   }
+  ],
+  "multi": false,
+  "answer": null,
+  "answerSource": null,
+  "sources": [
+   "FA25 FE #20"
+  ],
+  "sourceAnswers": [],
+  "conflict": false
+ },
+ {
+  "id": "fa25-21",
+  "question": "In the design thinking process, what do \"Playbacks\" refer to?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Presentations of data findings"
+   },
+   {
+    "key": "B",
+    "text": "Sessions where stakeholders share stories and feedback"
+   },
+   {
+    "key": "C",
+    "text": "Replaying recorded meetings"
+   },
+   {
+    "key": "D",
+    "text": "Reviewing past projects"
+   }
+  ],
+  "multi": false,
+  "answer": null,
+  "answerSource": null,
+  "sources": [
+   "FA25 FE #21"
+  ],
+  "sourceAnswers": [],
+  "conflict": false
+ },
+ {
+  "id": "fa25-22",
+  "question": "For the vector v = [2.0, -3.5, 5.1]:\nFind the L1 norm of v\nReturn the result as a float",
+  "code": "import numpy as np\n\ndef calculate_l1_norm(v):\n  //Code here?\n  return L1",
+  "options": [
+   {
+    "key": "A",
+    "text": "L1 = np.linalg.norm(v, ord=1)"
+   },
+   {
+    "key": "B",
+    "text": "L1 = np.linalg(ord=1,v)"
+   },
+   {
+    "key": "C",
+    "text": "L1 = np.norm(v, ord=1)"
+   },
+   {
+    "key": "D",
+    "text": "L1 = norm(v, ord=1)"
+   }
+  ],
+  "multi": false,
+  "answer": null,
+  "answerSource": null,
+  "sources": [
+   "FA25 FE #22"
+  ],
+  "sourceAnswers": [],
+  "conflict": false
+ },
+ {
+  "id": "fa25-23",
+  "question": "Which metric is used to evaluate the balance between precision and recall?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Accuracy"
+   },
+   {
+    "key": "B",
+    "text": "F1 Score"
+   },
+   {
+    "key": "C",
+    "text": "Recall"
+   },
+   {
+    "key": "D",
+    "text": "Precision"
+   }
+  ],
+  "multi": false,
+  "answer": null,
+  "answerSource": null,
+  "sources": [
+   "FA25 FE #23"
+  ],
+  "sourceAnswers": [],
+  "conflict": false
+ },
+ {
+  "id": "fa25-24",
+  "question": "What is the primary focus of data ingestion pipelines?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Data visualization"
+   },
+   {
+    "key": "B",
+    "text": "Data storage"
+   },
+   {
+    "key": "C",
+    "text": "Data quality maintenance"
+   },
+   {
+    "key": "D",
+    "text": "Data collection and processing"
+   }
+  ],
+  "multi": false,
+  "answer": null,
+  "answerSource": null,
+  "sources": [
+   "FA25 FE #24"
+  ],
+  "sourceAnswers": [],
+  "conflict": false
+ },
+ {
+  "id": "fa25-30",
+  "question": "In multilabel classification, how are labels assigned to samples?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Labels are mutually exclusive."
+   },
+   {
+    "key": "B",
+    "text": "Each sample can have multiple labels assigned."
+   },
+   {
+    "key": "C",
+    "text": "Only one label can be assigned to each sample."
+   },
+   {
+    "key": "D",
+    "text": "It is the same as binary classification."
+   }
+  ],
+  "multi": false,
+  "answer": null,
+  "answerSource": null,
+  "sources": [
+   "FA25 FE #30"
+  ],
+  "sourceAnswers": [],
+  "conflict": false
+ },
+ {
+  "id": "fa25-31",
+  "question": "Which of the following is NOT a benefit of using NLP in enterprises?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Extracting insights from unstructured text data"
+   },
+   {
+    "key": "B",
+    "text": "Automating customer service responses"
+   },
+   {
+    "key": "C",
+    "text": "Creating complex hardware systems"
+   },
+   {
+    "key": "D",
+    "text": "Enhancing data-driven decision-making"
+   }
+  ],
+  "multi": false,
+  "answer": null,
+  "answerSource": null,
+  "sources": [
+   "FA25 FE #31"
+  ],
+  "sourceAnswers": [],
+  "conflict": false
+ },
+ {
+  "id": "fa25-34",
+  "question": "Which learning technique involves discovering appropriate actions through trial and error?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Supervised Learning"
+   },
+   {
+    "key": "B",
+    "text": "Unsupervised Learning"
+   },
+   {
+    "key": "C",
+    "text": "Reinforcement Learning"
+   },
+   {
+    "key": "D",
+    "text": "Semi-supervised Learning"
+   }
+  ],
+  "multi": false,
+  "answer": null,
+  "answerSource": null,
+  "sources": [
+   "FA25 FE #34"
+  ],
+  "sourceAnswers": [],
+  "conflict": false
+ },
+ {
+  "id": "fa25-39",
+  "question": "What is the primary goal of the teams deployed by AAVAIL?",
+  "options": [
+   {
+    "key": "A",
+    "text": "To increase product prices"
+   },
+   {
+    "key": "B",
+    "text": "To focus on product traction in new markets"
+   },
+   {
+    "key": "C",
+    "text": "To reduce the number of team members"
+   },
+   {
+    "key": "D",
+    "text": "To develop new marketing strategies"
+   }
+  ],
+  "multi": false,
+  "answer": null,
+  "answerSource": null,
+  "sources": [
+   "FA25 FE #39"
+  ],
+  "sourceAnswers": [],
+  "conflict": false
+ },
+ {
+  "id": "fa25-40",
+  "question": "What is one of the key aspects to consider when preparing for data analysis?",
+  "options": [
+   {
+    "key": "A",
+    "text": "The color scheme of the dashboard"
+   },
+   {
+    "key": "B",
+    "text": "The features available for each individual from the teams"
+   },
+   {
+    "key": "C",
+    "text": "The number of team members"
+   },
+   {
+    "key": "D",
+    "text": "The location of the markets"
+   }
+  ],
+  "multi": false,
+  "answer": null,
+  "answerSource": null,
+  "sources": [
+   "FA25 FE #40"
+  ],
+  "sourceAnswers": [],
+  "conflict": false
+ },
+ {
+  "id": "fa25-46",
+  "question": "Which of the following is NOT a manager for a Spark cluster?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Apache Mesos"
+   },
+   {
+    "key": "B",
+    "text": "Hadoop YARN"
+   },
+   {
+    "key": "C",
+    "text": "Docker"
+   },
+   {
+    "key": "D",
+    "text": "Spark on Kubernetes"
+   }
+  ],
+  "multi": false,
+  "answer": null,
+  "answerSource": null,
+  "sources": [
+   "FA25 FE #46"
+  ],
+  "sourceAnswers": [],
+  "conflict": false
+ }
+]

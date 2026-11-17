@@ -1,0 +1,474 @@
+[
+ {
+  "id": "su26fe-01",
+  "chapterId": 4,
+  "aiAnswer": [
+   "B"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Multiclass classification là bài toán có nhiều hơn hai lớp nhưng mỗi sample chỉ được gán đúng một label. Trường hợp mỗi sample có nhiều label (A) là multilabel classification, còn giới hạn ở hai lớp (C) là binary classification; mọi bài toán phân loại đều cần evaluation metrics nên (D) sai."
+ },
+ {
+  "id": "su26fe-02",
+  "chapterId": 3,
+  "aiAnswer": [
+   "C"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Cả over-sampling (nhân bản hoặc sinh thêm mẫu lớp thiểu số, ví dụ SMOTE) và under-sampling (bớt mẫu lớp đa số) đều là kỹ thuật phổ biến để xử lý class imbalance, nên đáp án là \"Both A and B\" (C). Chọn riêng A hoặc B là chưa đầy đủ."
+ },
+ {
+  "id": "su26fe-03",
+  "chapterId": 6,
+  "aiAnswer": [
+   "A"
+  ],
+  "agree": true,
+  "confidence": "medium",
+  "explanation": "Trong khóa học, các trường thiết yếu của log khi monitor model gồm runtime, timestamp, model_version_number, predictions và input_data_summary. request_type và việc lưu toàn bộ input data được xem là không thiết yếu (A). Các lựa chọn B, C, D chỉ chứa các trường thiết yếu."
+ },
+ {
+  "id": "su26fe-04",
+  "chapterId": 1,
+  "aiAnswer": [
+   "B"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Trong design thinking, giai đoạn Define là lúc tổng hợp thông tin từ Empathize để xác định rõ vấn đề và thách thức (B). Empathize (A) là tìm hiểu người dùng, Ideate (C) là sinh ý tưởng giải pháp, Prototype (D) là xây dựng bản mẫu."
+ },
+ {
+  "id": "su26fe-05",
+  "chapterId": 4,
+  "aiAnswer": [
+   "A"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Các tham số có thể tinh chỉnh của neural network gồm structure (số hidden layer, số node), activation function, regularization (dropout, weight decay, early stopping) và training method (loss, learning rate, batch size, epochs). Hardware availability (A) là ràng buộc tài nguyên chứ không phải tham số của mô hình."
+ },
+ {
+  "id": "su26fe-06",
+  "chapterId": 6,
+  "aiAnswer": [
+   "B"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Continuous Deployment là việc tự động triển khai phần mềm lên production mỗi khi thay đổi vượt qua pipeline kiểm thử (B). Triển khai thủ công (A) hay merge không thường xuyên (C) đi ngược tinh thần CI/CD; testing (D) là một bước trong pipeline chứ không phải định nghĩa của Continuous Deployment."
+ },
+ {
+  "id": "su26fe-07",
+  "chapterId": 6,
+  "aiAnswer": [
+   "B"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Đảm bảo có tối thiểu dữ liệu cần thiết trong log giúp ta monitor model performance và debug khi có sự cố (B). Mục đích không phải là giảm kích thước dữ liệu (A) hay tránh dùng log files (D); ngược lại log là công cụ chính để lưu dữ liệu đó."
+ },
+ {
+  "id": "su26fe-08",
+  "chapterId": 4,
+  "aiAnswer": [
+   "B"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "API key và thông tin nhạy cảm nên được lưu trong một file bảo mật trên máy tin cậy (B), không đưa vào code hay repo công khai. Lưu ở file công khai (A), tài liệu chia sẻ (C) hoặc trên cloud không mã hóa (D) đều có nguy cơ lộ key."
+ },
+ {
+  "id": "su26fe-09",
+  "chapterId": 4,
+  "aiAnswer": [
+   "A"
+  ],
+  "agree": true,
+  "confidence": "medium",
+  "explanation": "Theo hướng dẫn của Watson Visual Recognition trong khóa học, negative images nên giống về mặt thị giác với positive images nhất có thể (A) để classifier học được ranh giới tinh tế giữa lớp đúng và các đối tượng dễ nhầm. Ảnh ngẫu nhiên hoặc khác biệt rõ (C, E) quá dễ phân biệt nên không giúp mô hình học thêm nhiều."
+ },
+ {
+  "id": "su26fe-10",
+  "chapterId": 5,
+  "aiAnswer": [
+   "B"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Phát biểu sai (B): Watson Machine Learning hỗ trợ lưu model từ nhiều framework (scikit-learn, Keras/TensorFlow, PyTorch, Spark ML...) và nhiều định dạng như joblib, h5, tar.gz, không chỉ pickle file."
+ },
+ {
+  "id": "su26fe-11",
+  "chapterId": 3,
+  "aiAnswer": [
+   "B"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Latent Dirichlet Allocation (LDA) là phương pháp topic modeling kinh điển, mô hình mỗi văn bản là hỗn hợp các topic và mỗi topic là phân phối trên từ (B). PCA (A) là giảm chiều tổng quát, SVM (C) là classifier, K-Means (D) là clustering, không trực tiếp sinh topic."
+ },
+ {
+  "id": "su26fe-12",
+  "chapterId": 5,
+  "aiAnswer": [
+   "B"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "spark-submit là script dùng để submit một ứng dụng (Python, Scala, Java) lên Spark cluster để chạy (B). Nó không tạo cluster (A), không phải công cụ monitor job (C, việc này dùng Spark UI) và không dùng để cài đặt Spark (D)."
+ },
+ {
+  "id": "su26fe-13",
+  "chapterId": 6,
+  "aiAnswer": [
+   "B"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Thay đổi phần mềm (ví dụ cập nhật thư viện, thay đổi pipeline xử lý dữ liệu) có thể làm model hoạt động khác đi theo thời gian, gây performance drift (B). Đây là lý do cần monitor sau khi deploy; khẳng định \"No impact at all\" (D) là sai, còn tăng accuracy (A) không phải hệ quả cần lo ngại."
+ },
+ {
+  "id": "su26fe-14",
+  "chapterId": 4,
+  "aiAnswer": [
+   "B"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Mục đích chính của NLP là giúp máy tính phân tích và hiểu ngôn ngữ tự nhiên của con người (B). Tạo nội dung hình ảnh (A) thuộc computer vision, còn phát triển phần cứng (C) hay quản lý cơ sở dữ liệu (D) không liên quan."
+ },
+ {
+  "id": "su26fe-15",
+  "chapterId": 1,
+  "aiAnswer": [
+   "B"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Khóa học yêu cầu người học đã quen với numeric computing, data munging, data visualization và data modeling (B), tức các kỹ năng data science cơ bản bằng Python. Các lựa chọn khác chứa những chủ đề nâng cao hoặc không phải điều kiện tiên quyết như convex optimization, high performance computing, linear programming."
+ },
+ {
+  "id": "su26fe-16",
+  "chapterId": 1,
+  "aiAnswer": [
+   "D"
+  ],
+  "agree": true,
+  "confidence": "medium",
+  "explanation": "Theo cách khóa học ánh xạ design thinking vào quy trình data science, giai đoạn Define tập trung xác định vấn đề và business opportunity (D), chuyển nó thành câu hỏi có thể kiểm chứng. Data collection, data cleaning/EDA (A, B) thuộc các bước xử lý dữ liệu sau đó, còn model training (C) thuộc giai đoạn Prototype."
+ },
+ {
+  "id": "su26fe-17",
+  "chapterId": 5,
+  "aiAnswer": [
+   "C"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Cython, mpi4py và ipyparallel đều là công cụ để tăng tốc hoặc song song hóa code Python. TensorBoard (C) là công cụ trực quan hóa quá trình training của TensorFlow, không phải công cụ tối ưu tốc độ code."
+ },
+ {
+  "id": "su26fe-18",
+  "chapterId": 4,
+  "aiAnswer": [
+   "A"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Đúng (A): một CNN điển hình gồm các convolutional layer để trích xuất đặc trưng, pooling layer để giảm kích thước không gian, và các dense (fully connected) layer ở cuối để phân loại."
+ },
+ {
+  "id": "su26fe-19",
+  "chapterId": 6,
+  "aiAnswer": [
+   "B"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Kullback-Leibler divergence đo mức độ khác nhau giữa hai phân phối xác suất, nên thường được dùng để so sánh phân phối dữ liệu, ví dụ phát hiện data drift giữa dữ liệu training và production (B). Linear regression, decision trees, neural networks (A, C, D) là mô hình dự đoán chứ không phải thước đo so sánh phân phối."
+ },
+ {
+  "id": "su26fe-20",
+  "chapterId": 4,
+  "aiAnswer": [
+   "C"
+  ],
+  "agree": true,
+  "confidence": "medium",
+  "explanation": "RMSE bình phương sai số nên rất nhạy với các giá trị lớn bất thường, còn MAE ít bị ảnh hưởng bởi outlier. Vì vậy khi dữ liệu có phân phối long-tailed như time to failure của máy móc (C), MAE là lựa chọn hợp lý hơn. Cả MAE và RMSE đều có cùng đơn vị gốc nên (A) không phải lý do để chọn MAE, còn (D) là bài toán phân loại."
+ },
+ {
+  "id": "su26fe-21",
+  "chapterId": 5,
+  "aiAnswer": [
+   "B"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Tùy chọn --executor-memory trong spark-submit chỉ định lượng bộ nhớ cấp cho mỗi executor (B). Bộ nhớ cho driver được đặt bằng --driver-memory (A); không có tham số này đặt tổng bộ nhớ toàn ứng dụng (C)."
+ },
+ {
+  "id": "su26fe-22",
+  "chapterId": 1,
+  "aiAnswer": [
+   "C"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "CSV (Comma-Separated Values) là định dạng phổ biến nhất để lưu dữ liệu có cấu trúc dạng bảng, mỗi dòng là một record và các cột phân tách bằng dấu phẩy (C). JSON và XML (A, B) phù hợp với dữ liệu phân cấp/lồng nhau, còn TXT (D) không có cấu trúc cố định."
+ },
+ {
+  "id": "su26fe-23",
+  "chapterId": 4,
+  "aiAnswer": [
+   "C"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Khóa học trình bày batch, mini-batch, stochastic gradient descent và việc áp dụng gradient descent cho regression. \"Regularized gradient descent\" (C) không được giới thiệu như một biến thể riêng, regularization là thành phần của loss function chứ không phải một kiểu gradient descent."
+ },
+ {
+  "id": "su26fe-24",
+  "chapterId": 3,
+  "aiAnswer": [
+   "B"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Sampling bias xảy ra khi mẫu dữ liệu không đại diện cho quần thể, ví dụ một số nhóm con bị under-represented (B). Dùng dataset lớn hơn (A) hay cross-validation (D) không gây ra sampling bias, còn tăng số feature (C) liên quan đến curse of dimensionality chứ không phải sampling."
+ },
+ {
+  "id": "su26fe-25",
+  "chapterId": 1,
+  "aiAnswer": [
+   "C"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Khách hàng hiện tại rất hài lòng nên sản phẩm đã tốt, vấn đề nằm ở việc thu hút khách hàng mới chậm. Vì vậy ưu tiên cao nhất là dùng customer segmentation/market analysis để hỗ trợ marketing tiếp cận khách hàng mới (C). Phát triển sản phẩm mới (A, B) hay chuyển sang thị trường khác (D) là không cần thiết khi sản phẩm hiện tại đang được đánh giá cao."
+ },
+ {
+  "id": "su26fe-26",
+  "chapterId": 1,
+  "aiAnswer": [
+   "B"
+  ],
+  "agree": true,
+  "confidence": "medium",
+  "explanation": "Chất lượng dữ liệu bao gồm cả bản thân các observations (độ đầy đủ, chính xác) và độ trưởng thành (maturity) của dữ liệu, tức dữ liệu đã được thu thập và quản lý ổn định đến đâu (B). Nó không chỉ phụ thuộc phương pháp thu thập (A) hay hệ thống lưu trữ (D), và chắc chắn ảnh hưởng đến thành công của dự án (C sai)."
+ },
+ {
+  "id": "su26fe-27",
+  "chapterId": 1,
+  "aiAnswer": [
+   "A",
+   "B",
+   "C"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Một data ingestion pipeline cần xử lý missing data, faulty data, duplicate và các vấn đề toàn vẹn dữ liệu (A), đảm bảo trả về đúng dữ liệu mong đợi với bộ tham số cho trước (B) và đúng định dạng mong đợi (C). Việc kiểm tra model cho ra kết quả mong đợi (D) thuộc model testing/monitoring, không phải nhiệm vụ của ingestion pipeline."
+ },
+ {
+  "id": "su26fe-28",
+  "chapterId": 4,
+  "aiAnswer": [
+   "B"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Ứng dụng NLP phổ biến trong doanh nghiệp lớn là xử lý và phân tích phản hồi của khách hàng như review, email, ticket hỗ trợ, ví dụ sentiment analysis hay topic modeling (B). Quản lý giao dịch tài chính (A), thiết kế sản phẩm vật lý (C) hay làm thí nghiệm khoa học (D) không phải bài toán xử lý ngôn ngữ."
+ },
+ {
+  "id": "su26fe-29",
+  "chapterId": 5,
+  "aiAnswer": [
+   "B"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Sai (B): thêm GPU hay tài nguyên tính toán chỉ giúp đến một mức nhất định vì có phần công việc không song song hóa được (Amdahl's law) và chi phí giao tiếp/đồng bộ giữa các thiết bị tăng lên. Đến một điểm, thời gian training sẽ không giảm thêm, thậm chí có thể tăng."
+ },
+ {
+  "id": "su26fe-30",
+  "chapterId": 5,
+  "aiAnswer": [
+   "B"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Một Docker container đóng gói code ứng dụng cùng runtime, thư viện phụ thuộc và một filesystem riêng (B), nhờ đó chạy nhất quán trên mọi môi trường. Nó không chỉ chứa code (A), không chứa toàn bộ hệ điều hành (C, container dùng chung kernel với host) và không chỉ là database (D)."
+ },
+ {
+  "id": "su26fe-31",
+  "chapterId": 2,
+  "aiAnswer": [
+   "D"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "EDA gồm tạo visual summaries (A), liên hệ dữ liệu với business opportunity (B) và trình bày kết quả cho stakeholders (C). Xây dựng mô hình dự đoán như linear hoặc logistic regression (D) thuộc giai đoạn modeling, không phải một phần thông thường của EDA."
+ },
+ {
+  "id": "su26fe-32",
+  "chapterId": 3,
+  "aiAnswer": [
+   "A"
+  ],
+  "agree": true,
+  "confidence": "medium",
+  "explanation": "Visualization of topics tác động đến business opportunity chủ yếu vì khi chia sẻ với domain experts, họ có thể gợi ý topic-specific feature engineering, từ đó cải thiện mô hình phục vụ mục tiêu kinh doanh (A). Các lựa chọn như chọn số topic (B) hay xem top words (C) là lợi ích kỹ thuật cho việc phân tích, không trực tiếp gắn với business opportunity."
+ },
+ {
+  "id": "su26fe-33",
+  "chapterId": 2,
+  "aiAnswer": [
+   "B"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Mục đích của EDA là tạo các summaries và visualizations để hiểu cấu trúc, phân phối và mối quan hệ trong dữ liệu (B). Data cleaning (A) và thu thập dữ liệu (D) thường diễn ra trước, còn xây dựng mô hình dự đoán (C) là giai đoạn modeling."
+ },
+ {
+  "id": "su26fe-34",
+  "chapterId": 6,
+  "aiAnswer": [
+   "B"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Kubelet là agent chạy trên mỗi worker node, đảm bảo các container/pod được giao cho node đó đang chạy và khỏe mạnh (B). Kubernetes Master và API Server (A, C) điều phối ở mức cluster, còn Deployment (D) mô tả desired state chứ không trực tiếp giám sát trên node."
+ },
+ {
+  "id": "su26fe-35",
+  "chapterId": 2,
+  "aiAnswer": [
+   "B"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Trong môi trường doanh nghiệp, data visualization cần đảm bảo reproducibility (người khác tái tạo được kết quả) và khả năng communication rõ ràng tới stakeholders (B). Tốc độ thực thi (A), độ phức tạp mô hình (C) hay thuật toán nâng cao (D) không phải trọng tâm của visualization."
+ },
+ {
+  "id": "su26fe-36",
+  "chapterId": 5,
+  "aiAnswer": [
+   "B"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Sai (B): Spark cluster thường được quản lý bởi cluster manager như Standalone, YARN, Mesos hoặc Kubernetes, ứng dụng được gửi bằng spark-submit. Việc quản lý bằng Docker container và một YAML file là mô tả gần với Kubernetes/docker-compose, không phải cách quản lý Spark cluster nói chung."
+ },
+ {
+  "id": "su26fe-37",
+  "chapterId": 4,
+  "aiAnswer": [
+   "B"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Chiến lược one-vs-all (one-vs-rest) huấn luyện một binary classifier riêng cho mỗi label, phân biệt lớp đó với tất cả các lớp còn lại (B). Khi dự đoán, lớp có score cao nhất được chọn. Một classifier duy nhất cho tất cả lớp (A) là cách multinomial, và chiến lược này chính là để giải multiclass nên (D) sai."
+ },
+ {
+  "id": "su26fe-38",
+  "chapterId": 5,
+  "aiAnswer": [
+   "C"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Port forwarding trong Docker ánh xạ một port của host vào port của container (ví dụ -p 8080:8080), cho phép dữ liệu đi vào/ra container và kiểm soát ứng dụng nào được truy cập (C). Lưu dữ liệu bền vững trên máy local (A) là volume, còn dùng image làm template (D) là base image trong Dockerfile."
+ },
+ {
+  "id": "su26fe-39",
+  "chapterId": 4,
+  "aiAnswer": [
+   "C"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "True Positive là số trường hợp thực tế positive và được mô hình dự đoán đúng là positive (C). Dự đoán đúng negative (A) là True Negative, dự đoán sai thành positive (B) là False Positive, còn dự đoán sai thành negative (D) là False Negative."
+ },
+ {
+  "id": "su26fe-40",
+  "chapterId": 6,
+  "aiAnswer": [
+   "B"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Deployment trong Kubernetes khai báo desired state của ứng dụng như image, số replicas, chiến lược cập nhật, và Kubernetes liên tục điều chỉnh để trạng thái thực tế khớp với nó (B). API server (A) là thành phần control plane, health của node (C) do kubelet đảm nhận, còn cấu hình mạng (D) thuộc Service/network plugin."
+ },
+ {
+  "id": "su26fe-41",
+  "chapterId": 1,
+  "aiAnswer": [
+   "B"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Khóa học không bắt buộc tuân thủ cứng nhắc một process model nào (A) mà tập trung đưa các best practices vào workflow AI doanh nghiệp (B), kết hợp ý tưởng từ CRISP-DM và design thinking. Việc chỉ học từ tài liệu data science (C) hay tránh mọi cách tiếp cận có cấu trúc (D) đều sai."
+ },
+ {
+  "id": "su26fe-42",
+  "chapterId": 2,
+  "aiAnswer": [
+   "D"
+  ],
+  "agree": true,
+  "confidence": "medium",
+  "explanation": "Giả thuyết so sánh trung bình tuổi của hai nhóm độc lập (người dùng Product 1 và Product 2) nên cần 2-sample t-test; vì không có cơ sở giả định hai nhóm có variance bằng nhau (nhóm Product 1 có độ phân tán lớn hơn), Welch's unequal variances t-test (D) là lựa chọn an toàn. 1-sample t-test (A) chỉ so một nhóm với giá trị cố định, còn Z-test và Binomial test (C, E) dành cho tỷ lệ."
+ },
+ {
+  "id": "su26fe-43",
+  "chapterId": 1,
+  "aiAnswer": [
+   "B"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "Giai đoạn Empathize tập trung vào việc hiểu stakeholders và business opportunity, tức hiểu đúng vấn đề kinh doanh trước khi làm việc với dữ liệu (B). Thu thập và làm sạch dữ liệu (A, C) cũng như xây dựng mô hình (D) thuộc các giai đoạn sau."
+ },
+ {
+  "id": "su26fe-44",
+  "chapterId": 5,
+  "aiAnswer": [
+   "C"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "py-cuda, Cython, multiprocessing, mpi4py, threading và ipyparallel đều là package/module Python cụ thể để tăng tốc code. Trong (C), \"subprocessing\" không phải tên package (module thực tế là subprocess) và symmetric-multiprocessing là một kiến trúc phần cứng chứ không phải package Python."
+ },
+ {
+  "id": "su26fe-45",
+  "chapterId": 3,
+  "aiAnswer": [
+   "E"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "PCA cho ảnh (A), NMF để tìm topic (B), t-SNE để trực quan hóa clustering (C) và chọn feature bằng ANOVA (D) đều là các cách giảm số chiều dữ liệu. Down-sampling lớp đa số (E) giảm số sample để xử lý class imbalance, không giảm số chiều nên không phải use case của dimensionality reduction."
+ },
+ {
+  "id": "su26fe-46",
+  "chapterId": 5,
+  "aiAnswer": [
+   "E"
+  ],
+  "agree": true,
+  "confidence": "medium",
+  "explanation": "Lý do chính tạo virtual environment khi train model local là để cố định đúng phiên bản thư viện (ví dụ scikit-learn, Python) mà Watson Machine Learning hỗ trợ, đảm bảo model tạo ra tương thích khi deploy (E). Virtual environment không đảm bảo dùng package mới nhất (B), và việc client có dependencies riêng (D) chỉ là lý do phụ."
+ },
+ {
+  "id": "su26fe-47",
+  "chapterId": 1,
+  "aiAnswer": [
+   "A"
+  ],
+  "agree": true,
+  "confidence": "high",
+  "explanation": "ETL là viết tắt của Extract, Transform, Load: trích xuất dữ liệu từ nguồn, biến đổi/làm sạch, rồi nạp vào hệ thống đích như data warehouse (A). Các lựa chọn khác thay sai một trong ba bước, ví dụ \"Transfer\" (C) không phải thuật ngữ chuẩn."
+ }
+]

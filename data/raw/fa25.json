@@ -1,0 +1,1401 @@
+[
+  {
+    "id": "fa25-01",
+    "source": "FA25 FE",
+    "number": 1,
+    "question": "What is the best practice for data collection in performance monitoring?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Collect data at a summary level"
+      },
+      {
+        "key": "B",
+        "text": "Collect data at the most granular level possible"
+      },
+      {
+        "key": "C",
+        "text": "Collect data only once a week"
+      },
+      {
+        "key": "D",
+        "text": "Collect data from social media"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": null,
+    "answerSource": null
+  },
+  {
+    "id": "fa25-02",
+    "source": "FA25 FE",
+    "number": 2,
+    "question": "What is a key risk associated with the increased pace of change in CI/CD?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Increased collaboration among teams"
+      },
+      {
+        "key": "B",
+        "text": "Introduction of bugs"
+      },
+      {
+        "key": "C",
+        "text": "Faster deployment times"
+      },
+      {
+        "key": "D",
+        "text": "Improved testing processes"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": null,
+    "answerSource": null
+  },
+  {
+    "id": "fa25-03",
+    "source": "FA25 FE",
+    "number": 3,
+    "question": "What happens if a pod fails in a Kubernetes deployment?",
+    "options": [
+      {
+        "key": "A",
+        "text": "The deployment is deleted"
+      },
+      {
+        "key": "B",
+        "text": "A new pod is created to replace it"
+      },
+      {
+        "key": "C",
+        "text": "The application stops running"
+      },
+      {
+        "key": "D",
+        "text": "The kubelet is notified"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": null,
+    "answerSource": null
+  },
+  {
+    "id": "fa25-04",
+    "source": "FA25 FE",
+    "number": 4,
+    "question": "What is the main function of the Kubernetes API server?",
+    "options": [
+      {
+        "key": "A",
+        "text": "To manage worker nodes"
+      },
+      {
+        "key": "B",
+        "text": "To expose capabilities for defining workloads"
+      },
+      {
+        "key": "C",
+        "text": "To deploy applications"
+      },
+      {
+        "key": "D",
+        "text": "To monitor application health"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": null,
+    "answerSource": null
+  },
+  {
+    "id": "fa25-05",
+    "source": "FA25 FE",
+    "number": 5,
+    "question": "To move through the AI enterprise workflow quickly, we used the concept of workflow templates. Which of the following aspects of the template contributes the least to the re-usability of these templates?",
+    "options": [
+      {
+        "key": "A",
+        "text": "When they are used with a version control system"
+      },
+      {
+        "key": "B",
+        "text": "Ensuring that the model exists as a separate Python module to be called by Flask"
+      },
+      {
+        "key": "C",
+        "text": "Have an HTML endpoint for the Flask app to create dashboards"
+      },
+      {
+        "key": "D",
+        "text": "Use a template for a unit test suite"
+      },
+      {
+        "key": "E",
+        "text": "Ensure that data ingestion and data visualization code exists as a modules or scripts"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": null,
+    "answerSource": null
+  },
+  {
+    "id": "fa25-06",
+    "source": "FA25 FE",
+    "number": 6,
+    "question": "What is the primary format used for collecting data in performance monitoring?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Spreadsheets"
+      },
+      {
+        "key": "B",
+        "text": "Log files"
+      },
+      {
+        "key": "C",
+        "text": "Text documents"
+      },
+      {
+        "key": "D",
+        "text": "Presentations"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": null,
+    "answerSource": null
+  },
+  {
+    "id": "fa25-07",
+    "source": "FA25 FE",
+    "number": 7,
+    "question": "Why is it important to ensure that minimally required data is available?",
+    "options": [
+      {
+        "key": "A",
+        "text": "To reduce the size of the data set"
+      },
+      {
+        "key": "B",
+        "text": "To monitor model performance and debug issues"
+      },
+      {
+        "key": "C",
+        "text": "To make data collection easier"
+      },
+      {
+        "key": "D",
+        "text": "To avoid using log files"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": null,
+    "answerSource": null
+  },
+  {
+    "id": "fa25-08",
+    "source": "FA25 FE",
+    "number": 8,
+    "question": "What is the role of Kube DNS in Kubernetes?",
+    "options": [
+      {
+        "key": "A",
+        "text": "To manage the API server"
+      },
+      {
+        "key": "B",
+        "text": "To provide service discovery for pods"
+      },
+      {
+        "key": "C",
+        "text": "To monitor application health"
+      },
+      {
+        "key": "D",
+        "text": "To create YAML manifests"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": null,
+    "answerSource": null
+  },
+  {
+    "id": "fa25-09",
+    "source": "FA25 FE",
+    "number": 9,
+    "question": "IBM Watson OpenScale only works with models that have been built on, and deployed by, IBM Watson Stuido.",
+    "options": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": null,
+    "answerSource": null,
+    "notes": "'Stuido' is a typo in the original image (Studio); kept verbatim."
+  },
+  {
+    "id": "fa25-10",
+    "source": "FA25 FE",
+    "number": 10,
+    "question": "AAVAIL Management has described their needs to you in the language of business. How would you describe this project in the language of Data Science?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Recommender system"
+      },
+      {
+        "key": "B",
+        "text": "A/B Testing"
+      },
+      {
+        "key": "C",
+        "text": "Dimensionality Reduction"
+      },
+      {
+        "key": "D",
+        "text": "Regression Analysis"
+      },
+      {
+        "key": "E",
+        "text": "Unsupervised Learning"
+      },
+      {
+        "key": "F",
+        "text": "Classification Analysis"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": null,
+    "answerSource": null
+  },
+  {
+    "id": "fa25-11",
+    "source": "FA25 FE",
+    "number": 11,
+    "question": "What is an important tool for comparing variants of the workflow in software engineering?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Data pipelines"
+      },
+      {
+        "key": "B",
+        "text": "Data lakes"
+      },
+      {
+        "key": "C",
+        "text": "Data warehouses"
+      },
+      {
+        "key": "D",
+        "text": "Data dashboards"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": null,
+    "answerSource": null
+  },
+  {
+    "id": "fa25-12",
+    "source": "FA25 FE",
+    "number": 12,
+    "question": "Which of the following statements describes the best strategy to address class imbalance?",
+    "options": [
+      {
+        "key": "A",
+        "text": "If there is a lot of data just use under-sampling otherwise use outlier detection algorithms."
+      },
+      {
+        "key": "B",
+        "text": "Determine the best variant of SMOTE by comparisons and use it."
+      },
+      {
+        "key": "C",
+        "text": "Continue to collect data until you have balanced classes."
+      },
+      {
+        "key": "D",
+        "text": "Use an outlier detection algorithm or SVM instead of a re-sampling technique."
+      },
+      {
+        "key": "E",
+        "text": "Compare re-sampling approaches to a baseline and to detection algorithms."
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": null,
+    "answerSource": null
+  },
+  {
+    "id": "fa25-13",
+    "source": "FA25 FE",
+    "number": 13,
+    "question": "When printing the most representative words from each topic what best describes the insight we gain?",
+    "options": [
+      {
+        "key": "A",
+        "text": "The top words in each topic correspond to the most frequently used words in the corpus"
+      },
+      {
+        "key": "B",
+        "text": "The topics are defined by their representative words and the document is a mixture of these topics"
+      },
+      {
+        "key": "C",
+        "text": "Documents have topics and the words describe the corpus"
+      },
+      {
+        "key": "D",
+        "text": "The words make up the document and the topics describe the words"
+      },
+      {
+        "key": "E",
+        "text": "Topics are latent features and the top words describe the average document"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": null,
+    "answerSource": null
+  },
+  {
+    "id": "fa25-14",
+    "source": "FA25 FE",
+    "number": 14,
+    "question": "Which of the following best describes feature engineering?",
+    "options": [
+      {
+        "key": "A",
+        "text": "The process of gathering data"
+      },
+      {
+        "key": "B",
+        "text": "The selection and creation of data features to improve model performance"
+      },
+      {
+        "key": "C",
+        "text": "The visualization of data"
+      },
+      {
+        "key": "D",
+        "text": "The storage of data"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": null,
+    "answerSource": null
+  },
+  {
+    "id": "fa25-15",
+    "source": "FA25 FE",
+    "number": 15,
+    "question": "Which of the following statements is not a feature of the package imbalanced-learn imbalance?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Has a suite of over and under-sampling methods implemented"
+      },
+      {
+        "key": "B",
+        "text": "Works with TensorFlow"
+      },
+      {
+        "key": "C",
+        "text": "Has a number of tutorials to work from"
+      },
+      {
+        "key": "D",
+        "text": "Has outlier detection algorithm packaged as part of library"
+      },
+      {
+        "key": "E",
+        "text": "Works with scikit-learn pipelines"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": null,
+    "answerSource": null
+  },
+  {
+    "id": "fa25-16",
+    "source": "FA25 FE",
+    "number": 16,
+    "question": "Which types of data generally work well with sparse matrices?",
+    "options": [
+      {
+        "key": "A",
+        "text": "word counts, time-series data"
+      },
+      {
+        "key": "B",
+        "text": "audio files, images"
+      },
+      {
+        "key": "C",
+        "text": "word counts, user-item matrix for recommendations"
+      },
+      {
+        "key": "D",
+        "text": "text data, audio files"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": null,
+    "answerSource": null
+  },
+  {
+    "id": "fa25-17",
+    "source": "FA25 FE",
+    "number": 17,
+    "question": "Mutable data types/collections in Python can be changed in place. Immutable ones can not change in place. Which of the following are mutable?",
+    "options": [
+      {
+        "key": "A",
+        "text": "bool"
+      },
+      {
+        "key": "B",
+        "text": "int"
+      },
+      {
+        "key": "C",
+        "text": "float"
+      },
+      {
+        "key": "D",
+        "text": "set"
+      },
+      {
+        "key": "E",
+        "text": "list"
+      },
+      {
+        "key": "F",
+        "text": "string"
+      }
+    ],
+    "multi": true,
+    "choose": 2,
+    "answer": null,
+    "answerSource": null
+  },
+  {
+    "id": "fa25-18",
+    "source": "FA25 FE",
+    "number": 18,
+    "question": "What does the 'average' parameter in the F1 score calculation affect?",
+    "options": [
+      {
+        "key": "A",
+        "text": "The number of classes considered"
+      },
+      {
+        "key": "B",
+        "text": "The weighting of precision and recall"
+      },
+      {
+        "key": "C",
+        "text": "The overall accuracy of the model"
+      },
+      {
+        "key": "D",
+        "text": "The size of the dataset"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": null,
+    "answerSource": null
+  },
+  {
+    "id": "fa25-19",
+    "source": "FA25 FE",
+    "number": 19,
+    "question": "Who are \"Sponsor Users\" in the design thinking framework?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Project managers overseeing the design process"
+      },
+      {
+        "key": "B",
+        "text": "Real-world users who provide domain expertise"
+      },
+      {
+        "key": "C",
+        "text": "Data scientists working on the project"
+      },
+      {
+        "key": "D",
+        "text": "Stakeholders funding the project"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": null,
+    "answerSource": null
+  },
+  {
+    "id": "fa25-20",
+    "source": "FA25 FE",
+    "number": 20,
+    "question": "What is a key reason for maintaining data quality in enterprises?",
+    "options": [
+      {
+        "key": "A",
+        "text": "To reduce the number of employees"
+      },
+      {
+        "key": "B",
+        "text": "To avoid project delays and budget shortfalls"
+      },
+      {
+        "key": "C",
+        "text": "To increase data storage capacity"
+      },
+      {
+        "key": "D",
+        "text": "To enhance social media presence"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": null,
+    "answerSource": null
+  },
+  {
+    "id": "fa25-21",
+    "source": "FA25 FE",
+    "number": 21,
+    "question": "In the design thinking process, what do \"Playbacks\" refer to?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Presentations of data findings"
+      },
+      {
+        "key": "B",
+        "text": "Sessions where stakeholders share stories and feedback"
+      },
+      {
+        "key": "C",
+        "text": "Replaying recorded meetings"
+      },
+      {
+        "key": "D",
+        "text": "Reviewing past projects"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": null,
+    "answerSource": null
+  },
+  {
+    "id": "fa25-22",
+    "source": "FA25 FE",
+    "number": 22,
+    "question": "For the vector v = [2.0, -3.5, 5.1]:\nFind the L1 norm of v\nReturn the result as a float",
+    "code": "import numpy as np\n\ndef calculate_l1_norm(v):\n  //Code here?\n  return L1",
+    "options": [
+      {
+        "key": "A",
+        "text": "L1 = np.linalg.norm(v, ord=1)"
+      },
+      {
+        "key": "B",
+        "text": "L1 = np.linalg(ord=1,v)"
+      },
+      {
+        "key": "C",
+        "text": "L1 = np.norm(v, ord=1)"
+      },
+      {
+        "key": "D",
+        "text": "L1 = norm(v, ord=1)"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": null,
+    "answerSource": null
+  },
+  {
+    "id": "fa25-23",
+    "source": "FA25 FE",
+    "number": 23,
+    "question": "Which metric is used to evaluate the balance between precision and recall?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Accuracy"
+      },
+      {
+        "key": "B",
+        "text": "F1 Score"
+      },
+      {
+        "key": "C",
+        "text": "Recall"
+      },
+      {
+        "key": "D",
+        "text": "Precision"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": null,
+    "answerSource": null
+  },
+  {
+    "id": "fa25-24",
+    "source": "FA25 FE",
+    "number": 24,
+    "question": "What is the primary focus of data ingestion pipelines?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Data visualization"
+      },
+      {
+        "key": "B",
+        "text": "Data storage"
+      },
+      {
+        "key": "C",
+        "text": "Data quality maintenance"
+      },
+      {
+        "key": "D",
+        "text": "Data collection and processing"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": null,
+    "answerSource": null
+  },
+  {
+    "id": "fa25-25",
+    "source": "FA25 FE",
+    "number": 25,
+    "question": "Which tasks should be included in a data ingestion pipeline? (Choose one or more)",
+    "options": [
+      {
+        "key": "A",
+        "text": "Account for missing data, faulty data, repeated observations and other data integrity issues"
+      },
+      {
+        "key": "B",
+        "text": "Ensure that expected data is returned given a specific set of parameters"
+      },
+      {
+        "key": "C",
+        "text": "Ensure that an expected format is returned"
+      },
+      {
+        "key": "D",
+        "text": "Ensure that models produce expected results"
+      }
+    ],
+    "multi": true,
+    "choose": 3,
+    "answer": null,
+    "answerSource": null,
+    "notes": "Header says 'Choose 3 answers' while the question text says '(Choose one or more)'."
+  },
+  {
+    "id": "fa25-26",
+    "source": "FA25 FE",
+    "number": 26,
+    "question": "Transfer learning is a recent advancement to come out of the field of reinforcement learning.",
+    "options": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": null,
+    "answerSource": null
+  },
+  {
+    "id": "fa25-27",
+    "source": "FA25 FE",
+    "number": 27,
+    "question": "In which situation would you most strongly consider MAE over RMSE as a regression metric?",
+    "options": [
+      {
+        "key": "A",
+        "text": "where we would like to interpret the error metric in terms of the original units"
+      },
+      {
+        "key": "B",
+        "text": "like predicting daily temperature where we expect a small range of values"
+      },
+      {
+        "key": "C",
+        "text": "like predicting time to failure for a machine where we expect a long tailed distribution of values"
+      },
+      {
+        "key": "D",
+        "text": "like predicting the category or topic associated with a document"
+      },
+      {
+        "key": "E",
+        "text": "where we would like to interpret the error metric as a squared version of the original units"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": null,
+    "answerSource": null
+  },
+  {
+    "id": "fa25-28",
+    "source": "FA25 FE",
+    "number": 28,
+    "question": "Models in the generalized linear mixture model (GLMM) family like multilevel models are generally optimized using sophisticated techniques like MCMC sampling.",
+    "options": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": null,
+    "answerSource": null
+  },
+  {
+    "id": "fa25-29",
+    "source": "FA25 FE",
+    "number": 29,
+    "question": "Which of the following use cases is the least appropriate use case for a convolutional neural network?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Image classification"
+      },
+      {
+        "key": "B",
+        "text": "Image retrieval"
+      },
+      {
+        "key": "C",
+        "text": "Image composition"
+      },
+      {
+        "key": "D",
+        "text": "Object detection"
+      },
+      {
+        "key": "E",
+        "text": "Image segmentation"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": null,
+    "answerSource": null
+  },
+  {
+    "id": "fa25-30",
+    "source": "FA25 FE",
+    "number": 30,
+    "question": "In multilabel classification, how are labels assigned to samples?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Labels are mutually exclusive."
+      },
+      {
+        "key": "B",
+        "text": "Each sample can have multiple labels assigned."
+      },
+      {
+        "key": "C",
+        "text": "Only one label can be assigned to each sample."
+      },
+      {
+        "key": "D",
+        "text": "It is the same as binary classification."
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": null,
+    "answerSource": null
+  },
+  {
+    "id": "fa25-31",
+    "source": "FA25 FE",
+    "number": 31,
+    "question": "Which of the following is NOT a benefit of using NLP in enterprises?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Extracting insights from unstructured text data"
+      },
+      {
+        "key": "B",
+        "text": "Automating customer service responses"
+      },
+      {
+        "key": "C",
+        "text": "Creating complex hardware systems"
+      },
+      {
+        "key": "D",
+        "text": "Enhancing data-driven decision-making"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": null,
+    "answerSource": null
+  },
+  {
+    "id": "fa25-32",
+    "source": "FA25 FE",
+    "number": 32,
+    "question": "Which of the following does not describe a feature of the Watson Natural Language Understanding service?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Perform document classification tasks using a custom model built from text"
+      },
+      {
+        "key": "B",
+        "text": "Identify high-level concepts that aren’t necessarily directly referenced in the text"
+      },
+      {
+        "key": "C",
+        "text": "Find people, places, events, and other types of entities mentioned in your content"
+      },
+      {
+        "key": "D",
+        "text": "Recognize when two entities are related, and identify the type of relation"
+      },
+      {
+        "key": "E",
+        "text": "Analyze the sentiment toward specific target phrases and the sentiment of the document as a whole"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": null,
+    "answerSource": null
+  },
+  {
+    "id": "fa25-33",
+    "source": "FA25 FE",
+    "number": 33,
+    "question": "In a confusion matrix, what does True Positive (TP) represent?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Correctly predicted negative cases"
+      },
+      {
+        "key": "B",
+        "text": "Incorrectly predicted positive cases"
+      },
+      {
+        "key": "C",
+        "text": "Correctly predicted positive cases"
+      },
+      {
+        "key": "D",
+        "text": "Incorrectly predicted negative cases"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": null,
+    "answerSource": null
+  },
+  {
+    "id": "fa25-34",
+    "source": "FA25 FE",
+    "number": 34,
+    "question": "Which learning technique involves discovering appropriate actions through trial and error?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Supervised Learning"
+      },
+      {
+        "key": "B",
+        "text": "Unsupervised Learning"
+      },
+      {
+        "key": "C",
+        "text": "Reinforcement Learning"
+      },
+      {
+        "key": "D",
+        "text": "Semi-supervised Learning"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": null,
+    "answerSource": null
+  },
+  {
+    "id": "fa25-35",
+    "source": "FA25 FE",
+    "number": 35,
+    "question": "The Watson Visual Recognition service can only be accessed using an API key via Python or curl.",
+    "options": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": null,
+    "answerSource": null
+  },
+  {
+    "id": "fa25-36",
+    "source": "FA25 FE",
+    "number": 36,
+    "question": "Which statement is the least true about using Jupyter notebooks in the context of EDA",
+    "options": [
+      {
+        "key": "A",
+        "text": "They naturally lend themselves to version control systems"
+      },
+      {
+        "key": "B",
+        "text": "They can be ported from one environment to another easily"
+      },
+      {
+        "key": "C",
+        "text": "They are helpful because a mixture of code and markdown enables storytelling"
+      },
+      {
+        "key": "D",
+        "text": "They are integrated with the plotting library matplotlib"
+      },
+      {
+        "key": "E",
+        "text": "They are integrated with the data manipulation library pandas"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": null,
+    "answerSource": null
+  },
+  {
+    "id": "fa25-37",
+    "source": "FA25 FE",
+    "number": 37,
+    "question": "Which of the following is NOT an example of assumption that you work with when making probability statements about a sample of data?",
+    "options": [
+      {
+        "key": "A",
+        "text": "That there is an underlying population that your sample comes from"
+      },
+      {
+        "key": "B",
+        "text": "That the population follows an assumed probability distribution"
+      },
+      {
+        "key": "C",
+        "text": "That the observations in your sample are independent and identically distributed"
+      },
+      {
+        "key": "D",
+        "text": "That random variables represent the possible values that the data can take"
+      },
+      {
+        "key": "E",
+        "text": "That the probability statement applies to one observation at a time in a data set"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": null,
+    "answerSource": null
+  },
+  {
+    "id": "fa25-38",
+    "source": "FA25 FE",
+    "number": 38,
+    "question": "Which of the following is NOT normally a part of the EDA process",
+    "options": [
+      {
+        "key": "A",
+        "text": "Visual summaries of the data"
+      },
+      {
+        "key": "B",
+        "text": "Connecting the data to the business opportunity"
+      },
+      {
+        "key": "C",
+        "text": "Communication to stakeholders"
+      },
+      {
+        "key": "D",
+        "text": "Predictive linear or logistic regression"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": null,
+    "answerSource": null
+  },
+  {
+    "id": "fa25-39",
+    "source": "FA25 FE",
+    "number": 39,
+    "question": "What is the primary goal of the teams deployed by AAVAIL?",
+    "options": [
+      {
+        "key": "A",
+        "text": "To increase product prices"
+      },
+      {
+        "key": "B",
+        "text": "To focus on product traction in new markets"
+      },
+      {
+        "key": "C",
+        "text": "To reduce the number of team members"
+      },
+      {
+        "key": "D",
+        "text": "To develop new marketing strategies"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": null,
+    "answerSource": null
+  },
+  {
+    "id": "fa25-40",
+    "source": "FA25 FE",
+    "number": 40,
+    "question": "What is one of the key aspects to consider when preparing for data analysis?",
+    "options": [
+      {
+        "key": "A",
+        "text": "The color scheme of the dashboard"
+      },
+      {
+        "key": "B",
+        "text": "The features available for each individual from the teams"
+      },
+      {
+        "key": "C",
+        "text": "The number of team members"
+      },
+      {
+        "key": "D",
+        "text": "The location of the markets"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": null,
+    "answerSource": null
+  },
+  {
+    "id": "fa25-41",
+    "source": "FA25 FE",
+    "number": 41,
+    "question": "You may only pass a pickle file to save your model in the your Watson Machine Learning library.",
+    "options": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": null,
+    "answerSource": null
+  },
+  {
+    "id": "fa25-42",
+    "source": "FA25 FE",
+    "number": 42,
+    "question": "Spark MLlib has several estimators and transformers, but it lacks basic tooling for natural language processing (NLP) like the ability to make term frequency-inverse document frequency (TF-IDF) transformations.",
+    "options": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": null,
+    "answerSource": null
+  },
+  {
+    "id": "fa25-43",
+    "source": "FA25 FE",
+    "number": 43,
+    "question": "Which of the following is a key benefit of using Docker?",
+    "options": [
+      {
+        "key": "A",
+        "text": "It requires more resources than virtual machines"
+      },
+      {
+        "key": "B",
+        "text": "It allows for easier deployment of applications"
+      },
+      {
+        "key": "C",
+        "text": "It is only suitable for small applications"
+      },
+      {
+        "key": "D",
+        "text": "It does not support multiple applications"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": null,
+    "answerSource": null
+  },
+  {
+    "id": "fa25-44",
+    "source": "FA25 FE",
+    "number": 44,
+    "question": "It is reasonable to think of the commands in a Dockerfile as a step-by-step recipe on how to build up a Docker image.",
+    "options": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": null,
+    "answerSource": null
+  },
+  {
+    "id": "fa25-45",
+    "source": "FA25 FE",
+    "number": 45,
+    "question": "If we continue to add GPUs or other computational resources, the time it takes to train a model will always continue to decrease.",
+    "options": [
+      {
+        "key": "A",
+        "text": "True"
+      },
+      {
+        "key": "B",
+        "text": "False"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": null,
+    "answerSource": null
+  },
+  {
+    "id": "fa25-46",
+    "source": "FA25 FE",
+    "number": 46,
+    "question": "Which of the following is NOT a manager for a Spark cluster?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Apache Mesos"
+      },
+      {
+        "key": "B",
+        "text": "Hadoop YARN"
+      },
+      {
+        "key": "C",
+        "text": "Docker"
+      },
+      {
+        "key": "D",
+        "text": "Spark on Kubernetes"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": null,
+    "answerSource": null
+  },
+  {
+    "id": "fa25-47",
+    "source": "FA25 FE",
+    "number": 47,
+    "question": "What are the two steps that must be carried out if you want to iterate locally on a model then deploy it to the Watson Machine Learning (WML) service?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Provision a WML service & Dockerize your model"
+      },
+      {
+        "key": "B",
+        "text": "Create a Python virtual environment & Dockerize your model"
+      },
+      {
+        "key": "C",
+        "text": "Provision cloud storage & Provision a WML service"
+      },
+      {
+        "key": "D",
+        "text": "Provision a WML service & create a Python virtual environment"
+      },
+      {
+        "key": "E",
+        "text": "Dockerize your model & Provision cloud storage"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": null,
+    "answerSource": null
+  },
+  {
+    "id": "fa25-48",
+    "source": "FA25 FE",
+    "number": 48,
+    "question": "Which of the following is NOT a recommended tool for optimizing code?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Cython"
+      },
+      {
+        "key": "B",
+        "text": "mpi4py"
+      },
+      {
+        "key": "C",
+        "text": "TensorBoard"
+      },
+      {
+        "key": "D",
+        "text": "ipyparallel"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": null,
+    "answerSource": null
+  },
+  {
+    "id": "fa25-49",
+    "source": "FA25 FE",
+    "number": 49,
+    "question": "Which type of recommender system is readily available in Spark Machine learning?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Utility-based recommender systems"
+      },
+      {
+        "key": "B",
+        "text": "Collaborative-based recommender systems"
+      },
+      {
+        "key": "C",
+        "text": "Content-based recommender systems"
+      },
+      {
+        "key": "D",
+        "text": "Hybrid recommender systems"
+      },
+      {
+        "key": "E",
+        "text": "Demographics-based recommender systems"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": null,
+    "answerSource": null
+  },
+  {
+    "id": "fa25-50",
+    "source": "FA25 FE",
+    "number": 50,
+    "question": "Where should you store your API key and sensitive information?",
+    "options": [
+      {
+        "key": "A",
+        "text": "In a publicly accessible file"
+      },
+      {
+        "key": "B",
+        "text": "On a machine you trust in a secure file"
+      },
+      {
+        "key": "C",
+        "text": "In a shared document"
+      },
+      {
+        "key": "D",
+        "text": "In the cloud without encryption"
+      }
+    ],
+    "multi": false,
+    "choose": 1,
+    "answer": null,
+    "answerSource": null
+  }
+]
