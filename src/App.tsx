@@ -1,6 +1,7 @@
 import { Icon, type IconName } from "./components/Icon";
 import { Doodles } from "./components/Doodles";
 import { ExamPage } from "./features/exam/ExamPage";
+import { FptExamsPage } from "./features/fptexams/FptExamsPage";
 import { LookupPage } from "./features/lookup/LookupPage";
 import { NotebookPage } from "./features/notebook/NotebookPage";
 import { ReviewHome } from "./features/review/ReviewHome";
@@ -11,6 +12,7 @@ import { useStore, type Theme } from "./store";
 
 const tabs: { path: string; label: string; icon: IconName }[] = [
   { path: "review", label: "Ôn tập", icon: "review" },
+  { path: "exams", label: "Đề thi", icon: "paper" },
   { path: "exam", label: "Thi thử", icon: "exam" },
   { path: "notebook", label: "Sổ tay", icon: "notebook" },
   { path: "study", label: "Học tập", icon: "study" },
@@ -46,13 +48,15 @@ const Settings = () => {
 };
 
 export const App = () => {
-  const [root = "review", param] = useHashRoute();
+  const [root = "review", param, sub] = useHashRoute();
   const { notebook } = useStore();
   const mistakes = Object.keys(notebook.mistakes).length;
   const active = root === "audit" ? "lookup" : root;
 
   const page = (() => {
     switch (root) {
+      case "exams":
+        return <FptExamsPage key={`${param}-${sub}`} examId={param} partNo={sub} />;
       case "exam":
         return <ExamPage />;
       case "notebook":

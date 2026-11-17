@@ -2,6 +2,7 @@
 const paths = {
   review: "M4 6h16M4 12h16M4 18h10",
   exam: "M12 7v5l3 2M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z",
+  paper: "M7 3h7l4 4v14H7V3ZM14 3v4h4M10 12h5M10 16h5",
   notebook: "M6 3h12v18l-6-4-6 4V3Z",
   study: "M10 8.5v7l6-3.5-6-3.5ZM21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z",
   search: "m20 20-4.5-4.5M17 10.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0Z",

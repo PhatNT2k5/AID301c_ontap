@@ -1092,6 +1092,135 @@ fieldset legend {
   font-weight: 600;
 }
 
+/* ---------- FPT exams ---------- */
+.term {
+  margin-bottom: 26px;
+}
+.term-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 12px;
+}
+.term-tag {
+  padding: 2px 12px;
+  border: 2px solid var(--line);
+  border-radius: var(--r-sm);
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 1rem;
+  transform: rotate(-2deg);
+}
+.term-name {
+  font-family: var(--body);
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--muted);
+}
+.exam-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+.exam-card {
+  height: 100%;
+  transition: transform 120ms ease;
+}
+.exam-card:hover {
+  transform: translate(-2px, -2px) rotate(-0.5deg);
+}
+.exam-card-done {
+  background: var(--surface-2);
+}
+.exam-card-body {
+  display: grid;
+  gap: 2px;
+  padding: 12px 14px 14px;
+}
+.exam-card-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--hand);
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+.exam-done-mark {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--paper);
+}
+.exam-card-sub {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.exam-card .meter {
+  display: block;
+  margin: 8px 0 6px;
+}
+.exam-card .meter-fill {
+  display: block;
+}
+.exam-card-note {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+.resume-big {
+  font-family: var(--hand);
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+.part-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+}
+.part-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 14px;
+  text-align: left;
+  background: var(--surface);
+  border: 2px solid var(--line);
+  border-radius: var(--r);
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+.part-row:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: var(--pop);
+}
+.part-row .bubble {
+  flex: none;
+  pointer-events: none;
+}
+.part-text {
+  display: grid;
+  flex: 1;
+}
+.part-status {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 1px 10px;
+  border-radius: 999px;
+  border: 1.5px solid currentColor;
+}
+.status-done {
+  color: var(--right);
+  background: var(--right-bg);
+}
+.status-doing {
+  color: var(--accent);
+}
+.status-new {
+  color: var(--muted);
+}
+
 /* ---------- study ---------- */
 .chapter-list {
   display: grid;
@@ -1201,7 +1330,7 @@ fieldset legend {
   }
   .nav {
     flex: 1;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     gap: 2px;
   }
   .nav-item {

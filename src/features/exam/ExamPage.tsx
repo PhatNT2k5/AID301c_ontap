@@ -20,6 +20,25 @@ type Exam = {
 
 const KEY = "exam-current";
 const isExamQuestion = (id: string) => !id.startsWith("qz");
+const SECONDS_PER_QUESTION = 72; // 1.2 minutes, like the real test
+
+/** Start a timed exam with a fixed question list (e.g. a whole FPT exam in original order). */
+export const startFixedExam = (ids: string[]): void => {
+  const current = loadJson<Exam | null>(KEY, null);
+  if (current && current.finishedAt === null && !window.confirm("Bạn đang có bài thi thử chưa nộp. Bỏ bài đó để làm đề này?")) {
+    return;
+  }
+  saveJson(KEY, {
+    ids,
+    answers: {},
+    flagged: [],
+    current: 0,
+    startedAt: Date.now(),
+    limitSec: ids.length * SECONDS_PER_QUESTION,
+    finishedAt: null,
+  } satisfies Exam);
+  navigate("exam");
+};
 
 export const ExamPage = () => {
   const [exam, setExamState] = useState<Exam | null>(() => loadJson<Exam | null>(KEY, null));

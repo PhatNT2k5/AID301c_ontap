@@ -105,7 +105,7 @@ export const ReviewHome = () => {
       <button
         className="link small danger"
         onClick={() => {
-          if (window.confirm("Xoá toàn bộ tiến độ section? Sổ tay và lịch sử thi thử vẫn giữ nguyên.")) api.resetAll();
+          if (window.confirm("Xoá toàn bộ tiến độ section và các phần luyện đề? Sổ tay và lịch sử thi thử vẫn giữ nguyên.")) api.resetAll();
         }}
       >
         Xoá tiến độ section
