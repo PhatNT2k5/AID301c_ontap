@@ -6,7 +6,7 @@ import { useStore } from "../../store";
 export const StudyHome = () => {
   const { notebook, progress } = useStore();
   return (
-    <div>
+    <div className="wide">
       <header className="page-head">
         <h1>Học tập</h1>
         <p className="lead">

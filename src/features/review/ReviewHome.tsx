@@ -1,6 +1,9 @@
-import { chapters, questions, sections } from "../../data";
+import { Icon } from "../../components/Icon";
+import { chapters, fptExams, questions, sections } from "../../data";
+import { formatClock, shuffle } from "../../lib/text";
 import { navigate } from "../../lib/useHashRoute";
 import { useStore } from "../../store";
+import { startFixedExam } from "../exam/ExamPage";
 
 const statusLabel = { done: "đã xong", doing: "đang làm", new: "chưa làm" } as const;
 
@@ -13,8 +16,8 @@ export const ReviewHome = () => {
   const mistakeCount = Object.keys(notebook.mistakes).length;
 
   return (
-    <div>
-      <header className="page-head">
+    <div className="wide home">
+      <header className="page-head home-head">
         <h1>Ôn tập</h1>
         <p className="lead">
           {questions.length} câu từ 4 đề thi và 2 bộ Quizlet, chia thành {sections.length} section. Chọn section nào làm
@@ -22,6 +25,7 @@ export const ReviewHome = () => {
         </p>
       </header>
 
+      <div className="home-main">
       <section className="resume">
         <div className="resume-progress">
           <div className="resume-numbers">
@@ -63,6 +67,9 @@ export const ReviewHome = () => {
                 <span className="sheet-count">
                   {chapterDone}/{list.length}
                 </span>
+                <button className="sheet-video" onClick={() => navigate(`study/${chapter.id}`)}>
+                  <Icon name="study" size={14} /> Video chương
+                </button>
               </div>
               <ol className="bubbles">
                 {list.map((s) => {
@@ -109,6 +116,112 @@ export const ReviewHome = () => {
       >
         Xoá tiến độ section
       </button>
+      </div>
+
+      <HomeAside />
     </div>
+  );
+};
+
+const QUICK_SIZE = 20;
+
+const HomeAside = () => {
+  const { progress, notebook } = useStore();
+  const mistakes = Object.keys(notebook.mistakes).length;
+  const lastExam = notebook.exams[0];
+
+  return (
+    <aside className="home-aside">
+      <section className="window widget">
+        <div className="window-bar" aria-hidden>
+          <span>thi_nhanh.exe</span>
+          <i />
+          <i />
+          <i />
+        </div>
+        <div className="widget-body">
+          <p className="widget-title">Thi nhanh {QUICK_SIZE} câu</p>
+          <p className="muted small">Bốc ngẫu nhiên từ cả 6 chương, hẹn giờ 24 phút.</p>
+          <button
+            className="btn btn-primary block-btn"
+            onClick={() => startFixedExam(shuffle(questions.map((q) => q.id)).slice(0, QUICK_SIZE))}
+          >
+            Bắt đầu
+          </button>
+          {lastExam && (
+            <p className="widget-foot">
+              Lần gần nhất: <strong>{((lastExam.correct / lastExam.total) * 10).toFixed(1)}</strong>/10 ·{" "}
+              {lastExam.correct}/{lastExam.total} câu · {formatClock(lastExam.seconds)}
+            </p>
+          )}
+        </div>
+      </section>
+
+      <section className="window widget">
+        <div className="window-bar" aria-hidden>
+          <span>so_tay.txt</span>
+          <i />
+          <i />
+          <i />
+        </div>
+        <div className="widget-body">
+          <div className="widget-stats">
+            <button onClick={() => navigate("notebook")}>
+              <strong>{mistakes}</strong>
+              <span>câu sai</span>
+            </button>
+            <button onClick={() => navigate("notebook")}>
+              <strong>{notebook.starred.length}</strong>
+              <span>đánh dấu</span>
+            </button>
+          </div>
+          {mistakes > 0 ? (
+            <button className="btn block-btn" onClick={() => navigate("notebook/mistakes")}>
+              Luyện lại {mistakes} câu sai
+            </button>
+          ) : (
+            <p className="muted small">Câu nào làm sai sẽ tự vào đây để luyện lại.</p>
+          )}
+        </div>
+      </section>
+
+      <section className="window widget">
+        <div className="window-bar" aria-hidden>
+          <span>de_thi_fe/</span>
+          <i />
+          <i />
+          <i />
+        </div>
+        <ul className="widget-body widget-exams">
+          {fptExams.map((exam) => {
+            const done = exam.parts.filter((p) => progress.progress.completed.includes(p.id)).length;
+            return (
+              <li key={exam.id}>
+                <button onClick={() => navigate(`exams/${exam.id}`)}>
+                  <span className="term-tag term-tag-sm">{exam.term}</span>
+                  <span className="we-label">{exam.label}</span>
+                  <span className="we-count">
+                    {done}/{exam.parts.length}
+                  </span>
+                </button>
+              </li>
+            );
+          })}
+        </ul>
+      </section>
+
+      <section className="widget-tip">
+        <p className="widget-title">Phím tắt</p>
+        <p>
+          <kbd>1</kbd>–<kbd>4</kbd> hoặc <kbd>A</kbd>–<kbd>D</kbd> chọn đáp án
+        </p>
+        <p>
+          <kbd>Enter</kbd> sang câu tiếp
+        </p>
+        <p>
+          <kbd>←</kbd> <kbd>→</kbd> chuyển câu khi thi
+        </p>
+      </section>
+    </aside>
   );
 };

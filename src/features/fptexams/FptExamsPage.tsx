@@ -31,7 +31,7 @@ const ExamList = () => {
   const terms = [...new Set(fptExams.map((e) => e.term))];
 
   return (
-    <div>
+    <div className="wide">
       <header className="page-head">
         <h1>Đề thi FE</h1>
         <p className="lead">

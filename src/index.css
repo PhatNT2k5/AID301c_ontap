@@ -284,9 +284,150 @@ kbd {
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: 800px;
+  max-width: 1240px;
   margin: 0 auto;
-  padding: 36px 24px 80px;
+  padding: 36px 32px 80px;
+}
+/* Reading and answering pages stay at a comfortable measure; overview pages use the full width. */
+.main > * {
+  max-width: 800px;
+  margin-inline: auto;
+}
+.main > .wide {
+  max-width: none;
+}
+.main > .exam {
+  max-width: 1060px;
+}
+
+/* ---------- review home: map + side widgets ---------- */
+.home {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 0 36px;
+  align-items: start;
+}
+.home-head {
+  grid-column: 1 / -1;
+}
+.home-aside {
+  position: sticky;
+  top: 24px;
+  display: grid;
+  gap: 18px;
+}
+.widget-body {
+  display: grid;
+  gap: 8px;
+  padding: 14px 16px 16px;
+}
+.widget-body .block-btn {
+  margin-top: 4px;
+}
+.widget-title {
+  font-family: var(--hand);
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+.widget-foot {
+  font-size: 0.82rem;
+  color: var(--muted);
+  padding-top: 8px;
+  border-top: 1.5px dashed var(--line-soft);
+}
+.widget-foot strong {
+  color: var(--ink);
+}
+.widget-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.widget-stats button {
+  display: grid;
+  justify-items: start;
+  padding: 8px 12px;
+  border: 1.8px dashed var(--line-soft);
+  border-radius: var(--r-sm);
+  text-align: left;
+}
+.widget-stats button:hover {
+  border-color: var(--line);
+  background: var(--surface-2);
+}
+.widget-stats strong {
+  font-family: var(--hand);
+  font-weight: 600;
+  font-size: 1.8rem;
+  line-height: 1.1;
+}
+.widget-stats span {
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+.widget-exams {
+  gap: 2px;
+  padding: 8px;
+}
+.widget-exams button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 8px;
+  border-radius: var(--r-sm);
+  text-align: left;
+}
+.widget-exams button:hover {
+  background: var(--surface-2);
+}
+.we-label {
+  flex: 1;
+  font-size: 0.92rem;
+}
+.we-count {
+  font-family: var(--hand);
+  color: var(--muted);
+}
+.term-tag-sm {
+  font-family: var(--hand);
+  font-weight: 600;
+  font-size: 0.8rem;
+  padding: 0 8px;
+  border-width: 1.5px;
+}
+.widget-tip {
+  display: grid;
+  gap: 6px;
+  padding: 14px 16px;
+  border: 1.8px dashed var(--line-soft);
+  border-radius: var(--r);
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+.sheet-video {
+  grid-column: 1 / -1;
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 4px;
+  font-size: 0.78rem;
+  color: var(--accent);
+}
+.sheet-video:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 1100px) {
+  .home {
+    grid-template-columns: 1fr;
+  }
+  .home-aside {
+    position: static;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    margin-top: 12px;
+  }
 }
 
 /* ---------- page heads ---------- */
@@ -1410,5 +1551,29 @@ fieldset legend {
 @media (prefers-reduced-motion: reduce) {
   * {
     transition: none !important;
+  }
+}
+
+/* Wide overview pages: lay chapter cards out in columns. */
+.wide .chapter-list {
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+}
+.wide .chapter-list .chapter-card {
+  height: 100%;
+}
+@media (max-width: 560px) {
+  .wide .chapter-list {
+    grid-template-columns: 1fr;
+  }
+}
+@media (min-width: 1400px) {
+  .sheet .bubble {
+    width: 52px;
+    height: 52px;
+    font-size: 1.15rem;
+  }
+  .sheet-row {
+    grid-template-columns: minmax(0, 290px) 1fr;
+    padding: 16px 0;
   }
 }
