@@ -9,6 +9,8 @@ Website học môn AID301c (FPT University), giao diện tiếng Việt, gồm c
 - **Học tập**: 6 chương bám theo chuỗi khóa IBM AI Enterprise Workflow (Coursera), mỗi chương có video thuyết minh khoảng 6 phút kèm tóm tắt và nguồn.
 - **Tra cứu**: tìm trong câu hỏi, đáp án và giải thích (gõ không dấu được), lọc theo chương, câu cần kiểm tra đáp án, câu đánh dấu, câu từng sai.
 
+Pet: mèo đốm đeo tai nghe ở góc màn hình, đổi trạng thái theo việc học (vui khi đúng, buồn khi sai, giận khi sai 3 câu liền, phấn khích khi xong phần hoặc combo, ngủ khi để lâu không đụng, tò mò khi tìm kiếm). Bấm vào pet để nghe cổ vũ, nút hình bàn chân để ẩn hoặc hiện.
+
 Phím tắt: `1`–`4` hoặc `A`–`D` chọn đáp án, `Enter` sang câu, `←` `→` chuyển câu khi thi thử. Có giao diện sáng/tối. Mọi tiến độ lưu trong trình duyệt (localStorage).
 
 > FPT không công khai slide hay đề cương AID301c. Phần Học tập dựa trên bộ câu hỏi và các nguồn công khai ghi trong từng chương.

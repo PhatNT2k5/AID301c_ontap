@@ -3,6 +3,7 @@ import type { Question } from "../types";
 import { playCorrect, playWrong } from "../lib/sound";
 import { sameSet } from "../lib/text";
 import { useStore } from "../store";
+import { emitPet } from "../features/pet/petBus";
 import { QuestionMeta, QuestionView, useAnswerKeys, type OptionState } from "./QuestionView";
 
 type Props = {
@@ -27,6 +28,7 @@ export const PracticeCard = ({ question, nextLabel, wrongNote, onAnswered, onNex
     setFeedback(correct ? "correct" : "wrong");
     if (!correct) notebook.recordWrong(question.id);
     if (settings.soundOn) (correct ? playCorrect : playWrong)();
+    emitPet({ type: correct ? "correct" : "wrong" });
     onAnswered(correct);
   };
 

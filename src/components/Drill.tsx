@@ -1,6 +1,7 @@
 import { useState, type ReactNode } from "react";
 import { questionById } from "../data";
 import { PracticeCard } from "./PracticeCard";
+import { emitPet } from "../features/pet/petBus";
 
 export type DrillRun = {
   queue: string[];
@@ -32,7 +33,10 @@ export const Drill = ({ run, header, onChange, onFinish, onCorrect }: Props) => 
       ? { ...run, queue: rest, solved: [...run.solved, head] }
       : { ...run, queue: [...rest, head], mistakes: run.mistakes + 1 };
     setTurn((t) => t + 1);
-    if (updated.queue.length === 0) onFinish(updated);
+    if (updated.queue.length === 0) {
+      emitPet({ type: "complete" });
+      onFinish(updated);
+    }
     else onChange(updated);
   };
 

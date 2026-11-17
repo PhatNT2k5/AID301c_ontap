@@ -4,6 +4,7 @@ import { chapters, questions, reviewReasonLabel } from "../../data";
 import { fold } from "../../lib/text";
 import { useStore } from "../../store";
 import type { Question } from "../../types";
+import { emitPet } from "../pet/petBus";
 
 /** Read-only question card with the answer marked and a collapsible explanation. */
 export const QuestionCompact = ({ question: q, note }: { question: Question; note?: string }) => {
@@ -85,6 +86,7 @@ export const LookupPage = ({ initialFilter = "all" }: { initialFilter?: Filter }
           aria-label="Tìm câu hỏi"
           onChange={(e) => {
             setQuery(e.target.value);
+            if (e.target.value.length === 1) emitPet({ type: "search" });
             setLimit(PAGE);
           }}
         />

@@ -1,5 +1,6 @@
 import { Icon, type IconName } from "./components/Icon";
 import { Doodles } from "./components/Doodles";
+import { Pet } from "./features/pet/Pet";
 import { ExamPage } from "./features/exam/ExamPage";
 import { FptExamsPage } from "./features/fptexams/FptExamsPage";
 import { LookupPage } from "./features/lookup/LookupPage";
@@ -42,6 +43,14 @@ const Settings = () => {
         title={`Giao diện: ${themeLabel[settings.theme]} (bấm để đổi sang ${themeLabel[nextTheme]})`}
       >
         <Icon name={themeIcon[settings.theme]} />
+      </button>
+      <button
+        className="icon-btn"
+        onClick={settings.togglePet}
+        aria-pressed={settings.petOn}
+        title={settings.petOn ? "Ẩn pet" : "Hiện pet"}
+      >
+        <Icon name="paw" />
       </button>
     </div>
   );
@@ -102,6 +111,7 @@ export const App = () => {
         <Settings />
       </aside>
       <main className="main">{page}</main>
+      <Pet />
     </div>
   );
 };

@@ -74,6 +74,7 @@ const useNotebook = () => {
 const useSettings = () => {
   const [soundOn, setSound] = usePersisted<boolean>("sound", true);
   const [theme, setThemeValue] = usePersisted<Theme>("theme", "system");
+  const [petOn, setPet] = usePersisted<boolean>("pet", true);
 
   useEffect(() => {
     const root = document.documentElement;
@@ -86,6 +87,8 @@ const useSettings = () => {
     toggleSound: () => setSound((on) => !on),
     theme,
     setTheme: (t: Theme) => setThemeValue(() => t),
+    petOn,
+    togglePet: () => setPet((on) => !on),
   };
 };
 

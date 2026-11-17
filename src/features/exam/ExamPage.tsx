@@ -7,6 +7,7 @@ import { loadJson, removeKey, saveJson } from "../../lib/storage";
 import { formatClock, sameSet, shuffle } from "../../lib/text";
 import { navigate } from "../../lib/useHashRoute";
 import { useStore } from "../../store";
+import { emitPet } from "../pet/petBus";
 
 type Exam = {
   ids: string[];
@@ -211,6 +212,7 @@ const ExamRunner = ({ exam, onChange }: { exam: Exam; onChange: (exam: Exam) => 
       seconds: Math.round((finishedAt - exam.startedAt) / 1000),
     });
     if (settings.soundOn) playComplete();
+    emitPet({ type: "exam", score: (correct / exam.ids.length) * 10 });
     onChange({ ...exam, finishedAt });
   };
 
