@@ -1,57 +1,85 @@
 import { chapters, questions, sections } from "../../data";
 import { navigate } from "../../lib/useHashRoute";
-import type { ProgressApi } from "./progress";
+import { useStore } from "../../store";
 
-const statusLabel = { done: "Đã xong", open: "Đang mở", locked: "Đang khóa" } as const;
+const statusLabel = { done: "đã xong", open: "đang mở", locked: "đang khóa" } as const;
 
-export const ReviewHome = ({ api }: { api: ProgressApi }) => {
-  const doneCount = sections.filter((s) => api.statusOf(s.id) === "done").length;
-  const flagged = questions.filter((q) => q.needsReview).length;
+export const ReviewHome = () => {
+  const { progress: api, notebook } = useStore();
+  const done = sections.filter((s) => api.statusOf(s.id) === "done");
+  const learned = done.reduce((n, s) => n + s.questionIds.length, 0);
+  const next = api.firstOpen;
+  const nextRun = next ? api.getRun(next.id) : undefined;
+  const mistakeCount = Object.keys(notebook.mistakes).length;
 
   return (
     <div>
-      <section className="intro">
+      <header className="page-head">
         <h1>Ôn tập</h1>
-        <p>
-          {questions.length} câu trắc nghiệm gom từ 4 đề thi và 2 bộ Quizlet, đã bỏ câu trùng, chia thành{" "}
-          {sections.length} section. Trả lời đúng hết mọi câu trong một section thì section kế tiếp mới mở.
+        <p className="lead">
+          {questions.length} câu từ 4 đề thi và 2 bộ Quizlet, chia thành {sections.length} section. Trả lời đúng hết một
+          section thì section sau mới mở.
         </p>
-        <p className="muted">
-          Hoàn thành {doneCount}/{sections.length} section.{" "}
-          {flagged > 0 && (
-            <button className="link" onClick={() => navigate("audit")}>
-              {flagged} câu cần bạn kiểm tra đáp án
-            </button>
-          )}
-        </p>
+      </header>
+
+      <section className="resume">
+        <div className="resume-progress">
+          <div className="resume-numbers">
+            <span>
+              <strong>{done.length}</strong>/{sections.length} section
+            </span>
+            <span>
+              <strong>{learned}</strong>/{questions.length} câu
+            </span>
+          </div>
+          <div className="meter meter-lg">
+            <div className="meter-fill" style={{ width: `${(learned / questions.length) * 100}%` }} />
+          </div>
+        </div>
+        {next ? (
+          <button className="btn btn-primary btn-lg" onClick={() => navigate(`review/${next.id}`)}>
+            {nextRun ? `Làm tiếp section ${next.index + 1}` : `Bắt đầu section ${next.index + 1}`}
+          </button>
+        ) : (
+          <p className="resume-done">Bạn đã xong toàn bộ section. Thử sức với bài thi thử nhé.</p>
+        )}
+        {mistakeCount > 0 && (
+          <button className="link small" onClick={() => navigate("notebook")}>
+            {mistakeCount} câu từng làm sai đang nằm trong sổ tay
+          </button>
+        )}
       </section>
 
-      <ol className="track">
+      <ol className="sheet" aria-label="Bản đồ section">
         {chapters.map((chapter) => {
-          const chapterSections = sections.filter((s) => s.chapterId === chapter.id);
-          if (chapterSections.length === 0) return null;
+          const list = sections.filter((s) => s.chapterId === chapter.id);
+          if (list.length === 0) return null;
+          const chapterDone = list.filter((s) => api.statusOf(s.id) === "done").length;
           return (
-            <li key={chapter.id} className="track-chapter">
-              <p className="track-chapter-title">
-                Chương {chapter.id}. {chapter.title}
-              </p>
-              <ol className="track-stops">
-                {chapterSections.map((s) => {
+            <li key={chapter.id} className="sheet-row">
+              <div className="sheet-label">
+                <span className="sheet-chapter">Chương {chapter.id}</span>
+                <span className="sheet-title">{chapter.title}</span>
+                <span className="sheet-count">
+                  {chapterDone}/{list.length}
+                </span>
+              </div>
+              <ol className="bubbles">
+                {list.map((s) => {
                   const status = api.statusOf(s.id);
                   const run = api.getRun(s.id);
+                  const partial = status === "open" && run ? run.solved.length / s.questionIds.length : 0;
                   return (
-                    <li key={s.id} className={`stop stop-${status}`}>
-                      <span className="stop-dot" aria-hidden />
+                    <li key={s.id}>
                       <button
-                        className="stop-btn"
+                        className={`bubble bubble-${status}`}
+                        style={partial ? { ["--fill" as string]: `${partial * 100}%` } : undefined}
                         disabled={status === "locked"}
+                        title={`Section ${s.index + 1}: ${s.questionIds.length} câu, ${statusLabel[status]}`}
+                        aria-label={`Section ${s.index + 1}, ${s.questionIds.length} câu, ${statusLabel[status]}`}
                         onClick={() => navigate(`review/${s.id}`)}
                       >
-                        <span className="stop-name">Section {s.index + 1}</span>
-                        <span className="stop-info">
-                          {s.questionIds.length} câu · {statusLabel[status]}
-                          {run && status === "open" ? ` · đúng ${run.solved.length}` : ""}
-                        </span>
+                        {s.index + 1}
                       </button>
                     </li>
                   );
@@ -62,13 +90,25 @@ export const ReviewHome = ({ api }: { api: ProgressApi }) => {
         })}
       </ol>
 
+      <div className="legend" aria-hidden>
+        <span>
+          <i className="bubble-mini bubble-done" /> Đã xong
+        </span>
+        <span>
+          <i className="bubble-mini bubble-open" /> Đang mở
+        </span>
+        <span>
+          <i className="bubble-mini bubble-locked" /> Đang khóa
+        </span>
+      </div>
+
       <button
-        className="link small"
+        className="link small danger"
         onClick={() => {
-          if (window.confirm("Xoá toàn bộ tiến độ ôn tập?")) api.resetAll();
+          if (window.confirm("Xoá toàn bộ tiến độ section? Sổ tay và lịch sử thi thử vẫn giữ nguyên.")) api.resetAll();
         }}
       >
-        Xoá toàn bộ tiến độ
+        Xoá tiến độ section
       </button>
     </div>
   );

@@ -1,12 +1,9 @@
 import { useCallback, useState } from "react";
 import { sections } from "../../data";
 import { loadJson, removeKey, saveJson } from "../../lib/storage";
+import type { DrillRun } from "../../components/Drill";
 
-export type SectionRun = {
-  queue: string[];
-  solved: string[];
-  mistakes: number;
-};
+export type SectionRun = DrillRun;
 
 type Progress = {
   completed: string[];
@@ -62,7 +59,9 @@ export const useProgress = () => {
     setProgress(empty);
   };
 
-  return { progress, statusOf, getRun, saveRun, completeSection, resetSection, resetAll };
+  const firstOpen = sections.find((s) => statusOf(s.id) === "open");
+
+  return { progress, firstOpen, statusOf, getRun, saveRun, completeSection, resetSection, resetAll };
 };
 
 export type ProgressApi = ReturnType<typeof useProgress>;

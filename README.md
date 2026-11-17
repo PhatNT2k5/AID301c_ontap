@@ -1,10 +1,14 @@
 # AID301c – Web ôn thi
 
-Website học môn AID301c (FPT University), giao diện tiếng Việt, gồm 3 phần:
+Website học môn AID301c (FPT University), giao diện tiếng Việt, gồm các phần:
 
-- **Ôn tập**: 235 câu trắc nghiệm gom từ 4 đề thi (FA25 FE, SP26 FE, SU26 FE, SU26 RE) và 2 bộ Quizlet, đã bỏ câu trùng, chia thành các section khoảng 10 câu. Phải trả lời đúng hết các câu trong section thì section sau mới mở. Chọn sai thì hiện giải thích tiếng Việt và câu đó quay lại ở cuối section. Có âm thanh khi đúng, khi sai và khi xong section. Tiến độ được lưu trong trình duyệt.
-- **Học tập**: 6 chương bám theo chuỗi khóa IBM AI Enterprise Workflow (Coursera), mỗi chương có video thuyết minh khoảng 5 phút kèm tóm tắt và nguồn.
-- **Cần kiểm tra**: danh sách những câu chưa có đáp án chính thức (do AI giải, lấy theo bình luận, các nguồn mâu thuẫn, hoặc AI không đồng ý với đáp án nguồn).
+- **Ôn tập**: 235 câu trắc nghiệm gom từ 4 đề thi (FA25 FE, SP26 FE, SU26 FE, SU26 RE) và 2 bộ Quizlet, đã bỏ câu trùng, chia thành 24 section khoảng 10 câu (bản đồ dạng phiếu tô trắc nghiệm). Phải trả lời đúng hết các câu trong section thì section sau mới mở. Chọn sai thì hiện giải thích tiếng Việt và câu đó quay lại ở cuối section. Có âm thanh khi đúng, khi sai và khi xong section.
+- **Thi thử**: bốc ngẫu nhiên 20/30/50 câu theo chương, hẹn giờ 1,2 phút/câu, bảng chuyển câu, đánh dấu xem lại, chấm điểm thang 10, thống kê theo chương và lịch sử các lần thi.
+- **Sổ tay**: câu từng làm sai (tự thêm) và câu đánh dấu sao, có chế độ luyện lại.
+- **Học tập**: 6 chương bám theo chuỗi khóa IBM AI Enterprise Workflow (Coursera), mỗi chương có video thuyết minh khoảng 6 phút kèm tóm tắt và nguồn.
+- **Tra cứu**: tìm trong câu hỏi, đáp án và giải thích (gõ không dấu được), lọc theo chương, câu cần kiểm tra đáp án, câu đánh dấu, câu từng sai.
+
+Phím tắt: `1`–`4` hoặc `A`–`D` chọn đáp án, `Enter` sang câu, `←` `→` chuyển câu khi thi thử. Có giao diện sáng/tối. Mọi tiến độ lưu trong trình duyệt (localStorage).
 
 > FPT không công khai slide hay đề cương AID301c. Phần Học tập dựa trên bộ câu hỏi và các nguồn công khai ghi trong từng chương.
 

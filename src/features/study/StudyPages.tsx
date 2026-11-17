@@ -1,38 +1,59 @@
+import { Icon } from "../../components/Icon";
 import { chapters, questions, sections } from "../../data";
 import { navigate } from "../../lib/useHashRoute";
+import { useStore } from "../../store";
 
-export const StudyHome = () => (
-  <div>
-    <section className="intro">
-      <h1>Học tập</h1>
-      <p>
-        FPT không công khai slide hay đề cương AID301c. Nội dung đề thi bám sát chuỗi khóa{" "}
-        <a href="https://www.coursera.org/specializations/ibm-ai-workflow" target="_blank" rel="noreferrer">
-          IBM AI Enterprise Workflow
-        </a>{" "}
-        trên Coursera, nên 6 chương dưới đây đi theo 6 khóa của chuỗi đó. Mỗi chương có video thuyết minh khoảng 5
-        phút, tóm tắt ý chính và nguồn tham khảo.
-      </p>
-    </section>
-    <ol className="chapter-list">
-      {chapters.map((c) => (
-        <li key={c.id}>
-          <button className="chapter-row" onClick={() => navigate(`study/${c.id}`)}>
-            <span className="chapter-no">{c.id}</span>
-            <span>
-              <span className="chapter-title">{c.title}</span>
-              <span className="muted small block">
-                {c.ibmCourse} · {questions.filter((q) => q.chapterId === c.id).length} câu ôn tập
-              </span>
-            </span>
-          </button>
-        </li>
-      ))}
-    </ol>
-  </div>
-);
+export const StudyHome = () => {
+  const { notebook, progress } = useStore();
+  return (
+    <div>
+      <header className="page-head">
+        <h1>Học tập</h1>
+        <p className="lead">
+          FPT không công khai slide hay đề cương AID301c. Nội dung đề bám sát chuỗi khóa{" "}
+          <a href="https://www.coursera.org/specializations/ibm-ai-workflow" target="_blank" rel="noreferrer">
+            IBM AI Enterprise Workflow
+          </a>{" "}
+          trên Coursera, nên 6 chương dưới đây đi theo 6 khóa đó. Mỗi chương có video khoảng 6 phút.
+        </p>
+      </header>
+      <ol className="chapter-list">
+        {chapters.map((c) => {
+          const watched = notebook.watched.includes(c.id);
+          const list = sections.filter((s) => s.chapterId === c.id);
+          const done = list.filter((s) => progress.statusOf(s.id) === "done").length;
+          return (
+            <li key={c.id}>
+              <button className="window chapter-card" onClick={() => navigate(`study/${c.id}`)}>
+                <span className="window-bar" aria-hidden>
+                  <span>chuong_{c.id}.mp4</span>
+                  <i />
+                  <i />
+                  <i />
+                </span>
+                <span className="chapter-body">
+                  <span className={`chapter-no ${watched ? "chapter-no-done" : ""}`}>
+                    {watched ? <Icon name="check" size={22} /> : c.id}
+                  </span>
+                  <span>
+                    <span className="chapter-title">{c.title}</span>
+                    <span className="chapter-sub">
+                      {c.ibmCourse} · {questions.filter((q) => q.chapterId === c.id).length} câu · ôn xong {done}/
+                      {list.length} section
+                    </span>
+                  </span>
+                </span>
+              </button>
+            </li>
+          );
+        })}
+      </ol>
+    </div>
+  );
+};
 
 export const ChapterPage = ({ id }: { id: number }) => {
+  const { notebook } = useStore();
   const chapter = chapters.find((c) => c.id === id);
   if (!chapter) return <p className="empty">Không có chương {id}.</p>;
   const firstSection = sections.find((s) => s.chapterId === id);
@@ -41,26 +62,39 @@ export const ChapterPage = ({ id }: { id: number }) => {
 
   return (
     <article className="chapter">
-      <button className="link" onClick={() => navigate("study")}>← Danh sách chương</button>
-      <h1>
-        Chương {chapter.id}. {chapter.title}
-      </h1>
-      <p className="muted">Tương ứng: {chapter.ibmCourse}</p>
+      <button className="back" onClick={() => navigate("study")}>
+        <Icon name="back" size={16} /> Danh sách chương
+      </button>
+      <header className="page-head">
+        <p className="kicker">Chương {chapter.id}</p>
+        <h1>{chapter.title}</h1>
+        <p className="muted">Tương ứng: {chapter.ibmCourse}</p>
+      </header>
 
-      <video className="video" controls preload="metadata" src={chapter.video}>
-        Trình duyệt không phát được video. Mở trực tiếp file {chapter.video}.
-      </video>
+      <div className="window video-window">
+        <div className="window-bar" aria-hidden>
+          <span>chuong_{chapter.id}.mp4</span>
+          <i />
+          <i />
+          <i />
+        </div>
+        <video className="video" controls preload="metadata" src={chapter.video} onEnded={() => notebook.markWatched(id)}>
+          Trình duyệt không phát được video. Mở trực tiếp file {chapter.video}.
+        </video>
+      </div>
 
       <p className="lead">{chapter.intro}</p>
 
-      {chapter.keyPoints.map((kp) => (
-        <section key={kp.heading} className="keypoint">
-          <h2>{kp.heading}</h2>
-          {kp.body.split("\n").map((para, i) => (
-            <p key={i}>{para}</p>
-          ))}
-        </section>
-      ))}
+      <div className="keypoints">
+        {chapter.keyPoints.map((kp) => (
+          <section key={kp.heading} className="keypoint">
+            <h2>{kp.heading}</h2>
+            {kp.body.split("\n").map((para, i) => (
+              <p key={i}>{para}</p>
+            ))}
+          </section>
+        ))}
+      </div>
 
       <section className="sources">
         <h2>Nguồn</h2>
@@ -80,8 +114,8 @@ export const ChapterPage = ({ id }: { id: number }) => {
 
       <div className="row">
         {firstSection && (
-          <button className="btn btn-primary" onClick={() => navigate("review")}>
-            Ôn tập câu hỏi chương này
+          <button className="btn btn-primary" onClick={() => navigate(`review/${firstSection.id}`)}>
+            Ôn câu hỏi chương này
           </button>
         )}
         {prev && (
