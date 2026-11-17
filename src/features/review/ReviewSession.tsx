@@ -20,7 +20,6 @@ export const ReviewSession = ({ sectionId }: { sectionId: string }) => {
 
   if (!section || !run) return <p className="empty">Không tìm thấy section này.</p>;
 
-  const status = api.statusOf(section.id);
   const chapter = chapters.find((c) => c.id === section.chapterId);
   const sectionNo = section.index + 1;
   const nextSection = sections[section.index + 1];
@@ -30,18 +29,6 @@ export const ReviewSession = ({ sectionId }: { sectionId: string }) => {
       <Icon name="back" size={16} /> Bản đồ section
     </button>
   );
-
-  if (status === "locked" && !finished) {
-    return (
-      <div className="panel center">
-        <Icon name="lock" size={28} />
-        <p>Section {sectionNo} đang khóa. Hoàn thành các section trước để mở.</p>
-        <button className="btn" onClick={() => navigate("review")}>
-          Về bản đồ section
-        </button>
-      </div>
-    );
-  }
 
   if (finished) {
     return (

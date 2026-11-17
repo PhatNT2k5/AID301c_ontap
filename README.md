@@ -2,7 +2,7 @@
 
 Website học môn AID301c (FPT University), giao diện tiếng Việt, gồm các phần:
 
-- **Ôn tập**: 235 câu trắc nghiệm gom từ 4 đề thi (FA25 FE, SP26 FE, SU26 FE, SU26 RE) và 2 bộ Quizlet, đã bỏ câu trùng, chia thành 24 section khoảng 10 câu (bản đồ dạng phiếu tô trắc nghiệm). Phải trả lời đúng hết các câu trong section thì section sau mới mở. Chọn sai thì hiện giải thích tiếng Việt và câu đó quay lại ở cuối section. Có âm thanh khi đúng, khi sai và khi xong section.
+- **Ôn tập**: 235 câu trắc nghiệm gom từ 4 đề thi (FA25 FE, SP26 FE, SU26 FE, SU26 RE) và 2 bộ Quizlet, đã bỏ câu trùng, chia thành 24 section khoảng 10 câu (bản đồ dạng phiếu tô trắc nghiệm). Section nào cũng mở, làm theo thứ tự nào cũng được; trả lời đúng hết mọi câu thì section đó xong. Chọn sai thì hiện giải thích tiếng Việt và câu đó quay lại ở cuối section. Có âm thanh khi đúng, khi sai và khi xong section.
 - **Đề thi FE**: 4 đề gốc của FPT (SU26 FE, SU26 RE, SP26 FE, FA25 FE) nhóm theo kỳ, giữ đúng thứ tự câu, mỗi đề chia 3 phần để luyện, hoặc thi cả đề có hẹn giờ.
 - **Thi thử**: bốc ngẫu nhiên 20/30/50 câu theo chương, hẹn giờ 1,2 phút/câu, bảng chuyển câu, đánh dấu xem lại, chấm điểm thang 10, thống kê theo chương và lịch sử các lần thi.
 - **Sổ tay**: câu từng làm sai (tự thêm) và câu đánh dấu sao, có chế độ luyện lại.

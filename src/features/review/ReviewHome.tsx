@@ -2,7 +2,7 @@ import { chapters, questions, sections } from "../../data";
 import { navigate } from "../../lib/useHashRoute";
 import { useStore } from "../../store";
 
-const statusLabel = { done: "đã xong", open: "đang mở", locked: "đang khóa" } as const;
+const statusLabel = { done: "đã xong", doing: "đang làm", new: "chưa làm" } as const;
 
 export const ReviewHome = () => {
   const { progress: api, notebook } = useStore();
@@ -17,8 +17,8 @@ export const ReviewHome = () => {
       <header className="page-head">
         <h1>Ôn tập</h1>
         <p className="lead">
-          {questions.length} câu từ 4 đề thi và 2 bộ Quizlet, chia thành {sections.length} section. Trả lời đúng hết một
-          section thì section sau mới mở.
+          {questions.length} câu từ 4 đề thi và 2 bộ Quizlet, chia thành {sections.length} section. Chọn section nào làm
+          cũng được, trả lời đúng hết mọi câu thì section đó xong.
         </p>
       </header>
 
@@ -68,13 +68,12 @@ export const ReviewHome = () => {
                 {list.map((s) => {
                   const status = api.statusOf(s.id);
                   const run = api.getRun(s.id);
-                  const partial = status === "open" && run ? run.solved.length / s.questionIds.length : 0;
+                  const partial = status === "doing" && run ? run.solved.length / s.questionIds.length : 0;
                   return (
                     <li key={s.id}>
                       <button
-                        className={`bubble bubble-${status}`}
+                        className={`bubble ${status === "done" ? "bubble-done" : status === "doing" ? "bubble-open" : "bubble-open-plain"}`}
                         style={partial ? { ["--fill" as string]: `${partial * 100}%` } : undefined}
-                        disabled={status === "locked"}
                         title={`Section ${s.index + 1}: ${s.questionIds.length} câu, ${statusLabel[status]}`}
                         aria-label={`Section ${s.index + 1}, ${s.questionIds.length} câu, ${statusLabel[status]}`}
                         onClick={() => navigate(`review/${s.id}`)}
@@ -95,10 +94,10 @@ export const ReviewHome = () => {
           <i className="bubble-mini bubble-done" /> Đã xong
         </span>
         <span>
-          <i className="bubble-mini bubble-open" /> Đang mở
+          <i className="bubble-mini bubble-open" /> Đang làm
         </span>
         <span>
-          <i className="bubble-mini bubble-locked" /> Đang khóa
+          <i className="bubble-mini" /> Chưa làm
         </span>
       </div>
 

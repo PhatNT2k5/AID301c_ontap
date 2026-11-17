@@ -13,7 +13,7 @@ type Progress = {
 const KEY = "progress-v1";
 const empty: Progress = { completed: [], runs: {} };
 
-export type SectionStatus = "done" | "open" | "locked";
+export type SectionStatus = "done" | "doing" | "new";
 
 export const useProgress = () => {
   const [progress, setProgress] = useState<Progress>(() => loadJson(KEY, empty));
@@ -26,12 +26,10 @@ export const useProgress = () => {
     });
   }, []);
 
-  // A section unlocks only after every earlier section is complete.
+  // Every section is open; status only reflects what the learner has done.
   const statusOf = (sectionId: string): SectionStatus => {
     if (progress.completed.includes(sectionId)) return "done";
-    const idx = sections.findIndex((s) => s.id === sectionId);
-    const allBeforeDone = sections.slice(0, idx).every((s) => progress.completed.includes(s.id));
-    return allBeforeDone ? "open" : "locked";
+    return progress.runs[sectionId] ? "doing" : "new";
   };
 
   const getRun = (sectionId: string): SectionRun | undefined => progress.runs[sectionId];
@@ -59,7 +57,9 @@ export const useProgress = () => {
     setProgress(empty);
   };
 
-  const firstOpen = sections.find((s) => statusOf(s.id) === "open");
+  // Suggest resuming an unfinished section first, otherwise the first one not done yet.
+  const firstOpen =
+    sections.find((s) => statusOf(s.id) === "doing") ?? sections.find((s) => statusOf(s.id) !== "done");
 
   return { progress, firstOpen, statusOf, getRun, saveRun, completeSection, resetSection, resetAll };
 };
