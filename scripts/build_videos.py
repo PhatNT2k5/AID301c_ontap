@@ -69,7 +69,7 @@ async def _stream_audio(text: str, path: Path) -> None:
                 audio.write(chunk["data"])
 
 
-async def tts_to_file(text: str, path: Path, attempts: int = 12) -> None:
+async def tts_to_file(text: str, path: Path, attempts: int = 25) -> None:
     # The edge-tts service randomly returns no audio for some requests; retry with backoff.
     for attempt in range(1, attempts + 1):
         try:
@@ -84,7 +84,7 @@ async def tts_to_file(text: str, path: Path, attempts: int = 12) -> None:
         ) as err:
             if attempt == attempts:
                 raise RuntimeError(f"TTS failed after {attempts} attempts: {text[:60]}") from err
-            await asyncio.sleep(min(2.0 * attempt, 20.0))
+            await asyncio.sleep(min(3.0 * attempt, 30.0))
 
 
 async def synthesize(text: str, mp3_path: Path) -> list[Sentence]:
