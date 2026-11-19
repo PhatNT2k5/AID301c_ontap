@@ -56,3 +56,47 @@ export const chapterStats = chapters.map((c) => ({
   chapter: c,
   stats: statsFor(questions.filter((q) => q.chapterId === c.id)),
 }));
+
+/* ---------- Quizlet vs FPT exams ---------- */
+
+const EXAM_IDS: SourceId[] = ["SU26 FE", "SU26 RE", "SP26 FE", "FA25 FE"];
+const QUIZLET_IDS: SourceId[] = ["Quizlet 1", "Quizlet 2"];
+
+export type OverlapStats = {
+  /** In an FPT exam and in a Quizlet set: the questions most worth knowing. */
+  both: Question[];
+  examOnly: number;
+  quizletOnly: number;
+  quizlet1: number;
+  quizlet2: number;
+  /** Questions in both Quizlet sets. */
+  quizletShared: number;
+  /** Distinct questions across the two Quizlet sets. */
+  quizletDistinct: number;
+  perExam: { id: SourceId; total: number; inQuizlet: number }[];
+};
+
+export const overlapFor = (list: Question[]): OverlapStats => {
+  const tagged = list.map((q) => {
+    const set = distinctSources(q);
+    return {
+      q,
+      set,
+      exam: EXAM_IDS.some((s) => set.has(s)),
+      quizlet: QUIZLET_IDS.some((s) => set.has(s)),
+    };
+  });
+  return {
+    both: tagged.filter((t) => t.exam && t.quizlet).map((t) => t.q),
+    examOnly: tagged.filter((t) => t.exam && !t.quizlet).length,
+    quizletOnly: tagged.filter((t) => !t.exam && t.quizlet).length,
+    quizlet1: tagged.filter((t) => t.set.has("Quizlet 1")).length,
+    quizlet2: tagged.filter((t) => t.set.has("Quizlet 2")).length,
+    quizletShared: tagged.filter((t) => t.set.has("Quizlet 1") && t.set.has("Quizlet 2")).length,
+    quizletDistinct: tagged.filter((t) => t.quizlet).length,
+    perExam: EXAM_IDS.map((id) => {
+      const inExam = tagged.filter((t) => t.set.has(id));
+      return { id, total: inExam.length, inQuizlet: inExam.filter((t) => t.quizlet).length };
+    }),
+  };
+};

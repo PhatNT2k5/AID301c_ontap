@@ -1,5 +1,7 @@
-import { useState, type MouseEvent } from "react";
-import { chapterStats, overallStats, type ScopeStats, type SourceSlice } from "./sourceStats";
+import { useMemo, useState, type MouseEvent } from "react";
+import { questions } from "../../data";
+import { OverlapSection } from "./OverlapSection";
+import { chapterStats, overallStats, overlapFor, type ScopeStats, type SourceSlice } from "./sourceStats";
 
 const pct = (share: number): string => `${Math.round(share * 100)}%`;
 
@@ -198,6 +200,7 @@ export const StatsPage = () => {
   const exams = current.slices.filter((s) => s.kind === "Đề FPT");
   const most = Math.max(...exams.map((s) => s.count));
   const leaders = exams.filter((s) => s.count === most);
+  const overlap = useMemo(() => overlapFor(scope === 0 ? questions : questions.filter((q) => q.chapterId === scope)), [scope]);
 
   return (
     <div className="wide stats">
@@ -260,6 +263,8 @@ export const StatsPage = () => {
           </div>
         </div>
       </section>
+
+      <OverlapSection key={scope} data={overlap} scopeLabel={chapter ? `chương ${chapter.id}` : "cả 6 chương"} />
 
       <section className="stats-compare">
         <h2>So sánh 6 chương</h2>
