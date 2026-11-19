@@ -63,8 +63,8 @@ export const playComplete = (): void =>
 
 /* ---------- MeoLearn cat sounds ---------- */
 
-// Real cat recordings from Wikimedia Commons (CC0 / public domain), trimmed and converted by
-// scripts/cut_cat_sounds.py into public/pet/sounds. Each sound may have a few takes.
+// Cat sounds synthesized offline by scripts/synth_cat_sounds.py into public/pet/sounds
+// (clean, no recording noise). Each sound may have a few takes.
 export type CatSound = "mew" | "meow" | "sadMeow" | "trill" | "hiss" | "purr" | "doubleMew";
 
 const CAT_FILES: Record<CatSound, string[]> = {
