@@ -9,7 +9,7 @@ Website học môn AID301c (FPT University), giao diện tiếng Việt, gồm c
 - **Học tập**: 6 chương bám theo chuỗi khóa IBM AI Enterprise Workflow (Coursera), mỗi chương có video thuyết minh khoảng 6 phút kèm tóm tắt và nguồn.
 - **Tra cứu**: tìm trong câu hỏi, đáp án và giải thích (gõ không dấu được), lọc theo chương, câu cần kiểm tra đáp án, câu đánh dấu, câu từng sai.
 
-Pet: mèo đốm đeo tai nghe ở góc màn hình, đổi trạng thái theo việc học (vui khi đúng, buồn khi sai, giận khi sai 3 câu liền, phấn khích khi xong phần hoặc combo, ngủ khi để lâu không đụng, tò mò khi tìm kiếm). Bấm vào pet để nghe cổ vũ, nút hình bàn chân để ẩn hoặc hiện.
+Pet MeoLearn: mèo trắng đốm xanh đeo tai nghe ở góc dưới phải, đổi tư thế theo việc học (tò mò khi bắt đầu làm bài hoặc tra cứu, vui khi đúng hoặc xong phần, buồn khi sai, giận khi sai 3 câu liền, ngủ khi để lâu không đụng). Bấm vào pet để nghe cổ vũ, nút hình bàn chân để ẩn hoặc hiện.
 
 Phím tắt: `1`–`4` hoặc `A`–`D` chọn đáp án, `Enter` sang câu, `←` `→` chuyển câu khi thi thử. Có giao diện sáng/tối. Mọi tiến độ lưu trong trình duyệt (localStorage).
 
@@ -69,3 +69,14 @@ python -m venv .venv
 ```
 
 Script dùng giọng `vi-VN-HoaiMyNeural` của dịch vụ Microsoft Edge TTS, nên cần có mạng; kịch bản sẽ được gửi lên dịch vụ đó. Slide được Playwright render thành ảnh, phụ đề in thẳng vào hình, rồi ghép thành MP4 bằng ffmpeg đi kèm `imageio-ffmpeg`.
+
+### Tạo lại sprite pet
+
+Các tư thế pet được cắt từ `image-pet/pet.png` ra `public/pet/*.webp` (nền trong suốt, cùng khung, chân chạm đáy):
+
+```bash
+.venv/Scripts/pip install numpy scipy pillow
+.venv/Scripts/python scripts/cut_pet.py
+```
+
+Thân mèo cùng màu với nền ảnh nên không tách nền bằng màu hay rembg được. Script loang nền từ mép ảnh và dừng ở nét viền. Toạ độ từng tư thế, vùng xoá trang trí và nét bịt chỗ viền hở khai báo trong `POSES` ở đầu script.

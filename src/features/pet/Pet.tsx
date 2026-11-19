@@ -1,16 +1,29 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useStore } from "../../store";
-import { PetArt, type Mood } from "./PetArt";
 import { onPet } from "./petBus";
+
+// Sprites are cut from image-pet/pet.png by scripts/cut_pet.py; all share one canvas size with
+// the feet on the bottom edge, so swapping the src never shifts the pet.
+export type Mood = "idle" | "happy" | "sad" | "angry" | "sleepy" | "curious";
+
+const MOODS: Mood[] = ["idle", "happy", "sad", "angry", "sleepy", "curious"];
+const spriteSrc = (mood: Mood) => `pet/${mood}.webp`;
+
+// Effects that were drawn beside each pose on the sheet, shown as separate overlays.
+const effect: Partial<Record<Mood, string>> = {
+  happy: "note",
+  angry: "anger",
+  sleepy: "zzz",
+  curious: "question",
+};
 
 const lines: Record<Mood, string[]> = {
   idle: ["Hi! Ôn bài cùng mình nha", "Hôm nay làm 1 section nhé?", "Mình ngồi đây cổ vũ nè"],
   happy: ["Đúng rồi!", "Giỏi quá~", "Meow~ chuẩn luôn", "Tiếp nào tiếp nào!"],
   sad: ["Sai mất rồi...", "Không sao, đọc giải thích nha", "Câu này sẽ quay lại, nhớ kỹ nha"],
   angry: ["Sai 3 câu liền rồi đó!", "Hmph! Đọc kỹ đề nha", "Tập trung nào!"],
-  excited: ["Wow! Xong rồi!", "Đỉnh quá đi!", "Giỏi ghê luôn!"],
   sleepy: ["Zzz... buồn ngủ quá", "Nghỉ chút rồi học tiếp nha..."],
-  curious: ["Tìm gì đó?", "Hửm?", "Câu nào khó vậy?"],
+  curious: ["Tìm gì đó?", "Hửm? Câu này hay nè", "Để xem nào..."],
 };
 
 const cheers = [
@@ -52,6 +65,12 @@ export const Pet = () => {
     }
   }, []);
 
+  // Preload every pose so the first mood change does not flash an empty frame.
+  useEffect(() => {
+    for (const m of MOODS) new Image().src = spriteSrc(m);
+    for (const fx of Object.values(effect)) new Image().src = `pet/fx-${fx}.webp`;
+  }, []);
+
   // Greeting bubble on load fades by itself.
   useEffect(() => {
     timers.current.bubble = window.setTimeout(() => setBubble(null), BUBBLE_MS);
@@ -71,8 +90,7 @@ export const Pet = () => {
           case "correct":
             s.right += 1;
             s.wrong = 0;
-            if (s.right % 5 === 0) say("excited", `Combo ${s.right} câu đúng liền!`);
-            else say("happy");
+            say("happy", s.right % 5 === 0 ? `Combo ${s.right} câu đúng liền!` : undefined);
             break;
           case "wrong":
             s.wrong += 1;
@@ -80,15 +98,15 @@ export const Pet = () => {
             say(s.wrong >= 3 ? "angry" : "sad");
             break;
           case "complete":
-            say("excited", pick(["Xong rồi! Giỏi quá~", "Wow! Hoàn thành luôn!", "Thêm một phần nữa xong!"]));
+            say("happy", pick(["Xong rồi! Giỏi quá~", "Hoàn thành luôn!", "Thêm một phần nữa xong!"]));
             break;
           case "exam": {
             const score = event.score.toFixed(1);
-            if (event.score >= 8) say("excited", `${score} điểm! Wow!`);
-            else if (event.score >= 5) say("happy", `${score} điểm, qua môn rồi!`);
+            if (event.score >= 5) say("happy", `${score} điểm${event.score >= 8 ? "! Wow!" : ", qua môn rồi!"}`);
             else say("sad", `${score} điểm... ôn thêm chút nha`);
             break;
           }
+          case "start":
           case "search":
             say("curious");
             break;
@@ -117,8 +135,10 @@ export const Pet = () => {
 
   if (!settings.petOn) return null;
 
+  const fx = effect[mood];
+
   return (
-    <div className="pet" data-mood={mood}>
+    <div className={`pet pet-${mood}`} data-mood={mood}>
       {bubble && (
         <p className="pet-bubble" role="status">
           {bubble}
@@ -127,10 +147,11 @@ export const Pet = () => {
       <button
         className="pet-btn"
         title="Bấm để nhận lời cổ vũ"
-        aria-label="Pet cổ vũ"
+        aria-label="MeoLearn, bấm để nhận lời cổ vũ"
         onClick={() => say("happy", pick(cheers))}
       >
-        <PetArt mood={mood} />
+        <img className="pet-sprite" src={spriteSrc(mood)} alt="" draggable={false} />
+        {fx && <img key={fx} className={`pet-fx pet-fx-${fx}`} src={`pet/fx-${fx}.webp`} alt="" draggable={false} />}
       </button>
     </div>
   );

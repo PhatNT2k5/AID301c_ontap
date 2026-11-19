@@ -1578,33 +1578,61 @@ fieldset legend {
   }
 }
 
-/* ---------- pet ---------- */
+/* ---------- pet (sprites cut from image-pet/pet.png) ---------- */
 .pet {
   position: fixed;
   right: 22px;
   bottom: 16px;
   z-index: 6;
-  width: 124px;
+  width: 130px;
   pointer-events: none;
 }
 .pet-btn {
+  position: relative;
   display: block;
   width: 100%;
   pointer-events: auto;
-  filter: drop-shadow(2px 3px 0 color-mix(in srgb, var(--line) 25%, transparent));
 }
 .pet-btn:focus-visible {
   outline-offset: -4px;
 }
-.pet-art {
+.pet-sprite {
   display: block;
   width: 100%;
-  overflow: visible;
+  height: auto;
+  transform-origin: 50% 100%;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+.pet-fx {
+  position: absolute;
+  pointer-events: none;
+  animation: pet-fx-float 1.8s ease-in-out infinite;
+}
+.pet-fx-zzz {
+  width: 34%;
+  right: -4%;
+  top: 4%;
+}
+.pet-fx-question {
+  width: 16%;
+  right: 2%;
+  top: -6%;
+}
+.pet-fx-note {
+  width: 17%;
+  right: 0;
+  top: 0;
+}
+.pet-fx-anger {
+  width: 24%;
+  right: 0;
+  top: 2%;
 }
 .pet-bubble {
   position: absolute;
-  right: 70%;
-  bottom: 86%;
+  right: 72%;
+  bottom: 82%;
   width: max-content;
   max-width: 210px;
   padding: 7px 12px;
@@ -1619,201 +1647,88 @@ fieldset legend {
   animation: pet-pop-in 200ms ease-out;
 }
 
-.pet-line {
-  stroke: var(--line);
-  stroke-width: 2.6;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  fill: none;
+/* Light motion per mood; the drawing itself is never altered. */
+.pet-idle .pet-sprite {
+  animation: pet-bob 2.6s ease-in-out infinite;
 }
-.pet-fill {
-  fill: var(--surface);
+.pet-happy .pet-sprite {
+  animation: pet-wiggle 0.36s ease-in-out 4;
 }
-.pet-fill-mint {
-  fill: var(--mint);
+.pet-angry .pet-sprite {
+  animation: pet-shake 0.12s linear 7;
 }
-.pet-spot {
-  fill: var(--mint);
-  stroke: none;
+.pet-sleepy .pet-sprite {
+  animation: pet-breathe 3.6s ease-in-out infinite;
 }
-.pet-blush {
-  fill: var(--accent);
-  opacity: 0.28;
+.pet-sad .pet-sprite {
+  animation: pet-droop 0.5s ease-out forwards;
 }
-.pet-ink-fill {
-  fill: var(--ink);
-  stroke: none;
-}
-.pet-band {
-  fill: none;
-  stroke: var(--ink);
-  stroke-width: 6;
-  stroke-linecap: round;
-}
-.pet-cup {
-  fill: var(--accent);
-}
-.pet-cup-star {
-  fill: #f6efa6;
-}
-.pet-tear {
-  fill: #a8dcd6;
-  stroke: none;
-}
-.pet-note,
-.pet-zzz,
-.pet-question {
-  fill: var(--ink);
-  font-family: var(--hand);
-  font-weight: 600;
-}
-.pet-note {
-  font-size: 20px;
-}
-.pet-zzz {
-  font-size: 15px;
-}
-.pet-zzz-2 {
-  font-size: 18px;
-}
-.pet-zzz-3 {
-  font-size: 22px;
-}
-.pet-question {
-  font-size: 30px;
-}
-.pet-star-deco,
-.pet-sparkle {
-  fill: #e9df7a;
-  stroke: var(--line);
-  stroke-width: 1.2;
-}
-.pet-anger {
-  fill: none;
-  stroke: var(--wrong);
-  stroke-width: 3;
-  stroke-linecap: round;
-}
-.pet-cloud {
-  fill: var(--line-soft);
-  stroke: var(--line);
-  stroke-width: 2;
-}
-.pet-rain {
-  stroke: #7fc4bd;
-  stroke-width: 2.4;
-  stroke-linecap: round;
+.pet-curious .pet-sprite {
+  animation: pet-tilt 1.4s ease-in-out infinite alternate;
 }
 
-/* mood motion */
-.pet-figure,
-.pet-head,
-.pet-blink,
-.pet-ears {
-  transform-box: fill-box;
-  transform-origin: 50% 100%;
-}
-.pet-blink {
-  transform-origin: 50% 50%;
-  animation: pet-blink 4.5s infinite;
-}
-.pet-idle .pet-figure {
-  animation: pet-breathe 3.2s ease-in-out infinite;
-}
-.pet-happy .pet-figure {
-  animation: pet-bounce 0.5s ease-in-out 3;
-}
-.pet-excited .pet-figure {
-  animation: pet-jump 0.6s ease-out 2;
-}
-.pet-angry .pet-figure {
-  animation: pet-shake 0.12s linear 6;
-}
-.pet-sad .pet-figure {
-  transform: translateY(4px) scaleY(0.96);
-}
-.pet-sad .pet-ears {
-  transform: scaleY(0.75);
-}
-.pet-sleepy .pet-figure {
-  transform: translateY(8px) scaleY(0.9);
-  animation: pet-snooze 4s ease-in-out infinite;
-}
-.pet-curious .pet-head {
-  transform: rotate(-8deg);
-  transform-origin: 50% 90%;
-}
-.pet-float {
-  animation: pet-float 1.6s ease-in-out infinite;
-}
-.pet-pop {
-  transform-box: fill-box;
-  transform-origin: center;
-  animation: pet-twinkle 0.8s ease-in-out infinite alternate;
-}
-.pet-rain {
-  animation: pet-rain 0.6s linear infinite;
-}
-
-@keyframes pet-breathe {
-  50% { transform: scale(1.02, 0.98); }
-}
-@keyframes pet-blink {
-  0%, 94%, 100% { transform: scaleY(1); }
-  97% { transform: scaleY(0.1); }
-}
-@keyframes pet-bounce {
-  50% { transform: translateY(-8px); }
-}
-@keyframes pet-jump {
-  40% { transform: translateY(-16px) scale(1.04); }
-  70% { transform: translateY(0) scale(1.06, 0.94); }
-}
-@keyframes pet-shake {
-  25% { transform: translateX(-2px) rotate(-2deg); }
-  75% { transform: translateX(2px) rotate(2deg); }
-}
-@keyframes pet-snooze {
-  50% { transform: translateY(8px) scaleY(0.86); }
-}
-@keyframes pet-float {
+@keyframes pet-bob {
   50% { transform: translateY(-5px); }
 }
-@keyframes pet-twinkle {
-  to { opacity: 0.45; transform: scale(0.85); }
+@keyframes pet-wiggle {
+  25% { transform: rotate(-4deg) translateY(-3px); }
+  75% { transform: rotate(4deg) translateY(-3px); }
 }
-@keyframes pet-rain {
-  to { transform: translateY(4px); opacity: 0.3; }
+@keyframes pet-shake {
+  25% { transform: translateX(-3px); }
+  75% { transform: translateX(3px); }
+}
+@keyframes pet-breathe {
+  50% { transform: scale(1.025, 0.97); }
+}
+@keyframes pet-droop {
+  to { transform: translateY(3px) scale(1, 0.98); }
+}
+@keyframes pet-tilt {
+  from { transform: rotate(-2deg); }
+  to { transform: rotate(2deg); }
+}
+@keyframes pet-fx-float {
+  50% { transform: translateY(-5px); }
 }
 @keyframes pet-pop-in {
   from { opacity: 0; transform: translateY(6px) scale(0.95); }
 }
 
-/* Mobile: the pet peeks out from behind the bottom tab bar so it never covers answers. */
+/* Desktop: keep a lane on the right for the pet so it never sits on content. On very wide
+   screens the centered content already leaves that space free. */
+@media (min-width: 861px) and (max-width: 1780px) {
+  .shell:has(.pet) .main {
+    padding-right: 172px;
+  }
+}
+
+/* Mobile: a small pet standing on the bottom tab bar, against the right edge where answer
+   rows are empty. */
 @media (max-width: 860px) {
   .pet {
-    z-index: 4;
-    width: 66px;
-    right: 10px;
-    bottom: calc(46px + env(safe-area-inset-bottom));
+    width: 64px;
+    right: 4px;
+    bottom: calc(72px + env(safe-area-inset-bottom));
   }
   .pet-bubble {
     right: 92%;
-    bottom: 48%;
+    bottom: 50%;
     max-width: 180px;
     font-size: 0.78rem;
     padding: 5px 10px;
   }
 }
-@media (prefers-reduced-motion: reduce) {
-  .pet *,
-  .pet-bubble {
-    animation: none !important;
-  }
-}
 @media (min-width: 1500px) {
   .pet {
-    width: 150px;
+    width: 160px;
     right: 32px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pet-sprite,
+  .pet-fx,
+  .pet-bubble {
+    animation: none !important;
   }
 }

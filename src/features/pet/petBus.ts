@@ -4,6 +4,7 @@ export type PetEvent =
   | { type: "wrong" }
   | { type: "complete" }
   | { type: "exam"; score: number }
+  | { type: "start" }
   | { type: "search" };
 
 type Listener = (event: PetEvent) => void;

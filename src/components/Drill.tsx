@@ -1,4 +1,4 @@
-import { useState, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import { questionById } from "../data";
 import { PracticeCard } from "./PracticeCard";
 import { emitPet } from "../features/pet/petBus";
@@ -21,6 +21,7 @@ type Props = {
 export const Drill = ({ run, header, onChange, onFinish, onCorrect }: Props) => {
   const [turn, setTurn] = useState(0);
   const [lastCorrect, setLastCorrect] = useState(false);
+  useEffect(() => emitPet({ type: "start" }), []);
   const total = run.queue.length + run.solved.length;
   const currentId = run.queue[0];
   const question = currentId ? questionById.get(currentId) : undefined;
