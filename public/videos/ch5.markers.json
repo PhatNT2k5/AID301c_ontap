@@ -1,0 +1,37 @@
+{
+ "duration": 400.47,
+ "markers": [
+  {
+   "title": "Mở đầu",
+   "start": 0.0
+  },
+  {
+   "title": "Tối ưu code",
+   "start": 19.49
+  },
+  {
+   "title": "Docker",
+   "start": 79.92
+  },
+  {
+   "title": "Flask API & Watson ML",
+   "start": 152.5
+  },
+  {
+   "title": "Apache Spark",
+   "start": 233.85
+  },
+  {
+   "title": "Hệ gợi ý ALS",
+   "start": 301.66
+  },
+  {
+   "title": "Bẫy hay gặp",
+   "start": 360.29
+  },
+  {
+   "title": "Tổng kết",
+   "start": 379.9
+  }
+ ]
+}

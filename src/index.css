@@ -1732,3 +1732,36 @@ fieldset legend {
     animation: none !important;
   }
 }
+
+/* ---------- video chapter markers ---------- */
+.markers {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: -10px 0 24px;
+}
+.marker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 12px;
+  border: 1.8px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  font-size: 0.88rem;
+}
+.marker:hover {
+  background: var(--mint);
+}
+.marker-time {
+  font-family: var(--hand);
+  font-weight: 600;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+.marker-total {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-left: 4px;
+}

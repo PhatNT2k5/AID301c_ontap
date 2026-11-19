@@ -1,0 +1,1179 @@
+{
+  "chapter": 1,
+  "title": "Quy trình AI doanh nghiệp & thu thập dữ liệu",
+  "sections": [
+    {
+      "id": "intro",
+      "title": "Mở đầu",
+      "scenes": [
+        {
+          "type": "intro",
+          "pose": "idle",
+          "headline": "Quy trình AI và thu thập dữ liệu",
+          "data": {
+            "chapterNo": 1,
+            "course": "IBM AI Workflow · Course 1",
+            "stops": [
+              {
+                "id": "p1",
+                "label": "Process model"
+              },
+              {
+                "id": "p2",
+                "label": "Design thinking"
+              },
+              {
+                "id": "p3",
+                "label": "Thu thập & ETL"
+              },
+              {
+                "id": "p4",
+                "label": "Sparse matrix"
+              }
+            ]
+          },
+          "narration": [
+            "Chào bạn, mình là MeoLearn.",
+            "Chương 1 bám theo khoá đầu tiên của IBM AI Workflow.",
+            "Hôm nay ta đi qua bốn chặng.",
+            "Process model, rồi design thinking.",
+            "Sau đó là thu thập dữ liệu, và sparse matrix.",
+            "Cuối chương có các bẫy hay gặp trong đề."
+          ],
+          "beats": [
+            {
+              "id": "chapter",
+              "s": 1,
+              "cue": "Chương 1"
+            },
+            {
+              "id": "course",
+              "s": 1,
+              "cue": "IBM AI Workflow"
+            },
+            {
+              "id": "road",
+              "s": 2,
+              "cue": "bốn chặng"
+            },
+            {
+              "id": "p1",
+              "s": 3,
+              "cue": "Process model"
+            },
+            {
+              "id": "p2",
+              "s": 3,
+              "cue": "design thinking"
+            },
+            {
+              "id": "p3",
+              "s": 4,
+              "cue": "thu thập"
+            },
+            {
+              "id": "p4",
+              "s": 4,
+              "cue": "sparse matrix"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "process",
+      "title": "Process model",
+      "scenes": [
+        {
+          "type": "cycle",
+          "pose": "idle",
+          "headline": "CRISP-DM: sáu pha, một vòng lặp",
+          "data": {
+            "center": "CRISP-DM",
+            "centerSub": [
+              {
+                "text": "chuẩn mở",
+                "beat": "open"
+              },
+              {
+                "text": "1996",
+                "beat": "year"
+              }
+            ],
+            "nodes": [
+              {
+                "id": "n1",
+                "label": "Business Understanding"
+              },
+              {
+                "id": "n2",
+                "label": "Data Understanding"
+              },
+              {
+                "id": "n3",
+                "label": "Data Preparation"
+              },
+              {
+                "id": "n4",
+                "label": "Modeling"
+              },
+              {
+                "id": "n5",
+                "label": "Evaluation"
+              },
+              {
+                "id": "n6",
+                "label": "Deployment"
+              }
+            ]
+          },
+          "narration": [
+            "CRISP-DM là một chuẩn mở.",
+            "Nó ra đời năm 1996.",
+            "Nó có sáu pha, nối với nhau thành một vòng lặp.",
+            "Đầu tiên là Business Understanding, rồi Data Understanding.",
+            "Tiếp theo là Data Preparation và Modeling.",
+            "Sau đó là Evaluation, cuối cùng là Deployment.",
+            "Rồi vòng lặp quay lại pha đầu tiên."
+          ],
+          "beats": [
+            {
+              "id": "center",
+              "s": 0,
+              "cue": "CRISP-DM"
+            },
+            {
+              "id": "open",
+              "s": 0,
+              "cue": "chuẩn mở"
+            },
+            {
+              "id": "year",
+              "s": 1,
+              "cue": "1996"
+            },
+            {
+              "id": "slots",
+              "s": 2,
+              "cue": "sáu pha"
+            },
+            {
+              "id": "track",
+              "s": 2,
+              "cue": "vòng lặp"
+            },
+            {
+              "id": "n1",
+              "s": 3,
+              "cue": "Business Understanding"
+            },
+            {
+              "id": "n2",
+              "s": 3,
+              "cue": "Data Understanding"
+            },
+            {
+              "id": "n3",
+              "s": 4,
+              "cue": "Data Preparation"
+            },
+            {
+              "id": "n4",
+              "s": 4,
+              "cue": "Modeling"
+            },
+            {
+              "id": "n5",
+              "s": 5,
+              "cue": "Evaluation"
+            },
+            {
+              "id": "n6",
+              "s": 5,
+              "cue": "Deployment"
+            },
+            {
+              "id": "loop",
+              "s": 6,
+              "cue": "quay lại"
+            }
+          ]
+        },
+        {
+          "type": "mnemonic",
+          "pose": "curious",
+          "headline": "OSEMN: năm chữ, năm việc",
+          "data": {
+            "phrase": "S là Scrub: chà cho sạch",
+            "items": [
+              {
+                "id": "o",
+                "letter": "O",
+                "word": "Obtain",
+                "gloss": "thu thập"
+              },
+              {
+                "id": "s",
+                "letter": "S",
+                "word": "Scrub",
+                "gloss": "làm sạch",
+                "highlight": true
+              },
+              {
+                "id": "e",
+                "letter": "E",
+                "word": "Explore",
+                "gloss": "khám phá"
+              },
+              {
+                "id": "m",
+                "letter": "M",
+                "word": "Model",
+                "gloss": "mô hình"
+              },
+              {
+                "id": "n",
+                "letter": "N",
+                "word": "iNterpret",
+                "gloss": "diễn giải"
+              }
+            ]
+          },
+          "narration": [
+            "Mô hình thứ hai là OSEMN.",
+            "O là Obtain, thu thập dữ liệu.",
+            "S là Scrub, tức là làm sạch.",
+            "E là Explore, M là Model.",
+            "Và N là Interpret, diễn giải kết quả.",
+            "Mẹo nhớ: S là Scrub, chà cho thật sạch."
+          ],
+          "beats": [
+            {
+              "id": "letters",
+              "s": 0,
+              "cue": "OSEMN"
+            },
+            {
+              "id": "o",
+              "s": 1,
+              "cue": "Obtain"
+            },
+            {
+              "id": "s",
+              "s": 2,
+              "cue": "Scrub"
+            },
+            {
+              "id": "e",
+              "s": 3,
+              "cue": "Explore"
+            },
+            {
+              "id": "m",
+              "s": 3,
+              "cue": "Model"
+            },
+            {
+              "id": "n",
+              "s": 4,
+              "cue": "Interpret"
+            },
+            {
+              "id": "phrase",
+              "s": 5,
+              "frac": 0.0
+            }
+          ]
+        },
+        {
+          "type": "quiz",
+          "pose": "curious",
+          "questionId": "su26re-14",
+          "explain": "Chữ S trong OSEMN là Scrubbing, tức làm sạch dữ liệu."
+        }
+      ]
+    },
+    {
+      "id": "design",
+      "title": "Design thinking",
+      "scenes": [
+        {
+          "type": "stairs",
+          "pose": "idle",
+          "headline": "Năm bậc của design thinking",
+          "data": {
+            "steps": [
+              {
+                "id": "emp",
+                "label": "Empathize",
+                "caption": "hiểu cơ hội kinh doanh"
+              },
+              {
+                "id": "def",
+                "label": "Define",
+                "caption": "chọn và định nghĩa thách thức"
+              },
+              {
+                "id": "ide",
+                "label": "Ideate",
+                "caption": "EDA, feature"
+              },
+              {
+                "id": "pro",
+                "label": "Prototype",
+                "caption": "xây, so sánh mô hình"
+              },
+              {
+                "id": "tes",
+                "label": "Test",
+                "caption": "triển khai, theo dõi"
+              }
+            ]
+          },
+          "narration": [
+            "Khoá học chọn IBM Design Thinking làm process model.",
+            "Nó có năm bậc, đi theo thứ tự.",
+            "Bậc đầu là Empathize: hiểu cơ hội kinh doanh.",
+            "Rồi Define: chọn và định nghĩa thách thức.",
+            "Ideate là lúc làm EDA và feature.",
+            "Prototype là xây và so sánh mô hình.",
+            "Test là triển khai và theo dõi."
+          ],
+          "beats": [
+            {
+              "id": "ghost",
+              "s": 0,
+              "cue": "Design Thinking"
+            },
+            {
+              "id": "count",
+              "s": 1,
+              "cue": "năm bậc"
+            },
+            {
+              "id": "emp",
+              "s": 2,
+              "cue": "Empathize"
+            },
+            {
+              "id": "def",
+              "s": 3,
+              "cue": "Define"
+            },
+            {
+              "id": "ide",
+              "s": 4,
+              "cue": "Ideate"
+            },
+            {
+              "id": "pro",
+              "s": 5,
+              "cue": "Prototype"
+            },
+            {
+              "id": "tes",
+              "s": 6,
+              "cue": "Test"
+            }
+          ]
+        },
+        {
+          "type": "mnemonic",
+          "pose": "curious",
+          "headline": "Mẹo nhớ thứ tự",
+          "data": {
+            "phrase": "Em Đi Ít, Phải Thử",
+            "items": [
+              {
+                "id": "e",
+                "letter": "E",
+                "word": "Empathize"
+              },
+              {
+                "id": "d",
+                "letter": "D",
+                "word": "Define"
+              },
+              {
+                "id": "i",
+                "letter": "I",
+                "word": "Ideate"
+              },
+              {
+                "id": "p",
+                "letter": "P",
+                "word": "Prototype"
+              },
+              {
+                "id": "t",
+                "letter": "T",
+                "word": "Test"
+              }
+            ]
+          },
+          "narration": [
+            "Mẹo nhớ thứ tự: lấy chữ cái đầu của năm bậc.",
+            "Ghép thành câu: Em Đi Ít, Phải Thử."
+          ],
+          "beats": [
+            {
+              "id": "letters",
+              "s": 0,
+              "cue": "chữ cái đầu"
+            },
+            {
+              "id": "e",
+              "s": 1,
+              "frac": 0.35
+            },
+            {
+              "id": "d",
+              "s": 1,
+              "frac": 0.47
+            },
+            {
+              "id": "i",
+              "s": 1,
+              "frac": 0.59
+            },
+            {
+              "id": "p",
+              "s": 1,
+              "frac": 0.71
+            },
+            {
+              "id": "t",
+              "s": 1,
+              "frac": 0.83
+            },
+            {
+              "id": "phrase",
+              "s": 1,
+              "cue": "Em Đi Ít"
+            }
+          ]
+        },
+        {
+          "type": "quiz",
+          "pose": "curious",
+          "questionId": "su26fe-04",
+          "explain": "Định nghĩa thách thức là việc của giai đoạn Define."
+        }
+      ]
+    },
+    {
+      "id": "etl",
+      "title": "Thu thập dữ liệu & ETL",
+      "scenes": [
+        {
+          "type": "pipeline",
+          "pose": "idle",
+          "headline": "Data ingestion: từ nguồn tới bảng",
+          "data": {
+            "stages": [
+              {
+                "id": "src",
+                "label": "Nguồn",
+                "items": [
+                  {
+                    "id": "db",
+                    "text": "Database"
+                  },
+                  {
+                    "id": "csv",
+                    "text": "File CSV"
+                  },
+                  {
+                    "id": "json",
+                    "text": "JSON, API"
+                  }
+                ]
+              },
+              {
+                "id": "chk",
+                "label": "Kiểm tra",
+                "items": [
+                  {
+                    "id": "c1",
+                    "text": "Missing data"
+                  },
+                  {
+                    "id": "c2",
+                    "text": "Dữ liệu lỗi"
+                  },
+                  {
+                    "id": "c3",
+                    "text": "Bản ghi trùng"
+                  }
+                ]
+              },
+              {
+                "id": "dst",
+                "label": "Đích",
+                "items": [
+                  {
+                    "id": "d1",
+                    "text": "pandas DataFrame"
+                  },
+                  {
+                    "id": "d2",
+                    "text": "NumPy array"
+                  }
+                ]
+              }
+            ]
+          },
+          "narration": [
+            "Dữ liệu đến từ nhiều nguồn.",
+            "Database, file CSV, JSON hay API.",
+            "Ingestion pipeline phải kiểm tra chất lượng.",
+            "Xử lý missing data, dữ liệu lỗi và bản ghi trùng.",
+            "Vì dữ liệu xấu vào thì kết quả xấu ra.",
+            "Đích đến là DataFrame hoặc NumPy array."
+          ],
+          "beats": [
+            {
+              "id": "src",
+              "s": 0,
+              "cue": "nhiều nguồn"
+            },
+            {
+              "id": "db",
+              "s": 1,
+              "cue": "Database"
+            },
+            {
+              "id": "csv",
+              "s": 1,
+              "cue": "CSV"
+            },
+            {
+              "id": "json",
+              "s": 1,
+              "cue": "JSON"
+            },
+            {
+              "id": "chk",
+              "s": 2,
+              "cue": "Ingestion"
+            },
+            {
+              "id": "c1",
+              "s": 3,
+              "cue": "missing data"
+            },
+            {
+              "id": "c2",
+              "s": 3,
+              "cue": "dữ liệu lỗi"
+            },
+            {
+              "id": "c3",
+              "s": 3,
+              "cue": "bản ghi trùng"
+            },
+            {
+              "id": "flow",
+              "s": 4,
+              "cue": "xấu vào"
+            },
+            {
+              "id": "dst",
+              "s": 5,
+              "cue": "Đích"
+            },
+            {
+              "id": "d1",
+              "s": 5,
+              "cue": "DataFrame"
+            },
+            {
+              "id": "d2",
+              "s": 5,
+              "cue": "NumPy"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "pose": "idle",
+          "headline": "ETL: lấy, biến đổi, nạp",
+          "data": {
+            "lines": [
+              {
+                "text": "import pandas as pd",
+                "beat": "l1"
+              },
+              {
+                "text": "import sqlite3",
+                "beat": "l2"
+              },
+              {
+                "text": ""
+              },
+              {
+                "text": "conn = sqlite3.connect(\"aavail.db\")",
+                "beat": "l4",
+                "marks": [
+                  {
+                    "text": "\"aavail.db\"",
+                    "beat": "db"
+                  }
+                ]
+              },
+              {
+                "text": "df_db = pd.read_sql(\"SELECT * FROM customers\", conn)",
+                "beat": "l5"
+              },
+              {
+                "text": "df_csv = pd.read_csv(\"streams.csv\")",
+                "beat": "l6"
+              },
+              {
+                "text": "df = df_db.merge(df_csv, on=\"customer_id\")",
+                "beat": "l7",
+                "marks": [
+                  {
+                    "text": "df =",
+                    "beat": "frame"
+                  },
+                  {
+                    "text": "\"customer_id\"",
+                    "beat": "key"
+                  }
+                ]
+              },
+              {
+                "text": "assert df[\"customer_id\"].is_unique",
+                "beat": "l8"
+              }
+            ],
+            "stages": [
+              {
+                "id": "E",
+                "label": "Extract",
+                "hint": "read_sql · read_csv"
+              },
+              {
+                "id": "T",
+                "label": "Transform",
+                "hint": "merge"
+              },
+              {
+                "id": "L",
+                "label": "Load",
+                "hint": "DataFrame · assert"
+              }
+            ]
+          },
+          "narration": [
+            "ETL là viết tắt của Extract, Transform và Load.",
+            "Extract là lấy dữ liệu thô từ nhiều nguồn.",
+            "Ở đây ta đọc bảng customers trong database của AAVAIL.",
+            "Rồi đọc thêm dữ liệu streams từ một file CSV.",
+            "Transform là làm sạch và gộp hai nguồn theo customer id.",
+            "Load là đưa kết quả vào một DataFrame để phân tích.",
+            "Cuối cùng kiểm tra dữ liệu, không để khách hàng bị trùng."
+          ],
+          "beats": [
+            {
+              "id": "l1",
+              "s": 0
+            },
+            {
+              "id": "E",
+              "s": 0,
+              "cue": "Extract"
+            },
+            {
+              "id": "T",
+              "s": 0,
+              "cue": "Transform"
+            },
+            {
+              "id": "L",
+              "s": 0,
+              "cue": "Load"
+            },
+            {
+              "id": "on_E",
+              "s": 1,
+              "cue": "Extract"
+            },
+            {
+              "id": "l2",
+              "s": 1,
+              "cue": "nhiều nguồn"
+            },
+            {
+              "id": "l4",
+              "s": 2,
+              "cue": "đọc bảng"
+            },
+            {
+              "id": "l5",
+              "s": 2,
+              "cue": "customers"
+            },
+            {
+              "id": "db",
+              "s": 2,
+              "cue": "AAVAIL"
+            },
+            {
+              "id": "l6",
+              "s": 3,
+              "cue": "streams"
+            },
+            {
+              "id": "on_T",
+              "s": 4,
+              "cue": "Transform"
+            },
+            {
+              "id": "l7",
+              "s": 4,
+              "cue": "gộp"
+            },
+            {
+              "id": "key",
+              "s": 4,
+              "cue": "customer id"
+            },
+            {
+              "id": "on_L",
+              "s": 5,
+              "cue": "Load"
+            },
+            {
+              "id": "frame",
+              "s": 5,
+              "cue": "DataFrame"
+            },
+            {
+              "id": "l8",
+              "s": 6,
+              "cue": "kiểm tra"
+            }
+          ]
+        },
+        {
+          "type": "mnemonic",
+          "pose": "curious",
+          "headline": "ETL như nấu một bữa cơm",
+          "data": {
+            "phrase": "Đi chợ, nấu, dọn lên bàn",
+            "items": [
+              {
+                "id": "x",
+                "letter": "E",
+                "word": "Extract",
+                "gloss": "đi chợ"
+              },
+              {
+                "id": "t",
+                "letter": "T",
+                "word": "Transform",
+                "gloss": "nấu"
+              },
+              {
+                "id": "l",
+                "letter": "L",
+                "word": "Load",
+                "gloss": "dọn lên bàn"
+              }
+            ]
+          },
+          "narration": [
+            "Mẹo nhớ ETL bằng chuyện nấu cơm.",
+            "Extract là đi chợ lấy nguyên liệu.",
+            "Transform là nấu.",
+            "Load là dọn lên bàn cho cả nhà ăn."
+          ],
+          "beats": [
+            {
+              "id": "letters",
+              "s": 0,
+              "cue": "ETL"
+            },
+            {
+              "id": "x",
+              "s": 1,
+              "cue": "Extract"
+            },
+            {
+              "id": "t",
+              "s": 2,
+              "cue": "Transform"
+            },
+            {
+              "id": "l",
+              "s": 3,
+              "cue": "Load"
+            },
+            {
+              "id": "phrase",
+              "s": 3,
+              "cue": "dọn lên bàn"
+            }
+          ]
+        },
+        {
+          "type": "quiz",
+          "pose": "curious",
+          "questionId": "su26fe-27",
+          "explain": "Pipeline xử lý dữ liệu thiếu, lỗi, trùng và kiểm tra dữ liệu, định dạng trả về; kiểm tra mô hình không thuộc ingestion."
+        }
+      ]
+    },
+    {
+      "id": "sparse",
+      "title": "Sparse matrix",
+      "scenes": [
+        {
+          "type": "matrix",
+          "pose": "idle",
+          "headline": "Sparse matrix: chỉ lưu ô khác 0",
+          "data": {
+            "rows": [
+              [
+                0,
+                0,
+                0,
+                5,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                2,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            ],
+            "triples": [
+              {
+                "id": "t0",
+                "r": 0,
+                "c": 3
+              },
+              {
+                "id": "t1",
+                "r": 1,
+                "c": 0
+              },
+              {
+                "id": "t2",
+                "r": 2,
+                "c": 2
+              }
+            ],
+            "note": {
+              "id": "note",
+              "text": "COO → đổi sang CSR để tính toán"
+            }
+          },
+          "narration": [
+            "Nhiều dữ liệu gần như toàn số không.",
+            "Sparse matrix chỉ lưu các ô khác không.",
+            "Mỗi ô được ghi thành hàng, cột và giá trị.",
+            "Như ô số năm, số một và số hai ở đây.",
+            "Đây là định dạng COO, thường đổi sang CSR để tính toán."
+          ],
+          "beats": [
+            {
+              "id": "grid",
+              "s": 0
+            },
+            {
+              "id": "fade",
+              "s": 1,
+              "cue": "chỉ lưu"
+            },
+            {
+              "id": "list",
+              "s": 2,
+              "cue": "hàng"
+            },
+            {
+              "id": "t0",
+              "s": 3,
+              "cue": "số năm"
+            },
+            {
+              "id": "t1",
+              "s": 3,
+              "cue": "số một"
+            },
+            {
+              "id": "t2",
+              "s": 3,
+              "cue": "số hai"
+            },
+            {
+              "id": "note",
+              "s": 4,
+              "cue": "COO"
+            }
+          ]
+        },
+        {
+          "type": "compare",
+          "pose": "curious",
+          "headline": "Mẹo nhớ: bãi giữ xe",
+          "data": {
+            "left": {
+              "title": "Dense",
+              "tone": "bad",
+              "items": [
+                {
+                  "id": "l1",
+                  "text": "Ghi cả những chỗ trống"
+                }
+              ]
+            },
+            "right": {
+              "title": "Sparse",
+              "tone": "good",
+              "items": [
+                {
+                  "id": "r1",
+                  "text": "Chỉ ghi chỗ có xe"
+                }
+              ]
+            },
+            "verdict": {
+              "id": "verdict",
+              "text": "Hợp với word counts và user-item matrix"
+            }
+          },
+          "narration": [
+            "Hình dung một bãi giữ xe gần như trống.",
+            "Dense ghi lại cả những chỗ trống.",
+            "Sparse chỉ ghi những chỗ có xe.",
+            "Nên nó hợp với word counts và ma trận user item."
+          ],
+          "beats": [
+            {
+              "id": "left",
+              "s": 1,
+              "cue": "Dense"
+            },
+            {
+              "id": "l1",
+              "s": 1,
+              "cue": "chỗ trống"
+            },
+            {
+              "id": "right",
+              "s": 2,
+              "cue": "Sparse"
+            },
+            {
+              "id": "r1",
+              "s": 2,
+              "cue": "chỗ có xe"
+            },
+            {
+              "id": "verdict",
+              "s": 3,
+              "cue": "word counts"
+            }
+          ]
+        },
+        {
+          "type": "quiz",
+          "pose": "curious",
+          "questionId": "qz2-014",
+          "explain": "Word counts và ma trận user item có rất nhiều số 0 nên hợp với sparse matrix."
+        }
+      ]
+    },
+    {
+      "id": "traps",
+      "title": "Bẫy hay gặp",
+      "scenes": [
+        {
+          "type": "traps",
+          "pose": "sad",
+          "headline": "Năm bẫy hay gặp trong đề",
+          "data": {
+            "traps": [
+              {
+                "id": "t1",
+                "wrong": "Process model giúp đi workflow nhanh hơn",
+                "right": "Giúp tránh lan man, chia thời gian hợp lý"
+              },
+              {
+                "id": "t2",
+                "wrong": "Ngày đầu đi làm: lao vào EDA ngay",
+                "right": "Hỏi góc nhìn của management trước"
+              },
+              {
+                "id": "t3",
+                "wrong": "“Lãnh đạo nào ủng hộ?” là câu khoa học",
+                "right": "Câu khoa học tìm dữ liệu, A/B testing"
+              },
+              {
+                "id": "t4",
+                "wrong": "Quy mô công ty quyết định thời gian làm sạch",
+                "right": "Do chất lượng, nguồn, độ phức tạp dữ liệu"
+              },
+              {
+                "id": "t5",
+                "wrong": "Berkeley DB → bsddb là relational",
+                "right": "Berkeley DB là key-value store"
+              }
+            ]
+          },
+          "narration": [
+            "Cuối cùng là năm cái bẫy hay gặp.",
+            "Process model không làm bạn đi nhanh hơn.",
+            "Ngày đầu đi làm, đừng lao vào EDA.",
+            "Hãy hỏi góc nhìn của management trước.",
+            "Câu hỏi lãnh đạo nào ủng hộ không mang tính khoa học.",
+            "Quy mô công ty không ảnh hưởng thời gian làm sạch.",
+            "Và Berkeley DB là key value store, không phải relational database."
+          ],
+          "beats": [
+            {
+              "id": "t1",
+              "s": 0,
+              "cue": "năm cái bẫy"
+            },
+            {
+              "id": "fix_t1",
+              "s": 1,
+              "cue": "không làm"
+            },
+            {
+              "id": "t2",
+              "s": 2,
+              "cue": "Ngày đầu"
+            },
+            {
+              "id": "fix_t2",
+              "s": 3,
+              "cue": "Hãy hỏi"
+            },
+            {
+              "id": "t3",
+              "s": 4,
+              "cue": "lãnh đạo"
+            },
+            {
+              "id": "fix_t3",
+              "s": 4,
+              "cue": "không mang"
+            },
+            {
+              "id": "t4",
+              "s": 5,
+              "cue": "Quy mô"
+            },
+            {
+              "id": "fix_t4",
+              "s": 5,
+              "cue": "không ảnh hưởng"
+            },
+            {
+              "id": "t5",
+              "s": 6,
+              "cue": "Berkeley DB"
+            },
+            {
+              "id": "fix_t5",
+              "s": 6,
+              "cue": "key value"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "recap",
+      "title": "Tổng kết",
+      "scenes": [
+        {
+          "type": "recap",
+          "pose": "happy",
+          "headline": "Nhớ năm điều này",
+          "data": {
+            "items": [
+              {
+                "id": "r1",
+                "text": "CRISP-DM có 6 pha"
+              },
+              {
+                "id": "r1b",
+                "text": "S trong OSEMN là Scrub"
+              },
+              {
+                "id": "r2",
+                "text": "Em Đi Ít, Phải Thử"
+              },
+              {
+                "id": "r3",
+                "text": "ETL: đi chợ, nấu, dọn lên bàn"
+              },
+              {
+                "id": "r4",
+                "text": "Sparse matrix chỉ lưu ô khác 0"
+              }
+            ]
+          },
+          "narration": [
+            "Tóm lại, nhớ năm điều.",
+            "CRISP-DM có sáu pha.",
+            "Chữ S trong OSEMN là Scrub.",
+            "Design thinking: Em Đi Ít, Phải Thử.",
+            "ETL: đi chợ, nấu, dọn lên bàn.",
+            "Sparse matrix chỉ lưu ô khác không.",
+            "Hẹn gặp bạn ở chương 2!"
+          ],
+          "beats": [
+            {
+              "id": "r1",
+              "s": 1,
+              "cue": "CRISP-DM"
+            },
+            {
+              "id": "r1b",
+              "s": 2,
+              "cue": "Chữ S"
+            },
+            {
+              "id": "r2",
+              "s": 3,
+              "cue": "Design thinking"
+            },
+            {
+              "id": "r3",
+              "s": 4,
+              "cue": "ETL"
+            },
+            {
+              "id": "r4",
+              "s": 5,
+              "cue": "Sparse matrix"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

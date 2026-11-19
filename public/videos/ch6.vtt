@@ -1,0 +1,469 @@
+WEBVTT
+
+1
+00:00:00.300 --> 00:00:02.408
+Chào bạn, mình là MeoLearn.
+
+2
+00:00:02.728 --> 00:00:06.178
+Chương 6 là khoá cuối của IBM AI Workflow.
+
+3
+00:00:06.498 --> 00:00:08.993
+Deploy xong mô hình mới chỉ là bắt đầu.
+
+4
+00:00:09.313 --> 00:00:12.622
+Ta đi qua feedback loop, unit test và CI/CD.
+
+5
+00:00:12.942 --> 00:00:16.447
+Rồi logging, performance drift, và Kubernetes.
+
+6
+00:00:16.767 --> 00:00:19.029
+Cuối chương có các bẫy hay gặp trong đề.
+
+7
+00:00:19.779 --> 00:00:22.264
+AI workflow không phải một đường thẳng.
+
+8
+00:00:22.584 --> 00:00:24.984
+Nó gồm năm bước, nối thành một vòng.
+
+9
+00:00:25.304 --> 00:00:28.558
+Business opportunity, rồi data collection.
+
+10
+00:00:28.878 --> 00:00:32.429
+Transformation, model iteration, rồi deploy.
+
+11
+00:00:32.749 --> 00:00:35.123
+Quay lại một bước trước gọi là feedback loop.
+
+12
+00:00:35.873 --> 00:00:37.601
+Mẹo nhớ rất ngắn gọn.
+
+13
+00:00:37.921 --> 00:00:40.163
+Quay lui về bước trước là feedback loop.
+
+14
+00:00:40.483 --> 00:00:42.679
+Đi tiếp sang bước sau thì không phải.
+
+15
+00:00:42.999 --> 00:00:45.011
+Lùi là loop, tiến là không.
+
+16
+00:00:45.761 --> 00:00:46.983
+Câu hỏi nhanh.
+
+17
+00:00:47.303 --> 00:00:53.485
+In the context of the AI workflow presented in these materials which of the following is not an example of a valid feedback loop?
+
+18
+00:00:53.805 --> 00:00:57.103
+A. Trying different data transformations on a given model
+
+19
+00:00:57.323 --> 00:01:02.557
+B. Returning to the data collection stage from transformations to reduce the number of transforms
+
+20
+00:01:02.777 --> 00:01:07.658
+C. Performing EDA on the data after a model has been deployed and data have been logged
+
+21
+00:01:07.878 --> 00:01:12.273
+D. Moving from the business opportunity and data collection to model iteration
+
+22
+00:01:12.493 --> 00:01:16.793
+E. Returning to discuss the business opportunity after a model has been deployed
+
+23
+00:01:20.013 --> 00:01:21.622
+Đáp án đúng là D.
+
+24
+00:01:21.942 --> 00:01:27.870
+Đi tiếp từ business opportunity và data collection sang model iteration là luồng tiến, không phải feedback loop.
+
+25
+00:01:28.620 --> 00:01:31.676
+Unit test kiểm tra từng đơn vị code nhỏ, độc lập.
+
+26
+00:01:31.996 --> 00:01:34.628
+Trong Python, ta dùng module unittest.
+
+27
+00:01:34.948 --> 00:01:37.278
+Với TDD, ta viết test trước.
+
+28
+00:01:37.598 --> 00:01:39.608
+Rồi mới viết code để test pass.
+
+29
+00:01:39.928 --> 00:01:42.520
+Package coverage ước lượng test coverage.
+
+30
+00:01:42.840 --> 00:01:45.670
+Nhưng không cần gần một trăm phần trăm trước production.
+
+31
+00:01:46.420 --> 00:01:49.005
+CI là Continuous Integration.
+
+32
+00:01:49.325 --> 00:01:52.050
+Lập trình viên merge thay đổi thường xuyên vào trunk.
+
+33
+00:01:52.370 --> 00:01:55.574
+Trunk là nhánh chính, mỗi lần merge đều build và test.
+
+34
+00:01:55.894 --> 00:01:59.016
+Continuous Delivery giữ code luôn sẵn sàng phát hành.
+
+35
+00:01:59.336 --> 00:02:02.766
+Continuous Deployment là tự động triển khai lên production.
+
+36
+00:02:03.086 --> 00:02:05.805
+Thay đổi nhanh thì rủi ro chính là đưa bug vào.
+
+37
+00:02:06.125 --> 00:02:08.402
+Nên luôn cần unit test và giám sát.
+
+38
+00:02:09.152 --> 00:02:11.604
+Vì sao đóng gói unit test cùng mô hình?
+
+39
+00:02:11.924 --> 00:02:14.491
+Q là quality, nâng chất lượng code.
+
+40
+00:02:14.811 --> 00:02:16.993
+R là regression test.
+
+41
+00:02:17.313 --> 00:02:20.242
+A là automate, tự động giám sát hiệu năng.
+
+42
+00:02:20.562 --> 00:02:23.014
+C là dễ tích hợp vào CI/CD.
+
+43
+00:02:23.334 --> 00:02:25.374
+Nhớ là: Quà Rất Ấm Cúng.
+
+44
+00:02:26.124 --> 00:02:27.347
+Câu hỏi nhanh.
+
+45
+00:02:27.667 --> 00:02:32.065
+Which of the following was not mentioned as a reason to bundle unit tests with a deployed model?
+
+46
+00:02:32.385 --> 00:02:34.340
+A. promotes code quality
+
+47
+00:02:34.560 --> 00:02:36.338
+B. regression tests
+
+48
+00:02:36.558 --> 00:02:39.307
+C. they perform the workflow feedback loops
+
+49
+00:02:39.527 --> 00:02:42.266
+D. automate performance monitoring tasks
+
+50
+00:02:42.486 --> 00:02:46.147
+E. can be readily integrated into CI/CD pipelines
+
+51
+00:02:49.367 --> 00:02:50.979
+Đáp án đúng là C.
+
+52
+00:02:51.299 --> 00:02:54.329
+Unit test không thực hiện các feedback loop của workflow.
+
+53
+00:02:55.079 --> 00:02:58.265
+Với predict endpoint, log có năm trường thiết yếu.
+
+54
+00:02:58.585 --> 00:03:01.841
+Timestamp, runtime, và model version.
+
+55
+00:03:02.161 --> 00:03:05.191
+Rồi predictions và input data summary.
+
+56
+00:03:05.511 --> 00:03:08.897
+Còn request type và toàn bộ input data thì không thiết yếu.
+
+57
+00:03:09.217 --> 00:03:11.782
+Nhớ: runtime không phải trường tùy chọn.
+
+58
+00:03:12.532 --> 00:03:14.569
+Mẹo nhớ năm trường log thiết yếu.
+
+59
+00:03:14.889 --> 00:03:17.741
+T là timestamp, R là runtime.
+
+60
+00:03:18.061 --> 00:03:21.496
+M là model version, P là predictions.
+
+61
+00:03:21.816 --> 00:03:24.099
+I là input data summary.
+
+62
+00:03:24.419 --> 00:03:26.858
+Ghép lại: Tết Rồi, Mua Pháo Ít.
+
+63
+00:03:27.608 --> 00:03:28.831
+Câu hỏi nhanh.
+
+64
+00:03:29.151 --> 00:03:35.717
+True/False. When logging for the predict endpoint, runtime is considered an optional feature to be monitored.
+
+65
+00:03:36.037 --> 00:03:37.367
+A. True
+
+66
+00:03:37.587 --> 00:03:39.026
+B. False
+
+67
+00:03:42.246 --> 00:03:43.853
+Đáp án đúng là B.
+
+68
+00:03:44.173 --> 00:03:48.298
+Runtime là trường thiết yếu khi log cho predict endpoint, không phải tùy chọn.
+
+69
+00:03:49.048 --> 00:03:52.402
+Hiệu năng giảm dần sau deploy gọi là performance drift.
+
+70
+00:03:52.722 --> 00:03:55.028
+Nguyên nhân là hành vi khách hàng thay đổi.
+
+71
+00:03:55.348 --> 00:03:58.168
+Dữ liệu huấn luyện thiếu, sai hoặc mất cân bằng.
+
+72
+00:03:58.488 --> 00:04:00.623
+Hoặc chỉ là đổi phiên bản thư viện.
+
+73
+00:04:00.943 --> 00:04:04.241
+Để phát hiện, so sánh phân phối dữ liệu mới và cũ.
+
+74
+00:04:04.561 --> 00:04:07.767
+Hoặc dùng outlier detection như Isolation Forest.
+
+75
+00:04:08.087 --> 00:04:12.190
+Trong production, IBM Watson OpenScale lo việc giám sát.
+
+76
+00:04:12.940 --> 00:04:15.242
+OpenScale có ba dịch vụ chính.
+
+77
+00:04:15.562 --> 00:04:18.421
+Drift monitoring theo dõi hiệu năng bị trôi.
+
+78
+00:04:18.741 --> 00:04:20.413
+Fairness phát hiện bias.
+
+79
+00:04:20.733 --> 00:04:24.339
+Explainability giải thích vì sao mô hình dự đoán như vậy.
+
+80
+00:04:24.659 --> 00:04:27.383
+Mẹo nhớ: trôi, công bằng, giải thích.
+
+81
+00:04:28.133 --> 00:04:29.356
+Câu hỏi nhanh.
+
+82
+00:04:29.676 --> 00:04:37.442
+True/False. IBM Watson OpenScale only works with models that have been built on, and deployed by, IBM Watson Stuido.
+
+83
+00:04:37.762 --> 00:04:39.092
+A. True
+
+84
+00:04:39.312 --> 00:04:40.751
+B. False
+
+85
+00:04:43.971 --> 00:04:45.578
+Đáp án đúng là B.
+
+86
+00:04:45.898 --> 00:04:50.603
+OpenScale giám sát được mô hình triển khai trên nhiều nền tảng, không chỉ Watson Studio.
+
+87
+00:04:51.353 --> 00:04:54.392
+Ta ra lệnh bằng kubectl, công cụ dòng lệnh.
+
+88
+00:04:54.712 --> 00:04:57.749
+Lệnh tới API server, nơi định nghĩa workload.
+
+89
+00:04:58.069 --> 00:05:01.023
+Mỗi worker node có một agent tên là Kubelet.
+
+90
+00:05:01.343 --> 00:05:04.409
+Kubelet giữ cho ứng dụng trên node khoẻ và đang chạy.
+
+91
+00:05:04.729 --> 00:05:07.854
+Ứng dụng chạy trong pod, chứa một hoặc nhiều container.
+
+92
+00:05:08.604 --> 00:05:10.419
+Mẹo nhớ ba loại service.
+
+93
+00:05:10.739 --> 00:05:14.116
+ClusterIP như ở trong nhà, chỉ truy cập nội bộ.
+
+94
+00:05:14.436 --> 00:05:17.218
+NodePort như mở cửa, mở cổng trên mỗi node.
+
+95
+00:05:17.538 --> 00:05:20.692
+LoadBalancer là ra phố, cho người dùng bên ngoài.
+
+96
+00:05:21.012 --> 00:05:23.480
+Trong nhà, mở cửa, ra phố.
+
+97
+00:05:24.230 --> 00:05:25.452
+Câu hỏi nhanh.
+
+98
+00:05:25.772 --> 00:05:29.139
+Which type of service exposes an application to external users?
+
+99
+00:05:29.459 --> 00:05:31.245
+A. Cluster IP
+
+100
+00:05:31.465 --> 00:05:33.092
+B. Node Port
+
+101
+00:05:33.312 --> 00:05:35.090
+C. Load Balancer
+
+102
+00:05:35.310 --> 00:05:37.091
+D. Internal Service
+
+103
+00:05:40.311 --> 00:05:41.923
+Đáp án đúng là C.
+
+104
+00:05:42.243 --> 00:05:47.495
+LoadBalancer phơi bày ứng dụng ra người dùng bên ngoài, còn ClusterIP chỉ dùng trong cluster.
+
+105
+00:05:48.245 --> 00:05:50.267
+Cuối cùng là năm cái bẫy hay gặp.
+
+106
+00:05:50.587 --> 00:05:53.171
+Không cần gần một trăm phần trăm test coverage.
+
+107
+00:05:53.491 --> 00:05:55.677
+Runtime không phải trường log tùy chọn.
+
+108
+00:05:55.997 --> 00:05:59.960
+ADASYN là oversampling, không phải outlier detection.
+
+109
+00:06:00.280 --> 00:06:03.298
+OpenScale không chỉ dùng cho Watson Studio.
+
+110
+00:06:03.618 --> 00:06:07.187
+Và pod không chứa deployment, deployment quản lý pod.
+
+111
+00:06:07.937 --> 00:06:09.844
+Tóm lại, nhớ năm điều.
+
+112
+00:06:10.164 --> 00:06:12.176
+Lùi là loop, tiến là không.
+
+113
+00:06:12.496 --> 00:06:15.382
+Quà Rất Ấm Cúng: lý do đóng gói unit test.
+
+114
+00:06:15.702 --> 00:06:18.326
+Tết Rồi, Mua Pháo Ít: năm trường log.
+
+115
+00:06:18.646 --> 00:06:22.171
+OpenScale: drift, fairness, explain.
+
+116
+00:06:22.491 --> 00:06:25.735
+Và service: trong nhà, mở cửa, ra phố.
+
+117
+00:06:26.055 --> 00:06:27.567
+Chúc bạn thi thật tốt!

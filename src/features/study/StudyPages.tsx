@@ -1,5 +1,6 @@
+import { useRef } from "react";
 import { Icon } from "../../components/Icon";
-import { chapters, questions, sections } from "../../data";
+import { chapters, markersFor, questions, sections } from "../../data";
 import { navigate } from "../../lib/useHashRoute";
 import { useStore } from "../../store";
 
@@ -14,7 +15,7 @@ export const StudyHome = () => {
           <a href="https://www.coursera.org/specializations/ibm-ai-workflow" target="_blank" rel="noreferrer">
             IBM AI Enterprise Workflow
           </a>{" "}
-          trên Coursera, nên 6 chương dưới đây đi theo 6 khóa đó. Mỗi chương có video khoảng 6 phút.
+          trên Coursera, nên 6 chương dưới đây đi theo 6 khóa đó. Mỗi chương có video khoảng 5–7 phút, bấm vào từng mục để tua tới đoạn đó.
         </p>
       </header>
       <ol className="chapter-list">
@@ -52,9 +53,16 @@ export const StudyHome = () => {
   );
 };
 
+const formatTime = (seconds: number): string => {
+  const s = Math.round(seconds);
+  return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
+};
+
 export const ChapterPage = ({ id }: { id: number }) => {
   const { notebook } = useStore();
+  const videoRef = useRef<HTMLVideoElement>(null);
   const chapter = chapters.find((c) => c.id === id);
+  const video = markersFor(id);
   if (!chapter) return <p className="empty">Không có chương {id}.</p>;
   const firstSection = sections.find((s) => s.chapterId === id);
   const prev = chapters.find((c) => c.id === id - 1);
@@ -78,10 +86,38 @@ export const ChapterPage = ({ id }: { id: number }) => {
           <i />
           <i />
         </div>
-        <video className="video" controls preload="metadata" src={chapter.video} onEnded={() => notebook.markWatched(id)}>
+        <video
+          ref={videoRef}
+          className="video"
+          controls
+          preload="metadata"
+          src={chapter.video}
+          onEnded={() => notebook.markWatched(id)}
+        >
           Trình duyệt không phát được video. Mở trực tiếp file {chapter.video}.
         </video>
       </div>
+
+      {video && video.markers.length > 0 && (
+        <nav className="markers" aria-label="Các đoạn trong video">
+          {video.markers.map((m) => (
+            <button
+              key={m.title}
+              className="marker"
+              onClick={() => {
+                const el = videoRef.current;
+                if (!el) return;
+                el.currentTime = m.start;
+                void el.play().catch(() => undefined); // autoplay may be blocked; seeking still works
+              }}
+            >
+              <span className="marker-time">{formatTime(m.start)}</span>
+              {m.title}
+            </button>
+          ))}
+          <span className="marker-total">Tổng {formatTime(video.duration)}</span>
+        </nav>
+      )}
 
       <p className="lead">{chapter.intro}</p>
 

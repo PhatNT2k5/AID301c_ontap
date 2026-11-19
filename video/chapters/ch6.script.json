@@ -1,0 +1,1296 @@
+{
+  "chapter": 6,
+  "title": "AI trong vận hành (AI in Production)",
+  "sections": [
+    {
+      "id": "intro",
+      "title": "Mở đầu",
+      "scenes": [
+        {
+          "type": "intro",
+          "pose": "idle",
+          "headline": "AI trong vận hành",
+          "data": {
+            "chapterNo": 6,
+            "course": "IBM AI Workflow · Course 6",
+            "stops": [
+              {
+                "id": "p1",
+                "label": "Feedback loop"
+              },
+              {
+                "id": "p2",
+                "label": "Unit test & CI/CD"
+              },
+              {
+                "id": "p3",
+                "label": "Logging"
+              },
+              {
+                "id": "p4",
+                "label": "Drift & OpenScale"
+              },
+              {
+                "id": "p5",
+                "label": "Kubernetes"
+              }
+            ]
+          },
+          "narration": [
+            "Chào bạn, mình là MeoLearn.",
+            "Chương 6 là khoá cuối của IBM AI Workflow.",
+            "Deploy xong mô hình mới chỉ là bắt đầu.",
+            "Ta đi qua feedback loop, unit test và CI/CD.",
+            "Rồi logging, performance drift, và Kubernetes.",
+            "Cuối chương có các bẫy hay gặp trong đề."
+          ],
+          "beats": [
+            {
+              "id": "chapter",
+              "s": 1,
+              "cue": "Chương 6"
+            },
+            {
+              "id": "course",
+              "s": 1,
+              "cue": "IBM AI Workflow"
+            },
+            {
+              "id": "road",
+              "s": 2,
+              "cue": "bắt đầu"
+            },
+            {
+              "id": "p1",
+              "s": 3,
+              "cue": "feedback loop"
+            },
+            {
+              "id": "p2",
+              "s": 3,
+              "cue": "unit test"
+            },
+            {
+              "id": "p3",
+              "s": 4,
+              "cue": "logging"
+            },
+            {
+              "id": "p4",
+              "s": 4,
+              "cue": "performance drift"
+            },
+            {
+              "id": "p5",
+              "s": 4,
+              "cue": "Kubernetes"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "feedback",
+      "title": "Feedback loop",
+      "scenes": [
+        {
+          "type": "cycle",
+          "pose": "idle",
+          "headline": "Workflow không phải đường thẳng",
+          "data": {
+            "center": "AI workflow",
+            "centerSub": [
+              {
+                "text": "có",
+                "beat": "has"
+              },
+              {
+                "text": "feedback loop",
+                "beat": "fb"
+              }
+            ],
+            "nodes": [
+              {
+                "id": "n1",
+                "label": "Business opportunity"
+              },
+              {
+                "id": "n2",
+                "label": "Data collection"
+              },
+              {
+                "id": "n3",
+                "label": "Transformation"
+              },
+              {
+                "id": "n4",
+                "label": "Model iteration"
+              },
+              {
+                "id": "n5",
+                "label": "Deploy"
+              }
+            ]
+          },
+          "narration": [
+            "AI workflow không phải một đường thẳng.",
+            "Nó gồm năm bước, nối thành một vòng.",
+            "Business opportunity, rồi data collection.",
+            "Transformation, model iteration, rồi deploy.",
+            "Quay lại một bước trước gọi là feedback loop."
+          ],
+          "beats": [
+            {
+              "id": "center",
+              "s": 0,
+              "cue": "AI workflow"
+            },
+            {
+              "id": "slots",
+              "s": 1,
+              "cue": "năm bước"
+            },
+            {
+              "id": "track",
+              "s": 1,
+              "cue": "vòng"
+            },
+            {
+              "id": "n1",
+              "s": 2,
+              "cue": "Business opportunity"
+            },
+            {
+              "id": "n2",
+              "s": 2,
+              "cue": "data collection"
+            },
+            {
+              "id": "n3",
+              "s": 3,
+              "cue": "Transformation"
+            },
+            {
+              "id": "n4",
+              "s": 3,
+              "cue": "model iteration"
+            },
+            {
+              "id": "n5",
+              "s": 3,
+              "cue": "deploy"
+            },
+            {
+              "id": "loop",
+              "s": 4,
+              "cue": "Quay lại"
+            },
+            {
+              "id": "has",
+              "s": 4,
+              "cue": "gọi là"
+            },
+            {
+              "id": "fb",
+              "s": 4,
+              "cue": "feedback loop"
+            }
+          ]
+        },
+        {
+          "type": "mnemonic",
+          "pose": "curious",
+          "headline": "Lùi là loop, tiến là không",
+          "data": {
+            "phrase": "Lùi là loop, tiến là không",
+            "items": [
+              {
+                "id": "back",
+                "letter": "↺",
+                "word": "Quay lui",
+                "gloss": "là feedback loop",
+                "highlight": true
+              },
+              {
+                "id": "fwd",
+                "letter": "→",
+                "word": "Đi tiếp",
+                "gloss": "luồng bình thường"
+              }
+            ]
+          },
+          "narration": [
+            "Mẹo nhớ rất ngắn gọn.",
+            "Quay lui về bước trước là feedback loop.",
+            "Đi tiếp sang bước sau thì không phải.",
+            "Lùi là loop, tiến là không."
+          ],
+          "beats": [
+            {
+              "id": "letters",
+              "s": 0,
+              "cue": "Mẹo nhớ"
+            },
+            {
+              "id": "back",
+              "s": 1,
+              "cue": "Quay lui"
+            },
+            {
+              "id": "fwd",
+              "s": 2,
+              "cue": "Đi tiếp"
+            },
+            {
+              "id": "phrase",
+              "s": 3,
+              "frac": 0.0
+            }
+          ]
+        },
+        {
+          "type": "quiz",
+          "pose": "curious",
+          "questionId": "qz2-102",
+          "explain": "Đi tiếp từ business opportunity và data collection sang model iteration là luồng tiến, không phải feedback loop."
+        }
+      ]
+    },
+    {
+      "id": "testing",
+      "title": "Unit test & CI/CD",
+      "scenes": [
+        {
+          "type": "code",
+          "pose": "idle",
+          "headline": "Unit test: viết test trước",
+          "data": {
+            "lines": [
+              {
+                "text": "import unittest",
+                "beat": "l1"
+              },
+              {
+                "text": ""
+              },
+              {
+                "text": "class ModelTest(unittest.TestCase):",
+                "beat": "l3"
+              },
+              {
+                "text": "    def test_predict(self):",
+                "beat": "l4"
+              },
+              {
+                "text": "        result = model_predict(\"all\", \"2018-01-05\")",
+                "beat": "l5"
+              },
+              {
+                "text": "        self.assertIn(\"y_pred\", result)",
+                "beat": "l6"
+              },
+              {
+                "text": ""
+              },
+              {
+                "text": "# coverage run -m unittest discover",
+                "beat": "l8"
+              },
+              {
+                "text": "# coverage report",
+                "beat": "l9"
+              }
+            ],
+            "stages": [
+              {
+                "id": "T",
+                "label": "Test trước",
+                "hint": "TDD"
+              },
+              {
+                "id": "C",
+                "label": "Code sau",
+                "hint": "cho test pass"
+              },
+              {
+                "id": "V",
+                "label": "Coverage",
+                "hint": "coverage report"
+              }
+            ]
+          },
+          "narration": [
+            "Unit test kiểm tra từng đơn vị code nhỏ, độc lập.",
+            "Trong Python, ta dùng module unittest.",
+            "Với TDD, ta viết test trước.",
+            "Rồi mới viết code để test pass.",
+            "Package coverage ước lượng test coverage.",
+            "Nhưng không cần gần một trăm phần trăm trước production."
+          ],
+          "beats": [
+            {
+              "id": "l1",
+              "s": 0
+            },
+            {
+              "id": "l3",
+              "s": 0,
+              "cue": "từng đơn vị"
+            },
+            {
+              "id": "l4",
+              "s": 1,
+              "cue": "module"
+            },
+            {
+              "id": "T",
+              "s": 2,
+              "cue": "TDD"
+            },
+            {
+              "id": "on_T",
+              "s": 2,
+              "cue": "viết test"
+            },
+            {
+              "id": "l5",
+              "s": 2,
+              "cue": "trước"
+            },
+            {
+              "id": "C",
+              "s": 3,
+              "cue": "viết code"
+            },
+            {
+              "id": "on_C",
+              "s": 3,
+              "cue": "viết code"
+            },
+            {
+              "id": "l6",
+              "s": 3,
+              "cue": "test pass"
+            },
+            {
+              "id": "V",
+              "s": 4,
+              "cue": "Package coverage"
+            },
+            {
+              "id": "l8",
+              "s": 4,
+              "cue": "ước lượng"
+            },
+            {
+              "id": "on_V",
+              "s": 4,
+              "cue": "test coverage"
+            },
+            {
+              "id": "l9",
+              "s": 5,
+              "cue": "không cần"
+            }
+          ]
+        },
+        {
+          "type": "pipeline",
+          "pose": "idle",
+          "headline": "CI/CD: merge, test, deploy",
+          "data": {
+            "stages": [
+              {
+                "id": "ci",
+                "label": "Integration",
+                "items": [
+                  {
+                    "id": "m1",
+                    "text": "Merge vào trunk"
+                  },
+                  {
+                    "id": "m2",
+                    "text": "Build, test tự động"
+                  }
+                ]
+              },
+              {
+                "id": "cd1",
+                "label": "Delivery",
+                "items": [
+                  {
+                    "id": "d1",
+                    "text": "Luôn sẵn sàng phát hành"
+                  }
+                ]
+              },
+              {
+                "id": "cd2",
+                "label": "Deployment",
+                "items": [
+                  {
+                    "id": "p1",
+                    "text": "Tự động lên production"
+                  }
+                ]
+              }
+            ]
+          },
+          "narration": [
+            "CI là Continuous Integration.",
+            "Lập trình viên merge thay đổi thường xuyên vào trunk.",
+            "Trunk là nhánh chính, mỗi lần merge đều build và test.",
+            "Continuous Delivery giữ code luôn sẵn sàng phát hành.",
+            "Continuous Deployment là tự động triển khai lên production.",
+            "Thay đổi nhanh thì rủi ro chính là đưa bug vào.",
+            "Nên luôn cần unit test và giám sát."
+          ],
+          "beats": [
+            {
+              "id": "ci",
+              "s": 0,
+              "cue": "Continuous Integration"
+            },
+            {
+              "id": "m1",
+              "s": 1,
+              "cue": "merge"
+            },
+            {
+              "id": "m2",
+              "s": 2,
+              "cue": "mỗi lần merge"
+            },
+            {
+              "id": "cd1",
+              "s": 3,
+              "cue": "Continuous Delivery"
+            },
+            {
+              "id": "d1",
+              "s": 3,
+              "cue": "sẵn sàng"
+            },
+            {
+              "id": "cd2",
+              "s": 4,
+              "cue": "Continuous Deployment"
+            },
+            {
+              "id": "p1",
+              "s": 4,
+              "cue": "tự động"
+            },
+            {
+              "id": "flow",
+              "s": 5,
+              "cue": "Thay đổi nhanh"
+            }
+          ]
+        },
+        {
+          "type": "mnemonic",
+          "pose": "curious",
+          "headline": "Vì sao đóng gói unit test?",
+          "data": {
+            "phrase": "Quà Rất Ấm Cúng",
+            "items": [
+              {
+                "id": "q",
+                "letter": "Q",
+                "word": "Quality",
+                "gloss": "chất lượng code"
+              },
+              {
+                "id": "r",
+                "letter": "R",
+                "word": "Regression",
+                "gloss": "test hồi quy"
+              },
+              {
+                "id": "a",
+                "letter": "A",
+                "word": "Automate",
+                "gloss": "tự động giám sát"
+              },
+              {
+                "id": "c",
+                "letter": "C",
+                "word": "CI/CD",
+                "gloss": "dễ tích hợp"
+              }
+            ]
+          },
+          "narration": [
+            "Vì sao đóng gói unit test cùng mô hình?",
+            "Q là quality, nâng chất lượng code.",
+            "R là regression test.",
+            "A là automate, tự động giám sát hiệu năng.",
+            "C là dễ tích hợp vào CI/CD.",
+            "Nhớ là: Quà Rất Ấm Cúng."
+          ],
+          "beats": [
+            {
+              "id": "letters",
+              "s": 0,
+              "cue": "đóng gói"
+            },
+            {
+              "id": "q",
+              "s": 1,
+              "cue": "quality"
+            },
+            {
+              "id": "r",
+              "s": 2,
+              "cue": "regression"
+            },
+            {
+              "id": "a",
+              "s": 3,
+              "cue": "automate"
+            },
+            {
+              "id": "c",
+              "s": 4,
+              "frac": 0.0
+            },
+            {
+              "id": "phrase",
+              "s": 5,
+              "cue": "Quà"
+            }
+          ]
+        },
+        {
+          "type": "quiz",
+          "pose": "curious",
+          "questionId": "qz2-099",
+          "explain": "Unit test không thực hiện các feedback loop của workflow."
+        }
+      ]
+    },
+    {
+      "id": "logging",
+      "title": "Logging",
+      "scenes": [
+        {
+          "type": "compare",
+          "pose": "idle",
+          "headline": "Log gì cho predict endpoint?",
+          "data": {
+            "left": {
+              "title": "Thiết yếu",
+              "tone": "good",
+              "items": [
+                {
+                  "id": "e1",
+                  "text": "timestamp, runtime"
+                },
+                {
+                  "id": "e2",
+                  "text": "model version"
+                },
+                {
+                  "id": "e3",
+                  "text": "predictions"
+                },
+                {
+                  "id": "e4",
+                  "text": "input data summary"
+                }
+              ]
+            },
+            "right": {
+              "title": "Không thiết yếu",
+              "tone": "bad",
+              "items": [
+                {
+                  "id": "x1",
+                  "text": "request type"
+                },
+                {
+                  "id": "x2",
+                  "text": "toàn bộ input data"
+                }
+              ]
+            },
+            "verdict": {
+              "id": "verdict",
+              "text": "Runtime là bắt buộc, không phải tùy chọn"
+            }
+          },
+          "narration": [
+            "Với predict endpoint, log có năm trường thiết yếu.",
+            "Timestamp, runtime, và model version.",
+            "Rồi predictions và input data summary.",
+            "Còn request type và toàn bộ input data thì không thiết yếu.",
+            "Nhớ: runtime không phải trường tùy chọn."
+          ],
+          "beats": [
+            {
+              "id": "left",
+              "s": 0,
+              "cue": "thiết yếu"
+            },
+            {
+              "id": "e1",
+              "s": 1,
+              "cue": "Timestamp"
+            },
+            {
+              "id": "e2",
+              "s": 1,
+              "cue": "model version"
+            },
+            {
+              "id": "e3",
+              "s": 2,
+              "cue": "predictions"
+            },
+            {
+              "id": "e4",
+              "s": 2,
+              "cue": "input data summary"
+            },
+            {
+              "id": "right",
+              "s": 3,
+              "cue": "request type"
+            },
+            {
+              "id": "x1",
+              "s": 3,
+              "cue": "request type"
+            },
+            {
+              "id": "x2",
+              "s": 3,
+              "cue": "toàn bộ"
+            },
+            {
+              "id": "verdict",
+              "s": 4,
+              "cue": "runtime"
+            }
+          ]
+        },
+        {
+          "type": "mnemonic",
+          "pose": "curious",
+          "headline": "Năm trường log thiết yếu",
+          "data": {
+            "phrase": "Tết Rồi, Mua Pháo Ít",
+            "items": [
+              {
+                "id": "t",
+                "letter": "T",
+                "word": "timestamp",
+                "gloss": "thời điểm"
+              },
+              {
+                "id": "r",
+                "letter": "R",
+                "word": "runtime",
+                "gloss": "thời gian chạy",
+                "highlight": true
+              },
+              {
+                "id": "m",
+                "letter": "M",
+                "word": "version",
+                "gloss": "phiên bản mô hình"
+              },
+              {
+                "id": "p",
+                "letter": "P",
+                "word": "predictions",
+                "gloss": "dự đoán"
+              },
+              {
+                "id": "i",
+                "letter": "I",
+                "word": "input",
+                "gloss": "tóm tắt đầu vào"
+              }
+            ]
+          },
+          "narration": [
+            "Mẹo nhớ năm trường log thiết yếu.",
+            "T là timestamp, R là runtime.",
+            "M là model version, P là predictions.",
+            "I là input data summary.",
+            "Ghép lại: Tết Rồi, Mua Pháo Ít."
+          ],
+          "beats": [
+            {
+              "id": "letters",
+              "s": 0,
+              "cue": "năm trường"
+            },
+            {
+              "id": "t",
+              "s": 1,
+              "cue": "timestamp"
+            },
+            {
+              "id": "r",
+              "s": 1,
+              "cue": "runtime"
+            },
+            {
+              "id": "m",
+              "s": 2,
+              "cue": "model version"
+            },
+            {
+              "id": "p",
+              "s": 2,
+              "cue": "predictions"
+            },
+            {
+              "id": "i",
+              "s": 3,
+              "cue": "input"
+            },
+            {
+              "id": "phrase",
+              "s": 4,
+              "cue": "Tết"
+            }
+          ]
+        },
+        {
+          "type": "quiz",
+          "pose": "curious",
+          "questionId": "qz2-100",
+          "explain": "Runtime là trường thiết yếu khi log cho predict endpoint, không phải tùy chọn."
+        }
+      ]
+    },
+    {
+      "id": "drift",
+      "title": "Drift & OpenScale",
+      "scenes": [
+        {
+          "type": "pipeline",
+          "pose": "idle",
+          "headline": "Performance drift: vì sao, làm gì",
+          "data": {
+            "stages": [
+              {
+                "id": "src",
+                "label": "Nguồn drift",
+                "items": [
+                  {
+                    "id": "s1",
+                    "text": "Khách hàng thay đổi"
+                  },
+                  {
+                    "id": "s2",
+                    "text": "Dữ liệu train lỗi"
+                  },
+                  {
+                    "id": "s3",
+                    "text": "Đổi phiên bản thư viện"
+                  }
+                ]
+              },
+              {
+                "id": "det",
+                "label": "Phát hiện",
+                "items": [
+                  {
+                    "id": "k1",
+                    "text": "So phân phối dữ liệu"
+                  },
+                  {
+                    "id": "k2",
+                    "text": "Outlier detection"
+                  }
+                ]
+              },
+              {
+                "id": "ops",
+                "label": "Giám sát",
+                "items": [
+                  {
+                    "id": "o1",
+                    "text": "Watson OpenScale"
+                  }
+                ]
+              }
+            ]
+          },
+          "narration": [
+            "Hiệu năng giảm dần sau deploy gọi là performance drift.",
+            "Nguyên nhân là hành vi khách hàng thay đổi.",
+            "Dữ liệu huấn luyện thiếu, sai hoặc mất cân bằng.",
+            "Hoặc chỉ là đổi phiên bản thư viện.",
+            "Để phát hiện, so sánh phân phối dữ liệu mới và cũ.",
+            "Hoặc dùng outlier detection như Isolation Forest.",
+            "Trong production, IBM Watson OpenScale lo việc giám sát."
+          ],
+          "beats": [
+            {
+              "id": "src",
+              "s": 0,
+              "cue": "performance drift"
+            },
+            {
+              "id": "s1",
+              "s": 1,
+              "cue": "hành vi"
+            },
+            {
+              "id": "s2",
+              "s": 2,
+              "cue": "Dữ liệu huấn luyện"
+            },
+            {
+              "id": "s3",
+              "s": 3,
+              "frac": 0.0
+            },
+            {
+              "id": "det",
+              "s": 4,
+              "cue": "phát hiện"
+            },
+            {
+              "id": "k1",
+              "s": 4,
+              "cue": "so sánh"
+            },
+            {
+              "id": "k2",
+              "s": 5,
+              "cue": "outlier detection"
+            },
+            {
+              "id": "ops",
+              "s": 6,
+              "frac": 0.0
+            },
+            {
+              "id": "o1",
+              "s": 6,
+              "cue": "IBM Watson OpenScale"
+            },
+            {
+              "id": "flow",
+              "s": 6,
+              "cue": "giám sát"
+            }
+          ]
+        },
+        {
+          "type": "mnemonic",
+          "pose": "curious",
+          "headline": "Ba dịch vụ của OpenScale",
+          "data": {
+            "phrase": "Trôi, công bằng, giải thích",
+            "items": [
+              {
+                "id": "d",
+                "letter": "D",
+                "word": "Drift",
+                "gloss": "hiệu năng trôi"
+              },
+              {
+                "id": "f",
+                "letter": "F",
+                "word": "Fairness",
+                "gloss": "phát hiện bias"
+              },
+              {
+                "id": "e",
+                "letter": "E",
+                "word": "Explain",
+                "gloss": "giải thích dự đoán"
+              }
+            ]
+          },
+          "narration": [
+            "OpenScale có ba dịch vụ chính.",
+            "Drift monitoring theo dõi hiệu năng bị trôi.",
+            "Fairness phát hiện bias.",
+            "Explainability giải thích vì sao mô hình dự đoán như vậy.",
+            "Mẹo nhớ: trôi, công bằng, giải thích."
+          ],
+          "beats": [
+            {
+              "id": "letters",
+              "s": 0,
+              "cue": "ba dịch vụ"
+            },
+            {
+              "id": "d",
+              "s": 1,
+              "cue": "Drift"
+            },
+            {
+              "id": "f",
+              "s": 2,
+              "cue": "Fairness"
+            },
+            {
+              "id": "e",
+              "s": 3,
+              "cue": "Explainability"
+            },
+            {
+              "id": "phrase",
+              "s": 4,
+              "frac": 0.0
+            }
+          ]
+        },
+        {
+          "type": "quiz",
+          "pose": "curious",
+          "questionId": "qz2-109",
+          "explain": "OpenScale giám sát được mô hình triển khai trên nhiều nền tảng, không chỉ Watson Studio."
+        }
+      ]
+    },
+    {
+      "id": "k8s",
+      "title": "Kubernetes",
+      "scenes": [
+        {
+          "type": "pipeline",
+          "pose": "idle",
+          "headline": "Kubernetes: ai làm việc gì",
+          "data": {
+            "stages": [
+              {
+                "id": "kc",
+                "label": "kubectl",
+                "items": [
+                  {
+                    "id": "i1",
+                    "text": "CLI gõ lệnh"
+                  }
+                ]
+              },
+              {
+                "id": "api",
+                "label": "API server",
+                "items": [
+                  {
+                    "id": "i2",
+                    "text": "Định nghĩa workload"
+                  }
+                ]
+              },
+              {
+                "id": "node",
+                "label": "Worker node",
+                "items": [
+                  {
+                    "id": "i3",
+                    "text": "Kubelet giữ app khoẻ"
+                  },
+                  {
+                    "id": "i4",
+                    "text": "Pod chứa container"
+                  }
+                ]
+              }
+            ]
+          },
+          "narration": [
+            "Ta ra lệnh bằng kubectl, công cụ dòng lệnh.",
+            "Lệnh tới API server, nơi định nghĩa workload.",
+            "Mỗi worker node có một agent tên là Kubelet.",
+            "Kubelet giữ cho ứng dụng trên node khoẻ và đang chạy.",
+            "Ứng dụng chạy trong pod, chứa một hoặc nhiều container."
+          ],
+          "beats": [
+            {
+              "id": "kc",
+              "s": 0,
+              "cue": "kubectl"
+            },
+            {
+              "id": "i1",
+              "s": 0,
+              "cue": "dòng lệnh"
+            },
+            {
+              "id": "api",
+              "s": 1,
+              "cue": "API server"
+            },
+            {
+              "id": "i2",
+              "s": 1,
+              "cue": "workload"
+            },
+            {
+              "id": "node",
+              "s": 2,
+              "cue": "worker node"
+            },
+            {
+              "id": "i3",
+              "s": 2,
+              "cue": "Kubelet"
+            },
+            {
+              "id": "flow",
+              "s": 3,
+              "cue": "đang chạy"
+            },
+            {
+              "id": "i4",
+              "s": 4,
+              "cue": "pod"
+            }
+          ]
+        },
+        {
+          "type": "mnemonic",
+          "pose": "curious",
+          "headline": "Ba loại service",
+          "data": {
+            "phrase": "Trong nhà, mở cửa, ra phố",
+            "items": [
+              {
+                "id": "c",
+                "letter": "C",
+                "word": "ClusterIP",
+                "gloss": "trong cluster"
+              },
+              {
+                "id": "n",
+                "letter": "N",
+                "word": "NodePort",
+                "gloss": "cổng trên node"
+              },
+              {
+                "id": "l",
+                "letter": "L",
+                "word": "LoadBalancer",
+                "gloss": "ra người dùng ngoài",
+                "highlight": true
+              }
+            ]
+          },
+          "narration": [
+            "Mẹo nhớ ba loại service.",
+            "ClusterIP như ở trong nhà, chỉ truy cập nội bộ.",
+            "NodePort như mở cửa, mở cổng trên mỗi node.",
+            "LoadBalancer là ra phố, cho người dùng bên ngoài.",
+            "Trong nhà, mở cửa, ra phố."
+          ],
+          "beats": [
+            {
+              "id": "letters",
+              "s": 0,
+              "cue": "ba loại"
+            },
+            {
+              "id": "c",
+              "s": 1,
+              "cue": "ClusterIP"
+            },
+            {
+              "id": "n",
+              "s": 2,
+              "cue": "NodePort"
+            },
+            {
+              "id": "l",
+              "s": 3,
+              "cue": "LoadBalancer"
+            },
+            {
+              "id": "phrase",
+              "s": 4,
+              "frac": 0.0
+            }
+          ]
+        },
+        {
+          "type": "quiz",
+          "pose": "curious",
+          "questionId": "su26re-10",
+          "explain": "LoadBalancer phơi bày ứng dụng ra người dùng bên ngoài, còn ClusterIP chỉ dùng trong cluster."
+        }
+      ]
+    },
+    {
+      "id": "traps",
+      "title": "Bẫy hay gặp",
+      "scenes": [
+        {
+          "type": "traps",
+          "pose": "sad",
+          "headline": "Năm bẫy hay gặp trong đề",
+          "data": {
+            "traps": [
+              {
+                "id": "t1",
+                "wrong": "Cần gần 100% test coverage",
+                "right": "Không bắt buộc, câu này là False"
+              },
+              {
+                "id": "t2",
+                "wrong": "Runtime là trường log tùy chọn",
+                "right": "Runtime là trường thiết yếu"
+              },
+              {
+                "id": "t3",
+                "wrong": "ADASYN là outlier detection",
+                "right": "ADASYN là oversampling"
+              },
+              {
+                "id": "t4",
+                "wrong": "OpenScale chỉ cho Watson Studio",
+                "right": "Giám sát mô hình ở nhiều nền tảng"
+              },
+              {
+                "id": "t5",
+                "wrong": "Một pod chứa nhiều deployment",
+                "right": "Deployment quản lý các pod"
+              }
+            ]
+          },
+          "narration": [
+            "Cuối cùng là năm cái bẫy hay gặp.",
+            "Không cần gần một trăm phần trăm test coverage.",
+            "Runtime không phải trường log tùy chọn.",
+            "ADASYN là oversampling, không phải outlier detection.",
+            "OpenScale không chỉ dùng cho Watson Studio.",
+            "Và pod không chứa deployment, deployment quản lý pod."
+          ],
+          "beats": [
+            {
+              "id": "t1",
+              "s": 0,
+              "cue": "năm cái bẫy"
+            },
+            {
+              "id": "fix_t1",
+              "s": 1,
+              "cue": "Không cần"
+            },
+            {
+              "id": "t2",
+              "s": 2,
+              "cue": "Runtime"
+            },
+            {
+              "id": "fix_t2",
+              "s": 2,
+              "cue": "không phải"
+            },
+            {
+              "id": "t3",
+              "s": 3,
+              "cue": "ADASYN"
+            },
+            {
+              "id": "fix_t3",
+              "s": 3,
+              "cue": "oversampling"
+            },
+            {
+              "id": "t4",
+              "s": 4,
+              "cue": "OpenScale"
+            },
+            {
+              "id": "fix_t4",
+              "s": 4,
+              "cue": "không chỉ"
+            },
+            {
+              "id": "t5",
+              "s": 5,
+              "cue": "pod"
+            },
+            {
+              "id": "fix_t5",
+              "s": 5,
+              "cue": "deployment quản lý"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "recap",
+      "title": "Tổng kết",
+      "scenes": [
+        {
+          "type": "recap",
+          "pose": "happy",
+          "headline": "Nhớ năm điều này",
+          "data": {
+            "items": [
+              {
+                "id": "r1",
+                "text": "Lùi là loop, tiến là không"
+              },
+              {
+                "id": "r2",
+                "text": "Quà Rất Ấm Cúng: vì sao có unit test"
+              },
+              {
+                "id": "r3",
+                "text": "Tết Rồi, Mua Pháo Ít: trường log"
+              },
+              {
+                "id": "r4",
+                "text": "OpenScale: drift, fairness, explain"
+              },
+              {
+                "id": "r5",
+                "text": "Service: trong nhà, mở cửa, ra phố"
+              }
+            ]
+          },
+          "narration": [
+            "Tóm lại, nhớ năm điều.",
+            "Lùi là loop, tiến là không.",
+            "Quà Rất Ấm Cúng: lý do đóng gói unit test.",
+            "Tết Rồi, Mua Pháo Ít: năm trường log.",
+            "OpenScale: drift, fairness, explain.",
+            "Và service: trong nhà, mở cửa, ra phố.",
+            "Chúc bạn thi thật tốt!"
+          ],
+          "beats": [
+            {
+              "id": "r1",
+              "s": 1,
+              "frac": 0.0
+            },
+            {
+              "id": "r2",
+              "s": 2,
+              "cue": "Quà"
+            },
+            {
+              "id": "r3",
+              "s": 3,
+              "cue": "Tết"
+            },
+            {
+              "id": "r4",
+              "s": 4,
+              "cue": "OpenScale"
+            },
+            {
+              "id": "r5",
+              "s": 5,
+              "frac": 0.0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1345 @@
+{
+  "chapter": 4,
+  "title": "Machine learning, nhận dạng hình ảnh & NLP",
+  "sections": [
+    {
+      "id": "intro",
+      "title": "Mở đầu",
+      "scenes": [
+        {
+          "type": "intro",
+          "pose": "idle",
+          "headline": "Machine learning, ảnh và NLP",
+          "data": {
+            "chapterNo": 4,
+            "course": "IBM AI Workflow · Course 4",
+            "stops": [
+              {
+                "id": "p1",
+                "label": "Metric phân loại"
+              },
+              {
+                "id": "p2",
+                "label": "Tree & ensemble"
+              },
+              {
+                "id": "p3",
+                "label": "Neural network"
+              },
+              {
+                "id": "p4",
+                "label": "NLP & Watson"
+              }
+            ]
+          },
+          "narration": [
+            "Chào bạn, mình là MeoLearn.",
+            "Chương 4 bám theo khoá thứ tư của IBM AI Workflow.",
+            "Hôm nay ta đi qua bốn chặng.",
+            "Metric phân loại, rồi tree và ensemble.",
+            "Sau đó là neural network, và NLP với Watson.",
+            "Cuối chương có các bẫy hay gặp trong đề."
+          ],
+          "beats": [
+            {
+              "id": "chapter",
+              "s": 1,
+              "cue": "Chương 4"
+            },
+            {
+              "id": "course",
+              "s": 1,
+              "cue": "IBM AI Workflow"
+            },
+            {
+              "id": "road",
+              "s": 2,
+              "cue": "bốn chặng"
+            },
+            {
+              "id": "p1",
+              "s": 3,
+              "cue": "Metric"
+            },
+            {
+              "id": "p2",
+              "s": 3,
+              "cue": "tree"
+            },
+            {
+              "id": "p3",
+              "s": 4,
+              "cue": "neural network"
+            },
+            {
+              "id": "p4",
+              "s": 4,
+              "cue": "NLP"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "metrics",
+      "title": "Metric phân loại",
+      "scenes": [
+        {
+          "type": "compare",
+          "pose": "idle",
+          "headline": "Confusion matrix: bốn ô kết quả",
+          "data": {
+            "left": {
+              "title": "Đoán đúng",
+              "tone": "good",
+              "items": [
+                {
+                  "id": "tp",
+                  "text": "TP: đoán dương, đúng là dương"
+                },
+                {
+                  "id": "tn",
+                  "text": "TN: đoán âm, đúng là âm"
+                }
+              ]
+            },
+            "right": {
+              "title": "Đoán sai",
+              "tone": "bad",
+              "items": [
+                {
+                  "id": "fp",
+                  "text": "FP: báo động nhầm"
+                },
+                {
+                  "id": "fn",
+                  "text": "FN: bỏ sót"
+                }
+              ]
+            },
+            "verdict": {
+              "id": "verdict",
+              "text": "Average Score không phải một ô"
+            }
+          },
+          "narration": [
+            "Mô hình đoán xong, ta đếm đúng sai.",
+            "Bảng đếm đó gọi là confusion matrix.",
+            "True Positive là đoán dương, và đúng là dương.",
+            "True Negative là đoán âm, và đúng là âm.",
+            "False Positive là báo động nhầm.",
+            "False Negative là bỏ sót.",
+            "Average Score không phải là một ô trong bảng này."
+          ],
+          "beats": [
+            {
+              "id": "left",
+              "s": 1,
+              "cue": "Bảng đếm"
+            },
+            {
+              "id": "tp",
+              "s": 2,
+              "cue": "True Positive"
+            },
+            {
+              "id": "tn",
+              "s": 3,
+              "cue": "True Negative"
+            },
+            {
+              "id": "right",
+              "s": 4,
+              "cue": "False Positive"
+            },
+            {
+              "id": "fp",
+              "s": 4,
+              "cue": "báo động nhầm"
+            },
+            {
+              "id": "fn",
+              "s": 5,
+              "cue": "bỏ sót"
+            },
+            {
+              "id": "verdict",
+              "s": 6,
+              "cue": "Average Score"
+            }
+          ]
+        },
+        {
+          "type": "compare",
+          "pose": "idle",
+          "headline": "Precision hay recall?",
+          "data": {
+            "left": {
+              "title": "Precision",
+              "tone": "neutral",
+              "items": [
+                {
+                  "id": "l1",
+                  "text": "TP / (TP + FP)"
+                },
+                {
+                  "id": "l2",
+                  "text": "Sợ báo nhầm"
+                }
+              ]
+            },
+            "right": {
+              "title": "Recall",
+              "tone": "neutral",
+              "items": [
+                {
+                  "id": "r1",
+                  "text": "TP / (TP + FN)"
+                },
+                {
+                  "id": "r2",
+                  "text": "Sợ bỏ sót"
+                }
+              ]
+            },
+            "verdict": {
+              "id": "verdict",
+              "text": "Bỏ sót đắt hơn → F-beta với beta = 2"
+            }
+          },
+          "narration": [
+            "Từ bốn ô đó, ta tính precision và recall.",
+            "Precision hỏi: trong các lần báo dương, bao nhiêu lần đúng?",
+            "Recall hỏi: trong các ca dương thật, bắt được bao nhiêu?",
+            "Precision quan trọng khi ta sợ báo nhầm.",
+            "Recall quan trọng khi ta sợ bỏ sót.",
+            "Nếu bỏ sót đắt hơn, ta dùng F-beta với beta bằng hai."
+          ],
+          "beats": [
+            {
+              "id": "left",
+              "s": 0,
+              "cue": "precision"
+            },
+            {
+              "id": "right",
+              "s": 0,
+              "cue": "recall"
+            },
+            {
+              "id": "l1",
+              "s": 1,
+              "cue": "trong các lần"
+            },
+            {
+              "id": "r1",
+              "s": 2,
+              "cue": "trong các ca"
+            },
+            {
+              "id": "l2",
+              "s": 3,
+              "cue": "Precision"
+            },
+            {
+              "id": "r2",
+              "s": 4,
+              "cue": "Recall"
+            },
+            {
+              "id": "verdict",
+              "s": 5,
+              "cue": "Nếu bỏ sót"
+            }
+          ]
+        },
+        {
+          "type": "mnemonic",
+          "pose": "curious",
+          "headline": "Mẹo đọc tên bốn ô",
+          "data": {
+            "phrase": "Chữ đầu chấm đúng sai, chữ sau là lời đoán",
+            "items": [
+              {
+                "id": "t",
+                "letter": "T",
+                "word": "True / False",
+                "gloss": "đoán đúng hay sai"
+              },
+              {
+                "id": "p",
+                "letter": "P",
+                "word": "Positive / Negative",
+                "gloss": "mô hình đã đoán gì"
+              }
+            ]
+          },
+          "narration": [
+            "Mẹo đọc tên bốn ô: tách làm hai chữ.",
+            "Chữ đầu, True hay False, chấm xem đoán đúng hay sai.",
+            "Chữ sau, Positive hay Negative, là điều đã đoán.",
+            "Vậy False Negative là: đoán âm, nhưng đoán sai."
+          ],
+          "beats": [
+            {
+              "id": "letters",
+              "s": 0,
+              "cue": "hai chữ"
+            },
+            {
+              "id": "t",
+              "s": 1,
+              "cue": "Chữ đầu"
+            },
+            {
+              "id": "p",
+              "s": 2,
+              "cue": "Chữ sau"
+            },
+            {
+              "id": "phrase",
+              "s": 3,
+              "frac": 0.0
+            }
+          ]
+        },
+        {
+          "type": "quiz",
+          "pose": "curious",
+          "questionId": "su26re-05",
+          "explain": "Bảng chỉ có TP, TN, FP và FN; Average Score không phải một ô."
+        }
+      ]
+    },
+    {
+      "id": "ensemble",
+      "title": "Tree & ensemble",
+      "scenes": [
+        {
+          "type": "pipeline",
+          "pose": "idle",
+          "headline": "Random Forest: nhiều cây cùng bầu",
+          "data": {
+            "stages": [
+              {
+                "id": "tree",
+                "label": "Một cây",
+                "items": [
+                  {
+                    "id": "c1",
+                    "text": "Dễ giải thích"
+                  },
+                  {
+                    "id": "c2",
+                    "text": "Hợp dữ liệu churn"
+                  },
+                  {
+                    "id": "c3",
+                    "text": "Variance cao"
+                  }
+                ]
+              },
+              {
+                "id": "rf",
+                "label": "Random Forest",
+                "items": [
+                  {
+                    "id": "f1",
+                    "text": "Nhiều cây, mẫu khác nhau"
+                  },
+                  {
+                    "id": "f2",
+                    "text": "Lấy trung bình"
+                  }
+                ]
+              },
+              {
+                "id": "out",
+                "label": "Kết quả",
+                "items": [
+                  {
+                    "id": "o1",
+                    "text": "Ổn định hơn"
+                  }
+                ]
+              }
+            ]
+          },
+          "narration": [
+            "Một decision tree dễ đọc và dễ giải thích.",
+            "Nó hợp với dữ liệu churn của AAVAIL.",
+            "Nhưng một cây thường có bias thấp, variance cao.",
+            "Random Forest trồng nhiều cây trên các mẫu khác nhau.",
+            "Rồi lấy trung bình kết quả của các cây.",
+            "Nhờ vậy variance giảm, dự đoán ổn định hơn."
+          ],
+          "beats": [
+            {
+              "id": "tree",
+              "s": 0,
+              "cue": "decision tree"
+            },
+            {
+              "id": "c1",
+              "s": 0,
+              "cue": "dễ giải thích"
+            },
+            {
+              "id": "c2",
+              "s": 1,
+              "cue": "churn"
+            },
+            {
+              "id": "c3",
+              "s": 2,
+              "cue": "variance cao"
+            },
+            {
+              "id": "rf",
+              "s": 3,
+              "cue": "Random Forest"
+            },
+            {
+              "id": "f1",
+              "s": 3,
+              "cue": "nhiều cây"
+            },
+            {
+              "id": "f2",
+              "s": 4,
+              "cue": "trung bình"
+            },
+            {
+              "id": "flow",
+              "s": 4,
+              "cue": "kết quả"
+            },
+            {
+              "id": "out",
+              "s": 5,
+              "cue": "variance giảm"
+            },
+            {
+              "id": "o1",
+              "s": 5,
+              "cue": "ổn định"
+            }
+          ]
+        },
+        {
+          "type": "compare",
+          "pose": "idle",
+          "headline": "Bagging và boosting khác nhau ở đâu",
+          "data": {
+            "left": {
+              "title": "Bagging",
+              "tone": "neutral",
+              "items": [
+                {
+                  "id": "b1",
+                  "text": "Nhiều model song song"
+                },
+                {
+                  "id": "b2",
+                  "text": "Giảm variance"
+                }
+              ]
+            },
+            "right": {
+              "title": "Boosting",
+              "tone": "neutral",
+              "items": [
+                {
+                  "id": "o1",
+                  "text": "Nối tiếp, sửa lỗi model trước"
+                },
+                {
+                  "id": "o2",
+                  "text": "Giảm bias"
+                }
+              ]
+            },
+            "verdict": {
+              "id": "verdict",
+              "text": "Không bắt buộc dùng cây làm nền"
+            }
+          },
+          "narration": [
+            "Random Forest thuộc nhóm bagging.",
+            "Bagging huấn luyện nhiều model song song.",
+            "Mục tiêu là giảm variance.",
+            "Boosting thì nối tiếp: model sau sửa lỗi model trước.",
+            "Boosting giúp giảm bias, như AdaBoost hay Gradient Boosting.",
+            "Cả hai không bắt buộc dùng decision tree làm nền."
+          ],
+          "beats": [
+            {
+              "id": "left",
+              "s": 0,
+              "cue": "bagging"
+            },
+            {
+              "id": "b1",
+              "s": 1,
+              "cue": "song song"
+            },
+            {
+              "id": "b2",
+              "s": 2,
+              "cue": "giảm variance"
+            },
+            {
+              "id": "right",
+              "s": 3,
+              "cue": "Boosting"
+            },
+            {
+              "id": "o1",
+              "s": 3,
+              "cue": "nối tiếp"
+            },
+            {
+              "id": "o2",
+              "s": 4,
+              "cue": "giảm bias"
+            },
+            {
+              "id": "verdict",
+              "s": 5,
+              "cue": "Cả hai"
+            }
+          ]
+        },
+        {
+          "type": "mnemonic",
+          "pose": "curious",
+          "headline": "Mẹo nhớ: bầu cùng lúc, sửa từng lượt",
+          "data": {
+            "phrase": "Bầu cùng lúc, sửa từng lượt",
+            "items": [
+              {
+                "id": "v",
+                "letter": "V",
+                "word": "Bagging",
+                "gloss": "giảm Variance"
+              },
+              {
+                "id": "b",
+                "letter": "B",
+                "word": "Boosting",
+                "gloss": "giảm Bias"
+              }
+            ]
+          },
+          "narration": [
+            "Mẹo nhớ: nhìn vào chữ cái.",
+            "Bagging giảm variance, như cả lớp bầu cùng lúc.",
+            "Boosting giảm bias, như học trò sửa bài từng lượt.",
+            "Còn một decision tree đơn lẻ thì không phải ensemble."
+          ],
+          "beats": [
+            {
+              "id": "letters",
+              "s": 0,
+              "cue": "chữ cái"
+            },
+            {
+              "id": "v",
+              "s": 1,
+              "cue": "Bagging"
+            },
+            {
+              "id": "b",
+              "s": 2,
+              "cue": "Boosting"
+            },
+            {
+              "id": "phrase",
+              "s": 3,
+              "cue": "decision tree"
+            }
+          ]
+        },
+        {
+          "type": "quiz",
+          "pose": "curious",
+          "questionId": "su26re-37",
+          "explain": "Decision tree là một mô hình đơn lẻ, không phải ensemble."
+        }
+      ]
+    },
+    {
+      "id": "nn",
+      "title": "Neural network",
+      "scenes": [
+        {
+          "type": "pipeline",
+          "pose": "idle",
+          "headline": "CNN: ba loại lớp",
+          "data": {
+            "stages": [
+              {
+                "id": "conv",
+                "label": "Convolutional",
+                "items": [
+                  {
+                    "id": "k1",
+                    "text": "Tìm cạnh, nét"
+                  },
+                  {
+                    "id": "k2",
+                    "text": "Ghép thành hình"
+                  }
+                ]
+              },
+              {
+                "id": "pool",
+                "label": "Pooling",
+                "items": [
+                  {
+                    "id": "p1",
+                    "text": "Thu nhỏ ảnh"
+                  },
+                  {
+                    "id": "p2",
+                    "text": "Giữ nét chính"
+                  }
+                ]
+              },
+              {
+                "id": "dense",
+                "label": "Dense",
+                "items": [
+                  {
+                    "id": "d1",
+                    "text": "Ra nhãn của ảnh"
+                  }
+                ]
+              }
+            ]
+          },
+          "narration": [
+            "CNN là mạng chuyên xử lý ảnh.",
+            "Lớp convolutional quét ảnh để tìm cạnh và nét.",
+            "Các lớp sau ghép nét thành hình.",
+            "Pooling thu nhỏ ảnh, chỉ giữ nét chính.",
+            "Lớp dense ở cuối đưa ra nhãn của ảnh.",
+            "Vậy CNN hợp với phân loại ảnh và phát hiện vật thể."
+          ],
+          "beats": [
+            {
+              "id": "conv",
+              "s": 1,
+              "cue": "convolutional"
+            },
+            {
+              "id": "k1",
+              "s": 1,
+              "cue": "tìm cạnh"
+            },
+            {
+              "id": "k2",
+              "s": 2,
+              "cue": "ghép"
+            },
+            {
+              "id": "pool",
+              "s": 3,
+              "cue": "Pooling"
+            },
+            {
+              "id": "p1",
+              "s": 3,
+              "cue": "thu nhỏ"
+            },
+            {
+              "id": "p2",
+              "s": 3,
+              "cue": "giữ nét"
+            },
+            {
+              "id": "dense",
+              "s": 4,
+              "cue": "dense"
+            },
+            {
+              "id": "d1",
+              "s": 4,
+              "cue": "nhãn"
+            },
+            {
+              "id": "flow",
+              "s": 5,
+              "cue": "phân loại"
+            }
+          ]
+        },
+        {
+          "type": "compare",
+          "pose": "idle",
+          "headline": "CNN nhìn ảnh, RNN đọc chuỗi",
+          "data": {
+            "left": {
+              "title": "CNN",
+              "tone": "neutral",
+              "items": [
+                {
+                  "id": "a1",
+                  "text": "Ảnh, phát hiện vật thể"
+                },
+                {
+                  "id": "a2",
+                  "text": "Hay dùng transfer learning"
+                }
+              ]
+            },
+            "right": {
+              "title": "RNN",
+              "tone": "neutral",
+              "items": [
+                {
+                  "id": "r1",
+                  "text": "Đọc theo thứ tự"
+                },
+                {
+                  "id": "r2",
+                  "text": "LSTM, GRU · time series"
+                }
+              ]
+            },
+            "verdict": {
+              "id": "verdict",
+              "text": "Transfer learning đến từ deep learning"
+            }
+          },
+          "narration": [
+            "CNN mạnh với dữ liệu dạng ảnh.",
+            "RNN đọc dữ liệu theo thứ tự, từng bước một.",
+            "RNN, LSTM và GRU hợp nhất với time series.",
+            "Với ảnh, ta hay mượn mô hình đã huấn luyện sẵn.",
+            "Đó là transfer learning, đến từ deep learning.",
+            "Không phải từ reinforcement learning."
+          ],
+          "beats": [
+            {
+              "id": "left",
+              "s": 0,
+              "cue": "CNN"
+            },
+            {
+              "id": "a1",
+              "s": 0,
+              "cue": "dạng ảnh"
+            },
+            {
+              "id": "right",
+              "s": 1,
+              "cue": "RNN"
+            },
+            {
+              "id": "r1",
+              "s": 1,
+              "cue": "theo thứ tự"
+            },
+            {
+              "id": "r2",
+              "s": 2,
+              "cue": "LSTM"
+            },
+            {
+              "id": "a2",
+              "s": 3,
+              "cue": "Với ảnh"
+            },
+            {
+              "id": "verdict",
+              "s": 4,
+              "cue": "transfer learning"
+            }
+          ]
+        },
+        {
+          "type": "mnemonic",
+          "pose": "curious",
+          "headline": "Mẹo nhớ: CNN nhìn, RNN nhớ",
+          "data": {
+            "phrase": "CNN nhìn, RNN nhớ",
+            "items": [
+              {
+                "id": "c",
+                "letter": "C",
+                "word": "CNN",
+                "gloss": "con mắt: nhìn ảnh"
+              },
+              {
+                "id": "r",
+                "letter": "R",
+                "word": "RNN",
+                "gloss": "trí nhớ: nhớ chuỗi"
+              }
+            ]
+          },
+          "narration": [
+            "Mẹo nhớ hai mạng này rất gọn.",
+            "C trong CNN là con mắt, chuyên nhìn ảnh.",
+            "R trong RNN là trí nhớ, nhớ những gì vừa xảy ra.",
+            "Gặp time series thì nghĩ ngay tới RNN."
+          ],
+          "beats": [
+            {
+              "id": "letters",
+              "s": 0,
+              "cue": "hai mạng"
+            },
+            {
+              "id": "c",
+              "s": 1,
+              "cue": "con mắt"
+            },
+            {
+              "id": "r",
+              "s": 2,
+              "cue": "trí nhớ"
+            },
+            {
+              "id": "phrase",
+              "s": 3,
+              "cue": "time series"
+            }
+          ]
+        },
+        {
+          "type": "quiz",
+          "pose": "curious",
+          "questionId": "qz2-070",
+          "explain": "RNN, cùng LSTM và GRU, xử lý dữ liệu tuần tự nên hợp nhất với time series."
+        }
+      ]
+    },
+    {
+      "id": "nlp",
+      "title": "NLP & Watson",
+      "scenes": [
+        {
+          "type": "pipeline",
+          "pose": "idle",
+          "headline": "Phân loại văn bản qua ba bước",
+          "data": {
+            "stages": [
+              {
+                "id": "pre",
+                "label": "Tiền xử lý",
+                "items": [
+                  {
+                    "id": "tk",
+                    "text": "Tokenize"
+                  },
+                  {
+                    "id": "sw",
+                    "text": "Bỏ stop words"
+                  },
+                  {
+                    "id": "lm",
+                    "text": "Lemmatize"
+                  }
+                ]
+              },
+              {
+                "id": "vec",
+                "label": "Biểu diễn",
+                "items": [
+                  {
+                    "id": "bw",
+                    "text": "Bag-of-words"
+                  },
+                  {
+                    "id": "tf",
+                    "text": "TF-IDF, n-gram"
+                  }
+                ]
+              },
+              {
+                "id": "clf",
+                "label": "Classifier",
+                "items": [
+                  {
+                    "id": "nb",
+                    "text": "Naive Bayes, SGD"
+                  }
+                ]
+              }
+            ]
+          },
+          "narration": [
+            "NLP giúp máy hiểu ngôn ngữ của người.",
+            "Bước đầu là tiền xử lý văn bản.",
+            "Tách từ, bỏ stop words, rồi đưa từ về dạng gốc.",
+            "Sau đó biến chữ thành số, bằng bag of words hay TF-IDF.",
+            "Cuối cùng là một classifier như Naive Bayes.",
+            "Ứng dụng phổ biến là phân tích phản hồi của khách hàng."
+          ],
+          "beats": [
+            {
+              "id": "pre",
+              "s": 1,
+              "cue": "tiền xử lý"
+            },
+            {
+              "id": "tk",
+              "s": 2,
+              "cue": "Tách từ"
+            },
+            {
+              "id": "sw",
+              "s": 2,
+              "cue": "stop words"
+            },
+            {
+              "id": "lm",
+              "s": 2,
+              "cue": "dạng gốc"
+            },
+            {
+              "id": "vec",
+              "s": 3,
+              "cue": "biến chữ"
+            },
+            {
+              "id": "bw",
+              "s": 3,
+              "cue": "bag of words"
+            },
+            {
+              "id": "tf",
+              "s": 3,
+              "cue": "TF-IDF"
+            },
+            {
+              "id": "clf",
+              "s": 4,
+              "cue": "classifier"
+            },
+            {
+              "id": "nb",
+              "s": 4,
+              "cue": "Naive Bayes"
+            },
+            {
+              "id": "flow",
+              "s": 5,
+              "cue": "phản hồi"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "pose": "idle",
+          "headline": "Gọi Watson NLU bằng Python",
+          "data": {
+            "lines": [
+              {
+                "text": "pip install --upgrade ibm-watson",
+                "beat": "l1",
+                "marks": [
+                  {
+                    "text": "--upgrade",
+                    "beat": "up"
+                  }
+                ]
+              },
+              {
+                "text": ""
+              },
+              {
+                "text": "nlu = NaturalLanguageUnderstandingV1(",
+                "beat": "l3"
+              },
+              {
+                "text": "    version=\"2022-04-07\",",
+                "beat": "l4",
+                "marks": [
+                  {
+                    "text": "\"2022-04-07\"",
+                    "beat": "ver"
+                  }
+                ]
+              },
+              {
+                "text": "    authenticator=IAMAuthenticator(API_KEY))",
+                "beat": "l5",
+                "marks": [
+                  {
+                    "text": "API_KEY",
+                    "beat": "key"
+                  }
+                ]
+              },
+              {
+                "text": "nlu.set_service_url(SERVICE_URL)",
+                "beat": "l6",
+                "marks": [
+                  {
+                    "text": "SERVICE_URL",
+                    "beat": "url"
+                  }
+                ]
+              },
+              {
+                "text": "res = nlu.analyze(text=review, features=feats)",
+                "beat": "l7"
+              }
+            ],
+            "stages": [
+              {
+                "id": "K",
+                "label": "API key",
+                "hint": "file bảo mật"
+              },
+              {
+                "id": "V",
+                "label": "Version",
+                "hint": "lặp lại thí nghiệm"
+              },
+              {
+                "id": "U",
+                "label": "URL",
+                "hint": "địa chỉ dịch vụ"
+              }
+            ]
+          },
+          "narration": [
+            "Không muốn tự xây mô hình, ta gọi Watson NLU.",
+            "Đầu tiên cài SDK bằng lệnh pip, nhớ thêm cờ upgrade.",
+            "Rồi tạo đối tượng NLU với ba thông tin.",
+            "Version là ngày phiên bản, gửi kèm mỗi request.",
+            "Nhờ đó thí nghiệm lặp lại được về sau.",
+            "API key nằm trong một file bảo mật, trên máy bạn tin cậy.",
+            "Cuối cùng là service URL, địa chỉ của dịch vụ.",
+            "Gọi analyze là có sentiment, entities và keywords."
+          ],
+          "beats": [
+            {
+              "id": "l1",
+              "s": 0,
+              "cue": "ta gọi"
+            },
+            {
+              "id": "up",
+              "s": 1,
+              "cue": "lệnh pip"
+            },
+            {
+              "id": "l3",
+              "s": 2,
+              "cue": "tạo đối tượng"
+            },
+            {
+              "id": "K",
+              "s": 2,
+              "frac": 0.6
+            },
+            {
+              "id": "V",
+              "s": 2,
+              "frac": 0.75
+            },
+            {
+              "id": "U",
+              "s": 2,
+              "frac": 0.9
+            },
+            {
+              "id": "l4",
+              "s": 3,
+              "cue": "Version"
+            },
+            {
+              "id": "on_V",
+              "s": 3,
+              "cue": "ngày phiên bản"
+            },
+            {
+              "id": "ver",
+              "s": 3,
+              "cue": "mỗi request"
+            },
+            {
+              "id": "l5",
+              "s": 4,
+              "cue": "thí nghiệm"
+            },
+            {
+              "id": "on_K",
+              "s": 5,
+              "cue": "API key"
+            },
+            {
+              "id": "key",
+              "s": 5,
+              "cue": "file bảo mật"
+            },
+            {
+              "id": "l6",
+              "s": 6,
+              "cue": "service URL"
+            },
+            {
+              "id": "on_U",
+              "s": 6,
+              "cue": "service URL"
+            },
+            {
+              "id": "url",
+              "s": 6,
+              "cue": "địa chỉ"
+            },
+            {
+              "id": "l7",
+              "s": 7,
+              "cue": "analyze"
+            }
+          ]
+        },
+        {
+          "type": "mnemonic",
+          "pose": "curious",
+          "headline": "Mẹo nhớ tiền xử lý",
+          "data": {
+            "phrase": "Cắt, lọc, về gốc",
+            "items": [
+              {
+                "id": "c",
+                "letter": "C",
+                "word": "Cắt",
+                "gloss": "tokenize"
+              },
+              {
+                "id": "l",
+                "letter": "L",
+                "word": "Lọc",
+                "gloss": "bỏ stop words"
+              },
+              {
+                "id": "g",
+                "letter": "G",
+                "word": "Gốc",
+                "gloss": "lemmatize"
+              }
+            ]
+          },
+          "narration": [
+            "Mẹo nhớ ba bước tiền xử lý.",
+            "Cắt câu thành từng token.",
+            "Lọc bỏ stop words như là, và, của.",
+            "Rồi đưa từ về gốc, như running thành run.",
+            "Cắt, lọc, về gốc."
+          ],
+          "beats": [
+            {
+              "id": "letters",
+              "s": 0,
+              "cue": "ba bước"
+            },
+            {
+              "id": "c",
+              "s": 1,
+              "cue": "Cắt"
+            },
+            {
+              "id": "l",
+              "s": 2,
+              "cue": "Lọc"
+            },
+            {
+              "id": "g",
+              "s": 3,
+              "cue": "đưa từ"
+            },
+            {
+              "id": "phrase",
+              "s": 4,
+              "frac": 0.0
+            }
+          ]
+        },
+        {
+          "type": "quiz",
+          "pose": "curious",
+          "questionId": "qz2-068",
+          "explain": "RMSE và MAE là metric hồi quy, không phải câu hỏi khi tinh chỉnh pipeline phân loại văn bản."
+        }
+      ]
+    },
+    {
+      "id": "traps",
+      "title": "Bẫy hay gặp",
+      "scenes": [
+        {
+          "type": "traps",
+          "pose": "sad",
+          "headline": "Năm bẫy hay gặp trong đề",
+          "data": {
+            "traps": [
+              {
+                "id": "t1",
+                "wrong": "Decision tree là một ensemble",
+                "right": "Cây đơn lẻ, không phải ensemble"
+              },
+              {
+                "id": "t2",
+                "wrong": "Cây trong Random Forest: bias cao, variance thấp",
+                "right": "Bias thấp, variance cao"
+              },
+              {
+                "id": "t3",
+                "wrong": "Transfer learning đến từ reinforcement learning",
+                "right": "Đến từ deep learning"
+              },
+              {
+                "id": "t4",
+                "wrong": "Thêm GPU là thời gian train giảm mãi",
+                "right": "Còn chi phí giao tiếp và I/O"
+              },
+              {
+                "id": "t5",
+                "wrong": "Phải tải ảnh về máy rồi mới classify",
+                "right": "Truyền URL ảnh là được"
+              }
+            ]
+          },
+          "narration": [
+            "Giờ là năm cái bẫy hay gặp.",
+            "Decision tree không phải ensemble.",
+            "Cây trong Random Forest có bias thấp, variance cao.",
+            "Transfer learning đến từ deep learning.",
+            "Thêm GPU không làm thời gian huấn luyện giảm mãi.",
+            "Và Watson phân loại được ảnh qua URL, không cần tải về."
+          ],
+          "beats": [
+            {
+              "id": "t1",
+              "s": 0,
+              "cue": "năm cái bẫy"
+            },
+            {
+              "id": "fix_t1",
+              "s": 1,
+              "cue": "không phải"
+            },
+            {
+              "id": "t2",
+              "s": 2,
+              "cue": "Cây trong"
+            },
+            {
+              "id": "fix_t2",
+              "s": 2,
+              "cue": "bias thấp"
+            },
+            {
+              "id": "t3",
+              "s": 3,
+              "cue": "Transfer"
+            },
+            {
+              "id": "fix_t3",
+              "s": 3,
+              "cue": "deep learning"
+            },
+            {
+              "id": "t4",
+              "s": 4,
+              "cue": "Thêm GPU"
+            },
+            {
+              "id": "fix_t4",
+              "s": 4,
+              "cue": "không làm"
+            },
+            {
+              "id": "t5",
+              "s": 5,
+              "cue": "Watson"
+            },
+            {
+              "id": "fix_t5",
+              "s": 5,
+              "cue": "qua URL"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "recap",
+      "title": "Tổng kết",
+      "scenes": [
+        {
+          "type": "recap",
+          "pose": "happy",
+          "headline": "Tổng kết chương 4",
+          "data": {
+            "items": [
+              {
+                "id": "r1",
+                "text": "Confusion matrix: TP, TN, FP, FN"
+              },
+              {
+                "id": "r2",
+                "text": "Bỏ sót đắt → beta = 2"
+              },
+              {
+                "id": "r3",
+                "text": "Bagging giảm variance, boosting giảm bias"
+              },
+              {
+                "id": "r4",
+                "text": "CNN nhìn ảnh, RNN nhớ chuỗi"
+              },
+              {
+                "id": "r5",
+                "text": "NLU cần API key, version, URL"
+              }
+            ]
+          },
+          "narration": [
+            "Tóm lại, nhớ năm điều.",
+            "Confusion matrix có bốn ô.",
+            "Bỏ sót đắt thì đặt beta bằng hai.",
+            "Bagging giảm variance, boosting giảm bias.",
+            "CNN nhìn ảnh, RNN nhớ chuỗi.",
+            "Watson NLU cần API key, version và URL.",
+            "Hẹn gặp bạn ở chương 5!"
+          ],
+          "beats": [
+            {
+              "id": "r1",
+              "s": 1,
+              "cue": "Confusion matrix"
+            },
+            {
+              "id": "r2",
+              "s": 2,
+              "cue": "Bỏ sót"
+            },
+            {
+              "id": "r3",
+              "s": 3,
+              "cue": "Bagging"
+            },
+            {
+              "id": "r4",
+              "s": 4,
+              "cue": "CNN"
+            },
+            {
+              "id": "r5",
+              "s": 5,
+              "cue": "Watson NLU"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

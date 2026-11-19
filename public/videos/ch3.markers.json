@@ -1,0 +1,33 @@
+{
+ "duration": 373.69,
+ "markers": [
+  {
+   "title": "Mở đầu",
+   "start": 0.0
+  },
+  {
+   "title": "Interface & pipeline",
+   "start": 22.61
+  },
+  {
+   "title": "Mất cân bằng & SMOTE",
+   "start": 91.63
+  },
+  {
+   "title": "Giảm chiều & topic",
+   "start": 173.19
+  },
+  {
+   "title": "Bias & tấn công",
+   "start": 259.17
+  },
+  {
+   "title": "Bẫy hay gặp",
+   "start": 330.91
+  },
+  {
+   "title": "Tổng kết",
+   "start": 354.22
+  }
+ ]
+}

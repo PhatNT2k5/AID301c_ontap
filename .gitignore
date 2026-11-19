@@ -5,3 +5,10 @@ dist/
 __pycache__/
 *.tsbuildinfo
 .env
+video-old/
+video/node_modules/
+video/cache/
+video/out/
+video/public/audio/
+video/public/pet/
+video/public/timeline/

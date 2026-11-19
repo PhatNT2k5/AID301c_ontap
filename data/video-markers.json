@@ -1,0 +1,208 @@
+{
+ "1": {
+  "duration": 320.3,
+  "markers": [
+   {
+    "title": "Mở đầu",
+    "start": 0.0
+   },
+   {
+    "title": "Process model",
+    "start": 17.96
+   },
+   {
+    "title": "Design thinking",
+    "start": 81.65
+   },
+   {
+    "title": "Thu thập dữ liệu & ETL",
+    "start": 131.08
+   },
+   {
+    "title": "Sparse matrix",
+    "start": 224.25
+   },
+   {
+    "title": "Bẫy hay gặp",
+    "start": 278.53
+   },
+   {
+    "title": "Tổng kết",
+    "start": 300.63
+   }
+  ]
+ },
+ "3": {
+  "duration": 373.7,
+  "markers": [
+   {
+    "title": "Mở đầu",
+    "start": 0.0
+   },
+   {
+    "title": "Interface & pipeline",
+    "start": 22.61
+   },
+   {
+    "title": "Mất cân bằng & SMOTE",
+    "start": 91.63
+   },
+   {
+    "title": "Giảm chiều & topic",
+    "start": 173.19
+   },
+   {
+    "title": "Bias & tấn công",
+    "start": 259.17
+   },
+   {
+    "title": "Bẫy hay gặp",
+    "start": 330.91
+   },
+   {
+    "title": "Tổng kết",
+    "start": 354.22
+   }
+  ]
+ },
+ "6": {
+  "duration": 388.0,
+  "markers": [
+   {
+    "title": "Mở đầu",
+    "start": 0.0
+   },
+   {
+    "title": "Feedback loop",
+    "start": 19.48
+   },
+   {
+    "title": "Unit test & CI/CD",
+    "start": 88.32
+   },
+   {
+    "title": "Logging",
+    "start": 174.78
+   },
+   {
+    "title": "Drift & OpenScale",
+    "start": 228.75
+   },
+   {
+    "title": "Kubernetes",
+    "start": 291.05
+   },
+   {
+    "title": "Bẫy hay gặp",
+    "start": 347.94
+   },
+   {
+    "title": "Tổng kết",
+    "start": 367.64
+   }
+  ]
+ },
+ "4": {
+  "duration": 395.6,
+  "markers": [
+   {
+    "title": "Mở đầu",
+    "start": 0.0
+   },
+   {
+    "title": "Metric phân loại",
+    "start": 18.76
+   },
+   {
+    "title": "Tree & ensemble",
+    "start": 102.65
+   },
+   {
+    "title": "Neural network",
+    "start": 178.99
+   },
+   {
+    "title": "NLP & Watson",
+    "start": 259.91
+   },
+   {
+    "title": "Bẫy hay gặp",
+    "start": 356.24
+   },
+   {
+    "title": "Tổng kết",
+    "start": 375.22
+   }
+  ]
+ },
+ "2": {
+  "duration": 398.5,
+  "markers": [
+   {
+    "title": "Mở đầu",
+    "start": 0.0
+   },
+   {
+    "title": "EDA & trực quan hoá",
+    "start": 15.0
+   },
+   {
+    "title": "Missing data",
+    "start": 90.04
+   },
+   {
+    "title": "Xác suất",
+    "start": 171.48
+   },
+   {
+    "title": "Kiểm định giả thuyết",
+    "start": 257.99
+   },
+   {
+    "title": "Bẫy hay gặp",
+    "start": 357.53
+   },
+   {
+    "title": "Tổng kết",
+    "start": 378.33
+   }
+  ]
+ },
+ "5": {
+  "duration": 400.5,
+  "markers": [
+   {
+    "title": "Mở đầu",
+    "start": 0.0
+   },
+   {
+    "title": "Tối ưu code",
+    "start": 19.49
+   },
+   {
+    "title": "Docker",
+    "start": 79.92
+   },
+   {
+    "title": "Flask API & Watson ML",
+    "start": 152.5
+   },
+   {
+    "title": "Apache Spark",
+    "start": 233.85
+   },
+   {
+    "title": "Hệ gợi ý ALS",
+    "start": 301.66
+   },
+   {
+    "title": "Bẫy hay gặp",
+    "start": 360.29
+   },
+   {
+    "title": "Tổng kết",
+    "start": 379.9
+   }
+  ]
+ }
+}

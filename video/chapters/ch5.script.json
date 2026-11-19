@@ -1,0 +1,1494 @@
+{
+  "chapter": 5,
+  "title": "Triển khai mô hình doanh nghiệp",
+  "sections": [
+    {
+      "id": "intro",
+      "title": "Mở đầu",
+      "scenes": [
+        {
+          "type": "intro",
+          "pose": "idle",
+          "headline": "Triển khai mô hình doanh nghiệp",
+          "data": {
+            "chapterNo": 5,
+            "course": "IBM AI Workflow · Course 5",
+            "stops": [
+              {
+                "id": "p1",
+                "label": "Tối ưu code"
+              },
+              {
+                "id": "p2",
+                "label": "Docker"
+              },
+              {
+                "id": "p3",
+                "label": "Flask & Watson"
+              },
+              {
+                "id": "p4",
+                "label": "Spark"
+              },
+              {
+                "id": "p5",
+                "label": "Hệ gợi ý ALS"
+              }
+            ]
+          },
+          "narration": [
+            "Chào bạn, mình là MeoLearn.",
+            "Chương 5 bám theo khoá thứ năm của IBM AI Workflow.",
+            "Hôm nay, ta đưa mô hình ra môi trường thật.",
+            "Qua năm chặng: tối ưu code, rồi Docker.",
+            "Tiếp theo là Flask API với Watson, rồi Spark.",
+            "Chặng cuối là hệ gợi ý ALS."
+          ],
+          "beats": [
+            {
+              "id": "chapter",
+              "s": 1,
+              "cue": "Chương 5"
+            },
+            {
+              "id": "course",
+              "s": 1,
+              "cue": "IBM AI Workflow"
+            },
+            {
+              "id": "road",
+              "s": 2,
+              "cue": "đưa mô hình"
+            },
+            {
+              "id": "p1",
+              "s": 3,
+              "cue": "tối ưu code"
+            },
+            {
+              "id": "p2",
+              "s": 3,
+              "cue": "Docker"
+            },
+            {
+              "id": "p3",
+              "s": 4,
+              "cue": "Flask API"
+            },
+            {
+              "id": "p4",
+              "s": 4,
+              "cue": "Spark"
+            },
+            {
+              "id": "p5",
+              "s": 5,
+              "cue": "hệ gợi ý"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "optimize",
+      "title": "Tối ưu code",
+      "scenes": [
+        {
+          "type": "pipeline",
+          "pose": "idle",
+          "headline": "Tối ưu code: đo trước, sửa sau",
+          "data": {
+            "stages": [
+              {
+                "id": "measure",
+                "label": "Đo",
+                "items": [
+                  {
+                    "id": "m1",
+                    "text": "Profiling"
+                  },
+                  {
+                    "id": "m2",
+                    "text": "Tìm bottleneck"
+                  }
+                ]
+              },
+              {
+                "id": "speed",
+                "label": "Tăng tốc",
+                "items": [
+                  {
+                    "id": "s1",
+                    "text": "Cython, Numba"
+                  },
+                  {
+                    "id": "s2",
+                    "text": "multiprocessing"
+                  },
+                  {
+                    "id": "s3",
+                    "text": "mpi4py, ipyparallel"
+                  }
+                ]
+              },
+              {
+                "id": "scale",
+                "label": "Mở rộng",
+                "items": [
+                  {
+                    "id": "c1",
+                    "text": "n_jobs=-1"
+                  },
+                  {
+                    "id": "c2",
+                    "text": "Dask, Spark"
+                  }
+                ]
+              }
+            ]
+          },
+          "narration": [
+            "Bước đầu tiên luôn là đo, gọi là profiling.",
+            "Đo để tìm đúng phần code là bottleneck.",
+            "Rồi mới tăng tốc, bằng Cython hay Numba.",
+            "Multiprocessing tạo nhiều process chạy song song.",
+            "Còn có mpi4py và ipyparallel.",
+            "Python gốc không tự chia việc cho nhiều core.",
+            "Trong scikit-learn, đặt n_jobs bằng trừ một.",
+            "Dữ liệu quá lớn thì dùng Dask hoặc Spark."
+          ],
+          "beats": [
+            {
+              "id": "measure",
+              "s": 0,
+              "cue": "đo"
+            },
+            {
+              "id": "m1",
+              "s": 0,
+              "cue": "profiling"
+            },
+            {
+              "id": "m2",
+              "s": 1,
+              "cue": "bottleneck"
+            },
+            {
+              "id": "speed",
+              "s": 2,
+              "cue": "tăng tốc"
+            },
+            {
+              "id": "s1",
+              "s": 2,
+              "cue": "Cython"
+            },
+            {
+              "id": "s2",
+              "s": 3,
+              "cue": "Multiprocessing"
+            },
+            {
+              "id": "s3",
+              "s": 4,
+              "cue": "mpi4py"
+            },
+            {
+              "id": "scale",
+              "s": 5,
+              "cue": "Python gốc"
+            },
+            {
+              "id": "flow",
+              "s": 5,
+              "cue": "không tự chia"
+            },
+            {
+              "id": "c1",
+              "s": 6,
+              "cue": "n_jobs"
+            },
+            {
+              "id": "c2",
+              "s": 7,
+              "cue": "Dask"
+            }
+          ]
+        },
+        {
+          "type": "mnemonic",
+          "pose": "curious",
+          "headline": "Mẹo nhớ: làm như bác sĩ",
+          "data": {
+            "phrase": "Khám trước, kê đơn sau",
+            "items": [
+              {
+                "id": "d",
+                "letter": "Đ",
+                "word": "Đo",
+                "gloss": "profiling"
+              },
+              {
+                "id": "t",
+                "letter": "T",
+                "word": "Tìm",
+                "gloss": "bottleneck",
+                "highlight": true
+              },
+              {
+                "id": "s",
+                "letter": "S",
+                "word": "Sửa",
+                "gloss": "đúng chỗ đó"
+              }
+            ]
+          },
+          "narration": [
+            "Mẹo nhớ: hãy làm như một bác sĩ.",
+            "Đo, tức là khám bằng profiling.",
+            "Tìm ra chỗ đau, chính là bottleneck.",
+            "Rồi mới sửa đúng chỗ đó.",
+            "Khám trước, kê đơn sau."
+          ],
+          "beats": [
+            {
+              "id": "letters",
+              "s": 0,
+              "frac": 0.0
+            },
+            {
+              "id": "d",
+              "s": 1,
+              "cue": "Đo"
+            },
+            {
+              "id": "t",
+              "s": 2,
+              "cue": "Tìm"
+            },
+            {
+              "id": "s",
+              "s": 3,
+              "cue": "sửa"
+            },
+            {
+              "id": "phrase",
+              "s": 4,
+              "frac": 0.0
+            }
+          ]
+        },
+        {
+          "type": "quiz",
+          "pose": "curious",
+          "questionId": "su26fe-17",
+          "explain": "TensorBoard là công cụ trực quan hoá, không phải công cụ tối ưu code."
+        }
+      ]
+    },
+    {
+      "id": "docker",
+      "title": "Docker",
+      "scenes": [
+        {
+          "type": "code",
+          "pose": "idle",
+          "headline": "Dockerfile: công thức để build image",
+          "data": {
+            "lines": [
+              {
+                "text": "FROM python:3.11-slim",
+                "beat": "l1"
+              },
+              {
+                "text": "COPY . /app",
+                "beat": "l2"
+              },
+              {
+                "text": "RUN pip install -r requirements.txt",
+                "beat": "l3"
+              },
+              {
+                "text": "EXPOSE 8080",
+                "beat": "l4"
+              },
+              {
+                "text": "CMD [\"python\", \"app.py\"]",
+                "beat": "l5"
+              },
+              {
+                "text": ""
+              },
+              {
+                "text": "docker build -t app .",
+                "beat": "l7",
+                "marks": [
+                  {
+                    "text": "docker build",
+                    "beat": "build"
+                  }
+                ]
+              },
+              {
+                "text": "docker run -p 4000:8080 app",
+                "beat": "l8",
+                "marks": [
+                  {
+                    "text": "-p",
+                    "beat": "port"
+                  },
+                  {
+                    "text": "4000",
+                    "beat": "host"
+                  },
+                  {
+                    "text": ":8080",
+                    "beat": "guest"
+                  }
+                ]
+              },
+              {
+                "text": "docker run -v notebooks:/app/notebooks app",
+                "beat": "l9",
+                "marks": [
+                  {
+                    "text": "-v",
+                    "beat": "vol"
+                  },
+                  {
+                    "text": "notebooks",
+                    "beat": "keep"
+                  }
+                ]
+              }
+            ],
+            "stages": [
+              {
+                "id": "F",
+                "label": "Dockerfile",
+                "hint": "FROM · COPY · RUN"
+              },
+              {
+                "id": "I",
+                "label": "Image",
+                "hint": "docker build"
+              },
+              {
+                "id": "C",
+                "label": "Container",
+                "hint": "docker run"
+              }
+            ]
+          },
+          "narration": [
+            "Docker cho mô hình một môi trường chuẩn, tái lập được.",
+            "Mọi thứ bắt đầu từ Dockerfile, một công thức từng bước.",
+            "FROM chọn image nền, COPY chép code vào.",
+            "RUN cài thư viện, EXPOSE mở cổng 8080.",
+            "CMD là lệnh chạy khi container khởi động.",
+            "Lệnh docker build biến công thức thành image.",
+            "Docker run chạy image thành một container.",
+            "Tham số p là port forwarding.",
+            "Cổng 4000 của máy bạn nối vào cổng 8080 trong container.",
+            "Để mở notebook và script trong container, dùng volumes.",
+            "Dữ liệu trong volume vẫn còn sau khi container dừng."
+          ],
+          "beats": [
+            {
+              "id": "F",
+              "s": 0,
+              "frac": 0.0
+            },
+            {
+              "id": "I",
+              "s": 0,
+              "cue": "môi trường chuẩn"
+            },
+            {
+              "id": "C",
+              "s": 0,
+              "cue": "tái lập"
+            },
+            {
+              "id": "on_F",
+              "s": 1,
+              "cue": "Dockerfile"
+            },
+            {
+              "id": "l1",
+              "s": 1,
+              "cue": "công thức"
+            },
+            {
+              "id": "l2",
+              "s": 2,
+              "cue": "COPY"
+            },
+            {
+              "id": "l3",
+              "s": 3,
+              "cue": "RUN"
+            },
+            {
+              "id": "l4",
+              "s": 3,
+              "cue": "EXPOSE"
+            },
+            {
+              "id": "l5",
+              "s": 4,
+              "cue": "CMD"
+            },
+            {
+              "id": "on_I",
+              "s": 5,
+              "cue": "docker build"
+            },
+            {
+              "id": "l7",
+              "s": 5,
+              "cue": "biến"
+            },
+            {
+              "id": "build",
+              "s": 5,
+              "cue": "image"
+            },
+            {
+              "id": "on_C",
+              "s": 6,
+              "cue": "run"
+            },
+            {
+              "id": "l8",
+              "s": 6,
+              "cue": "container"
+            },
+            {
+              "id": "port",
+              "s": 7,
+              "cue": "Tham số"
+            },
+            {
+              "id": "host",
+              "s": 8,
+              "cue": "Cổng 4000"
+            },
+            {
+              "id": "guest",
+              "s": 8,
+              "cue": "cổng 8080"
+            },
+            {
+              "id": "l9",
+              "s": 9,
+              "cue": "notebook"
+            },
+            {
+              "id": "vol",
+              "s": 9,
+              "cue": "volumes"
+            },
+            {
+              "id": "keep",
+              "s": 10,
+              "cue": "vẫn còn"
+            }
+          ]
+        },
+        {
+          "type": "mnemonic",
+          "pose": "curious",
+          "headline": "Mẹo nhớ: công thức, hộp cơm, bữa ăn",
+          "data": {
+            "phrase": "Công thức → hộp cơm → bữa ăn",
+            "items": [
+              {
+                "id": "f",
+                "letter": "F",
+                "word": "Dockerfile",
+                "gloss": "công thức nấu"
+              },
+              {
+                "id": "i",
+                "letter": "I",
+                "word": "Image",
+                "gloss": "hộp cơm đóng sẵn"
+              },
+              {
+                "id": "c",
+                "letter": "C",
+                "word": "Container",
+                "gloss": "bữa ăn đang dọn"
+              }
+            ]
+          },
+          "narration": [
+            "Mẹo nhớ ba khái niệm bằng một bữa cơm.",
+            "Dockerfile là công thức nấu.",
+            "Image là hộp cơm đã đóng sẵn.",
+            "Container là lúc mở hộp ra ăn.",
+            "Công thức, hộp cơm, rồi bữa ăn."
+          ],
+          "beats": [
+            {
+              "id": "letters",
+              "s": 0,
+              "cue": "ba khái niệm"
+            },
+            {
+              "id": "f",
+              "s": 1,
+              "cue": "Dockerfile"
+            },
+            {
+              "id": "i",
+              "s": 2,
+              "cue": "Image"
+            },
+            {
+              "id": "c",
+              "s": 3,
+              "cue": "Container"
+            },
+            {
+              "id": "phrase",
+              "s": 4,
+              "frac": 0.0
+            }
+          ]
+        },
+        {
+          "type": "quiz",
+          "pose": "curious",
+          "questionId": "qz2-082",
+          "explain": "Đúng, Dockerfile là công thức từng bước để build một image."
+        }
+      ]
+    },
+    {
+      "id": "serve",
+      "title": "Flask API & Watson ML",
+      "scenes": [
+        {
+          "type": "pipeline",
+          "pose": "idle",
+          "headline": "Flask API: JSON vào, JSON ra",
+          "data": {
+            "stages": [
+              {
+                "id": "client",
+                "label": "Truy vấn",
+                "items": [
+                  {
+                    "id": "q1",
+                    "text": "country"
+                  },
+                  {
+                    "id": "q2",
+                    "text": "target date"
+                  }
+                ]
+              },
+              {
+                "id": "api",
+                "label": "Flask API",
+                "items": [
+                  {
+                    "id": "e1",
+                    "text": "/train"
+                  },
+                  {
+                    "id": "e2",
+                    "text": "/predict"
+                  },
+                  {
+                    "id": "e3",
+                    "text": "/logs"
+                  }
+                ]
+              },
+              {
+                "id": "model",
+                "label": "Module mô hình",
+                "items": [
+                  {
+                    "id": "f1",
+                    "text": "train · load"
+                  },
+                  {
+                    "id": "f2",
+                    "text": "predict"
+                  }
+                ]
+              }
+            ]
+          },
+          "narration": [
+            "Người dùng gửi một truy vấn dạng JSON.",
+            "Với AAVAIL, cần quốc gia và ngày mục tiêu.",
+            "Truy vấn đi tới ứng dụng Flask.",
+            "Flask có các endpoint train, predict và logs.",
+            "Mô hình nằm trong một module Python riêng.",
+            "Có các hàm train, load và predict.",
+            "Kết quả trả về cũng là JSON.",
+            "Và API phải kiểm tra lỗi đầu vào."
+          ],
+          "beats": [
+            {
+              "id": "client",
+              "s": 0,
+              "cue": "truy vấn"
+            },
+            {
+              "id": "q1",
+              "s": 1,
+              "cue": "quốc gia"
+            },
+            {
+              "id": "q2",
+              "s": 1,
+              "cue": "ngày mục tiêu"
+            },
+            {
+              "id": "api",
+              "s": 2,
+              "cue": "Flask"
+            },
+            {
+              "id": "e1",
+              "s": 3,
+              "cue": "train"
+            },
+            {
+              "id": "e2",
+              "s": 3,
+              "cue": "predict"
+            },
+            {
+              "id": "e3",
+              "s": 3,
+              "cue": "logs"
+            },
+            {
+              "id": "model",
+              "s": 4,
+              "cue": "module"
+            },
+            {
+              "id": "f1",
+              "s": 5,
+              "cue": "train"
+            },
+            {
+              "id": "f2",
+              "s": 5,
+              "cue": "predict"
+            },
+            {
+              "id": "flow",
+              "s": 6,
+              "cue": "Kết quả"
+            }
+          ]
+        },
+        {
+          "type": "stairs",
+          "pose": "idle",
+          "headline": "Đưa mô hình lên Watson ML",
+          "data": {
+            "steps": [
+              {
+                "id": "acc",
+                "label": "IBM Cloud",
+                "caption": "tạo tài khoản"
+              },
+              {
+                "id": "wml",
+                "label": "Provision WML",
+                "caption": "bật dịch vụ"
+              },
+              {
+                "id": "env",
+                "label": "Virtual env",
+                "caption": "khớp phiên bản thư viện"
+              },
+              {
+                "id": "dep",
+                "label": "Triển khai",
+                "caption": "không chỉ file pickle"
+              }
+            ]
+          },
+          "narration": [
+            "Watson Machine Learning là dịch vụ cloud của IBM.",
+            "Bước đầu tiên là tạo tài khoản IBM Cloud.",
+            "Rồi provision dịch vụ WML.",
+            "Và tạo một Python virtual environment.",
+            "Để mô hình ở local tương thích với WML.",
+            "Cuối cùng là triển khai, và WML không chỉ nhận file pickle."
+          ],
+          "beats": [
+            {
+              "id": "ghost",
+              "s": 0,
+              "frac": 0.0
+            },
+            {
+              "id": "count",
+              "s": 0,
+              "cue": "dịch vụ cloud"
+            },
+            {
+              "id": "acc",
+              "s": 1,
+              "cue": "Bước đầu tiên"
+            },
+            {
+              "id": "wml",
+              "s": 2,
+              "cue": "provision"
+            },
+            {
+              "id": "env",
+              "s": 3,
+              "cue": "virtual environment"
+            },
+            {
+              "id": "cap_env",
+              "s": 4,
+              "cue": "tương thích"
+            },
+            {
+              "id": "dep",
+              "s": 5,
+              "cue": "triển khai"
+            },
+            {
+              "id": "cap_dep",
+              "s": 5,
+              "cue": "không chỉ"
+            }
+          ]
+        },
+        {
+          "type": "mnemonic",
+          "pose": "curious",
+          "headline": "Ba thứ phải cất thật kỹ",
+          "data": {
+            "phrase": "Chìa khoá, phiên bản, địa chỉ",
+            "items": [
+              {
+                "id": "k",
+                "letter": "K",
+                "word": "API key",
+                "gloss": "chìa khoá",
+                "highlight": true
+              },
+              {
+                "id": "v",
+                "letter": "V",
+                "word": "Version",
+                "gloss": "phiên bản"
+              },
+              {
+                "id": "u",
+                "letter": "U",
+                "word": "URL",
+                "gloss": "địa chỉ"
+              }
+            ]
+          },
+          "narration": [
+            "Dùng Watson qua Python SDK, cần cất ba thứ.",
+            "API key là chìa khoá.",
+            "Version là phiên bản dịch vụ.",
+            "URL là địa chỉ của service.",
+            "Mẹo nhớ: chìa khoá, phiên bản, địa chỉ, cất ở nơi an toàn."
+          ],
+          "beats": [
+            {
+              "id": "letters",
+              "s": 0,
+              "cue": "ba thứ"
+            },
+            {
+              "id": "k",
+              "s": 1,
+              "cue": "API key"
+            },
+            {
+              "id": "v",
+              "s": 2,
+              "cue": "Version"
+            },
+            {
+              "id": "u",
+              "s": 3,
+              "cue": "URL"
+            },
+            {
+              "id": "phrase",
+              "s": 4,
+              "frac": 0.0
+            }
+          ]
+        },
+        {
+          "type": "quiz",
+          "pose": "curious",
+          "questionId": "su26fe-10",
+          "explain": "Sai, WML lưu được mô hình ở nhiều dạng, không chỉ file pickle."
+        }
+      ]
+    },
+    {
+      "id": "spark",
+      "title": "Apache Spark",
+      "scenes": [
+        {
+          "type": "code",
+          "pose": "idle",
+          "headline": "spark-submit: gửi ứng dụng lên cluster",
+          "data": {
+            "lines": [
+              {
+                "text": "#!/bin/bash",
+                "beat": "l1",
+                "marks": [
+                  {
+                    "text": "#!/bin/bash",
+                    "beat": "shebang"
+                  }
+                ]
+              },
+              {
+                "text": "spark-submit \\",
+                "beat": "l2",
+                "marks": [
+                  {
+                    "text": "spark-submit",
+                    "beat": "submit"
+                  }
+                ]
+              },
+              {
+                "text": "  --master local[4] \\",
+                "beat": "l3",
+                "marks": [
+                  {
+                    "text": "--master",
+                    "beat": "master"
+                  }
+                ]
+              },
+              {
+                "text": "  --driver-memory 4g \\",
+                "beat": "l4"
+              },
+              {
+                "text": "  --executor-memory 4g \\",
+                "beat": "l5",
+                "marks": [
+                  {
+                    "text": "--executor-memory",
+                    "beat": "exec"
+                  }
+                ]
+              },
+              {
+                "text": "  recommender.py",
+                "beat": "l6"
+              }
+            ],
+            "stages": [
+              {
+                "id": "S",
+                "label": "Submit",
+                "hint": "gửi app lên cluster"
+              },
+              {
+                "id": "D",
+                "label": "Driver",
+                "hint": "--driver-memory"
+              },
+              {
+                "id": "E",
+                "label": "Executor",
+                "hint": "bộ nhớ mỗi executor"
+              }
+            ]
+          },
+          "narration": [
+            "Khi dữ liệu vượt quá một máy, ta dùng Apache Spark.",
+            "Dòng shebang bin bash báo hệ thống chạy script bằng Bash.",
+            "Lệnh spark-submit gửi ứng dụng lên một Spark cluster.",
+            "Master chỉ ra cluster manager.",
+            "Driver memory là bộ nhớ của driver.",
+            "Executor memory là bộ nhớ cấp cho mỗi executor.",
+            "Cuối cùng là file Python cần chạy."
+          ],
+          "beats": [
+            {
+              "id": "S",
+              "s": 0,
+              "cue": "Apache Spark"
+            },
+            {
+              "id": "l1",
+              "s": 1,
+              "cue": "shebang"
+            },
+            {
+              "id": "shebang",
+              "s": 1,
+              "cue": "chạy script"
+            },
+            {
+              "id": "l2",
+              "s": 2,
+              "cue": "spark-submit"
+            },
+            {
+              "id": "on_S",
+              "s": 2,
+              "cue": "gửi ứng dụng"
+            },
+            {
+              "id": "submit",
+              "s": 2,
+              "cue": "Spark cluster"
+            },
+            {
+              "id": "l3",
+              "s": 3,
+              "cue": "Master"
+            },
+            {
+              "id": "master",
+              "s": 3,
+              "cue": "cluster manager"
+            },
+            {
+              "id": "D",
+              "s": 4,
+              "cue": "Driver memory"
+            },
+            {
+              "id": "l4",
+              "s": 4,
+              "cue": "Driver memory"
+            },
+            {
+              "id": "on_D",
+              "s": 4,
+              "cue": "bộ nhớ"
+            },
+            {
+              "id": "E",
+              "s": 5,
+              "cue": "Executor memory"
+            },
+            {
+              "id": "l5",
+              "s": 5,
+              "cue": "Executor memory"
+            },
+            {
+              "id": "on_E",
+              "s": 5,
+              "cue": "cấp cho"
+            },
+            {
+              "id": "exec",
+              "s": 5,
+              "cue": "mỗi executor"
+            },
+            {
+              "id": "l6",
+              "s": 6,
+              "cue": "file Python"
+            }
+          ]
+        },
+        {
+          "type": "compare",
+          "pose": "curious",
+          "headline": "Mẹo nhớ: ai quản lý Spark cluster?",
+          "data": {
+            "left": {
+              "title": "Cluster manager",
+              "tone": "good",
+              "items": [
+                {
+                  "id": "k1",
+                  "text": "Standalone"
+                },
+                {
+                  "id": "k2",
+                  "text": "Hadoop YARN"
+                },
+                {
+                  "id": "k3",
+                  "text": "Apache Mesos"
+                },
+                {
+                  "id": "k4",
+                  "text": "Kubernetes"
+                }
+              ]
+            },
+            "right": {
+              "title": "Không phải",
+              "tone": "bad",
+              "items": [
+                {
+                  "id": "x1",
+                  "text": "Docker container"
+                },
+                {
+                  "id": "x2",
+                  "text": "File YAML"
+                }
+              ]
+            },
+            "verdict": {
+              "id": "verdict",
+              "text": "Đề gài “Docker + YAML”: chọn False"
+            }
+          },
+          "narration": [
+            "Spark cluster do một cluster manager quản lý.",
+            "Có bốn loại: Standalone, Hadoop YARN.",
+            "Apache Mesos và Kubernetes.",
+            "Docker và file YAML không phải cluster manager.",
+            "Đề hay gài câu này, nhớ chọn False."
+          ],
+          "beats": [
+            {
+              "id": "left",
+              "s": 0,
+              "cue": "cluster manager"
+            },
+            {
+              "id": "k1",
+              "s": 1,
+              "cue": "Standalone"
+            },
+            {
+              "id": "k2",
+              "s": 1,
+              "cue": "Hadoop YARN"
+            },
+            {
+              "id": "k3",
+              "s": 2,
+              "cue": "Apache Mesos"
+            },
+            {
+              "id": "k4",
+              "s": 2,
+              "cue": "Kubernetes"
+            },
+            {
+              "id": "right",
+              "s": 3,
+              "frac": 0.0
+            },
+            {
+              "id": "x1",
+              "s": 3,
+              "cue": "Docker"
+            },
+            {
+              "id": "x2",
+              "s": 3,
+              "cue": "YAML"
+            },
+            {
+              "id": "verdict",
+              "s": 4,
+              "frac": 0.0
+            }
+          ]
+        },
+        {
+          "type": "quiz",
+          "pose": "curious",
+          "questionId": "su26fe-21",
+          "explain": "Executor memory là bộ nhớ cấp cho mỗi executor."
+        }
+      ]
+    },
+    {
+      "id": "als",
+      "title": "Hệ gợi ý ALS",
+      "scenes": [
+        {
+          "type": "matrix",
+          "pose": "idle",
+          "headline": "ALS: đoán ô trống của ma trận",
+          "data": {
+            "rows": [
+              [
+                5,
+                0,
+                0,
+                3,
+                0
+              ],
+              [
+                0,
+                4,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                2
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            ],
+            "triples": [
+              {
+                "id": "t0",
+                "r": 0,
+                "c": 0
+              },
+              {
+                "id": "t1",
+                "r": 0,
+                "c": 3
+              },
+              {
+                "id": "t2",
+                "r": 1,
+                "c": 1
+              },
+              {
+                "id": "t3",
+                "r": 2,
+                "c": 4
+              }
+            ],
+            "note": {
+              "id": "note",
+              "text": "ALS phân rã ma trận để đoán ô trống"
+            }
+          },
+          "narration": [
+            "Dữ liệu là ma trận user item.",
+            "Ma trận này rất thưa, toàn ô trống.",
+            "Ta chỉ biết vài điểm đánh giá.",
+            "Như điểm năm, điểm ba, điểm bốn và điểm hai.",
+            "ALS là collaborative filtering, phân rã ma trận để đoán ô trống."
+          ],
+          "beats": [
+            {
+              "id": "grid",
+              "s": 0,
+              "frac": 0.0
+            },
+            {
+              "id": "fade",
+              "s": 1,
+              "cue": "rất thưa"
+            },
+            {
+              "id": "list",
+              "s": 2,
+              "cue": "vài điểm"
+            },
+            {
+              "id": "t0",
+              "s": 3,
+              "cue": "điểm năm"
+            },
+            {
+              "id": "t1",
+              "s": 3,
+              "cue": "điểm ba"
+            },
+            {
+              "id": "t2",
+              "s": 3,
+              "cue": "điểm bốn"
+            },
+            {
+              "id": "t3",
+              "s": 3,
+              "cue": "điểm hai"
+            },
+            {
+              "id": "note",
+              "s": 4,
+              "cue": "ALS"
+            }
+          ]
+        },
+        {
+          "type": "mnemonic",
+          "pose": "curious",
+          "headline": "Bốn điều về ALS hay ra",
+          "data": {
+            "phrase": "Khách mới, món mới: cold start",
+            "items": [
+              {
+                "id": "e",
+                "letter": "E",
+                "word": "Explicit",
+                "gloss": "mặc định, rating"
+              },
+              {
+                "id": "i",
+                "letter": "I",
+                "word": "Implicit",
+                "gloss": "implicitPrefs"
+              },
+              {
+                "id": "r",
+                "letter": "R",
+                "word": "regParam",
+                "gloss": "ảnh hưởng nhất",
+                "highlight": true
+              },
+              {
+                "id": "c",
+                "letter": "C",
+                "word": "Cold start",
+                "gloss": "user, item mới"
+              }
+            ]
+          },
+          "narration": [
+            "Bốn điều về ALS hay ra trong đề.",
+            "Explicit feedback, như điểm rating, là mặc định.",
+            "Bật implicitPrefs để dùng implicit feedback.",
+            "Tham số regParam ảnh hưởng hiệu năng nhiều nhất.",
+            "Còn user mới hay item mới thì chưa có tương tác.",
+            "Đó là cold start: khách mới, món mới, chưa ai biết."
+          ],
+          "beats": [
+            {
+              "id": "letters",
+              "s": 0,
+              "cue": "Bốn điều"
+            },
+            {
+              "id": "e",
+              "s": 1,
+              "cue": "Explicit"
+            },
+            {
+              "id": "i",
+              "s": 2,
+              "cue": "implicitPrefs"
+            },
+            {
+              "id": "r",
+              "s": 3,
+              "cue": "regParam"
+            },
+            {
+              "id": "c",
+              "s": 4,
+              "cue": "user mới"
+            },
+            {
+              "id": "phrase",
+              "s": 5,
+              "frac": 0.0
+            }
+          ]
+        },
+        {
+          "type": "quiz",
+          "pose": "curious",
+          "questionId": "qz2-096",
+          "explain": "Đúng, collaborative filtering như ALS dựa trên matrix factorization."
+        }
+      ]
+    },
+    {
+      "id": "traps",
+      "title": "Bẫy hay gặp",
+      "scenes": [
+        {
+          "type": "traps",
+          "pose": "sad",
+          "headline": "Năm bẫy hay gặp trong đề",
+          "data": {
+            "traps": [
+              {
+                "id": "t1",
+                "wrong": "TensorBoard giúp tối ưu code",
+                "right": "TensorBoard để trực quan hoá"
+              },
+              {
+                "id": "t2",
+                "wrong": "Docker thay thế máy ảo",
+                "right": "Không thay máy ảo tiêu chuẩn"
+              },
+              {
+                "id": "t3",
+                "wrong": "WML chỉ nhận file pickle",
+                "right": "Lưu được nhiều dạng mô hình"
+              },
+              {
+                "id": "t4",
+                "wrong": "Spark cluster dùng Docker + YAML",
+                "right": "Standalone, YARN, Mesos, Kubernetes"
+              },
+              {
+                "id": "t5",
+                "wrong": "Spark MLlib thiếu TF-IDF",
+                "right": "Có Tokenizer, HashingTF, IDF"
+              }
+            ]
+          },
+          "narration": [
+            "Giờ là năm cái bẫy hay gặp.",
+            "TensorBoard không tối ưu code, nó để trực quan hoá.",
+            "Docker không thay thế một máy ảo tiêu chuẩn.",
+            "WML không chỉ nhận file pickle.",
+            "Spark cluster không quản lý bằng Docker và YAML.",
+            "Và Spark MLlib có đủ TF-IDF cho NLP."
+          ],
+          "beats": [
+            {
+              "id": "t1",
+              "s": 0,
+              "cue": "năm cái bẫy"
+            },
+            {
+              "id": "fix_t1",
+              "s": 1,
+              "cue": "không tối ưu"
+            },
+            {
+              "id": "t2",
+              "s": 2,
+              "cue": "Docker"
+            },
+            {
+              "id": "fix_t2",
+              "s": 2,
+              "cue": "không thay"
+            },
+            {
+              "id": "t3",
+              "s": 3,
+              "cue": "WML"
+            },
+            {
+              "id": "fix_t3",
+              "s": 3,
+              "cue": "không chỉ"
+            },
+            {
+              "id": "t4",
+              "s": 4,
+              "cue": "Spark cluster"
+            },
+            {
+              "id": "fix_t4",
+              "s": 4,
+              "cue": "không quản lý"
+            },
+            {
+              "id": "t5",
+              "s": 5,
+              "cue": "Spark MLlib"
+            },
+            {
+              "id": "fix_t5",
+              "s": 5,
+              "cue": "có đủ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "recap",
+      "title": "Tổng kết",
+      "scenes": [
+        {
+          "type": "recap",
+          "pose": "happy",
+          "headline": "Nhớ năm điều này",
+          "data": {
+            "items": [
+              {
+                "id": "r1",
+                "text": "Tối ưu: đo trước, sửa sau"
+              },
+              {
+                "id": "r2",
+                "text": "Dockerfile → image → container"
+              },
+              {
+                "id": "r3",
+                "text": "Flask API: JSON vào, JSON ra"
+              },
+              {
+                "id": "r4",
+                "text": "spark-submit gửi app lên cluster"
+              },
+              {
+                "id": "r5",
+                "text": "Hệ gợi ý Spark: ALS"
+              }
+            ]
+          },
+          "narration": [
+            "Tóm lại, nhớ năm điều.",
+            "Tối ưu code: đo trước, sửa sau.",
+            "Dockerfile thành image, image chạy thành container.",
+            "Flask API trả về JSON.",
+            "Spark-submit gửi ứng dụng lên cluster.",
+            "Và hệ gợi ý có sẵn trong Spark là ALS.",
+            "Hẹn gặp bạn ở chương 6!"
+          ],
+          "beats": [
+            {
+              "id": "r1",
+              "s": 1,
+              "cue": "Tối ưu"
+            },
+            {
+              "id": "r2",
+              "s": 2,
+              "cue": "Dockerfile"
+            },
+            {
+              "id": "r3",
+              "s": 3,
+              "cue": "Flask"
+            },
+            {
+              "id": "r4",
+              "s": 4,
+              "cue": "Spark-submit"
+            },
+            {
+              "id": "r5",
+              "s": 5,
+              "cue": "hệ gợi ý"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

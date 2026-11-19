@@ -1,0 +1,37 @@
+{
+ "duration": 388.02,
+ "markers": [
+  {
+   "title": "Mở đầu",
+   "start": 0.0
+  },
+  {
+   "title": "Feedback loop",
+   "start": 19.48
+  },
+  {
+   "title": "Unit test & CI/CD",
+   "start": 88.32
+  },
+  {
+   "title": "Logging",
+   "start": 174.78
+  },
+  {
+   "title": "Drift & OpenScale",
+   "start": 228.75
+  },
+  {
+   "title": "Kubernetes",
+   "start": 291.05
+  },
+  {
+   "title": "Bẫy hay gặp",
+   "start": 347.94
+  },
+  {
+   "title": "Tổng kết",
+   "start": 367.64
+  }
+ ]
+}

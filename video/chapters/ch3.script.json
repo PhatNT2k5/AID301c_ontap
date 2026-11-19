@@ -1,0 +1,1264 @@
+{
+  "chapter": 3,
+  "title": "Feature engineering & phát hiện bias",
+  "sections": [
+    {
+      "id": "intro",
+      "title": "Mở đầu",
+      "scenes": [
+        {
+          "type": "intro",
+          "pose": "idle",
+          "headline": "Feature engineering và phát hiện bias",
+          "data": {
+            "chapterNo": 3,
+            "course": "IBM AI Workflow · Course 3",
+            "stops": [
+              {
+                "id": "p1",
+                "label": "Interface & pipeline"
+              },
+              {
+                "id": "p2",
+                "label": "Mất cân bằng & SMOTE"
+              },
+              {
+                "id": "p3",
+                "label": "Giảm chiều & topic"
+              },
+              {
+                "id": "p4",
+                "label": "Bias & tấn công"
+              }
+            ]
+          },
+          "narration": [
+            "Chào bạn, mình là MeoLearn.",
+            "Chương 3 bám theo khoá thứ ba của IBM AI Workflow.",
+            "Chủ đề là feature engineering và phát hiện bias.",
+            "Đầu tiên là interface của scikit-learn và pipeline.",
+            "Rồi tới dữ liệu mất cân bằng và SMOTE.",
+            "Sau đó là giảm chiều và topic modeling.",
+            "Cuối cùng là bias và tấn công mô hình."
+          ],
+          "beats": [
+            {
+              "id": "chapter",
+              "s": 1,
+              "cue": "Chương 3"
+            },
+            {
+              "id": "course",
+              "s": 1,
+              "cue": "IBM AI Workflow"
+            },
+            {
+              "id": "road",
+              "s": 2,
+              "cue": "feature engineering"
+            },
+            {
+              "id": "p1",
+              "s": 3,
+              "cue": "interface"
+            },
+            {
+              "id": "p2",
+              "s": 4,
+              "cue": "mất cân bằng"
+            },
+            {
+              "id": "p3",
+              "s": 5,
+              "cue": "giảm chiều"
+            },
+            {
+              "id": "p4",
+              "s": 6,
+              "cue": "bias"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "api",
+      "title": "Interface & pipeline",
+      "scenes": [
+        {
+          "type": "code",
+          "pose": "idle",
+          "headline": "Bốn interface của scikit-learn",
+          "data": {
+            "lines": [
+              {
+                "text": "from sklearn.pipeline import Pipeline",
+                "beat": "l1"
+              },
+              {
+                "text": ""
+              },
+              {
+                "text": "pipe = Pipeline([",
+                "beat": "l3"
+              },
+              {
+                "text": "    (\"scale\", StandardScaler()),",
+                "beat": "l4",
+                "marks": [
+                  {
+                    "text": "\"scale\"",
+                    "beat": "mk_s"
+                  },
+                  {
+                    "text": "StandardScaler()",
+                    "beat": "mk_t"
+                  }
+                ]
+              },
+              {
+                "text": "    (\"model\", LogisticRegression()),",
+                "beat": "l5",
+                "marks": [
+                  {
+                    "text": "LogisticRegression()",
+                    "beat": "mk_e"
+                  }
+                ]
+              },
+              {
+                "text": "])"
+              },
+              {
+                "text": "pipe.fit(X_train, y_train)",
+                "beat": "l7"
+              },
+              {
+                "text": "pipe.predict(X_test)",
+                "beat": "l8"
+              },
+              {
+                "text": "pipe.score(X_test, y_test)",
+                "beat": "l9"
+              }
+            ],
+            "stages": [
+              {
+                "id": "E",
+                "label": "Estimator",
+                "hint": "fit"
+              },
+              {
+                "id": "P",
+                "label": "Predictor",
+                "hint": "predict"
+              },
+              {
+                "id": "T",
+                "label": "Transformer",
+                "hint": "transform · fit_transform"
+              },
+              {
+                "id": "M",
+                "label": "Model",
+                "hint": "score"
+              }
+            ]
+          },
+          "narration": [
+            "scikit-learn có bốn interface chính.",
+            "Ta nối các bước lại thành một pipeline.",
+            "Bước đầu là một Transformer, có hàm transform.",
+            "Làm feature engineering cùng domain expert?",
+            "Hãy đóng gói nó thành một Transformer tùy biến.",
+            "Bước cuối là một Estimator, nó học bằng hàm fit.",
+            "Predictor thì dự đoán bằng hàm predict.",
+            "Còn Model chấm điểm bằng hàm score.",
+            "Hàm fit transform thuộc cả Transformer lẫn Estimator.",
+            "Pipeline giúp so sánh nhiều biến thể một cách nhất quán."
+          ],
+          "beats": [
+            {
+              "id": "l1",
+              "s": 0
+            },
+            {
+              "id": "E",
+              "s": 0,
+              "cue": "bốn interface"
+            },
+            {
+              "id": "P",
+              "s": 0,
+              "frac": 0.62
+            },
+            {
+              "id": "T",
+              "s": 0,
+              "frac": 0.74
+            },
+            {
+              "id": "M",
+              "s": 0,
+              "frac": 0.86
+            },
+            {
+              "id": "l3",
+              "s": 1,
+              "cue": "nối"
+            },
+            {
+              "id": "on_T",
+              "s": 2,
+              "cue": "Transformer"
+            },
+            {
+              "id": "l4",
+              "s": 2,
+              "cue": "có hàm"
+            },
+            {
+              "id": "mk_s",
+              "s": 3,
+              "cue": "feature engineering"
+            },
+            {
+              "id": "mk_t",
+              "s": 4,
+              "cue": "đóng gói"
+            },
+            {
+              "id": "l5",
+              "s": 5,
+              "frac": 0.0
+            },
+            {
+              "id": "on_E",
+              "s": 5,
+              "cue": "Estimator"
+            },
+            {
+              "id": "l7",
+              "s": 5,
+              "cue": "hàm fit"
+            },
+            {
+              "id": "on_P",
+              "s": 6,
+              "cue": "Predictor"
+            },
+            {
+              "id": "l8",
+              "s": 6,
+              "cue": "hàm predict"
+            },
+            {
+              "id": "on_M",
+              "s": 7,
+              "cue": "Model"
+            },
+            {
+              "id": "l9",
+              "s": 7,
+              "cue": "hàm score"
+            },
+            {
+              "id": "mk_e",
+              "s": 8,
+              "cue": "Estimator"
+            }
+          ]
+        },
+        {
+          "type": "mnemonic",
+          "pose": "curious",
+          "headline": "Mẹo nhớ bốn interface",
+          "data": {
+            "phrase": "Em Phải Thử Mãi",
+            "items": [
+              {
+                "id": "e",
+                "letter": "E",
+                "word": "Estimator",
+                "gloss": "fit"
+              },
+              {
+                "id": "p",
+                "letter": "P",
+                "word": "Predictor",
+                "gloss": "predict"
+              },
+              {
+                "id": "t",
+                "letter": "T",
+                "word": "Transformer",
+                "gloss": "transform",
+                "highlight": true
+              },
+              {
+                "id": "m",
+                "letter": "M",
+                "word": "Model",
+                "gloss": "score"
+              }
+            ]
+          },
+          "narration": [
+            "Mẹo nhớ: lấy chữ cái đầu của bốn interface.",
+            "Estimator, Predictor, Transformer, Model.",
+            "Ghép thành câu: Em Phải Thử Mãi.",
+            "Vì biến đổi dữ liệu cần thử đi thử lại, tức là lặp."
+          ],
+          "beats": [
+            {
+              "id": "letters",
+              "s": 0,
+              "cue": "chữ cái đầu"
+            },
+            {
+              "id": "e",
+              "s": 1,
+              "cue": "Estimator"
+            },
+            {
+              "id": "p",
+              "s": 1,
+              "cue": "Predictor"
+            },
+            {
+              "id": "t",
+              "s": 1,
+              "cue": "Transformer"
+            },
+            {
+              "id": "m",
+              "s": 1,
+              "cue": "Model"
+            },
+            {
+              "id": "phrase",
+              "s": 2,
+              "cue": "Em Phải"
+            }
+          ]
+        },
+        {
+          "type": "quiz",
+          "pose": "curious",
+          "questionId": "qz2-035",
+          "explain": "Feature engineering cùng domain expert được đóng gói thành một Transformer."
+        }
+      ]
+    },
+    {
+      "id": "imbalance",
+      "title": "Mất cân bằng & SMOTE",
+      "scenes": [
+        {
+          "type": "compare",
+          "pose": "idle",
+          "headline": "Lớp thiểu số quá ít",
+          "data": {
+            "left": {
+              "title": "Accuracy",
+              "tone": "bad",
+              "items": [
+                {
+                  "id": "a1",
+                  "text": "Đoán toàn lớp đa số"
+                },
+                {
+                  "id": "a2",
+                  "text": "Vẫn đạt 99%"
+                }
+              ]
+            },
+            "right": {
+              "title": "Precision, recall, F1",
+              "tone": "good",
+              "items": [
+                {
+                  "id": "b1",
+                  "text": "Thấy lớp thiểu số bị bỏ sót"
+                }
+              ]
+            },
+            "verdict": {
+              "id": "verdict",
+              "text": "Oversampling, undersampling, hoặc cả hai"
+            }
+          },
+          "narration": [
+            "Khi một lớp quá ít, accuracy dễ đánh lừa.",
+            "Mô hình chỉ cần đoán toàn lớp đa số.",
+            "Vẫn đạt chín mươi chín phần trăm.",
+            "Hãy nhìn precision, recall và F1.",
+            "Chúng cho thấy lớp thiểu số bị bỏ sót.",
+            "Cách sửa phổ biến là oversampling, undersampling, hoặc cả hai."
+          ],
+          "beats": [
+            {
+              "id": "left",
+              "s": 0,
+              "cue": "accuracy"
+            },
+            {
+              "id": "a1",
+              "s": 1,
+              "cue": "đoán toàn"
+            },
+            {
+              "id": "a2",
+              "s": 2,
+              "cue": "chín mươi"
+            },
+            {
+              "id": "right",
+              "s": 3,
+              "cue": "precision"
+            },
+            {
+              "id": "b1",
+              "s": 4,
+              "cue": "lớp thiểu số"
+            },
+            {
+              "id": "verdict",
+              "s": 5,
+              "cue": "oversampling"
+            }
+          ]
+        },
+        {
+          "type": "pipeline",
+          "pose": "idle",
+          "headline": "SMOTE tạo mẫu mới thế nào",
+          "data": {
+            "stages": [
+              {
+                "id": "pick",
+                "label": "Mẫu thiểu số",
+                "items": [
+                  {
+                    "id": "m1",
+                    "text": "Chọn một điểm"
+                  }
+                ]
+              },
+              {
+                "id": "nn",
+                "label": "Láng giềng gần",
+                "items": [
+                  {
+                    "id": "k1",
+                    "text": "Tìm k điểm gần nhất"
+                  }
+                ]
+              },
+              {
+                "id": "mix",
+                "label": "Nội suy",
+                "items": [
+                  {
+                    "id": "i1",
+                    "text": "Điểm mới nằm giữa"
+                  }
+                ]
+              }
+            ]
+          },
+          "narration": [
+            "SMOTE là cách oversampling phổ biến nhất.",
+            "Nó lấy một điểm của lớp thiểu số.",
+            "Tìm vài láng giềng gần nhất của điểm đó.",
+            "Rồi tạo một điểm mới nằm giữa hai điểm.",
+            "ADASYN cũng vậy, nhưng sinh nhiều mẫu hơn ở vùng khó học.",
+            "Thư viện imbalanced-learn có sẵn cả hai."
+          ],
+          "beats": [
+            {
+              "id": "pick",
+              "s": 0,
+              "cue": "phổ biến"
+            },
+            {
+              "id": "m1",
+              "s": 1,
+              "cue": "lớp thiểu số"
+            },
+            {
+              "id": "nn",
+              "s": 2,
+              "cue": "láng giềng"
+            },
+            {
+              "id": "k1",
+              "s": 2,
+              "cue": "gần nhất"
+            },
+            {
+              "id": "mix",
+              "s": 3,
+              "cue": "tạo một điểm"
+            },
+            {
+              "id": "i1",
+              "s": 3,
+              "cue": "nằm giữa"
+            },
+            {
+              "id": "flow",
+              "s": 4,
+              "cue": "ADASYN"
+            }
+          ]
+        },
+        {
+          "type": "mnemonic",
+          "pose": "curious",
+          "headline": "Dữ liệu trộn: dùng SMOTENC",
+          "data": {
+            "phrase": "NC: vừa nhãn, vừa số",
+            "items": [
+              {
+                "id": "s",
+                "letter": "S",
+                "word": "SMOTE",
+                "gloss": "tạo mẫu mới"
+              },
+              {
+                "id": "n",
+                "letter": "N",
+                "word": "Nominal",
+                "gloss": "biến categorical",
+                "highlight": true
+              },
+              {
+                "id": "c",
+                "letter": "C",
+                "word": "Continuous",
+                "gloss": "biến liên tục",
+                "highlight": true
+              }
+            ]
+          },
+          "narration": [
+            "Dữ liệu có cả categorical lẫn continuous thì sao?",
+            "Hãy dùng SMOTENC.",
+            "Chữ N là Nominal, tức categorical.",
+            "Chữ C là Continuous, tức biến liên tục.",
+            "Mẹo nhớ: NC là vừa nhãn, vừa số."
+          ],
+          "beats": [
+            {
+              "id": "letters",
+              "s": 0,
+              "cue": "continuous"
+            },
+            {
+              "id": "s",
+              "s": 1,
+              "cue": "SMOTENC"
+            },
+            {
+              "id": "n",
+              "s": 2,
+              "cue": "Nominal"
+            },
+            {
+              "id": "c",
+              "s": 3,
+              "cue": "Continuous"
+            },
+            {
+              "id": "phrase",
+              "s": 4,
+              "frac": 0.0
+            }
+          ]
+        },
+        {
+          "type": "quiz",
+          "pose": "curious",
+          "questionId": "qz2-036",
+          "explain": "SMOTENC dành cho dữ liệu trộn cả biến categorical và continuous."
+        }
+      ]
+    },
+    {
+      "id": "dimension",
+      "title": "Giảm chiều & topic",
+      "scenes": [
+        {
+          "type": "matrix",
+          "pose": "idle",
+          "headline": "Bag-of-words: chỉ đếm từ",
+          "data": {
+            "rows": [
+              [
+                2,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                3,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0,
+                0,
+                0
+              ]
+            ],
+            "triples": [
+              {
+                "id": "t0",
+                "r": 0,
+                "c": 0
+              },
+              {
+                "id": "t1",
+                "r": 1,
+                "c": 2
+              },
+              {
+                "id": "t2",
+                "r": 2,
+                "c": 1
+              }
+            ],
+            "note": {
+              "id": "note",
+              "text": "Kết quả là một sparse matrix"
+            }
+          },
+          "narration": [
+            "Với văn bản, ta dùng bag-of-words.",
+            "Mỗi hàng là một tài liệu, mỗi cột là một từ.",
+            "Như hai, ba, một: số lần từ đó xuất hiện.",
+            "Hầu hết ô là số không.",
+            "Nên kết quả là một sparse matrix, thứ tự từ bị bỏ qua.",
+            "LDA dùng ma trận này để tìm ra các topic."
+          ],
+          "beats": [
+            {
+              "id": "grid",
+              "s": 0,
+              "cue": "bag-of-words"
+            },
+            {
+              "id": "list",
+              "s": 1,
+              "cue": "mỗi cột"
+            },
+            {
+              "id": "t0",
+              "s": 2,
+              "cue": "hai"
+            },
+            {
+              "id": "t1",
+              "s": 2,
+              "cue": "ba"
+            },
+            {
+              "id": "t2",
+              "s": 2,
+              "cue": "một"
+            },
+            {
+              "id": "fade",
+              "s": 3,
+              "cue": "số không"
+            },
+            {
+              "id": "note",
+              "s": 4,
+              "cue": "sparse matrix"
+            }
+          ]
+        },
+        {
+          "type": "pipeline",
+          "pose": "idle",
+          "headline": "Nhiều feature: PCA trước, tSNE sau",
+          "data": {
+            "stages": [
+              {
+                "id": "raw",
+                "label": "Dữ liệu gốc",
+                "items": [
+                  {
+                    "id": "r1",
+                    "text": "Hàng nghìn feature"
+                  },
+                  {
+                    "id": "r2",
+                    "text": "Chậm và nhiễu"
+                  }
+                ]
+              },
+              {
+                "id": "pca",
+                "label": "PCA",
+                "items": [
+                  {
+                    "id": "p1",
+                    "text": "Còn khoảng 50 chiều"
+                  }
+                ]
+              },
+              {
+                "id": "tsne",
+                "label": "tSNE",
+                "items": [
+                  {
+                    "id": "t1",
+                    "text": "Vẽ ra 2 chiều"
+                  }
+                ]
+              }
+            ]
+          },
+          "narration": [
+            "Dữ liệu gốc có thể có hàng nghìn feature.",
+            "Mô hình sẽ chậm và nhiễu, nên cần giảm chiều.",
+            "Bước một: dùng PCA giảm còn khoảng năm mươi chiều.",
+            "Bước hai: dùng tSNE vẽ dữ liệu ra hai chiều.",
+            "tSNE thấy nhiều dạng cấu trúc hơn PCA, nhưng chạy chậm.",
+            "Ngoài ra còn NMF, SVD và LDA."
+          ],
+          "beats": [
+            {
+              "id": "raw",
+              "s": 0,
+              "cue": "Dữ liệu gốc"
+            },
+            {
+              "id": "r1",
+              "s": 0,
+              "cue": "hàng nghìn"
+            },
+            {
+              "id": "r2",
+              "s": 1,
+              "cue": "chậm"
+            },
+            {
+              "id": "pca",
+              "s": 2,
+              "cue": "PCA"
+            },
+            {
+              "id": "p1",
+              "s": 2,
+              "cue": "năm mươi"
+            },
+            {
+              "id": "tsne",
+              "s": 3,
+              "cue": "tSNE"
+            },
+            {
+              "id": "t1",
+              "s": 3,
+              "cue": "hai chiều"
+            },
+            {
+              "id": "flow",
+              "s": 4,
+              "cue": "cấu trúc"
+            }
+          ]
+        },
+        {
+          "type": "mnemonic",
+          "pose": "curious",
+          "headline": "Kẻ lạc loài: KNN",
+          "data": {
+            "phrase": "KNN đi tìm hàng xóm, không giảm chiều",
+            "items": [
+              {
+                "id": "p",
+                "letter": "P",
+                "word": "PCA",
+                "gloss": "giảm chiều"
+              },
+              {
+                "id": "n",
+                "letter": "N",
+                "word": "NMF",
+                "gloss": "giảm chiều"
+              },
+              {
+                "id": "s",
+                "letter": "S",
+                "word": "SVD",
+                "gloss": "giảm chiều"
+              },
+              {
+                "id": "k",
+                "letter": "K",
+                "word": "KNN",
+                "gloss": "tìm hàng xóm",
+                "highlight": true
+              }
+            ]
+          },
+          "narration": [
+            "Đề hay hỏi: đâu không phải kỹ thuật giảm chiều?",
+            "PCA, NMF và SVD đều giảm chiều.",
+            "Còn KNN là K nearest neighbors.",
+            "Mẹo nhớ: KNN đi tìm hàng xóm, không giảm chiều."
+          ],
+          "beats": [
+            {
+              "id": "letters",
+              "s": 0,
+              "cue": "không phải"
+            },
+            {
+              "id": "p",
+              "s": 1,
+              "cue": "PCA"
+            },
+            {
+              "id": "n",
+              "s": 1,
+              "cue": "NMF"
+            },
+            {
+              "id": "s",
+              "s": 1,
+              "cue": "SVD"
+            },
+            {
+              "id": "k",
+              "s": 2,
+              "cue": "KNN"
+            },
+            {
+              "id": "phrase",
+              "s": 3,
+              "frac": 0.0
+            }
+          ]
+        },
+        {
+          "type": "quiz",
+          "pose": "curious",
+          "questionId": "qz2-037",
+          "explain": "K nearest neighbors là thuật toán phân loại, không phải kỹ thuật giảm chiều."
+        }
+      ]
+    },
+    {
+      "id": "bias",
+      "title": "Bias & tấn công",
+      "scenes": [
+        {
+          "type": "compare",
+          "pose": "idle",
+          "headline": "Thuộc tính nào cần tránh?",
+          "data": {
+            "left": {
+              "title": "Protected attribute",
+              "tone": "bad",
+              "items": [
+                {
+                  "id": "pa1",
+                  "text": "Tuổi, giới tính"
+                },
+                {
+                  "id": "pa2",
+                  "text": "Chủng tộc, tôn giáo"
+                },
+                {
+                  "id": "pa3",
+                  "text": "Duyệt vay theo tuổi"
+                }
+              ]
+            },
+            "right": {
+              "title": "Thường dùng được",
+              "tone": "good",
+              "items": [
+                {
+                  "id": "ok1",
+                  "text": "Lịch sử mua hàng"
+                }
+              ]
+            },
+            "verdict": {
+              "id": "verdict",
+              "text": "Precision, recall không chứng minh fairness"
+            }
+          },
+          "narration": [
+            "Protected attribute là thứ không được dùng để phân biệt.",
+            "Như tuổi, giới tính, chủng tộc hay tôn giáo.",
+            "Nên luật cho vay dựa vào tuổi là pattern xấu nhất.",
+            "Còn lịch sử mua hàng thì thường dùng được.",
+            "Lưu ý: precision và recall không chứng minh fairness.",
+            "Cần metric riêng, như disparate impact."
+          ],
+          "beats": [
+            {
+              "id": "left",
+              "s": 0,
+              "cue": "Protected attribute"
+            },
+            {
+              "id": "pa1",
+              "s": 1,
+              "cue": "tuổi"
+            },
+            {
+              "id": "pa2",
+              "s": 1,
+              "cue": "chủng tộc"
+            },
+            {
+              "id": "pa3",
+              "s": 2,
+              "cue": "dựa vào tuổi"
+            },
+            {
+              "id": "right",
+              "s": 3,
+              "cue": "lịch sử"
+            },
+            {
+              "id": "ok1",
+              "s": 3,
+              "cue": "mua hàng"
+            },
+            {
+              "id": "verdict",
+              "s": 4,
+              "cue": "precision"
+            }
+          ]
+        },
+        {
+          "type": "pipeline",
+          "pose": "idle",
+          "headline": "Hai kiểu tấn công mô hình",
+          "data": {
+            "stages": [
+              {
+                "id": "train",
+                "label": "Dữ liệu huấn luyện",
+                "items": [
+                  {
+                    "id": "po",
+                    "text": "Poisoning: chèn dữ liệu độc"
+                  }
+                ]
+              },
+              {
+                "id": "model",
+                "label": "Mô hình",
+                "items": [
+                  {
+                    "id": "art",
+                    "text": "ART kiểm tra robustness"
+                  }
+                ]
+              },
+              {
+                "id": "pred",
+                "label": "Lúc dự đoán",
+                "items": [
+                  {
+                    "id": "ev",
+                    "text": "Evasion: sửa nhẹ input"
+                  }
+                ]
+              }
+            ]
+          },
+          "narration": [
+            "Kẻ xấu có thể tấn công ngay từ dữ liệu huấn luyện.",
+            "Đó là poisoning: chèn dữ liệu độc vào.",
+            "Hoặc tấn công lúc dự đoán, bằng cách sửa nhẹ input.",
+            "Đó là evasion, đánh lừa mô hình.",
+            "Để kiểm tra, IBM có Adversarial Robustness Toolbox."
+          ],
+          "beats": [
+            {
+              "id": "train",
+              "s": 0,
+              "cue": "dữ liệu huấn luyện"
+            },
+            {
+              "id": "po",
+              "s": 1,
+              "cue": "poisoning"
+            },
+            {
+              "id": "pred",
+              "s": 2,
+              "cue": "lúc dự đoán"
+            },
+            {
+              "id": "ev",
+              "s": 2,
+              "cue": "sửa nhẹ"
+            },
+            {
+              "id": "flow",
+              "s": 3,
+              "cue": "evasion"
+            },
+            {
+              "id": "model",
+              "s": 4,
+              "cue": "IBM"
+            },
+            {
+              "id": "art",
+              "s": 4,
+              "cue": "Robustness"
+            }
+          ]
+        },
+        {
+          "type": "mnemonic",
+          "pose": "curious",
+          "headline": "Đầu độc lúc học, lừa lúc thi",
+          "data": {
+            "phrase": "Đầu độc lúc học, lừa lúc thi",
+            "items": [
+              {
+                "id": "p",
+                "letter": "P",
+                "word": "Poisoning",
+                "gloss": "đầu độc lúc học"
+              },
+              {
+                "id": "e",
+                "letter": "E",
+                "word": "Evasion",
+                "gloss": "lừa lúc thi"
+              }
+            ]
+          },
+          "narration": [
+            "Mẹo nhớ hai kiểu tấn công.",
+            "Poisoning là đầu độc lúc mô hình học.",
+            "Evasion là lừa lúc mô hình đi thi.",
+            "Đầu độc lúc học, lừa lúc thi."
+          ],
+          "beats": [
+            {
+              "id": "letters",
+              "s": 0,
+              "cue": "hai kiểu"
+            },
+            {
+              "id": "p",
+              "s": 1,
+              "cue": "Poisoning"
+            },
+            {
+              "id": "e",
+              "s": 2,
+              "cue": "Evasion"
+            },
+            {
+              "id": "phrase",
+              "s": 3,
+              "frac": 0.0
+            }
+          ]
+        },
+        {
+          "type": "quiz",
+          "pose": "curious",
+          "questionId": "su26re-18",
+          "explain": "Adversarial Robustness Toolbox của IBM dùng để kiểm chứng độ bền vững của mô hình."
+        }
+      ]
+    },
+    {
+      "id": "traps",
+      "title": "Bẫy hay gặp",
+      "scenes": [
+        {
+          "type": "traps",
+          "pose": "sad",
+          "headline": "Năm bẫy hay gặp trong đề",
+          "data": {
+            "traps": [
+              {
+                "id": "t1",
+                "wrong": "Có một Classifier interface",
+                "right": "Chỉ có Estimator, Predictor, Transformer, Model"
+              },
+              {
+                "id": "t2",
+                "wrong": "ADASYN là outlier detection",
+                "right": "ADASYN là kỹ thuật oversampling"
+              },
+              {
+                "id": "t3",
+                "wrong": "imbalanced-learn có outlier detection",
+                "right": "Không có, chỉ lo re-sampling"
+              },
+              {
+                "id": "t4",
+                "wrong": "Dùng inertia để chọn số cụm",
+                "right": "Inertia luôn giảm; dùng silhouette, BIC"
+              },
+              {
+                "id": "t5",
+                "wrong": "Down-sampling là giảm chiều",
+                "right": "Chỉ là bớt mẫu lớp đa số"
+              }
+            ]
+          },
+          "narration": [
+            "Giờ là năm cái bẫy hay gặp.",
+            "Không hề có Classifier interface trong scikit-learn.",
+            "ADASYN không phải outlier detection.",
+            "Nó là kỹ thuật oversampling, giống SMOTE.",
+            "imbalanced-learn cũng không có outlier detection.",
+            "Inertia luôn giảm khi tăng số cụm, nên đừng dùng nó để chọn k.",
+            "Và down-sampling lớp đa số không phải giảm chiều."
+          ],
+          "beats": [
+            {
+              "id": "t1",
+              "s": 0,
+              "cue": "năm cái bẫy"
+            },
+            {
+              "id": "fix_t1",
+              "s": 1,
+              "cue": "Không hề"
+            },
+            {
+              "id": "t2",
+              "s": 2,
+              "cue": "ADASYN"
+            },
+            {
+              "id": "fix_t2",
+              "s": 3,
+              "cue": "Nó là"
+            },
+            {
+              "id": "t3",
+              "s": 4,
+              "cue": "imbalanced-learn"
+            },
+            {
+              "id": "fix_t3",
+              "s": 4,
+              "cue": "không có"
+            },
+            {
+              "id": "t4",
+              "s": 5,
+              "cue": "Inertia"
+            },
+            {
+              "id": "fix_t4",
+              "s": 5,
+              "cue": "đừng dùng"
+            },
+            {
+              "id": "t5",
+              "s": 6,
+              "cue": "down-sampling"
+            },
+            {
+              "id": "fix_t5",
+              "s": 6,
+              "cue": "không phải"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "recap",
+      "title": "Tổng kết",
+      "scenes": [
+        {
+          "type": "recap",
+          "pose": "happy",
+          "headline": "Nhớ năm điều này",
+          "data": {
+            "items": [
+              {
+                "id": "r1",
+                "text": "Em Phải Thử Mãi: E-P-T-M"
+              },
+              {
+                "id": "r2",
+                "text": "Dữ liệu trộn → SMOTENC"
+              },
+              {
+                "id": "r3",
+                "text": "PCA trước, tSNE sau"
+              },
+              {
+                "id": "r4",
+                "text": "Đầu độc lúc học, lừa lúc thi"
+              },
+              {
+                "id": "r5",
+                "text": "Precision không chứng minh fairness"
+              }
+            ]
+          },
+          "narration": [
+            "Tóm lại, nhớ năm điều.",
+            "Bốn interface: Em Phải Thử Mãi.",
+            "Dữ liệu trộn thì dùng SMOTENC.",
+            "Nhiều feature thì PCA trước, tSNE sau.",
+            "Đầu độc lúc học, lừa lúc thi.",
+            "Và precision không chứng minh fairness.",
+            "Hẹn gặp bạn ở chương 4!"
+          ],
+          "beats": [
+            {
+              "id": "r1",
+              "s": 1,
+              "cue": "Bốn interface"
+            },
+            {
+              "id": "r2",
+              "s": 2,
+              "cue": "Dữ liệu trộn"
+            },
+            {
+              "id": "r3",
+              "s": 3,
+              "cue": "Nhiều feature"
+            },
+            {
+              "id": "r4",
+              "s": 4,
+              "frac": 0.0
+            },
+            {
+              "id": "r5",
+              "s": 5,
+              "cue": "precision"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

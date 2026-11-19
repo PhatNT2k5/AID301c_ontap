@@ -1,0 +1,302 @@
+{
+  "chapter": 1,
+  "title": "Quy trình AI doanh nghiệp & thu thập dữ liệu",
+  "sections": [
+    {
+      "id": "process",
+      "title": "Process model",
+      "scenes": [
+        {
+          "type": "cycle",
+          "pose": "idle",
+          "headline": "CRISP-DM: sáu pha, một vòng lặp",
+          "data": {
+            "center": "CRISP-DM",
+            "centerSub": [
+              {
+                "text": "chuẩn mở",
+                "beat": "open"
+              },
+              {
+                "text": "1996",
+                "beat": "year"
+              }
+            ],
+            "nodes": [
+              {
+                "id": "n1",
+                "label": "Business Understanding"
+              },
+              {
+                "id": "n2",
+                "label": "Data Understanding"
+              },
+              {
+                "id": "n3",
+                "label": "Data Preparation"
+              },
+              {
+                "id": "n4",
+                "label": "Modeling"
+              },
+              {
+                "id": "n5",
+                "label": "Evaluation"
+              },
+              {
+                "id": "n6",
+                "label": "Deployment"
+              }
+            ]
+          },
+          "narration": [
+            "CRISP-DM là một chuẩn mở.",
+            "Nó ra đời năm 1996.",
+            "Nó có sáu pha, nối với nhau thành một vòng lặp.",
+            "Đầu tiên là Business Understanding, rồi Data Understanding.",
+            "Tiếp theo là Data Preparation và Modeling.",
+            "Sau đó là Evaluation, cuối cùng là Deployment.",
+            "Rồi vòng lặp quay lại pha đầu tiên."
+          ],
+          "beats": [
+            {
+              "id": "center",
+              "s": 0,
+              "cue": "CRISP-DM"
+            },
+            {
+              "id": "open",
+              "s": 0,
+              "cue": "chuẩn mở"
+            },
+            {
+              "id": "year",
+              "s": 1,
+              "cue": "1996"
+            },
+            {
+              "id": "slots",
+              "s": 2,
+              "cue": "sáu pha"
+            },
+            {
+              "id": "track",
+              "s": 2,
+              "cue": "vòng lặp"
+            },
+            {
+              "id": "n1",
+              "s": 3,
+              "cue": "Business Understanding"
+            },
+            {
+              "id": "n2",
+              "s": 3,
+              "cue": "Data Understanding"
+            },
+            {
+              "id": "n3",
+              "s": 4,
+              "cue": "Data Preparation"
+            },
+            {
+              "id": "n4",
+              "s": 4,
+              "cue": "Modeling"
+            },
+            {
+              "id": "n5",
+              "s": 5,
+              "cue": "Evaluation"
+            },
+            {
+              "id": "n6",
+              "s": 5,
+              "cue": "Deployment"
+            },
+            {
+              "id": "loop",
+              "s": 6,
+              "cue": "quay lại"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "etl",
+      "title": "Data ingestion và ETL",
+      "scenes": [
+        {
+          "type": "code",
+          "pose": "idle",
+          "headline": "ETL: lấy, biến đổi, nạp",
+          "data": {
+            "lines": [
+              {
+                "text": "import pandas as pd",
+                "beat": "l1"
+              },
+              {
+                "text": "import sqlite3",
+                "beat": "l2"
+              },
+              {
+                "text": ""
+              },
+              {
+                "text": "conn = sqlite3.connect(\"aavail.db\")",
+                "beat": "l4",
+                "marks": [
+                  {
+                    "text": "\"aavail.db\"",
+                    "beat": "db"
+                  }
+                ]
+              },
+              {
+                "text": "df_db = pd.read_sql(\"SELECT * FROM customers\", conn)",
+                "beat": "l5"
+              },
+              {
+                "text": "df_csv = pd.read_csv(\"streams.csv\")",
+                "beat": "l6"
+              },
+              {
+                "text": "df = df_db.merge(df_csv, on=\"customer_id\")",
+                "beat": "l7",
+                "marks": [
+                  {
+                    "text": "df =",
+                    "beat": "frame"
+                  },
+                  {
+                    "text": "\"customer_id\"",
+                    "beat": "key"
+                  }
+                ]
+              },
+              {
+                "text": "assert df[\"customer_id\"].is_unique",
+                "beat": "l8"
+              }
+            ],
+            "stages": [
+              {
+                "id": "E",
+                "label": "Extract",
+                "hint": "read_sql · read_csv"
+              },
+              {
+                "id": "T",
+                "label": "Transform",
+                "hint": "merge"
+              },
+              {
+                "id": "L",
+                "label": "Load",
+                "hint": "DataFrame · assert"
+              }
+            ]
+          },
+          "narration": [
+            "ETL là viết tắt của Extract, Transform và Load.",
+            "Extract là lấy dữ liệu thô từ nhiều nguồn.",
+            "Ở đây ta đọc bảng customers trong database của AAVAIL.",
+            "Rồi đọc thêm dữ liệu streams từ một file CSV.",
+            "Transform là làm sạch và gộp hai nguồn theo customer id.",
+            "Load là đưa kết quả vào một DataFrame để phân tích.",
+            "Cuối cùng kiểm tra dữ liệu, không để khách hàng bị trùng."
+          ],
+          "beats": [
+            {
+              "id": "l1",
+              "s": 0
+            },
+            {
+              "id": "E",
+              "s": 0,
+              "cue": "Extract"
+            },
+            {
+              "id": "T",
+              "s": 0,
+              "cue": "Transform"
+            },
+            {
+              "id": "L",
+              "s": 0,
+              "cue": "Load"
+            },
+            {
+              "id": "on_E",
+              "s": 1,
+              "cue": "Extract"
+            },
+            {
+              "id": "l2",
+              "s": 1,
+              "cue": "nhiều nguồn"
+            },
+            {
+              "id": "l4",
+              "s": 2,
+              "cue": "đọc bảng"
+            },
+            {
+              "id": "l5",
+              "s": 2,
+              "cue": "customers"
+            },
+            {
+              "id": "db",
+              "s": 2,
+              "cue": "AAVAIL"
+            },
+            {
+              "id": "l6",
+              "s": 3,
+              "cue": "streams"
+            },
+            {
+              "id": "on_T",
+              "s": 4,
+              "cue": "Transform"
+            },
+            {
+              "id": "l7",
+              "s": 4,
+              "cue": "gộp"
+            },
+            {
+              "id": "key",
+              "s": 4,
+              "cue": "customer id"
+            },
+            {
+              "id": "on_L",
+              "s": 5,
+              "cue": "Load"
+            },
+            {
+              "id": "frame",
+              "s": 5,
+              "cue": "DataFrame"
+            },
+            {
+              "id": "l8",
+              "s": 6,
+              "cue": "kiểm tra"
+            }
+          ]
+        },
+        {
+          "type": "quiz",
+          "pose": "curious",
+          "questionId": "su26fe-47",
+          "explain": "Trích xuất, biến đổi, rồi nạp vào hệ thống đích; \"Transfer\" không phải thuật ngữ chuẩn."
+        }
+      ]
+    }
+  ]
+}

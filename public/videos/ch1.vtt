@@ -1,0 +1,401 @@
+WEBVTT
+
+1
+00:00:00.300 --> 00:00:02.408
+Chào bạn, mình là MeoLearn.
+
+2
+00:00:02.728 --> 00:00:06.416
+Chương 1 bám theo khoá đầu tiên của IBM AI Workflow.
+
+3
+00:00:06.736 --> 00:00:08.624
+Hôm nay ta đi qua bốn chặng.
+
+4
+00:00:08.944 --> 00:00:11.505
+Process model, rồi design thinking.
+
+5
+00:00:11.825 --> 00:00:14.928
+Sau đó là thu thập dữ liệu, và sparse matrix.
+
+6
+00:00:15.248 --> 00:00:17.510
+Cuối chương có các bẫy hay gặp trong đề.
+
+7
+00:00:18.260 --> 00:00:21.097
+CRISP-DM là một chuẩn mở.
+
+8
+00:00:21.417 --> 00:00:24.012
+Nó ra đời năm 1996.
+
+9
+00:00:24.332 --> 00:00:27.300
+Nó có sáu pha, nối với nhau thành một vòng lặp.
+
+10
+00:00:27.620 --> 00:00:31.415
+Đầu tiên là Business Understanding, rồi Data Understanding.
+
+11
+00:00:31.735 --> 00:00:34.864
+Tiếp theo là Data Preparation và Modeling.
+
+12
+00:00:35.184 --> 00:00:38.824
+Sau đó là Evaluation, cuối cùng là Deployment.
+
+13
+00:00:39.144 --> 00:00:41.330
+Rồi vòng lặp quay lại pha đầu tiên.
+
+14
+00:00:42.080 --> 00:00:44.102
+Mô hình thứ hai là OSEMN.
+
+15
+00:00:44.422 --> 00:00:46.863
+O là Obtain, thu thập dữ liệu.
+
+16
+00:00:47.183 --> 00:00:49.592
+S là Scrub, tức là làm sạch.
+
+17
+00:00:49.912 --> 00:00:52.782
+E là Explore, M là Model.
+
+18
+00:00:53.102 --> 00:00:56.330
+Và N là Interpret, diễn giải kết quả.
+
+19
+00:00:56.650 --> 00:00:59.824
+Mẹo nhớ: S là Scrub, chà cho thật sạch.
+
+20
+00:01:00.574 --> 00:01:01.797
+Câu hỏi nhanh.
+
+21
+00:01:02.117 --> 00:01:05.130
+In the OSEMN framework, what does the "S" stand for?
+
+22
+00:01:05.450 --> 00:01:07.045
+A. Scrubbing
+
+23
+00:01:07.265 --> 00:01:08.818
+B. Sampling
+
+24
+00:01:09.038 --> 00:01:10.720
+C. Structuring
+
+25
+00:01:10.940 --> 00:01:12.410
+D. Storing
+
+26
+00:01:15.630 --> 00:01:17.263
+Đáp án đúng là A.
+
+27
+00:01:17.583 --> 00:01:21.195
+Chữ S trong OSEMN là Scrubbing, tức làm sạch dữ liệu.
+
+28
+00:01:21.945 --> 00:01:25.413
+Khoá học chọn IBM Design Thinking làm process model.
+
+29
+00:01:25.733 --> 00:01:28.104
+Nó có năm bậc, đi theo thứ tự.
+
+30
+00:01:28.424 --> 00:01:31.473
+Bậc đầu là Empathize: hiểu cơ hội kinh doanh.
+
+31
+00:01:31.793 --> 00:01:34.309
+Rồi Define: chọn và định nghĩa thách thức.
+
+32
+00:01:34.629 --> 00:01:37.544
+Ideate là lúc làm EDA và feature.
+
+33
+00:01:37.864 --> 00:01:40.372
+Prototype là xây và so sánh mô hình.
+
+34
+00:01:40.692 --> 00:01:42.721
+Test là triển khai và theo dõi.
+
+35
+00:01:43.471 --> 00:01:46.378
+Mẹo nhớ thứ tự: lấy chữ cái đầu của năm bậc.
+
+36
+00:01:46.698 --> 00:01:49.297
+Ghép thành câu: Em Đi Ít, Phải Thử.
+
+37
+00:01:50.047 --> 00:01:51.269
+Câu hỏi nhanh.
+
+38
+00:01:51.589 --> 00:01:55.983
+During which phase of the design thinking process does AAVAiL move to define challenges?
+
+39
+00:01:56.303 --> 00:01:57.899
+A. Empathize
+
+40
+00:01:58.119 --> 00:01:59.599
+B. Define
+
+41
+00:01:59.819 --> 00:02:01.188
+C. Ideate
+
+42
+00:02:01.408 --> 00:02:02.874
+D. Prototype
+
+43
+00:02:06.094 --> 00:02:07.701
+Đáp án đúng là B.
+
+44
+00:02:08.021 --> 00:02:10.627
+Định nghĩa thách thức là việc của giai đoạn Define.
+
+45
+00:02:11.377 --> 00:02:13.276
+Dữ liệu đến từ nhiều nguồn.
+
+46
+00:02:13.596 --> 00:02:17.661
+Database, file CSV, JSON hay API.
+
+47
+00:02:17.981 --> 00:02:20.654
+Ingestion pipeline phải kiểm tra chất lượng.
+
+48
+00:02:20.974 --> 00:02:24.345
+Xử lý missing data, dữ liệu lỗi và bản ghi trùng.
+
+49
+00:02:24.665 --> 00:02:27.304
+Vì dữ liệu xấu vào thì kết quả xấu ra.
+
+50
+00:02:27.624 --> 00:02:30.538
+Đích đến là DataFrame hoặc NumPy array.
+
+51
+00:02:31.288 --> 00:02:34.616
+ETL là viết tắt của Extract, Transform và Load.
+
+52
+00:02:34.936 --> 00:02:37.506
+Extract là lấy dữ liệu thô từ nhiều nguồn.
+
+53
+00:02:37.826 --> 00:02:41.701
+Ở đây ta đọc bảng customers trong database của AAVAIL.
+
+54
+00:02:42.021 --> 00:02:45.083
+Rồi đọc thêm dữ liệu streams từ một file CSV.
+
+55
+00:02:45.403 --> 00:02:48.659
+Transform là làm sạch và gộp hai nguồn theo customer id.
+
+56
+00:02:48.979 --> 00:02:52.092
+Load là đưa kết quả vào một DataFrame để phân tích.
+
+57
+00:02:52.412 --> 00:02:55.533
+Cuối cùng kiểm tra dữ liệu, không để khách hàng bị trùng.
+
+58
+00:02:56.283 --> 00:02:58.718
+Mẹo nhớ ETL bằng chuyện nấu cơm.
+
+59
+00:02:59.038 --> 00:03:01.285
+Extract là đi chợ lấy nguyên liệu.
+
+60
+00:03:01.605 --> 00:03:03.136
+Transform là nấu.
+
+61
+00:03:03.456 --> 00:03:05.773
+Load là dọn lên bàn cho cả nhà ăn.
+
+62
+00:03:06.523 --> 00:03:08.729
+Câu hỏi nhanh, chọn 3 đáp án.
+
+63
+00:03:09.049 --> 00:03:13.590
+Which tasks should be included in a data ingestion pipeline? (Choose one or more)
+
+64
+00:03:13.910 --> 00:03:19.778
+A. Account for missing data, faulty data, repeated observations and other data integrity issues
+
+65
+00:03:19.998 --> 00:03:24.313
+B. Ensure that expected data is returned given a specific set of parameters
+
+66
+00:03:24.533 --> 00:03:27.593
+C. Ensure that an expected format is returned
+
+67
+00:03:27.813 --> 00:03:30.745
+D. Ensure that models produce expected results
+
+68
+00:03:33.965 --> 00:03:36.616
+Đáp án đúng là A, B, C.
+
+69
+00:03:36.936 --> 00:03:43.801
+Pipeline xử lý dữ liệu thiếu, lỗi, trùng và kiểm tra dữ liệu, định dạng trả về; kiểm tra mô hình không thuộc ingestion.
+
+70
+00:03:44.551 --> 00:03:46.810
+Nhiều dữ liệu gần như toàn số không.
+
+71
+00:03:47.130 --> 00:03:49.541
+Sparse matrix chỉ lưu các ô khác không.
+
+72
+00:03:49.861 --> 00:03:52.702
+Mỗi ô được ghi thành hàng, cột và giá trị.
+
+73
+00:03:53.022 --> 00:03:56.002
+Như ô số năm, số một và số hai ở đây.
+
+74
+00:03:56.322 --> 00:04:00.109
+Đây là định dạng COO, thường đổi sang CSR để tính toán.
+
+75
+00:04:00.859 --> 00:04:03.153
+Hình dung một bãi giữ xe gần như trống.
+
+76
+00:04:03.473 --> 00:04:05.675
+Dense ghi lại cả những chỗ trống.
+
+77
+00:04:05.995 --> 00:04:08.127
+Sparse chỉ ghi những chỗ có xe.
+
+78
+00:04:08.447 --> 00:04:11.471
+Nên nó hợp với word counts và ma trận user item.
+
+79
+00:04:12.221 --> 00:04:13.443
+Câu hỏi nhanh.
+
+80
+00:04:13.763 --> 00:04:16.791
+Which types of data generally work well with sparse matrices?
+
+81
+00:04:17.111 --> 00:04:19.730
+A. word counts, time-series data
+
+82
+00:04:19.950 --> 00:04:22.087
+B. audio files, images
+
+83
+00:04:22.307 --> 00:04:25.988
+C. word counts, user-item matrix for recommendations
+
+84
+00:04:26.208 --> 00:04:28.607
+D. text data, audio files
+
+85
+00:04:31.827 --> 00:04:33.439
+Đáp án đúng là C.
+
+86
+00:04:33.759 --> 00:04:38.079
+Word counts và ma trận user item có rất nhiều số 0 nên hợp với sparse matrix.
+
+87
+00:04:38.829 --> 00:04:40.852
+Cuối cùng là năm cái bẫy hay gặp.
+
+88
+00:04:41.172 --> 00:04:43.613
+Process model không làm bạn đi nhanh hơn.
+
+89
+00:04:43.933 --> 00:04:46.812
+Ngày đầu đi làm, đừng lao vào EDA.
+
+90
+00:04:47.132 --> 00:04:49.355
+Hãy hỏi góc nhìn của management trước.
+
+91
+00:04:49.675 --> 00:04:52.381
+Câu hỏi lãnh đạo nào ủng hộ không mang tính khoa học.
+
+92
+00:04:52.701 --> 00:04:55.242
+Quy mô công ty không ảnh hưởng thời gian làm sạch.
+
+93
+00:04:55.562 --> 00:05:00.180
+Và Berkeley DB là key value store, không phải relational database.
+
+94
+00:05:00.930 --> 00:05:02.837
+Tóm lại, nhớ năm điều.
+
+95
+00:05:03.157 --> 00:05:05.769
+CRISP-DM có sáu pha.
+
+96
+00:05:06.089 --> 00:05:08.436
+Chữ S trong OSEMN là Scrub.
+
+97
+00:05:08.756 --> 00:05:11.502
+Design thinking: Em Đi Ít, Phải Thử.
+
+98
+00:05:11.822 --> 00:05:15.134
+ETL: đi chợ, nấu, dọn lên bàn.
+
+99
+00:05:15.454 --> 00:05:17.699
+Sparse matrix chỉ lưu ô khác không.
+
+100
+00:05:18.019 --> 00:05:19.854
+Hẹn gặp bạn ở chương 2!

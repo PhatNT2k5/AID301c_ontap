@@ -1,11 +1,19 @@
 import questionsJson from "../data/questions.json";
 import chaptersJson from "../data/chapters.json";
+import markersJson from "../data/video-markers.json";
 import type { Chapter, Question, Section } from "./types";
 
 export const questions = questionsJson as Question[];
 export const chapters = chaptersJson as Chapter[];
 
 export const questionById = new Map(questions.map((q) => [q.id, q]));
+
+export type VideoMarker = { title: string; start: number };
+type MarkerFile = Record<string, { duration: number; markers: VideoMarker[] }>;
+// Written by video/pipeline/build.py after each chapter render.
+const videoMarkers = markersJson as MarkerFile;
+export const markersFor = (chapterId: number): { duration: number; markers: VideoMarker[] } | undefined =>
+  videoMarkers[String(chapterId)];
 
 const TARGET_SECTION_SIZE = 10;
 

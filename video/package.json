@@ -1,0 +1,21 @@
+{
+  "name": "aid301c-video",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "build:ch": "node pipeline/run.mjs build",
+    "demo": "node pipeline/run.mjs demo",
+    "prep:ch": "node pipeline/run.mjs prep"
+  },
+  "dependencies": {
+    "@remotion/cli": "^4.0.545",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "remotion": "^4.0.545"
+  },
+  "devDependencies": {
+    "@types/react": "^19.3.0",
+    "typescript": "^7.0.2"
+  }
+}

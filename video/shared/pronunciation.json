@@ -1,0 +1,1872 @@
+[
+  {
+    "term": "CRISP-DM",
+    "spoken": "CRISP-DM",
+    "verified": false,
+    "tried": [
+      "Crít đi em"
+    ]
+  },
+  {
+    "term": "Business Understanding",
+    "spoken": "Bít nít ân đơ xtén đinh",
+    "verified": false
+  },
+  {
+    "term": "Data Understanding",
+    "spoken": "Data Understanding",
+    "verified": false,
+    "tried": [
+      "Đây ta ân đơ xtén đinh"
+    ]
+  },
+  {
+    "term": "Data Preparation",
+    "spoken": "Data Preparation",
+    "verified": false,
+    "tried": [
+      "Đây ta pờ re pơ rây sần"
+    ]
+  },
+  {
+    "term": "Modeling",
+    "spoken": "Mo đơ linh",
+    "verified": false
+  },
+  {
+    "term": "Evaluation",
+    "spoken": "I va liu ây sần",
+    "verified": false
+  },
+  {
+    "term": "Deployment",
+    "spoken": "Đi ploi mần",
+    "verified": false
+  },
+  {
+    "term": "ETL",
+    "spoken": "i ti eo",
+    "verified": false
+  },
+  {
+    "term": "Extract",
+    "spoken": "Ếch xtrách",
+    "verified": false
+  },
+  {
+    "term": "Transform",
+    "spoken": "Transform",
+    "verified": false,
+    "tried": [
+      "Tờ ran phom"
+    ]
+  },
+  {
+    "term": "Load",
+    "spoken": "Lốt",
+    "verified": false
+  },
+  {
+    "term": "customers",
+    "spoken": "cớt tơ mờ",
+    "verified": false
+  },
+  {
+    "term": "database",
+    "spoken": "đây ta bây",
+    "verified": false
+  },
+  {
+    "term": "AAVAIL",
+    "spoken": "AAVAIL",
+    "verified": false,
+    "tried": [
+      "A veo"
+    ]
+  },
+  {
+    "term": "streams",
+    "spoken": "xờ trim",
+    "verified": false
+  },
+  {
+    "term": "CSV",
+    "spoken": "CSV",
+    "verified": false,
+    "tried": [
+      "xi ét vi",
+      "C S V"
+    ]
+  },
+  {
+    "term": "customer id",
+    "spoken": "customer id",
+    "verified": false,
+    "tried": [
+      "cớt tơ mờ ai đi"
+    ]
+  },
+  {
+    "term": "DataFrame",
+    "spoken": "đây ta phờ rêm",
+    "verified": false
+  },
+  {
+    "term": "file",
+    "spoken": "phai",
+    "verified": false
+  },
+  {
+    "term": "Transfer",
+    "spoken": "Tờ ran phơ",
+    "verified": false
+  },
+  {
+    "term": "MeoLearn",
+    "spoken": "Meo Lơn",
+    "verified": false
+  },
+  {
+    "term": "IBM",
+    "spoken": "I B M",
+    "verified": false,
+    "tried": [
+      "Ai bi em"
+    ]
+  },
+  {
+    "term": "AI Workflow",
+    "spoken": "Ây ai uốc phờ lâu",
+    "verified": false
+  },
+  {
+    "term": "IBM Design Thinking",
+    "spoken": "IBM Design Thinking",
+    "verified": false,
+    "tried": [
+      "Ai bi em Đi zai thinh kinh"
+    ]
+  },
+  {
+    "term": "process model",
+    "spoken": "process model",
+    "verified": false,
+    "tried": [
+      "pờ rô xét mo đồ"
+    ]
+  },
+  {
+    "term": "design thinking",
+    "spoken": "đi zai thinh kinh",
+    "verified": false
+  },
+  {
+    "term": "sparse matrix",
+    "spoken": "sparse matrix",
+    "verified": false,
+    "tried": [
+      "xì pa mây tríc"
+    ]
+  },
+  {
+    "term": "Sparse",
+    "spoken": "Xì pa",
+    "verified": false
+  },
+  {
+    "term": "Dense",
+    "spoken": "Đen xơ",
+    "verified": false
+  },
+  {
+    "term": "OSEMN",
+    "spoken": "Ô xem",
+    "verified": false
+  },
+  {
+    "term": "Obtain",
+    "spoken": "Ọp thên",
+    "verified": false
+  },
+  {
+    "term": "Scrub",
+    "spoken": "Xì cờ ráp",
+    "verified": false
+  },
+  {
+    "term": "Scrubbing",
+    "spoken": "Xì cờ ráp binh",
+    "verified": false
+  },
+  {
+    "term": "Explore",
+    "spoken": "Explore",
+    "verified": false,
+    "tried": [
+      "Ếch xờ plo"
+    ]
+  },
+  {
+    "term": "Model",
+    "spoken": "Model",
+    "verified": false,
+    "tried": [
+      "Mo đồ"
+    ]
+  },
+  {
+    "term": "Interpret",
+    "spoken": "Interpret",
+    "verified": false,
+    "tried": [
+      "In tơ prét"
+    ]
+  },
+  {
+    "term": "Empathize",
+    "spoken": "Em pờ thai",
+    "verified": false
+  },
+  {
+    "term": "Define",
+    "spoken": "Đi phai",
+    "verified": false
+  },
+  {
+    "term": "Ideate",
+    "spoken": "Ai đi ết",
+    "verified": false
+  },
+  {
+    "term": "EDA",
+    "spoken": "i đi ây",
+    "verified": false
+  },
+  {
+    "term": "feature",
+    "spoken": "phi chờ",
+    "verified": false
+  },
+  {
+    "term": "Prototype",
+    "spoken": "Prô tô thai",
+    "verified": false
+  },
+  {
+    "term": "Test",
+    "spoken": "Test",
+    "verified": false,
+    "tried": [
+      "Tét"
+    ]
+  },
+  {
+    "term": "JSON",
+    "spoken": "J S O N",
+    "verified": false,
+    "tried": [
+      "Giây xơn"
+    ]
+  },
+  {
+    "term": "API",
+    "spoken": "API",
+    "verified": false,
+    "tried": [
+      "ây pi ai",
+      "A P I"
+    ]
+  },
+  {
+    "term": "ingestion pipeline",
+    "spoken": "in giét sần pai pờ lai",
+    "verified": false
+  },
+  {
+    "term": "ingestion",
+    "spoken": "in giét sần",
+    "verified": false
+  },
+  {
+    "term": "pipeline",
+    "spoken": "pai pờ lai",
+    "verified": false
+  },
+  {
+    "term": "missing data",
+    "spoken": "mít xinh đây ta",
+    "verified": false
+  },
+  {
+    "term": "NumPy array",
+    "spoken": "NumPy array",
+    "verified": false,
+    "tried": [
+      "nam pai ơ rây"
+    ]
+  },
+  {
+    "term": "NumPy",
+    "spoken": "NumPy",
+    "verified": false,
+    "tried": [
+      "nam pai"
+    ]
+  },
+  {
+    "term": "COO",
+    "spoken": "xi ô ô",
+    "verified": false
+  },
+  {
+    "term": "CSR",
+    "spoken": "xi ét a",
+    "verified": false
+  },
+  {
+    "term": "word counts",
+    "spoken": "word counts",
+    "verified": false,
+    "tried": [
+      "uơ cao"
+    ]
+  },
+  {
+    "term": "user item",
+    "spoken": "giu dơ ai tầm",
+    "verified": false
+  },
+  {
+    "term": "management",
+    "spoken": "ma nịch mần",
+    "verified": false
+  },
+  {
+    "term": "Berkeley DB",
+    "spoken": "Berkeley DB",
+    "verified": false,
+    "tried": [
+      "Bơ cơ li đi bi"
+    ]
+  },
+  {
+    "term": "key value store",
+    "spoken": "ki va liu xờ to",
+    "verified": false
+  },
+  {
+    "term": "relational database",
+    "spoken": "ri lây sần nồ đây ta bây",
+    "verified": false
+  },
+  {
+    "term": "relational",
+    "spoken": "ri lây sần nồ",
+    "verified": false
+  },
+  {
+    "term": "Metric",
+    "spoken": "Metric",
+    "verified": false,
+    "tried": [
+      "mét tríc"
+    ]
+  },
+  {
+    "term": "ensemble",
+    "spoken": "an xam bồ",
+    "verified": false
+  },
+  {
+    "term": "neural network",
+    "spoken": "niu rồ nét uốc",
+    "verified": false
+  },
+  {
+    "term": "NLP",
+    "spoken": "en eo pi",
+    "verified": false
+  },
+  {
+    "term": "Watson",
+    "spoken": "Watson",
+    "verified": false,
+    "tried": [
+      "Oát xơn"
+    ]
+  },
+  {
+    "term": "confusion matrix",
+    "spoken": "confusion matrix",
+    "verified": false,
+    "tried": [
+      "cần phiu giần mây tríc"
+    ]
+  },
+  {
+    "term": "Positive",
+    "spoken": "pô di típ",
+    "verified": false
+  },
+  {
+    "term": "Negative",
+    "spoken": "Negative",
+    "verified": false,
+    "tried": [
+      "ne ga típ"
+    ]
+  },
+  {
+    "term": "True",
+    "spoken": "tru",
+    "verified": false
+  },
+  {
+    "term": "False",
+    "spoken": "phon",
+    "verified": false
+  },
+  {
+    "term": "Average Score",
+    "spoken": "a vơ rịch xờ co",
+    "verified": false
+  },
+  {
+    "term": "precision",
+    "spoken": "pri xi giần",
+    "verified": false
+  },
+  {
+    "term": "recall",
+    "spoken": "ri con",
+    "verified": false
+  },
+  {
+    "term": "F1",
+    "spoken": "F1",
+    "verified": false,
+    "tried": [
+      "ép oan"
+    ]
+  },
+  {
+    "term": "F-beta",
+    "spoken": "ép bê ta",
+    "verified": false
+  },
+  {
+    "term": "beta",
+    "spoken": "bê ta",
+    "verified": false
+  },
+  {
+    "term": "Classification report",
+    "spoken": "cla xi phi kê sần ri po",
+    "verified": false
+  },
+  {
+    "term": "TP",
+    "spoken": "ti pi",
+    "verified": false
+  },
+  {
+    "term": "TN",
+    "spoken": "ti en",
+    "verified": false
+  },
+  {
+    "term": "FP",
+    "spoken": "ép pi",
+    "verified": false
+  },
+  {
+    "term": "FN",
+    "spoken": "ép en",
+    "verified": false
+  },
+  {
+    "term": "decision tree",
+    "spoken": "đi xi giần tri",
+    "verified": false
+  },
+  {
+    "term": "churn",
+    "spoken": "chơn",
+    "verified": false
+  },
+  {
+    "term": "bias",
+    "spoken": "bias",
+    "verified": false,
+    "tried": [
+      "bai ợt"
+    ]
+  },
+  {
+    "term": "variance",
+    "spoken": "ve ri ần",
+    "verified": false
+  },
+  {
+    "term": "Random Forest",
+    "spoken": "Random Forest",
+    "verified": false,
+    "tried": [
+      "ren đơm pho rét"
+    ]
+  },
+  {
+    "term": "bagging",
+    "spoken": "bé ghinh",
+    "verified": false
+  },
+  {
+    "term": "Boosting",
+    "spoken": "Boosting",
+    "verified": false,
+    "tried": [
+      "bu xtinh"
+    ]
+  },
+  {
+    "term": "AdaBoost",
+    "spoken": "a đa bu xt",
+    "verified": false
+  },
+  {
+    "term": "Gradient Boosting",
+    "spoken": "grây đi ần bu xtinh",
+    "verified": false
+  },
+  {
+    "term": "CNN",
+    "spoken": "xi en en",
+    "verified": false
+  },
+  {
+    "term": "convolutional",
+    "spoken": "con vô lu sần nồ",
+    "verified": false
+  },
+  {
+    "term": "Pooling",
+    "spoken": "pu linh",
+    "verified": false
+  },
+  {
+    "term": "RNN",
+    "spoken": "a en en",
+    "verified": false
+  },
+  {
+    "term": "LSTM",
+    "spoken": "LSTM",
+    "verified": false,
+    "tried": [
+      "eo ét ti em"
+    ]
+  },
+  {
+    "term": "GRU",
+    "spoken": "gi a iu",
+    "verified": false
+  },
+  {
+    "term": "time series",
+    "spoken": "tham xi ri",
+    "verified": false
+  },
+  {
+    "term": "transfer learning",
+    "spoken": "tờ ran phơ lơ ninh",
+    "verified": false
+  },
+  {
+    "term": "deep learning",
+    "spoken": "đíp lơ ninh",
+    "verified": false
+  },
+  {
+    "term": "reinforcement learning",
+    "spoken": "ri in pho mần lơ ninh",
+    "verified": false
+  },
+  {
+    "term": "learning",
+    "spoken": "lơ ninh",
+    "verified": false
+  },
+  {
+    "term": "stop words",
+    "spoken": "xờ tóp uơ",
+    "verified": false
+  },
+  {
+    "term": "bag of words",
+    "spoken": "béc ợp uơ",
+    "verified": false
+  },
+  {
+    "term": "TF-IDF",
+    "spoken": "ti ép ai đi ép",
+    "verified": false
+  },
+  {
+    "term": "classifier",
+    "spoken": "classifier",
+    "verified": false,
+    "tried": [
+      "cla xi phai ơ"
+    ]
+  },
+  {
+    "term": "Naive Bayes",
+    "spoken": "na iu bây",
+    "verified": false
+  },
+  {
+    "term": "NLU",
+    "spoken": "en eo iu",
+    "verified": false
+  },
+  {
+    "term": "SDK",
+    "spoken": "ét đi cây",
+    "verified": false
+  },
+  {
+    "term": "upgrade",
+    "spoken": "ắp grêt",
+    "verified": false
+  },
+  {
+    "term": "Version",
+    "spoken": "vơ sần",
+    "verified": false
+  },
+  {
+    "term": "request",
+    "spoken": "ri quét",
+    "verified": false
+  },
+  {
+    "term": "service URL",
+    "spoken": "xơ vít iu a eo",
+    "verified": false
+  },
+  {
+    "term": "URL",
+    "spoken": "iu a eo",
+    "verified": false
+  },
+  {
+    "term": "service",
+    "spoken": "xơ vít",
+    "verified": false
+  },
+  {
+    "term": "analyze",
+    "spoken": "a na lai",
+    "verified": false
+  },
+  {
+    "term": "sentiment",
+    "spoken": "xen ti mần",
+    "verified": false
+  },
+  {
+    "term": "entities",
+    "spoken": "en ti tì",
+    "verified": false
+  },
+  {
+    "term": "keywords",
+    "spoken": "ki uơ",
+    "verified": false
+  },
+  {
+    "term": "token",
+    "spoken": "tô kần",
+    "verified": false
+  },
+  {
+    "term": "running",
+    "spoken": "ra ninh",
+    "verified": false
+  },
+  {
+    "term": "RMSE",
+    "spoken": "a em ét i",
+    "verified": false
+  },
+  {
+    "term": "MAE",
+    "spoken": "em ây i",
+    "verified": false
+  },
+  {
+    "term": "GPU",
+    "spoken": "gi pi iu",
+    "verified": false
+  },
+  {
+    "term": "Gradient",
+    "spoken": "grây đi ần",
+    "verified": false
+  },
+  {
+    "term": "engineering",
+    "spoken": "en gi nia rinh",
+    "verified": false
+  },
+  {
+    "term": "interface",
+    "spoken": "interface",
+    "verified": false,
+    "tried": [
+      "in tơ phây"
+    ]
+  },
+  {
+    "term": "scikit-learn",
+    "spoken": "xai kít lơn",
+    "verified": false
+  },
+  {
+    "term": "SMOTENC",
+    "spoken": "SMOTENC",
+    "verified": false,
+    "tried": [
+      "xờ mốt en xi"
+    ]
+  },
+  {
+    "term": "SMOTE",
+    "spoken": "xờ mốt",
+    "verified": false
+  },
+  {
+    "term": "topic",
+    "spoken": "tô pích",
+    "verified": false
+  },
+  {
+    "term": "Transformer",
+    "spoken": "Transformer",
+    "verified": false,
+    "tried": [
+      "Tờ ran phom mơ"
+    ]
+  },
+  {
+    "term": "domain expert",
+    "spoken": "domain expert",
+    "verified": false,
+    "tried": [
+      "đô mên ếch xpợt"
+    ]
+  },
+  {
+    "term": "Estimator",
+    "spoken": "Estimator",
+    "verified": false,
+    "tried": [
+      "Ét ti mây tơ"
+    ]
+  },
+  {
+    "term": "fit",
+    "spoken": "phít",
+    "verified": false
+  },
+  {
+    "term": "Predictor",
+    "spoken": "Pri đích tơ",
+    "verified": false
+  },
+  {
+    "term": "predict",
+    "spoken": "pri đích",
+    "verified": false
+  },
+  {
+    "term": "score",
+    "spoken": "xì co",
+    "verified": false
+  },
+  {
+    "term": "accuracy",
+    "spoken": "ác kiu rơ xi",
+    "verified": false
+  },
+  {
+    "term": "oversampling",
+    "spoken": "âu vơ xam pờ linh",
+    "verified": false
+  },
+  {
+    "term": "undersampling",
+    "spoken": "ăn đơ xam pờ linh",
+    "verified": false
+  },
+  {
+    "term": "down-sampling",
+    "spoken": "đao xam pờ linh",
+    "verified": false
+  },
+  {
+    "term": "ADASYN",
+    "spoken": "a đa xin",
+    "verified": false
+  },
+  {
+    "term": "imbalanced-learn",
+    "spoken": "im ba lần xờ lơn",
+    "verified": false
+  },
+  {
+    "term": "categorical",
+    "spoken": "ca tơ go ri cồ",
+    "verified": false
+  },
+  {
+    "term": "continuous",
+    "spoken": "continuous",
+    "verified": false,
+    "tried": [
+      "con ti niu ợt"
+    ]
+  },
+  {
+    "term": "Nominal",
+    "spoken": "Nô mi nồ",
+    "verified": false
+  },
+  {
+    "term": "NC",
+    "spoken": "en xi",
+    "verified": false
+  },
+  {
+    "term": "bag-of-words",
+    "spoken": "béc ọp uơ",
+    "verified": false
+  },
+  {
+    "term": "LDA",
+    "spoken": "eo đi ây",
+    "verified": false
+  },
+  {
+    "term": "PCA",
+    "spoken": "PCA",
+    "verified": false,
+    "tried": [
+      "pi xi ây"
+    ]
+  },
+  {
+    "term": "tSNE",
+    "spoken": "ti xờ ni",
+    "verified": false
+  },
+  {
+    "term": "NMF",
+    "spoken": "en em ép",
+    "verified": false
+  },
+  {
+    "term": "SVD",
+    "spoken": "ét vi đi",
+    "verified": false
+  },
+  {
+    "term": "KNN",
+    "spoken": "KNN",
+    "verified": false,
+    "tried": [
+      "Kây en en"
+    ]
+  },
+  {
+    "term": "nearest neighbors",
+    "spoken": "nia rét nây bơ",
+    "verified": false
+  },
+  {
+    "term": "Protected attribute",
+    "spoken": "Prô téc tịt a tri biu",
+    "verified": false
+  },
+  {
+    "term": "pattern",
+    "spoken": "pát tơn",
+    "verified": false
+  },
+  {
+    "term": "fairness",
+    "spoken": "phe nợt",
+    "verified": false
+  },
+  {
+    "term": "disparate impact",
+    "spoken": "đít pơ rịt im pác",
+    "verified": false
+  },
+  {
+    "term": "poisoning",
+    "spoken": "poi dơ ninh",
+    "verified": false
+  },
+  {
+    "term": "input",
+    "spoken": "in pút",
+    "verified": false
+  },
+  {
+    "term": "evasion",
+    "spoken": "i vây giần",
+    "verified": false
+  },
+  {
+    "term": "Adversarial Robustness Toolbox",
+    "spoken": "Ét vơ xe ri ồ Rô bất nợt Tun bóc",
+    "verified": false
+  },
+  {
+    "term": "outlier detection",
+    "spoken": "ao lai ơ đi téc sần",
+    "verified": false
+  },
+  {
+    "term": "Inertia",
+    "spoken": "I nơ sa",
+    "verified": false
+  },
+  {
+    "term": "exploratory data analysis",
+    "spoken": "ếch xờ plo rờ tô ri đây ta ơ ná li xít",
+    "verified": false
+  },
+  {
+    "term": "ingest",
+    "spoken": "in giét",
+    "verified": false
+  },
+  {
+    "term": "groupby",
+    "spoken": "grúp bai",
+    "verified": false
+  },
+  {
+    "term": "pivot table",
+    "spoken": "pi vợt tây bồ",
+    "verified": false
+  },
+  {
+    "term": "copy paste",
+    "spoken": "cóp pi pết",
+    "verified": false
+  },
+  {
+    "term": "spreadsheet",
+    "spoken": "xờ prét sít",
+    "verified": false
+  },
+  {
+    "term": "Notebook",
+    "spoken": "Nốt búc",
+    "verified": false
+  },
+  {
+    "term": "version control",
+    "spoken": "vơ sần cần trôn",
+    "verified": false
+  },
+  {
+    "term": "code",
+    "spoken": "cốt",
+    "verified": false
+  },
+  {
+    "term": "Python",
+    "spoken": "Pai thon",
+    "verified": false
+  },
+  {
+    "term": "reproducibility",
+    "spoken": "ri prơ đu xi bi li ti",
+    "verified": false
+  },
+  {
+    "term": "communication",
+    "spoken": "cơ miu ni kây sần",
+    "verified": false
+  },
+  {
+    "term": "logistic regression",
+    "spoken": "lô gít tíc ri grét sần",
+    "verified": false
+  },
+  {
+    "term": "regression",
+    "spoken": "regression",
+    "verified": false,
+    "tried": [
+      "ri grét sần"
+    ]
+  },
+  {
+    "term": "linear",
+    "spoken": "li nia",
+    "verified": false
+  },
+  {
+    "term": "MCAR",
+    "spoken": "em xi ây a",
+    "verified": false
+  },
+  {
+    "term": "MAR",
+    "spoken": "em ây a",
+    "verified": false
+  },
+  {
+    "term": "MNAR",
+    "spoken": "em en ây a",
+    "verified": false
+  },
+  {
+    "term": "stream",
+    "spoken": "xờ trim",
+    "verified": false
+  },
+  {
+    "term": "user log",
+    "spoken": "giu dơ lóc",
+    "verified": false
+  },
+  {
+    "term": "SimpleImputer",
+    "spoken": "xim pồ im piu tơ",
+    "verified": false
+  },
+  {
+    "term": "strategy",
+    "spoken": "xờ tra tơ gi",
+    "verified": false
+  },
+  {
+    "term": "population",
+    "spoken": "pó piu lây sần",
+    "verified": false
+  },
+  {
+    "term": "IID",
+    "spoken": "ai ai đi",
+    "verified": false
+  },
+  {
+    "term": "random variable",
+    "spoken": "ren đơm ve ri ơ bồ",
+    "verified": false
+  },
+  {
+    "term": "cdf",
+    "spoken": "xi đi ép",
+    "verified": false
+  },
+  {
+    "term": "H0",
+    "spoken": "hát không",
+    "verified": false
+  },
+  {
+    "term": "null",
+    "spoken": "nân",
+    "verified": false
+  },
+  {
+    "term": "Product",
+    "spoken": "Pro đắc",
+    "verified": false
+  },
+  {
+    "term": "Welch",
+    "spoken": "Oen",
+    "verified": false
+  },
+  {
+    "term": "binomial",
+    "spoken": "bai nô mi ồ",
+    "verified": false
+  },
+  {
+    "term": "p-value",
+    "spoken": "pi va liu",
+    "verified": false
+  },
+  {
+    "term": "alpha",
+    "spoken": "an pha",
+    "verified": false
+  },
+  {
+    "term": "multiple comparisons problem",
+    "spoken": "mân ti pồ cơm pe ri xần pró blem",
+    "verified": false
+  },
+  {
+    "term": "Bonferroni",
+    "spoken": "Bon phe rô ni",
+    "verified": false
+  },
+  {
+    "term": "Benjamini Hochberg",
+    "spoken": "Ben gia mi ni Hốc bớc",
+    "verified": false
+  },
+  {
+    "term": "permutation",
+    "spoken": "pơ miu tây sần",
+    "verified": false
+  },
+  {
+    "term": "GLM",
+    "spoken": "gi eo em",
+    "verified": false
+  },
+  {
+    "term": "p-hacking",
+    "spoken": "pi hách kinh",
+    "verified": false
+  },
+  {
+    "term": "confirmatory analysis",
+    "spoken": "cơn phơ mơ to ri ơ ná li xít",
+    "verified": false
+  },
+  {
+    "term": "Seaborn",
+    "spoken": "Xi bon",
+    "verified": false
+  },
+  {
+    "term": "matplotlib",
+    "spoken": "mát plót líp",
+    "verified": false
+  },
+  {
+    "term": "NHST",
+    "spoken": "en hát ét ti",
+    "verified": false
+  },
+  {
+    "term": "control",
+    "spoken": "cần trôn",
+    "verified": false
+  },
+  {
+    "term": "feedback loop",
+    "spoken": "phít bách lúp",
+    "verified": false
+  },
+  {
+    "term": "loop",
+    "spoken": "lúp",
+    "verified": false
+  },
+  {
+    "term": "deploy",
+    "spoken": "deploy",
+    "verified": false,
+    "tried": [
+      "đi ploi"
+    ]
+  },
+  {
+    "term": "unit test",
+    "spoken": "giu nít tét",
+    "verified": false
+  },
+  {
+    "term": "unittest",
+    "spoken": "giu nít tét",
+    "verified": false
+  },
+  {
+    "term": "CI/CD",
+    "spoken": "xi ai xi đi",
+    "verified": false
+  },
+  {
+    "term": "CI",
+    "spoken": "xi ai",
+    "verified": false
+  },
+  {
+    "term": "logging",
+    "spoken": "lóc ghinh",
+    "verified": false
+  },
+  {
+    "term": "log files",
+    "spoken": "lóc phai",
+    "verified": false
+  },
+  {
+    "term": "log",
+    "spoken": "lóc",
+    "verified": false
+  },
+  {
+    "term": "performance drift",
+    "spoken": "pơ pho mần đờ ríp",
+    "verified": false
+  },
+  {
+    "term": "drift monitoring",
+    "spoken": "đờ ríp mo ni tơ rinh",
+    "verified": false
+  },
+  {
+    "term": "drift",
+    "spoken": "đờ ríp",
+    "verified": false
+  },
+  {
+    "term": "Kubernetes",
+    "spoken": "Kiu bơ nét tít",
+    "verified": false
+  },
+  {
+    "term": "business opportunity",
+    "spoken": "bít nít óp pơ tiu ni ti",
+    "verified": false
+  },
+  {
+    "term": "data collection",
+    "spoken": "đây ta cơ lét sần",
+    "verified": false
+  },
+  {
+    "term": "transformation",
+    "spoken": "transformation",
+    "verified": false,
+    "tried": [
+      "tờ ran xphơ mây sần"
+    ]
+  },
+  {
+    "term": "model iteration",
+    "spoken": "model iteration",
+    "verified": false,
+    "tried": [
+      "mo đồ i tơ rây sần"
+    ]
+  },
+  {
+    "term": "iteration",
+    "spoken": "i tơ rây sần",
+    "verified": false
+  },
+  {
+    "term": "module",
+    "spoken": "mô đun",
+    "verified": false
+  },
+  {
+    "term": "TDD",
+    "spoken": "ti đi đi",
+    "verified": false
+  },
+  {
+    "term": "pass",
+    "spoken": "pát",
+    "verified": false
+  },
+  {
+    "term": "package",
+    "spoken": "pách kịch",
+    "verified": false
+  },
+  {
+    "term": "coverage",
+    "spoken": "cớ vơ rịch",
+    "verified": false
+  },
+  {
+    "term": "production",
+    "spoken": "production",
+    "verified": false,
+    "tried": [
+      "pờ rô đắc sần"
+    ]
+  },
+  {
+    "term": "Integration",
+    "spoken": "in tơ grây sần",
+    "verified": false
+  },
+  {
+    "term": "Delivery",
+    "spoken": "đi li vơ ri",
+    "verified": false
+  },
+  {
+    "term": "merge",
+    "spoken": "mơ giơ",
+    "verified": false
+  },
+  {
+    "term": "trunk",
+    "spoken": "trăng",
+    "verified": false
+  },
+  {
+    "term": "build",
+    "spoken": "biu",
+    "verified": false
+  },
+  {
+    "term": "bug",
+    "spoken": "bắc",
+    "verified": false
+  },
+  {
+    "term": "quality",
+    "spoken": "qua li ti",
+    "verified": false
+  },
+  {
+    "term": "automate",
+    "spoken": "o tô mết",
+    "verified": false
+  },
+  {
+    "term": "workflow",
+    "spoken": "uốc phờ lâu",
+    "verified": false
+  },
+  {
+    "term": "predict endpoint",
+    "spoken": "pờ ri đích en poi",
+    "verified": false
+  },
+  {
+    "term": "timestamp",
+    "spoken": "tai xờ tem",
+    "verified": false
+  },
+  {
+    "term": "runtime",
+    "spoken": "ran tai",
+    "verified": false
+  },
+  {
+    "term": "model version",
+    "spoken": "mo đồ vơ sần",
+    "verified": false
+  },
+  {
+    "term": "predictions",
+    "spoken": "pờ ri đích sần",
+    "verified": false
+  },
+  {
+    "term": "input data summary",
+    "spoken": "in pút đây ta xăm mơ ri",
+    "verified": false
+  },
+  {
+    "term": "input data",
+    "spoken": "in pút đây ta",
+    "verified": false
+  },
+  {
+    "term": "request type",
+    "spoken": "ri quét tai",
+    "verified": false
+  },
+  {
+    "term": "Isolation Forest",
+    "spoken": "Ai xô lây sần Pho rét",
+    "verified": false
+  },
+  {
+    "term": "Watson OpenScale",
+    "spoken": "Oát xơn Âu pần xờ keo",
+    "verified": false
+  },
+  {
+    "term": "OpenScale",
+    "spoken": "Âu pần xờ keo",
+    "verified": false
+  },
+  {
+    "term": "Watson Studio",
+    "spoken": "Oát xơn Xtiu đi ô",
+    "verified": false
+  },
+  {
+    "term": "explainability",
+    "spoken": "ếch xờ plên nờ bi li ti",
+    "verified": false
+  },
+  {
+    "term": "kubectl",
+    "spoken": "kiu xi ti eo",
+    "verified": false
+  },
+  {
+    "term": "server",
+    "spoken": "xơ vơ",
+    "verified": false
+  },
+  {
+    "term": "workload",
+    "spoken": "uốc lốt",
+    "verified": false
+  },
+  {
+    "term": "worker node",
+    "spoken": "uốc cơ nốt",
+    "verified": false
+  },
+  {
+    "term": "node",
+    "spoken": "nốt",
+    "verified": false
+  },
+  {
+    "term": "agent",
+    "spoken": "ây giần",
+    "verified": false
+  },
+  {
+    "term": "Kubelet",
+    "spoken": "Kiu bơ lét",
+    "verified": false
+  },
+  {
+    "term": "pods",
+    "spoken": "pót",
+    "verified": false
+  },
+  {
+    "term": "pod",
+    "spoken": "pót",
+    "verified": false
+  },
+  {
+    "term": "container",
+    "spoken": "cờn tê nơ",
+    "verified": false
+  },
+  {
+    "term": "YAML",
+    "spoken": "YAML",
+    "verified": false,
+    "tried": [
+      "giam mồ"
+    ]
+  },
+  {
+    "term": "Kube DNS",
+    "spoken": "Kiu đi en ét",
+    "verified": false
+  },
+  {
+    "term": "service discovery",
+    "spoken": "xơ vít đít cớ vơ ri",
+    "verified": false
+  },
+  {
+    "term": "Minikube",
+    "spoken": "Mi ni kiu",
+    "verified": false
+  },
+  {
+    "term": "cluster",
+    "spoken": "cluster",
+    "verified": false,
+    "tried": [
+      "cờ lớt xtơ"
+    ]
+  },
+  {
+    "term": "apply",
+    "spoken": "ờ plai",
+    "verified": false
+  },
+  {
+    "term": "LoadBalancer",
+    "spoken": "Lốt ba lần xơ",
+    "verified": false
+  },
+  {
+    "term": "ClusterIP",
+    "spoken": "Cờ lớt xtơ ai pi",
+    "verified": false
+  },
+  {
+    "term": "NodePort",
+    "spoken": "Nốt pọt",
+    "verified": false
+  },
+  {
+    "term": "unit",
+    "spoken": "giu nít",
+    "verified": false
+  },
+  {
+    "term": "explain",
+    "spoken": "ếch xplên",
+    "verified": false
+  },
+  {
+    "term": "type",
+    "spoken": "tai",
+    "verified": false
+  },
+  {
+    "term": "Studio",
+    "spoken": "Xtiu đi ô",
+    "verified": false
+  },
+  {
+    "term": "Docker",
+    "spoken": "Docker",
+    "verified": false,
+    "tried": [
+      "Đốc cơ"
+    ]
+  },
+  {
+    "term": "Dockerfile",
+    "spoken": "Đốc cơ phai",
+    "verified": false
+  },
+  {
+    "term": "Flask",
+    "spoken": "Phờ lát",
+    "verified": false
+  },
+  {
+    "term": "Spark",
+    "spoken": "Xì pác",
+    "verified": false
+  },
+  {
+    "term": "spark-submit",
+    "spoken": "spark-submit",
+    "verified": false,
+    "tried": [
+      "xì pác xắp mít"
+    ]
+  },
+  {
+    "term": "ALS",
+    "spoken": "ALS",
+    "verified": false,
+    "tried": [
+      "ây eo ét"
+    ]
+  },
+  {
+    "term": "profiling",
+    "spoken": "prô phai linh",
+    "verified": false
+  },
+  {
+    "term": "bottleneck",
+    "spoken": "bót tồ néc",
+    "verified": false
+  },
+  {
+    "term": "Cython",
+    "spoken": "Xai thon",
+    "verified": false
+  },
+  {
+    "term": "Numba",
+    "spoken": "Num ba",
+    "verified": false
+  },
+  {
+    "term": "multiprocessing",
+    "spoken": "mun ti prô xét xinh",
+    "verified": false
+  },
+  {
+    "term": "process",
+    "spoken": "prô xét",
+    "verified": false
+  },
+  {
+    "term": "mpi4py",
+    "spoken": "em pi phò pai",
+    "verified": false
+  },
+  {
+    "term": "ipyparallel",
+    "spoken": "ai pai pa ra leo",
+    "verified": false
+  },
+  {
+    "term": "core",
+    "spoken": "co",
+    "verified": false
+  },
+  {
+    "term": "n_jobs",
+    "spoken": "en giốp",
+    "verified": false
+  },
+  {
+    "term": "Dask",
+    "spoken": "Đát",
+    "verified": false
+  },
+  {
+    "term": "TensorBoard",
+    "spoken": "Ten xơ bo",
+    "verified": false
+  },
+  {
+    "term": "FROM",
+    "spoken": "Phờ rom",
+    "verified": false
+  },
+  {
+    "term": "image",
+    "spoken": "im mịch",
+    "verified": false
+  },
+  {
+    "term": "COPY",
+    "spoken": "Cóp pi",
+    "verified": false
+  },
+  {
+    "term": "RUN",
+    "spoken": "Ran",
+    "verified": false
+  },
+  {
+    "term": "EXPOSE",
+    "spoken": "Ếch xpâu",
+    "verified": false
+  },
+  {
+    "term": "CMD",
+    "spoken": "xi em đi",
+    "verified": false
+  },
+  {
+    "term": "port forwarding",
+    "spoken": "pót pho uơ đinh",
+    "verified": false
+  },
+  {
+    "term": "script",
+    "spoken": "xì cờ ríp",
+    "verified": false
+  },
+  {
+    "term": "volumes",
+    "spoken": "vo lium",
+    "verified": false
+  },
+  {
+    "term": "volume",
+    "spoken": "vo lium",
+    "verified": false
+  },
+  {
+    "term": "endpoint",
+    "spoken": "en poi",
+    "verified": false
+  },
+  {
+    "term": "logs",
+    "spoken": "lóc",
+    "verified": false
+  },
+  {
+    "term": "train",
+    "spoken": "tờ rên",
+    "verified": false
+  },
+  {
+    "term": "Watson Machine Learning",
+    "spoken": "Oát xơn mơ xin lơ ninh",
+    "verified": false
+  },
+  {
+    "term": "Machine Learning",
+    "spoken": "mơ xin lơ ninh",
+    "verified": false
+  },
+  {
+    "term": "cloud",
+    "spoken": "clao",
+    "verified": false
+  },
+  {
+    "term": "provision",
+    "spoken": "provision",
+    "verified": false,
+    "tried": [
+      "prô vi giần"
+    ]
+  },
+  {
+    "term": "WML",
+    "spoken": "đáp liu em eo",
+    "verified": false
+  },
+  {
+    "term": "virtual environment",
+    "spoken": "vơ chu ơ in vai rần mần",
+    "verified": false
+  },
+  {
+    "term": "local",
+    "spoken": "lâu cồ",
+    "verified": false
+  },
+  {
+    "term": "pickle",
+    "spoken": "píc cồ",
+    "verified": false
+  },
+  {
+    "term": "Apache",
+    "spoken": "A pa chi",
+    "verified": false
+  },
+  {
+    "term": "shebang",
+    "spoken": "si bang",
+    "verified": false
+  },
+  {
+    "term": "bash",
+    "spoken": "bát",
+    "verified": false
+  },
+  {
+    "term": "cluster manager",
+    "spoken": "cờ lát tơ ma ni giơ",
+    "verified": false
+  },
+  {
+    "term": "Master",
+    "spoken": "Mát xtơ",
+    "verified": false
+  },
+  {
+    "term": "driver",
+    "spoken": "đờ rai vơ",
+    "verified": false
+  },
+  {
+    "term": "memory",
+    "spoken": "me mơ ri",
+    "verified": false
+  },
+  {
+    "term": "executor",
+    "spoken": "ếch xê kiu tơ",
+    "verified": false
+  },
+  {
+    "term": "Standalone",
+    "spoken": "Xtan đa lôn",
+    "verified": false
+  },
+  {
+    "term": "Hadoop",
+    "spoken": "Ha đúp",
+    "verified": false
+  },
+  {
+    "term": "YARN",
+    "spoken": "Gian",
+    "verified": false
+  },
+  {
+    "term": "Mesos",
+    "spoken": "Mê xốt",
+    "verified": false
+  },
+  {
+    "term": "collaborative filtering",
+    "spoken": "cô la bơ ra tiv phin tơ rinh",
+    "verified": false
+  },
+  {
+    "term": "explicit",
+    "spoken": "ếch xpli xít",
+    "verified": false
+  },
+  {
+    "term": "implicit",
+    "spoken": "im pli xít",
+    "verified": false
+  },
+  {
+    "term": "feedback",
+    "spoken": "phít béc",
+    "verified": false
+  },
+  {
+    "term": "rating",
+    "spoken": "rây tinh",
+    "verified": false
+  },
+  {
+    "term": "implicitPrefs",
+    "spoken": "im pli xít prép",
+    "verified": false
+  },
+  {
+    "term": "regParam",
+    "spoken": "regParam",
+    "verified": false,
+    "tried": [
+      "rét pa ram"
+    ]
+  },
+  {
+    "term": "user",
+    "spoken": "giu dơ",
+    "verified": false
+  },
+  {
+    "term": "item",
+    "spoken": "ai tầm",
+    "verified": false
+  },
+  {
+    "term": "cold start",
+    "spoken": "côn xtát",
+    "verified": false
+  },
+  {
+    "term": "MLlib",
+    "spoken": "em eo líp",
+    "verified": false
+  },
+  {
+    "term": "ML",
+    "spoken": "em eo",
+    "verified": false
+  },
+  {
+    "term": "matrix factorization",
+    "spoken": "mây tríc phác tơ rai dây sần",
+    "verified": false
+  }
+]

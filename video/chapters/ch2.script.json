@@ -1,0 +1,1371 @@
+{
+  "chapter": 2,
+  "title": "Phân tích dữ liệu & kiểm định giả thuyết",
+  "sections": [
+    {
+      "id": "intro",
+      "title": "Mở đầu",
+      "scenes": [
+        {
+          "type": "intro",
+          "pose": "idle",
+          "headline": "Phân tích dữ liệu và kiểm định",
+          "data": {
+            "chapterNo": 2,
+            "course": "IBM AI Workflow · Course 2",
+            "stops": [
+              {
+                "id": "p1",
+                "label": "EDA"
+              },
+              {
+                "id": "p2",
+                "label": "Missing data"
+              },
+              {
+                "id": "p3",
+                "label": "Xác suất"
+              },
+              {
+                "id": "p4",
+                "label": "Kiểm định"
+              }
+            ]
+          },
+          "narration": [
+            "Chào bạn, lại là MeoLearn đây.",
+            "Chương 2 bám theo khoá thứ hai của IBM AI Workflow.",
+            "Hôm nay ta đi qua bốn chặng.",
+            "EDA, rồi missing data.",
+            "Sau đó là xác suất, và kiểm định giả thuyết."
+          ],
+          "beats": [
+            {
+              "id": "chapter",
+              "s": 1,
+              "cue": "Chương 2"
+            },
+            {
+              "id": "course",
+              "s": 1,
+              "cue": "IBM AI Workflow"
+            },
+            {
+              "id": "road",
+              "s": 2,
+              "cue": "bốn chặng"
+            },
+            {
+              "id": "p1",
+              "s": 3,
+              "cue": "EDA"
+            },
+            {
+              "id": "p2",
+              "s": 3,
+              "cue": "missing data"
+            },
+            {
+              "id": "p3",
+              "s": 4,
+              "cue": "xác suất"
+            },
+            {
+              "id": "p4",
+              "s": 4,
+              "cue": "kiểm định"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "eda",
+      "title": "EDA & trực quan hoá",
+      "scenes": [
+        {
+          "type": "pipeline",
+          "pose": "idle",
+          "headline": "EDA: nhìn kỹ trước khi đoán",
+          "data": {
+            "stages": [
+              {
+                "id": "in",
+                "label": "Dữ liệu",
+                "items": [
+                  {
+                    "id": "i1",
+                    "text": "Đã ingest"
+                  },
+                  {
+                    "id": "i2",
+                    "text": "Kiểm tra thiếu, trùng"
+                  }
+                ]
+              },
+              {
+                "id": "sum",
+                "label": "Tóm tắt",
+                "items": [
+                  {
+                    "id": "s1",
+                    "text": "groupby, pivot_table"
+                  },
+                  {
+                    "id": "s2",
+                    "text": "Biểu đồ"
+                  }
+                ]
+              },
+              {
+                "id": "out",
+                "label": "Kết quả",
+                "items": [
+                  {
+                    "id": "o1",
+                    "text": "Giả thuyết"
+                  },
+                  {
+                    "id": "o2",
+                    "text": "Gợi ý feature"
+                  }
+                ]
+              }
+            ]
+          },
+          "narration": [
+            "EDA là phân tích khám phá dữ liệu.",
+            "Ta bắt đầu từ dữ liệu đã ingest.",
+            "Kiểm tra trước chỗ thiếu và chỗ trùng.",
+            "Rồi tạo bảng tóm tắt bằng groupby hay pivot table.",
+            "Kèm biểu đồ để nhìn phân phối.",
+            "Kết quả là các giả thuyết cần kiểm định.",
+            "Và gợi ý những feature nên tạo."
+          ],
+          "beats": [
+            {
+              "id": "in",
+              "s": 0,
+              "cue": "EDA"
+            },
+            {
+              "id": "i1",
+              "s": 1,
+              "cue": "bắt đầu"
+            },
+            {
+              "id": "i2",
+              "s": 2,
+              "cue": "Kiểm tra"
+            },
+            {
+              "id": "sum",
+              "s": 3,
+              "cue": "bảng tóm tắt"
+            },
+            {
+              "id": "s1",
+              "s": 3,
+              "cue": "groupby"
+            },
+            {
+              "id": "s2",
+              "s": 4,
+              "cue": "biểu đồ"
+            },
+            {
+              "id": "out",
+              "s": 5,
+              "cue": "Kết quả"
+            },
+            {
+              "id": "o1",
+              "s": 5,
+              "cue": "giả thuyết"
+            },
+            {
+              "id": "o2",
+              "s": 6,
+              "cue": "gợi ý"
+            },
+            {
+              "id": "flow",
+              "s": 6,
+              "cue": "feature"
+            }
+          ]
+        },
+        {
+          "type": "compare",
+          "pose": "idle",
+          "headline": "Biểu đồ phải tái lập được",
+          "data": {
+            "left": {
+              "title": "Không tái lập",
+              "tone": "bad",
+              "items": [
+                {
+                  "id": "l1",
+                  "text": "Copy-paste trong spreadsheet"
+                },
+                {
+                  "id": "l2",
+                  "text": "Notebook khó diff trong git"
+                }
+              ]
+            },
+            "right": {
+              "title": "Tái lập được",
+              "tone": "good",
+              "items": [
+                {
+                  "id": "r1",
+                  "text": "Mọi biến đổi nằm trong code"
+                },
+                {
+                  "id": "r2",
+                  "text": "Code ổn định → file .py"
+                }
+              ]
+            },
+            "verdict": {
+              "id": "verdict",
+              "text": "Doanh nghiệp cần: reproducibility + communication"
+            }
+          },
+          "narration": [
+            "Thao tác copy paste trong spreadsheet không tái lập được.",
+            "Notebook cũng khó quản lý bằng version control.",
+            "Cách đúng là để mọi biến đổi nằm trong code.",
+            "Code đã ổn định thì đưa ra file Python.",
+            "Hai điều doanh nghiệp cần là reproducibility và communication."
+          ],
+          "beats": [
+            {
+              "id": "left",
+              "s": 0,
+              "frac": 0.0
+            },
+            {
+              "id": "l1",
+              "s": 0,
+              "cue": "spreadsheet"
+            },
+            {
+              "id": "l2",
+              "s": 1,
+              "cue": "Notebook"
+            },
+            {
+              "id": "right",
+              "s": 2,
+              "cue": "Cách đúng"
+            },
+            {
+              "id": "r1",
+              "s": 2,
+              "cue": "trong code"
+            },
+            {
+              "id": "r2",
+              "s": 3,
+              "cue": "file Python"
+            },
+            {
+              "id": "verdict",
+              "s": 4,
+              "cue": "reproducibility"
+            }
+          ]
+        },
+        {
+          "type": "mnemonic",
+          "pose": "curious",
+          "headline": "Mẹo nhớ: EDA làm ba việc",
+          "data": {
+            "phrase": "Nhìn, vẽ, ghi — chưa dự đoán",
+            "items": [
+              {
+                "id": "n",
+                "letter": "N",
+                "word": "Nhìn",
+                "gloss": "bảng tóm tắt"
+              },
+              {
+                "id": "v",
+                "letter": "V",
+                "word": "Vẽ",
+                "gloss": "biểu đồ"
+              },
+              {
+                "id": "g",
+                "letter": "G",
+                "word": "Ghi",
+                "gloss": "giả thuyết"
+              }
+            ]
+          },
+          "narration": [
+            "Mẹo nhớ: EDA chỉ làm ba việc.",
+            "Nhìn bảng tóm tắt.",
+            "Vẽ biểu đồ.",
+            "Ghi lại giả thuyết.",
+            "Nhìn, vẽ, ghi, nhưng chưa dự đoán bằng regression."
+          ],
+          "beats": [
+            {
+              "id": "letters",
+              "s": 0,
+              "cue": "ba việc"
+            },
+            {
+              "id": "n",
+              "s": 1,
+              "cue": "Nhìn"
+            },
+            {
+              "id": "v",
+              "s": 2,
+              "cue": "Vẽ"
+            },
+            {
+              "id": "g",
+              "s": 3,
+              "cue": "Ghi"
+            },
+            {
+              "id": "phrase",
+              "s": 4,
+              "frac": 0.0
+            }
+          ]
+        },
+        {
+          "type": "quiz",
+          "pose": "curious",
+          "questionId": "su26fe-31",
+          "explain": "Mô hình dự đoán như linear hay logistic regression là việc của modeling, không thuộc EDA."
+        }
+      ]
+    },
+    {
+      "id": "missing",
+      "title": "Missing data",
+      "scenes": [
+        {
+          "type": "stairs",
+          "pose": "idle",
+          "headline": "Ba kiểu thiếu dữ liệu",
+          "data": {
+            "steps": [
+              {
+                "id": "mcar",
+                "label": "MCAR",
+                "caption": "thiếu hoàn toàn ngẫu nhiên"
+              },
+              {
+                "id": "mar",
+                "label": "MAR",
+                "caption": "phụ thuộc một biến khác"
+              },
+              {
+                "id": "mnar",
+                "label": "MNAR",
+                "caption": "phụ thuộc chính giá trị thiếu"
+              }
+            ]
+          },
+          "narration": [
+            "Dữ liệu thiếu có ba kiểu, càng lên càng khó xử lý.",
+            "MCAR là thiếu hoàn toàn ngẫu nhiên.",
+            "MAR là thiếu phụ thuộc vào một biến khác.",
+            "MNAR là thiếu vì chính giá trị bị thiếu."
+          ],
+          "beats": [
+            {
+              "id": "ghost",
+              "s": 0,
+              "cue": "ba kiểu"
+            },
+            {
+              "id": "count",
+              "s": 0,
+              "cue": "càng lên"
+            },
+            {
+              "id": "mcar",
+              "s": 1,
+              "cue": "MCAR"
+            },
+            {
+              "id": "cap_mcar",
+              "s": 1,
+              "cue": "hoàn toàn"
+            },
+            {
+              "id": "mar",
+              "s": 2,
+              "cue": "MAR"
+            },
+            {
+              "id": "cap_mar",
+              "s": 2,
+              "cue": "biến khác"
+            },
+            {
+              "id": "mnar",
+              "s": 3,
+              "cue": "MNAR"
+            },
+            {
+              "id": "cap_mnar",
+              "s": 3,
+              "cue": "chính giá trị"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "pose": "idle",
+          "headline": "AAVAIL thiếu 10% số stream",
+          "data": {
+            "lines": [
+              {
+                "text": "from sklearn.impute import SimpleImputer",
+                "beat": "l1"
+              },
+              {
+                "text": ""
+              },
+              {
+                "text": "# streams: 10% missing",
+                "beat": "l3"
+              },
+              {
+                "text": "imp = SimpleImputer(strategy=\"mean\")",
+                "beat": "l4",
+                "marks": [
+                  {
+                    "text": "\"mean\"",
+                    "beat": "mk_mean"
+                  }
+                ]
+              },
+              {
+                "text": "df[[\"streams\"]] = imp.fit_transform(df[[\"streams\"]])",
+                "beat": "l5"
+              },
+              {
+                "text": "# df[\"streams\"].fillna(-1)   # avoid: fake value",
+                "beat": "l6",
+                "marks": [
+                  {
+                    "text": "fillna(-1)",
+                    "beat": "neg"
+                  }
+                ]
+              }
+            ],
+            "stages": [
+              {
+                "id": "log",
+                "label": "Lấy lại",
+                "hint": "từ user log"
+              },
+              {
+                "id": "mean",
+                "label": "Điền mean",
+                "hint": "SimpleImputer"
+              },
+              {
+                "id": "model",
+                "label": "Dự đoán",
+                "hint": "IterativeImputer"
+              }
+            ]
+          },
+          "narration": [
+            "Ở AAVAIL, mười phần trăm khách hàng thiếu số stream.",
+            "Bước đầu: thử lấy lại từ user log.",
+            "Không được thì điền bằng giá trị trung bình.",
+            "SimpleImputer với strategy mean làm việc này.",
+            "Hoặc dùng feature khác để dự đoán giá trị thiếu.",
+            "Tệ nhất là thay bằng âm một, vì đó là giá trị giả.",
+            "Và nhớ: xoá dòng thiếu chỉ an toàn khi là MCAR."
+          ],
+          "beats": [
+            {
+              "id": "l1",
+              "s": 0,
+              "frac": 0.0
+            },
+            {
+              "id": "l3",
+              "s": 0,
+              "cue": "mười phần trăm"
+            },
+            {
+              "id": "log",
+              "s": 1,
+              "cue": "Bước đầu"
+            },
+            {
+              "id": "on_log",
+              "s": 1,
+              "cue": "user log"
+            },
+            {
+              "id": "mean",
+              "s": 2,
+              "cue": "điền"
+            },
+            {
+              "id": "l4",
+              "s": 2,
+              "cue": "trung bình"
+            },
+            {
+              "id": "on_mean",
+              "s": 3,
+              "cue": "SimpleImputer"
+            },
+            {
+              "id": "mk_mean",
+              "s": 3,
+              "cue": "mean"
+            },
+            {
+              "id": "l5",
+              "s": 3,
+              "cue": "làm việc"
+            },
+            {
+              "id": "model",
+              "s": 4,
+              "cue": "Hoặc"
+            },
+            {
+              "id": "on_model",
+              "s": 4,
+              "cue": "dự đoán"
+            },
+            {
+              "id": "l6",
+              "s": 5,
+              "cue": "Tệ nhất"
+            },
+            {
+              "id": "neg",
+              "s": 5,
+              "cue": "âm một"
+            }
+          ]
+        },
+        {
+          "type": "mnemonic",
+          "pose": "curious",
+          "headline": "Mẹo nhớ ba kiểu thiếu",
+          "data": {
+            "phrase": "Chẳng vì ai · vì biến khác · vì chính nó",
+            "items": [
+              {
+                "id": "c",
+                "letter": "C",
+                "word": "MCAR",
+                "gloss": "chẳng vì ai"
+              },
+              {
+                "id": "a",
+                "letter": "A",
+                "word": "MAR",
+                "gloss": "vì biến khác"
+              },
+              {
+                "id": "n",
+                "letter": "N",
+                "word": "MNAR",
+                "gloss": "vì chính nó",
+                "highlight": true
+              }
+            ]
+          },
+          "narration": [
+            "Mẹo nhớ: nhìn chữ cái ở giữa mỗi tên.",
+            "C trong MCAR: chẳng vì ai cả.",
+            "MAR: thiếu vì một biến khác.",
+            "N trong MNAR: thiếu vì chính nó.",
+            "Chẳng vì ai, vì biến khác, vì chính nó."
+          ],
+          "beats": [
+            {
+              "id": "letters",
+              "s": 0,
+              "cue": "chữ cái"
+            },
+            {
+              "id": "c",
+              "s": 1,
+              "cue": "MCAR"
+            },
+            {
+              "id": "a",
+              "s": 2,
+              "cue": "MAR"
+            },
+            {
+              "id": "n",
+              "s": 3,
+              "cue": "MNAR"
+            },
+            {
+              "id": "phrase",
+              "s": 4,
+              "frac": 0.0
+            }
+          ]
+        },
+        {
+          "type": "quiz",
+          "pose": "curious",
+          "questionId": "qz2-025",
+          "explain": "Ba kiểu chuẩn là MCAR, MAR và MNAR, các tên còn lại không tồn tại."
+        }
+      ]
+    },
+    {
+      "id": "prob",
+      "title": "Xác suất",
+      "scenes": [
+        {
+          "type": "stairs",
+          "pose": "idle",
+          "headline": "Bốn giả định khi nói xác suất",
+          "data": {
+            "steps": [
+              {
+                "id": "pop",
+                "label": "Population",
+                "caption": "mẫu lấy từ một tổng thể"
+              },
+              {
+                "id": "dist",
+                "label": "Phân phối",
+                "caption": "tổng thể theo một phân phối"
+              },
+              {
+                "id": "iid",
+                "label": "i.i.d.",
+                "caption": "độc lập, cùng phân phối"
+              },
+              {
+                "id": "rv",
+                "label": "Random variable",
+                "caption": "biểu diễn giá trị có thể có"
+              }
+            ]
+          },
+          "narration": [
+            "Khi nói xác suất về một mẫu, ta ngầm có bốn giả định.",
+            "Mẫu được lấy từ một population.",
+            "Population đó theo một phân phối nào đó.",
+            "Các quan sát độc lập và cùng phân phối, gọi là IID.",
+            "Và random variable biểu diễn các giá trị có thể có.",
+            "Phát biểu xác suất không áp dụng cho từng quan sát riêng lẻ."
+          ],
+          "beats": [
+            {
+              "id": "ghost",
+              "s": 0,
+              "cue": "xác suất"
+            },
+            {
+              "id": "count",
+              "s": 0,
+              "cue": "bốn giả định"
+            },
+            {
+              "id": "pop",
+              "s": 1,
+              "cue": "population"
+            },
+            {
+              "id": "dist",
+              "s": 2,
+              "cue": "phân phối"
+            },
+            {
+              "id": "iid",
+              "s": 3,
+              "cue": "độc lập"
+            },
+            {
+              "id": "rv",
+              "s": 4,
+              "cue": "random variable"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "pose": "idle",
+          "headline": "Phân phối chuẩn: tính đuôi phải",
+          "data": {
+            "lines": [
+              {
+                "text": "from scipy import stats",
+                "beat": "l1"
+              },
+              {
+                "text": ""
+              },
+              {
+                "text": "# score: mean 50, sd 20",
+                "beat": "l3"
+              },
+              {
+                "text": "p_high = 1 - stats.norm.cdf(80, loc=50, scale=20)",
+                "beat": "l4",
+                "marks": [
+                  {
+                    "text": "stats.norm.cdf",
+                    "beat": "norm"
+                  },
+                  {
+                    "text": "1 -",
+                    "beat": "minus"
+                  }
+                ]
+              },
+              {
+                "text": "print(round(p_high, 3))   # 0.067",
+                "beat": "l5",
+                "marks": [
+                  {
+                    "text": "0.067",
+                    "beat": "r1"
+                  }
+                ]
+              }
+            ],
+            "stages": [
+              {
+                "id": "cdf",
+                "label": "cdf",
+                "hint": "P(X ≤ x)"
+              },
+              {
+                "id": "sf",
+                "label": "1 − cdf",
+                "hint": "P(X ≥ x)"
+              }
+            ]
+          },
+          "narration": [
+            "Điểm thi có trung bình năm mươi, độ lệch chuẩn hai mươi.",
+            "Hỏi xác suất đạt từ tám mươi trở lên.",
+            "Hàm cdf cho xác suất bên trái, tức nhỏ hơn hoặc bằng.",
+            "Muốn bên phải thì lấy một trừ cdf.",
+            "Kết quả khoảng sáu phẩy bảy phần trăm."
+          ],
+          "beats": [
+            {
+              "id": "l1",
+              "s": 0,
+              "frac": 0.0
+            },
+            {
+              "id": "l3",
+              "s": 0,
+              "cue": "trung bình"
+            },
+            {
+              "id": "l4",
+              "s": 1,
+              "cue": "xác suất"
+            },
+            {
+              "id": "cdf",
+              "s": 2,
+              "cue": "cdf"
+            },
+            {
+              "id": "on_cdf",
+              "s": 2,
+              "cue": "bên trái"
+            },
+            {
+              "id": "norm",
+              "s": 2,
+              "cue": "nhỏ hơn"
+            },
+            {
+              "id": "sf",
+              "s": 3,
+              "cue": "bên phải"
+            },
+            {
+              "id": "on_sf",
+              "s": 3,
+              "cue": "một trừ"
+            },
+            {
+              "id": "minus",
+              "s": 3,
+              "cue": "cdf"
+            },
+            {
+              "id": "l5",
+              "s": 4,
+              "cue": "Kết quả"
+            },
+            {
+              "id": "r1",
+              "s": 4,
+              "cue": "sáu phẩy"
+            }
+          ]
+        },
+        {
+          "type": "compare",
+          "pose": "curious",
+          "headline": "Mẹo nhớ: cdf gom bên trái",
+          "data": {
+            "left": {
+              "title": "cdf",
+              "tone": "neutral",
+              "items": [
+                {
+                  "id": "a1",
+                  "text": "Gom từ trái tới x"
+                },
+                {
+                  "id": "a2",
+                  "text": "P(X ≤ x)"
+                }
+              ]
+            },
+            "right": {
+              "title": "1 − cdf",
+              "tone": "good",
+              "items": [
+                {
+                  "id": "b1",
+                  "text": "Phần đuôi bên phải"
+                },
+                {
+                  "id": "b2",
+                  "text": "P(X ≥ x)"
+                }
+              ]
+            },
+            "verdict": {
+              "id": "verdict",
+              "text": "Đề hỏi “từ … trở lên” → dùng 1 − cdf"
+            }
+          },
+          "narration": [
+            "Mẹo nhớ: cdf như cái chổi, gom từ bên trái tới x.",
+            "Phần đuôi bên phải là một trừ cdf.",
+            "Đề hỏi từ bao nhiêu trở lên, hãy dùng một trừ cdf."
+          ],
+          "beats": [
+            {
+              "id": "left",
+              "s": 0,
+              "cue": "cdf"
+            },
+            {
+              "id": "a1",
+              "s": 0,
+              "cue": "gom"
+            },
+            {
+              "id": "a2",
+              "s": 0,
+              "cue": "tới x"
+            },
+            {
+              "id": "right",
+              "s": 1,
+              "cue": "bên phải"
+            },
+            {
+              "id": "b1",
+              "s": 1,
+              "cue": "đuôi"
+            },
+            {
+              "id": "b2",
+              "s": 1,
+              "cue": "một trừ"
+            },
+            {
+              "id": "verdict",
+              "s": 2,
+              "cue": "trở lên"
+            }
+          ]
+        },
+        {
+          "type": "quiz",
+          "pose": "curious",
+          "questionId": "su26re-16",
+          "explain": "Phát biểu xác suất nói về cả mẫu, không áp dụng cho từng quan sát một."
+        }
+      ]
+    },
+    {
+      "id": "test",
+      "title": "Kiểm định giả thuyết",
+      "scenes": [
+        {
+          "type": "pipeline",
+          "pose": "idle",
+          "headline": "Ba bước kiểm định giả thuyết",
+          "data": {
+            "stages": [
+              {
+                "id": "h0",
+                "label": "Đặt H0",
+                "items": [
+                  {
+                    "id": "h1",
+                    "text": "Không có khác biệt"
+                  },
+                  {
+                    "id": "h2",
+                    "text": "vd: tuổi bằng nhau"
+                  }
+                ]
+              },
+              {
+                "id": "pick",
+                "label": "Chọn test",
+                "items": [
+                  {
+                    "id": "k1",
+                    "text": "Welch: 2 nhóm lệch"
+                  },
+                  {
+                    "id": "k2",
+                    "text": "Binomial: tỷ lệ"
+                  }
+                ]
+              },
+              {
+                "id": "dec",
+                "label": "Quyết định",
+                "items": [
+                  {
+                    "id": "d1",
+                    "text": "p < 0.05"
+                  },
+                  {
+                    "id": "d2",
+                    "text": "Bác bỏ H0"
+                  }
+                ]
+              }
+            ]
+          },
+          "narration": [
+            "Kiểm định bắt đầu bằng giả thuyết null, H0.",
+            "H0 luôn nói: không có khác biệt.",
+            "Ví dụ, người dùng Product 1 và 2 có cùng độ tuổi.",
+            "Tiếp theo là chọn test phù hợp.",
+            "Hai nhóm có phương sai khác nhau thì dùng Welch.",
+            "Dữ liệu tỷ lệ, như đăng ký hay không, dùng binomial test.",
+            "Cuối cùng, xem p-value có nhỏ hơn alpha, thường là năm phần trăm.",
+            "Nếu nhỏ hơn, ta bác bỏ H0."
+          ],
+          "beats": [
+            {
+              "id": "h0",
+              "s": 0,
+              "cue": "giả thuyết null"
+            },
+            {
+              "id": "h1",
+              "s": 1,
+              "cue": "không có khác biệt"
+            },
+            {
+              "id": "h2",
+              "s": 2,
+              "cue": "Ví dụ"
+            },
+            {
+              "id": "pick",
+              "s": 3,
+              "cue": "Tiếp theo"
+            },
+            {
+              "id": "k1",
+              "s": 4,
+              "cue": "Hai nhóm"
+            },
+            {
+              "id": "k2",
+              "s": 5,
+              "cue": "tỷ lệ"
+            },
+            {
+              "id": "dec",
+              "s": 6,
+              "cue": "Cuối cùng"
+            },
+            {
+              "id": "d1",
+              "s": 6,
+              "cue": "p-value"
+            },
+            {
+              "id": "d2",
+              "s": 7,
+              "cue": "bác bỏ"
+            },
+            {
+              "id": "flow",
+              "s": 7,
+              "frac": 0.0
+            }
+          ]
+        },
+        {
+          "type": "compare",
+          "pose": "idle",
+          "headline": "Chạy nhiều test: coi chừng ăn may",
+          "data": {
+            "left": {
+              "title": "Hợp lệ",
+              "tone": "good",
+              "items": [
+                {
+                  "id": "v1",
+                  "text": "Bonferroni"
+                },
+                {
+                  "id": "v2",
+                  "text": "Benjamini–Hochberg (FDR)"
+                },
+                {
+                  "id": "v3",
+                  "text": "Permutation, GLM"
+                }
+              ]
+            },
+            "right": {
+              "title": "Không hợp lệ",
+              "tone": "bad",
+              "items": [
+                {
+                  "id": "x1",
+                  "text": "Chạy hết, giữ test đẹp nhất"
+                },
+                {
+                  "id": "x2",
+                  "text": "= p-hacking"
+                }
+              ]
+            },
+            "verdict": {
+              "id": "verdict",
+              "text": "20 test ở mức 0.05 → khoảng 1 kết quả ăn may"
+            }
+          },
+          "narration": [
+            "Chạy hai mươi test, kiểu gì cũng có một test ăn may.",
+            "Có cách xử lý cho multiple comparisons problem.",
+            "Hiệu chỉnh Bonferroni, hoặc Benjamini Hochberg.",
+            "Tạo phân phối null bằng permutation, hoặc dùng GLM.",
+            "Cách sai là chạy hết, rồi chỉ giữ test đẹp nhất.",
+            "Đó chính là p-hacking."
+          ],
+          "beats": [
+            {
+              "id": "verdict",
+              "s": 0,
+              "cue": "hai mươi test"
+            },
+            {
+              "id": "left",
+              "s": 1,
+              "cue": "Có cách"
+            },
+            {
+              "id": "v1",
+              "s": 2,
+              "cue": "Hiệu chỉnh"
+            },
+            {
+              "id": "v2",
+              "s": 2,
+              "cue": "Benjamini"
+            },
+            {
+              "id": "v3",
+              "s": 3,
+              "cue": "permutation"
+            },
+            {
+              "id": "right",
+              "s": 4,
+              "cue": "Cách sai"
+            },
+            {
+              "id": "x1",
+              "s": 4,
+              "cue": "chỉ giữ"
+            },
+            {
+              "id": "x2",
+              "s": 5,
+              "cue": "p-hacking"
+            }
+          ]
+        },
+        {
+          "type": "mnemonic",
+          "pose": "curious",
+          "headline": "Mẹo nhớ: H0 hoà, p nhỏ phá",
+          "data": {
+            "phrase": "H0 hoà, p nhỏ thì phá",
+            "items": [
+              {
+                "id": "h",
+                "letter": "H0",
+                "word": "Hoà",
+                "gloss": "hai nhóm như nhau"
+              },
+              {
+                "id": "p",
+                "letter": "p",
+                "word": "Phá",
+                "gloss": "p < α → bác bỏ H0",
+                "highlight": true
+              },
+              {
+                "id": "w",
+                "letter": "W",
+                "word": "Welch",
+                "gloss": "phương sai lệch"
+              }
+            ]
+          },
+          "narration": [
+            "Mẹo nhớ ba chữ cho phần kiểm định.",
+            "H0 là hoà: hai nhóm như nhau.",
+            "p nhỏ thì phá, tức là bác bỏ H0.",
+            "Welch: hai nhóm lệch phương sai.",
+            "Gọn lại: H0 hoà, p nhỏ thì phá."
+          ],
+          "beats": [
+            {
+              "id": "letters",
+              "s": 0,
+              "cue": "ba chữ"
+            },
+            {
+              "id": "h",
+              "s": 1,
+              "cue": "hoà"
+            },
+            {
+              "id": "p",
+              "s": 2,
+              "cue": "p nhỏ"
+            },
+            {
+              "id": "w",
+              "s": 3,
+              "cue": "Welch"
+            },
+            {
+              "id": "phrase",
+              "s": 4,
+              "cue": "H0 hoà"
+            }
+          ]
+        },
+        {
+          "type": "quiz",
+          "pose": "curious",
+          "questionId": "qz2-034",
+          "explain": "Chạy hết rồi chỉ giữ test đẹp nhất chính là p-hacking, không phải cách xử lý hợp lệ."
+        }
+      ]
+    },
+    {
+      "id": "traps",
+      "title": "Bẫy hay gặp",
+      "scenes": [
+        {
+          "type": "traps",
+          "pose": "sad",
+          "headline": "Năm bẫy hay gặp trong đề",
+          "data": {
+            "traps": [
+              {
+                "id": "t1",
+                "wrong": "EDA gồm cả confirmatory analysis",
+                "right": "Kiểm định là bước riêng, sau EDA"
+              },
+              {
+                "id": "t2",
+                "wrong": "EDA tách rời modeling",
+                "right": "EDA giúp ước lượng thời gian modeling"
+              },
+              {
+                "id": "t3",
+                "wrong": "seaborn tách biệt matplotlib",
+                "right": "seaborn xây trên matplotlib"
+              },
+              {
+                "id": "t4",
+                "wrong": "Điền missing bằng -1 cho an toàn",
+                "right": "-1 là giá trị giả, kém nhất"
+              },
+              {
+                "id": "t5",
+                "wrong": "NHST là cách tính ước lượng",
+                "right": "NHST là khung ra quyết định"
+              }
+            ]
+          },
+          "narration": [
+            "Cuối cùng là năm cái bẫy hay gặp.",
+            "EDA không gồm confirmatory analysis.",
+            "EDA cũng không tách rời modeling.",
+            "Nó giúp ước lượng thời gian làm mô hình.",
+            "Seaborn được xây trên matplotlib, không tách biệt.",
+            "Điền giá trị thiếu bằng âm một là cách kém nhất.",
+            "Và NHST không phải phương pháp tính ước lượng."
+          ],
+          "beats": [
+            {
+              "id": "t1",
+              "s": 0,
+              "cue": "năm cái bẫy"
+            },
+            {
+              "id": "fix_t1",
+              "s": 1,
+              "cue": "không gồm"
+            },
+            {
+              "id": "t2",
+              "s": 2,
+              "frac": 0.0
+            },
+            {
+              "id": "fix_t2",
+              "s": 3,
+              "frac": 0.0
+            },
+            {
+              "id": "t3",
+              "s": 4,
+              "frac": 0.0
+            },
+            {
+              "id": "fix_t3",
+              "s": 4,
+              "cue": "xây trên"
+            },
+            {
+              "id": "t4",
+              "s": 5,
+              "frac": 0.0
+            },
+            {
+              "id": "fix_t4",
+              "s": 5,
+              "cue": "kém nhất"
+            },
+            {
+              "id": "t5",
+              "s": 6,
+              "frac": 0.0
+            },
+            {
+              "id": "fix_t5",
+              "s": 6,
+              "cue": "không phải"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "recap",
+      "title": "Tổng kết",
+      "scenes": [
+        {
+          "type": "recap",
+          "pose": "happy",
+          "headline": "Tóm tắt chương 2",
+          "data": {
+            "items": [
+              {
+                "id": "r1",
+                "text": "EDA: nhìn, vẽ, ghi, chưa dự đoán"
+              },
+              {
+                "id": "r2",
+                "text": "MCAR, MAR, MNAR; đừng điền −1"
+              },
+              {
+                "id": "r3",
+                "text": "Từ x trở lên: 1 − cdf"
+              },
+              {
+                "id": "r4",
+                "text": "Hai nhóm lệch phương sai: Welch"
+              },
+              {
+                "id": "r5",
+                "text": "Nhiều test: hiệu chỉnh, không p-hacking"
+              }
+            ]
+          },
+          "narration": [
+            "Tóm lại, nhớ năm điều.",
+            "EDA là nhìn, vẽ, ghi, chưa dự đoán.",
+            "Có ba kiểu thiếu, và đừng điền âm một.",
+            "Hỏi từ bao nhiêu trở lên thì dùng một trừ cdf.",
+            "So tuổi hai nhóm thì dùng Welch.",
+            "Chạy nhiều test thì hiệu chỉnh, đừng p-hacking.",
+            "Hẹn gặp bạn ở chương 3!"
+          ],
+          "beats": [
+            {
+              "id": "r1",
+              "s": 1,
+              "cue": "EDA"
+            },
+            {
+              "id": "r2",
+              "s": 2,
+              "cue": "ba kiểu"
+            },
+            {
+              "id": "r3",
+              "s": 3,
+              "frac": 0.0
+            },
+            {
+              "id": "r4",
+              "s": 4,
+              "frac": 0.0
+            },
+            {
+              "id": "r5",
+              "s": 5,
+              "frac": 0.0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

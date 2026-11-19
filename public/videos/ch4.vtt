@@ -1,0 +1,493 @@
+WEBVTT
+
+1
+00:00:00.300 --> 00:00:02.408
+Chào bạn, mình là MeoLearn.
+
+2
+00:00:02.728 --> 00:00:06.457
+Chương 4 bám theo khoá thứ tư của IBM AI Workflow.
+
+3
+00:00:06.777 --> 00:00:08.666
+Hôm nay ta đi qua bốn chặng.
+
+4
+00:00:08.986 --> 00:00:11.896
+Metric phân loại, rồi tree và ensemble.
+
+5
+00:00:12.216 --> 00:00:15.730
+Sau đó là neural network, và NLP với Watson.
+
+6
+00:00:16.050 --> 00:00:18.312
+Cuối chương có các bẫy hay gặp trong đề.
+
+7
+00:00:19.062 --> 00:00:21.494
+Mô hình đoán xong, ta đếm đúng sai.
+
+8
+00:00:21.814 --> 00:00:24.324
+Bảng đếm đó gọi là confusion matrix.
+
+9
+00:00:24.644 --> 00:00:27.591
+True Positive là đoán dương, và đúng là dương.
+
+10
+00:00:27.911 --> 00:00:30.891
+True Negative là đoán âm, và đúng là âm.
+
+11
+00:00:31.211 --> 00:00:33.325
+False Positive là báo động nhầm.
+
+12
+00:00:33.645 --> 00:00:35.582
+False Negative là bỏ sót.
+
+13
+00:00:35.902 --> 00:00:38.827
+Average Score không phải là một ô trong bảng này.
+
+14
+00:00:39.577 --> 00:00:42.770
+Từ bốn ô đó, ta tính precision và recall.
+
+15
+00:00:43.090 --> 00:00:46.659
+Precision hỏi: trong các lần báo dương, bao nhiêu lần đúng?
+
+16
+00:00:46.979 --> 00:00:50.190
+Recall hỏi: trong các ca dương thật, bắt được bao nhiêu?
+
+17
+00:00:50.510 --> 00:00:53.093
+Precision quan trọng khi ta sợ báo nhầm.
+
+18
+00:00:53.413 --> 00:00:55.731
+Recall quan trọng khi ta sợ bỏ sót.
+
+19
+00:00:56.051 --> 00:00:59.718
+Nếu bỏ sót đắt hơn, ta dùng F-beta với beta bằng hai.
+
+20
+00:01:00.468 --> 00:01:03.132
+Mẹo đọc tên bốn ô: tách làm hai chữ.
+
+21
+00:01:03.452 --> 00:01:06.729
+Chữ đầu, True hay False, chấm xem đoán đúng hay sai.
+
+22
+00:01:07.049 --> 00:01:10.491
+Chữ sau, Positive hay Negative, là điều đã đoán.
+
+23
+00:01:10.811 --> 00:01:14.231
+Vậy False Negative là: đoán âm, nhưng đoán sai.
+
+24
+00:01:14.981 --> 00:01:16.203
+Câu hỏi nhanh.
+
+25
+00:01:16.523 --> 00:01:19.770
+Which of the following is NOT a component of the confusion matrix?
+
+26
+00:01:20.090 --> 00:01:22.141
+A. True Negatives (TN)
+
+27
+00:01:22.361 --> 00:01:24.496
+B. False Positives (FP)
+
+28
+00:01:24.716 --> 00:01:26.913
+C. True Positives (TP)
+
+29
+00:01:27.133 --> 00:01:29.317
+D. Average Score (AS)
+
+30
+00:01:29.537 --> 00:01:31.760
+E. False Negatives (FN)
+
+31
+00:01:34.980 --> 00:01:36.589
+Đáp án đúng là D.
+
+32
+00:01:36.909 --> 00:01:42.199
+Bảng chỉ có TP, TN, FP và FN; Average Score không phải một ô.
+
+33
+00:01:42.949 --> 00:01:45.531
+Một decision tree dễ đọc và dễ giải thích.
+
+34
+00:01:45.851 --> 00:01:48.806
+Nó hợp với dữ liệu churn của AAVAIL.
+
+35
+00:01:49.126 --> 00:01:52.155
+Nhưng một cây thường có bias thấp, variance cao.
+
+36
+00:01:52.475 --> 00:01:55.317
+Random Forest trồng nhiều cây trên các mẫu khác nhau.
+
+37
+00:01:55.637 --> 00:01:57.984
+Rồi lấy trung bình kết quả của các cây.
+
+38
+00:01:58.304 --> 00:02:01.400
+Nhờ vậy variance giảm, dự đoán ổn định hơn.
+
+39
+00:02:02.150 --> 00:02:04.315
+Random Forest thuộc nhóm bagging.
+
+40
+00:02:04.635 --> 00:02:06.981
+Bagging huấn luyện nhiều model song song.
+
+41
+00:02:07.301 --> 00:02:09.290
+Mục tiêu là giảm variance.
+
+42
+00:02:09.610 --> 00:02:12.871
+Boosting thì nối tiếp: model sau sửa lỗi model trước.
+
+43
+00:02:13.191 --> 00:02:17.211
+Boosting giúp giảm bias, như AdaBoost hay Gradient Boosting.
+
+44
+00:02:17.531 --> 00:02:20.330
+Cả hai không bắt buộc dùng decision tree làm nền.
+
+45
+00:02:21.080 --> 00:02:23.317
+Mẹo nhớ: nhìn vào chữ cái.
+
+46
+00:02:23.637 --> 00:02:26.734
+Bagging giảm variance, như cả lớp bầu cùng lúc.
+
+47
+00:02:27.054 --> 00:02:30.042
+Boosting giảm bias, như học trò sửa bài từng lượt.
+
+48
+00:02:30.362 --> 00:02:33.571
+Còn một decision tree đơn lẻ thì không phải ensemble.
+
+49
+00:02:34.321 --> 00:02:35.543
+Câu hỏi nhanh.
+
+50
+00:02:35.863 --> 00:02:39.870
+Which of the following model is not an example of an ensemble approach to learning?
+
+51
+00:02:40.190 --> 00:02:41.880
+A. Decision tree
+
+52
+00:02:42.100 --> 00:02:43.880
+B. Random forest
+
+53
+00:02:44.100 --> 00:02:45.739
+C. Boosting
+
+54
+00:02:45.959 --> 00:02:47.730
+D. Model stacking
+
+55
+00:02:47.950 --> 00:02:49.729
+E. Gradient boosting
+
+56
+00:02:52.949 --> 00:02:54.581
+Đáp án đúng là A.
+
+57
+00:02:54.901 --> 00:02:58.537
+Decision tree là một mô hình đơn lẻ, không phải ensemble.
+
+58
+00:02:59.287 --> 00:03:01.613
+CNN là mạng chuyên xử lý ảnh.
+
+59
+00:03:01.933 --> 00:03:04.935
+Lớp convolutional quét ảnh để tìm cạnh và nét.
+
+60
+00:03:05.255 --> 00:03:07.140
+Các lớp sau ghép nét thành hình.
+
+61
+00:03:07.460 --> 00:03:10.008
+Pooling thu nhỏ ảnh, chỉ giữ nét chính.
+
+62
+00:03:10.328 --> 00:03:12.869
+Lớp dense ở cuối đưa ra nhãn của ảnh.
+
+63
+00:03:13.189 --> 00:03:16.516
+Vậy CNN hợp với phân loại ảnh và phát hiện vật thể.
+
+64
+00:03:17.266 --> 00:03:19.632
+CNN mạnh với dữ liệu dạng ảnh.
+
+65
+00:03:19.952 --> 00:03:22.940
+RNN đọc dữ liệu theo thứ tự, từng bước một.
+
+66
+00:03:23.260 --> 00:03:27.551
+RNN, LSTM và GRU hợp nhất với time series.
+
+67
+00:03:27.871 --> 00:03:30.798
+Với ảnh, ta hay mượn mô hình đã huấn luyện sẵn.
+
+68
+00:03:31.118 --> 00:03:34.248
+Đó là transfer learning, đến từ deep learning.
+
+69
+00:03:34.568 --> 00:03:36.967
+Không phải từ reinforcement learning.
+
+70
+00:03:37.717 --> 00:03:39.792
+Mẹo nhớ hai mạng này rất gọn.
+
+71
+00:03:40.112 --> 00:03:42.937
+C trong CNN là con mắt, chuyên nhìn ảnh.
+
+72
+00:03:43.257 --> 00:03:47.003
+R trong RNN là trí nhớ, nhớ những gì vừa xảy ra.
+
+73
+00:03:47.323 --> 00:03:50.019
+Gặp time series thì nghĩ ngay tới RNN.
+
+74
+00:03:50.769 --> 00:03:51.992
+Câu hỏi nhanh.
+
+75
+00:03:52.312 --> 00:03:57.261
+Which of the following neural network architectures are most-commonly used for time-series analysis?
+
+76
+00:03:57.581 --> 00:03:59.588
+A. Multi-layer perceptron
+
+77
+00:03:59.808 --> 00:04:01.847
+B. Recurrent neural networks
+
+78
+00:04:02.067 --> 00:04:03.843
+C. Transfer learning
+
+79
+00:04:04.063 --> 00:04:06.420
+D. Convolutional neural network
+
+80
+00:04:06.640 --> 00:04:08.283
+E. Autoencoders
+
+81
+00:04:11.503 --> 00:04:13.110
+Đáp án đúng là B.
+
+82
+00:04:13.430 --> 00:04:19.458
+RNN, cùng LSTM và GRU, xử lý dữ liệu tuần tự nên hợp nhất với time series.
+
+83
+00:04:20.208 --> 00:04:22.660
+NLP giúp máy hiểu ngôn ngữ của người.
+
+84
+00:04:22.980 --> 00:04:25.198
+Bước đầu là tiền xử lý văn bản.
+
+85
+00:04:25.518 --> 00:04:28.990
+Tách từ, bỏ stop words, rồi đưa từ về dạng gốc.
+
+86
+00:04:29.310 --> 00:04:33.172
+Sau đó biến chữ thành số, bằng bag of words hay TF-IDF.
+
+87
+00:04:33.492 --> 00:04:36.225
+Cuối cùng là một classifier như Naive Bayes.
+
+88
+00:04:36.545 --> 00:04:39.362
+Ứng dụng phổ biến là phân tích phản hồi của khách hàng.
+
+89
+00:04:40.112 --> 00:04:43.428
+Không muốn tự xây mô hình, ta gọi Watson NLU.
+
+90
+00:04:43.748 --> 00:04:47.232
+Đầu tiên cài SDK bằng lệnh pip, nhớ thêm cờ upgrade.
+
+91
+00:04:47.552 --> 00:04:50.266
+Rồi tạo đối tượng NLU với ba thông tin.
+
+92
+00:04:50.586 --> 00:04:53.477
+Version là ngày phiên bản, gửi kèm mỗi request.
+
+93
+00:04:53.797 --> 00:04:56.163
+Nhờ đó thí nghiệm lặp lại được về sau.
+
+94
+00:04:56.483 --> 00:04:59.908
+API key nằm trong một file bảo mật, trên máy bạn tin cậy.
+
+95
+00:05:00.228 --> 00:05:03.474
+Cuối cùng là service URL, địa chỉ của dịch vụ.
+
+96
+00:05:03.794 --> 00:05:07.580
+Gọi analyze là có sentiment, entities và keywords.
+
+97
+00:05:08.330 --> 00:05:10.367
+Mẹo nhớ ba bước tiền xử lý.
+
+98
+00:05:10.687 --> 00:05:12.491
+Cắt câu thành từng token.
+
+99
+00:05:12.811 --> 00:05:15.827
+Lọc bỏ stop words như là, và, của.
+
+100
+00:05:16.147 --> 00:05:18.910
+Rồi đưa từ về gốc, như running thành run.
+
+101
+00:05:19.230 --> 00:05:20.887
+Cắt, lọc, về gốc.
+
+102
+00:05:21.637 --> 00:05:22.859
+Câu hỏi nhanh.
+
+103
+00:05:23.179 --> 00:05:28.723
+Which of the following is not an example of a relevant question when tuning a NLP classification pipeline?
+
+104
+00:05:29.044 --> 00:05:32.858
+A. Should I use bag-of-words or a vector embedding representation?
+
+105
+00:05:33.078 --> 00:05:35.122
+B. Which stop words do I include?
+
+106
+00:05:35.342 --> 00:05:37.497
+C. Which n-grams do I include?
+
+107
+00:05:37.717 --> 00:05:41.229
+D. Should I use a TF or a tf-idf transformation?
+
+108
+00:05:41.449 --> 00:05:45.095
+E. Should I use RMSE or MAE as an evaluation metric?
+
+109
+00:05:48.315 --> 00:05:49.942
+Đáp án đúng là E.
+
+110
+00:05:50.262 --> 00:05:55.790
+RMSE và MAE là metric hồi quy, không phải câu hỏi khi tinh chỉnh pipeline phân loại văn bản.
+
+111
+00:05:56.540 --> 00:05:58.467
+Giờ là năm cái bẫy hay gặp.
+
+112
+00:05:58.787 --> 00:06:01.163
+Decision tree không phải ensemble.
+
+113
+00:06:01.483 --> 00:06:04.880
+Cây trong Random Forest có bias thấp, variance cao.
+
+114
+00:06:05.200 --> 00:06:07.697
+Transfer learning đến từ deep learning.
+
+115
+00:06:08.017 --> 00:06:10.821
+Thêm GPU không làm thời gian huấn luyện giảm mãi.
+
+116
+00:06:11.141 --> 00:06:14.773
+Và Watson phân loại được ảnh qua URL, không cần tải về.
+
+117
+00:06:15.523 --> 00:06:17.430
+Tóm lại, nhớ năm điều.
+
+118
+00:06:17.750 --> 00:06:19.798
+Confusion matrix có bốn ô.
+
+119
+00:06:20.118 --> 00:06:22.390
+Bỏ sót đắt thì đặt beta bằng hai.
+
+120
+00:06:22.710 --> 00:06:25.643
+Bagging giảm variance, boosting giảm bias.
+
+121
+00:06:25.963 --> 00:06:28.842
+CNN nhìn ảnh, RNN nhớ chuỗi.
+
+122
+00:06:29.162 --> 00:06:33.046
+Watson NLU cần API key, version và URL.
+
+123
+00:06:33.366 --> 00:06:35.150
+Hẹn gặp bạn ở chương 5!
