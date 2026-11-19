@@ -7,6 +7,7 @@ import { LookupPage } from "./features/lookup/LookupPage";
 import { NotebookPage } from "./features/notebook/NotebookPage";
 import { ReviewHome } from "./features/review/ReviewHome";
 import { ReviewSession } from "./features/review/ReviewSession";
+import { StatsPage } from "./features/stats/StatsPage";
 import { ChapterPage, StudyHome } from "./features/study/StudyPages";
 import { navigate, useHashRoute } from "./lib/useHashRoute";
 import { useStore, type Theme } from "./store";
@@ -18,6 +19,7 @@ const tabs: { path: string; label: string; icon: IconName }[] = [
   { path: "notebook", label: "Sổ tay", icon: "notebook" },
   { path: "study", label: "Học tập", icon: "study" },
   { path: "lookup", label: "Tra cứu", icon: "search" },
+  { path: "stats", label: "Thống kê", icon: "pie" },
 ];
 
 const themeOrder: Theme[] = ["system", "light", "dark"];
@@ -74,6 +76,8 @@ export const App = () => {
         return param ? <ChapterPage key={param} id={Number(param)} /> : <StudyHome />;
       case "lookup":
         return <LookupPage />;
+      case "stats":
+        return <StatsPage />;
       case "audit":
         return <LookupPage initialFilter="review" />;
       default:
