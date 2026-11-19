@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
+import { playCat, type CatSound } from "../../lib/sound";
 import { useStore } from "../../store";
 import { onPet } from "./petBus";
 
@@ -34,7 +35,17 @@ const cheers = [
   "Mỗi ngày một section là đủ nè",
 ];
 
-const pick = (list: string[]): string => list[Math.floor(Math.random() * list.length)];
+// What MeoLearn says out loud (a cat sound, not words) for each mood.
+const moodSound: Record<Mood, CatSound> = {
+  idle: "meow",
+  happy: "mew",
+  sad: "sadMeow",
+  angry: "hiss",
+  sleepy: "purr",
+  curious: "trill",
+};
+
+const pick = <T,>(list: T[]): T => list[Math.floor(Math.random() * list.length)];
 
 const MOOD_MS = 4000;
 const BUBBLE_MS = 3500;
@@ -48,8 +59,13 @@ export const Pet = () => {
   const streak = useRef({ right: 0, wrong: 0 });
   const lastActive = useRef(Date.now());
   const timers = useRef<{ mood?: number; bubble?: number }>({});
+  const soundOn = useRef(settings.soundOn);
+  useEffect(() => {
+    soundOn.current = settings.soundOn;
+  }, [settings.soundOn]);
 
-  const say = useCallback((next: Mood, text?: string) => {
+  const say = useCallback((next: Mood, text?: string, sound?: CatSound) => {
+    if (soundOn.current) playCat(sound ?? moodSound[next]);
     window.clearTimeout(timers.current.mood);
     window.clearTimeout(timers.current.bubble);
     moodRef.current = next;
@@ -90,7 +106,8 @@ export const Pet = () => {
           case "correct":
             s.right += 1;
             s.wrong = 0;
-            say("happy", s.right % 5 === 0 ? `Combo ${s.right} câu đúng liền!` : undefined);
+            if (s.right % 5 === 0) say("happy", `Combo ${s.right} câu đúng liền!`, "doubleMew");
+            else say("happy");
             break;
           case "wrong":
             s.wrong += 1;
@@ -98,11 +115,12 @@ export const Pet = () => {
             say(s.wrong >= 3 ? "angry" : "sad");
             break;
           case "complete":
-            say("happy", pick(["Xong rồi! Giỏi quá~", "Hoàn thành luôn!", "Thêm một phần nữa xong!"]));
+            say("happy", pick(["Xong rồi! Giỏi quá~", "Hoàn thành luôn!", "Thêm một phần nữa xong!"]), "doubleMew");
             break;
           case "exam": {
             const score = event.score.toFixed(1);
-            if (event.score >= 5) say("happy", `${score} điểm${event.score >= 8 ? "! Wow!" : ", qua môn rồi!"}`);
+            if (event.score >= 5)
+              say("happy", `${score} điểm${event.score >= 8 ? "! Wow!" : ", qua môn rồi!"}`, event.score >= 8 ? "doubleMew" : "mew");
             else say("sad", `${score} điểm... ôn thêm chút nha`);
             break;
           }
@@ -148,7 +166,7 @@ export const Pet = () => {
         className="pet-btn"
         title="Bấm để nhận lời cổ vũ"
         aria-label="MeoLearn, bấm để nhận lời cổ vũ"
-        onClick={() => say("happy", pick(cheers))}
+        onClick={() => say("happy", pick(cheers), pick<CatSound>(["mew", "meow", "trill"]))}
       >
         <img className="pet-sprite" src={spriteSrc(mood)} alt="" draggable={false} />
         {fx && <img key={fx} className={`pet-fx pet-fx-${fx}`} src={`pet/fx-${fx}.webp`} alt="" draggable={false} />}
