@@ -71,8 +71,21 @@ const useNotebook = () => {
   };
 };
 
+export const AUTO_NEXT_MIN_S = 0.5;
+export const AUTO_NEXT_MAX_S = 3;
+export const AUTO_NEXT_STEP_S = 0.5;
+
+const clampAutoNextDelay = (seconds: number): number => {
+  if (!Number.isFinite(seconds)) return 1.5;
+  const stepped = Math.round(seconds / AUTO_NEXT_STEP_S) * AUTO_NEXT_STEP_S;
+  return Math.min(AUTO_NEXT_MAX_S, Math.max(AUTO_NEXT_MIN_S, stepped));
+};
+
 const useSettings = () => {
   const [soundOn, setSound] = usePersisted<boolean>("sound", true);
+  const [autoNextOn, setAutoNext] = usePersisted<boolean>("auto-next", false);
+  const [rawAutoNextDelay, setAutoNextDelayValue] = usePersisted<number>("auto-next-delay", 1.5);
+  const autoNextDelay = clampAutoNextDelay(rawAutoNextDelay);
   const [theme, setThemeValue] = usePersisted<Theme>("theme", "system");
   const [petOn, setPet] = usePersisted<boolean>("pet", true);
 
@@ -89,6 +102,11 @@ const useSettings = () => {
     setTheme: (t: Theme) => setThemeValue(() => t),
     petOn,
     togglePet: () => setPet((on) => !on),
+    autoNextOn,
+    toggleAutoNext: () => setAutoNext((on) => !on),
+    /** Seconds to wait after a correct answer before moving on (0.5–3). */
+    autoNextDelay,
+    setAutoNextDelay: (seconds: number) => setAutoNextDelayValue(() => clampAutoNextDelay(seconds)),
   };
 };
 

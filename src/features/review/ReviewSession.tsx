@@ -5,6 +5,7 @@ import { chapters, sections } from "../../data";
 import { playComplete } from "../../lib/sound";
 import { navigate } from "../../lib/useHashRoute";
 import { useStore } from "../../store";
+import { AutoNextControl } from "./AutoNextControl";
 
 const freshRun = (ids: string[]): DrillRun => ({ queue: [...ids], solved: [], mistakes: 0 });
 
@@ -66,6 +67,7 @@ export const ReviewSession = ({ sectionId }: { sectionId: string }) => {
       <Drill
         key={epoch}
         run={run}
+        autoNextMs={settings.autoNextOn ? settings.autoNextDelay * 1000 : undefined}
         header={
           <>
             {back}
@@ -73,6 +75,7 @@ export const ReviewSession = ({ sectionId }: { sectionId: string }) => {
               Section {sectionNo}
               <span> · Chương {chapter?.id}. {chapter?.title}</span>
             </p>
+            <AutoNextControl />
           </>
         }
         onChange={(next) => {

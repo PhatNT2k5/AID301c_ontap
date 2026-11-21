@@ -15,10 +15,12 @@ type Props = {
   onChange: (run: DrillRun) => void;
   onFinish: (run: DrillRun) => void;
   onCorrect?: (id: string) => void;
+  /** When set, a correct answer moves to the next question after this many ms. */
+  autoNextMs?: number;
 };
 
 /** Queue drill: a correct answer leaves the queue, a wrong one goes to the back until answered right. */
-export const Drill = ({ run, header, onChange, onFinish, onCorrect }: Props) => {
+export const Drill = ({ run, header, onChange, onFinish, onCorrect, autoNextMs }: Props) => {
   const [turn, setTurn] = useState(0);
   const [lastCorrect, setLastCorrect] = useState(false);
   useEffect(() => emitPet({ type: "start" }), []);
@@ -63,6 +65,7 @@ export const Drill = ({ run, header, onChange, onFinish, onCorrect }: Props) => 
         question={question}
         wrongNote={run.queue.length > 1 ? "Câu này sẽ quay lại sau." : undefined}
         nextLabel={isLast && lastCorrect ? "Hoàn thành" : "Câu tiếp"}
+        autoNextMs={autoNextMs}
         onAnswered={(correct) => {
           setLastCorrect(correct);
           if (correct) onCorrect?.(question.id);

@@ -771,6 +771,67 @@ kbd {
 .session-count .kbd-hint {
   margin-left: auto;
 }
+.auto-next {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 16px;
+  margin: 8px 0 10px;
+  font-size: 0.875rem;
+  color: var(--ink-soft);
+}
+.auto-next-toggle,
+.auto-next-delay {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+.auto-next input {
+  accent-color: var(--accent);
+}
+.auto-next-toggle input {
+  width: 16px;
+  height: 16px;
+}
+.auto-next-delay input {
+  width: 140px;
+  max-width: 40vw;
+}
+.auto-next-delay output {
+  min-width: 2.6em;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+}
+.auto-next-status {
+  margin-left: auto;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+.auto-next-bar {
+  height: 3px;
+  margin-top: 10px;
+  border-radius: 2px;
+  background: var(--line-soft);
+  overflow: hidden;
+}
+.auto-next-bar span {
+  display: block;
+  height: 100%;
+  background: var(--right);
+  transform-origin: left;
+  animation-name: auto-next-shrink;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+@keyframes auto-next-shrink {
+  from {
+    transform: scaleX(1);
+  }
+  to {
+    transform: scaleX(0);
+  }
+}
 .session > .card + *,
 .session + .link {
   margin-top: 16px;

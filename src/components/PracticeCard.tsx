@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { Question } from "../types";
 import { playCorrect, playWrong } from "../lib/sound";
 import { sameSet } from "../lib/text";
@@ -10,6 +10,8 @@ type Props = {
   question: Question;
   nextLabel: string;
   wrongNote?: string;
+  /** When set, a correct answer moves on by itself after this many ms. */
+  autoNextMs?: number;
   onAnswered: (correct: boolean) => void;
   onNext: () => void;
 };
@@ -17,11 +19,23 @@ type Props = {
 type Feedback = "none" | "correct" | "wrong";
 
 /** One question with instant feedback. Remount (key) it for each new turn. */
-export const PracticeCard = ({ question, nextLabel, wrongNote, onAnswered, onNext }: Props) => {
+export const PracticeCard = ({ question, nextLabel, wrongNote, autoNextMs, onAnswered, onNext }: Props) => {
   const { settings, notebook } = useStore();
   const [selected, setSelected] = useState<string[]>([]);
   const [feedback, setFeedback] = useState<Feedback>("none");
+  const [autoPaused, setAutoPaused] = useState(false);
   const revealed = feedback !== "none";
+  const autoNextActive = feedback === "correct" && autoNextMs !== undefined && !autoPaused;
+
+  // The parent passes a fresh onNext each render; always call the latest one.
+  const onNextRef = useRef(onNext);
+  onNextRef.current = onNext;
+
+  useEffect(() => {
+    if (!autoNextActive) return;
+    const timer = window.setTimeout(() => onNextRef.current(), autoNextMs);
+    return () => window.clearTimeout(timer);
+  }, [autoNextActive, autoNextMs]);
 
   const check = (picked: string[]) => {
     const correct = sameSet(picked, question.answer);
@@ -75,7 +89,7 @@ export const PracticeCard = ({ question, nextLabel, wrongNote, onAnswered, onNex
           {feedback === "wrong" ? (
             <p className="explanation">{question.explanation}</p>
           ) : (
-            <details>
+            <details onToggle={(e) => e.currentTarget.open && setAutoPaused(true)}>
               <summary>Xem giải thích</summary>
               <p className="explanation">{question.explanation}</p>
             </details>
@@ -87,7 +101,17 @@ export const PracticeCard = ({ question, nextLabel, wrongNote, onAnswered, onNex
             <span className="kbd-hint">
               <kbd>Enter</kbd>
             </span>
+            {feedback === "correct" && autoNextMs !== undefined && (
+              <span className="auto-next-status" aria-live="polite">
+                {autoPaused ? "Đã dừng tự qua câu" : "Tự qua câu…"}
+              </span>
+            )}
           </div>
+          {autoNextActive && (
+            <div className="auto-next-bar" aria-hidden>
+              <span style={{ animationDuration: `${autoNextMs}ms` }} />
+            </div>
+          )}
         </div>
       )}
     </article>
