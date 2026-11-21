@@ -1,5 +1,6 @@
 // Sound effects synthesized with the Web Audio API, so no audio files are needed.
 let ctx: AudioContext | null = null;
+let master: AudioNode | null = null;
 
 const getContext = (): AudioContext | null => {
   try {
@@ -9,6 +10,23 @@ const getContext = (): AudioContext | null => {
   } catch {
     return null;
   }
+};
+
+// Everything goes through a compressor so the effects can be loud without clipping.
+const getOutput = (audio: AudioContext): AudioNode => {
+  if (!master) {
+    const compressor = audio.createDynamicsCompressor();
+    compressor.threshold.value = -14;
+    compressor.knee.value = 8;
+    compressor.ratio.value = 6;
+    compressor.attack.value = 0.002;
+    compressor.release.value = 0.15;
+    const volume = audio.createGain();
+    volume.gain.value = 1.4;
+    compressor.connect(volume).connect(audio.destination);
+    master = compressor;
+  }
+  return master;
 };
 
 type Tone = {
@@ -29,6 +47,7 @@ const playTones = (tones: Tone[]): void => {
   const audio = getContext();
   if (!audio) return;
   const now = audio.currentTime;
+  const output = getOutput(audio);
   for (const tone of tones) {
     const t0 = now + tone.start;
     const osc = audio.createOscillator();
@@ -47,28 +66,46 @@ const playTones = (tones: Tone[]): void => {
       filter.frequency.value = tone.lowpass;
       node = osc.connect(filter);
     }
-    node.connect(amp).connect(audio.destination);
+    node.connect(amp).connect(output);
     osc.start(t0);
     osc.stop(t0 + tone.duration + 0.05);
   }
 };
 
 // A bell-like note: fundamental plus a quieter octave and a faint inharmonic shimmer.
-const bell = (freq: number, start: number, duration: number, gain = 0.16): Tone[] => [
-  { freq, start, duration, gain, attack: 0.004 },
-  { freq: freq * 2, start, duration: duration * 0.6, gain: gain * 0.35, attack: 0.004 },
-  { freq: freq * 2.76, start, duration: duration * 0.35, gain: gain * 0.12, attack: 0.004 },
+const bell = (freq: number, start: number, duration: number, gain = 0.3): Tone[] => [
+  { freq, start, duration, gain, attack: 0.003 },
+  { freq: freq * 2, start, duration: duration * 0.6, gain: gain * 0.4, attack: 0.003 },
+  { freq: freq * 2.76, start, duration: duration * 0.35, gain: gain * 0.15, attack: 0.003 },
 ];
 
-/** Bright "ting-ting" chime for a correct answer. */
-export const playCorrect = (): void =>
-  playTones([...bell(1046.5, 0, 0.35), ...bell(1568, 0.09, 0.6)]);
+// High twinkles scattered over the chime's tail, for a "sparkle" finish.
+const sparkle = (start: number): Tone[] =>
+  [3136, 4186, 3520, 4699, 3951].map((freq, i) => ({
+    freq,
+    start: start + i * 0.045,
+    duration: 0.14,
+    gain: 0.07,
+    attack: 0.002,
+  }));
 
-/** Soft low "bu-buh" buzz for a wrong answer. */
+/** Bright rising "ting-ting-ting!" chime with sparkles for a correct answer. */
+export const playCorrect = (): void =>
+  playTones([
+    ...bell(1046.5, 0, 0.3), // C6
+    ...bell(1318.5, 0.07, 0.3), // E6
+    ...bell(1568, 0.14, 0.35), // G6
+    ...bell(2093, 0.21, 0.8, 0.34), // C7
+    ...sparkle(0.24),
+  ]);
+
+/** Punchy "buzz-buzz" for a wrong answer: two flat low notes over a soft thud, no pitch glide. */
 export const playWrong = (): void =>
   playTones([
-    { freq: 220, start: 0, duration: 0.16, type: "square", gain: 0.07, lowpass: 900 },
-    { freq: 175, slideTo: 140, start: 0.17, duration: 0.32, type: "square", gain: 0.07, lowpass: 900 },
+    { freq: 110, start: 0, duration: 0.25, gain: 0.35, attack: 0.003 },
+    { freq: 233, start: 0, duration: 0.17, type: "square", gain: 0.16, lowpass: 1500 },
+    { freq: 116.5, start: 0.18, duration: 0.3, gain: 0.35, attack: 0.003 },
+    { freq: 175, start: 0.18, duration: 0.3, type: "square", gain: 0.16, lowpass: 1500 },
   ]);
 
 export const playComplete = (): void =>
@@ -111,6 +148,12 @@ const clip = (name: string): HTMLAudioElement => {
     cache.set(name, audio);
   }
   return audio;
+};
+
+/** Silences any cat sound that is still playing. */
+export const stopCat = (): void => {
+  current?.pause();
+  current = null;
 };
 
 /** Plays one take of a cat sound; a new sound cuts off the one still playing. */

@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { playCat, type CatSound } from "../../lib/sound";
+import { playCat, stopCat, type CatSound } from "../../lib/sound";
 import { useStore } from "../../store";
 import { onPet } from "./petBus";
 
@@ -58,6 +58,7 @@ export const Pet = () => {
   // the cat makes a sound only when the learner clicks it.
   const say = useCallback((next: Mood, text?: string, sound?: CatSound) => {
     if (sound && soundOn.current) playCat(sound);
+    else stopCat();
     window.clearTimeout(timers.current.mood);
     window.clearTimeout(timers.current.bubble);
     moodRef.current = next;
