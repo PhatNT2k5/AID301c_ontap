@@ -35,16 +35,6 @@ const cheers = [
   "Mỗi ngày một section là đủ nè",
 ];
 
-// What MeoLearn says out loud (a cat sound, not words) for each mood.
-const moodSound: Record<Mood, CatSound> = {
-  idle: "meow",
-  happy: "mew",
-  sad: "sadMeow",
-  angry: "hiss",
-  sleepy: "purr",
-  curious: "trill",
-};
-
 const pick = <T,>(list: T[]): T => list[Math.floor(Math.random() * list.length)];
 
 const MOOD_MS = 4000;
@@ -64,8 +54,10 @@ export const Pet = () => {
     soundOn.current = settings.soundOn;
   }, [settings.soundOn]);
 
+  // Reactions to quiz events are animation only (the quiz plays its own chime/buzz);
+  // the cat makes a sound only when the learner clicks it.
   const say = useCallback((next: Mood, text?: string, sound?: CatSound) => {
-    if (soundOn.current) playCat(sound ?? moodSound[next]);
+    if (sound && soundOn.current) playCat(sound);
     window.clearTimeout(timers.current.mood);
     window.clearTimeout(timers.current.bubble);
     moodRef.current = next;
@@ -106,7 +98,7 @@ export const Pet = () => {
           case "correct":
             s.right += 1;
             s.wrong = 0;
-            if (s.right % 5 === 0) say("happy", `Combo ${s.right} câu đúng liền!`, "doubleMew");
+            if (s.right % 5 === 0) say("happy", `Combo ${s.right} câu đúng liền!`);
             else say("happy");
             break;
           case "wrong":
@@ -115,12 +107,12 @@ export const Pet = () => {
             say(s.wrong >= 3 ? "angry" : "sad");
             break;
           case "complete":
-            say("happy", pick(["Xong rồi! Giỏi quá~", "Hoàn thành luôn!", "Thêm một phần nữa xong!"]), "doubleMew");
+            say("happy", pick(["Xong rồi! Giỏi quá~", "Hoàn thành luôn!", "Thêm một phần nữa xong!"]));
             break;
           case "exam": {
             const score = event.score.toFixed(1);
             if (event.score >= 5)
-              say("happy", `${score} điểm${event.score >= 8 ? "! Wow!" : ", qua môn rồi!"}`, event.score >= 8 ? "doubleMew" : "mew");
+              say("happy", `${score} điểm${event.score >= 8 ? "! Wow!" : ", qua môn rồi!"}`);
             else say("sad", `${score} điểm... ôn thêm chút nha`);
             break;
           }

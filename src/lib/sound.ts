@@ -17,6 +17,12 @@ type Tone = {
   duration: number;
   type?: OscillatorType;
   gain?: number;
+  /** Pitch the tone glides to by its end. */
+  slideTo?: number;
+  /** Low-pass cutoff in Hz, to soften harsh waveforms. */
+  lowpass?: number;
+  /** Attack time in seconds; bells want a very short one. */
+  attack?: number;
 };
 
 const playTones = (tones: Tone[]): void => {
@@ -24,30 +30,45 @@ const playTones = (tones: Tone[]): void => {
   if (!audio) return;
   const now = audio.currentTime;
   for (const tone of tones) {
+    const t0 = now + tone.start;
     const osc = audio.createOscillator();
     const amp = audio.createGain();
     osc.type = tone.type ?? "sine";
-    osc.frequency.setValueAtTime(tone.freq, now + tone.start);
+    osc.frequency.setValueAtTime(tone.freq, t0);
+    if (tone.slideTo) osc.frequency.exponentialRampToValueAtTime(tone.slideTo, t0 + tone.duration);
     const peak = tone.gain ?? 0.18;
-    amp.gain.setValueAtTime(0.0001, now + tone.start);
-    amp.gain.exponentialRampToValueAtTime(peak, now + tone.start + 0.015);
-    amp.gain.exponentialRampToValueAtTime(0.0001, now + tone.start + tone.duration);
-    osc.connect(amp).connect(audio.destination);
-    osc.start(now + tone.start);
-    osc.stop(now + tone.start + tone.duration + 0.05);
+    amp.gain.setValueAtTime(0.0001, t0);
+    amp.gain.exponentialRampToValueAtTime(peak, t0 + (tone.attack ?? 0.015));
+    amp.gain.exponentialRampToValueAtTime(0.0001, t0 + tone.duration);
+    let node: AudioNode = osc;
+    if (tone.lowpass) {
+      const filter = audio.createBiquadFilter();
+      filter.type = "lowpass";
+      filter.frequency.value = tone.lowpass;
+      node = osc.connect(filter);
+    }
+    node.connect(amp).connect(audio.destination);
+    osc.start(t0);
+    osc.stop(t0 + tone.duration + 0.05);
   }
 };
 
-export const playCorrect = (): void =>
-  playTones([
-    { freq: 880, start: 0, duration: 0.12 },
-    { freq: 1318.5, start: 0.08, duration: 0.25 },
-  ]);
+// A bell-like note: fundamental plus a quieter octave and a faint inharmonic shimmer.
+const bell = (freq: number, start: number, duration: number, gain = 0.16): Tone[] => [
+  { freq, start, duration, gain, attack: 0.004 },
+  { freq: freq * 2, start, duration: duration * 0.6, gain: gain * 0.35, attack: 0.004 },
+  { freq: freq * 2.76, start, duration: duration * 0.35, gain: gain * 0.12, attack: 0.004 },
+];
 
+/** Bright "ting-ting" chime for a correct answer. */
+export const playCorrect = (): void =>
+  playTones([...bell(1046.5, 0, 0.35), ...bell(1568, 0.09, 0.6)]);
+
+/** Soft low "bu-buh" buzz for a wrong answer. */
 export const playWrong = (): void =>
   playTones([
-    { freq: 196, start: 0, duration: 0.18, type: "sawtooth", gain: 0.08 },
-    { freq: 155.6, start: 0.16, duration: 0.3, type: "sawtooth", gain: 0.08 },
+    { freq: 220, start: 0, duration: 0.16, type: "square", gain: 0.07, lowpass: 900 },
+    { freq: 175, slideTo: 140, start: 0.17, duration: 0.32, type: "square", gain: 0.07, lowpass: 900 },
   ]);
 
 export const playComplete = (): void =>
