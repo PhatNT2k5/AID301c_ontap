@@ -2,10 +2,11 @@ import { useState } from "react";
 import { Drill, type DrillRun } from "../../components/Drill";
 import { Icon } from "../../components/Icon";
 import { fptExams, type ExamPart, type FptExam } from "../../data";
-import { playComplete } from "../../lib/sound";
+import { playCelebrate } from "../../lib/sound";
 import { navigate } from "../../lib/useHashRoute";
 import { useStore } from "../../store";
 import { startFixedExam } from "../exam/ExamPage";
+import { SectionRecap } from "../review/SectionRecap";
 
 type PartStatus = "done" | "doing" | "new";
 
@@ -166,39 +167,51 @@ const freshRun = (ids: string[]): DrillRun => ({ queue: [...ids], solved: [], mi
 
 const PartDrill = ({ exam, part }: { exam: FptExam; part: ExamPart }) => {
   const { progress, settings } = useStore();
-  const [run, setRun] = useState<DrillRun>(() => progress.getRun(part.id) ?? freshRun(part.questionIds));
-  const [finished, setFinished] = useState<DrillRun | null>(null);
+  const savedRun = progress.getRun(part.id);
+  const [run, setRun] = useState<DrillRun>(() => savedRun ?? freshRun(part.questionIds));
+  // A finished part with nothing in progress opens on its review instead of a new drill.
+  const [view, setView] = useState<"drill" | "recap">(() =>
+    !savedRun && progress.progress.completed.includes(part.id) ? "recap" : "drill",
+  );
+  const [justFinished, setJustFinished] = useState(false);
   const [epoch, setEpoch] = useState(0);
   const nextPart = exam.parts.find((p) => p.no === part.no + 1);
 
-  if (finished) {
+  const restart = () => {
+    progress.resetSection(part.id);
+    setRun(freshRun(part.questionIds));
+    setEpoch((e) => e + 1);
+    setJustFinished(false);
+    setView("drill");
+  };
+
+  if (view === "recap") {
     return (
-      <div className="panel finish">
-        <span className="finish-mark" aria-hidden>
-          <Icon name="check" size={34} />
-        </span>
-        <h2>
-          Xong phần {part.no} · {exam.term} {exam.label}
-        </h2>
-        <p>
-          Đúng cả {part.questionIds.length} câu
-          {finished.mistakes > 0 ? `, sai ${finished.mistakes} lượt trước khi đúng.` : " ngay lần đầu."}
-        </p>
-        <div className="row">
-          {nextPart ? (
-            <button className="btn btn-primary" autoFocus onClick={() => navigate(`exams/${exam.id}/${nextPart.no}`)}>
-              Sang phần {nextPart.no}
+      <SectionRecap
+        title={`Xong phần ${part.no} · ${exam.term} ${exam.label}`}
+        questionIds={part.questionIds}
+        result={progress.getResult(part.id)}
+        justFinished={justFinished}
+        actions={
+          <>
+            {nextPart ? (
+              <button className="btn btn-primary" autoFocus onClick={() => navigate(`exams/${exam.id}/${nextPart.no}`)}>
+                Sang phần {nextPart.no}
+              </button>
+            ) : (
+              <button className="btn btn-primary" autoFocus onClick={() => startFixedExam(exam.questionIds)}>
+                Thi cả đề
+              </button>
+            )}
+            <button className="btn" onClick={restart}>
+              Làm lại phần này
             </button>
-          ) : (
-            <button className="btn btn-primary" autoFocus onClick={() => startFixedExam(exam.questionIds)}>
-              Thi cả đề
+            <button className="btn" onClick={() => navigate(`exams/${exam.id}`)}>
+              Về đề {exam.term}
             </button>
-          )}
-          <button className="btn" onClick={() => navigate(`exams/${exam.id}`)}>
-            Về đề {exam.term}
-          </button>
-        </div>
-      </div>
+          </>
+        }
+      />
     );
   }
 
@@ -226,19 +239,14 @@ const PartDrill = ({ exam, part }: { exam: FptExam; part: ExamPart }) => {
           progress.saveRun(part.id, next);
         }}
         onFinish={(last) => {
-          progress.completeSection(part.id);
-          setFinished(last);
-          if (settings.soundOn) playComplete();
+          progress.completeSection(part.id, last);
+          setJustFinished(true);
+          setView("recap");
+          window.scrollTo({ top: 0 });
+          if (settings.soundOn) playCelebrate();
         }}
       />
-      <button
-        className="link small"
-        onClick={() => {
-          progress.resetSection(part.id);
-          setRun(freshRun(part.questionIds));
-          setEpoch((e) => e + 1);
-        }}
-      >
+      <button className="link small" onClick={restart}>
         Làm lại phần này từ đầu
       </button>
     </>

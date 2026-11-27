@@ -7,6 +7,8 @@ export type DrillRun = {
   queue: string[];
   solved: string[];
   mistakes: number;
+  /** First wrong pick per question, kept so a finished run can be reviewed. */
+  wrongPicks?: Record<string, string[]>;
 };
 
 type Props = {
@@ -23,6 +25,7 @@ type Props = {
 export const Drill = ({ run, header, onChange, onFinish, onCorrect, autoNextMs }: Props) => {
   const [turn, setTurn] = useState(0);
   const [lastCorrect, setLastCorrect] = useState(false);
+  const [lastPicked, setLastPicked] = useState<string[]>([]);
   useEffect(() => emitPet({ type: "start" }), []);
   const total = run.queue.length + run.solved.length;
   const currentId = run.queue[0];
@@ -34,7 +37,12 @@ export const Drill = ({ run, header, onChange, onFinish, onCorrect, autoNextMs }
     const [head, ...rest] = run.queue;
     const updated: DrillRun = lastCorrect
       ? { ...run, queue: rest, solved: [...run.solved, head] }
-      : { ...run, queue: [...rest, head], mistakes: run.mistakes + 1 };
+      : {
+          ...run,
+          queue: [...rest, head],
+          mistakes: run.mistakes + 1,
+          wrongPicks: { [head]: lastPicked, ...run.wrongPicks },
+        };
     setTurn((t) => t + 1);
     if (updated.queue.length === 0) {
       emitPet({ type: "complete" });
@@ -66,8 +74,9 @@ export const Drill = ({ run, header, onChange, onFinish, onCorrect, autoNextMs }
         wrongNote={run.queue.length > 1 ? "Câu này sẽ quay lại sau." : undefined}
         nextLabel={isLast && lastCorrect ? "Hoàn thành" : "Câu tiếp"}
         autoNextMs={autoNextMs}
-        onAnswered={(correct) => {
+        onAnswered={(correct, picked) => {
           setLastCorrect(correct);
+          setLastPicked(picked);
           if (correct) onCorrect?.(question.id);
         }}
         onNext={next}

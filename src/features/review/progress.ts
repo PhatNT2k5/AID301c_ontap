@@ -5,9 +5,18 @@ import type { DrillRun } from "../../components/Drill";
 
 export type SectionRun = DrillRun;
 
+/** What a finished section looked like, so it can be reviewed later. */
+export type SectionResult = {
+  mistakes: number;
+  wrongPicks: Record<string, string[]>;
+  finishedAt: number;
+};
+
 type Progress = {
   completed: string[];
   runs: Record<string, SectionRun>;
+  /** Missing in progress saved before results were tracked. */
+  results?: Record<string, SectionResult>;
 };
 
 const KEY = "progress-v1";
@@ -37,12 +46,20 @@ export const useProgress = () => {
   const saveRun = (sectionId: string, run: SectionRun) =>
     update((p) => ({ ...p, runs: { ...p.runs, [sectionId]: run } }));
 
-  const completeSection = (sectionId: string) =>
+  const getResult = (sectionId: string): SectionResult | undefined => progress.results?.[sectionId];
+
+  const completeSection = (sectionId: string, run: SectionRun) =>
     update((p) => {
       const { [sectionId]: _done, ...runs } = p.runs;
+      const result: SectionResult = {
+        mistakes: run.mistakes,
+        wrongPicks: run.wrongPicks ?? {},
+        finishedAt: Date.now(),
+      };
       return {
         completed: p.completed.includes(sectionId) ? p.completed : [...p.completed, sectionId],
         runs,
+        results: { ...p.results, [sectionId]: result },
       };
     });
 
@@ -61,7 +78,7 @@ export const useProgress = () => {
   const firstOpen =
     sections.find((s) => statusOf(s.id) === "doing") ?? sections.find((s) => statusOf(s.id) !== "done");
 
-  return { progress, firstOpen, statusOf, getRun, saveRun, completeSection, resetSection, resetAll };
+  return { progress, firstOpen, statusOf, getRun, getResult, saveRun, completeSection, resetSection, resetAll };
 };
 
 export type ProgressApi = ReturnType<typeof useProgress>;

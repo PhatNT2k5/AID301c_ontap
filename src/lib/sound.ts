@@ -119,6 +119,67 @@ export const playComplete = (): void =>
     })),
   );
 
+// A brassy note: two slightly detuned sawtooths, low-passed so they sound like a horn, not a buzzer.
+const horn = (freq: number, start: number, duration: number, gain = 0.09): Tone[] => [
+  { freq, start, duration, gain, type: "sawtooth", lowpass: 2400, attack: 0.02 },
+  { freq: freq * 1.006, start, duration, gain: gain * 0.8, type: "sawtooth", lowpass: 2400, attack: 0.02 },
+  { freq: freq / 2, start, duration, gain: gain * 0.5, type: "triangle", attack: 0.02 },
+];
+
+let clapBuffer: AudioBuffer | null = null;
+
+// Applause: many short band-passed noise bursts at random times, swelling then fading out.
+const playApplause = (start: number, duration: number, claps: number): void => {
+  const audio = getContext();
+  if (!audio) return;
+  if (!clapBuffer) {
+    clapBuffer = audio.createBuffer(1, Math.floor(audio.sampleRate * 0.06), audio.sampleRate);
+    const data = clapBuffer.getChannelData(0);
+    for (let i = 0; i < data.length; i++) data[i] = Math.random() * 2 - 1;
+  }
+  const output = getOutput(audio);
+  const t0 = audio.currentTime + start;
+  for (let i = 0; i < claps; i++) {
+    const at = Math.random() * duration;
+    const progress = at / duration;
+    // Quick swell over the first 15%, then a long fade.
+    const level = progress < 0.15 ? progress / 0.15 : 1 - (progress - 0.15) / 0.85;
+    const src = audio.createBufferSource();
+    src.buffer = clapBuffer;
+    const band = audio.createBiquadFilter();
+    band.type = "bandpass";
+    band.frequency.value = 900 + Math.random() * 1600;
+    band.Q.value = 1.1;
+    const amp = audio.createGain();
+    const when = t0 + at;
+    const peak = 0.05 + 0.3 * Math.max(level, 0.05);
+    amp.gain.setValueAtTime(0.0001, when);
+    amp.gain.exponentialRampToValueAtTime(peak, when + 0.002);
+    amp.gain.exponentialRampToValueAtTime(0.0001, when + 0.035 + Math.random() * 0.03);
+    src.connect(band).connect(amp).connect(output);
+    src.start(when);
+    src.stop(when + 0.07);
+  }
+};
+
+/** Congratulation fanfare with a final chord, sparkles and applause, for finishing a section. */
+export const playCelebrate = (): void => {
+  playTones([
+    ...horn(392, 0, 0.14), // G4
+    ...horn(523.25, 0.13, 0.14), // C5
+    ...horn(659.25, 0.26, 0.14), // E5
+    ...horn(783.99, 0.39, 0.3), // G5
+    ...horn(659.25, 0.66, 0.12), // E5
+    ...horn(783.99, 0.78, 0.16), // G5
+    // Final C major chord, held.
+    ...[523.25, 659.25, 783.99, 1046.5].flatMap((freq) => horn(freq, 0.95, 1.3, 0.075)),
+    ...bell(2093, 0.95, 1.1, 0.22), // C7 shimmer on top
+    ...sparkle(1.0),
+    ...sparkle(1.35),
+  ]);
+  playApplause(0.9, 2.2, 140);
+};
+
 /* ---------- MeoLearn cat sounds ---------- */
 
 // Cat sounds synthesized offline by scripts/synth_cat_sounds.py into public/pet/sounds

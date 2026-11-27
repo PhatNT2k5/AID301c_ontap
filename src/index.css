@@ -1041,6 +1041,69 @@ details summary {
   margin-top: 10px;
 }
 
+/* Celebration right after finishing a section: the check mark pops and confetti falls once. */
+.finish-party {
+  position: relative;
+  overflow: hidden;
+}
+.finish-party .finish-mark {
+  animation: finish-pop 520ms cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+.confetti {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.confetti i {
+  --x: calc(var(--i) * 7.1% + 2%);
+  position: absolute;
+  top: -14px;
+  left: var(--x);
+  width: 8px;
+  height: 12px;
+  border: 1.5px solid var(--line);
+  border-radius: 2px;
+  background: var(--mint);
+  opacity: 0;
+  animation: confetti-fall 1.6s ease-in calc(var(--i) * 45ms) 1 both;
+}
+.confetti i:nth-child(3n) {
+  background: var(--accent);
+  border-radius: 50%;
+}
+.confetti i:nth-child(3n + 1) {
+  background: var(--wrong-bg);
+  width: 10px;
+  height: 6px;
+}
+@keyframes finish-pop {
+  from {
+    transform: scale(0.3) rotate(-30deg);
+  }
+  to {
+    transform: scale(1) rotate(-6deg);
+  }
+}
+@keyframes confetti-fall {
+  0% {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(260px) rotate(calc(220deg + var(--i) * 37deg));
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .finish-party .finish-mark,
+  .confetti i {
+    animation: none;
+  }
+  .confetti {
+    display: none;
+  }
+}
+
 /* ---------- chips / segmented / forms ---------- */
 .chips {
   display: flex;

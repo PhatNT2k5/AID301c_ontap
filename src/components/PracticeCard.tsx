@@ -12,7 +12,7 @@ type Props = {
   wrongNote?: string;
   /** When set, a correct answer moves on by itself after this many ms. */
   autoNextMs?: number;
-  onAnswered: (correct: boolean) => void;
+  onAnswered: (correct: boolean, picked: string[]) => void;
   onNext: () => void;
 };
 
@@ -43,7 +43,7 @@ export const PracticeCard = ({ question, nextLabel, wrongNote, autoNextMs, onAns
     if (!correct) notebook.recordWrong(question.id);
     if (settings.soundOn) (correct ? playCorrect : playWrong)();
     emitPet({ type: correct ? "correct" : "wrong" });
-    onAnswered(correct);
+    onAnswered(correct, picked);
   };
 
   const toggle = (key: string) => {
