@@ -1,0 +1,7 @@
+.venv/
+cache/
+models/
+out/
+ref/**/*.wav
+# the pipeline's reference voice (small, from github.com/nguyenthienhy/F5-TTS-Vietnamese)
+!ref/hynt/*.wav

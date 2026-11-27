@@ -1,5 +1,5 @@
 {
- "duration": 395.6,
+ "duration": 384.78,
  "markers": [
   {
    "title": "Mở đầu",
@@ -7,27 +7,27 @@
   },
   {
    "title": "Metric phân loại",
-   "start": 18.76
+   "start": 17.26
   },
   {
    "title": "Tree & ensemble",
-   "start": 102.65
+   "start": 97.39
   },
   {
    "title": "Neural network",
-   "start": 178.99
+   "start": 171.98
   },
   {
    "title": "NLP & Watson",
-   "start": 259.91
+   "start": 253.23
   },
   {
    "title": "Bẫy hay gặp",
-   "start": 356.24
+   "start": 347.59
   },
   {
    "title": "Tổng kết",
-   "start": 375.22
+   "start": 365.86
   }
  ]
 }

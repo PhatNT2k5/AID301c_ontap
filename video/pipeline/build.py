@@ -7,7 +7,9 @@ Usage (from web/video, via `npm run build:ch -- N` or `npm run demo`):
 Steps:
   1. load chapters/chN.script.json, expand quiz scenes from web/data/questions.json, validate
   2. apply shared/pronunciation.json to Vietnamese sentences, report terms missing from it
-  3. edge-tts per sentence, cached in cache/ by hash(voice + rate + spoken text)
+  3. TTS per sentence, cached in cache/ by hash(voice + rate + spoken text). Vietnamese goes
+     to the local F5-TTS worker (local-tts/, cloned voice) unless VIDEO_TTS=edge; English
+     quiz text always uses edge-tts
   4. place sentences on a timeline (scene length = its audio), resolve beats to frames
   5. mix one WAV, write the timeline JSON, render with Remotion
   6. add chapter markers + faststart, write .vtt and markers.json, extract sample frames
@@ -17,11 +19,14 @@ from __future__ import annotations
 
 import asyncio
 import hashlib
+import atexit
 import json
+import os
 import re
 import shutil
 import subprocess
 import sys
+import threading
 import unicodedata
 import wave
 from dataclasses import dataclass, field
@@ -41,9 +46,23 @@ FFMPEG = imageio_ffmpeg.get_ffmpeg_exe()
 
 FPS = 30
 SR = 24_000
-VOICE_VI = "vi-VN-HoaiMyNeural"
 VOICE_EN = "en-US-AvaNeural"  # exam questions stay in English, so they get an English voice
-RATE = "+18%"  # approved: faster delivery so ~1000 words fit 5-7 minutes
+RATE = "+18%"  # approved: faster delivery so ~1000 words fit 5-7 minutes (edge-tts only)
+
+# Vietnamese narration engine: "f5" = local F5-TTS cloning F5_REF (see local-tts/README.md),
+# "edge" = the original vi-VN-HoaiMyNeural. Each has its own cache keys, so switching is free.
+TTS_ENGINE = os.environ.get("VIDEO_TTS", "f5")
+LOCAL_TTS = VIDEO / "local-tts"
+F5_REF = LOCAL_TTS / "ref" / "hynt" / "ref.wav"  # user's pick (compare clip 7)
+# speed 0.85: this voice reads ~4.4 words/s at 1.0, which leaves chapters under the 5 min minimum.
+F5_SETTINGS = {"speed": 0.85, "nfe": 64, "cfg": 2.0, "seed": 42}
+if TTS_ENGINE == "f5":
+    # The voice id is part of the cache key: changing the clip or a setting re-synthesizes.
+    VOICE_VI = "f5:{}:{speed}:{nfe}:{cfg}:{seed}".format(F5_REF.relative_to(LOCAL_TTS).as_posix(), **F5_SETTINGS)
+elif TTS_ENGINE == "edge":
+    VOICE_VI = "vi-VN-HoaiMyNeural"
+else:
+    raise SystemExit(f"VIDEO_TTS must be 'f5' or 'edge', got {TTS_ENGINE!r}")
 
 LEAD_IN = 0.3  # seconds before the first sentence of a scene
 GAP = 0.32  # between sentences
@@ -280,13 +299,141 @@ async def tts(text: str, voice: str, mp3: Path, attempts: int = 25) -> None:
 
 
 def cache_key(voice: str, spoken: str) -> str:
-    return hashlib.sha1(f"{voice}|{RATE}|{spoken}".encode("utf-8")).hexdigest()[:16]
+    sent = f5_text(spoken) if voice.startswith("f5:") else spoken  # key on what the engine actually reads
+    return hashlib.sha1(f"{voice}|{RATE}|{sent}".encode("utf-8")).hexdigest()[:16]
+
+
+# Vietnamese names of standalone capital letters (quiz keys "B", "A, C"). The F5 checkpoint is
+# trained on lowercase text and reads a bare "b" as "bì"/"bề".
+LETTER_NAMES = {
+    "A": "a", "B": "bê", "C": "xê", "D": "dê", "E": "e", "F": "ép", "G": "giê", "H": "hát",
+    "I": "i", "K": "ca", "L": "e lờ", "M": "em mờ", "N": "en nờ", "O": "o", "P": "pê", "Q": "quy",
+    "R": "e rờ", "S": "ét", "T": "tê", "U": "u", "V": "vê", "X": "ích", "Y": "i dài",
+}
+LONE_CAPITAL = re.compile(r"(?<![\w-])([A-Z])(?![\w-])")
+
+VI_DIGITS = ["không", "một", "hai", "ba", "bốn", "năm", "sáu", "bảy", "tám", "chín"]
+VI_SCALES = ["", "nghìn", "triệu", "tỷ"]
+# 1996, 6,7%, 99%, 1.000 (dot as thousands separator only when followed by exactly 3 digits)
+NUMBER = re.compile(r"(?<![\w])(\d{1,3}(?:\.\d{3})+|\d+)(?:,(\d+))?(\s?%)?(?![\w])")
+
+
+def vi_below_1000(n: int, full: bool) -> str:
+    """0-999 read the Vietnamese way; `full` forces "không trăm" / "linh" inside larger numbers."""
+    hundreds, tens, units = n // 100, n // 10 % 10, n % 10
+    words: list[str] = []
+    if hundreds or full:
+        words += [VI_DIGITS[hundreds], "trăm"]
+    if tens > 1:
+        words += [VI_DIGITS[tens], "mươi"]
+    elif tens == 1:
+        words.append("mười")
+    elif units and words:
+        words.append("linh")
+    if units:
+        if units == 1 and tens > 1:
+            words.append("mốt")
+        elif units == 5 and tens > 0:
+            words.append("lăm")
+        else:
+            words.append(VI_DIGITS[units])
+    return " ".join(words)
+
+
+def vi_number(n: int) -> str:
+    if n == 0:
+        return VI_DIGITS[0]
+    groups: list[int] = []
+    while n:
+        groups.append(n % 1000)
+        n //= 1000
+    words: list[str] = []
+    for i in range(len(groups) - 1, -1, -1):
+        g = groups[i]
+        if g == 0:
+            continue
+        words.append(vi_below_1000(g, full=i < len(groups) - 1))
+        if i:
+            words.append(VI_SCALES[i % 4] or "nghìn")
+    return " ".join(words)
+
+
+def spell_numbers(text: str) -> str:
+    def one(m: re.Match[str]) -> str:
+        out = vi_number(int(m[1].replace(".", "")))
+        if m[2]:
+            out += " phẩy " + (vi_number(int(m[2])) if not m[2].startswith("0") else " ".join(VI_DIGITS[int(d)] for d in m[2]))
+        if m[3]:
+            out += " phần trăm"
+        return out
+
+    return NUMBER.sub(one, text)
+
+
+def f5_text(spoken: str) -> str:
+    """The F5 checkpoint was trained on normalized transcripts: digits and bare capital letters
+    come out garbled, so both are written as words."""
+    return LONE_CAPITAL.sub(lambda m: LETTER_NAMES.get(m[1], m[1]), spell_numbers(spoken))
+
+
+_f5_proc: subprocess.Popen[str] | None = None
+_f5_lock = threading.Lock()
+F5_LOG = CACHE / "f5-worker.log"
+
+
+def f5_worker() -> subprocess.Popen[str]:
+    """Start local-tts/worker.py once per build process; it keeps the model on the GPU."""
+    global _f5_proc
+    if _f5_proc is not None and _f5_proc.poll() is None:
+        return _f5_proc
+    python = LOCAL_TTS / ".venv" / ("Scripts/python.exe" if sys.platform == "win32" else "bin/python")
+    if not python.exists():
+        raise BuildError(f"local F5-TTS not installed ({python} missing): see local-tts/README.md, or set VIDEO_TTS=edge")
+    CACHE.mkdir(exist_ok=True)
+    log = F5_LOG.open("a", encoding="utf-8")
+    print("  starting F5-TTS worker (loads the model, ~15 s)...", flush=True)
+    _f5_proc = subprocess.Popen(
+        [str(python), str(LOCAL_TTS / "worker.py")],
+        stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=log,
+        text=True, encoding="utf-8", cwd=LOCAL_TTS, env={**os.environ, "PYTHONWARNINGS": "ignore"},
+    )
+    atexit.register(stop_f5_worker)
+    return _f5_proc
+
+
+def stop_f5_worker() -> None:
+    if _f5_proc is not None and _f5_proc.poll() is None:
+        _f5_proc.stdin.close()  # type: ignore[union-attr]  # worker exits on EOF
+        try:
+            _f5_proc.wait(timeout=10)
+        except subprocess.TimeoutExpired:
+            _f5_proc.kill()
+
+
+def f5_tts(text: str, wav: Path) -> None:
+    """Blocking; one sentence at a time (the GPU is the bottleneck, not the request)."""
+    job = {"ref": str(F5_REF), "text": text, "out": str(wav), **F5_SETTINGS}
+    with _f5_lock:
+        proc = f5_worker()
+        try:
+            proc.stdin.write(json.dumps(job, ensure_ascii=False) + "\n")  # type: ignore[union-attr]
+            proc.stdin.flush()  # type: ignore[union-attr]
+            line = proc.stdout.readline()  # type: ignore[union-attr]
+        except OSError:
+            line = ""
+    if not line:
+        raise BuildError(f"F5-TTS worker exited (see {F5_LOG})")
+    reply = json.loads(line)
+    if not reply["ok"]:
+        raise BuildError(f"F5-TTS failed: {reply['error']}\n  text: {text[:70]}")
 
 
 async def synthesize(sentence: Sentence, attempts: int = 25) -> None:
     key = cache_key(sentence.voice, sentence.spoken)
     wav = CACHE / f"{key}.wav"
-    if not wav.exists():
+    if not wav.exists() and sentence.voice.startswith("f5:"):
+        await asyncio.to_thread(f5_tts, f5_text(sentence.spoken), wav)
+    elif not wav.exists():
         mp3 = CACHE / f"{key}.mp3"
         await tts(sentence.spoken, sentence.voice, mp3, attempts)
         await asyncio.sleep(1.0)  # pace requests; the free service throttles bursts
@@ -306,15 +453,17 @@ MAX_TAIL_SILENCE = 0.45
 
 
 def read_clip(path: Path) -> np.ndarray:
-    """A TTS clip with its padding trimmed: edge-tts adds ~0.2 s before and ~0.7 s (more for
-    short lines) after the speech, which would add up to >1.5 s pauses between sentences."""
+    """A TTS clip with its padding normalized: edge-tts adds ~0.2 s before and ~0.7 s (more for
+    short lines) after the speech, which would add up to >1.5 s pauses between sentences; F5-TTS
+    stops right after the last word, so its tail is padded up to the same breath pause."""
     pcm = read_wav(path)
     loud = np.nonzero(np.abs(pcm) > 10 ** (-45 / 20))[0]
     if len(loud) == 0:
         return pcm
     a = max(0, loud[0] - int(SR * MAX_LEAD_SILENCE))
-    b = min(len(pcm), loud[-1] + int(SR * MAX_TAIL_SILENCE))
-    return pcm[a:b]
+    b = loud[-1] + int(SR * MAX_TAIL_SILENCE)
+    clip = pcm[a : min(len(pcm), b)]
+    return np.pad(clip, (0, max(0, b - len(pcm))))
 
 
 def tick(freq: float = 880.0, length: float = 0.09) -> np.ndarray:
@@ -496,13 +645,10 @@ def pronunciation_check(entries: list[dict], used_terms: list[str]) -> None:
 
 
 def normalize(text: str) -> str:
-    t = unicodedata.normalize("NFD", text.lower())
+    t = spell_numbers(text.lower())  # Whisper writes "99%" for "chín mươi chín phần trăm"
+    t = unicodedata.normalize("NFD", t)
     t = "".join(ch for ch in t if unicodedata.category(ch) != "Mn").replace("đ", "d")
-    t = re.sub(r"\d", lambda m: f" {DIGIT_WORDS[int(m[0])]} ", t)  # Whisper writes "5" for "năm"
     return re.sub(r"[^a-z0-9]+", " ", t).strip()
-
-
-DIGIT_WORDS = ["khong", "mot", "hai", "ba", "bon", "nam", "sau", "bay", "tam", "chin"]
 
 
 def similarity(a: str, b: str) -> float:

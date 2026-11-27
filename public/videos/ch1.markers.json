@@ -1,5 +1,5 @@
 {
- "duration": 320.3,
+ "duration": 308.47,
  "markers": [
   {
    "title": "Mở đầu",
@@ -7,27 +7,27 @@
   },
   {
    "title": "Process model",
-   "start": 17.96
+   "start": 17.1
   },
   {
    "title": "Design thinking",
-   "start": 81.65
+   "start": 75.86
   },
   {
    "title": "Thu thập dữ liệu & ETL",
-   "start": 131.08
+   "start": 123.87
   },
   {
    "title": "Sparse matrix",
-   "start": 224.25
+   "start": 215.32
   },
   {
    "title": "Bẫy hay gặp",
-   "start": 278.53
+   "start": 270.34
   },
   {
    "title": "Tổng kết",
-   "start": 300.63
+   "start": 291.91
   }
  ]
 }

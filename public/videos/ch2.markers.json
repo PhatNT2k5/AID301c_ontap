@@ -1,5 +1,5 @@
 {
- "duration": 398.49,
+ "duration": 394.52,
  "markers": [
   {
    "title": "Mở đầu",
@@ -7,27 +7,27 @@
   },
   {
    "title": "EDA & trực quan hoá",
-   "start": 15.0
+   "start": 14.25
   },
   {
    "title": "Missing data",
-   "start": 90.04
+   "start": 89.9
   },
   {
    "title": "Xác suất",
-   "start": 171.48
+   "start": 169.66
   },
   {
    "title": "Kiểm định giả thuyết",
-   "start": 257.99
+   "start": 257.18
   },
   {
    "title": "Bẫy hay gặp",
-   "start": 357.53
+   "start": 354.82
   },
   {
    "title": "Tổng kết",
-   "start": 378.33
+   "start": 375.58
   }
  ]
 }

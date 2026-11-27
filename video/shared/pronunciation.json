@@ -1,10 +1,11 @@
 [
   {
     "term": "CRISP-DM",
-    "spoken": "CRISP-DM",
+    "spoken": "cờ rít đi em",
     "verified": false,
     "tried": [
-      "Crít đi em"
+      "Crít đi em",
+      "CRISP-DM"
     ]
   },
   {
@@ -78,10 +79,11 @@
   },
   {
     "term": "AAVAIL",
-    "spoken": "AAVAIL",
+    "spoken": "a veo",
     "verified": false,
     "tried": [
-      "A veo"
+      "A veo",
+      "AAVAIL"
     ]
   },
   {
@@ -91,11 +93,11 @@
   },
   {
     "term": "CSV",
-    "spoken": "CSV",
+    "spoken": "xi ét vi",
     "verified": false,
     "tried": [
-      "xi ét vi",
-      "C S V"
+      "C S V",
+      "CSV"
     ]
   },
   {
@@ -114,7 +116,10 @@
   {
     "term": "file",
     "spoken": "phai",
-    "verified": false
+    "verified": false,
+    "tried": [
+      "file"
+    ]
   },
   {
     "term": "Transfer",
@@ -128,10 +133,11 @@
   },
   {
     "term": "IBM",
-    "spoken": "I B M",
+    "spoken": "IBM",
     "verified": false,
     "tried": [
-      "Ai bi em"
+      "Ai bi em",
+      "I B M"
     ]
   },
   {
@@ -185,8 +191,11 @@
   },
   {
     "term": "Obtain",
-    "spoken": "Ọp thên",
-    "verified": false
+    "spoken": "ốp tên",
+    "verified": false,
+    "tried": [
+      "Ọp thên"
+    ]
   },
   {
     "term": "Scrub",
@@ -254,27 +263,29 @@
   },
   {
     "term": "Test",
-    "spoken": "Test",
+    "spoken": "tét",
     "verified": false,
     "tried": [
-      "Tét"
+      "Tét",
+      "Test"
     ]
   },
   {
     "term": "JSON",
-    "spoken": "J S O N",
+    "spoken": "giây sơn",
     "verified": false,
     "tried": [
-      "Giây xơn"
+      "Giây xơn",
+      "J S O N"
     ]
   },
   {
     "term": "API",
-    "spoken": "API",
+    "spoken": "ây pi ai",
     "verified": false,
     "tried": [
-      "ây pi ai",
-      "A P I"
+      "A P I",
+      "API"
     ]
   },
   {
@@ -325,16 +336,20 @@
   },
   {
     "term": "word counts",
-    "spoken": "word counts",
+    "spoken": "uơ đờ cao",
     "verified": false,
     "tried": [
+      "word counts",
       "uơ cao"
     ]
   },
   {
     "term": "user item",
-    "spoken": "giu dơ ai tầm",
-    "verified": false
+    "spoken": "du dơ ai thầm",
+    "verified": false,
+    "tried": [
+      "giu dơ ai tầm"
+    ]
   },
   {
     "term": "management",
@@ -351,8 +366,11 @@
   },
   {
     "term": "key value store",
-    "spoken": "ki va liu xờ to",
-    "verified": false
+    "spoken": "key value store",
+    "verified": false,
+    "tried": [
+      "ki va liu xờ to"
+    ]
   },
   {
     "term": "relational database",
@@ -374,8 +392,12 @@
   },
   {
     "term": "ensemble",
-    "spoken": "an xam bồ",
-    "verified": false
+    "spoken": "on xom bồ",
+    "verified": false,
+    "tried": [
+      "an xam bồ",
+      "ensemble"
+    ]
   },
   {
     "term": "neural network",
@@ -397,10 +419,11 @@
   },
   {
     "term": "confusion matrix",
-    "spoken": "confusion matrix",
+    "spoken": "cần phiu dần mây trích",
     "verified": false,
     "tried": [
-      "cần phiu giần mây tríc"
+      "cần phiu giần mây tríc",
+      "confusion matrix"
     ]
   },
   {
@@ -423,8 +446,11 @@
   },
   {
     "term": "False",
-    "spoken": "phon",
-    "verified": false
+    "spoken": "False",
+    "verified": false,
+    "tried": [
+      "phon"
+    ]
   },
   {
     "term": "Average Score",
@@ -433,20 +459,28 @@
   },
   {
     "term": "precision",
-    "spoken": "pri xi giần",
-    "verified": false
+    "spoken": "pre xi dần",
+    "verified": false,
+    "tried": [
+      "pri xi giần",
+      "pờ ri xi dần"
+    ]
   },
   {
     "term": "recall",
-    "spoken": "ri con",
-    "verified": false
+    "spoken": "ri côn",
+    "verified": false,
+    "tried": [
+      "ri con"
+    ]
   },
   {
     "term": "F1",
-    "spoken": "F1",
+    "spoken": "ép một",
     "verified": false,
     "tried": [
-      "ép oan"
+      "ép oan",
+      "F1"
     ]
   },
   {
@@ -486,8 +520,13 @@
   },
   {
     "term": "decision tree",
-    "spoken": "đi xi giần tri",
-    "verified": false
+    "spoken": "đi xi sần tri",
+    "verified": false,
+    "tried": [
+      "đi xi giần tri",
+      "decision tree",
+      "đi xi dần tri"
+    ]
   },
   {
     "term": "churn",
@@ -496,10 +535,10 @@
   },
   {
     "term": "bias",
-    "spoken": "bias",
+    "spoken": "bai ợt",
     "verified": false,
     "tried": [
-      "bai ợt"
+      "bias"
     ]
   },
   {
@@ -555,26 +594,39 @@
   },
   {
     "term": "RNN",
-    "spoken": "a en en",
-    "verified": false
+    "spoken": "R N N",
+    "verified": false,
+    "tried": [
+      "a en en"
+    ]
   },
   {
     "term": "LSTM",
-    "spoken": "LSTM",
+    "spoken": "L S T M",
     "verified": false,
     "tried": [
-      "eo ét ti em"
+      "LSTM",
+      "eo ét ti em",
+      "eo ét tê em"
     ]
   },
   {
     "term": "GRU",
-    "spoken": "gi a iu",
-    "verified": false
+    "spoken": "giê a u",
+    "verified": false,
+    "tried": [
+      "gi a iu",
+      "di a iu"
+    ]
   },
   {
     "term": "time series",
-    "spoken": "tham xi ri",
-    "verified": false
+    "spoken": "thai xi ri",
+    "verified": false,
+    "tried": [
+      "time series",
+      "tham xi ri"
+    ]
   },
   {
     "term": "transfer learning",
@@ -681,8 +733,11 @@
   },
   {
     "term": "keywords",
-    "spoken": "ki uơ",
-    "verified": false
+    "spoken": "keywords",
+    "verified": false,
+    "tried": [
+      "ki uơ"
+    ]
   },
   {
     "term": "token",
@@ -859,10 +914,11 @@
   },
   {
     "term": "PCA",
-    "spoken": "PCA",
+    "spoken": "P C A",
     "verified": false,
     "tried": [
-      "pi xi ây"
+      "pi xi ây",
+      "PCA"
     ]
   },
   {
@@ -882,10 +938,11 @@
   },
   {
     "term": "KNN",
-    "spoken": "KNN",
+    "spoken": "K N N",
     "verified": false,
     "tried": [
-      "Kây en en"
+      "Kây en en",
+      "KNN"
     ]
   },
   {
@@ -905,8 +962,11 @@
   },
   {
     "term": "fairness",
-    "spoken": "phe nợt",
-    "verified": false
+    "spoken": "phe nớt",
+    "verified": false,
+    "tried": [
+      "phe nợt"
+    ]
   },
   {
     "term": "disparate impact",
@@ -930,8 +990,11 @@
   },
   {
     "term": "Adversarial Robustness Toolbox",
-    "spoken": "Ét vơ xe ri ồ Rô bất nợt Tun bóc",
-    "verified": false
+    "spoken": "Adversarial Robustness Toolbox",
+    "verified": false,
+    "tried": [
+      "Ét vơ xe ri ồ Rô bất nợt Tun bóc"
+    ]
   },
   {
     "term": "outlier detection",
@@ -995,8 +1058,11 @@
   },
   {
     "term": "reproducibility",
-    "spoken": "ri prơ đu xi bi li ti",
-    "verified": false
+    "spoken": "reproducibility",
+    "verified": false,
+    "tried": [
+      "ri prơ đu xi bi li ti"
+    ]
   },
   {
     "term": "communication",
@@ -1010,10 +1076,12 @@
   },
   {
     "term": "regression",
-    "spoken": "regression",
+    "spoken": "rì grét sần",
     "verified": false,
     "tried": [
-      "ri grét sần"
+      "ri grét sần",
+      "regression",
+      "ri gờ re sần"
     ]
   },
   {
@@ -1023,8 +1091,11 @@
   },
   {
     "term": "MCAR",
-    "spoken": "em xi ây a",
-    "verified": false
+    "spoken": "M C A R",
+    "verified": false,
+    "tried": [
+      "em xi ây a"
+    ]
   },
   {
     "term": "MAR",
@@ -1039,7 +1110,10 @@
   {
     "term": "stream",
     "spoken": "xờ trim",
-    "verified": false
+    "verified": false,
+    "tried": [
+      "stream"
+    ]
   },
   {
     "term": "user log",
@@ -1053,8 +1127,11 @@
   },
   {
     "term": "strategy",
-    "spoken": "xờ tra tơ gi",
-    "verified": false
+    "spoken": "strategy",
+    "verified": false,
+    "tried": [
+      "xờ tra tơ gi"
+    ]
   },
   {
     "term": "population",
@@ -1113,8 +1190,11 @@
   },
   {
     "term": "multiple comparisons problem",
-    "spoken": "mân ti pồ cơm pe ri xần pró blem",
-    "verified": false
+    "spoken": "multiple comparisons problem",
+    "verified": false,
+    "tried": [
+      "mân ti pồ cơm pe ri xần pró blem"
+    ]
   },
   {
     "term": "Bonferroni",
@@ -1123,8 +1203,11 @@
   },
   {
     "term": "Benjamini Hochberg",
-    "spoken": "Ben gia mi ni Hốc bớc",
-    "verified": false
+    "spoken": "Benjamini Hochberg",
+    "verified": false,
+    "tried": [
+      "Ben gia mi ni Hốc bớc"
+    ]
   },
   {
     "term": "permutation",
@@ -1143,8 +1226,11 @@
   },
   {
     "term": "confirmatory analysis",
-    "spoken": "cơn phơ mơ to ri ơ ná li xít",
-    "verified": false
+    "spoken": "confirmatory analysis",
+    "verified": false,
+    "tried": [
+      "cơn phơ mơ to ri ơ ná li xít"
+    ]
   },
   {
     "term": "Seaborn",
@@ -1231,13 +1317,21 @@
   },
   {
     "term": "drift",
-    "spoken": "đờ ríp",
-    "verified": false
+    "spoken": "drift",
+    "verified": false,
+    "tried": [
+      "đờ ríp",
+      "đờ rít"
+    ]
   },
   {
     "term": "Kubernetes",
-    "spoken": "Kiu bơ nét tít",
-    "verified": false
+    "spoken": "cu bơ nét tít",
+    "verified": false,
+    "tried": [
+      "Kiu bơ nét tít",
+      "Kubernetes"
+    ]
   },
   {
     "term": "business opportunity",
@@ -1272,8 +1366,11 @@
   },
   {
     "term": "module",
-    "spoken": "mô đun",
-    "verified": false
+    "spoken": "module",
+    "verified": false,
+    "tried": [
+      "mô đun"
+    ]
   },
   {
     "term": "TDD",
@@ -1292,8 +1389,12 @@
   },
   {
     "term": "coverage",
-    "spoken": "cớ vơ rịch",
-    "verified": false
+    "spoken": "cá vơ rịch",
+    "verified": false,
+    "tried": [
+      "cớ vơ rịch",
+      "coverage"
+    ]
   },
   {
     "term": "production",
@@ -1355,13 +1456,19 @@
   },
   {
     "term": "timestamp",
-    "spoken": "tai xờ tem",
-    "verified": false
+    "spoken": "timestamp",
+    "verified": false,
+    "tried": [
+      "tai xờ tem"
+    ]
   },
   {
     "term": "runtime",
-    "spoken": "ran tai",
-    "verified": false
+    "spoken": "runtime",
+    "verified": false,
+    "tried": [
+      "ran tai"
+    ]
   },
   {
     "term": "model version",
@@ -1370,8 +1477,11 @@
   },
   {
     "term": "predictions",
-    "spoken": "pờ ri đích sần",
-    "verified": false
+    "spoken": "predictions",
+    "verified": false,
+    "tried": [
+      "pờ ri đích sần"
+    ]
   },
   {
     "term": "input data summary",
@@ -1400,8 +1510,12 @@
   },
   {
     "term": "OpenScale",
-    "spoken": "Âu pần xờ keo",
-    "verified": false
+    "spoken": "OpenScale",
+    "verified": false,
+    "tried": [
+      "Âu pần xờ keo",
+      "ốp pần xờ keo"
+    ]
   },
   {
     "term": "Watson Studio",
@@ -1521,8 +1635,13 @@
   },
   {
     "term": "explain",
-    "spoken": "ếch xplên",
-    "verified": false
+    "spoken": "ích xờ plên",
+    "verified": false,
+    "tried": [
+      "ếch xplên",
+      "explain",
+      "ếch xờ plên"
+    ]
   },
   {
     "term": "type",
@@ -1549,13 +1668,20 @@
   },
   {
     "term": "Flask",
-    "spoken": "Phờ lát",
-    "verified": false
+    "spoken": "Flask",
+    "verified": false,
+    "tried": [
+      "Phờ lát",
+      "phlát"
+    ]
   },
   {
     "term": "Spark",
-    "spoken": "Xì pác",
-    "verified": false
+    "spoken": "Spark",
+    "verified": false,
+    "tried": [
+      "Xì pác"
+    ]
   },
   {
     "term": "spark-submit",
@@ -1567,10 +1693,11 @@
   },
   {
     "term": "ALS",
-    "spoken": "ALS",
+    "spoken": "A L S",
     "verified": false,
     "tried": [
-      "ây eo ét"
+      "ây eo ét",
+      "ALS"
     ]
   },
   {
@@ -1595,13 +1722,19 @@
   },
   {
     "term": "multiprocessing",
-    "spoken": "mun ti prô xét xinh",
-    "verified": false
+    "spoken": "multiprocessing",
+    "verified": false,
+    "tried": [
+      "mun ti prô xét xinh"
+    ]
   },
   {
     "term": "process",
-    "spoken": "prô xét",
-    "verified": false
+    "spoken": "process",
+    "verified": false,
+    "tried": [
+      "prô xét"
+    ]
   },
   {
     "term": "mpi4py",
@@ -1610,8 +1743,11 @@
   },
   {
     "term": "ipyparallel",
-    "spoken": "ai pai pa ra leo",
-    "verified": false
+    "spoken": "ipyparallel",
+    "verified": false,
+    "tried": [
+      "ai pai pa ra leo"
+    ]
   },
   {
     "term": "core",
@@ -1620,8 +1756,11 @@
   },
   {
     "term": "n_jobs",
-    "spoken": "en giốp",
-    "verified": false
+    "spoken": "n_jobs",
+    "verified": false,
+    "tried": [
+      "en giốp"
+    ]
   },
   {
     "term": "Dask",
@@ -1686,7 +1825,10 @@
   {
     "term": "endpoint",
     "spoken": "en poi",
-    "verified": false
+    "verified": false,
+    "tried": [
+      "endpoint"
+    ]
   },
   {
     "term": "logs",
@@ -1695,8 +1837,11 @@
   },
   {
     "term": "train",
-    "spoken": "tờ rên",
-    "verified": false
+    "spoken": "trên",
+    "verified": false,
+    "tried": [
+      "tờ rên"
+    ]
   },
   {
     "term": "Watson Machine Learning",
@@ -1710,8 +1855,11 @@
   },
   {
     "term": "cloud",
-    "spoken": "clao",
-    "verified": false
+    "spoken": "cloud",
+    "verified": false,
+    "tried": [
+      "clao"
+    ]
   },
   {
     "term": "provision",
@@ -1723,8 +1871,12 @@
   },
   {
     "term": "WML",
-    "spoken": "đáp liu em eo",
-    "verified": false
+    "spoken": "W M L",
+    "verified": false,
+    "tried": [
+      "đáp liu em eo",
+      "WML"
+    ]
   },
   {
     "term": "virtual environment",
@@ -1743,8 +1895,12 @@
   },
   {
     "term": "Apache",
-    "spoken": "A pa chi",
-    "verified": false
+    "spoken": "ơ pát chi",
+    "verified": false,
+    "tried": [
+      "A pa chi",
+      "Apache"
+    ]
   },
   {
     "term": "shebang",
@@ -1773,13 +1929,19 @@
   },
   {
     "term": "memory",
-    "spoken": "me mơ ri",
-    "verified": false
+    "spoken": "memory",
+    "verified": false,
+    "tried": [
+      "me mơ ri"
+    ]
   },
   {
     "term": "executor",
-    "spoken": "ếch xê kiu tơ",
-    "verified": false
+    "spoken": "executor",
+    "verified": false,
+    "tried": [
+      "ếch xê kiu tơ"
+    ]
   },
   {
     "term": "Standalone",
@@ -1798,13 +1960,20 @@
   },
   {
     "term": "Mesos",
-    "spoken": "Mê xốt",
-    "verified": false
+    "spoken": "mê sốt",
+    "verified": false,
+    "tried": [
+      "Mê xốt",
+      "Mesos"
+    ]
   },
   {
     "term": "collaborative filtering",
-    "spoken": "cô la bơ ra tiv phin tơ rinh",
-    "verified": false
+    "spoken": "collaborative filtering",
+    "verified": false,
+    "tried": [
+      "cô la bơ ra tiv phin tơ rinh"
+    ]
   },
   {
     "term": "explicit",
@@ -1841,13 +2010,19 @@
   },
   {
     "term": "user",
-    "spoken": "giu dơ",
-    "verified": false
+    "spoken": "du dơ",
+    "verified": false,
+    "tried": [
+      "giu dơ"
+    ]
   },
   {
     "term": "item",
-    "spoken": "ai tầm",
-    "verified": false
+    "spoken": "ai thầm",
+    "verified": false,
+    "tried": [
+      "ai tầm"
+    ]
   },
   {
     "term": "cold start",
